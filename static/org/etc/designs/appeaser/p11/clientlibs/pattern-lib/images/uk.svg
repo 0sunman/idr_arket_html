@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="26px" height="18px" viewBox="0 0 26 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>uk</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="uk">
+            <g id="Rectangle-9">
+                <g id="path-1-link" fill="#1C379E">
+                    <polygon id="path-1" points="0 0.511823 0 0 26 0 26 18 0 18"></polygon>
+                </g>
+                <polygon id="path-1" points="0 0.511823 0 0 26 0 26 18 0 18"></polygon>
+            </g>
+            <polygon id="Combined-Shape" fill="#FFFFFF" fill-rule="nonzero" points="0 16.9493174 0.0365592733 17.0180753 26 3.21306903 26 0.71243623 5.01335085e-16 14.5368815 3.34801631e-16 16.9493174"></polygon>
+            <polygon id="Combined-Shape" fill="#FFFFFF" fill-rule="nonzero" points="26 14.5284337 26 17.077929 8.11473658e-17 2.06682203 0 0 1 1.18501937e-16"></polygon>
+            <polygon id="Combined-Shape" fill="#D0011B" fill-rule="nonzero" points="0 0.28867513 26 15.2997821 26 16.4544827 9.15933995e-16 1.44337567 5.82867088e-16 0.28867513"></polygon>
+            <polygon id="Combined-Shape" fill="#D0011B" fill-rule="nonzero" points="-1.77635684e-15 16.6694515 26 2.84500628 26 1.71243623 1.38777879e-16 15.5368815 1.94289031e-16 16.6694515"></polygon>
+            <rect id="Rectangle-9" fill="#FFFFFF" fill-rule="nonzero" x="11" y="0" width="4" height="18"></rect>
+            <polygon id="Rectangle-9" fill="#FFFFFF" fill-rule="nonzero" points="26 7 26 11 -1.77635684e-15 11 -1.77635684e-15 7"></polygon>
+            <rect id="Rectangle-9" fill="#D0011B" fill-rule="nonzero" transform="translate(13.000000, 9.000000) rotate(90.000000) translate(-13.000000, -9.000000) " x="12" y="-4" width="2" height="26"></rect>
+            <rect id="Rectangle-9" fill="#D0011B" fill-rule="nonzero" x="12" y="0" width="2" height="18"></rect>
+        </g>
+    </g>
+</svg>

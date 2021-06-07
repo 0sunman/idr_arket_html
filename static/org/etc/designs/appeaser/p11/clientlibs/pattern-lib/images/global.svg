@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="26px" height="18px" viewBox="0 0 26 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>Global</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Global" fill-rule="nonzero">
+            <polygon id="Rectangle-9" fill="#FFB4B4" opacity="0" points="26 0 26 18 0 18 0 0"></polygon>
+            <g id="Group-6" transform="translate(4.000000, 0.000000)">
+                <g id="Group-5" transform="translate(2.000000, 0.000000)" fill="#85CAF0">
+                    <rect id="Rectangle-9-Copy-390" x="4" y="0" width="6" height="1"></rect>
+                    <rect id="Rectangle-9-Copy-393" x="0" y="2" width="14" height="13"></rect>
+                    <rect id="Rectangle-9-Copy-436" x="2" y="1" width="10" height="1"></rect>
+                </g>
+                <g id="Group-4" transform="translate(16.500000, 9.000000) rotate(90.000000) translate(-16.500000, -9.000000) translate(9.500000, 7.500000)" fill="#85CAF0">
+                    <rect id="Rectangle-9-Copy-410" x="4" y="0" width="6" height="1"></rect>
+                    <rect id="Rectangle-9-Copy-413" x="0" y="2" width="14" height="1"></rect>
+                    <rect id="Rectangle-9-Copy-437" x="2" y="1" width="10" height="1"></rect>
+                </g>
+                <g id="Group-4-Copy" transform="translate(1.500000, 9.000000) scale(-1, 1) rotate(90.000000) translate(-1.500000, -9.000000) translate(-5.500000, 7.500000)" fill="#85CAF0">
+                    <rect id="Rectangle-9-Copy-410" x="4" y="0" width="6" height="1"></rect>
+                    <rect id="Rectangle-9-Copy-413" x="0" y="2" width="14" height="1"></rect>
+                    <rect id="Rectangle-9-Copy-437" x="2" y="1" width="10" height="1"></rect>
+                </g>
+                <g id="Group-5-Copy" transform="translate(9.000000, 16.500000) scale(1, -1) translate(-9.000000, -16.500000) translate(2.000000, 15.000000)" fill="#85CAF0">
+                    <rect id="Rectangle-9-Copy-390" x="4" y="0" width="6" height="1"></rect>
+                    <rect id="Rectangle-9-Copy-393" x="0" y="2" width="14" height="1"></rect>
+                    <rect id="Rectangle-9-Copy-436" x="2" y="1" width="10" height="1"></rect>
+                </g>
+                <rect id="Rectangle-9-Copy-321" fill="#6C8F01" x="12" y="3" width="3" height="3"></rect>
+                <rect id="Rectangle-9-Copy-392" fill="#6C8F01" x="14" y="4" width="3" height="3"></rect>
+                <rect id="Rectangle-9-Copy-335" fill="#6C8F01" x="12" y="2" width="1" height="2"></rect>
+                <rect id="Rectangle-9-Copy-322" fill="#6C8F01" x="4" y="13" width="2" height="2"></rect>
+                <rect id="Rectangle-9-Copy-323" fill="#6C8F01" x="0" y="6" width="4" height="3"></rect>
+                <rect id="Rectangle-9-Copy-324" fill="#6C8F01" x="5" y="15" width="1" height="2"></rect>
+                <rect id="Rectangle-9-Copy-325" fill="#6C8F01" x="1" y="9" width="1" height="3"></rect>
+                <rect id="Rectangle-9-Copy-326" fill="#6C8F01" x="11" y="6" width="7" height="2"></rect>
+                <rect id="Rectangle-9-Copy-327" fill="#6C8F01" x="2" y="11" width="5" height="1"></rect>
+                <rect id="Rectangle-9-Copy-328" fill="#6C8F01" x="2" y="3" width="4" height="4"></rect>
+                <rect id="Rectangle-9-Copy-391" fill="#6C8F01" x="1" y="4" width="3" height="3"></rect>
+                <rect id="Rectangle-9-Copy-329" fill="#6C8F01" x="16" y="10" width="2" height="1"></rect>
+                <rect id="Rectangle-9-Copy-396" fill="#6C8F01" x="10" y="10" width="6" height="1"></rect>
+                <rect id="Rectangle-9-Copy-330" fill="#6C8F01" x="11" y="11" width="4" height="2"></rect>
+                <rect id="Rectangle-9-Copy-394" fill="#6C8F01" x="12" y="12" width="3" height="2"></rect>
+                <rect id="Rectangle-9-Copy-331" fill="#6C8F01" x="13" y="13" width="1" height="3"></rect>
+                <rect id="Rectangle-9-Copy-332" fill="#6C8F01" x="9" y="9" width="9" height="1"></rect>
+                <rect id="Rectangle-9-Copy-395" fill="#6C8F01" x="9" y="8" width="9" height="1"></rect>
+                <rect id="Rectangle-9-Copy-333" fill="#6C8F01" x="4" y="10" width="2" height="2"></rect>
+                <rect id="Rectangle-9-Copy-334" fill="#6C8F01" x="2" y="11" width="4" height="2"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AACA,gEAAgE;AAChE,gEAAgE;AAChE,0DAA0D;AAC1D,gEAAgE;AAChE,gEAAgE;AAChE,gEAAgE;AAEhE,gEAAgE;AAChE,MAAO,GAAC,KAAK,EAAC,IAAI;;AAClB,gEAAgE;AAChE,gEAAgE",
+"sources": ["../../dev/css_dev/pages/_lim.scss"],
+"names": [],
+"file": "frontend.renew.v2.css"
+}
