@@ -909,11 +909,14 @@ display: inline-block;
 
 /* simple e ================================================= */
 /* frontend.min overwrite s ================================= */
-.o-navigation .category-group .a-button-nostyle, .o-navigation .category-group .a-link, .o-product-filters .clear-btn, .o-product-filters .filter-link, .o-page-content .o-width .product-listing.align-below .o-product-filters .filter-buttons .total-items { font-family: 'Arket Sans', 'Noto Sans KR', HelveticaNeue-Light, 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, Sans-Serif; }
+.o-navigation .category-group .a-button-nostyle, .o-navigation .category-group .a-link, .o-product-filters .clear-btn, .o-product-filters .filter-link, .o-page-content .o-width .product-listing.align-below .o-product-filters .filter-buttons .total-items, .o-product-attributes .list-container .add-comp, .o-product-details-selection .product-size-wrapper .a-heading-4, .o-product-details-selection .product-size-wrapper .size-guide-link, .a-link-pdp-essential { font-family: 'Arket Sans', 'Noto Sans KR', HelveticaNeue-Light, 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, Sans-Serif; }
 
 .o-navigation .information-section .a-button-nostyle.nav, .o-navigation .information-section .a-link.nav { float: left; }
 
 .o-navigation .information-section .bottom-section { clear: both; }
+
+@media (min-width: 769px) { .o-header.has-open-search .category-group { padding-top: 0; } }
+.o-sign-in-registration-tabs.is-my-account-tooltip .m-tablist { margin-top: 0; }
 
 /* frontend.min overwrite e ================================= */
 /* common s ================================================= */
@@ -922,6 +925,12 @@ body, body * { font-family: 'Arket Sans', 'Noto Sans KR', HelveticaNeue-Light, '
 /* common e ================================================= */
 /* product s ================================================ */
 .o-product-listing.fixed-columns-4 .o-product { float: left; }
+
+.q-udln { position: relative; background: none; border: 0; padding: 0; /*letter-spacing: 0px;*/ /* @ 주문상태 - 배송완료 아래 '상세보기' 텍스트 퍼블 추가요청. (underline 조정필요) / 2018.03.26 / mglee */ letter-spacing: inherit; /* @ 주문상태 - 배송완료 아래 '상세보기' 텍스트 퍼블 추가요청. (underline 조정필요) / 2018.03.26 / mglee */ }
+
+.q-udln::after { content: ""; background: #444; position: absolute; height: 1px; left: 0; right: 0; bottom: -2px; /*PC-Chrome, PC-IE?*/ }
+
+.a-link-pdp-essential { font-size: 13px; color: #000; font-weight: 400; }
 
 /* product e ================================================ */
 /* ---------------------------------------------------------- */
