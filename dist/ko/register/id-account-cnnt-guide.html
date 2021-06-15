@@ -26,7 +26,8 @@
 
     <link rel="canonical" href="../../ko/index.html">
 
-    <link rel="stylesheet" href="../../org/etc/designs/appeaser/p11/pattern-lib/frontend.min.a033ce601ceae2b3ed0d1dc0a1cc8264.css" type="text/css">
+    <!--<link rel="stylesheet" href="../../org/etc/designs/appeaser/p11/pattern-lib/frontend.min.a033ce601ceae2b3ed0d1dc0a1cc8264.css" type="text/css">-->
+    <link rel="stylesheet" href="../../org/etc/designs/appeaser/p11/pattern-lib/frontend.min.1987a0f885a03ad325376517da7bed68.css" type="text/css">
 
     <!-- frontend.renew.css -->
     <link rel="stylesheet" href="../../css/frontend.renew.css" type="text/css">
@@ -119,6 +120,29 @@
             </div>
         </div>
     </div>
+
+    <!--
+    <div id="site-banner-id" data-component="MSiteBanner" class="m-site-banner slide-down" data-component-id="99b5970e-f57c-49a0-81af-c7dcdc255c0b" style="background-color: rgb(0, 0, 0); display: block;">
+        <input type="hidden" name="startDateField" value="2021/06/10 08:10:00" id="sitebannersd">
+        <input type="hidden" name="endDateField" value="2021/06/18 00:05:00" id="sitebannered">
+        <div>
+            <div class="a-paragraph site-banner-desktop is-richtext" style="padding-top:15px;padding-bottom:15px;color:#FFFFFF">
+                <a title="ARKET SALE" href="/en/sale.html">SALE —</a>
+                U
+                <a href="/en/sale.html">p to 50% off |</a>
+                <a title="Women SALE" href="/en/women/sale.html">Women,</a>
+                <a title="Men SALE" href="/en/men/sale.html">Men,</a>
+                <a title="Children SALE" href="/en/children/sale.html">Children</a>
+                <a title="Homeware SALE" href="/en/homeware/sale.html">&amp; Homeware</a>
+            </div>
+            <div class="a-paragraph site-banner-mobile is-richtext" style="padding-top:10px;padding-bottom:10px;color:#FFFFFF">
+                <a href="/en/sale.html">SALE —</a>
+                U
+                <a href="/en/sale.html">p to 50% off</a>
+            </div>
+        </div>
+    </div>
+    -->
 
     <div class="u-no-select">
         <div class="a-overlay js-a-overlay q-opacity-0" data-component="AOverlay" data-component-id="00dc7c54-c454-4add-9da6-62430cfc116d"></div>
@@ -875,7 +899,7 @@
                 data-classes="is-country-selector is-multi-language"
                 class="a-button-nostyle open-lightbox m-country-cta"
                 data-template="country-selector">
-            <span class="country-name">배송위치</span>
+            <span class="country-name">배송국가</span>
             <span class="lang"></span>
         </button>
         <a href="/ko/logout" target="_self" class="a-link bottom account logout" style="display:none;" area-hidden="true">로그아웃</a>
@@ -1411,7 +1435,7 @@
             <div data-component="MCountrySelection" class="m-country-selection with-flags">
                 <div class="matrix-content">
                     <div class="country-selector-title">
-                        <h2 class="a-heading-2">배송 위치</h2>
+                        <h2 class="a-heading-2">배송 국가를 선택하세요</h2>
                     </div>
 
                     <div class="country-container">
@@ -1560,6 +1584,11 @@
                             <span>슬로베니아</span>
                         </a>
 
+                        <a href="https://www.arket.com/content/p11/page.countryselector.sl_SI.en_eur.EUR.jsp" target="_self" class="a-link internal-link m-country-select" data-country="SI">
+                            <img alt="South Korea" class="a-image icon-flag" src="../../images/icon/icon-country-korea.svg" />
+                            <span>대한민국</span>
+                        </a>
+
                         <a href="https://www.arket.com/content/p11/page.countryselector.es_ES.en_eur.EUR.jsp" target="_self" class="a-link internal-link m-country-select" data-country="ES">
                             <img alt="Spain" class="a-image icon-flag" src="https://www.arket.com/content/dam/P11/country-flags/spain.svg" />
                             <span>스페인</span>
@@ -1600,7 +1629,7 @@
                             <span>국제배송</span>
                         </a>
                     </div>
-                    <p class="a-paragraph">정확한 가격, 배송 시간 및 배송비를 확인하려면 배송 위치를 선택하세요. 품목 가격은 현지 시장 가격 및 세금을 반영하기 위해 배송지에 따라 다를 수 있습니다.</p>
+                    <p class="a-paragraph">정확한 가격, 배송 시간 및 배송비를 확인하려면 배송 위치를 선택하세요.<br>품목 가격은 현지 시장 가격 및 세금을 반영하기 위해 배송지에 따라 다를 수 있습니다.</p>
                 </div>
             </div>
         </div>
@@ -1862,6 +1891,8 @@
         <li>
             <a class="a-link" href="/ko/my-account.html" target="_self">리사이클링</a>
         </li>
+    </ul>
+    <ul>
         <li class="right">
             <a class="a-link" href="#" target="_self">KAKAOTALK</a>
         </li>
@@ -1874,62 +1905,52 @@
         <li class="right">
             <a class="a-link" href="#" target="_self">PINTEREST</a>
         </li>
-        <li class="right">
+        <li class="right li-contry">
             <a class="a-link m-country-select open-lightbox" href="#" target="_self" data-country="UK" data-template="country-selector" data-classes="is-country-selector is-multi-language">
                 <span>배송국가 : 대한민국</span>
-                <img class="a-image icon-flag" alt="flag" src="../images/icon/icon-country-korea.svg">
+                <img class="a-image icon-flag" alt="flag" src="../../images/icon/icon-country-korea.svg">
             </a>
         </li>
     </ul>
 </footer>
 
-<footer class="o-footer u-clearfix">
+<footer class="o-footer v2 u-clearfix">
     <div class="footer-cont">
         <div class="section-01">
-            <div class="inner">
-                <p class="footer-hyundai">
-                    <a href="http://www.thehyundai.com" class="unsmart-underline" target="_blank"></a>
-                    <span class="is-hidden">the HYUNDAI.COM</span>
-                </p>
-            </div>
+            <p class="footer-hyundai">
+                <a href="http://www.thehyundai.com" class="unsmart-underline" target="_blank"></a>
+                <span class="is-hidden">the HYUNDAI.COM</span>
+            </p>
         </div>
         <div class="section-02">
-            <div class="inner">
-                <div class="link-lst">
-                    <ul>
-                        <li><a href="/kr_krw/customer-service/terms-and-conditions.html" target="_self">이용약관</a></li>
-                        <li><a href="/kr_krw/customer-service/privacy-policy.html" target="_self"><strong>개인정보처리방침</strong></a></li>
-                        <li><a href="http://www.ehyundai.com/newPortal/ir/main.do" target="_blank">현대백화점 그룹</a></li>
-                    </ul>
-                    <p><span class="inner">COS 온라인 스토어는<br><a href="http://thehyundai.com" class="no-underline" target="_blank">더현대닷컴</a>을 이용하고 있습니다.</span></p>
-                </div>
-            </div>
+            <p>ARKET 온라인 스토어는<br><a href="http://thehyundai.com" class="a-link a-link-udln" target="_blank">더현대닷컴</a>을 이용하고 있습니다.</p>
+            <ul class="link-lst">
+                <li><a href="#none" class="a-link" target="_self">이용약관</a></li>
+                <li><a href="#none" class="a-link" target="_self">개인정보처리방침</a></li>
+                <li><a href="http://www.ehyundai.com/newPortal/ir/main.do" class="a-link" target="_blank">현대백화점 그룹</a></li>
+            </ul>
         </div>
         <div class="section-03">
-            <div class="inner">
-                <div class="section-right">
-                    <div class="txt">
-                        <span>주식회사 현대백화점 대표이사 : 김형종 외 2인</span>
-                        <address>서울시 강남구 테헤란로98길 12</address>
-                        <span> / </span>
-                        <span>사업자등록번호 : 211-87-21455 [<a href="http://www.ftc.go.kr/www/bizCommView.do?key=232&amp;apv_perm_no=2010322014830201882&amp;pageUnit=10&amp;searchCnd=wrkr_no&amp;searchKrwd=2118721455&amp;pageIndex=1" data-toggle="winpopup" data-api="center,750,700,scrollbars" target="_blank" class="unsmart-underline">사업자정보 확인</a>]</span>
-                        <span> / </span>
-                        <span>통신판매업신고 : 2010-서울강남-01882</span>
-                        <span> / </span>
-                        <span>개인정보관리 및 청소년보호 책임자 :</span> <span>회원운영관리담당 장근혁</span>
-                        <span> / </span>
-                        <span>홈페이지/앱 문의 : <a href="mailto:customerservice.kr@cosstores.com">customerservice.kr@cosstores.com</a></span>
-                        <span> / </span>
-                        <span>고객센터 : 1800-2765</span>
-                        <span> / </span>
-                        <span>호스팅서비스 : (주)현대백화점</span>
-                        <span> / </span>
-                        <span>고객님의 안전거래를 위해 현금결제시 우리은행과 채무지급보증계약을 체결하여 안전거래를 보장하고 있습니다. <a class="open-lightbox" href="#" target="_self" data-template="guarantee-popup" data-classes="is-large">서비스 가입사실 확인</a></span>
-                    </div>
-                    <p class="txt-copy"><span>CopyrightⓒHyundai Department Store. </span> <span>All rights reserved.</span></p>
-                    <p></p>
-                </div>
+            <div class="txt">
+                <span>주식회사 현대백화점 대표이사 : 김형종 외 2인</span>
+                <address>서울시 강남구 테헤란로98길 12</address>
+                <br>
+                <span>사업자등록번호 : 211-87-21455 [<a href="http://www.ftc.go.kr/www/bizCommView.do?key=232&amp;apv_perm_no=2010322014830201882&amp;pageUnit=10&amp;searchCnd=wrkr_no&amp;searchKrwd=2118721455&amp;pageIndex=1" data-toggle="winpopup" data-api="center,750,700,scrollbars" target="_blank" class="a-link">사업자정보 확인</a>]</span>
+                <span> / </span>
+                <span>통신판매업신고 : 2010-서울강남-01882</span>
+                <br>
+                <span>개인정보관리 및 청소년보호 책임자 :</span> <span>회원운영관리담당 장근혁</span>
+                <br>
+                <span>홈페이지/앱 문의 : <a href="mailto:customerservice.kr@cosstores.com" class="a-link">customerservice.kr@cosstores.com</a></span>
+                <span> / </span>
+                <span>고객센터 : 1800-2765</span>
+                <span> / </span>
+                <span>호스팅서비스 : (주)현대백화점</span>
+                <span class="txt-copy"><span>CopyrightⓒHyundai Department Store. </span><br class="only-m"><span>All rights reserved.</span></span>
             </div>
+        </div>
+        <div class="section-04">
+            <span>고객님의 안전거래를 위해 현금결제시 우리은행과 채무지급보증계약을 체결하여 안전거래를 보장하고 있습니다. <a class="a-link a-link-udln open-lightbox" href="#none" target="_self" data-template="guarantee-popup" data-classes="is-large">서비스 가입사실 확인</a></span>
         </div>
     </div>
     

@@ -26,9 +26,10 @@
 /* login */
 .o-sign-in-wrapper .o-sign-in .o-form .password { margin-bottom: 20px; }
 .o-sign-in-wrapper .o-sign-in .o-form .checkbox-input { width: 35%; margin-bottom: 0; }
-.o-sign-in-wrapper .o-sign-in .o-form .link-holder { margin-top: 0; }
-.o-sign-in-wrapper .o-sign-in .o-form .link-holder a { border-bottom: 1px solid #b3b3b3; line-height: 0.5em; }
-.o-sign-in-wrapper .o-sign-in .o-form .link-holder a:first-child { right: 100px; }
+.o-sign-in-wrapper .o-sign-in .o-form .link-holder.v2 { display: inline-block; margin-top: 0; text-align: right; }
+.o-sign-in-wrapper .o-sign-in .o-form .link-holder.v2 a { border-bottom: 1px solid #b3b3b3; line-height: 0.5em; }
+.o-sign-in-wrapper .o-sign-in .o-form .link-holder.v2 a:first-child { margin-right: 15px; right: 100px; }
+.o-sign-in-wrapper .o-sign-in .o-form .link-holder.v2 .forgot-password { width: auto; }
 
 /* register */
 .o-registration.empty-registration .o-registration-form { width: 100%; }
@@ -36,21 +37,21 @@
 
 /* frontend.min overwrite e ================================= */
 /* login s ================================================= */
-.login-box { width: 100%; margin: 0 auto; }
-@media (min-width: 769px) { .login-box { width: 80%; } }
-.login-box .sns-list { display: block; font-size: 0; padding: 60px 0 20px; }
-@media (min-width: 769px) { .login-box .sns-list { padding: 85px 0 20px; } }
-.login-box .sns-list ul { display: flex; flex-wrap: wrap; justify-content: space-between; margin: 0; border: 0; }
-@media (min-width: 769px) { .login-box .sns-list ul { flex-wrap: nowrap; } }
-.login-box .sns-list li { width: 50%; height: 35px; margin: 3px 0px; padding: 0px 3px; border: 0; text-align: left; }
-@media (min-width: 769px) { .login-box .sns-list li { width: 100%; } }
-.login-box .sns-list a { position: relative; display: block; width: 100%; height: 100%; text-align: left; padding: 5px; padding-left: 10px; border: 1px solid #b2b2b2; cursor: pointer; }
-.login-box .sns-list a .icontab { position: absolute; float: left; }
-.login-box .sns-list a .icon { display: inline-block; width: 24px; height: 24px; background-size: contain; }
-.login-box .sns-list a .captiontab { text-align: center; width: 100%; float: left; line-height: 25px; font-weight: 300; font-size: 12px; color: #000; }
-.login-box .sns-list a:hover div { opacity: 0.6; }
-.login-box .info { font-weight: 300; font-size: 12px; color: #000; }
-.login-box .non-member a { font-weight: 300; font-size: 12px; color: #000; border-bottom: 1px solid #000; }
+.social-login-container { width: 100%; margin: 0 auto; }
+@media (min-width: 769px) { .social-login-container { width: 80%; } }
+.social-login-container .sns-list { display: block; font-size: 0; padding: 60px 0 20px; }
+@media (min-width: 769px) { .social-login-container .sns-list { padding: 85px 0 20px; } }
+.social-login-container .sns-list ul { display: flex; flex-wrap: wrap; justify-content: space-between; margin: 0; border: 0; }
+@media (min-width: 769px) { .social-login-container .sns-list ul { flex-wrap: nowrap; } }
+.social-login-container .sns-list li { width: 50%; height: 35px; margin: 3px 0px; padding: 0px 3px; border: 0; text-align: left; }
+@media (min-width: 769px) { .social-login-container .sns-list li { width: 100%; } }
+.social-login-container .sns-list a { position: relative; display: block; width: 100%; height: 100%; text-align: left; padding: 5px; padding-left: 10px; border: 1px solid #b2b2b2; cursor: pointer; }
+.social-login-container .sns-list a .icontab { position: absolute; float: left; }
+.social-login-container .sns-list a .icon { display: inline-block; width: 24px; height: 24px; background-size: contain; }
+.social-login-container .sns-list a .captiontab { text-align: left; padding-left: 35%; width: 100%; float: left; line-height: 25px; font-weight: 300; font-size: 12px; color: #000; }
+.social-login-container .sns-list a:hover div { opacity: 0.6; }
+.social-login-container .info { font-weight: 300; font-size: 12px; color: #000; }
+.social-login-container .non-member a { font-weight: 300; font-size: 12px; color: #000; border-bottom: 1px solid #000; }
 
 /* login e ================================================= */
 /* register s ================================================= */
@@ -65,23 +66,23 @@
 .o-registration-form.v2 .info-1 { font-weight: 300; font-size: 12px; color: #000; padding-top: 20px; line-height: 20px; }
 .o-registration-form.v2 .info-2 { font-weight: 300; font-size: 12px; color: #000; padding-bottom: 10px; text-align: center; }
 
-.personal-box { width: 100%; margin: 0 auto; padding-bottom: 75px; }
-.personal-box .sns-list { display: block; font-size: 0; padding: 0; }
-.personal-box .sns-list ul { display: flex; justify-content: flex-start; flex-wrap: wrap; margin: 0; border: 0; }
-.personal-box .sns-list li { width: 50%; height: 35px; margin: 3px 0; padding: 0; padding-right: 5px; border: 0; text-align: left; }
-@media (min-width: 769px) { .personal-box .sns-list li { width: 33%; } }
-.personal-box .sns-list a { position: relative; display: block; width: 100%; height: 100%; text-align: left; padding: 5px; padding-left: 10px; border: 1px solid #b2b2b2; cursor: pointer; }
-.personal-box .sns-list a .icontab { position: absolute; float: left; }
-.personal-box .sns-list a .icon { display: inline-block; width: 24px; height: 24px; background-size: contain; background-repeat: no-repeat; }
-.personal-box .sns-list a .captiontab { text-align: center; width: 100%; float: left; line-height: 25px; font-weight: 300; font-size: 12px; color: #000; }
-.personal-box .sns-list a:hover div { opacity: 0.6; }
+.social-certify-container { width: 100%; margin: 0 auto; padding-bottom: 75px; }
+.social-certify-container .sns-list { display: block; font-size: 0; padding: 0; }
+.social-certify-container .sns-list ul { display: flex; justify-content: flex-start; flex-wrap: wrap; margin: 0; border: 0; }
+.social-certify-container .sns-list li { width: 50%; height: 35px; margin: 3px 0; padding: 0; padding-right: 5px; border: 0; text-align: left; }
+@media (min-width: 769px) { .social-certify-container .sns-list li { width: 33%; } }
+.social-certify-container .sns-list a { position: relative; display: block; width: 100%; height: 100%; text-align: left; padding: 5px; padding-left: 10px; border: 1px solid #b2b2b2; cursor: pointer; }
+.social-certify-container .sns-list a .icontab { position: absolute; float: left; }
+.social-certify-container .sns-list a .icon { display: inline-block; width: 24px; height: 24px; background-size: contain; background-repeat: no-repeat; }
+.social-certify-container .sns-list a .captiontab { text-align: center; width: 100%; float: left; line-height: 25px; font-weight: 300; font-size: 12px; color: #000; }
+.social-certify-container .sns-list a:hover div { opacity: 0.6; }
 
 /* register e ================================================= */
 /* register-info s ================================================= */
 .o-registration-form.v2 .info-1 { font-weight: 300; font-size: 12px; color: #000000; }
 .o-registration-form.v2 .guide-text { margin-top: 2px; font-weight: 300; font-size: 12px; color: #b2b2b2; }
 .o-registration-form.v2 .r-only { background-color: #e9f0fe; }
-.o-registration-form.v2 .a-input { font-weight: 400; font-size: 18px; color: #babbbc; }
+.o-registration-form.v2 .a-input { font-weight: 400; font-size: 18px; color: #000000; }
 .o-registration-form.v2 .m-input:last-child { clear: both; }
 .o-registration-form.v2 .posi-r { position: relative; }
 .o-registration-form.v2 .a-button.v2-inline { position: absolute; right: 0; top: 21px; width: 100px; height: 35px; margin-top: 0; font-weight: 300; font-size: 13px; line-height: 35px; background-color: #000; }
@@ -91,6 +92,7 @@
 .o-registration-form.v2 .dis-flex .a-label { width: auto; }
 .o-registration-form.v2 .text-container { clear: both; padding-top: 60px; }
 .o-registration-form.v2 .text-container .all-agree { margin: 30px 0px 40px; }
+.o-registration-form.v2 .text-container .section { margin-bottom: 60px; }
 .o-registration-form.v2 .text-container .section .caption { font-weight: 300; font-size: 13px; color: #000000; }
 .o-registration-form.v2 .text-container .section .table-wrap { border-collapse: initial; border-top: 1px solid #626262; border-bottom: 1px solid #626262; }
 .o-registration-form.v2 .text-container .section .table-wrap .p-left { padding-left: 15px; }

@@ -933,18 +933,26 @@ display: inline-block;
 .m-informative-section p.brd-btm-bold { padding-bottom: 15px; }
 .m-informative-section p span.desc-text { padding-left: 10px; font-size: 12px; }
 
-.m-checkbox.v2 .a-label.custom-box { width: 12px; height: 12px; }
-.m-checkbox.v2 .a-label.custom-box::before { position: absolute; top: 2px; left: 0; width: 100%; height: 100%; border: 1px solid #000; }
-.m-checkbox.v2 .a-label.custom-box::after { top: 0; width: 18px; background-repeat: no-repeat; background-size: contain; }
+.m-checkbox.v2 .a-label.custom-box { width: 16px; height: 16px; }
+.m-checkbox.v2 .a-label.custom-box::before { position: absolute; top: 4px; left: 0; width: 100%; height: 100%; border: 1px solid #000; }
+.m-checkbox.v2 .a-label.custom-box::after { top: 2px; width: 22px; background-repeat: no-repeat; background-size: contain; }
+.m-checkbox.v3 .a-label.custom-box { width: 12px; height: 12px; }
+.m-checkbox.v3 .a-label.custom-box::before { position: absolute; top: 2px; left: 0; width: 100%; height: 100%; border: 1px solid #000; }
+.m-checkbox.v3 .a-label.custom-box::after { top: 0; width: 18px; background-repeat: no-repeat; background-size: contain; }
 
 .m-radio-button.v2 { display: flex; align-items: center; }
-.m-radio-button.v2 .a-radio-button + .custom-radio { position: relative; display: inline-block; width: 12px; height: 12px; cursor: pointer; border: 1px solid #000; border-radius: 100%; overflow: hidden; }
-.m-radio-button.v2 .a-radio-button + .custom-radio::after { background-color: #000; transition: top .2s ease-in-out; content: ""; width: 6px; height: 6px; border-radius: 100%; display: block; position: absolute; left: 2px; top: -15px; }
-.m-radio-button.v2 .a-radio-button.is-checked + .custom-radio::after, .m-radio-button.v2 .a-radio-button:checked + .custom-radio::after { top: 2px; }
+.m-radio-button.v2 .a-radio-button + .custom-radio { position: relative; display: inline-block; width: 20px; height: 20px; cursor: pointer; border: 1px solid #000; border-radius: 100%; overflow: hidden; }
+.m-radio-button.v2 .a-radio-button + .custom-radio::after { background-color: #000; transition: top .2s ease-in-out; content: ""; width: 10px; height: 10px; border-radius: 100%; display: block; position: absolute; left: 4px; top: -15px; }
+.m-radio-button.v2 .a-radio-button.is-checked + .custom-radio::after, .m-radio-button.v2 .a-radio-button:checked + .custom-radio::after { top: 4px; }
 .m-radio-button.v2 .a-label.label-text { width: auto; margin-top: 0; }
+.m-radio-button.v3 { display: flex; align-items: center; }
+.m-radio-button.v3 .a-radio-button + .custom-radio { position: relative; display: inline-block; width: 12px; height: 12px; cursor: pointer; border: 1px solid #000; border-radius: 100%; overflow: hidden; }
+.m-radio-button.v3 .a-radio-button + .custom-radio::after { background-color: #000; transition: top .2s ease-in-out; content: ""; width: 6px; height: 6px; border-radius: 100%; display: block; position: absolute; left: 2px; top: -15px; }
+.m-radio-button.v3 .a-radio-button.is-checked + .custom-radio::after, .m-radio-button.v3 .a-radio-button:checked + .custom-radio::after { top: 2px; }
+.m-radio-button.v3 .a-label.label-text { width: auto; margin-top: 0; }
 
 .m-input.v2 { min-height: auto; }
-.m-input.v2 .a-input { padding-right: 22px; padding-left: 22px; font-weight: 300; font-size: 13px; color: #787573; background: transparent; border: 1px solid #ddd; }
+.m-input.v2 .a-input { padding-right: 22px; padding-left: 22px; font-weight: 300; font-size: 13px; color: #000; background: transparent; border: 1px solid #ddd; }
 
 .m-dropdown-filter.v2 ul { font-family: 'Arket Sans', 'Noto Sans KR', 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', 'Sans-Serif'; }
 .m-dropdown-filter.v2 ul li { font-size: 12px; }
@@ -954,6 +962,18 @@ display: inline-block;
 .m-dropdown-filter.v2 .a-icon-accordion { right: 11px; }
 
 /* frontend.min overwrite e ================================= */
+/* header s ================================================= */
+.o-sign-in-registration-tabs.is-my-account-tooltip .o-sign-in .link-holder { margin-top: 0; margin-bottom: 40px; order: 2; text-align: right; }
+.o-sign-in-registration-tabs.is-my-account-tooltip .o-sign-in .link-holder a { margin-left: 20px; color: #7b7b7b; }
+.o-sign-in-registration-tabs.is-my-account-tooltip .o-sign-in .social-login-container { margin-right: 0; margin-left: 0; width: 100%; order: 5; }
+.o-sign-in-registration-tabs.is-my-account-tooltip .o-sign-in .social-login-container .sns-list { padding-top: 24px; padding-bottom: 16px; }
+.o-sign-in-registration-tabs.is-my-account-tooltip .o-sign-in .social-login-container .sns-list ul { flex-wrap: wrap; }
+.o-sign-in-registration-tabs.is-my-account-tooltip .o-sign-in .social-login-container .sns-list ul li { flex: 1 50%; }
+.o-sign-in-registration-tabs.is-my-account-tooltip .o-sign-in .social-login-container .sns-list ul li:nth-child(2n + 1) { padding-left: 0; }
+.o-sign-in-registration-tabs.is-my-account-tooltip .o-sign-in .social-login-container .sns-list ul li:nth-child(2n + 2) { padding-right: 0; }
+.o-sign-in-registration-tabs.is-my-account-tooltip .o-sign-in .social-login-container .info { margin-top: 0; margin-bottom: 26px; color: #000; }
+
+/* header e ================================================= */
 /* common s ================================================= */
 body { font-family: 'Arket Sans', 'Noto Sans KR', 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', 'Sans-Serif'; }
 
@@ -976,12 +996,12 @@ body { font-family: 'Arket Sans', 'Noto Sans KR', 'HelveticaNeue-Light', 'Helvet
 .line-bx { border: 1px solid #969696; border-radius: 5px; }
 
 .radio-button-list { display: flex; flex-wrap: nowrap; }
-.radio-button-list .m-radio-button.v2 { margin-left: 97px; }
-.radio-button-list .m-radio-button.v2:first-child { margin-left: 0; }
+.radio-button-list .m-radio-button.v2, .radio-button-list .m-radio-button.v3 { margin-left: 97px; }
+.radio-button-list .m-radio-button.v2:first-child, .radio-button-list .m-radio-button.v3:first-child { margin-left: 0; }
 .radio-button-list.vertical { flex-wrap: wrap; }
-.radio-button-list.vertical .m-radio-button.v2 { margin-top: 5px; margin-left: 0; margin-bottom: 5px; width: 100%; }
+.radio-button-list.vertical .m-radio-button.v2, .radio-button-list.vertical .m-radio-button.v3 { margin-top: 5px; margin-left: 0; margin-bottom: 5px; width: 100%; }
 
-.text-count-bx { font-weight: 300; font-size: 13px; color: #787573; }
+.text-count-bx { font-weight: 300; font-size: 13px; color: #000; }
 
 .desc-text { position: relative; margin-top: 0; margin-bottom: 0; padding-left: 10px; }
 .desc-text::before { content: '-'; display: block; position: absolute; top: 0; left: 0; }
@@ -1069,6 +1089,7 @@ ul.link-lst > li:first-child::before { display: none; }
 .o-cart .order-summary-section .o-order-summary .total-label { display: block; }
 .o-cart .order-summary-section .o-order-summary .total::after { font-size: 28px; }
 .o-cart .o-product-cofs .m-product-markers .marker-text { font-family: 'Arket Sans SC', 'Noto Sans KR', 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', 'Sans-Serif'; }
+.o-cart .o-cart-item .cart-wrapper .cart-item-info .size-section .low-stock { font-family: 'Arket Sans SC', 'Noto Sans KR', 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', 'Sans-Serif'; }
 
 .o-cart-item .cart-wrapper .cart-item-info .product-name { flex: 1 100%; }
 .o-cart-item .total-section .total::after { font-size: 18px; }
@@ -1083,7 +1104,7 @@ ul.link-lst > li:first-child::before { display: none; }
 .o-order-confirmation .order-sheet-info { position: relative; display: flex; flex-wrap: wrap; width: 100%; }
 @media (min-width: 631px) { .o-order-confirmation .order-sheet-info { float: left; margin-bottom: 40px; width: calc(50% - 15px); } }
 @media (min-width: 769px) { .o-order-confirmation .order-sheet-info { margin-bottom: 40px; width: calc(66.66% - 20px); } }
-.o-order-confirmation .order-sheet-info .dft-bx { margin-bottom: 20px; width: 100%; font-weight: 300; font-size: 13px; color: #787573; }
+.o-order-confirmation .order-sheet-info .dft-bx { margin-bottom: 20px; width: 100%; font-weight: 300; font-size: 13px; color: #000; }
 .o-order-confirmation .order-sheet-info .orderer { padding-right: 20px; }
 .o-order-confirmation .order-summary-section { margin-right: 0; padding-top: 0; width: 100%; }
 @media (min-width: 631px) { .o-order-confirmation .order-summary-section { float: right; width: calc(50% - 15px); } }
@@ -1108,10 +1129,12 @@ ul.link-lst > li:first-child::before { display: none; }
 .o-order-confirmation .o-order-summary .total-section .price-won::after { font-size: 28px; }
 
 .delivery-info-bx .radio-button-list { padding-bottom: 10px; border-bottom: 1px solid #ddd; font-weight: 400; }
+.delivery-info-bx .my-delivery-list .m-radio-button.v3 .custom-radio { top: 4px; }
 
-.my-delivery-list .m-radio-button.v2 { align-items: baseline; }
+.my-delivery-list { padding-top: 8px; }
+.my-delivery-list .m-radio-button.v2, .my-delivery-list .m-radio-button.v3 { align-items: flex-start; }
 
-.delivery-item .item-top { margin-top: 8px; margin-bottom: 8px; }
+.delivery-item .item-top { margin-top: 0; margin-bottom: 8px; }
 .delivery-item .phone-num, .delivery-item .address { margin-top: 2px; margin-bottom: 2px; }
 .delivery-item .name { font-weight: 400; }
 .delivery-item .basic-label { font-weight: 300; }
