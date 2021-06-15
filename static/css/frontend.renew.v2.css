@@ -5,9 +5,108 @@
 /* ========================================================== */
 /* ---------------------------------------------------------- */
 /* common s ================================================= */
-.test2 { width: 100%; }
+/* icon-img */
+.icon.naver { background-image: url(../images/icon/icon-naver.png); }
+
+.icon.kakao { background-image: url(../images/icon/icon-kakao.png); }
+
+.icon.facebook { background-image: url(../images/icon/icon-facebook.png); }
+
+.icon.google { background-image: url(../images/icon/icon-google.png); }
+
+.icon.phone { background-image: url(../images/icon/icon-phone.png); }
+
+.icon.mail { margin-top: 5px; background-image: url(../images/icon/icon-mail.png); }
 
 /* common e ================================================= */
+/* ---------------------------------------------------------- */
+/* simple s ================================================= */
+/* simple e ================================================= */
+/* frontend.min overwrite s ================================= */
+/* login */
+.o-sign-in-wrapper .o-sign-in .o-form .password { margin-bottom: 20px; }
+.o-sign-in-wrapper .o-sign-in .o-form .checkbox-input { width: 35%; margin-bottom: 0; }
+.o-sign-in-wrapper .o-sign-in .o-form .link-holder { margin-top: 0; }
+.o-sign-in-wrapper .o-sign-in .o-form .link-holder a { border-bottom: 1px solid #b3b3b3; line-height: 0.5em; }
+.o-sign-in-wrapper .o-sign-in .o-form .link-holder a:first-child { right: 100px; }
+
+/* register */
+.o-registration.empty-registration .o-registration-form { width: 100%; }
+@media (min-width: 769px) { .o-registration.empty-registration .o-registration-form { width: 80%; } }
+
+/* frontend.min overwrite e ================================= */
+/* login s ================================================= */
+.login-box { width: 100%; margin: 0 auto; }
+@media (min-width: 769px) { .login-box { width: 80%; } }
+.login-box .sns-list { display: block; font-size: 0; padding: 60px 0 20px; }
+@media (min-width: 769px) { .login-box .sns-list { padding: 85px 0 20px; } }
+.login-box .sns-list ul { display: flex; flex-wrap: wrap; justify-content: space-between; margin: 0; border: 0; }
+@media (min-width: 769px) { .login-box .sns-list ul { flex-wrap: nowrap; } }
+.login-box .sns-list li { width: 50%; height: 35px; margin: 3px 0px; padding: 0px 3px; border: 0; text-align: left; }
+@media (min-width: 769px) { .login-box .sns-list li { width: 100%; } }
+.login-box .sns-list a { position: relative; display: block; width: 100%; height: 100%; text-align: left; padding: 5px; padding-left: 10px; border: 1px solid #b2b2b2; cursor: pointer; }
+.login-box .sns-list a .icontab { position: absolute; float: left; }
+.login-box .sns-list a .icon { display: inline-block; width: 24px; height: 24px; background-size: contain; }
+.login-box .sns-list a .captiontab { text-align: center; width: 100%; float: left; line-height: 25px; font-weight: 300; font-size: 12px; color: #000; }
+.login-box .sns-list a:hover div { opacity: 0.6; }
+.login-box .info { font-weight: 300; font-size: 12px; color: #000; }
+.login-box .non-member a { font-weight: 300; font-size: 12px; color: #000; border-bottom: 1px solid #000; }
+
+/* login e ================================================= */
+/* register s ================================================= */
+.o-registration-form.v2 { text-align: left; font-weight: 300; font-size: 12px; color: #000; }
+.o-registration-form.v2 .step { display: flex; justify-content: space-between; color: #7b7b7b; }
+@media (min-width: 769px) { .o-registration-form.v2 .step { width: 80%; margin: 0 auto; } }
+.o-registration-form.v2 .step li { font-size: 13px; height: 30px; }
+.o-registration-form.v2 .step li.on, .o-registration-form.v2 .step span.on { font-weight: 400; color: #000; }
+.o-registration-form.v2 .step span { font-size: 18px; }
+.o-registration-form.v2 .title { width: 100%; margin-top: 50px; padding-bottom: 15px; border-bottom: 1px solid #000; font-weight: 400; font-size: 16px; color: #000; }
+@media (min-width: 769px) { .o-registration-form.v2 .title { font-size: 21px; } }
+.o-registration-form.v2 .info-1 { font-weight: 300; font-size: 12px; color: #000; padding-top: 20px; line-height: 20px; }
+.o-registration-form.v2 .info-2 { font-weight: 300; font-size: 12px; color: #000; padding-bottom: 10px; text-align: center; }
+
+.personal-box { width: 100%; margin: 0 auto; padding-bottom: 75px; }
+.personal-box .sns-list { display: block; font-size: 0; padding: 0; }
+.personal-box .sns-list ul { display: flex; justify-content: flex-start; flex-wrap: wrap; margin: 0; border: 0; }
+.personal-box .sns-list li { width: 50%; height: 35px; margin: 3px 0; padding: 0; padding-right: 5px; border: 0; text-align: left; }
+@media (min-width: 769px) { .personal-box .sns-list li { width: 33%; } }
+.personal-box .sns-list a { position: relative; display: block; width: 100%; height: 100%; text-align: left; padding: 5px; padding-left: 10px; border: 1px solid #b2b2b2; cursor: pointer; }
+.personal-box .sns-list a .icontab { position: absolute; float: left; }
+.personal-box .sns-list a .icon { display: inline-block; width: 24px; height: 24px; background-size: contain; background-repeat: no-repeat; }
+.personal-box .sns-list a .captiontab { text-align: center; width: 100%; float: left; line-height: 25px; font-weight: 300; font-size: 12px; color: #000; }
+.personal-box .sns-list a:hover div { opacity: 0.6; }
+
+/* register e ================================================= */
+/* register-info s ================================================= */
+.o-registration-form.v2 .info-1 { font-weight: 300; font-size: 12px; color: #000000; }
+.o-registration-form.v2 .guide-text { margin-top: 2px; font-weight: 300; font-size: 12px; color: #b2b2b2; }
+.o-registration-form.v2 .r-only { background-color: #e9f0fe; }
+.o-registration-form.v2 .a-input { font-weight: 400; font-size: 18px; color: #babbbc; }
+.o-registration-form.v2 .m-input:last-child { clear: both; }
+.o-registration-form.v2 .posi-r { position: relative; }
+.o-registration-form.v2 .a-button.v2-inline { position: absolute; right: 0; top: 21px; width: 100px; height: 35px; margin-top: 0; font-weight: 300; font-size: 13px; line-height: 35px; background-color: #000; }
+@media (min-width: 769px) { .o-registration-form.v2 .a-button.v2-mar { margin-top: 70px; margin-bottom: 90px; } }
+.o-registration-form.v2 .a-heading-2 { font-weight: 400; font-size: 16px; color: #000000; }
+.o-registration-form.v2 .dis-flex { display: flex; justify-content: space-between; }
+.o-registration-form.v2 .dis-flex .a-label { width: auto; }
+.o-registration-form.v2 .text-container { clear: both; padding-top: 60px; }
+.o-registration-form.v2 .text-container .all-agree { margin: 30px 0px 40px; }
+.o-registration-form.v2 .text-container .section .caption { font-weight: 300; font-size: 13px; color: #000000; }
+.o-registration-form.v2 .text-container .section .table-wrap { border-collapse: initial; border-top: 1px solid #626262; border-bottom: 1px solid #626262; }
+.o-registration-form.v2 .text-container .section .table-wrap .p-left { padding-left: 15px; }
+.o-registration-form.v2 .text-container .section .table-wrap tr th, .o-registration-form.v2 .text-container .section .table-wrap tr td { border-right: 1px solid #dddddd; border-top: 1px solid #dddddd; }
+.o-registration-form.v2 .text-container .section .table-wrap tr th { padding: 10px 0; background-color: #f4f4f4; text-align: center; }
+.o-registration-form.v2 .text-container .section .table-wrap tr td { padding: 5px; }
+.o-registration-form.v2 .text-container .section .table-wrap tr:first-child th { border-top: 0; }
+.o-registration-form.v2 .text-container .section .table-wrap.type1 th:nth-child(4), .o-registration-form.v2 .text-container .section .table-wrap.type1 td:nth-child(4), .o-registration-form.v2 .text-container .section .table-wrap.type2 th:nth-child(4), .o-registration-form.v2 .text-container .section .table-wrap.type2 th:nth-child(4), .o-registration-form.v2 .text-container .section .table-wrap.type2 td:nth-child(4), .o-registration-form.v2 .text-container .section .table-wrap.type3 th:last-child, .o-registration-form.v2 .text-container .section .table-wrap.type3 td:last-child { border-right: none; }
+.o-registration-form.v2 .text-container .section .radio-button-list .m-radio-button.v2:last-child { margin-left: 90px; }
+.o-registration-form.v2 .text-container .section .marketing-agree { display: flex; justify-content: space-evenly; margin-top: 12px; border-top: 1px solid #dddd; border-bottom: 1px solid #dddd; }
+.o-registration-form.v2 .text-container .section .marketing-agree .m-checkbox { padding: 12px 0px; }
+.o-registration-form.v2 .text-container .section .marketing-agree .m-checkbox .a-label:last-child { width: auto; }
+.o-registration-form.v2 .text-container .section .is-primary { margin-bottom: 55px; }
+.o-registration-form.v2 .text-container .description { font-weight: 300; font-size: 12px; color: #707070; }
+
+/* register-info e ================================================= */
 /* ---------------------------------------------------------- */
 
 /*# sourceMappingURL=frontend.renew.v2.css.map */

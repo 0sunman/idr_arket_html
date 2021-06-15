@@ -120,6 +120,29 @@
         </div>
     </div>
 
+    <!--
+    <div id="site-banner-id" data-component="MSiteBanner" class="m-site-banner slide-down" data-component-id="99b5970e-f57c-49a0-81af-c7dcdc255c0b" style="background-color: rgb(0, 0, 0); display: block;">
+        <input type="hidden" name="startDateField" value="2021/06/10 08:10:00" id="sitebannersd">
+        <input type="hidden" name="endDateField" value="2021/06/18 00:05:00" id="sitebannered">
+        <div>
+            <div class="a-paragraph site-banner-desktop is-richtext" style="padding-top:15px;padding-bottom:15px;color:#FFFFFF">
+                <a title="ARKET SALE" href="/en/sale.html">SALE —</a>
+                U
+                <a href="/en/sale.html">p to 50% off |</a>
+                <a title="Women SALE" href="/en/women/sale.html">Women,</a>
+                <a title="Men SALE" href="/en/men/sale.html">Men,</a>
+                <a title="Children SALE" href="/en/children/sale.html">Children</a>
+                <a title="Homeware SALE" href="/en/homeware/sale.html">&amp; Homeware</a>
+            </div>
+            <div class="a-paragraph site-banner-mobile is-richtext" style="padding-top:10px;padding-bottom:10px;color:#FFFFFF">
+                <a href="/en/sale.html">SALE —</a>
+                U
+                <a href="/en/sale.html">p to 50% off</a>
+            </div>
+        </div>
+    </div>
+    -->
+
     <div class="u-no-select">
         <div class="a-overlay js-a-overlay q-opacity-0" data-component="AOverlay" data-component-id="00dc7c54-c454-4add-9da6-62430cfc116d"></div>
         <div id="popupOutOfStock" class="m-out-of-stock" data-component="MOutOfStockCart" aria-hidden="true" data-component-id="b4808637-9ae3-4f32-9137-413fafd34485">
@@ -132,16 +155,16 @@
         </div>
 
         <!-- header -->
-        <header data-component="OHeader" class="o-header hide-departments hide-border"
-        data-component-id="eff22b3f-5adc-4489-be0d-4fba17c12ad3">
+        
+            <!-- tip : class name be able to toggle [hide-departments, hide-border] -->
+<header data-component="OHeader" class="o-header">
     <input type="hidden" id="signinFormPath" value="/ko/j_spring_security_check">
     <input type="hidden" id="forgotPasswordPath" value="/ko/password/requestSignIn">
     <input type="hidden" id="joinFormPath" value="/ko/register/newcustomer">
     <input type="hidden" id="isIndex" value="false">
     <input type="hidden" id="isAccountPage" value="">
-
-
     <input type="hidden" id="contextPath2" value="en">
+    
     <div class="header-bar">
         
         <!-- o-search -->
@@ -153,6 +176,7 @@
 <!--                <li class="a-tag is-suggestion is-hidden"><a class="a-link" href="#" target="_self">Jeans</a></li>-->
 <!--                <li class="a-tag is-suggestion is-hidden"><a class="a-link" href="#" target="_self">Outerwear</a></li>-->
             </ul>
+
             <div class="form-container">
                 <form data-component="OForm"
                       class="o-form search-form"
@@ -178,12 +202,11 @@
              hidden=""></div>
         <div class="notificationTicker parbase">
 
-
         </div>
         <div class="firstLevelNavConfiguration parbase">
-            <div data-component="ONavigation" class="o-navigation has-selected-department"
-                 data-component-id="c2fcece0-98f7-497d-9d57-76aa3f30036e">
+            <div data-component="ONavigation" class="o-navigation has-selected-department">
                 <nav class="main-navigation">
+
                     <div class="arket-logo">
                         <a href="/ko/index.html" target="_self" class="a-link"
                            aria-label="arket-logo">
@@ -200,619 +223,625 @@
                         </a>
                     </div>
 
+                    
                     <!-- departments -->
-                    <ul class="departments">
-                        <li>
-                            <a href="/ko/women.html" target="_self" class="a-link department-item is-active" data-title="Women">
-                                Women
-                            </a>
-                        </li>
+<ul class="departments">
+    <li>
+        <a href="/ko/women.html" target="_self" class="a-link department-item" data-title="Women">
+            Women
+        </a>
+    </li>
+    <li>
+        <a href="/ko/men.html" target="_self" class="a-link department-item" data-title="Men">
+            Men
+        </a>
+    </li>
 
-                        <li>
-                            <a href="/ko/men.html" target="_self" class="a-link department-item" data-title="Men">
-                                Men
-                            </a>
-                        </li>
-                        
-                        <li>
-                            <a href="/ko/homeware.html" target="_self" class="a-link department-item" data-title="Homeware">
-                                Homeware
-                            </a>
-                        </li>
+    <li>
+        <a href="/ko/homeware.html" target="_self" class="a-link department-item" data-title="Homeware">
+            Homeware
+        </a>
+    </li>
 
-                        <li>
-                            <a href="/language-masters/ko/travel.html" target="_self" class="a-link department-item" data-title="Travel">
-                                Travel
-                            </a>
-                        </li>
-                    </ul>
-                    <!-- //departments -->
+    <li>
+        <a href="/language-masters/ko/travel.html" target="_self" class="a-link department-item" data-title="Travel">
+            Travel
+        </a>
+    </li>
+</ul>
+<!-- //departments -->
 
                     <div aria-hidden="false" class="navigation-curtain" aria-expanded="true">
                         <div role="tree" class="animation-wrapper">
+
+                            <!-- o-search-suggestion -->
                             <div data-component="OSearchSuggestion" class="o-search-suggestion search-palette" role="treeitem">
-                                <ul class="pages sites"></ul>
-                                <h4 class="a-heading-4 product-heading u-display-none i18n">Products</h4>
-                                <ul class="products"></ul>
-                                <span class="see-all-products u-display-none i18n">See all products</span>
+                                <ul class="pages sites">
+                                </ul>
+                                <h4 class="a-heading-4 product-heading u-display-none i18n">상품</h4>
+                                <ul class="products">
+                                </ul>
+                                <span class="see-all-products u-display-none i18n">상품 모두 보기</span>
                             </div>
+                            <!-- //o-search-suggestion -->
 
+                            
                             <!-- category-wrapper -->
-                            <div data-title="Women" role="treeitem" aria-hidden="true" class="category-wrapper">
-                                <div class="category-menu">
+<div data-title="Women" role="treeitem" aria-hidden="true" class="category-wrapper">
+    <div class="category-menu">
 
-                                    <div class="curated-categories">
-                                        <a href="/ko/women/new-arrivals.html" target="_self" class="a-link department-link">New arrivals</a>
-                                        <a href="/ko/women/basics.html" target="_self" class="a-link department-link">Basics</a>
-                                        <a href="/ko/women/most-popular.html" target="_self" class="a-link department-link">Most popular</a>
-                                        <a href="/ko/women/c/sdp/online-exclusive.html" target="_self" class="a-link department-link">Online exclusive</a>
-                                        <div class="folder-category">
-                                            <button class="a-button a-button-nostyle folder-link  ">
+        <div class="curated-categories">
+            <a href="/ko/women/new-arrivals.html" target="_self" class="a-link department-link">New arrivals</a>
+            <a href="/ko/women/basics.html" target="_self" class="a-link department-link">Basics</a>
+            <a href="/ko/women/most-popular.html" target="_self" class="a-link department-link">Most popular</a>
+            <a href="/ko/women/c/sdp/online-exclusive.html" target="_self" class="a-link department-link">Online exclusive</a>
+            <div class="folder-category">
+                <button class="a-button a-button-nostyle folder-link  ">
                                                 <span>
                                                     <span class="title">Campaigns</span>
                                                     <span class="a-icon-plus-circle"></span>
                                                     <span class="a-icon-lg-arrow-right"></span>
                                                 </span>
-                                            </button>
-                                            <div role="treeitem" class="category-group is-underneath">
-                                                <h3 class="a-heading-3">
-                                                    <a href="/ko/women/c/striped-collection.html" target="_self" class="a-link">Campaigns</a>
-                                                </h3>
-                                                <ul class="subcategories">
-                                                    <li class="subcategory">
-                                                        <a href="/ko/women/c/striped-collection.html" target="_self" class="a-link ">스트라이프 컬렉션</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/women/c/terry-basics.html" target="_self" class="a-link ">테리</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/women/c/the-new-romantic.html" target="_self" class="a-link ">로맨틱</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/women/c/summer-linen.html" target="_self" class="a-link ">여름 리넨</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
+                </button>
+                <div role="treeitem" class="category-group is-underneath">
+                    <h3 class="a-heading-3">
+                        <a href="/ko/women/c/striped-collection.html" target="_self" class="a-link">Campaigns</a>
+                    </h3>
+                    <ul class="subcategories">
+                        <li class="subcategory">
+                            <a href="/ko/women/c/striped-collection.html" target="_self" class="a-link ">스트라이프 컬렉션</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/women/c/terry-basics.html" target="_self" class="a-link ">테리</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/women/c/the-new-romantic.html" target="_self" class="a-link ">로맨틱</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/women/c/summer-linen.html" target="_self" class="a-link ">여름 리넨</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
 
-                                    <div class="main-categories">
-                                        <div class="folder-category">
-                                            <button class="a-button a-button-nostyle folder-link is-open">
+        <div class="main-categories">
+            <div class="folder-category">
+                <button class="a-button a-button-nostyle folder-link is-open">
                                                 <span>
                                                     <span class="title">Clothing</span>
                                                     <span class="a-icon-plus-circle"></span>
                                                     <span class="a-icon-lg-arrow-right"></span>
                                                 </span>
-                                            </button>
-                                            <div role="treeitem" class="category-group is-visible">
-                                                <h3 class="a-heading-3">
-                                                    <a href="/ko/women/all.html" target="_self"class="a-link">Clothing</a>
-                                                </h3>
-                                                <ul class="subcategories">
-                                                    <li class="subcategory">
-                                                        <a href="/ko/women/all.html" target="_self" class="a-link ">전체</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/women/coats-and-jackets.html" target="_self" class="a-link ">코트 &amp; 자켓</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/women/knitwear.html" target="_self" class="a-link ">니트웨어</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/women/tailoring/blazers.html" target="_self" class="a-link ">블레이저</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/women/trousers.html" target="_self" class="a-link ">바지</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/women/loungewear.html" target="_self" class="a-link">라운지웨어</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/women/jeans.html" target="_self" class="a-link">진</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/women/tops/t-shirts.html" target="_self" class="a-link">티셔츠</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/women/dresses.html" target="_self" class="a-link">드레스</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/women/shirts-blouses.html" target="_self" class="a-link">셔츠 &amp; 블라우스</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/women/shirts-blouses/overshirts.html" target="_self" class="a-link">오버셔츠</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/women/skirts.html" target="_self" class="a-link">스커트</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/women/tops.html" target="_self" class="a-link">탑</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/women/trousers/shorts.html" target="_self" class="a-link">셔츠</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/women/tailoring.html" target="_self" class="a-link">양복&nbsp;</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/women/sportswear.html" target="_self" class="a-link">스포츠웨어</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/women/underwear.html" target="_self" class="a-link">언더웨어</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/women/tops/sweatshirts-hoodies.html" target="_self" class="a-link">스웨트셔츠</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/women/swimwear.html" target="_self" class="a-link">수영복</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/women/c/leather-collection.html" target="_self" class="a-link">가죽</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/women/underwear/socks.html" target="_self" class="a-link">양말</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
+                </button>
+                <div role="treeitem" class="category-group is-visible">
+                    <h3 class="a-heading-3">
+                        <a href="/ko/women/all.html" target="_self"class="a-link">Clothing</a>
+                    </h3>
+                    <ul class="subcategories">
+                        <li class="subcategory">
+                            <a href="/ko/women/all.html" target="_self" class="a-link ">전체</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/women/coats-and-jackets.html" target="_self" class="a-link ">코트 &amp; 자켓</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/women/knitwear.html" target="_self" class="a-link ">니트웨어</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/women/tailoring/blazers.html" target="_self" class="a-link ">블레이저</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/women/trousers.html" target="_self" class="a-link ">바지</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/women/loungewear.html" target="_self" class="a-link">라운지웨어</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/women/jeans.html" target="_self" class="a-link">진</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/women/tops/t-shirts.html" target="_self" class="a-link">티셔츠</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/women/dresses.html" target="_self" class="a-link">드레스</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/women/shirts-blouses.html" target="_self" class="a-link">셔츠 &amp; 블라우스</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/women/shirts-blouses/overshirts.html" target="_self" class="a-link">오버셔츠</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/women/skirts.html" target="_self" class="a-link">스커트</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/women/tops.html" target="_self" class="a-link">탑</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/women/trousers/shorts.html" target="_self" class="a-link">셔츠</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/women/tailoring.html" target="_self" class="a-link">양복&nbsp;</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/women/sportswear.html" target="_self" class="a-link">스포츠웨어</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/women/underwear.html" target="_self" class="a-link">언더웨어</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/women/tops/sweatshirts-hoodies.html" target="_self" class="a-link">스웨트셔츠</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/women/swimwear.html" target="_self" class="a-link">수영복</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/women/c/leather-collection.html" target="_self" class="a-link">가죽</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/women/underwear/socks.html" target="_self" class="a-link">양말</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
 
-                                        <div class="folder-category">
-                                            <button class="a-button a-button-nostyle folder-link is-open">
+            <div class="folder-category">
+                <button class="a-button a-button-nostyle folder-link is-open">
                                                 <span>
                                                     <span class="title">Shoes</span>
                                                     <span class="a-icon-plus-circle"></span>
                                                     <span class="a-icon-lg-arrow-right"></span>
                                                 </span>
-                                            </button>
-                                            <div role="treeitem" class="category-group is-visible">
-                                                <h3 class="a-heading-3">
-                                                    <a href="/ko/women/shoes.html" target="_self" class="a-link">Shoes</a>
-                                                </h3>
-                                                <ul class="subcategories">
-                                                    <li class="subcategory">
-                                                        <a href="/ko/women/shoes.html" target="_self" class="a-link">전체</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/women/shoes/boots.html" target="_self" class="a-link">부츠</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/women/shoes/trainers.html" target="_self" class="a-link">트레이너</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/women/shoes/veja.html" target="_self" class="a-link">Veja</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/women/shoes/adidas.html" target="_self" class="a-link">adidas</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/women/shoes/heels.html" target="_self" class="a-link">힐스</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/women/shoes/sandals.html" target="_self" class="a-link">샌들</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/women/shoes/flats.html" target="_self" class="a-link">플랫</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/women/shoes/loafers-and-mules.html" target="_self" class="a-link">단화 &amp; 슬리퍼</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
+                </button>
+                <div role="treeitem" class="category-group is-visible">
+                    <h3 class="a-heading-3">
+                        <a href="/ko/women/shoes.html" target="_self" class="a-link">Shoes</a>
+                    </h3>
+                    <ul class="subcategories">
+                        <li class="subcategory">
+                            <a href="/ko/women/shoes.html" target="_self" class="a-link">전체</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/women/shoes/boots.html" target="_self" class="a-link">부츠</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/women/shoes/trainers.html" target="_self" class="a-link">트레이너</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/women/shoes/veja.html" target="_self" class="a-link">Veja</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/women/shoes/adidas.html" target="_self" class="a-link">adidas</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/women/shoes/heels.html" target="_self" class="a-link">힐스</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/women/shoes/sandals.html" target="_self" class="a-link">샌들</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/women/shoes/flats.html" target="_self" class="a-link">플랫</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/women/shoes/loafers-and-mules.html" target="_self" class="a-link">단화 &amp; 슬리퍼</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
 
-                                        <div class="folder-category">
-                                            <button class="a-button a-button-nostyle folder-link is-open">
+            <div class="folder-category">
+                <button class="a-button a-button-nostyle folder-link is-open">
                                                 <span>
                                                     <span class="title">Bags</span>
                                                     <span class="a-icon-plus-circle"></span>
                                                     <span class="a-icon-lg-arrow-right"></span>
                                                 </span>
-                                            </button>
-                                            <div role="treeitem" class="category-group is-visible">
-                                                <h3 class="a-heading-3">
-                                                    <a href="/ko/women/bags-and-accessories/bags.html" target="_self" class="a-link">Bags</a>
-                                                </h3>
-                                                <ul class="subcategories">
-                                                    <li class="subcategory">
-                                                        <a href="/ko/women/bags-and-accessories/bags.html" target="_self" class="a-link">가방</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/women/bags-and-accessories/crossbody-bags.html" target="_self" class="a-link">크로스백</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/women/bags-and-accessories/tote-bags.html" target="_self" class="a-link">토트백</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/travel.html" target="_self" class="a-link">여행가방</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
+                </button>
+                <div role="treeitem" class="category-group is-visible">
+                    <h3 class="a-heading-3">
+                        <a href="/ko/women/bags-and-accessories/bags.html" target="_self" class="a-link">Bags</a>
+                    </h3>
+                    <ul class="subcategories">
+                        <li class="subcategory">
+                            <a href="/ko/women/bags-and-accessories/bags.html" target="_self" class="a-link">가방</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/women/bags-and-accessories/crossbody-bags.html" target="_self" class="a-link">크로스백</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/women/bags-and-accessories/tote-bags.html" target="_self" class="a-link">토트백</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/travel.html" target="_self" class="a-link">여행가방</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
 
-                                        <div class="folder-category">
-                                            <button class="a-button a-button-nostyle folder-link is-open">
+            <div class="folder-category">
+                <button class="a-button a-button-nostyle folder-link is-open">
                                                 <span>
                                                     <span class="title">Accessories</span>
                                                     <span class="a-icon-plus-circle"></span>
                                                     <span class="a-icon-lg-arrow-right"></span>
                                                 </span>
-                                            </button>
-                                            <div role="treeitem" class="category-group is-visible">
-                                                <h3 class="a-heading-3">
-                                                    <a href="/ko/women/bags-and-accessories.html" target="_self" class="a-link">Accessories</a>
-                                                </h3>
-                                                <ul class="subcategories">
-                                                    <li class="subcategory">
-                                                        <a href="/ko/women/bags-and-accessories.html" target="_self" class="a-link">전체</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/women/jewellery.html" target="_self" class="a-link">쥬얼리</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/women/bags-and-accessories/hats-and-gloves.html" target="_self" class="a-link">모자 &amp; 장갑</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/women/bags-and-accessories/scarves.html" target="_self" class="a-link">스카프</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/women/bags-and-accessories/hair-accessories.html" target="_self" class="a-link">헤어액세서리</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/women/bags-and-accessories/sunglasses.html" target="_self" class="a-link">선글라스</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/women/bags-and-accessories/belts.html" target="_self" class="a-link">벨트</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
+                </button>
+                <div role="treeitem" class="category-group is-visible">
+                    <h3 class="a-heading-3">
+                        <a href="/ko/women/bags-and-accessories.html" target="_self" class="a-link">Accessories</a>
+                    </h3>
+                    <ul class="subcategories">
+                        <li class="subcategory">
+                            <a href="/ko/women/bags-and-accessories.html" target="_self" class="a-link">전체</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/women/jewellery.html" target="_self" class="a-link">쥬얼리</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/women/bags-and-accessories/hats-and-gloves.html" target="_self" class="a-link">모자 &amp; 장갑</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/women/bags-and-accessories/scarves.html" target="_self" class="a-link">스카프</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/women/bags-and-accessories/hair-accessories.html" target="_self" class="a-link">헤어액세서리</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/women/bags-and-accessories/sunglasses.html" target="_self" class="a-link">선글라스</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/women/bags-and-accessories/belts.html" target="_self" class="a-link">벨트</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
 
-                                    </div>
+        </div>
 
-                                </div>
-                            </div>
-                            <!-- //category-wrapper -->
+    </div>
+</div>
+<!-- //category-wrapper -->
 
-                            <!-- category-wrapper -->
-                            <div data-title="Men" role="treeitem" aria-hidden="true" class="category-wrapper">
-                                <div class="category-menu">
+<!-- category-wrapper -->
+<div data-title="Men" role="treeitem" aria-hidden="true" class="category-wrapper">
+    <div class="category-menu">
 
-                                    <div class="curated-categories">
-                                        <a href="/ko/men/new-arrivals.html" target="_self" class="a-link department-link">New arrivals</a>
-                                        <a href="/ko/men/basics.html" target="_self" class="a-link department-link">Basics</a>
-                                        <a href="/ko/men/most-popular.html" target="_self" class="a-link department-link">Most popular</a>
-                                        <div class="folder-category">
-                                            <button class="a-button a-button-nostyle folder-link  ">
+        <div class="curated-categories">
+            <a href="/ko/men/new-arrivals.html" target="_self" class="a-link department-link">New arrivals</a>
+            <a href="/ko/men/basics.html" target="_self" class="a-link department-link">Basics</a>
+            <a href="/ko/men/most-popular.html" target="_self" class="a-link department-link">Most popular</a>
+            <div class="folder-category">
+                <button class="a-button a-button-nostyle folder-link  ">
                                                 <span>
                                                     <span class="title">Campaigns</span>
                                                     <span class="a-icon-plus-circle"></span>
                                                     <span class="a-icon-lg-arrow-right"></span>
                                                 </span>
-                                            </button>
-                                            <div role="treeitem" class="category-group is-underneath">
-                                                <h3 class="a-heading-3">
-                                                    <a href="/ko/men/c/striped-collection.html" target="_self" class="a-link">Campaigns</a>
-                                                </h3>
-                                                <ul class="subcategories">
-                                                    <li class="subcategory">
-                                                        <a href="/ko/men/c/striped-collection.html" target="_self" class="a-link">Striped Collection</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/men/c/terry-basics.html" target="_self" class="a-link">Terry Basics</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/men/c/life-in-linen.html" target="_self" class="a-link">Life in linen</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/men/c/the-comfort-edit.html" target="_self" class="a-link">The comfort edit</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <a href="/ko/men/travel.html" target="_self" class="a-link department-link">Travel</a>
-                                    </div>
+                </button>
+                <div role="treeitem" class="category-group is-underneath">
+                    <h3 class="a-heading-3">
+                        <a href="/ko/men/c/striped-collection.html" target="_self" class="a-link">Campaigns</a>
+                    </h3>
+                    <ul class="subcategories">
+                        <li class="subcategory">
+                            <a href="/ko/men/c/striped-collection.html" target="_self" class="a-link">Striped Collection</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/men/c/terry-basics.html" target="_self" class="a-link">Terry Basics</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/men/c/life-in-linen.html" target="_self" class="a-link">Life in linen</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/men/c/the-comfort-edit.html" target="_self" class="a-link">The comfort edit</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <a href="/ko/men/travel.html" target="_self" class="a-link department-link">Travel</a>
+        </div>
 
-                                    <div class="main-categories">
-                                        <div class="folder-category">
-                                            <button class="a-button a-button-nostyle folder-link is-open">
+        <div class="main-categories">
+            <div class="folder-category">
+                <button class="a-button a-button-nostyle folder-link is-open">
                                                 <span>
                                                     <span class="title">Clothing</span>
                                                     <span class="a-icon-plus-circle"></span>
                                                     <span class="a-icon-lg-arrow-right"></span>
                                                 </span>
-                                            </button>
-                                            <div role="treeitem" class="category-group is-visible">
-                                                <h3 class="a-heading-3">
-                                                    <a href="/ko/men/all.html" target="_self" class="a-link">Clothing</a>
-                                                </h3>
-                                                <ul class="subcategories">
-                                                    <li class="subcategory">
-                                                        <a href="/ko/men/all.html" target="_self" class="a-link">전체</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/men/shirts.html" target="_self" class="a-link">셔츠</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/men/trousers.html" target="_self" class="a-link">바지</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/men/T-shirts.html" target="_self" class="a-link">티셔츠</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/men/sweatshirts-and-hoodies.html" target="_self" class="a-link">스웻셔츠</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/men/Shorts.html" target="_self" class="a-link">반바지</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/men/swim-shorts.html" target="_self" class="a-link">수영반바지</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/men/shoes.html" target="_self" class="a-link">신발</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/men/coats-jackets.html" target="_self" class="a-link">코드 &amp; 재킷</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/men/shirts/overshirts.html" target="_self" class="a-link">오버셔츠</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/men/jeans.html" target="_self" class="a-link">청바지</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/men/knitwear.html" target="_self" class="a-link">니트웨어</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/men/pile-fleece.html" target="_self" class="a-link">파일 &amp; 양털</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/men/suits.html" target="_self" class="a-link">양복</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/men/socks.html" target="_self" class="a-link"><b>5 for 4 &nbsp;</b>양말</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/men/underwear.html" target="_self" class="a-link">속옷</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/men/blazers.html" target="_self" class="a-link">블레이저</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/men/T-shirts/polos.html" target="_self" class="a-link">폴로</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/men/sportswear.html" target="_self" class="a-link">러닝</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/men/pyjamas.html" target="_self" class="a-link">잠옷</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
+                </button>
+                <div role="treeitem" class="category-group is-visible">
+                    <h3 class="a-heading-3">
+                        <a href="/ko/men/all.html" target="_self" class="a-link">Clothing</a>
+                    </h3>
+                    <ul class="subcategories">
+                        <li class="subcategory">
+                            <a href="/ko/men/all.html" target="_self" class="a-link">전체</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/men/shirts.html" target="_self" class="a-link">셔츠</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/men/trousers.html" target="_self" class="a-link">바지</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/men/T-shirts.html" target="_self" class="a-link">티셔츠</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/men/sweatshirts-and-hoodies.html" target="_self" class="a-link">스웻셔츠</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/men/Shorts.html" target="_self" class="a-link">반바지</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/men/swim-shorts.html" target="_self" class="a-link">수영반바지</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/men/shoes.html" target="_self" class="a-link">신발</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/men/coats-jackets.html" target="_self" class="a-link">코드 &amp; 재킷</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/men/shirts/overshirts.html" target="_self" class="a-link">오버셔츠</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/men/jeans.html" target="_self" class="a-link">청바지</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/men/knitwear.html" target="_self" class="a-link">니트웨어</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/men/pile-fleece.html" target="_self" class="a-link">파일 &amp; 양털</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/men/suits.html" target="_self" class="a-link">양복</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/men/socks.html" target="_self" class="a-link"><b>5 for 4 &nbsp;</b>양말</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/men/underwear.html" target="_self" class="a-link">속옷</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/men/blazers.html" target="_self" class="a-link">블레이저</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/men/T-shirts/polos.html" target="_self" class="a-link">폴로</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/men/sportswear.html" target="_self" class="a-link">러닝</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/men/pyjamas.html" target="_self" class="a-link">잠옷</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
 
-                                        <div class="folder-category">
-                                            <button class="a-button a-button-nostyle folder-link is-open">
+            <div class="folder-category">
+                <button class="a-button a-button-nostyle folder-link is-open">
                                                 <span>
                                                     <span class="title">Shoes</span>
                                                     <span class="a-icon-plus-circle"></span>
                                                     <span class="a-icon-lg-arrow-right"></span>
                                                 </span>
-                                            </button>
-                                            <div role="treeitem" class="category-group is-visible">
-                                                <h3 class="a-heading-3">
-                                                    <a href="/ko/men/shoes.html" target="_self" class="a-link">Shoes</a>
-                                                </h3>
-                                                <ul class="subcategories">
-                                                    <li class="subcategory">
-                                                        <a href="/ko/men/shoes.html" target="_self" class="a-link">전체</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/men/shoes/trainers.html" target="_self" class="a-link">트레이너</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/men/shoes/leather-shoes.html" target="_self" class="a-link">가죽신발</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/men/shoes/boots.html" target="_self" class="a-link">부츠</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/men/shoes/slides.html" target="_self" class="a-link">슬라이드</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
+                </button>
+                <div role="treeitem" class="category-group is-visible">
+                    <h3 class="a-heading-3">
+                        <a href="/ko/men/shoes.html" target="_self" class="a-link">Shoes</a>
+                    </h3>
+                    <ul class="subcategories">
+                        <li class="subcategory">
+                            <a href="/ko/men/shoes.html" target="_self" class="a-link">전체</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/men/shoes/trainers.html" target="_self" class="a-link">트레이너</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/men/shoes/leather-shoes.html" target="_self" class="a-link">가죽신발</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/men/shoes/boots.html" target="_self" class="a-link">부츠</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/men/shoes/slides.html" target="_self" class="a-link">슬라이드</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
 
-                                        <div class="folder-category">
-                                            <button class="a-button a-button-nostyle folder-link is-open">
+            <div class="folder-category">
+                <button class="a-button a-button-nostyle folder-link is-open">
                                                 <span>
                                                     <span class="title">Bags</span>
                                                     <span class="a-icon-plus-circle"></span>
                                                     <span class="a-icon-lg-arrow-right"></span>
                                                 </span>
-                                            </button>
-                                            <div role="treeitem" class="category-group is-visible">
-                                                <h3 class="a-heading-3">
-                                                    <a href="/ko/men/bags.html" target="_self" class="a-link">Bags</a>
-                                                </h3>
-                                                <ul class="subcategories">
-                                                    <li class="subcategory">
-                                                        <a href="/ko/men/bags.html" target="_self" class="a-link">전체</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/men/bags/backpacks.html" target="_self" class="a-link">백팩</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/men/bags/tote-bags.html" target="_self" class="a-link">토트백</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
+                </button>
+                <div role="treeitem" class="category-group is-visible">
+                    <h3 class="a-heading-3">
+                        <a href="/ko/men/bags.html" target="_self" class="a-link">Bags</a>
+                    </h3>
+                    <ul class="subcategories">
+                        <li class="subcategory">
+                            <a href="/ko/men/bags.html" target="_self" class="a-link">전체</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/men/bags/backpacks.html" target="_self" class="a-link">백팩</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/men/bags/tote-bags.html" target="_self" class="a-link">토트백</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
 
-                                        <div class="folder-category">
-                                            <button class="a-button a-button-nostyle folder-link is-open">
+            <div class="folder-category">
+                <button class="a-button a-button-nostyle folder-link is-open">
                                                 <span>
                                                     <span class="title">Accessories</span>
                                                     <span class="a-icon-plus-circle"></span>
                                                     <span class="a-icon-lg-arrow-right"></span>
                                                 </span>
-                                            </button>
-                                            <div role="treeitem" class="category-group is-visible">
-                                                <h3 class="a-heading-3">
-                                                    <a href="/ko/men/accessories.html" target="_self" class="a-link">Accessories</a>
-                                                </h3>
-                                                <ul class="subcategories">
-                                                    <li class="subcategory">
-                                                        <a href="/ko/men/accessories.html" target="_self" class="a-link">전체</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/men/accessories/hats.html" target="_self" class="a-link">모자</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/men/accessories/belts.html" target="_self" class="a-link">벨트</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/men/accessories/sunglasses.html" target="_self" class="a-link">선글라스</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/men/accessories/scarves.html" target="_self" class="a-link">스카프</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/men/accessories/leather-accessories.html" target="_self" class="a-link">가죽 액세서리</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/men/accessories/gloves.html" target="_self" class="a-link">장급</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/men/accessories/care.html" target="_self" class="a-link">케어</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/men/accessories/beanies.html" target="_self" class="a-link">비니</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/men/accessories/ties.html" target="_self" class="a-link">타이</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
+                </button>
+                <div role="treeitem" class="category-group is-visible">
+                    <h3 class="a-heading-3">
+                        <a href="/ko/men/accessories.html" target="_self" class="a-link">Accessories</a>
+                    </h3>
+                    <ul class="subcategories">
+                        <li class="subcategory">
+                            <a href="/ko/men/accessories.html" target="_self" class="a-link">전체</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/men/accessories/hats.html" target="_self" class="a-link">모자</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/men/accessories/belts.html" target="_self" class="a-link">벨트</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/men/accessories/sunglasses.html" target="_self" class="a-link">선글라스</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/men/accessories/scarves.html" target="_self" class="a-link">스카프</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/men/accessories/leather-accessories.html" target="_self" class="a-link">가죽 액세서리</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/men/accessories/gloves.html" target="_self" class="a-link">장급</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/men/accessories/care.html" target="_self" class="a-link">케어</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/men/accessories/beanies.html" target="_self" class="a-link">비니</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/men/accessories/ties.html" target="_self" class="a-link">타이</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
 
-                                    </div>
+        </div>
 
-                                </div>
-                            </div>
-                            <!-- //category-wrapper -->
+    </div>
+</div>
+<!-- //category-wrapper -->
 
-                            <!-- category-wrapper -->
-                            <div data-title="Homeware" role="treeitem" aria-hidden="true" class="category-wrapper">
-                                <div class="category-menu">
+<!-- category-wrapper -->
+<div data-title="Homeware" role="treeitem" aria-hidden="true" class="category-wrapper">
+    <div class="category-menu">
 
-                                    <div class="curated-categories">
-                                        <a href="/ko/homeware/new-arrivals.html" target="_self" class="a-link department-link">New arrivals</a>
-                                        <a href="/ko/homeware/all.html" target="_self" class="a-link department-link">All products</a>
+        <div class="curated-categories">
+            <a href="/ko/homeware/new-arrivals.html" target="_self" class="a-link department-link">New arrivals</a>
+            <a href="/ko/homeware/all.html" target="_self" class="a-link department-link">All products</a>
 
-                                        <div class="folder-category">
-                                            <button class="a-button a-button-nostyle folder-link  ">
+            <div class="folder-category">
+                <button class="a-button a-button-nostyle folder-link  ">
                                                 <span>
                                                     <span class="title">In season</span>
                                                     <span class="a-icon-plus-circle"></span>
                                                     <span class="a-icon-lg-arrow-right"></span>
                                                 </span>
-                                            </button>
-                                            <div role="treeitem" class="category-group is-underneath">
-                                                <h3 class="a-heading-3">
-                                                    <a href="/ko/homeware/decorating/pots.html" target="_self" class="a-link"></a>
-                                                </h3>
-                                                <ul class="subcategories">
-                                                    <li class="subcategory">
-                                                        <a href="/ko/homeware/decorating/pots.html" target="_self" class="a-link">화분</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/homeware/textiles/blankets.html" target="_self" class="a-link">담요</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
+                </button>
+                <div role="treeitem" class="category-group is-underneath">
+                    <h3 class="a-heading-3">
+                        <a href="/ko/homeware/decorating/pots.html" target="_self" class="a-link"></a>
+                    </h3>
+                    <ul class="subcategories">
+                        <li class="subcategory">
+                            <a href="/ko/homeware/decorating/pots.html" target="_self" class="a-link">화분</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/homeware/textiles/blankets.html" target="_self" class="a-link">담요</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
 
-                                    <div class="main-categories">
-                                        <div class="folder-category">
-                                            <button class="a-button a-button-nostyle folder-link is-open">
+        <div class="main-categories">
+            <div class="folder-category">
+                <button class="a-button a-button-nostyle folder-link is-open">
                                                 <span>
                                                     <span class="title">Rooms</span>
                                                     <span class="a-icon-plus-circle"></span>
                                                     <span class="a-icon-lg-arrow-right"></span>
                                                 </span>
-                                            </button>
-                                            <div role="treeitem" class="category-group is-visible">
-                                                <h3 class="a-heading-3">
-                                                    <a href="/ko/homeware/kitchen_.html" target="_self" class="a-link">Rooms</a>
-                                                </h3>
-                                                <ul class="subcategories">
-                                                    <li class="subcategory">
-                                                        <a href="/ko/homeware/kitchen_.html" target="_self" class="a-link">부엌</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/homeware/living-room.html" target="_self" class="a-link">거실</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/homeware/bathroom.html" target="_self" class="a-link">화장실</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/homeware/children-room.html" target="_self" class="a-link">어린이방</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
+                </button>
+                <div role="treeitem" class="category-group is-visible">
+                    <h3 class="a-heading-3">
+                        <a href="/ko/homeware/kitchen_.html" target="_self" class="a-link">Rooms</a>
+                    </h3>
+                    <ul class="subcategories">
+                        <li class="subcategory">
+                            <a href="/ko/homeware/kitchen_.html" target="_self" class="a-link">부엌</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/homeware/living-room.html" target="_self" class="a-link">거실</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/homeware/bathroom.html" target="_self" class="a-link">화장실</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/homeware/children-room.html" target="_self" class="a-link">어린이방</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
 
-                                        <div class="folder-category">
-                                            <button class="a-button a-button-nostyle folder-link is-open">
+            <div class="folder-category">
+                <button class="a-button a-button-nostyle folder-link is-open">
                                                 <span>
                                                     <span class="title">Categories</span>
                                                     <span class="a-icon-plus-circle"></span>
                                                     <span class="a-icon-lg-arrow-right"></span>
                                                 </span>
-                                            </button>
-                                            <div role="treeitem" class="category-group is-visible">
-                                                <h3 class="a-heading-3">
-                                                    <a href="/ko/homeware/cleaning-and-caring.html" target="_self" class="a-link">CATEGORIES</a>
-                                                </h3>
-                                                <ul class="subcategories">
-                                                    <li class="subcategory">
-                                                        <a href="/ko/homeware/cleaning-and-caring.html" target="_self" class="a-link">청소 &amp; 관리</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/homeware/cooking.html" target="_self" class="a-link">요리</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/homeware/serving.html" target="_self" class="a-link">피복재</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/homeware/decorating.html" target="_self" class="a-link">꾸미기</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/homeware/organising.html" target="_self" class="a-link">정리</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/homeware/textiles.html" target="_self" class="a-link">홈 덱스타일</a>
-                                                    </li>
-                                                    <li class="subcategory">
-                                                        <a href="/ko/homeware/play.html" target="_self" class="a-link">장난감</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
+                </button>
+                <div role="treeitem" class="category-group is-visible">
+                    <h3 class="a-heading-3">
+                        <a href="/ko/homeware/cleaning-and-caring.html" target="_self" class="a-link">CATEGORIES</a>
+                    </h3>
+                    <ul class="subcategories">
+                        <li class="subcategory">
+                            <a href="/ko/homeware/cleaning-and-caring.html" target="_self" class="a-link">청소 &amp; 관리</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/homeware/cooking.html" target="_self" class="a-link">요리</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/homeware/serving.html" target="_self" class="a-link">피복재</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/homeware/decorating.html" target="_self" class="a-link">꾸미기</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/homeware/organising.html" target="_self" class="a-link">정리</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/homeware/textiles.html" target="_self" class="a-link">홈 덱스타일</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="/ko/homeware/play.html" target="_self" class="a-link">장난감</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
 
-                                    </div>
+        </div>
 
-                                </div>
-                            </div>
-                            <!-- //category-wrapper -->
+    </div>
+</div>
+<!-- //category-wrapper -->
 
-                            <!-- category-wrapper -->
-                            <div data-title="Travel" role="treeitem" aria-hidden="true" class="category-wrapper">
+<!-- category-wrapper -->
+<div data-title="Travel" role="treeitem" aria-hidden="true" class="category-wrapper">
 
-                            </div>
-                            <!-- //category-wrapper -->
+</div>
+<!-- //category-wrapper -->
 
                             <div class="m-static-notification-ticker" style="display: none;">
                                 <div class="center-content">
@@ -826,55 +855,60 @@
                                     <p class="mobile-notification"></p>
                                 </div>
                             </div>
-                            <div role="treeitem" class="information-section tooltip-content" aria-hidden="true" aria-expanded="false">
 
-                                <a href="ko/about.html" target="_self" class="a-link nav">
-                                    <img class="a-image img" src="../../static/org/content/dam/P11/images/customer-service-icons/stores.png" alt="">
-                                    <span class="text">About ARKET</span>
-                                </a>
-                                <a href="ko/stores.html" target="_self" class="a-link nav">
-                                    <img class="a-image img" src="../../static/org/content/dam/P11/images/illustrations/storesandcafes.gif" alt="">
-                                    <span class="text">상점 &amp; 카페</span>
-                                </a>
-                                <a href="ko/customer-service.html" target="_self" class="a-link nav">
-                                    <img class="a-image img" src="../../static/org/content/dam/P11/images/customer-service-icons/customerservice1.png" alt="">
-                                    <span class="text">고객 서비스</span>
-                                </a>
-                                <a href="ko/newslettersubscribe.html" target="_self" class="a-link nav">
-                                    <img class="a-image img" src="../../static/org/content/dam/P11/images/customer-service-icons/newsletter.png" alt="">
-                                    <span class="text">뉴스레터</span>
-                                </a>
-                                <a href="ko/customer-service/delivery-methods.html" target="_self" class="a-link nav">
-                                    <img class="a-image img" src="../../static/org/content/dam/P11/images/customer-service-icons/delivery-ani-3.gif" alt="">
-                                    <span class="text">배달</span>
-                                </a>
-                                <a href="ko/guide/recycle-with-arket.html" target="_self" class="a-link nav">
-                                    <img class="a-image img" src="../../static/org/content/dam/P11/images/illustrations/recyclewitharket_icon.png" alt="">
-                                    <span class="text">재활용 with ARKET</span>
-                                </a>
-                                <a href="ko/login" target="_self" class="a-link my-account-icon" id="signInMobile" area-hidden="false">
-                                    <span class="a-icon-profile"></span>
-                                    <span class="text">로그인</span>
-                                </a>
-                                <a href="ko/my-account/profile" target="_self" class="a-link my-account-icon" id="accountMobile" style="display:none" area-hidden="true">
-                                    <span class="a-icon-profile"></span>
-                                    <span class="text">내계정</span>
-                                </a>
+                            
+                            <!-- information-section -->
+<div role="treeitem" class="information-section tooltip-content" aria-hidden="true" aria-expanded="false">
 
-                                <div class="bottom-section">
-                                    <button type="button" id="navMenuShippingLink"
-                                            data-classes="is-country-selector is-multi-language"
-                                            class="a-button-nostyle open-lightbox m-country-cta"
-                                            data-template="country-selector">
-                                        <span class="country-name">배송위치</span>
-                                        <span class="lang"></span>
-                                    </button>
-                                    <a href="/ko/logout" target="_self" class="a-link bottom account logout" style="display:none;" area-hidden="true">로그아웃</a>
-                                </div>
+    <a href="ko/about.html" target="_self" class="a-link nav">
+        <img class="a-image img" src="../../static/org/content/dam/P11/images/customer-service-icons/stores.png" alt="">
+        <span class="text">About ARKET</span>
+    </a>
+    <a href="ko/stores.html" target="_self" class="a-link nav">
+        <img class="a-image img" src="../../static/org/content/dam/P11/images/illustrations/storesandcafes.gif" alt="">
+        <span class="text">상점 &amp; 카페</span>
+    </a>
+    <a href="ko/customer-service.html" target="_self" class="a-link nav">
+        <img class="a-image img" src="../../static/org/content/dam/P11/images/customer-service-icons/customerservice1.png" alt="">
+        <span class="text">고객 서비스</span>
+    </a>
+    <a href="ko/newslettersubscribe.html" target="_self" class="a-link nav">
+        <img class="a-image img" src="../../static/org/content/dam/P11/images/customer-service-icons/newsletter.png" alt="">
+        <span class="text">뉴스레터</span>
+    </a>
+    <a href="ko/customer-service/delivery-methods.html" target="_self" class="a-link nav">
+        <img class="a-image img" src="../../static/org/content/dam/P11/images/customer-service-icons/delivery-ani-3.gif" alt="">
+        <span class="text">배달</span>
+    </a>
+    <a href="ko/guide/recycle-with-arket.html" target="_self" class="a-link nav">
+        <img class="a-image img" src="../../static/org/content/dam/P11/images/illustrations/recyclewitharket_icon.png" alt="">
+        <span class="text">재활용 with ARKET</span>
+    </a>
+    <a href="ko/login" target="_self" class="a-link my-account-icon" id="signInMobile" area-hidden="false">
+        <span class="a-icon-profile"></span>
+        <span class="text">로그인</span>
+    </a>
+    <a href="ko/my-account/profile" target="_self" class="a-link my-account-icon" id="accountMobile" style="display:none" area-hidden="true">
+        <span class="a-icon-profile"></span>
+        <span class="text">내계정</span>
+    </a>
 
-                                <a href="https://www.instagram.com/arketofficial" target="_self" class="a-link follow">Follow us</a>
+    <div class="bottom-section">
+        <button type="button" id="navMenuShippingLink"
+                data-classes="is-country-selector is-multi-language"
+                class="a-button-nostyle open-lightbox m-country-cta"
+                data-template="country-selector">
+            <span class="country-name">배송국가</span>
+            <span class="lang"></span>
+        </button>
+        <a href="/ko/logout" target="_self" class="a-link bottom account logout" style="display:none;" area-hidden="true">로그아웃</a>
+    </div>
 
-                            </div>
+    <a href="https://www.instagram.com/arketofficial" target="_self" class="a-link follow">Follow us</a>
+
+</div>
+<!-- information-section -->
+
                         </div>
                     </div>
                 </nav>
@@ -941,7 +975,7 @@
                                                            id="sign-in-password" required="required"
                                                            pattern="^[^ ]{6,25}$"
                                                            data-validation-required-text="비밀번호를 입력하세요"ㄹㅐ                   ㄹ
-                                                           data-validation-pattern-text="Password must be between 5 - 25 characters and may not contain any spaces"
+                                                          data-validation-pattern-text="Password must be between 5 - 25 characters and may not contain any spaces"
                                                            tabindex="201"
                                                            style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6zwAAAgcBApocMXEAAAAASUVORK5CYII=&quot;);">
                                                     <label class="a-label js-a-label" for="sign-in-password" data-placeholder="" aria-hidden="true"></label>
@@ -1330,7 +1364,7 @@
 					<span class="a-bag-icon js-a-bag-icon animate">
 						<span class="wrapper">
 							<span class="handle"></span>
-							<span class="quantity"></span>
+							<span class="quantity">2</span>
 						</span>
 					</span>
                     </a>
@@ -1375,12 +1409,13 @@
         </div>
     </div>
 </header>
+        
         <!-- //header -->
 
-        <div data-component="OLightbox" class="o-lightbox" data-component-id="f58e67b9-494b-46e5-bbe5-68dfd042d818">
+        <div data-component="OLightbox" class="o-lightbox">
             <div class="lightbox-wrapper">
                 <div class="lightbox-header"></div>
-
+                <div class="lightbox-content js-content u-clearfix"></div>
                 <button type="button" class="a-button-nostyle m-button-icon a-icon-close js-close-button"></button>
             </div>
         </div>
@@ -1399,58 +1434,58 @@
             <div data-component="MCountrySelection" class="m-country-selection with-flags">
                 <div class="matrix-content">
                     <div class="country-selector-title">
-                        <h2 class="a-heading-2">SHIPPING LOCATION</h2>
+                        <h2 class="a-heading-2">배송 국가를 선택하세요</h2>
                     </div>
 
                     <div class="country-container">
                         <a href="https://www.arket.com/content/p11/page.countryselector.de_AT.en_eur.EUR.jsp" target="_self" class="a-link internal-link m-country-select" data-country="AT">
                             <img alt="Austria" class="a-image icon-flag" src="https://www.arket.com/content/dam/P11/country-flags/austria.svg" />
-                            <span>Austria</span>
+                            <span>오스트리아</span>
                         </a>
 
                         <a href="https://www.arket.com/content/p11/page.countryselector.nl_BE.en_eur.EUR.jsp" target="_self" class="a-link internal-link m-country-select" data-country="BE">
                             <img alt="Belgium" class="a-image icon-flag" src="https://www.arket.com/content/dam/P11/country-flags/belgium.svg" />
-                            <span>Belgium</span>
+                            <span>벨기에</span>
                         </a>
 
                         <a href="https://www.arket.com/content/p11/page.countryselector.bg_BG.en_eur.EUR.jsp" target="_self" class="a-link m-country-select" data-country="BG">
                             <img alt="Bulgaria" class="a-image icon-flag" src="https://www.arket.com/content/dam/P11/country-flags/Bulgaria.svg" />
-                            <span>Bulgaria</span>
+                            <span>불가리아</span>
                         </a>
 
                         <a href="https://www.arket.com/content/p11/page.countryselector.hr_HR.en_eur.EUR.jsp" target="_self" class="a-link m-country-select" data-country="HR">
                             <img alt="Croatia" class="a-image icon-flag" src="https://www.arket.com/content/dam/P11/country-flags/Croatia.svg" />
-                            <span>Croatia</span>
+                            <span>크로아티아</span>
                         </a>
 
                         <a href="https://www.arket.com/content/p11/page.countryselector.el_CY.en_eur.EUR.jsp" target="_self" class="a-link m-country-select" data-country="CY">
                             <img alt="Cyprus" class="a-image icon-flag" src="https://www.arket.com/content/dam/P11/country-flags/cyprus_flag.svg" />
-                            <span>Cyprus</span>
+                            <span>키프로스</span>
                         </a>
 
                         <a href="https://www.arket.com/content/p11/page.countryselector.cs_CZ.en_eur.EUR.jsp" target="_self" class="a-link internal-link m-country-select" data-country="CZ">
                             <img alt="Czech Republic" class="a-image icon-flag" src="https://www.arket.com/content/dam/P11/country-flags/czech_republic.svg" />
-                            <span>Czech Republic</span>
+                            <span>체코 공화국</span>
                         </a>
 
                         <a href="https://www.arket.com/content/p11/page.countryselector.da_DK.en_eur.DKK.jsp" target="_self" class="a-link internal-link m-country-select" data-country="DK">
                             <img alt="Denmark" class="a-image icon-flag" src="https://www.arket.com/content/dam/P11/country-flags/denmark.svg" />
-                            <span>Denmark</span>
+                            <span>덴마크</span>
                         </a>
 
                         <a href="https://www.arket.com/content/p11/page.countryselector.et_EE.en_eur.EUR.jsp" target="_self" class="a-link m-country-select" data-country="EE">
                             <img alt="Estonia" class="a-image icon-flag" src="https://www.arket.com/content/dam/P11/country-flags/Estonia.svg" />
-                            <span>Estonia</span>
+                            <span>에스토니아</span>
                         </a>
 
                         <a href="https://www.arket.com/content/p11/page.countryselector.fi_FI.en_eur.EUR.jsp" target="_self" class="a-link internal-link m-country-select" data-country="FI">
                             <img alt="Finland" class="a-image icon-flag" src="https://www.arket.com/content/dam/P11/country-flags/finland.svg" />
-                            <span>Finland</span>
+                            <span>핀란드</span>
                         </a>
 
                         <a href="https://www.arket.com/content/p11/page.countryselector.fr_FR.en_eur.EUR.jsp" target="_self" class="a-link internal-link m-country-select" data-country="FR">
                             <img alt="France" class="a-image icon-flag" src="https://www.arket.com/content/dam/P11/country-flags/france.svg" />
-                            <span>France</span>
+                            <span>프랑스</span>
                         </a>
 
                         <button type="button" class="a-button-nostyle m-country-select" data-country="DE">
@@ -1462,10 +1497,10 @@
                                     <li class="ul-container">
                                         <ul class="options">
                                             <li class="a-option">
-                                                <a href="https://www.arket.com/content/p11/page.countryselector.de_DE.de_de.EUR.jsp" target="_self" class="a-link is-multilanguage internal-link">German</a>
+                                                <a href="https://www.arket.com/content/p11/page.countryselector.de_DE.de_de.EUR.jsp" target="_self" class="a-link is-multilanguage internal-link">독일</a>
                                             </li>
                                             <li class="a-option">
-                                                <a href="https://www.arket.com/content/cos/page.countryselector.en_DE.en_de.EUR.jsp" target="_self" class="a-link is-multilanguage internal-link">English</a>
+                                                <a href="https://www.arket.com/content/cos/page.countryselector.en_DE.en_de.EUR.jsp" target="_self" class="a-link is-multilanguage internal-link">영어</a>
                                             </li>
                                         </ul>
                                     </li>
@@ -1475,87 +1510,92 @@
 
                         <a href="https://www.arket.com/content/p11/page.countryselector.el_GR.en_eur.EUR.jsp" target="_self" class="a-link m-country-select" data-country="GR">
                             <img alt="Greece" class="a-image icon-flag" src="https://www.arket.com/content/dam/P11/country-flags/Greece.svg" />
-                            <span>Greece</span>
+                            <span>그리스</span>
                         </a>
 
                         <a href="https://www.arket.com/content/p11/page.countryselector.hu_HU.en_eur.EUR.jsp" target="_self" class="a-link internal-link m-country-select" data-country="HU">
                             <img alt="Hungary" class="a-image icon-flag" src="https://www.arket.com/content/dam/P11/country-flags/hungary.svg" />
-                            <span>Hungary</span>
+                            <span>헝가리</span>
                         </a>
 
                         <a href="https://www.arket.com/content/p11/page.countryselector.en_IE.en_eur.EUR.jsp" target="_self" class="a-link internal-link m-country-select" data-country="IE">
                             <img alt="Ireland" class="a-image icon-flag" src="https://www.arket.com/content/dam/P11/country-flags/ireland.svg" />
-                            <span>Ireland</span>
+                            <span>아일랜드</span>
                         </a>
 
                         <a href="https://www.arket.com/content/p11/page.countryselector.it_IT.en_eur.EUR.jsp" target="_self" class="a-link internal-link m-country-select" data-country="IT">
                             <img alt="Italy" class="a-image icon-flag" src="https://www.arket.com/content/dam/P11/country-flags/italy.svg" />
-                            <span>Italy</span>
+                            <span>이탈리아</span>
                         </a>
 
                         <a href="https://www.arket.com/content/p11/page.countryselector.lv_LV.en_eur.EUR.jsp" target="_self" class="a-link m-country-select" data-country="LV">
                             <img alt="Latvia" class="a-image icon-flag" src="https://www.arket.com/content/dam/P11/country-flags/Latvia.svg" />
-                            <span>Latvia</span>
+                            <span>라트비아</span>
                         </a>
 
                         <a href="https://www.arket.com/content/p11/page.countryselector.lt_LT.en_eur.EUR.jsp" target="_self" class="a-link m-country-select" data-country="LT">
                             <img alt="Lithuania" class="a-image icon-flag" src="https://www.arket.com/content/dam/P11/country-flags/Lithuania.svg" />
-                            <span>Lithuania</span>
+                            <span>리투아니아</span>
                         </a>
 
                         <a href="https://www.arket.com/content/p11/page.countryselector.fr_LU.en_eur.EUR.jsp" target="_self" class="a-link m-country-select" data-country="LU">
                             <img alt="Luxembourg" class="a-image icon-flag" src="https://www.arket.com/content/dam/P11/country-flags/Luxembourg.svg" />
-                            <span>Luxembourg</span>
+                            <span>록셈부르크</span>
                         </a>
 
                         <a href="https://www.arket.com/content/p11/page.countryselector.nl_NL.en_eur.EUR.jsp" target="_self" class="a-link internal-link m-country-select" data-country="NL">
                             <img alt="Netherlands" class="a-image icon-flag" src="https://www.arket.com/content/dam/P11/country-flags/netherlands.svg" />
-                            <span>Netherlands</span>
+                            <span>네덜란드</span>
                         </a>
 
                         <a href="https://www.arket.com/content/p11/page.countryselector.no_NO.en_eur.NOK.jsp" target="_self" class="a-link internal-link m-country-select" data-country="NO">
                             <img alt="Norway" class="a-image icon-flag" src="https://www.arket.com/content/dam/P11/country-flags/norway.svg" />
-                            <span>Norway</span>
+                            <span>노르웨이</span>
                         </a>
 
                         <a href="https://www.arket.com/content/p11/page.countryselector.pl_PL.en_eur.EUR.jsp" target="_self" class="a-link internal-link m-country-select" data-country="PL">
                             <img alt="Poland" class="a-image icon-flag" src="https://www.arket.com/content/dam/P11/country-flags/poland.svg" />
-                            <span>Poland</span>
+                            <span>폴란드</span>
                         </a>
 
                         <a href="https://www.arket.com/content/p11/page.countryselector.pt_PT.en_eur.EUR.jsp" target="_self" class="a-link internal-link m-country-select" data-country="PT">
                             <img alt="Portugal" class="a-image icon-flag" src="https://www.arket.com/content/dam/P11/country-flags/portugal.svg" />
-                            <span>Portugal</span>
+                            <span>포르투갈</span>
                         </a>
 
                         <a href="https://www.arket.com/content/p11/page.countryselector.ro_RO.en_eur.EUR.jsp" target="_self" class="a-link m-country-select" data-country="RO">
                             <img alt="Romania" class="a-image icon-flag" src="https://www.arket.com/content/dam/P11/country-flags/Romania.svg" />
-                            <span>Romania</span>
+                            <span>루마니아</span>
                         </a>
 
                         <a href="https://www.arket.com/ru_ru/" target="_self" class="a-link m-country-select" data-country="RU">
                             <img alt="Russia" class="a-image icon-flag" src="https://www.arket.com/content/dam/P11/country-flags/Russian.svg" />
-                            <span>Russia</span>
+                            <span>러시아</span>
                         </a>
 
                         <a href="https://www.arket.com/content/p11/page.countryselector.sk_SK.en_eur.EUR.jsp" target="_self" class="a-link internal-link m-country-select" data-country="SK">
                             <img alt="Slovakia" class="a-image icon-flag" src="https://www.arket.com/content/dam/P11/country-flags/slovakia.svg" />
-                            <span>Slovakia</span>
+                            <span>솔로바키아</span>
                         </a>
 
                         <a href="https://www.arket.com/content/p11/page.countryselector.sl_SI.en_eur.EUR.jsp" target="_self" class="a-link internal-link m-country-select" data-country="SI">
                             <img alt="Slovenia" class="a-image icon-flag" src="https://www.arket.com/content/dam/P11/country-flags/slovenia.svg" />
-                            <span>Slovenia</span>
+                            <span>슬로베니아</span>
+                        </a>
+
+                        <a href="https://www.arket.com/content/p11/page.countryselector.sl_SI.en_eur.EUR.jsp" target="_self" class="a-link internal-link m-country-select" data-country="SI">
+                            <img alt="South Korea" class="a-image icon-flag" src="../../static/images/icon/icon-country-korea.svg" />
+                            <span>대한민국</span>
                         </a>
 
                         <a href="https://www.arket.com/content/p11/page.countryselector.es_ES.en_eur.EUR.jsp" target="_self" class="a-link internal-link m-country-select" data-country="ES">
                             <img alt="Spain" class="a-image icon-flag" src="https://www.arket.com/content/dam/P11/country-flags/spain.svg" />
-                            <span>Spain</span>
+                            <span>스페인</span>
                         </a>
 
                         <a href="https://www.arket.com/content/p11/page.countryselector.sv_SE.en_eur.SEK.jsp" target="_self" class="a-link internal-link m-country-select" data-country="SE">
                             <img alt="Sweden" class="a-image icon-flag" src="https://www.arket.com/content/dam/P11/country-flags/swedish-flag.svg" />
-                            <span>Sweden</span>
+                            <span>스웨덴</span>
                         </a>
 
                         <button type="button" class="a-button-nostyle m-country-select" data-country="CH">
@@ -1567,10 +1607,10 @@
                                     <li class="ul-container">
                                         <ul class="options">
                                             <li class="a-option">
-                                                <a href="https://www.arket.com/content/p11/page.countryselector.de_CH.de_ch.CHF.jsp" target="_self" class="a-link is-multilanguage internal-link">German</a>
+                                                <a href="https://www.arket.com/content/p11/page.countryselector.de_CH.de_ch.CHF.jsp" target="_self" class="a-link is-multilanguage internal-link">독일</a>
                                             </li>
                                             <li class="a-option">
-                                                <a href="https://www.arket.com/content/p11/page.countryselector.en_CH.en_ch.CHF.jsp" target="_self" class="a-link is-multilanguage internal-link">English</a>
+                                                <a href="https://www.arket.com/content/p11/page.countryselector.en_CH.en_ch.CHF.jsp" target="_self" class="a-link is-multilanguage internal-link">영문</a>
                                             </li>
                                         </ul>
                                     </li>
@@ -1580,16 +1620,15 @@
 
                         <a href="https://www.arket.com/content/p11/page.countryselector.en_GB.en_eur.GBP.jsp" target="_self" class="a-link internal-link m-country-select" data-country="GB">
                             <img alt="United Kingdom" class="a-image icon-flag" src="https://www.arket.com/content/dam/P11/country-flags/uk.svg" />
-                            <span>United Kingdom</span>
+                            <span>영국</span>
                         </a>
 
                         <a href="https://www.arket.com/content/p11/page.countryselectorGlobal.en_WW.en.USD.jsp" target="_self" class="a-link internal-link m-country-select" data-country="WW">
                             <img alt="International Shipping" class="a-image icon-flag" src="https://www.arket.com/content/dam/P11/country-flags/Global.svg" />
-                            <span>International Shipping</span>
+                            <span>국제배송</span>
                         </a>
                     </div>
-
-                    <p class="a-paragraph">Choose shipping location in order to see the correct pricing, delivery times and shipping costs. Prices of items may vary based on your shipping destination to reflect local market pricing and taxes.</p>
+                    <p class="a-paragraph">정확한 가격, 배송 시간 및 배송비를 확인하려면 배송 위치를 선택하세요.<br>품목 가격은 현지 시장 가격 및 세금을 반영하기 위해 배송지에 따라 다를 수 있습니다.</p>
                 </div>
             </div>
         </div>
@@ -2113,53 +2152,112 @@
     <div class="splash parbase">
     </div>
 </div>
+
+<!-- tip : when develop this script must be delete -->
+<script type="text/javascript">
+    (function() {
+        'use strict';
+        //헤더 border-bottom 라인 숨기기
+        let tempHeader = document.querySelector('.o-header');
+        tempHeader.classList.add('hide-border');
+    })();
+</script>
+<!-- //tip -->
     <!-- //o-page-content -->
 
     <!-- footer -->
-    <footer class="o-footer u-clearfix">
-    <a href="/ko/index.html" target="_self" class="a-link">
-        <div class="a-logo clear-all">
-            <svg id="Lager_1" data-name="Lager 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 317.51 70">
-                <title>p11-logo</title>
-                <g id="Page-1">
-                    <path id="ARKET" d="M117.14,55.2c-.1-6.7-.3-14.6-9.4-17.3,7.9-1.5,13.4-6.9,13.4-17.3,0-13.4-9.8-20.6-24.4-20.6H71.14V70H80V41.6h24.2c4.8,4.1,3.8,8.5,3.8,14.2,0,4.1.5,10.1,3.9,14.2h9.9c-3.5-4-4.6-9.7-4.7-14.8ZM80.21,33.6V8.1h16.7c10.3,0,15.3,4.4,15.3,12.4s-5,13.1-15.3,13.1ZM54.5,70h9.1L38.4,0H25.2L0,70H9.1l6.5-18.1H48Zm-36-26.1L31.8,6.8,45.1,43.9ZM166.81,24.2,190.31,0h-12l-35.6,36.6V0h-8.9V70h8.9V49l17.5-18,7.7,19.4c2.5,6.2,5.6,15,9.1,19.6h9.9c-4-5.5-7.4-13.1-10.2-20.3ZM249.71,8V0H201V70h48.7V62h-39.8V38h36V30h-36V8Zm67.8-8h-58.7V8h24.9V70h8.9V8h24.9Z"></path>
-                </g>
-            </svg>
-        </div>
-    </a>
-
+    <footer class="o-footer o-footer-top u-clearfix">
     <ul>
         <li>
-            <a href="/ko/newslettersubscribe.html" target="_self" class="a-link ">뉴스레터 - 신청 시 10% 할인</a>
+            <a class="a-link" href="#" target="_self">About ARKET</a>
         </li>
         <li>
-            <a href="/ko/customer-service.html" target="_self" class="a-link ">고객서비스</a>
+            <a class="a-link" href="#" target="_self">지속가능성</a>
         </li>
         <li>
-            <a href="/ko/stores.html" target="_self" class="a-link ">매장찾기</a>
+            <a class="a-link" href="/ko/customer-service.html" target="_self">고객서비스</a>
         </li>
         <li>
-            <a href="/ko/customer-service/size-guide.html" target="_self" class="a-link ">사이즈 가이드</a>
+            <a class="a-link" href="/ko/newslettersubscribe.html"  target="_self">뉴스레터</a>
         </li>
         <li>
-            <a href="http://press.arket.com/" target="_blank" class="a-link ">프레스</a>
+            <a class="a-link" href="/ko/stores.html" target="_self">매장정보</a>
         </li>
         <li>
-            <a href="https://career.hmgroup.com/arket" target="_self" class="a-link ">채용정보</a>
+            <a class="a-link" href="/ko/customer-service/size-guide.html" target="_self">사이즈 가이드</a>
         </li>
         <li>
-            <a href="/ko/affiliate.html" target="_self" class="a-link ">제휴</a>
+            <a class="a-link" href="http://press.arket.com/" target="_self">프레스</a>
         </li>
-        <li class="right">
-            <a href="/ko/my-account.html" target="_self" class="a-link ">내계정</a>
+        <li>
+            <a class="a-link" href="https://career.hmgroup.com/arket" target="_self">채용정보</a>
         </li>
-        <li class="right">
-            <a href="/ko/customer-service/privacy-notice.html" target="_self" class="a-link ">이용약관</a>
-        </li>
-        <li class="right">
-            <a id="noTransactionalClick" href="#" target="_self" data-classes="is-country-selector is-multi-language" data-template="country-selector" class="a-link open-lightbox m-country-select"><img class="a-image icon-flag" alt="flag" src="https://www.arket.com/content/dam/P11/country-flags/Global.svg"><span> International</span><span class="lang"></span></a>
+        <li>
+            <a class="a-link" href="/ko/my-account.html" target="_self">리사이클링</a>
         </li>
     </ul>
+    <ul>
+        <li class="right">
+            <a class="a-link" href="#" target="_self">KAKAOTALK</a>
+        </li>
+        <li class="right">
+            <a class="a-link" href="#" target="_self">INSTAGRAM</a>
+        </li>
+        <li class="right">
+            <a class="a-link" href="#" target="_self">FACEBOOK</a>
+        </li>
+        <li class="right">
+            <a class="a-link" href="#" target="_self">PINTEREST</a>
+        </li>
+        <li class="right li-contry">
+            <a class="a-link m-country-select open-lightbox" href="#" target="_self" data-country="UK" data-template="country-selector" data-classes="is-country-selector is-multi-language">
+                <span>배송국가 : 대한민국</span>
+                <img class="a-image icon-flag" alt="flag" src="../../static/images/icon/icon-country-korea.svg">
+            </a>
+        </li>
+    </ul>
+</footer>
+
+<footer class="o-footer v2 u-clearfix">
+    <div class="footer-cont">
+        <div class="section-01">
+            <p class="footer-hyundai">
+                <a href="http://www.thehyundai.com" class="unsmart-underline" target="_blank"></a>
+                <span class="is-hidden">the HYUNDAI.COM</span>
+            </p>
+        </div>
+        <div class="section-02">
+            <p>ARKET 온라인 스토어는<br><a href="http://thehyundai.com" class="a-link a-link-udln" target="_blank">더현대닷컴</a>을 이용하고 있습니다.</p>
+            <ul class="link-lst">
+                <li><a href="#none" class="a-link" target="_self">이용약관</a></li>
+                <li><a href="#none" class="a-link" target="_self">개인정보처리방침</a></li>
+                <li><a href="http://www.ehyundai.com/newPortal/ir/main.do" class="a-link" target="_blank">현대백화점 그룹</a></li>
+            </ul>
+        </div>
+        <div class="section-03">
+            <div class="txt">
+                <span>주식회사 현대백화점 대표이사 : 김형종 외 2인</span>
+                <address>서울시 강남구 테헤란로98길 12</address>
+                <br>
+                <span>사업자등록번호 : 211-87-21455 [<a href="http://www.ftc.go.kr/www/bizCommView.do?key=232&amp;apv_perm_no=2010322014830201882&amp;pageUnit=10&amp;searchCnd=wrkr_no&amp;searchKrwd=2118721455&amp;pageIndex=1" data-toggle="winpopup" data-api="center,750,700,scrollbars" target="_blank" class="a-link">사업자정보 확인</a>]</span>
+                <span> / </span>
+                <span>통신판매업신고 : 2010-서울강남-01882</span>
+                <br>
+                <span>개인정보관리 및 청소년보호 책임자 :</span> <span>회원운영관리담당 장근혁</span>
+                <br>
+                <span>홈페이지/앱 문의 : <a href="mailto:customerservice.kr@cosstores.com" class="a-link">customerservice.kr@cosstores.com</a></span>
+                <span> / </span>
+                <span>고객센터 : 1800-2765</span>
+                <span> / </span>
+                <span>호스팅서비스 : (주)현대백화점</span>
+                <span class="txt-copy"><span>CopyrightⓒHyundai Department Store. </span><br class="only-m"><span>All rights reserved.</span></span>
+            </div>
+        </div>
+        <div class="section-04">
+            <span>고객님의 안전거래를 위해 현금결제시 우리은행과 채무지급보증계약을 체결하여 안전거래를 보장하고 있습니다. <a class="a-link a-link-udln open-lightbox" href="#none" target="_self" data-template="guarantee-popup" data-classes="is-large">서비스 가입사실 확인</a></span>
+        </div>
+    </div>
+    
 </footer>
     <!-- //footer -->
 
