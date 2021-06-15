@@ -1019,7 +1019,7 @@ ul.link-lst > li:first-child::before { display: none; }
 .o-footer.v2 { background: #eee; }
 @media (min-width: 769px) { .o-footer.v2 { background: none; } }
 
-.footer-cont { display: flex; flex-wrap: wrap; margin-right: auto; margin-left: auto; width: 100%; max-width: 1000px; }
+.footer-cont { display: flex; flex-wrap: wrap; margin-right: auto; margin-left: auto; width: 100%; max-width: 1200px; }
 .footer-cont .footer-hyundai { margin-top: 10px; margin-bottom: 23px; text-align: left; }
 .footer-cont .footer-hyundai a { display: inline-block; width: 108px; height: 52px; background: url("../images/common/footer-hyundai-logo.png"); background-size: contain; background-repeat: no-repeat; }
 .footer-cont .a-link { font-size: 12px; }
@@ -1148,8 +1148,8 @@ span.m-hazmat-v2 { position: relative; display: block; position: relative; margi
 span.m-hazmat-v2 span.hazmat-label { display: inline-block; font-weight: 300; font-size: 12px; line-height: 18px; color: #787573; }
 span.m-hazmat-v2:first-child { margin-top: 0; }
 span.m-hazmat-v2::before { content: ''; position: absolute; top: 0; left: 0; width: 26px; height: 26px; background-repeat: no-repeat; background-color: #eee; background-position: 50%; }
-span.m-hazmat-v2.fire::before { background-image: url("../../images/icon/icon-fire.svg"); background-size: 16px; }
-span.m-hazmat-v2.warning::before { background-image: url("../../images/icon/icon-warning.svg"); background-size: 17px; }
+span.m-hazmat-v2.fire::before { background-image: url("../images/icon/icon-fire.svg"); background-size: 16px; }
+span.m-hazmat-v2.warning::before { background-image: url("../images/icon/icon-warning.svg"); background-size: 17px; }
 
 .pay-policy-bx .dft-bx-tit { margin-top: 0; font-size: 14px; }
 .pay-policy-bx .desc-text { font-size: 13px; color: #787573; }
