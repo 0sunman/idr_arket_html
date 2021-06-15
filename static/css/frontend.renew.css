@@ -1021,7 +1021,7 @@ ul.link-lst > li:first-child::before { display: none; }
 
 .footer-cont { display: flex; flex-wrap: wrap; margin-right: auto; margin-left: auto; width: 100%; max-width: 1000px; }
 .footer-cont .footer-hyundai { margin-top: 10px; margin-bottom: 23px; text-align: left; }
-.footer-cont .footer-hyundai a { display: inline-block; width: 108px; height: 52px; background: url("../../images/common/footer-hyundai-logo.png"); background-size: contain; background-repeat: no-repeat; }
+.footer-cont .footer-hyundai a { display: inline-block; width: 108px; height: 52px; background: url("../images/common/footer-hyundai-logo.png"); background-size: contain; background-repeat: no-repeat; }
 .footer-cont .a-link { font-size: 12px; }
 @media (max-width: 768px) { .footer-cont .a-link { font-size: 12px; } }
 .footer-cont ul.link-lst { padding-top: 20px; padding-bottom: 26px; text-align: left; }
