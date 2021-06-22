@@ -31,7 +31,6 @@
 
     <!-- frontend.renew.css -->
     <link rel="stylesheet" href="../../../static/css/frontend.renew.css" type="text/css">
-    <link rel="stylesheet" href="../../../static/css/frontend.renew.v2.css" type="text/css">
     <!-- //frontend.renew.css -->
 
     <script src="../../../static/org/etc/designs/hm/clientlibs/shared/jquery.min.98d49f2a9477a5d4f9edef7b7e9698b1.js"></script>
@@ -984,22 +983,21 @@
                                     <label class="a-label js-a-label" for="sign-in-password" data-placeholder="" aria-hidden="true"></label>
                                     <button type="button" class="a-button-nostyle toggle-password-state password-visible" data-show-text="Show" data-hide-text="Hide">Show</button>
                                 </div>
-
-                                <div class="link-holder">
-                                    <a href="/ko/id/requestSignIn" target="_self" class="a-link forgot-id bo-b" onclick="">아이디찾기</a>
-                                    <a href="/ko/password/requestSignIn" target="_self" class="a-link forgot-password bo-b" onclick="TealiumUtils.trackForgotButton();">비밀번호찾기</a>
-                                </div>
-
-                                <!--
+                                
                                 <div class="checkbox-input">
                                     <span class="m-checkbox u-clearfix" id="rememberme">
                                         <input type="checkbox" class="a-checkbox" id="checkbox_rememberme_popup" name="_spring_security_remember_me" checked="checked">
                                         <label class="a-label js-a-label custom-box" for="checkbox_rememberme_popup" tabindex="0"></label>
-                                        <label class="a-label js-a-label" for="checkbox_rememberme_popup">저장하기</label>
+                                        <label class="a-label js-a-label" for="checkbox_rememberme_popup">아이디 저장</label>
                                     </span>
+                                    <div class="link-holder">
+                                        <a href="/ko/id/requestSignIn" target="_self" class="a-link forgot-id bo-b" onclick="">아이디찾기</a>
+                                        <a href="/ko/password/requestSignIn" target="_self" class="a-link forgot-password bo-b" onclick="TealiumUtils.trackForgotButton();">비밀번호찾기</a>
+                                    </div>
                                 </div>
-                                -->
                                 
+
+
                                 <button type="submit" class="a-button is-primary" tabindex="202">
                                     <span>로그인</span>
                                 </button>
@@ -1703,7 +1701,7 @@
                             <span>국제배송</span>
                         </a>
                     </div>
-                    <p class="a-paragraph">정확한 가격, 배송 시간 및 배송비를 확인하려면 배송 위치를 선택하세요.<br>품목 가격은 현지 시장 가격 및 세금을 반영하기 위해 배송지에 따라 다를 수 있습니다.</p>
+                    <p class="a-paragraph">정확한 가격, 배송 시간 및 배송비를<br class="only-m"> 확인하려면 국가를 선택하세요.<br>상품의 가격은 구가별 가격 정책 및 세금에 따라<br class="only-m">달라 질 수 있는 점에 유의하세요.</p>
                 </div>
             </div>
         </div>
@@ -2044,34 +2042,47 @@
     <!-- //handlebars-template -->
 
     <!-- o-page-content -->
-    <div data-component="OPageContent" class="o-page-content cofs-page" data-component-id="">
+    <div data-component="OPageContent" class="o-page-content cofs-page">
     <span id="content" tabindex="-1" class="access-content">Content of the page</span>
     <div class="o-sign-in-wrapper">
-        <div class="sign-in-heading">
-            <h2 class="a-heading-2">로그인 또는 회원가입</h2>
-        </div>
-        <div class="is-sign-in-tabs ">
-            <ul class="m-tablist tabs-1-2">
-                <li class="u-no-select ">
-                    <a href="/en/login" target="_self" class="a-link">로그인</a>
-                </li>
-                <li class="u-no-select is-active" onclick="TealiumUtils.trackFunnelLink('registration_start');">
-                    <a href="/en/register" target="_self" class="a-link">회원가입</a>
-                </li>
-            </ul>
+        
+        <!-- 로그인 또는 회원가입 title -->
+<div class="sign-in-heading">
+    <h2 class="a-heading-2">로그인 또는 회원가입</h2>
+</div>
+<!-- // 로그인 또는 회원가입 title -->
+        <div class="is-sign-in-tabs">
+            
+            <!-- 활성화 탭 표기 : 회원가입 -->
+<ul class="m-tablist tabs-1-2">
+    <li class="u-no-select ">
+        <a href="/en/login" target="_self" class="a-link">로그인</a>
+    </li>
+    <li class="u-no-select is-active" onclick="TealiumUtils.trackFunnelLink('registration_start');">
+        <a href="/en/register" target="_self" class="a-link">회원가입</a>
+    </li>
+</ul>
+<!-- // 활성화 탭 표기 : 회원가입 -->
             <div class="o-registration empty-registration alternative-style-option ng-scope" data-ng-controller="RegisterController">
-                    <div class="o-registration-form v2">
-                        <p class="info-1">ARKET 온라인 스토어는 더현대닷컴이 운영 제공하는 사이트로 기존회원은 더현대닷컴 아이디와 비밀번호로 바로 이용 가능합니다.</p>
-                        <ul class="step">
-                            <li class="on">1.간편인증</li>
-                            <span class="a-icon-arrow-right on"></span>
-                            <li>2.가입정보입력</li>
-                            <span class="a-icon-arrow-right"></span>
-                            <li>3.가입완료</li>
-                        </ul>
-                        <h2 class="title">인증 방식 선택 </h2>
-                        <p class="info-2">이용중이신 개인계정을 선택하여 인증할 수 있습니다.</p>
-
+                <div class="o-registration-form v2">
+                    
+                    <!-- 회원가입 관련 안내 문구 -->
+<p class="main-info">ARKET 온라인 스토어는 더현대닷컴이 운영 제공하는 사이트로 기존회원은 더현대닷컴 아이디와 비밀번호로 바로 이용 가능합니다.</p>
+<!-- // 회원가입 관련 안내 문구 -->
+                    
+                    <!-- 회원가입 단계 표기 : 1.간편인증 -->
+<ul class="step">
+    <li class="on">1.간편인증</li>
+    <span class="a-icon-arrow-right on"></span>
+    <li>2.가입정보입력</li>
+    <span class="a-icon-arrow-right"></span>
+    <li>3.가입완료</li>
+</ul>
+<!-- // 회원가입 단계 표기 : 1.간편인증 -->
+                    <!-- 신규추가 내용 : 회원가입 1.간편인증 -->
+                    <div class="n-wrap step-1">
+                        <h2 class="title">인증 방식 선택</h2>
+                        <p class="info-1">이용중이신 개인계정을 선택하여 인증할 수 있습니다.</p>
                         <!-- 개인계정 인증 -->
                         <div class="social-certify-container">
                             <div class="sns-list">
@@ -2128,8 +2139,9 @@
                                     </li>
                                 </ul>
                             </div>
-                        </div>
-                    </div>
+                        </div><!-- // 개인계정 인증 -->
+                    </div><!-- // 신규추가 내용 : 회원가입 1.간편인증 -->
+                </div>
             </div>
         </div>
     </div>
@@ -2282,6 +2294,10 @@
 <!--    <script src="../../../static/org/etc/designs/appeaser/p11/clientlibs/aem-clientlibs/global_Clientlib.min.bffddb20c0117ec36495ecd499273e2a.js"></script>-->
 <!--    <script src="../../../static/org/etc/designs/appeaser/p11/clientlibs/aem-clientlibs/product_Clientlib.min.09ff425f6b46f61e5c6429be9e290878.js"></script>-->
 <!--    <script src="../../../static/org/etc/designs/appeaser/p11/clientlibs/aem-clientlibs/genericpage_Clientlib.min.44bc583ac294a90847353b251f2c46c0.js"></script>-->
+
+    <!-- frontend.renew.js -->
+    <script src="../../../static/js/frontend.renew.js"></script>
+    <!-- //frontend.renew.js -->
 
 </body>
 </html>

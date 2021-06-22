@@ -31,7 +31,6 @@
 
     <!-- frontend.renew.css -->
     <link rel="stylesheet" href="../../../static/css/frontend.renew.css" type="text/css">
-    <link rel="stylesheet" href="../../../static/css/frontend.renew.v2.css" type="text/css">
     <!-- //frontend.renew.css -->
 
     <script src="../../../static/org/etc/designs/hm/clientlibs/shared/jquery.min.98d49f2a9477a5d4f9edef7b7e9698b1.js"></script>
@@ -984,22 +983,21 @@
                                     <label class="a-label js-a-label" for="sign-in-password" data-placeholder="" aria-hidden="true"></label>
                                     <button type="button" class="a-button-nostyle toggle-password-state password-visible" data-show-text="Show" data-hide-text="Hide">Show</button>
                                 </div>
-
-                                <div class="link-holder">
-                                    <a href="/ko/id/requestSignIn" target="_self" class="a-link forgot-id bo-b" onclick="">아이디찾기</a>
-                                    <a href="/ko/password/requestSignIn" target="_self" class="a-link forgot-password bo-b" onclick="TealiumUtils.trackForgotButton();">비밀번호찾기</a>
-                                </div>
-
-                                <!--
+                                
                                 <div class="checkbox-input">
                                     <span class="m-checkbox u-clearfix" id="rememberme">
                                         <input type="checkbox" class="a-checkbox" id="checkbox_rememberme_popup" name="_spring_security_remember_me" checked="checked">
                                         <label class="a-label js-a-label custom-box" for="checkbox_rememberme_popup" tabindex="0"></label>
-                                        <label class="a-label js-a-label" for="checkbox_rememberme_popup">저장하기</label>
+                                        <label class="a-label js-a-label" for="checkbox_rememberme_popup">아이디 저장</label>
                                     </span>
+                                    <div class="link-holder">
+                                        <a href="/ko/id/requestSignIn" target="_self" class="a-link forgot-id bo-b" onclick="">아이디찾기</a>
+                                        <a href="/ko/password/requestSignIn" target="_self" class="a-link forgot-password bo-b" onclick="TealiumUtils.trackForgotButton();">비밀번호찾기</a>
+                                    </div>
                                 </div>
-                                -->
                                 
+
+
                                 <button type="submit" class="a-button is-primary" tabindex="202">
                                     <span>로그인</span>
                                 </button>
@@ -1703,7 +1701,7 @@
                             <span>국제배송</span>
                         </a>
                     </div>
-                    <p class="a-paragraph">정확한 가격, 배송 시간 및 배송비를 확인하려면 배송 위치를 선택하세요.<br>품목 가격은 현지 시장 가격 및 세금을 반영하기 위해 배송지에 따라 다를 수 있습니다.</p>
+                    <p class="a-paragraph">정확한 가격, 배송 시간 및 배송비를<br class="only-m"> 확인하려면 국가를 선택하세요.<br>상품의 가격은 구가별 가격 정책 및 세금에 따라<br class="only-m">달라 질 수 있는 점에 유의하세요.</p>
                 </div>
             </div>
         </div>
@@ -2047,117 +2045,140 @@
     <div data-component="OPageContent" class="o-page-content cofs-page" data-component-id="">
     <span id="content" tabindex="-1" class="access-content">Content of the page</span>
     <div class="o-sign-in-wrapper">
-        <div class="sign-in-heading">
-            <h2 class="a-heading-2">로그인 또는 회원가입</h2>
-        </div>
+        
+        <!-- 로그인 또는 회원가입 title -->
+<div class="sign-in-heading">
+    <h2 class="a-heading-2">로그인 또는 회원가입</h2>
+</div>
+<!-- // 로그인 또는 회원가입 title -->
         <div class="is-sign-in-tabs ">
-            <ul class="m-tablist tabs-1-2">
-                <li class="u-no-select ">
-                    <a href="/en/login" target="_self" class="a-link">로그인</a>
-                </li>
-                <li class="u-no-select is-active" onclick="TealiumUtils.trackFunnelLink('registration_start');">
-                    <a href="/en/register" target="_self" class="a-link">회원가입</a>
-                </li>
-            </ul>
+            
+            <!-- 활성화 탭 표기 : 회원가입 -->
+<ul class="m-tablist tabs-1-2">
+    <li class="u-no-select ">
+        <a href="/en/login" target="_self" class="a-link">로그인</a>
+    </li>
+    <li class="u-no-select is-active" onclick="TealiumUtils.trackFunnelLink('registration_start');">
+        <a href="/en/register" target="_self" class="a-link">회원가입</a>
+    </li>
+</ul>
+<!-- // 활성화 탭 표기 : 회원가입 -->
             <div class="o-registration empty-registration alternative-style-option ng-scope" data-ng-controller="RegisterController">
                 <form method="post" id="registration-form" novalidate="true" class="responsive form-section o-form ng-pristine ng-valid-email ng-invalid ng-invalid-required ng-valid-pattern ng-valid-maxlength" data-component="OForm" data-manually-submit="true" data-component-id="7efb5d57-d1fa-46ed-9ebf-df6684af2852">
                     <div class="o-registration-form v2">
-                        <p class="info-1">ARKET 온라인 스토어는 더현대닷컴이 운영 제공하는 사이트로 기존회원은 더현대닷컴 아이디와 비밀번호로 바로 이용 가능합니다.</p>
-                        <ul class="step">
-                            <li>1.간편인증</li>
-                            <span class="a-icon-arrow-right"></span>
-                            <li class="on">2.가입정보입력</li>
-                            <span class="a-icon-arrow-right on"></span>
-                            <li>3.가입완료</li>
-                        </ul>
-                        <div class="m-error js-m-error is-hidden">
-                            <label class="a-label js-a-label has-error"></label>
-                        </div>
-                        <p class="info-1">[이메일인증]으로 인증 완료되었습니다.</p>
-                        <!-- 인증 계정 표기 -->
-                        <div data-component="MInput" class="m-input" data-validate="" style="min-height: 0;">
-                            <input id="" name="email" type="text" class="a-input js-a-input r-only" value="pk666@hanmail.net" readonly="readonly" >
-                        </div>
-                        <span class="m-checkbox v2 u-clearfix" id="">
-                                <input class="a-checkbox" type="checkbox" id="checkbox-personal">
-                                <label class="a-label js-a-label custom-box" for="checkbox-personal" tabindex="0"></label>
-                                <label class="a-label js-a-label" for="checkbox-personal">위 메일주소를 아이디로 사용</label>
-                        </span>
-                        <!-- 아이디 또는 이메일 -->
-                        <div data-component="MInput" class="m-input posi-r" data-validate="email" placeholder="아이디 또는 이메일" data-component-id="9d189dc9-195b-4333-afef-400540f39200">
-                            <label for="j_username" class="a-label js-a-label">아이디 또는 이메일</label>
-                            <input id="j_username" name="j_username" data-validation-required-text="아이디 또는 이메일을 입력해주세요." pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" data-validation-pattern-text="아이디 또는 이메일을 입력해 주세요." placeholder="아이디 또는 이메일" type="email" class="a-input js-a-input" required="required" value="">
-                            <label for="j_username" class="a-label js-a-label" aria-hidden="true"></label>
-                            <a class="a-button v2-inline" href="#">중복확인</a>
-                        </div>
-                        <!-- 비밀번호 -->
-                        <div data-component="MInput" class="m-input password password-with-label is-filled" data-validate="" placeholder="비밀번호" data-component-id="a4d73460-5906-4ebd-8415-c276f79698cf">
-                            <label for="j_password" class="a-label js-a-label">비밀번호</label>
-                            <input id="j_password" name="j_password" data-validation-required-text="비밀번호를 입력해주세요." pattern="^[^ ]{5,35}$" data-validation-pattern-text="" placeholder="비밀번호" type="password" class="a-input js-a-input" required="required" value="">
-                            <p class="guide-text">10~30자 이내로 영문자, 숫자, 특수문자 중 2가지 이상포함</p>
-                            <label class="a-label js-a-label" for="sign-in-password" data-placeholder=""></label>
-                        </div>
-                        <!-- 비밀번호 확인 -->
-                        <div data-component="MInput" class="m-input password-repeat password" placeholder="Confirm password" data-validation-match-field="password" data-component-id="24622822-f267-4591-b67f-15fb45f58d87">
-                            <label class="a-label js-a-label">비밀번호 확인</label>
-                            <input class="a-input js-a-input ng-pristine ng-untouched ng-invalid ng-invalid-required" type="password" id="checkPwd" name="checkPwd" required="" placeholder="비밀번호 확인" data-validation-required-text="" data-validation-match-field-text="비밀번호가 일치하지 않습니다." ng-model="registerForm.checkPwd">
-                            <label class="a-label js-a-label" data-placeholder=""></label>
-                        </div>
-                        <!-- 이름 -->
-                        <div data-component="MInput" class="m-input " data-validate="" placeholder="이름" data-component-id="9d189dc9-195b-4333-afef-400540f39200">
-                            <label for="j_username" class="a-label js-a-label">이름</label>
-                            <input id="j_username" name="j_username" data-validation-required-text="" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" data-validation-pattern-text="" placeholder="이름" type="email" class="a-input js-a-input" required="required" value="">
-                            <label for="j_username" class="a-label js-a-label" aria-hidden="true"></label>
-                        </div>
-                        <!-- 생년월일 -->
-                        <div data-component="MInput" class="m-input " data-validate="email" placeholder="생년월일" data-component-id="9d189dc9-195b-4333-afef-400540f39200">
-                            <label for="j_username" class="a-label js-a-label">생년월일</label>
-                            <input id="j_username" name="j_username" data-validation-required-text="" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" data-validation-pattern-text="" placeholder="생년월일" type="" class="a-input js-a-input" required="required" value="">
-                            <p class="guide-text">생년월일 8자리를 입력해 주세요.(예:19880512)</p>
-                            <label for="j_username" class="a-label js-a-label" aria-hidden="true"></label>
-                        </div>
-                        <!-- 휴대폰번호 -->
-                        <div data-component="MInput" class="m-input " data-validate="" placeholder="휴대폰번호" data-component-id="9d189dc9-195b-4333-afef-400540f39200">
-                            <label for="j_username" class="a-label js-a-label">휴대폰번호</label>
-                            <input id="j_username" name="j_username" data-validation-required-text="" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" data-validation-pattern-text="" placeholder="휴대폰번호" type="" class="a-input js-a-input" required="required" value="">
-                            <p class="guide-text">‘-’를 빼고 휴대폰번호를 입력해 주세요</p>
-                            <label for="j_username" class="a-label js-a-label" aria-hidden="true"></label>
-                        </div>
-                        <div class="text-container">
-                            <h2 class="a-heading-2">개인정보 수집.이용동의</h2>
-                            <!--  체크박스 : 전체동의 -->
-                            <div class="all-agree">
-                                <span class="m-checkbox v2 u-clearfix" id="">
-                                    <input class="a-checkbox" type="checkbox" id="checkbox-all">
-                                    <label class="a-label js-a-label custom-box" for="checkbox-all" tabindex="0"></label>
-                                    <label class="a-label js-a-label" for="checkbox-all">전체동의</label>
-                                </span>
+                        
+                        <!-- 회원가입 관련 안내 문구 -->
+<p class="main-info">ARKET 온라인 스토어는 더현대닷컴이 운영 제공하는 사이트로 기존회원은 더현대닷컴 아이디와 비밀번호로 바로 이용 가능합니다.</p>
+<!-- // 회원가입 관련 안내 문구 -->
+                        
+                        <!-- 회원가입 단계 표기 : 2.가입정보 입력 -->
+<ul class="step">
+    <li>1.간편인증</li>
+    <span class="a-icon-arrow-right"></span>
+    <li class="on">2.가입정보입력</li>
+    <span class="a-icon-arrow-right on"></span>
+    <li>3.가입완료</li>
+</ul>
+<!-- // 회원가입 단계 표기 : 2.가입정보 입력 -->
+                        <!-- 신규추가 내용 : 회원가입 2.가입정보입력 -->
+                        <div class="n-wrap step-2">
+                            <div class="m-error js-m-error is-hidden">
+                                <label class="a-label js-a-label has-error"></label>
                             </div>
+                            <!-- input : 인증완료 계정 표기 -->
+                            <div class="auth-select">
+                                <p class="info-1"><span>[이메일인증]</span>으로 인증 완료되었습니다.</p>
+                                <div data-component="MInput" class="m-input r-only" data-validate="">
+                                    <input id="" name="email" type="text" class="a-input js-a-input" value="pk666@hanmail.net" readonly="readonly" >
+                                </div>
+                                <span class="m-checkbox v2 u-clearfix dis-block" id="">
+                                        <input class="a-checkbox" type="checkbox" id="checkbox-personal">
+                                        <label class="a-label js-a-label custom-box" for="checkbox-personal" tabindex="0"></label>
+                                        <label class="a-label js-a-label" for="checkbox-personal">위 메일주소를 아이디로 사용</label>
+                                </span>
+                            </div><!-- // input : 인증완료 계정 표기 -->
 
-                            <!-- 테이블01 : [필수사항 1] - 개인정보 수집 및 이용동의 -->
-                            <div class="section">
-                                <h4 class="cation">[필수사항 1] - 개인정보 수집 및 이용동의</h4>
-                                <table class="table-wrap type1">
-                                    <colgroup>
-                                        <col width="10%">
-                                        <col width="25%">
-                                        <col width="40%">
-                                        <col width="25%">
-                                    </colgroup>
-                                    <thead>
+                            <!-- input : 아이디 또는 이메일 -->
+                            <div data-component="MInput" class="m-input int-id" data-validate="email" data-component-id="9d189dc9-195b-4333-afef-400540f39200">
+                                <label for="j_username" class="a-label js-a-label">아이디 또는 이메일</label>
+                                <input id="j_username" name="j_username" data-validation-required-text="아이디를 입력해주세요." pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" data-validation-pattern-text="아이디는 4~20자 영문/숫자 또는  email만 가능합니다." placeholder="아이디 또는 이메일" type="id" class="a-input js-a-input" required="required" value="">
+                                <label for="j_username" class="a-label js-a-label"></label>
+                                <a class="a-button s-btn" href="#">중복확인</a>
+                            </div><!-- // input : 아이디 또는 이메일 -->
+
+                            <!-- input : 비밀번호 -->
+                            <div data-component="MInput" class="m-input password password-with-label" data-component-id="a4d73460-5906-4ebd-8415-c276f79698cf">
+                                <label for="j_password" class="a-label js-a-label">비밀번호</label>
+                                <input id="j_password" name="j_password" data-validation-required-text="비밀번호를 입력해주세요." pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" data-validation-pattern-text="동일한 영문자와 숫자를 연속해서 3자 이상 사용할 수 없습니다." placeholder="비밀번호" type="password" class="a-input js-a-input" required="required" value="">
+                                <label class="a-label js-a-label" for="sign-in-password"></label>
+                                <p class="guide-text">10~30자 이내로 영문자, 숫자, 특수문자 중 2가지 이상포함</p>
+                            </div><!-- // input : 비밀번호 -->
+
+                            <!-- input : 비밀번호 확인 -->
+                            <div data-component="MInput" class="m-input password-repeat password" data-validation-match-field="password" data-component-id="24622822-f267-4591-b67f-15fb45f58d87">
+                                <label class="a-label js-a-label">비밀번호 확인</label>
+                                <input class="a-input js-a-input ng-pristine ng-untouched ng-invalid ng-invalid-required" type="password" id="checkPwd" name="checkPwd" required="" placeholder="비밀번호 확인" data-validation-required-text="비밀번호를 재입력해주세요." data-validation-match-field-text="입력하신 정보가 일치하지 않습니다. 확인 후 다시 입력해 주세요." ng-model="registerForm.checkPwd">
+                                <label class="a-label js-a-label"></label>
+                            </div><!-- // input : 비밀번호 확인 -->
+
+                            <!-- input : 이름 -->
+                            <div data-component="MInput" class="m-input mt-30">
+                                <label for="j_username" class="a-label js-a-label">이름</label>
+                                <input id="j_username" name="j_username" data-validation-required-text="이름을 입력해 주세요." pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" data-validation-pattern-text="이름은 한글 또는 영문만 입력 가능합니다." placeholder="이름" type="text" class="a-input js-a-input" required="required" value="">
+                                <label for="j_username" class="a-label js-a-label"></label>
+                            </div><!-- // input : 이름 -->
+
+                            <!-- input : 생년월일 -->
+                            <div data-component="MInput" class="m-input birthday">
+                                <label for="j_username" class="a-label js-a-label">생년월일</label>
+                                <input id="j_username" name="j_username" data-validation-required-text="생년월일을 입력해주세요." pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" data-validation-pattern-text="올바른 날짜형식이 아닙니다." placeholder="생년월일" type="text" class="a-input js-a-input" required="required" value="" maxlength="8">
+                                <label for="j_username" class="a-label js-a-label"></label>
+                                <p class="guide-text">생년월일 8자리를 입력해 주세요.(예:19880512)</p>
+                            </div><!-- // input : 생년월일 -->
+
+                            <!-- input : 휴대폰번호 -->
+                            <div data-component="MInput" class="m-input">
+                                <label for="j_username" class="a-label js-a-label">휴대폰번호</label>
+                                <input id="j_username" name="j_username" data-validation-required-text="휴대폰번호를 입력해 주세요" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" data-validation-pattern-text="휴대폰 번호를 정확히 입력해 주세요." placeholder="휴대폰번호" type="tel" class="a-input js-a-input" required="required" value="">
+                                <label for="j_username" class="a-label js-a-label"></label>
+                                <p class="guide-text">‘-’를 빼고 휴대폰번호를 입력해 주세요</p>
+                            </div><!-- // input : 휴대폰번호 -->
+
+                            <div class="text-container">
+                                <h2 class="a-heading-2">개인정보 수집.이용동의</h2>
+                                <!--  체크박스 : 전체동의 -->
+                                <div class="all-agree">
+                                    <span class="m-checkbox v2 u-clearfix" id="">
+                                        <input class="a-checkbox" type="checkbox" id="checkbox-all">
+                                        <label class="a-label js-a-label custom-box" for="checkbox-all" tabindex="0"></label>
+                                        <label class="a-label js-a-label" for="checkbox-all">전체동의</label>
+                                    </span>
+                                </div>
+
+                                <!-- 테이블01 : [필수사항 1] - 개인정보 수집 및 이용동의 -->
+                                <div class="section">
+                                    <h4 class="cation">[필수사항 1] - 개인정보 수집 및 이용동의</h4>
+                                    <table class="table-wrap type1">
+                                        <colgroup>
+                                            <col width="10%">
+                                            <col width="25%">
+                                            <col width="40%">
+                                            <col width="25%">
+                                        </colgroup>
+                                        <thead>
                                         <tr>
                                             <th scope="col">구분</th>
                                             <th scope="col">이용목적</th>
                                             <th scope="col">수집항목</th>
                                             <th scope="col">보유기간</th>
                                         </tr>
-                                    </thead>
-                                    <tbody>
+                                        </thead>
+                                        <tbody>
                                         <tr>
                                             <td>가입</td>
                                             <td>서비스이용 및 상담</td>
                                             <td>이메일, 성명, ID, 비밀번호, 생년월일, 휴대폰번호</td>
-                                            <td rowspan="3" class="p-left">회원탈퇴 시 또는 법정보유기간</td>
+                                            <td rowspan="3">회원탈퇴 시 또는 법정보유기간</td>
                                         </tr>
                                         <tr>
                                             <td rowspan="2">구매 및 배송</td>
@@ -2168,101 +2189,101 @@
                                             <td>물품배송</td>
                                             <td>배송정보(주문자/수취인 성명, 연락처, 배송지주소)</td>
                                         </tr>
-                                    </tbody>
-                                </table>
-                                <p class="description">* 필수사항은 당사의 서비스 제공을 위한 최소한의 개인정보이므로 동의를 해주셔야 서비스를 이용하실 수 있습니다.</p>
+                                        </tbody>
+                                    </table>
+                                    <p class="description">* 필수사항은 당사의 서비스 제공을 위한 최소한의 개인정보이므로 동의를 해주셔야 서비스를 이용하실 수 있습니다.</p>
 
-                                <div class="radio-button-list">
-                                    <div class="m-radio-button v2">
-                                        <input type="radio" class="a-radio-button" id="agreement1" name="agreement" checked>
-                                        <label class="a-label js-a-label u-no-select custom-radio" for="agreement1"></label>
-                                        <label class="a-label js-a-label label-text" for="agreement1">동의합니다.</label>
+                                    <div class="radio-button-list">
+                                        <div class="m-radio-button v2">
+                                            <input type="radio" class="a-radio-button" id="agreement1" name="agreement" checked>
+                                            <label class="a-label js-a-label u-no-select custom-radio" for="agreement1"></label>
+                                            <label class="a-label js-a-label label-text" for="agreement1">동의합니다.</label>
+                                        </div>
+
+                                        <div class="m-radio-button v2">
+                                            <input type="radio" class="a-radio-button" id="agreement2" name="agreement">
+                                            <label class="a-label js-a-label u-no-select custom-radio" for="agreement2"></label>
+                                            <label class="a-label js-a-label label-text" for="agreement2">동의하지 않습니다.</label>
+                                        </div>
                                     </div>
+                                </div><!-- // 테이블01 : [필수사항 1] - 개인정보 수집 및 이용동의 -->
 
-                                    <div class="m-radio-button v2">
-                                        <input type="radio" class="a-radio-button" id="agreement2" name="agreement">
-                                        <label class="a-label js-a-label u-no-select custom-radio" for="agreement2"></label>
-                                        <label class="a-label js-a-label label-text" for="agreement2">동의하지 않습니다.</label>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- 테이블02 : [선택사항 1] - ARKTE 마케팅 정보 수신동의 -->
-                            <div class="section">
-                                <h4 class="cation">[선택사항 1] - ARKTE 마케팅 정보 수신동의</h4>
-                                <table class="table-wrap type2">
-                                    <colgroup>
-                                        <col width="10%">
-                                        <col width="25%">
-                                        <col width="40%">
-                                        <col width="25%">
-                                    </colgroup>
-                                    <thead>
+                                <!-- 테이블02 : [선택사항 1] - ARKTE 마케팅 정보 수신동의 -->
+                                <div class="section">
+                                    <h4 class="cation">[선택사항 1] - ARKTE 마케팅 정보 수신동의</h4>
+                                    <table class="table-wrap type2">
+                                        <colgroup>
+                                            <col width="10%">
+                                            <col width="25%">
+                                            <col width="40%">
+                                            <col width="25%">
+                                        </colgroup>
+                                        <thead>
                                         <tr>
                                             <th scope="col">구분</th>
                                             <th scope="col">이용목적</th>
                                             <th scope="col">수집목적</th>
                                             <th scope="col">보유기간</th>
                                         </tr>
-                                    </thead>
-                                    <tbody>
+                                        </thead>
+                                        <tbody>
                                         <tr>
                                             <td rowspan="2">기타</td>
                                             <td>신규 서비스/상품 안내/마케팅</td>
                                             <td>이메일, 휴대폰번호, 성별, 스페셜데이</td>
-                                            <td rowspan="2"  class="p-left">회원탈퇴 시 또는 동의철회 시</td>
+                                            <td rowspan="2">회원탈퇴 시 또는 동의철회 시</td>
                                         </tr>
                                         <tr>
                                             <td>현금영수증 발급, 앱설치 URL 전송</td>
                                             <td>휴대폰번호</td>
                                         </tr>
-                                    </tbody>
-                                </table>
-                                <p class="description">* 동의하지 않으셔도 회원가입이 가능하나, 상품 및 마케팅 안내를 받으실 수 없습니다.</p>
-                                <div class="radio-button-list">
-                                    <div class="m-radio-button v2">
-                                        <input type="radio" class="a-radio-button" id="agreement-opt1-1" name="agreement-opt1" checked>
-                                        <label class="a-label js-a-label u-no-select custom-radio" for="agreement-opt1-1"></label>
-                                        <label class="a-label js-a-label label-text" for="agreement-opt1-1">동의합니다.</label>
+                                        </tbody>
+                                    </table>
+                                    <p class="description">* 동의하지 않으셔도 회원가입이 가능하나, 상품 및 마케팅 안내를 받으실 수 없습니다.</p>
+                                    <div class="radio-button-list">
+                                        <div class="m-radio-button v2">
+                                            <input type="radio" class="a-radio-button" id="agreement-opt1-1" name="agreement-opt1" checked>
+                                            <label class="a-label js-a-label u-no-select custom-radio" for="agreement-opt1-1"></label>
+                                            <label class="a-label js-a-label label-text" for="agreement-opt1-1">동의합니다.</label>
+                                        </div>
+
+                                        <div class="m-radio-button v2">
+                                            <input type="radio" class="a-radio-button" id="agreement1-2" name="agreement-opt1">
+                                            <label class="a-label js-a-label u-no-select custom-radio" for="agreement1-2"></label>
+                                            <label class="a-label js-a-label label-text" for="agreement1-2">동의하지 않습니다.</label>
+                                        </div>
                                     </div>
+                                    <!--  체크박스 : SMS/이메일 수신 -->
+                                    <div class="marketing-agree">
+                                        <span class="m-checkbox v2 u-clearfix" id="">
+                                            <input class="a-checkbox" type="checkbox" id="checkbox-sms">
+                                            <label class="a-label js-a-label custom-box" for="checkbox-sms" tabindex="0"></label>
+                                            <label class="a-label js-a-label" for="checkbox-sms">SMS수신</label>
+                                        </span>
 
-                                    <div class="m-radio-button v2">
-                                        <input type="radio" class="a-radio-button" id="agreement1-2" name="agreement-opt1">
-                                        <label class="a-label js-a-label u-no-select custom-radio" for="agreement1-2"></label>
-                                        <label class="a-label js-a-label label-text" for="agreement1-2">동의하지 않습니다.</label>
-                                    </div>
-                                </div>
-                                <!--  체크박스 : SMS/이메일 수신 -->
-                                <div class="marketing-agree">
-                                    <span class="m-checkbox v2 u-clearfix" id="">
-                                        <input class="a-checkbox" type="checkbox" id="checkbox-sms">
-                                        <label class="a-label js-a-label custom-box" for="checkbox-sms" tabindex="0"></label>
-                                        <label class="a-label js-a-label" for="checkbox-sms">SMS수신</label>
-                                    </span>
+                                        <span class="m-checkbox v2 u-clearfix" id="">
+                                            <input class="a-checkbox" type="checkbox" id="checkbox-email">
+                                            <label class="a-label js-a-label custom-box" for="checkbox-email" tabindex="0"></label>
+                                            <label class="a-label js-a-label" for="checkbox-email">이메일수신</label>
+                                        </span>
+                                    </div><!-- // 체크박스 : SMS/이메일 수신 -->
+                                </div><!-- // 테이블02 : [선택사항 1] - ARKTE 마케팅 정보 수신동의 -->
 
-                                    <span class="m-checkbox v2 u-clearfix" id="">
-                                        <input class="a-checkbox" type="checkbox" id="checkbox-email">
-                                        <label class="a-label js-a-label custom-box" for="checkbox-email" tabindex="0"></label>
-                                        <label class="a-label js-a-label" for="checkbox-email">이메일수신</label>
-                                    </span>
-                                </div>
-                            </div>
-
-                            <!-- 테이블03 : [선택사항 2] - 마케팅 수신 목적 제3자 정보 제공 동의 -->
-                            <div class="section">
-                                <h4 class="cation">[선택사항 2] - 마케팅 수신 목적 제3자 정보 제공 동의</h4>
-                                <table class="table-wrap type3">
-                                    <colgroup>
-                                        <col width="30%">
-                                        <col width="70%">
-                                    </colgroup>
-                                    <thead>
+                                <!-- 테이블03 : [선택사항 2] - 마케팅 수신 목적 제3자 정보 제공 동의 -->
+                                <div class="section">
+                                    <h4 class="cation">[선택사항 2] - 마케팅 수신 목적 제3자 정보 제공 동의</h4>
+                                    <table class="table-wrap type3">
+                                        <colgroup>
+                                            <col width="30%">
+                                            <col width="70%">
+                                        </colgroup>
+                                        <thead>
                                         <tr>
                                             <th scope="col">구분</th>
                                             <th scope="col">내용</th>
                                         </tr>
-                                    </thead>
-                                    <tbody>
+                                        </thead>
+                                        <tbody>
                                         <tr>
                                             <td>개인정보를 제공받는 자(연락처)</td>
                                             <td>H&M(스웨덴) / Info@hm.com</td>
@@ -2283,34 +2304,35 @@
                                             <td>제공 시기 및 방법</td>
                                             <td>이용목적에 해당하는 경우 데이터베이스 시스템을 통하여 조회 전달</td>
                                         </tr>
-                                    </tbody>
-                                </table>
-                                <p class="description">* 선택사항은 동의하지 않으실 수 있으나, 할인행사/이벤트 등의 안내서비스가 제한됩니다.</p>
-                                <div class="radio-button-list">
-                                    <div class="m-radio-button v2">
-                                        <input type="radio" class="a-radio-button" id="agreement-opt2-1" name="agreement-opt2" checked>
-                                        <label class="a-label js-a-label u-no-select custom-radio" for="agreement-opt2-1"></label>
-                                        <label class="a-label js-a-label label-text" for="agreement-opt2-1">동의합니다.</label>
-                                    </div>
+                                        </tbody>
+                                    </table>
+                                    <p class="description">* 선택사항은 동의하지 않으실 수 있으나, 할인행사/이벤트 등의 안내서비스가 제한됩니다.</p>
+                                    <div class="radio-button-list">
+                                        <div class="m-radio-button v2">
+                                            <input type="radio" class="a-radio-button" id="agreement-opt2-1" name="agreement-opt2" checked>
+                                            <label class="a-label js-a-label u-no-select custom-radio" for="agreement-opt2-1"></label>
+                                            <label class="a-label js-a-label label-text" for="agreement-opt2-1">동의합니다.</label>
+                                        </div>
 
-                                    <div class="m-radio-button v2">
-                                        <input type="radio" class="a-radio-button" id="agreement2-2" name="agreement-opt2">
-                                        <label class="a-label js-a-label u-no-select custom-radio" for="agreement2-2"></label>
-                                        <label class="a-label js-a-label label-text" for="agreement2-2">동의하지 않습니다.</label>
+                                        <div class="m-radio-button v2">
+                                            <input type="radio" class="a-radio-button" id="agreement2-2" name="agreement-opt2">
+                                            <label class="a-label js-a-label u-no-select custom-radio" for="agreement2-2"></label>
+                                            <label class="a-label js-a-label label-text" for="agreement2-2">동의하지 않습니다.</label>
+                                        </div>
                                     </div>
+                                </div> <!-- // 테이블03 : [선택사항 2] - 마케팅 수신 목적 제3자 정보 제공 동의 -->
+                                <div class="m-checkbox dis-flex">
+                                    <h2 class="a-heading-2">이용약관 및 개인정보 처리방침</h2>
+                                    <span class="a-label policiesText">
+                                         <a href="#" id="registerLink" class="a-link policiesLink" target="_self">전문보기</a>
+                                    </span>
                                 </div>
+                                <p class="info-1">이용약관 및 개인정보 수집 및 이용에 대한 내용을 확인하고 동의합니다.</p>
                             </div>
-                            <div class="m-checkbox dis-flex">
-                                <h2 class="a-heading-2">이용약관 및 개인정보 처리방침</h2>
-                                <span class="a-label policiesText">
-                                     <a href="#" id="registerLink" class="a-link policiesLink" target="_self">전문보기</a>
-                                </span>
-                            </div>
-                            <p class="info-1">이용약관 및 개인정보 수집 및 이용에 대한 내용을 확인하고 동의합니다.</p>
-                        </div>
-                        <button type="submit" id="registerButton" class="a-button is-primary v2-mar">
-                            <span>동의하고 회원가입</span>
-                        </button>
+                            <button type="submit" id="registerButton" class="a-button is-primary pc-margin">
+                                <span>동의하고 회원가입</span>
+                            </button>
+                        </div><!-- // 신규추가 내용 : 회원가입 2.가입정보입력 -->
                     </div>
                     <script type="text/html" data-template="select-country" id="select-country">
                         <div class="m-change-country-lightbox">
@@ -2339,7 +2361,6 @@
         </div>
     </div>
 </div>
-
     <!-- //o-page-content -->
 
     <!-- footer -->
@@ -2487,6 +2508,10 @@
 <!--    <script src="../../../static/org/etc/designs/appeaser/p11/clientlibs/aem-clientlibs/global_Clientlib.min.bffddb20c0117ec36495ecd499273e2a.js"></script>-->
 <!--    <script src="../../../static/org/etc/designs/appeaser/p11/clientlibs/aem-clientlibs/product_Clientlib.min.09ff425f6b46f61e5c6429be9e290878.js"></script>-->
 <!--    <script src="../../../static/org/etc/designs/appeaser/p11/clientlibs/aem-clientlibs/genericpage_Clientlib.min.44bc583ac294a90847353b251f2c46c0.js"></script>-->
+
+    <!-- frontend.renew.js -->
+    <script src="../../../static/js/frontend.renew.js"></script>
+    <!-- //frontend.renew.js -->
 
 </body>
 </html>

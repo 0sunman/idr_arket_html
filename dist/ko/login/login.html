@@ -31,7 +31,6 @@
 
     <!-- frontend.renew.css -->
     <link rel="stylesheet" href="../../../static/css/frontend.renew.css" type="text/css">
-    <link rel="stylesheet" href="../../../static/css/frontend.renew.v2.css" type="text/css">
     <!-- //frontend.renew.css -->
 
     <script src="../../../static/org/etc/designs/hm/clientlibs/shared/jquery.min.98d49f2a9477a5d4f9edef7b7e9698b1.js"></script>
@@ -984,22 +983,21 @@
                                     <label class="a-label js-a-label" for="sign-in-password" data-placeholder="" aria-hidden="true"></label>
                                     <button type="button" class="a-button-nostyle toggle-password-state password-visible" data-show-text="Show" data-hide-text="Hide">Show</button>
                                 </div>
-
-                                <div class="link-holder">
-                                    <a href="/ko/id/requestSignIn" target="_self" class="a-link forgot-id bo-b" onclick="">아이디찾기</a>
-                                    <a href="/ko/password/requestSignIn" target="_self" class="a-link forgot-password bo-b" onclick="TealiumUtils.trackForgotButton();">비밀번호찾기</a>
-                                </div>
-
-                                <!--
+                                
                                 <div class="checkbox-input">
                                     <span class="m-checkbox u-clearfix" id="rememberme">
                                         <input type="checkbox" class="a-checkbox" id="checkbox_rememberme_popup" name="_spring_security_remember_me" checked="checked">
                                         <label class="a-label js-a-label custom-box" for="checkbox_rememberme_popup" tabindex="0"></label>
-                                        <label class="a-label js-a-label" for="checkbox_rememberme_popup">저장하기</label>
+                                        <label class="a-label js-a-label" for="checkbox_rememberme_popup">아이디 저장</label>
                                     </span>
+                                    <div class="link-holder">
+                                        <a href="/ko/id/requestSignIn" target="_self" class="a-link forgot-id bo-b" onclick="">아이디찾기</a>
+                                        <a href="/ko/password/requestSignIn" target="_self" class="a-link forgot-password bo-b" onclick="TealiumUtils.trackForgotButton();">비밀번호찾기</a>
+                                    </div>
                                 </div>
-                                -->
                                 
+
+
                                 <button type="submit" class="a-button is-primary" tabindex="202">
                                     <span>로그인</span>
                                 </button>
@@ -1703,7 +1701,7 @@
                             <span>국제배송</span>
                         </a>
                     </div>
-                    <p class="a-paragraph">정확한 가격, 배송 시간 및 배송비를 확인하려면 배송 위치를 선택하세요.<br>품목 가격은 현지 시장 가격 및 세금을 반영하기 위해 배송지에 따라 다를 수 있습니다.</p>
+                    <p class="a-paragraph">정확한 가격, 배송 시간 및 배송비를<br class="only-m"> 확인하려면 국가를 선택하세요.<br>상품의 가격은 구가별 가격 정책 및 세금에 따라<br class="only-m">달라 질 수 있는 점에 유의하세요.</p>
                 </div>
             </div>
         </div>
@@ -2047,48 +2045,53 @@
     <div data-component="OPageContent" class="o-page-content cofs-page" data-component-id="">
     <span id="content" tabindex="-1" class="access-content">Content of the page</span>
     <div class="o-sign-in-wrapper">
-        <div class="sign-in-heading">
-            <h2 class="a-heading-2">로그인 또는 회원가입</h2>
-        </div>
+        
+        <!-- 로그인 또는 회원가입 title -->
+<div class="sign-in-heading">
+    <h2 class="a-heading-2">로그인 또는 회원가입</h2>
+</div>
+<!-- // 로그인 또는 회원가입 title -->
         <div class="is-sign-in-tabs">
-            <ul class="m-tablist tabs-1-2">
-                <li class="u-no-select is-active">
-                    <a href="/en/login" target="_self" class="a-link">로그인</a>
-                </li>
-                <li class="u-no-select" onclick="TealiumUtils.trackFunnelLink('registration_start');">
-                    <a href="/en/register" target="_self" class="a-link">회원가입</a>
-                </li>
-            </ul>
+            
+            <!-- 활성화 탭 표기 : 로그인 -->
+<ul class="m-tablist tabs-1-2">
+    <li class="u-no-select is-active">
+        <a href="/en/login" target="_self" class="a-link">로그인</a>
+    </li>
+    <li class="u-no-select" onclick="TealiumUtils.trackFunnelLink('registration_start');">
+        <a href="/en/register" target="_self" class="a-link">회원가입</a>
+    </li>
+</ul>
+<!-- // 활성화 탭 표기 : 로그인-->
             <div class="o-sign-in alternative-style-option">
                 <form id="loginForm" data-component="OForm" class="o-form ng-pristine ng-valid is-touched" action="/en/j_spring_security_check" method="post" onsubmit="TealiumUtils.trackTryLoginRegister('login');" data-component-id="009f29be-5da1-4f9c-b757-92fb82f98a52">
                     <div class="m-error js-m-error is-hidden">
                         <label class="a-label js-a-label has-error"></label>
                     </div>
-
-                    <div data-component="MInput" class="m-input is-filled" data-validate="email" placeholder="아이디 또는 이메일" data-component-id="9d189dc9-195b-4333-afef-400540f39200">
+                    <!-- input : 아이디 또는 이메일 -->
+                    <div data-component="MInput" class="m-input" data-validate="email" placeholder="아이디 또는 이메일" data-component-id="9d189dc9-195b-4333-afef-400540f39200">
                         <label for="j_username" class="a-label js-a-label">아이디 또는 이메일</label>
                         <input id="j_username" name="j_username" data-validation-required-text="아이디 또는 이메일을 입력해주세요." pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" data-validation-pattern-text="아이디 또는 이메일을 입력해 주세요." placeholder="아이디 또는 이메일" type="email" class="a-input js-a-input" required="required" value="">
                         <label for="j_username" class="a-label js-a-label" aria-hidden="true"></label>
-                    </div>
-
+                    </div><!-- // input : 아이디 또는 이메일 -->
+                    <!-- input : 비밀번호 -->
                     <div data-component="MInput" class="m-input password password-with-label is-filled" data-validate="" placeholder="비밀번호" data-component-id="a4d73460-5906-4ebd-8415-c276f79698cf">
                         <label for="j_password" class="a-label js-a-label">비밀번호</label>
                         <input id="j_password" name="j_password" data-validation-required-text="비밀번호를 입력해주세요." pattern="^[^ ]{5,35}$" data-validation-pattern-text="Password must be maximum 25 characters Password must be minimum 6 characters" placeholder="비밀번호" type="password" class="a-input js-a-input" required="required" value="">
                         <label class="a-label js-a-label" for="sign-in-password" data-placeholder=""></label>
-                    </div>
+                    </div><!-- // input : 비밀번호 -->
 
-                    <!-- 화면설계서에 없는 관계로 삭제 처리 예정-->
-<!--                    <div class="checkbox-input">-->
-<!--                        <span class="m-checkbox u-clearfix" id="rememberme">-->
-<!--                            <input type="checkbox" class="a-checkbox" id="checkbox_rememberme" name="_spring_security_remember_me">-->
-<!--                            <label class="a-label js-a-label custom-box" for="checkbox_rememberme" tabindex="0"></label>-->
-<!--                            <label class="a-label js-a-label" for="checkbox_rememberme">로그인 유지</label>-->
-<!--                        </span>-->
-<!--                    </div>-->
+                    <div class="checkbox-input">
+                        <span class="m-checkbox u-clearfix" id="rememberme">
+                            <input type="checkbox" class="a-checkbox" id="checkbox_rememberme" name="_spring_security_remember_me">
+                            <label class="a-label js-a-label custom-box" for="checkbox_rememberme" tabindex="0"></label>
+                            <label class="a-label js-a-label" for="checkbox_rememberme">아이디 저장</label>
+                        </span>
+                    </div>
 
                     <!-- 아이디 찾기, 비밀번호 찾기 - 해당 페이지로 이동 -->
                     <div class="link-holder v2">
-                        <a href="/en/id/requestSignIn" target="_self" class="a-link forgot-password bo-b" onclick="">아이디찾기</a>
+                        <a href="#" target="_self" class="a-link forgot-password bo-b" onclick="">아이디찾기</a>
                         <a href="/en/password/requestSignIn" target="_self" class="a-link forgot-password bo-b" onclick="TealiumUtils.trackForgotButton();">비밀번호찾기</a>
                     </div>
 
@@ -2309,6 +2312,10 @@
 <!--    <script src="../../../static/org/etc/designs/appeaser/p11/clientlibs/aem-clientlibs/global_Clientlib.min.bffddb20c0117ec36495ecd499273e2a.js"></script>-->
 <!--    <script src="../../../static/org/etc/designs/appeaser/p11/clientlibs/aem-clientlibs/product_Clientlib.min.09ff425f6b46f61e5c6429be9e290878.js"></script>-->
 <!--    <script src="../../../static/org/etc/designs/appeaser/p11/clientlibs/aem-clientlibs/genericpage_Clientlib.min.44bc583ac294a90847353b251f2c46c0.js"></script>-->
+
+    <!-- frontend.renew.js -->
+    <script src="../../../static/js/frontend.renew.js"></script>
+    <!-- //frontend.renew.js -->
 
 </body>
 </html>

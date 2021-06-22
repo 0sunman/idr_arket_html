@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* ========================================================== */
 /*                                                            */
 /* file		: lim                                   	      */
@@ -18,18 +19,32 @@
 
 .icon.mail { margin-top: 5px; background-image: url(../images/icon/icon-mail.png); }
 
+/* button list / col-2로 공통 처리 / 추후 삭제 예정 */
 /* common e ================================================= */
 /* ---------------------------------------------------------- */
 /* simple s ================================================= */
+.dis-block { display: block; }
+
+.fs21 { font-size: 21px; }
+
 /* simple e ================================================= */
 /* frontend.min overwrite s ================================= */
+/* login > input 공통 사항 */
+.o-sign-in .m-input, .o-registration .m-input, .o-forgot-password .m-input, .n-find-idpw .m-input { margin-top: 8px; }
+.o-sign-in .m-input .a-label:first-child, .o-registration .m-input .a-label:first-child, .o-forgot-password .m-input .a-label:first-child, .n-find-idpw .m-input .a-label:first-child { color: #7b7b7b; height: 19px; }
+.o-sign-in .m-input .a-input, .o-registration .m-input .a-input, .o-forgot-password .m-input .a-input, .n-find-idpw .m-input .a-input { padding: 0; height: 39px; line-height: 26px; font-weight: 400; font-size: 18px; color: #000000; background-color: #ffffff; }
+.o-sign-in .m-input .a-label:last-of-type, .o-registration .m-input .a-label:last-of-type, .o-forgot-password .m-input .a-label:last-of-type, .n-find-idpw .m-input .a-label:last-of-type { font-size: 12px; line-height: 20px; font-family: 'Arket Sans', 'Noto Sans KR', 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', 'Sans-Serif'; }
+.o-sign-in .m-input .guide-text, .o-registration .m-input .guide-text, .o-forgot-password .m-input .guide-text, .n-find-idpw .m-input .guide-text { margin-top: 2px; font-weight: 300; font-size: 12px; color: #b2b2b2; }
+
 /* login */
+.o-sign-in-wrapper { padding-bottom: 80px; }
+@media (min-width: 769px) { .o-sign-in-wrapper { padding-bottom: 115px; } }
 .o-sign-in-wrapper .o-sign-in .o-form .password { margin-bottom: 20px; }
 .o-sign-in-wrapper .o-sign-in .o-form .checkbox-input { width: 35%; margin-bottom: 0; }
-.o-sign-in-wrapper .o-sign-in .o-form .link-holder.v2 { display: inline-block; margin-top: 0; text-align: right; }
-.o-sign-in-wrapper .o-sign-in .o-form .link-holder.v2 a { border-bottom: 1px solid #b3b3b3; line-height: 0.5em; }
-.o-sign-in-wrapper .o-sign-in .o-form .link-holder.v2 a:first-child { margin-right: 15px; right: 100px; }
-.o-sign-in-wrapper .o-sign-in .o-form .link-holder.v2 .forgot-password { width: auto; }
+.o-sign-in-wrapper .o-sign-in .link-holder.v2 { display: inline-block; margin-top: 0; text-align: right; }
+.o-sign-in-wrapper .o-sign-in .link-holder.v2 a { border-bottom: 1px solid #b3b3b3; line-height: 0.5em; }
+.o-sign-in-wrapper .o-sign-in .link-holder.v2 a:first-child { margin-right: 15px; right: 100px; }
+.o-sign-in-wrapper .o-sign-in .link-holder.v2 .forgot-password { width: auto; }
 
 /* register */
 .o-registration.empty-registration .o-registration-form { width: 100%; }
@@ -55,60 +70,106 @@
 
 /* login e ================================================= */
 /* register s ================================================= */
-.o-registration-form.v2 { text-align: left; font-weight: 300; font-size: 12px; color: #000; }
+.o-registration-form { /* 신규추가 내용 */ }
+.o-registration-form.v2 { text-align: left; font-weight: 300; font-size: 12px; color: #000; line-height: 20px; /* 회원가입 단계 표기 */ }
+.o-registration-form.v2 .main-info { font-weight: 300; font-size: 12px; color: #000; line-height: 20px; margin: 50px 0 15px; }
+@media (min-width: 769px) { .o-registration-form.v2 .main-info { margin: 75px 0 35px; } }
 .o-registration-form.v2 .step { display: flex; justify-content: space-between; color: #7b7b7b; }
-@media (min-width: 769px) { .o-registration-form.v2 .step { width: 80%; margin: 0 auto; } }
+@media (min-width: 769px) { .o-registration-form.v2 .step { width: 60%; margin: 0 auto; } }
 .o-registration-form.v2 .step li { font-size: 13px; height: 30px; }
 .o-registration-form.v2 .step li.on, .o-registration-form.v2 .step span.on { font-weight: 400; color: #000; }
 .o-registration-form.v2 .step span { font-size: 18px; }
-.o-registration-form.v2 .title { width: 100%; margin-top: 50px; padding-bottom: 15px; border-bottom: 1px solid #000; font-weight: 400; font-size: 16px; color: #000; }
+.o-registration-form.v2 .title { width: 100%; padding-bottom: 15px; border-bottom: 1px solid #000; font-weight: 400; font-size: 16px; color: #000; }
 @media (min-width: 769px) { .o-registration-form.v2 .title { font-size: 21px; } }
-.o-registration-form.v2 .info-1 { font-weight: 300; font-size: 12px; color: #000; padding-top: 20px; line-height: 20px; }
-.o-registration-form.v2 .info-2 { font-weight: 300; font-size: 12px; color: #000; padding-bottom: 10px; text-align: center; }
-
-.social-certify-container { width: 100%; margin: 0 auto; padding-bottom: 75px; }
-.social-certify-container .sns-list { display: block; font-size: 0; padding: 0; }
-.social-certify-container .sns-list ul { display: flex; justify-content: flex-start; flex-wrap: wrap; margin: 0; border: 0; }
-.social-certify-container .sns-list li { width: 50%; height: 35px; margin: 3px 0; padding: 0; padding-right: 5px; border: 0; text-align: left; }
-@media (min-width: 769px) { .social-certify-container .sns-list li { width: 33%; } }
-.social-certify-container .sns-list a { position: relative; display: block; width: 100%; height: 100%; text-align: left; padding: 5px; padding-left: 10px; border: 1px solid #b2b2b2; cursor: pointer; }
-.social-certify-container .sns-list a .icontab { position: absolute; float: left; }
-.social-certify-container .sns-list a .icon { display: inline-block; width: 24px; height: 24px; background-size: contain; background-repeat: no-repeat; }
-.social-certify-container .sns-list a .captiontab { text-align: center; width: 100%; float: left; line-height: 25px; font-weight: 300; font-size: 12px; color: #000; }
-.social-certify-container .sns-list a:hover div { opacity: 0.6; }
+.o-registration-form.v2 .info-1 { font-weight: 300; font-size: 12px; color: #000; }
+.o-registration-form .n-wrap { margin-top: 30px; }
+.o-registration-form .n-wrap.step-1 .info-1 { font-weight: 300; font-size: 12px; color: #000; padding-bottom: 10px; text-align: center; }
+.o-registration-form .n-wrap.step-1 .social-certify-container { width: 100%; margin: 0 auto; padding-bottom: 75px; }
+.o-registration-form .n-wrap.step-1 .social-certify-container .sns-list { display: block; font-size: 0; padding: 0; }
+.o-registration-form .n-wrap.step-1 .social-certify-container .sns-list ul { display: flex; justify-content: flex-start; flex-wrap: wrap; margin: 0; border: 0; }
+.o-registration-form .n-wrap.step-1 .social-certify-container .sns-list li { width: 50%; height: 35px; margin: 3px 0; padding: 0; padding-right: 5px; border: 0; text-align: left; }
+@media (min-width: 769px) { .o-registration-form .n-wrap.step-1 .social-certify-container .sns-list li { width: 33%; } }
+.o-registration-form .n-wrap.step-1 .social-certify-container .sns-list a { position: relative; display: block; width: 100%; height: 100%; text-align: left; padding: 5px; padding-left: 10px; border: 1px solid #b2b2b2; cursor: pointer; }
+.o-registration-form .n-wrap.step-1 .social-certify-container .sns-list a .icontab { position: absolute; float: left; }
+.o-registration-form .n-wrap.step-1 .social-certify-container .sns-list a .icon { display: inline-block; width: 24px; height: 24px; background-size: contain; background-repeat: no-repeat; }
+.o-registration-form .n-wrap.step-1 .social-certify-container .sns-list a .captiontab { text-align: center; width: 100%; float: left; line-height: 25px; font-weight: 300; font-size: 12px; color: #000; }
+.o-registration-form .n-wrap.step-1 .social-certify-container .sns-list a:hover div { opacity: 0.6; }
+.o-registration-form .n-wrap.step-1-2 .title { font-size: 21px; }
+.o-registration-form .n-wrap.step-1-2 .in-service { padding: 25px 15px; border-color: #000; border-bottom-width: 1px; border-bottom-style: solid; font-weight: 300; font-size: 13px; color: #000; line-height: 20px; }
+.o-registration-form .n-wrap.step-1-2 .m-input.id { margin-top: -6px; }
+.o-registration-form .n-wrap.step-1-2 .password { width: 100%; }
+.o-registration-form .n-wrap.step-1-2 .a-button { margin-top: 35px; }
+.o-registration-form .n-wrap.step-1-2 .link-holder { position: relative; margin-top: 20px; }
+.o-registration-form .n-wrap.step-1-2 .link-holder .a-link { margin-right: 20px; font-weight: 300; font-size: 11px; color: #7b7b7b; line-height: 26px; text-underline-offset: 4px; }
+@media (min-width: 769px) { .o-registration-form .n-wrap.step-1-2 .link-holder .a-link { margin-right: 30px; } }
+.o-registration-form .n-wrap.step-1-2 .link-holder .register { position: absolute; right: 0; margin-right: 0; font-weight: 300; font-size: 12px; color: #000; }
+@media (min-width: 769px) { .o-registration-form .n-wrap.step-1-2 .link-holder .register { position: unset; } }
 
 /* register e ================================================= */
 /* register-info s ================================================= */
-.o-registration-form.v2 .info-1 { font-weight: 300; font-size: 12px; color: #000000; }
-.o-registration-form.v2 .guide-text { margin-top: 2px; font-weight: 300; font-size: 12px; color: #b2b2b2; }
-.o-registration-form.v2 .r-only { background-color: #e9f0fe; }
-.o-registration-form.v2 .a-input { font-weight: 400; font-size: 18px; color: #000000; }
-.o-registration-form.v2 .m-input:last-child { clear: both; }
-.o-registration-form.v2 .posi-r { position: relative; }
-.o-registration-form.v2 .a-button.v2-inline { position: absolute; right: 0; top: 21px; width: 100px; height: 35px; margin-top: 0; font-weight: 300; font-size: 13px; line-height: 35px; background-color: #000; }
-@media (min-width: 769px) { .o-registration-form.v2 .a-button.v2-mar { margin-top: 70px; margin-bottom: 90px; } }
-.o-registration-form.v2 .a-heading-2 { font-weight: 400; font-size: 16px; color: #000000; }
-.o-registration-form.v2 .dis-flex { display: flex; justify-content: space-between; }
-.o-registration-form.v2 .dis-flex .a-label { width: auto; }
-.o-registration-form.v2 .text-container { clear: both; padding-top: 60px; }
-.o-registration-form.v2 .text-container .all-agree { margin: 30px 0px 40px; }
-.o-registration-form.v2 .text-container .section { margin-bottom: 60px; }
-.o-registration-form.v2 .text-container .section .caption { font-weight: 300; font-size: 13px; color: #000000; }
-.o-registration-form.v2 .text-container .section .table-wrap { border-collapse: initial; border-top: 1px solid #626262; border-bottom: 1px solid #626262; }
-.o-registration-form.v2 .text-container .section .table-wrap .p-left { padding-left: 15px; }
-.o-registration-form.v2 .text-container .section .table-wrap tr th, .o-registration-form.v2 .text-container .section .table-wrap tr td { border-right: 1px solid #dddddd; border-top: 1px solid #dddddd; }
-.o-registration-form.v2 .text-container .section .table-wrap tr th { padding: 10px 0; background-color: #f4f4f4; text-align: center; }
-.o-registration-form.v2 .text-container .section .table-wrap tr td { padding: 5px; }
-.o-registration-form.v2 .text-container .section .table-wrap tr:first-child th { border-top: 0; }
-.o-registration-form.v2 .text-container .section .table-wrap.type1 th:nth-child(4), .o-registration-form.v2 .text-container .section .table-wrap.type1 td:nth-child(4), .o-registration-form.v2 .text-container .section .table-wrap.type2 th:nth-child(4), .o-registration-form.v2 .text-container .section .table-wrap.type2 th:nth-child(4), .o-registration-form.v2 .text-container .section .table-wrap.type2 td:nth-child(4), .o-registration-form.v2 .text-container .section .table-wrap.type3 th:last-child, .o-registration-form.v2 .text-container .section .table-wrap.type3 td:last-child { border-right: none; }
-.o-registration-form.v2 .text-container .section .radio-button-list .m-radio-button.v2:last-child { margin-left: 90px; }
-.o-registration-form.v2 .text-container .section .marketing-agree { display: flex; justify-content: space-evenly; margin-top: 12px; border-top: 1px solid #dddd; border-bottom: 1px solid #dddd; }
-.o-registration-form.v2 .text-container .section .marketing-agree .m-checkbox { padding: 12px 0px; }
-.o-registration-form.v2 .text-container .section .marketing-agree .m-checkbox .a-label:last-child { width: auto; }
-.o-registration-form.v2 .text-container .section .is-primary { margin-bottom: 55px; }
-.o-registration-form.v2 .text-container .description { font-weight: 300; font-size: 12px; color: #707070; }
+.o-registration-form.v2 .n-wrap.step-2 .m-input.r-only { min-height: inherit; }
+.o-registration-form.v2 .n-wrap.step-2 .m-input.r-only .a-input { background-color: #e9f0fe; }
+.o-registration-form.v2 .n-wrap.step-2 .m-input.r-only + .m-checkbox.v2 { margin-top: -14px; }
+.o-registration-form.v2 .n-wrap.step-2 .m-input.int-id { position: relative; width: calc(100% - 110px); }
+@media (min-width: 769px) { .o-registration-form.v2 .n-wrap.step-2 .m-input.mt-30 { margin-top: -30px; } }
+.o-registration-form.v2 .n-wrap.step-2 .m-input:last-child { clear: both; }
+.o-registration-form.v2 .n-wrap.step-2 .m-input .s-btn { position: absolute; right: -110px; top: 21px; width: 100px; height: 35px; margin-top: 0; font-weight: 300; font-size: 13px; line-height: 35px; background-color: #000; }
+@media (min-width: 769px) { .o-registration-form.v2 .n-wrap.step-2 .a-button.pc-margin { margin-top: 70px; margin-bottom: 90px; } }
+.o-registration-form.v2 .n-wrap.step-2 .dis-flex { display: flex; justify-content: space-between; }
+.o-registration-form.v2 .n-wrap.step-2 .dis-flex .a-label { width: auto; }
+.o-registration-form.v2 .n-wrap.step-2 .text-container { clear: both; padding-top: 60px; }
+.o-registration-form.v2 .n-wrap.step-2 .text-container .all-agree { margin: 30px 0px 40px; }
+.o-registration-form.v2 .n-wrap.step-2 .text-container .section { margin-bottom: 40px; }
+.o-registration-form.v2 .n-wrap.step-2 .text-container .section .caption { font-weight: 300; font-size: 13px; color: #000000; }
+.o-registration-form.v2 .n-wrap.step-2 .text-container .section .table-wrap { border-collapse: initial; border-top: 1px solid #626262; border-bottom: 1px solid #626262; }
+.o-registration-form.v2 .n-wrap.step-2 .text-container .section .table-wrap tr th, .o-registration-form.v2 .n-wrap.step-2 .text-container .section .table-wrap tr td { border-right: 1px solid #dddddd; border-top: 1px solid #dddddd; }
+.o-registration-form.v2 .n-wrap.step-2 .text-container .section .table-wrap tr th { padding: 10px 0; background-color: #f4f4f4; text-align: center; }
+.o-registration-form.v2 .n-wrap.step-2 .text-container .section .table-wrap tr td { padding: 5px; }
+.o-registration-form.v2 .n-wrap.step-2 .text-container .section .table-wrap tr:first-child th { border-top: 0; }
+.o-registration-form.v2 .n-wrap.step-2 .text-container .section .table-wrap.type1 th:nth-child(4), .o-registration-form.v2 .n-wrap.step-2 .text-container .section .table-wrap.type1 td:nth-child(4), .o-registration-form.v2 .n-wrap.step-2 .text-container .section .table-wrap.type2 th:nth-child(4), .o-registration-form.v2 .n-wrap.step-2 .text-container .section .table-wrap.type2 td:nth-child(4), .o-registration-form.v2 .n-wrap.step-2 .text-container .section .table-wrap.type3 th:last-child, .o-registration-form.v2 .n-wrap.step-2 .text-container .section .table-wrap.type3 td:last-child { border-right: none; }
+.o-registration-form.v2 .n-wrap.step-2 .text-container .section .description { font-weight: 300; font-size: 12px; color: #707070; }
+.o-registration-form.v2 .n-wrap.step-2 .text-container .section .marketing-agree { display: flex; justify-content: space-evenly; margin-top: 12px; border-top: 1px solid #dddd; border-bottom: 1px solid #dddd; }
+.o-registration-form.v2 .n-wrap.step-2 .text-container .section .marketing-agree .m-checkbox { padding: 12px 0px; }
+.o-registration-form.v2 .n-wrap.step-2 .text-container .section .marketing-agree .m-checkbox .a-label:last-child { width: auto; }
+.o-registration-form.v2 .n-wrap.step-2 .text-container .section .is-primary { margin-bottom: 55px; }
+.o-registration-form.v2 .n-wrap.step-2 .text-container .section:last-child { margin-bottom: 30px; }
 
 /* register-info e ================================================= */
-/* ---------------------------------------------------------- */
+/* register-complate s ================================================= */
+.o-registration-form.v2 .n-wrap.step-3 { text-align: center; }
+@media (min-width: 769px) { .o-registration-form.v2 .n-wrap.step-3 { margin-top: 65px; } }
+.o-registration-form.v2 .n-wrap.step-3 .info-1 { font-weight: 400; font-size: 18px; color: #000000; line-height: 26px; }
+.o-registration-form.v2 .n-wrap.step-3 .info-2 { font-weight: 400; font-size: 13px; color: #000; line-height: 20px; margin: -3px 0 50px; }
+
+/* register-complate e ================================================= */
+/* --------------------------------------------------------------------- */
+/* forgot-password s ================================================= */
+.n-find-idpw .a-heading-2 { font-size: 18px; text-align: left; }
+.n-find-idpw .data { padding-bottom: 0; font-weight: 300; font-size: 12px; color: #000; line-height: 18px; }
+@media (min-width: 769px) { .n-find-idpw .data { line-height: 20px; } }
+.n-find-idpw .data.v2 { font-weight: 400; font-size: 13px; color: #000; }
+.n-find-idpw .n-wrap { margin-top: 45px; }
+@media (min-width: 769px) { .n-find-idpw .n-wrap { margin-top: 50px; } }
+.n-find-idpw .n-wrap .m-input { margin-bottom: 15px; }
+.n-find-idpw .n-wrap .a-button { margin-top: 50px; }
+@media (min-width: 769px) { .n-find-idpw .n-wrap .a-button { margin-top: 55px; } }
+.n-find-idpw .n-wrap .find-result-box { margin-top: 40px; }
+@media (min-width: 769px) { .n-find-idpw .n-wrap .find-result-box { margin-top: 55px; } }
+.n-find-idpw .n-wrap .find-result-box table { width: 100%; text-align: left; }
+.n-find-idpw .n-wrap .find-result-box table tr th { line-height: 26px; font-weight: 300; font-size: 13px; color: #000; padding-left: 5px; }
+@media (min-width: 769px) { .n-find-idpw .n-wrap .find-result-box table tr th { padding-left: 35px; } }
+.n-find-idpw .n-wrap .find-result-box table td { line-height: 26px; font-weight: 300; font-size: 15px; color: #000; }
+
+/* forgot-password e ============================================================ */
+/* change-password-complete s =================================================== */
+.n-find-idpw .n-wrap.cp-complete .sub-title { font-weight: 300; font-size: 18px; color: #000; line-height: 26px; text-align: center; }
+.n-find-idpw .n-wrap.cp-complete .text-content { padding-top: 25px; padding-left: 15px; }
+@media (min-width: 769px) { .n-find-idpw .n-wrap.cp-complete .text-content { padding-left: 32px; } }
+.n-find-idpw .n-wrap.cp-complete .text-content .list-box li { font-weight: 300; font-size: 12px; color: #000; line-height: 20px; text-indent: -10px; }
+.n-find-idpw .n-wrap.cp-complete .text-content .list-box li .brd-btm { border-color: #ccc; border-bottom-width: 1px; border-bottom-style: solid; }
+.n-find-idpw .n-wrap.cp-complete .text-content .list-box li:before { content: "-"; padding-right: 5px; }
+
+/* change-password-complete  e ========================================== */
+/* --------------------------------------------------------------------- */
 
 /*# sourceMappingURL=frontend.renew.v2.css.map */

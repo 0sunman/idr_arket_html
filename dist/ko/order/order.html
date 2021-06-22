@@ -31,7 +31,6 @@
 
     <!-- frontend.renew.css -->
     <link rel="stylesheet" href="../../../static/css/frontend.renew.css" type="text/css">
-    <link rel="stylesheet" href="../../../static/css/frontend.renew.v2.css" type="text/css">
     <!-- //frontend.renew.css -->
 
     <script src="../../../static/org/etc/designs/hm/clientlibs/shared/jquery.min.98d49f2a9477a5d4f9edef7b7e9698b1.js"></script>
@@ -984,22 +983,21 @@
                                     <label class="a-label js-a-label" for="sign-in-password" data-placeholder="" aria-hidden="true"></label>
                                     <button type="button" class="a-button-nostyle toggle-password-state password-visible" data-show-text="Show" data-hide-text="Hide">Show</button>
                                 </div>
-
-                                <div class="link-holder">
-                                    <a href="/ko/id/requestSignIn" target="_self" class="a-link forgot-id bo-b" onclick="">아이디찾기</a>
-                                    <a href="/ko/password/requestSignIn" target="_self" class="a-link forgot-password bo-b" onclick="TealiumUtils.trackForgotButton();">비밀번호찾기</a>
-                                </div>
-
-                                <!--
+                                
                                 <div class="checkbox-input">
                                     <span class="m-checkbox u-clearfix" id="rememberme">
                                         <input type="checkbox" class="a-checkbox" id="checkbox_rememberme_popup" name="_spring_security_remember_me" checked="checked">
                                         <label class="a-label js-a-label custom-box" for="checkbox_rememberme_popup" tabindex="0"></label>
-                                        <label class="a-label js-a-label" for="checkbox_rememberme_popup">저장하기</label>
+                                        <label class="a-label js-a-label" for="checkbox_rememberme_popup">아이디 저장</label>
                                     </span>
+                                    <div class="link-holder">
+                                        <a href="/ko/id/requestSignIn" target="_self" class="a-link forgot-id bo-b" onclick="">아이디찾기</a>
+                                        <a href="/ko/password/requestSignIn" target="_self" class="a-link forgot-password bo-b" onclick="TealiumUtils.trackForgotButton();">비밀번호찾기</a>
+                                    </div>
                                 </div>
-                                -->
                                 
+
+
                                 <button type="submit" class="a-button is-primary" tabindex="202">
                                     <span>로그인</span>
                                 </button>
@@ -1703,7 +1701,7 @@
                             <span>국제배송</span>
                         </a>
                     </div>
-                    <p class="a-paragraph">정확한 가격, 배송 시간 및 배송비를 확인하려면 배송 위치를 선택하세요.<br>품목 가격은 현지 시장 가격 및 세금을 반영하기 위해 배송지에 따라 다를 수 있습니다.</p>
+                    <p class="a-paragraph">정확한 가격, 배송 시간 및 배송비를<br class="only-m"> 확인하려면 국가를 선택하세요.<br>상품의 가격은 구가별 가격 정책 및 세금에 따라<br class="only-m">달라 질 수 있는 점에 유의하세요.</p>
                 </div>
             </div>
         </div>
@@ -2243,7 +2241,8 @@
             <div class="order-summary-info">
                 <div class="m-order-summary-row u-clearfix">
                     <div class="product-image">
-                        <img class="a-image" alt="product image" src="http://pava-0341648599.s3-eu-west-1.amazonaws.com/images/571a2ab9834df503009f067f/men_shoes_adrian-grain-black-thumbnail-thumbnail-big.jpg">
+                        <!--<img class="a-image" alt="product image" src="http://pava-0341648599.s3-eu-west-1.amazonaws.com/images/571a2ab9834df503009f067f/men_shoes_adrian-grain-black-thumbnail-thumbnail-big.jpg">-->
+                        <img class="a-image" alt="product image" src="../../../static/images/temp/men_shoes_01.jpg">
                     </div>
                     <div class="product-info">
                         <div class="quantity-section">
@@ -2271,7 +2270,8 @@
                 </div>
                 <div class="m-order-summary-row u-clearfix">
                     <div class="product-image">
-                        <img class="a-image" alt="product image" src="http://pava-0341648599.s3-eu-west-1.amazonaws.com/images/55f88dcce517704a05ab1da5/boy-vintage-thumbnail-big.jpg">
+                        <!-- <img class="a-image" alt="product image" src="http://pava-0341648599.s3-eu-west-1.amazonaws.com/images/55f88dcce517704a05ab1da5/boy-vintage-thumbnail-big.jpg">-->
+                        <img class="a-image" alt="product image" src="../../../static/images/temp/boy-vintage-thumbnail-big.jpg">
                     </div>
                     <div class="product-info">
                         <div class="quantity-section">
@@ -2341,8 +2341,8 @@
             <div class="dft-bx line-bx pay-policy-bx">
                 <p class="dft-bx-tit">채무지급 보증안내</p>
                 <p class="desc-text">
-                    고객님의 안전거래를 위해 현금결제 시 우리은행과 <a href="#" class="a-link open-lightbox a-link-udln" data-template="" data-classes="is-large">채무지급보증 계약을 체결하여</a> 안전거래를 보장하고 있습니다.
-                    <a href="#" class="a-link open-lightbox" data-template="service-join-fact-confirm" data-classes="is-large">[서비스 가입사실 확인]</a>
+                    고객님의 안전거래를 위해 현금결제 시 우리은행과 <a href="#" class="a-link open-lightbox" data-template="" data-classes="is-large">채무지급보증 계약을 체결하여</a> 안전거래를 보장하고 있습니다.
+                    <a href="#" class="a-link a-link-udln open-lightbox" data-template="service-join-fact-confirm" data-classes="is-large">[서비스 가입사실 확인]</a>
                 </p>
                 <div class="pay-policy-agree">
                     <span class="m-checkbox v2 u-clearfix" id="checkbox1">
@@ -2360,6 +2360,7 @@
             <!-- m-informative-section -->
 <div class="m-informative-section">
 	<h3>Customer</h3>
+	<p class="fc-point2">무료배송, 무료반품 혜택과 함께 새로운 상품을 찾아보세요<br class="only-pc">택배사 파업으로 인해 배송 및 반품이 지연될 수 있습니다.</p>
 	<p>배송완료 후 14일 이내 청약철회(반품)가 가능합니다.
 		단, 위생상의 이유로 속옷, 피어싱류 보석은 반품 불가합니다.
 		자세한 내용은 <a href="#" class="a-link open-lightbox" data-template="return-and-refund-policy" data-classes="is-large">반품 및 환불</a>을 확인해주세요.</p>
@@ -2537,6 +2538,10 @@
 <!--    <script src="../../../static/org/etc/designs/appeaser/p11/clientlibs/aem-clientlibs/global_Clientlib.min.bffddb20c0117ec36495ecd499273e2a.js"></script>-->
 <!--    <script src="../../../static/org/etc/designs/appeaser/p11/clientlibs/aem-clientlibs/product_Clientlib.min.09ff425f6b46f61e5c6429be9e290878.js"></script>-->
 <!--    <script src="../../../static/org/etc/designs/appeaser/p11/clientlibs/aem-clientlibs/genericpage_Clientlib.min.44bc583ac294a90847353b251f2c46c0.js"></script>-->
+
+    <!-- frontend.renew.js -->
+    <script src="../../../static/js/frontend.renew.js"></script>
+    <!-- //frontend.renew.js -->
 
 </body>
 </html>
