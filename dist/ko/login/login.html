@@ -120,6 +120,7 @@
         </div>
     </div>
 
+    <!-- m-site-banner : 띠배너 -->
     <!--
     <div id="site-banner-id" data-component="MSiteBanner" class="m-site-banner slide-down" data-component-id="99b5970e-f57c-49a0-81af-c7dcdc255c0b" style="background-color: rgb(0, 0, 0); display: block;">
         <input type="hidden" name="startDateField" value="2021/06/10 08:10:00" id="sitebannersd">
@@ -142,6 +143,7 @@
         </div>
     </div>
     -->
+    <!-- //m-site-banner : 띠배너 -->
 
     <div class="u-no-select">
         <div class="a-overlay js-a-overlay q-opacity-0" data-component="AOverlay" data-component-id="00dc7c54-c454-4add-9da6-62430cfc116d"></div>
@@ -901,7 +903,7 @@
             <span class="country-name">배송국가</span>
             <span class="lang"></span>
         </button>
-        <a href="/ko/logout" target="_self" class="a-link bottom account logout" style="display:none;" area-hidden="true">로그아웃</a>
+        <a href="/ko/logout" target="_self" class="a-link bottom account logout" area-hidden="true">로그아웃</a>
     </div>
 
     <a href="https://www.instagram.com/arketofficial" target="_self" class="a-link follow">Follow us</a>
@@ -1457,18 +1459,25 @@
         <div class="basket-wrapper">
             <div class="added-item">
                 <div class="basket-added-image">
-                    <img class="a-image" src="//:0" alt="">
+                    <img class="a-image ResolveComplete" src="../../../static/images/temp/sample-img.jpg">
                 </div>
                 <div class="basket-added-info">
-                    <div class="basket-added-info-title i18n">Added To Bag</div>
                     <p class="a-paragraph">
-								<span class="basket-added-info-price">
-									<span class="u-price"></span>
-									<span class="u-currency"></span>
-								</span>
-                        <span class="item-title"></span>
+                        <span class="item-title">루즈핏 리넨 쇼츠</span>
+                        <div class="product-param-info second">
+                            <div class="product-params data">
+                                <div class="product-size">44</div>
+                                <div class="product-color">핑크</div>
+                                <div class="product-qty">2</div>
+                            </div>
+                        </div>
+                        <span class="basket-added-info-price">
+                            <span class="u-price is-deprecated">100,000</span>
+                            <!--<span class="u-price-discount">85,000</span>-->
+                            <span class="u-price discount total">85,000</span>
+                        </span>
                     </p>
-                    <a class="a-button checkout i18n" href="/ko/cart">View bag</a>
+                    <a class="a-button checkout i18n" href="/ko/cart">장바구니 보기</a>
                 </div>
             </div>
             <div class="no-added-item">

@@ -1,0 +1,1656 @@
+<div data-component="OPageContent" class="o-page-content">
+    <div class="coremetricsPageId" hidden="">product page 3</div>
+    <div class="coremetricsPageType" hidden="">product page 4</div>
+    <div class="coremetricsCategoryId" hidden="">product page 2</div>
+    <div class="coremetricsCategoryPath" hidden="">product page 1</div>
+
+    <!-- m-breadcrumb -->
+    <nav aria-label="breadcrumbs" class="m-breadcrumb pdp-breadcrumb full-width" data-component="MBreadCrumb">
+        <%# m-breadcrumb %>
+        <%- include ("../../common/md-m-breadcrumb.ejs") %>
+    </nav>
+    <!-- //m-breadcrumb -->
+
+    <!-- o-product-details -->
+    <div data-component="OProductDetails" class="o-product-details">
+        <form data-component="OForm" class="o-form add-to-cart" action="/someURL" method="POST" onsubmit="">
+
+            <!-- center-panel -->
+            <div class="center-panel">
+                <input type="hidden" id="toggling-enabled" value="true">
+                <div class="o-product-gallery-main">
+
+                    <!-- main-image-wrapper -->
+                    <div class="main-image-wrapper">
+                        <div id="images" class="image-gallery">
+                            <div id="product-gallery" data-component="OProductGallery" class="o-product-gallery">
+                                <%# md-o-lazy-load %>
+                                <%- include ("../../common/md-o-lazy-load.ejs") %>
+
+                                <!-- o-zoom-slider -->
+                                <div data-component="OZoomSlider" data-slides-desktop="1" data-slides-tablet="1" data-slides-mobile="1" class="o-zoom-slider pdp-slider">
+                                    <div class="a-heading-2 slider-title u-align-center"></div>
+                                    <div class="slider" id="imageContainer">
+                                        <picture class="a-picture" data-component="APicture">
+                                            <source media="(min-width:1951px)"
+                                                    srcset="//lp.arket.com/app006prod?set=key[resolve.pixelRatio],value[2]&amp;set=key[resolve.width],value[975]&amp;set=key[resolve.height],value[10000]&amp;set=key[resolve.imageFit],value[containerwidth]&amp;set=key[resolve.allowImageUpscaling],value[0]&amp;set=key[resolve.format],value[jpeg]&amp;set=key[resolve.quality],value[70]&amp;set=source[/5d/ac/5dac740a77b9291bdbed02fc6b701a3c1e18fb8f.jpg],origin[dam],type[LOOKBOOK],ImageVersion[1]&amp;call=url[file:/product/dynamic.chain]">
+                                            <source media="(min-width:1851px)"
+                                                    srcset="//lp.arket.com/app006prod?set=key[resolve.pixelRatio],value[2]&amp;set=key[resolve.width],value[925]&amp;set=key[resolve.height],value[10000]&amp;set=key[resolve.imageFit],value[containerwidth]&amp;set=key[resolve.allowImageUpscaling],value[0]&amp;set=key[resolve.format],value[jpeg]&amp;set=key[resolve.quality],value[70]&amp;set=source[/5d/ac/5dac740a77b9291bdbed02fc6b701a3c1e18fb8f.jpg],origin[dam],type[LOOKBOOK],ImageVersion[1]&amp;call=url[file:/product/dynamic.chain]">
+                                            <source media="(min-width:1751px)"
+                                                    srcset="//lp.arket.com/app006prod?set=key[resolve.pixelRatio],value[2]&amp;set=key[resolve.width],value[875]&amp;set=key[resolve.height],value[10000]&amp;set=key[resolve.imageFit],value[containerwidth]&amp;set=key[resolve.allowImageUpscaling],value[0]&amp;set=key[resolve.format],value[jpeg]&amp;set=key[resolve.quality],value[70]&amp;set=source[/5d/ac/5dac740a77b9291bdbed02fc6b701a3c1e18fb8f.jpg],origin[dam],type[LOOKBOOK],ImageVersion[1]&amp;call=url[file:/product/dynamic.chain]">
+                                            <source media="(min-width:1651px)"
+                                                    srcset="//lp.arket.com/app006prod?set=key[resolve.pixelRatio],value[2]&amp;set=key[resolve.width],value[825]&amp;set=key[resolve.height],value[10000]&amp;set=key[resolve.imageFit],value[containerwidth]&amp;set=key[resolve.allowImageUpscaling],value[0]&amp;set=key[resolve.format],value[jpeg]&amp;set=key[resolve.quality],value[70]&amp;set=source[/5d/ac/5dac740a77b9291bdbed02fc6b701a3c1e18fb8f.jpg],origin[dam],type[LOOKBOOK],ImageVersion[1]&amp;call=url[file:/product/dynamic.chain]">
+                                            <source media="(min-width:1551px)"
+                                                    srcset="//lp.arket.com/app006prod?set=key[resolve.pixelRatio],value[2]&amp;set=key[resolve.width],value[775]&amp;set=key[resolve.height],value[10000]&amp;set=key[resolve.imageFit],value[containerwidth]&amp;set=key[resolve.allowImageUpscaling],value[0]&amp;set=key[resolve.format],value[jpeg]&amp;set=key[resolve.quality],value[70]&amp;set=source[/5d/ac/5dac740a77b9291bdbed02fc6b701a3c1e18fb8f.jpg],origin[dam],type[LOOKBOOK],ImageVersion[1]&amp;call=url[file:/product/dynamic.chain]">
+                                            <source media="(min-width:1451px)"
+                                                    srcset="//lp.arket.com/app006prod?set=key[resolve.pixelRatio],value[2]&amp;set=key[resolve.width],value[725]&amp;set=key[resolve.height],value[10000]&amp;set=key[resolve.imageFit],value[containerwidth]&amp;set=key[resolve.allowImageUpscaling],value[0]&amp;set=key[resolve.format],value[jpeg]&amp;set=key[resolve.quality],value[70]&amp;set=source[/5d/ac/5dac740a77b9291bdbed02fc6b701a3c1e18fb8f.jpg],origin[dam],type[LOOKBOOK],ImageVersion[1]&amp;call=url[file:/product/dynamic.chain]">
+                                            <source media="(min-width:1351px)"
+                                                    srcset="//lp.arket.com/app006prod?set=key[resolve.pixelRatio],value[2]&amp;set=key[resolve.width],value[675]&amp;set=key[resolve.height],value[10000]&amp;set=key[resolve.imageFit],value[containerwidth]&amp;set=key[resolve.allowImageUpscaling],value[0]&amp;set=key[resolve.format],value[jpeg]&amp;set=key[resolve.quality],value[70]&amp;set=source[/5d/ac/5dac740a77b9291bdbed02fc6b701a3c1e18fb8f.jpg],origin[dam],type[LOOKBOOK],ImageVersion[1]&amp;call=url[file:/product/dynamic.chain]">
+                                            <source media="(min-width:1251px)"
+                                                    srcset="//lp.arket.com/app006prod?set=key[resolve.pixelRatio],value[2]&amp;set=key[resolve.width],value[625]&amp;set=key[resolve.height],value[10000]&amp;set=key[resolve.imageFit],value[containerwidth]&amp;set=key[resolve.allowImageUpscaling],value[0]&amp;set=key[resolve.format],value[jpeg]&amp;set=key[resolve.quality],value[70]&amp;set=source[/5d/ac/5dac740a77b9291bdbed02fc6b701a3c1e18fb8f.jpg],origin[dam],type[LOOKBOOK],ImageVersion[1]&amp;call=url[file:/product/dynamic.chain]">
+                                            <source media="(min-width:1151px)"
+                                                    srcset="//lp.arket.com/app006prod?set=key[resolve.pixelRatio],value[2]&amp;set=key[resolve.width],value[575]&amp;set=key[resolve.height],value[10000]&amp;set=key[resolve.imageFit],value[containerwidth]&amp;set=key[resolve.allowImageUpscaling],value[0]&amp;set=key[resolve.format],value[jpeg]&amp;set=key[resolve.quality],value[70]&amp;set=source[/5d/ac/5dac740a77b9291bdbed02fc6b701a3c1e18fb8f.jpg],origin[dam],type[LOOKBOOK],ImageVersion[1]&amp;call=url[file:/product/dynamic.chain]">
+                                            <source media="(min-width:1051px)"
+                                                    srcset="//lp.arket.com/app006prod?set=key[resolve.pixelRatio],value[2]&amp;set=key[resolve.width],value[525]&amp;set=key[resolve.height],value[10000]&amp;set=key[resolve.imageFit],value[containerwidth]&amp;set=key[resolve.allowImageUpscaling],value[0]&amp;set=key[resolve.format],value[jpeg]&amp;set=key[resolve.quality],value[70]&amp;set=source[/5d/ac/5dac740a77b9291bdbed02fc6b701a3c1e18fb8f.jpg],origin[dam],type[LOOKBOOK],ImageVersion[1]&amp;call=url[file:/product/dynamic.chain]">
+                                            <source media="(min-width:951px)"
+                                                    srcset="//lp.arket.com/app006prod?set=key[resolve.pixelRatio],value[]&amp;set=key[resolve.width],value[475]&amp;set=key[resolve.height],value[10000]&amp;set=key[resolve.imageFit],value[containerwidth]&amp;set=key[resolve.allowImageUpscaling],value[0]&amp;set=key[resolve.format],value[jpeg]&amp;set=key[resolve.quality],value[70]&amp;set=source[/5d/ac/5dac740a77b9291bdbed02fc6b701a3c1e18fb8f.jpg],origin[dam],type[LOOKBOOK],ImageVersion[1]&amp;call=url[file:/product/dynamic.chain]">
+                                            <source media="(min-width:851px)"
+                                                    srcset="//lp.arket.com/app006prod?set=key[resolve.pixelRatio],value[]&amp;set=key[resolve.width],value[425]&amp;set=key[resolve.height],value[10000]&amp;set=key[resolve.imageFit],value[containerwidth]&amp;set=key[resolve.allowImageUpscaling],value[0]&amp;set=key[resolve.format],value[jpeg]&amp;set=key[resolve.quality],value[70]&amp;set=source[/5d/ac/5dac740a77b9291bdbed02fc6b701a3c1e18fb8f.jpg],origin[dam],type[LOOKBOOK],ImageVersion[1]&amp;call=url[file:/product/dynamic.chain]">
+                                            <source media="(min-width:751px)"
+                                                    srcset="//lp.arket.com/app006prod?set=key[resolve.pixelRatio],value[2]&amp;set=key[resolve.width],value[1502]&amp;set=key[resolve.height],value[10000]&amp;set=key[resolve.imageFit],value[containerwidth]&amp;set=key[resolve.allowImageUpscaling],value[0]&amp;set=key[resolve.format],value[jpeg]&amp;set=key[resolve.quality],value[70]&amp;set=source[/5d/ac/5dac740a77b9291bdbed02fc6b701a3c1e18fb8f.jpg],origin[dam],type[LOOKBOOK],ImageVersion[1]&amp;call=url[file:/product/dynamic.chain]">
+                                            <source media="(min-width:651px)"
+                                                    srcset="//lp.arket.com/app006prod?set=key[resolve.pixelRatio],value[2]&amp;set=key[resolve.width],value[1302]&amp;set=key[resolve.height],value[10000]&amp;set=key[resolve.imageFit],value[containerwidth]&amp;set=key[resolve.allowImageUpscaling],value[0]&amp;set=key[resolve.format],value[jpeg]&amp;set=key[resolve.quality],value[70]&amp;set=source[/5d/ac/5dac740a77b9291bdbed02fc6b701a3c1e18fb8f.jpg],origin[dam],type[LOOKBOOK],ImageVersion[1]&amp;call=url[file:/product/dynamic.chain]">
+                                            <source media="(min-width:551px)"
+                                                    srcset="//lp.arket.com/app006prod?set=key[resolve.pixelRatio],value[2]&amp;set=key[resolve.width],value[1102]&amp;set=key[resolve.height],value[10000]&amp;set=key[resolve.imageFit],value[containerwidth]&amp;set=key[resolve.allowImageUpscaling],value[0]&amp;set=key[resolve.format],value[jpeg]&amp;set=key[resolve.quality],value[70]&amp;set=source[/5d/ac/5dac740a77b9291bdbed02fc6b701a3c1e18fb8f.jpg],origin[dam],type[LOOKBOOK],ImageVersion[1]&amp;call=url[file:/product/dynamic.chain]">
+                                            <source media="(min-width:451px)"
+                                                    srcset="//lp.arket.com/app006prod?set=key[resolve.pixelRatio],value[2]&amp;set=key[resolve.width],value[902]&amp;set=key[resolve.height],value[10000]&amp;set=key[resolve.imageFit],value[containerwidth]&amp;set=key[resolve.allowImageUpscaling],value[0]&amp;set=key[resolve.format],value[jpeg]&amp;set=key[resolve.quality],value[70]&amp;set=source[/5d/ac/5dac740a77b9291bdbed02fc6b701a3c1e18fb8f.jpg],origin[dam],type[LOOKBOOK],ImageVersion[1]&amp;call=url[file:/product/dynamic.chain]">
+                                            <source media="(min-width:351px)"
+                                                    srcset="//lp.arket.com/app006prod?set=key[resolve.pixelRatio],value[2]&amp;set=key[resolve.width],value[702]&amp;set=key[resolve.height],value[10000]&amp;set=key[resolve.imageFit],value[containerwidth]&amp;set=key[resolve.allowImageUpscaling],value[0]&amp;set=key[resolve.format],value[jpeg]&amp;set=key[resolve.quality],value[70]&amp;set=source[/5d/ac/5dac740a77b9291bdbed02fc6b701a3c1e18fb8f.jpg],origin[dam],type[LOOKBOOK],ImageVersion[1]&amp;call=url[file:/product/dynamic.chain]">
+                                            <source media="(min-width:251px)"
+                                                    srcset="//lp.arket.com/app006prod?set=key[resolve.pixelRatio],value[2]&amp;set=key[resolve.width],value[502]&amp;set=key[resolve.height],value[10000]&amp;set=key[resolve.imageFit],value[containerwidth]&amp;set=key[resolve.allowImageUpscaling],value[0]&amp;set=key[resolve.format],value[jpeg]&amp;set=key[resolve.quality],value[70]&amp;set=source[/5d/ac/5dac740a77b9291bdbed02fc6b701a3c1e18fb8f.jpg],origin[dam],type[LOOKBOOK],ImageVersion[1]&amp;call=url[file:/product/dynamic.chain]">
+                                            <img class="a-image default-image" data-resolvewidth="2"
+                                                 data-resolveheight="3"
+                                                 data-resolvechain="set=source[/5d/ac/5dac740a77b9291bdbed02fc6b701a3c1e18fb8f.jpg],origin[dam],type[LOOKBOOK],ImageVersion[1]&amp;call=url[file:/product/dynamic.chain]"
+                                                 data-large-src="set=source[/5d/ac/5dac740a77b9291bdbed02fc6b701a3c1e18fb8f.jpg],origin[dam],type[LOOKBOOK],ImageVersion[1]&amp;call=url[file:/product/dynamic.chain]"
+                                                 data-thumbnail-src="set=source[/5d/ac/5dac740a77b9291bdbed02fc6b701a3c1e18fb8f.jpg],origin[dam],type[LOOKBOOK],ImageVersion[1]&amp;call=url[file:/product/dynamic.chain]"
+                                                 data-zoom-src="set=source[/5d/ac/5dac740a77b9291bdbed02fc6b701a3c1e18fb8f.jpg],origin[dam],type[LOOKBOOK],ImageVersion[1]&amp;call=url[file:/product/dynamic.chain]"
+                                                 src="//" alt="">
+                                        </picture>
+                                        <div data-component="APicture" class="a-picture">
+                                            <img alt="" class="a-image ResolveComplete"
+                                                 src="https://lp.arket.com/app006prod?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&amp;set=key%5Bresolve.width%5D,value%5B600%5D&amp;set=key%5Bresolve.height%5D,value%5B10000%5D&amp;set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&amp;set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&amp;set=key%5Bresolve.format%5D,value%5Bwebp%5D&amp;set=key%5Bresolve.quality%5D,value%5B70%5D&amp;set=ImageVersion%5B1%5D,origin%5Bdam%5D,source%5B/8f/6f/8f6fb81f4dfcd78297b3773bda8434cb8745f2f6.jpg%5D,type%5BLOOKBOOK%5D&amp;call=url%5Bfile:/product/dynamic.chain%5D"
+                                                 data-resolvewidth="2" data-resolveheight="3"
+                                                 data-resolvechain="set=source[/8f/6f/8f6fb81f4dfcd78297b3773bda8434cb8745f2f6.jpg],origin[dam],type[LOOKBOOK],ImageVersion[1]&amp;call=url[file:/product/dynamic.chain]"
+                                                 data-large-src="set=source[/8f/6f/8f6fb81f4dfcd78297b3773bda8434cb8745f2f6.jpg],origin[dam],type[LOOKBOOK],ImageVersion[1]&amp;call=url[file:/product/dynamic.chain]"
+                                                 data-thumbnail-src="set=source[/8f/6f/8f6fb81f4dfcd78297b3773bda8434cb8745f2f6.jpg],origin[dam],type[LOOKBOOK],ImageVersion[1]&amp;call=url[file:/product/dynamic.chain]"
+                                                 data-zoom-src="set=source[/8f/6f/8f6fb81f4dfcd78297b3773bda8434cb8745f2f6.jpg],origin[dam],type[LOOKBOOK],ImageVersion[1]&amp;call=url[file:/product/dynamic.chain]"
+                                                 id="resolve_6">
+                                        </div>
+                                        <div data-component="APicture"
+                                             class="a-picture placeholder-wrapper slick-slide"
+                                             data-component-id="edce2cea-cd5e-43cf-b8ee-86d865b4dde3"
+                                             data-slick-index="2" aria-hidden="true" style="width: 734px;"
+                                             tabindex="-1">
+                                            <img alt="" class="a-image is-hidden Resolve"
+                                                 src="//lp.arket.com/app006prod?blank=width[2],height[3],color[none]&amp;sink=format[gif]"
+                                                 data-resolvewidth="2" data-resolveheight="3"
+                                                 data-resolvechain="set=source[/ec/b0/ecb0c0b5b0e4af788ee42a56ae1d1c1149a514a4.jpg],origin[dam],type[LOOKBOOK],ImageVersion[1]&amp;call=url[file:/product/dynamic.chain]"
+                                                 data-large-src="set=source[/ec/b0/ecb0c0b5b0e4af788ee42a56ae1d1c1149a514a4.jpg],origin[dam],type[LOOKBOOK],ImageVersion[1]&amp;call=url[file:/product/dynamic.chain]"
+                                                 data-thumbnail-src="set=source[/ec/b0/ecb0c0b5b0e4af788ee42a56ae1d1c1149a514a4.jpg],origin[dam],type[LOOKBOOK],ImageVersion[1]&amp;call=url[file:/product/dynamic.chain]"
+                                                 data-zoom-src="set=source[/ec/b0/ecb0c0b5b0e4af788ee42a56ae1d1c1149a514a4.jpg],origin[dam],type[LOOKBOOK],ImageVersion[1]&amp;call=url[file:/product/dynamic.chain]">
+                                        </div>
+                                        <div data-component="APicture"class="a-picture placeholder-wrapper">
+                                            <img alt="" class="a-image is-hidden Resolve"
+                                                 src="//lp.arket.com/app006prod?blank=width[2],height[3],color[none]&amp;sink=format[gif]"
+                                                 data-resolvewidth="2" data-resolveheight="3"
+                                                 data-resolvechain="set=source[/f1/8b/f18bb38e0e77b081a6a0e694bda12595c62b1997.jpg],origin[dam],type[LOOKBOOK],ImageVersion[1]&amp;call=url[file:/product/dynamic.chain]"
+                                                 data-large-src="set=source[/f1/8b/f18bb38e0e77b081a6a0e694bda12595c62b1997.jpg],origin[dam],type[LOOKBOOK],ImageVersion[1]&amp;call=url[file:/product/dynamic.chain]"
+                                                 data-thumbnail-src="set=source[/f1/8b/f18bb38e0e77b081a6a0e694bda12595c62b1997.jpg],origin[dam],type[LOOKBOOK],ImageVersion[1]&amp;call=url[file:/product/dynamic.chain]"
+                                                 data-zoom-src="set=source[/f1/8b/f18bb38e0e77b081a6a0e694bda12595c62b1997.jpg],origin[dam],type[LOOKBOOK],ImageVersion[1]&amp;call=url[file:/product/dynamic.chain]">
+                                        </div>
+                                        <div data-component="APicture" class="a-picture placeholder-wrapper">
+                                            <img alt="" class="a-image is-hidden Resolve"
+                                                 src="//lp.arket.com/app006prod?blank=width[2],height[3],color[none]&amp;sink=format[gif]"
+                                                 data-resolvewidth="2" data-resolveheight="3"
+                                                 data-resolvechain="set=source[/fc/68/fc681864213ded7129b4b50ce4035e0f0a507d1f.jpg],origin[dam],type[DESCRIPTIVESTILLLIFE],ImageVersion[1]&amp;call=url[file:/product/dynamic.chain]"
+                                                 data-large-src="set=source[/fc/68/fc681864213ded7129b4b50ce4035e0f0a507d1f.jpg],origin[dam],type[DESCRIPTIVESTILLLIFE],ImageVersion[1]&amp;call=url[file:/product/dynamic.chain]"
+                                                 data-thumbnail-src="set=source[/fc/68/fc681864213ded7129b4b50ce4035e0f0a507d1f.jpg],origin[dam],type[DESCRIPTIVESTILLLIFE],ImageVersion[1]&amp;call=url[file:/product/dynamic.chain]"
+                                                 data-zoom-src="set=source[/fc/68/fc681864213ded7129b4b50ce4035e0f0a507d1f.jpg],origin[dam],type[DESCRIPTIVESTILLLIFE],ImageVersion[1]&amp;call=url[file:/product/dynamic.chain]">
+                                        </div>
+                                    </div>
+                                    <span class="image-counter"></span>
+                                </div>
+                                <!-- //o-zoom-slider -->
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //main-image-wrapper -->
+
+                </div>
+            </div>
+            <!-- //center-panel -->
+
+            <!-- left-panel -->
+            <div class="left-panel">
+
+                <%# md-o-product-details-selection %>
+                <%- include ("../../common/md-o-product-details-selection.ejs") %>
+
+                <div class="trail instore parbase">
+                    <!-- o-availability -->
+                    <div data-component="OAvailability" class="o-availability is-visible">
+                        <h6 class="a-heading-6 i18n">Availability</h6>
+                        <div class="o-availability-content">
+                            <button type="button" class="a-button-nostyle online-label availability-label in-stock">
+                                <span class="a-svg-package">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="35" viewBox="0 0 30 35" id="package" y="103">
+                                        <path d="M15 1L1 9.113V25.33l14 8.112 14-8.11V9.11L15 1zm.037 15.07l-4.516-2.623L21.487 7.07l4.528 2.625-10.977 6.375zm4.457-10.154L8.53 12.292l-4.508-2.62L15 3.313l4.494 2.604zM3 11.393l11 6.388v12.772L3 24.178V11.393zM16 30.55V17.824l11-6.388v12.743L16 30.55z"
+                                              fill="#231f20"></path>
+                                    </svg>
+                                </span>
+                                <span class="i18n">Online</span>
+                            </button>
+                            <div class="a-tooltip has-animation">
+                                <h6 class="a-heading-6 i18n">Online availability</h6>
+                                <p class="a-paragraph" id="online-stock-par"></p>
+                            </div>
+                        </div>
+                        <div class="o-availability-content">
+                            <button type="button" class="a-button-nostyle instore-label availability-label" onclick="stockStatus()">
+                                <span class="a-bag-icon js-a-bag-icon sm-scale">
+                                    <span class="wrapper">
+                                        <span class="handle"></span>
+                                        <span class="quantity"></span>
+                                    </span>
+                                </span>
+                                <span class="i18n">In Store</span>
+                            </button>
+                            <div id="dataStoreCountry" class="a-tooltip has-animation">
+                                <a href="#" target="_self" class="a-link open-lightbox other-countries i18n"
+                                   data-template="other-countries" data-classes="is-large">Other market</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //o-availability -->
+                </div>
+
+                <!-- o-product-attributes -->
+                <div data-component="OProductAttributes" class="o-product-attributes">
+
+                    <div class="attributes-top">
+                        <div class="id-el">
+                            <span class="pdp-label i18n">ID </span>
+                            <span class="pdp-value for-highlight"><span class="dep">0905140<span class="spacer">-</span>001</span></span>
+                        </div>
+                        <div class="made-in-el" id="made-in">
+                            <div data-component="OAccordion" class="o-accordion pdp align-left full-width" data-exclusive="true" data-exclusive-group="pdpPage" data-component-id="1b7c8531-4de9-4c30-bfa5-de1253ee894a">
+                                <div class="accordion-header">
+                                    <a href="#" target="_self" class="a-link accordion-title js-accordion-toggle">
+                                        <span class="pdp-value" id="made-in-title i18n">Made in&nbsp;Bangladesh</span>
+                                    </a>
+                                </div>
+                                <div class="accordion-content">
+                                    <div class="accordion-inner-content">
+                                        <div class="m-made-in">
+                                            <div class="made-in-content made-in" id="made-in-content">
+                                                <span class="pdp-label i18n">Made in</span>
+                                                <div class="made-in-value">
+                                                    <span id="made-in-region-name">Bangladesh</span>
+                                                </div>
+                                            </div><div class="made-in-content supplier" id="made-in-supplier"><span class="pdp-label">Supplier</span><div class="made-in-value"><span>Flamingo Fashions</span></div></div><div class="made-in-content factory" id="made-in-factory"><span class="pdp-label">Factory</span><div class="made-in-value"><span>Flamingo Fashions Unit 2</span><div class="address"><p class="a-paragraph"> Bangladesh</p></div></div></div>
+
+
+                                            <p class="is-richtext a-paragraph made-in-information"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="care-el">
+                            <div data-component="OAccordion" class="o-accordion pdp align-left full-width" data-exclusive="true" data-exclusive-group="pdpPage" data-component-id="9db61ca8-32d8-47af-96a2-1b4a80450d95">
+                                <div class="accordion-header">
+                                    <a href="#" target="_self" class="a-link accordion-title js-accordion-toggle">
+                                        <span class="pdp-value i18n">Care Instructions</span>
+                                    </a>
+                                </div>
+                                <div class="accordion-content">
+                                    <div class="m-care-instructions">
+                                        <p class="a-paragraph" id="careDetail">
+                                            중간 온도에서 철분, 무 염소 표백제 만 드라이 클리닝, 40 ° C 이하에서 세척, 라인 건조.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="attributes-bottom">
+                        <div class="description-container">
+                            <p class="a-paragraph">Lorem Ipsum은 인쇄 및 조판 업계의 더미 텍스트입니다. Lorem Ipsum은 알려지지 않은 프린터가 유형의 갤리를 가져 와서 유형 표본 책을 만들기 위해 스크램블 한 1500 년대 이후로 업계의 표준 더미 텍스트였습니다.</p>
+                            <ul class="list-elements">
+                                <li>일정하고 균일 한 열에 최적화</li>
+                                <li>에나멜 인테리어는 밝은 모래 ㅂ색상으로 요리하는 동안 음식을 쉽게 모니터링 할 수있어 끈적임과 타는 현상이 줄어 듭니다.</li>
+                                <li>합성 손잡이는 최대 260 ° C의 온도를 견디며 확실한 그립을 제공합니다.</li>
+                                <li>빠르고 편리한 청소를위한 식기 세척기 사용 가능</li>
+                                <li>Made in France123123</li>
+                                <li><a class="a-link essential-info-link open-lightbox" href="#" target="_self" data-template="essential-info-template" data-classes="is-large">상품 필수 표시 정보</a></li>
+                            </ul>
+                        </div>
+                        <div class="list-container">
+                            <span class="add-comp">Composition</span>
+                            <ul id="details-list" class="list-elements">
+                                <li class="list-desc">
+                                    <span class="text"> : Linen 100%</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--
+                        <span class="m-hazmat bg-transparent">
+                            <img class="a-image hazmat-image" alt="flamable warning icon" src="<%= pageInfo.root %>/org/etc/designs/appeaser/p11/clientlibs/pattern-lib/images/icon-hazmat.png" aria-label="hazardous materials">
+                            <span class="hazmat-label">이 제품에는 가연성 물질이 포함되어 있으므로 제공되는 서비스에 대한 특별 규정이 적용됩니다.</span>
+                        </span>
+                        <div class="ingredients-container">
+                            <p class="a-paragraph is-ingredients">성분: 이 제품에는 가연성 물질이 포함되어 있으므로 제공되는 서비스에 대한 특별 규정이 적용됩니다.</p>
+                        </div>
+                        -->
+                    </div>
+                    
+                </div>
+                <!-- //o-product-attributes -->
+
+                <!-- m-product-shipping-info -->
+                <div data-component="MShippingInfo" class="m-product-shipping-info absolute-position">
+                    <div class="info-short is-richtext" data-content="localizedTTT">무료배송</div>
+                    <div class="a-tooltip">
+                        <div class="is-richtext" data-content="localized"><h3>택배</h3>
+                            <p>영업일 기준 3-5 일, 20 USD / 200 USD 이상 무료</p>
+                            <p>총 주문 금액에는 현지 판매 세 (VAT)가 포함되어 있지 않습니다. 추가 요금이 적용될 수 있습니다. <a href="https://www.arket.com/language-masters/en/customer-service/delivery-methods.html">여기</a>에 서배송비에 대해 자세히 알아보십시오.</p>
+                            <p>우리는 공휴일을 제외하고 월요일-토요일을 배달합니다. 성수기 및 세일 기간에는 배송이 조금 더 오래 걸릴 수 있습니다. <a href="/content/p11/en/customer-service/delivery-methods.html">배송</a>에 대해 자세히 알아보십시오.</p>
+                            <h3>안전한 결제</h3>
+                            <p>카드, Klarna 및 PayPal.</p>
+                        </div>
+                        <p><a href="#" target="_self"></a></p>
+                    </div>
+                </div>
+                <!-- //m-product-shipping-info -->
+
+            </div>
+            <!-- //left-panel -->
+
+            <!-- right-panel -->
+            <div class="right-panel breadcrumb-enabled">
+
+                <div class="swatch-container color-swatch-container">
+                    <div data-component="MSwatches" class="m-swatches swatch-panel-container colors">
+                        <h4 class="a-heading-4 i18n">컬러</h4>
+
+                        <div data-id="swatch_0739734003" id="swatch_0739734003" class="a-swatch js-swatch ">
+                            <label id="swatchLabel" class="a-label swatch-label js-a-label">
+                                <input type="radio">
+                                <a class="a-button-nostyle a-link">
+                                    <div class="a-swatch-foreground"></div>
+                                    <div class="" style="">
+                                        <img class="a-image ResolveComplete"
+                                            data-articlecode="0739734003"
+                                            src="https://lp.arket.com/app006prod?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&amp;set=key%5Bresolve.width%5D,value%5B50%5D&amp;set=key%5Bresolve.height%5D,value%5B10000%5D&amp;set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&amp;set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&amp;set=key%5Bresolve.format%5D,value%5Bwebp%5D&amp;set=key%5Bresolve.quality%5D,value%5B70%5D&amp;set=ImageVersion%5B1%5D,device%5Bhdpi%5D,origin%5Bdam%5D,quality%5B80%5D,source%5B/4f/c8/4fc8ec68d7efe8b107e20426d2707abd0e5969ff.jpg%5D,type%5BDESCRIPTIVESTILLLIFE%5D&amp;call=url%5Bfile:/product/miniature.chain%5D"
+                                            data-resolvechain="set=source[/4f/c8/4fc8ec68d7efe8b107e20426d2707abd0e5969ff.jpg],origin[dam],type[DESCRIPTIVESTILLLIFE],device[hdpi],quality[80],ImageVersion[1]&amp;call=url[file:/product/miniature.chain]"
+                                            alt="" onclick="trackProductVariant(this);"
+                                            id="resolve_1">
+                                    </div>
+                                    <p class="sold-out i18n">Sold out</p>
+                                    <p class="a-paragraph swatch-title" data-articlecode="0739734003">블랙</p>
+                                </a>
+                            </label>
+                            <p class="a-paragraph sold-out-swatch">SOLD OUT</p>
+                        </div>
+                        <div data-id="swatch_0739734004" id="swatch_0739734004" class="a-swatch js-swatch">
+                            <label id="swatchLabel" class="a-label swatch-label js-a-label">
+                                <input type="radio">
+                                <a class="a-button-nostyle a-link">
+                                    <div class="a-swatch-foreground"></div>
+                                    <div class="" style="">
+                                        <img class="a-image ResolveComplete"
+                                            data-articlecode="0739734004"
+                                            src="https://lp.arket.com/app006prod?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&amp;set=key%5Bresolve.width%5D,value%5B50%5D&amp;set=key%5Bresolve.height%5D,value%5B10000%5D&amp;set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&amp;set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&amp;set=key%5Bresolve.format%5D,value%5Bwebp%5D&amp;set=key%5Bresolve.quality%5D,value%5B70%5D&amp;set=ImageVersion%5B1%5D,device%5Bhdpi%5D,origin%5Bdam%5D,quality%5B80%5D,source%5B/ae/fa/aefa9abaf2b4f3b4114c2a6508a96095849bdb1f.jpg%5D,type%5BDESCRIPTIVESTILLLIFE%5D&amp;call=url%5Bfile:/product/miniature.chain%5D"
+                                            data-resolvechain="set=source[/ae/fa/aefa9abaf2b4f3b4114c2a6508a96095849bdb1f.jpg],origin[dam],type[DESCRIPTIVESTILLLIFE],device[hdpi],quality[80],ImageVersion[1]&amp;call=url[file:/product/miniature.chain]"
+                                            alt="" onclick="trackProductVariant(this);"
+                                            id="resolve_2">
+                                    </div>
+                                    <p class="sold-out i18n">Sold out</p>
+                                    <p class="a-paragraph swatch-title" data-articlecode="0739734004">밝은 베이지</p>
+                                </a>
+                            </label>
+                            <p class="a-paragraph sold-out-swatch">SOLD OUT</p>
+                        </div>
+                        <div data-id="swatch_0739734008" id="swatch_0739734008" class="a-swatch js-swatch ">
+                            <label id="swatchLabel" class="a-label swatch-label js-a-label">
+                                <input type="radio">
+                                <a  class="a-button-nostyle a-link">
+                                    <div class="a-swatch-foreground"></div>
+                                    <div class="" style="">
+                                        <img class="a-image ResolveComplete"
+                                            data-articlecode="0739734008"
+                                            src="https://lp.arket.com/app006prod?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&amp;set=key%5Bresolve.width%5D,value%5B50%5D&amp;set=key%5Bresolve.height%5D,value%5B10000%5D&amp;set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&amp;set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&amp;set=key%5Bresolve.format%5D,value%5Bwebp%5D&amp;set=key%5Bresolve.quality%5D,value%5B70%5D&amp;set=ImageVersion%5B1%5D,device%5Bhdpi%5D,origin%5Bdam%5D,quality%5B80%5D,source%5B/36/db/36db98375929328ed27a765daa2f50822c08084c.jpg%5D,type%5BDESCRIPTIVESTILLLIFE%5D&amp;call=url%5Bfile:/product/miniature.chain%5D"
+                                            data-resolvechain="set=source[/36/db/36db98375929328ed27a765daa2f50822c08084c.jpg],origin[dam],type[DESCRIPTIVESTILLLIFE],device[hdpi],quality[80],ImageVersion[1]&amp;call=url[file:/product/miniature.chain]"
+                                            alt="" onclick="trackProductVariant(this);"
+                                            id="resolve_3">
+                                    </div>
+                                    <p class="sold-out i18n">Sold out</p>
+                                    <p class="a-paragraph swatch-title" data-articlecode="0739734008">화이트/파랑</p>
+                                </a>
+                            </label>
+                            <p class="a-paragraph sold-out-swatch">SOLD OUT</p>
+                        </div>
+                        <div data-id="swatch_0739734009" id="swatch_0739734009" class="a-swatch js-swatch is-selected">
+                            <label id="swatchLabel" class="a-label swatch-label js-a-label">
+                                <input type="radio">
+                                <a class="a-button-nostyle a-link">
+                                    <div class="a-swatch-foreground"></div>
+                                    <div class="" style="">
+                                        <img class="a-image ResolveComplete"
+                                            data-articlecode="0739734009"
+                                            src="https://lp.arket.com/app006prod?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&amp;set=key%5Bresolve.width%5D,value%5B50%5D&amp;set=key%5Bresolve.height%5D,value%5B10000%5D&amp;set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&amp;set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&amp;set=key%5Bresolve.format%5D,value%5Bwebp%5D&amp;set=key%5Bresolve.quality%5D,value%5B70%5D&amp;set=ImageVersion%5B1%5D,device%5Bhdpi%5D,origin%5Bdam%5D,quality%5B80%5D,source%5B/fc/68/fc681864213ded7129b4b50ce4035e0f0a507d1f.jpg%5D,type%5BDESCRIPTIVESTILLLIFE%5D&amp;call=url%5Bfile:/product/miniature.chain%5D"
+                                            data-resolvechain="set=source[/fc/68/fc681864213ded7129b4b50ce4035e0f0a507d1f.jpg],origin[dam],type[DESCRIPTIVESTILLLIFE],device[hdpi],quality[80],ImageVersion[1]&amp;call=url[file:/product/miniature.chain]"
+                                            alt="" onclick="trackProductVariant(this);"
+                                            id="resolve_4">
+                                    </div>
+                                    <p class="sold-out i18n">Sold out</p>
+                                    <p class="a-paragraph swatch-title" data-articlecode="0739734009">피치</p>
+                                </a>
+                            </label>
+                            <p class="a-paragraph sold-out-swatch">SOLD OUT</p>
+                        </div>
+                        <div data-id="swatch_0739734010" id="swatch_0739734010" class="a-swatch js-swatch ">
+                            <label id="swatchLabel" class="a-label swatch-label js-a-label">
+                                <input type="radio">
+                                <a  class="a-button-nostyle a-link">
+                                    <div class="a-swatch-foreground"></div>
+                                    <div class="" style="">
+                                        <img class="a-image ResolveComplete"
+                                            data-articlecode="0739734010"
+                                            src="https://lp.arket.com/app006prod?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&amp;set=key%5Bresolve.width%5D,value%5B50%5D&amp;set=key%5Bresolve.height%5D,value%5B10000%5D&amp;set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&amp;set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&amp;set=key%5Bresolve.format%5D,value%5Bwebp%5D&amp;set=key%5Bresolve.quality%5D,value%5B70%5D&amp;set=ImageVersion%5B1%5D,device%5Bhdpi%5D,origin%5Bdam%5D,quality%5B80%5D,source%5B/99/c2/99c2cdb1b4674754a1de37a4f4d29bf0a68c1246.jpg%5D,type%5BDESCRIPTIVESTILLLIFE%5D&amp;call=url%5Bfile:/product/miniature.chain%5D"
+                                            data-resolvechain="set=source[/99/c2/99c2cdb1b4674754a1de37a4f4d29bf0a68c1246.jpg],origin[dam],type[DESCRIPTIVESTILLLIFE],device[hdpi],quality[80],ImageVersion[1]&amp;call=url[file:/product/miniature.chain]"
+                                            alt="" onclick="trackProductVariant(this);"
+                                            id="resolve_5">
+                                    </div>
+                                    <p class="sold-out i18n">Sold out</p>
+                                    <p class="a-paragraph swatch-title" data-articlecode="0739734010">화이트</p>
+                                </a>
+                            </label>
+                            <p class="a-paragraph sold-out-swatch">SOLD OUT</p>
+                        </div>
+                        <div data-id="swatch_0739734001" id="swatch_0739734001" class="a-swatch js-swatch is-discontinued is-disabled">
+                            <label id="swatchLabel" class="a-label swatch-label js-a-label">
+                                <input type="radio">
+                                <a class="a-button-nostyle a-link">
+                                    <div class="a-swatch-foreground"></div>
+                                    <div class="placeholder-wrapper">
+                                        <img class="a-image is-hidden Resolve"
+                                              data-articlecode="0739734001"
+                                              src="//lp.arket.com/app006prod?blank=width[2],height[3],color[none]&amp;sink=format[gif]"
+                                              data-resolvechain="set=source[02_0739734_001_001],type[PRODUCT],device[hdpi],quality[80],ImageVersion[2019092]&amp;call=url[file:/product/miniature.chain]"
+                                              alt="" onclick="trackProductVariant(this);">
+                                    </div>
+                                    <p class="sold-out i18n">Sold out</p>
+                                    <p class="a-paragraph swatch-title" data-articlecode="0739734001">Light Beige</p>
+                                </a>
+                            </label>
+                            <p class="a-paragraph dis-continued-swatch">ARCHIVED ITEM</p>
+                        </div>
+                        <div data-id="swatch_0739734002" id="swatch_0739734002" class="a-swatch js-swatch is-discontinued is-disabled">
+                            <label id="swatchLabel" class="a-label swatch-label js-a-label">
+                                <input type="radio">
+                                <a class="a-button-nostyle a-link">
+                                    <div class="a-swatch-foreground"></div>
+                                    <div class="placeholder-wrapper">
+                                        <img class="a-image is-hidden Resolve"
+                                              data-articlecode="0739734002"
+                                              src="//lp.arket.com/app006prod?blank=width[2],height[3],color[none]&amp;sink=format[gif]"
+                                              data-resolvechain="set=source[02_0739734_002_1],type[PRODUCT],device[hdpi],quality[80],ImageVersion[201908202327]&amp;call=url[file:/product/miniature.chain]"
+                                              alt="" onclick="trackProductVariant(this);">
+                                    </div>
+                                    <p class="sold-out i18n">Sold out</p>
+                                    <p class="a-paragraph swatch-title" data-articlecode="0739734002">Beige</p>
+                                </a>
+                            </label>
+                            <p class="a-paragraph dis-continued-swatch">ARCHIVED ITEM</p>
+                        </div>
+
+                    </div>
+                </div>
+                
+                <div class="swatch-container material-swatch-container">
+                    <div data-component="MSwatches" class="m-swatches swatch-panel-container" data-component-id="213cf414-54fe-41b5-b12c-c9e248203c50">
+                        <h4 class="a-heading-4 i18n">Materials</h4>
+                        <div class="a-link-swatch selected">
+                            <a target="_self" class="a-link">
+                                <img class="a-image" src="<%= pageInfo.root %>/org/temp/medias/380-LINEN.png?context=cDExfHJvb3R8NjE1MTB8aW1hZ2UvcG5nfGg0Yi9oNjQvODgwNzg3MTU0NTM3NC5wbmd8NWM2ZWNhNDA1NmUxOGE4YjlmMTlhZDkzY2ZmNGRkM2NiNzNkZDk0OTA5ZGFkNDFhNzIwMDk1ODg2NDIwMGNlZA&amp;storeId=p11-global">
+                                <span class="a-swatch-title">Linen</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- //right-panel -->
+
+            <div class="data-container">
+                <div data-apptusvalue="women_campaigns_2020_linen_collection"></div>
+                <div data-apptusvalue="women_underwearloungewear_all"></div>
+                <div data-type="product" data-code="212087-380"
+                     data-icon="//lp.arket.com/app006prod?set=source[/fc/68/fc681864213ded7129b4b50ce4035e0f0a507d1f.jpg],origin[dam],type[DESCRIPTIVESTILLLIFE],device[hdpi],quality[80],ImageVersion[1]&amp;call=url[file:/product/main]"
+                     data-title="Linen Shorts">
+                </div>
+            </div>
+
+            <!-- lightbox-con : size-guide-template -->
+            <script type="text/x-handlebars-template" id="size-guide-template">
+                <div class="o-sizeguide">
+                    <div class="intro parbase">
+                        <div class="o-sizeguide">
+                            <div>
+                                <div id="sizeguideIntroID" class="is-richtext">
+                                    <div class="freeHTML-sizeguide"><h1 class="freeHTML-sizeguide-title">Clothing</h1>
+                                        <div class="freeHTML-sizeguide-information"><p>Measure yourself</p>
+                                            <table class="freeHTML-sizeguide-information-text">
+                                                <tbody>
+                                                <tr>
+                                                    <th>Chest</th>
+                                                    <td>Measure around the fullest part of the bust, while wearing a bra
+                                                        that fits.
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Waist</th>
+                                                    <td>Measure around the narrowest part of the waist.</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Hips</th>
+                                                    <td>Measure around the fullest part of the hips.</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Inside leg</th>
+                                                    <td>Measure from the top of the inside leg down to the floor.</td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="freeHTML-sizeguide-chart"><p class="freeHTML-sizeguide-chartTitle">
+                                            Size Chart</p>
+                                            <input class="freeHTML-sizeguide-inputInch" type="radio"
+                                                   name="women_full_body_free_html_sizeguide"> <span
+                                                    class="freeHTML-sizeguide-titleInch">inch</span> <input
+                                                    class="freeHTML-sizeguide-inputCm" type="radio"
+                                                    name="women_full_body_free_html_sizeguide" checked="checked"> <span
+                                                    class="freeHTML-sizeguide-titleCm">cm</span>
+                                            <table class="freeHTML-sizeguide-chart-titles">
+                                                <thead>
+                                                <tr>
+                                                    <th><span>SIZE</span></th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr>
+                                                    <td>eur</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>uk</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>chest</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>waist</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>hip</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>inside leg</td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                            <div class="freeHTML-sizeguide-overflow freeHTML-is-cm">
+                                                <table class="freeHTML-sizeguide-chart-sizes">
+                                                    <thead>
+                                                    <tr>
+                                                        <th><span>XS</span></th>
+                                                        <th><span>S</span></th>
+                                                        <th><span>M</span></th>
+                                                        <th><span>L</span></th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td>32-34</td>
+                                                        <td>36-38</td>
+                                                        <td>40-42</td>
+                                                        <td>44-46</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>6-8</td>
+                                                        <td>10-12</td>
+                                                        <td>14-16</td>
+                                                        <td>18-20</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>76-80</td>
+                                                        <td>84-88</td>
+                                                        <td>92-96</td>
+                                                        <td>100-104</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>60-64</td>
+                                                        <td>68-72</td>
+                                                        <td>76-80</td>
+                                                        <td>84-88</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>84-88</td>
+                                                        <td>92-96</td>
+                                                        <td>100-104</td>
+                                                        <td>108-112</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>76-77</td>
+                                                        <td>78-79</td>
+                                                        <td>80-81</td>
+                                                        <td>82-83</td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div class="freeHTML-sizeguide-overflow freeHTML-is-inch">
+                                                <table class="freeHTML-sizeguide-chart-sizes">
+                                                    <thead>
+                                                    <tr>
+                                                        <th><span>XS</span></th>
+                                                        <th><span>S</span></th>
+                                                        <th><span>M</span></th>
+                                                        <th><span>L</span></th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td>32-34</td>
+                                                        <td>36-38</td>
+                                                        <td>40-42</td>
+                                                        <td>44-46</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>6-8</td>
+                                                        <td>10-12</td>
+                                                        <td>14-16</td>
+                                                        <td>18-20</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>30-31½</td>
+                                                        <td>33-34½</td>
+                                                        <td>36¼-37¾</td>
+                                                        <td>39½-41</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>23½-25¼</td>
+                                                        <td>26¾-28½</td>
+                                                        <td>30-31½</td>
+                                                        <td>33-34½</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>33-34½</td>
+                                                        <td>36¼-37¾</td>
+                                                        <td>39½-41</td>
+                                                        <td>42½-44</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>30-30½</td>
+                                                        <td>30¾-31¼</td>
+                                                        <td>31½-32</td>
+                                                        <td>32½-32¾</td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="toggle-list size-guides">
+                        <div class="listing parsys"></div>
+                    </div>
+
+                    <style>
+                        #sizePlaceholder {
+                            border-color: rgba(0, 0, 0, 0.3);
+                            background-color: rgba(255, 255, 255, 0.25);
+                            border-style: solid;
+                            border-width: 0.125rem;
+                            margin: -0.125rem;
+                            line-height: 2.875rem;
+                            color: #DDDDDD;
+                            font-size: 0.875rem;
+                            text-align: center;
+                        }
+                    </style>
+                </div>
+            </script>
+            <!-- //lightbox-con : size-guide-template -->
+
+            <!-- lightbox-con : essential-info-template -->
+            <script type="text/x-handlebars-template" id="essential-info-template">
+                <div class="scrollbar-inner scroll-content">
+                    <div class="m-change-country-lightbox false">
+
+                        <div class="information-product">
+                            <h2 class="popup_title"><b>상품 필수 표시 정보</b></h2>
+                            <table class="table-wrap border-type left">
+                                <tbody>
+                                </tbody><colgroup>
+                                <col style="width: 25%">
+                                <col>
+                            </colgroup>
+
+
+
+                                <tbody><tr>
+                                    <th scope="row">제품소재</th>
+                                    <td>100% 면</td>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row">색상</th>
+                                    <td>화이트</td>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row">치수</th>
+                                    <td>32, 34, 36, 38, 40, 42</td>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row">제조자(수입자명)</th>
+                                    <td>COS</td>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row">제조국</th>
+                                    <td>중국</td>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row">세탁방법 및 취급 시 주의사항</th>
+                                    <td>기계 세탁 가능</td>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row">제조연월</th>
+                                    <td>2020-07-28, 2021-01-11</td>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row">품질보증기준</th>
+                                    <td>상품에 동봉되는 품질보증서 또는 공정거래위원회 고시 소비자 분쟁해결 기준에 따릅니다. 공정거래위원회 고시 소비자 분쟁 해결 기본은 품질보증서에 우선하여 진행됩니다.</td>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row">A/S책임자와 전화번호</th>
+                                    <td>COS고객센터: 1800-2765</td>
+                                </tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                <tr>
+
+
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </script>
+            <!-- //lightbox-con : essential-info-template -->
+
+
+        </form>
+    </div>
+    <!-- //o-product-details -->
+
+    <!-- stylewith -->
+    <div class="stylewith parbase">
+        <div id="osliderStyleWith" class="o-width wc-75 carousel">
+            <span class="nodeName" hidden=""></span>
+            <span class="propTitle" hidden="">Style with</span>
+            <div class="o-pra-component is-combine-with" style="display: block;">
+                <h2 class="a-heading-2 u-align-center is-main-heading">Style with</h2>
+                <div data-component="OSlider" class="o-slider single-multislide-disable" data-pagination="false"
+                     data-multislide="true" data-num-slides="adaptive" data-slide-width="200"
+                     data-component-id="a71cfc1a-c01d-47db-a0d4-ae8d0b959a63">
+                    <div class="redils redils--imagesLoaded redils-activated">
+                        <div class="slide-cont" id="sliderStyleWith" style="width: 2998.5px;">
+                            <div class="super-slide redils-duplicated" style="width: 999.5px;">
+                                <div class="slides" aria-hidden="true">
+                                    <div class="o-product" onclick="trackProductClick(this,'.o-product')">
+                                        <a href="https://www.arket.com/en/women/shoes/product.birkenstock-madrid-eva-slide-sandals-black.0985624001.html"
+                                           target="_self" class="a-link"
+                                           onclick="setVCParameter('STYLE_WITH','0985624001');">
+                                            <div class="image">
+                                                <div class="m-product-image">
+                                                    <div class="cross"></div>
+
+                                                    <div class="placeholder-wrapper">
+                                                        <img src="//lp.arket.com/app006prod?blank=width[2],height[3],color[none]&amp;sink=format[gif]"
+                                                             data-resolvewidth="2" data-resolveheight="3"
+                                                             data-resolvechain="set=source[/85/34/853401a2da485f69f6815ab72f9a288582fe51ef.jpg],origin[dam],type[DESCRIPTIVESTILLLIFE],ImageVersion[1]&amp;call=url[file:/product/dynamic.chain]"
+                                                             alt="" class="product-image a-image is-hidden Resolve">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="description">
+                                                <div class="id">
+                                                    <span></span>
+                                                    <span></span>
+                                                </div>
+                                                <div class="product">
+                                                    <span class="i18n">Product</span>
+                                                    <span>Birkenstock Madrid 슬라이드 샌들</span>
+                                                </div>
+                                                <div class="price">
+                                                    <span class="i18n">Price</span>
+                                                    <div class="m-product-price">
+                                                        <span class="is-regular price-value">42,000</span>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- product styleWith details -->
+                                            <div class="producttile-details" hidden="">
+                                                <span class="articleCode">0985624001</span>
+                                                <span class="baseProductCode"></span>
+                                                <span class="productName">Birkenstock Madrid EVA Slide Sandals</span>
+                                                <span class="productCategory">Shoes - women_shoes_all</span>
+                                                <span class="currencyCode"></span>
+                                                <span class="price">42.0</span>
+                                                <span class="originalPrice">42.0</span>
+                                                <span class="colorName">Black</span>
+                                                <span class="brandName">[]</span>
+                                                <span class="colorLoc"></span>
+                                                <span class="atelierName"></span>
+                                                <span class="originCountry"></span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="slides" aria-hidden="true">
+                                    <div class="o-product" onclick="trackProductClick(this,'.o-product')">
+                                        <a href="https://www.arket.com/en/women/shirts-blouses/product.short-sleeved-linen-shirt-beige.0859554002.html"
+                                           target="_self" class="a-link"
+                                           onclick="setVCParameter('STYLE_WITH','0859554002');">
+                                            <div class="image">
+                                                <div class="m-product-image">
+                                                    <div class="cross"></div>
+
+                                                    <div class="placeholder-wrapper">
+                                                        <img src="//lp.arket.com/app006prod?blank=width[2],height[3],color[none]&amp;sink=format[gif]"
+                                                             data-resolvewidth="2" data-resolveheight="3"
+                                                             data-resolvechain="set=source[/8c/6e/8c6ee4f601f24d3c86ba1b271f42a9eff291126f.jpg],origin[dam],type[DESCRIPTIVESTILLLIFE],ImageVersion[1]&amp;call=url[file:/product/dynamic.chain]"
+                                                             alt="" class="product-image a-image is-hidden Resolve">
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="description">
+                                                <div class="id">
+                                                    <span></span>
+                                                    <span></span>
+                                                </div>
+                                                <div class="product">
+                                                    <span class="i18n">Product</span>
+                                                    <span>반팔 리넨 셔츠</span>
+                                                </div>
+                                                <div class="price">
+                                                    <span class="i18n">Price</span>
+                                                    <div class="m-product-price">
+                                                        <div class="price parbase"><span class="is-regular price-value">59,000</span>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="super-slide current" style="width: 999.5px;">
+                                <div class="slides" aria-hidden="false">
+                                    <div class="o-product" onclick="trackProductClick(this,'.o-product')">
+                                        <a href="https://www.arket.com/en/women/shoes/product.birkenstock-madrid-eva-slide-sandals-black.0985624001.html"
+                                           target="_self" class="a-link"
+                                           onclick="setVCParameter('STYLE_WITH','0985624001');">
+                                            <div class="image">
+                                                <div class="m-product-image">
+                                                    <div class="cross"></div>
+
+                                                    <div class="" style="">
+                                                        <img src="https://lp.arket.com/app006prod?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&amp;set=key%5Bresolve.width%5D,value%5B250%5D&amp;set=key%5Bresolve.height%5D,value%5B10000%5D&amp;set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&amp;set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&amp;set=key%5Bresolve.format%5D,value%5Bwebp%5D&amp;set=key%5Bresolve.quality%5D,value%5B70%5D&amp;set=ImageVersion%5B1%5D,origin%5Bdam%5D,source%5B/85/34/853401a2da485f69f6815ab72f9a288582fe51ef.jpg%5D,type%5BDESCRIPTIVESTILLLIFE%5D&amp;call=url%5Bfile:/product/dynamic.chain%5D"
+                                                             data-resolvewidth="2" data-resolveheight="3"
+                                                             data-resolvechain="set=source[/85/34/853401a2da485f69f6815ab72f9a288582fe51ef.jpg],origin[dam],type[DESCRIPTIVESTILLLIFE],ImageVersion[1]&amp;call=url[file:/product/dynamic.chain]"
+                                                             alt="" class="product-image a-image ResolveComplete"
+                                                             id="resolve_7">
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="description">
+                                                <div class="id">
+                                                    <span></span>
+                                                    <span></span>
+                                                </div>
+                                                <div class="product">
+                                                    <span class="i18n">Product</span>
+                                                    <span>Birkenstock 슬라이드 샌들</span>
+                                                </div>
+                                                <div class="price">
+                                                    <span class="i18n">Price</span>
+                                                    <div class="m-product-price">
+                                                        <span id="price" class="is-regular price-value">42,000</span>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- product styleWith details -->
+                                            <div class="producttile-details" hidden="" data-slides-index="0">
+                                                <span class="articleCode">0985624001</span>
+                                                <span class="baseProductCode"></span>
+                                                <span class="productName">Birkenstock Madrid EVA Slide Sandals</span>
+                                                <span class="productCategory">Shoes - women_shoes_all</span>
+                                                <span class="currencyCode"></span>
+                                                <span class="price">42.0</span>
+                                                <span class="originalPrice">42.0</span>
+                                                <span class="colorName">Black</span>
+                                                <span class="brandName">[]</span>
+                                                <span class="colorLoc"></span>
+                                                <span class="atelierName"></span>
+                                                <span class="originCountry"></span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="slides" aria-hidden="false">
+                                    <div class="o-product" onclick="trackProductClick(this,'.o-product')">
+                                        <a href="https://www.arket.com/en/women/shirts-blouses/product.short-sleeved-linen-shirt-beige.0859554002.html"
+                                           target="_self" class="a-link"
+                                           onclick="setVCParameter('STYLE_WITH','0859554002');">
+                                            <div class="image">
+                                                <div class="m-product-image">
+                                                    <div class="cross"></div>
+
+                                                    <div class="" style="">
+                                                        <img src="https://lp.arket.com/app006prod?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&amp;set=key%5Bresolve.width%5D,value%5B250%5D&amp;set=key%5Bresolve.height%5D,value%5B10000%5D&amp;set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&amp;set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&amp;set=key%5Bresolve.format%5D,value%5Bwebp%5D&amp;set=key%5Bresolve.quality%5D,value%5B70%5D&amp;set=ImageVersion%5B1%5D,origin%5Bdam%5D,source%5B/8c/6e/8c6ee4f601f24d3c86ba1b271f42a9eff291126f.jpg%5D,type%5BDESCRIPTIVESTILLLIFE%5D&amp;call=url%5Bfile:/product/dynamic.chain%5D"
+                                                             data-resolvewidth="2" data-resolveheight="3"
+                                                             data-resolvechain="set=source[/8c/6e/8c6ee4f601f24d3c86ba1b271f42a9eff291126f.jpg],origin[dam],type[DESCRIPTIVESTILLLIFE],ImageVersion[1]&amp;call=url[file:/product/dynamic.chain]"
+                                                             alt="" class="product-image a-image ResolveComplete"
+                                                             id="resolve_8">
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="description">
+                                                <div class="id">
+                                                    <span></span>
+                                                    <span></span>
+                                                </div>
+                                                <div class="product">
+                                                    <span class="i18n">Product</span>
+                                                    <span>Short-Sleeved Linen Shirt</span>
+                                                </div>
+                                                <div class="price">
+                                                    <span class="i18n">Price</span>
+                                                    <div class="m-product-price">
+                                                        <div class="price parbase"><span id="price"
+                                                                                         class="is-regular price-value">$59</span>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- product styleWith details -->
+                                            <div class="producttile-details" hidden="" data-slides-index="1">
+                                                <span class="articleCode">0859554002</span>
+                                                <span class="baseProductCode"></span>
+                                                <span class="productName">Short-Sleeved Linen Shirt</span>
+                                                <span class="productCategory">Shirts &amp; blouses - women_shirtsblouses_all</span>
+                                                <span class="currencyCode"></span>
+                                                <span class="price">59.0</span>
+                                                <span class="originalPrice">59.0</span>
+                                                <span class="colorName">Beige</span>
+                                                <span class="brandName">[]</span>
+                                                <span class="colorLoc"></span>
+                                                <span class="atelierName"></span>
+                                                <span class="originCountry"></span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="super-slide redils-duplicated" style="width: 999.5px;">
+                                <div class="slides" aria-hidden="true">
+                                    <div class="o-product" onclick="trackProductClick(this,'.o-product')">
+                                        <a href="https://www.arket.com/en/women/shoes/product.birkenstock-madrid-eva-slide-sandals-black.0985624001.html"
+                                           target="_self" class="a-link"
+                                           onclick="setVCParameter('STYLE_WITH','0985624001');">
+                                            <div class="image">
+                                                <div class="m-product-image">
+                                                    <div class="cross"></div>
+
+                                                    <div class="placeholder-wrapper">
+                                                        <img src="//lp.arket.com/app006prod?blank=width[2],height[3],color[none]&amp;sink=format[gif]"
+                                                             data-resolvewidth="2" data-resolveheight="3"
+                                                             data-resolvechain="set=source[/85/34/853401a2da485f69f6815ab72f9a288582fe51ef.jpg],origin[dam],type[DESCRIPTIVESTILLLIFE],ImageVersion[1]&amp;call=url[file:/product/dynamic.chain]"
+                                                             alt="" class="product-image a-image is-hidden Resolve">
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="description">
+                                                <div class="id">
+                                                    <span></span>
+                                                    <span></span>
+                                                </div>
+                                                <div class="product">
+                                                    <span class="i18n">Product</span>
+                                                    <span>Birkenstock Madrid 슬라이드 샌들</span>
+                                                </div>
+                                                <div class="price">
+                                                    <span class="i18n">Price</span>
+                                                    <div class="m-product-price">
+                                                        <span class="is-regular price-value">67,000</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- product styleWith details -->
+                                            <div class="producttile-details" hidden="">
+                                                <span class="articleCode">0985624001</span>
+                                                <span class="baseProductCode"></span>
+                                                <span class="productName">Birkenstock Madrid EVA Slide Sandals</span>
+                                                <span class="productCategory">Shoes - women_shoes_all</span>
+                                                <span class="currencyCode"></span>
+                                                <span class="price">42.0</span>
+                                                <span class="originalPrice">42.0</span>
+                                                <span class="colorName">Black</span>
+                                                <span class="brandName">[]</span>
+                                                <span class="colorLoc"></span>
+                                                <span class="atelierName"></span>
+                                                <span class="originCountry"></span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="slides" aria-hidden="true">
+                                    <div class="o-product" onclick="trackProductClick(this,'.o-product')">
+                                        <a href="https://www.arket.com/en/women/shirts-blouses/product.short-sleeved-linen-shirt-beige.0859554002.html"
+                                           target="_self" class="a-link"
+                                           onclick="setVCParameter('STYLE_WITH','0859554002');">
+                                            <div class="image">
+                                                <div class="m-product-image">
+                                                    <div class="cross"></div>
+
+                                                    <div class="placeholder-wrapper">
+                                                        <img src="//lp.arket.com/app006prod?blank=width[2],height[3],color[none]&amp;sink=format[gif]"
+                                                             data-resolvewidth="2" data-resolveheight="3"
+                                                             data-resolvechain="set=source[/8c/6e/8c6ee4f601f24d3c86ba1b271f42a9eff291126f.jpg],origin[dam],type[DESCRIPTIVESTILLLIFE],ImageVersion[1]&amp;call=url[file:/product/dynamic.chain]"
+                                                             alt="" class="product-image a-image is-hidden Resolve">
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="description">
+                                                <div class="id">
+                                                    <span></span>
+                                                    <span></span>
+                                                </div>
+                                                <div class="product">
+                                                    <span class="i18n">Product</span>
+                                                    <span>Short-Sleeved Linen Shirt</span>
+                                                </div>
+                                                <div class="price">
+                                                    <span class="i18n">Price</span>
+                                                    <div class="m-product-price">
+                                                        <div class="price parbase"><span class="is-regular price-value">$59</span>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- product styleWith details -->
+                                            <div class="producttile-details" hidden="">
+                                                <span class="articleCode">0859554002</span>
+                                                <span class="baseProductCode"></span>
+                                                <span class="productName">Short-Sleeved Linen Shirt</span>
+                                                <span class="productCategory">Shirts &amp; blouses - women_shirtsblouses_all</span>
+                                                <span class="currencyCode"></span>
+                                                <span class="price">59.0</span>
+                                                <span class="originalPrice">59.0</span>
+                                                <span class="colorName">Beige</span>
+                                                <span class="brandName">[]</span>
+                                                <span class="colorLoc"></span>
+                                                <span class="atelierName"></span>
+                                                <span class="originCountry"></span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pagination"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //stylewith -->
+
+    <div class="dynamicarea parbase"></div>
+
+    <!-- carousel -->
+    <div class="o-width wc-75 carousel">
+        <div class="o-pra-component is-suggestions" data-component="OPra" data-pra-panel="product-detail-page" data-pra-locale="en" data-pra-id="PRA1">
+            <h2 class="a-heading-2 u-align-center is-main-heading slider-title">Others also bought</h2>
+            <span class="propTitle" hidden="">Others also bought</span>
+
+            <!-- o-slider -->
+            <div data-component="OSlider" id="praOSlider" class="o-slider" data-multislide="true" data-num-slides="customized-pra" data-slide-width="200">
+                <div class="redils">
+                    <div class="slide-cont">
+                        <div class="slides"
+                             data-ticket="Oy9wcm9kdWN0LWRldGFpbC1wYWdlX21jL3ByYTEvcHJhMS1jb21wZXRpbmcvcmVjb21tZW5kLWJhc2VkLW9uLXByb2R1Y3Q7Iztwcm9kdWN0X2tleTswNzM5NzM0X2dyb3VwXzAwNF9lbl93dzswNzM5NzM0MDA0X2VuX3d3O1NZTiQwO05PTkU6Tk9ORTs2NTs"
+                             data-varticlecode="0739734004" data-pracode="PRA1"
+                             data-product="{&quot;ticket&quot;:&quot;Oy9wcm9kdWN0LWRldGFpbC1wYWdlX21jL3ByYTEvcHJhMS1jb21wZXRpbmcvcmVjb21tZW5kLWJhc2VkLW9uLXByb2R1Y3Q7Iztwcm9kdWN0X2tleTswNzM5NzM0X2dyb3VwXzAwNF9lbl93dzswNzM5NzM0MDA0X2VuX3d3O1NZTiQwO05PTkU6Tk9ORTs2NTs&quot;,&quot;productKey&quot;:&quot;0739734_group_004_en_ww&quot;,&quot;categoryId&quot;:&quot;&quot;,&quot;mainCategory&quot;:&quot;Underwear &amp; Loungewear - women_underwearloungewear_all&quot;,&quot;isNew&quot;:&quot;true&quot;,&quot;productName&quot;:&quot;Linen Shorts&quot;,&quot;variantData&quot;:[{&quot;ticket&quot;:&quot;Oy9wcm9kdWN0LWRldGFpbC1wYWdlX21jL3ByYTEvcHJhMS1jb21wZXRpbmcvcmVjb21tZW5kLWJhc2VkLW9uLXByb2R1Y3Q7Iztwcm9kdWN0X2tleTswNzM5NzM0X2dyb3VwXzAwNF9lbl93dzswNzM5NzM0MDA0X2VuX3d3O1NZTiQwO05PTkU6Tk9ORTs2NTs&quot;,&quot;variantKey&quot;:&quot;0739734004_en_ww&quot;,&quot;varticleCode&quot;:&quot;0739734004&quot;,&quot;vfashionImage&quot;:&quot;https://lp.arket.com/app006prod?set=source[/f9/ba/f9ba83c823d9500bce71dd19bbecb7eb3b5dd502.jpg],origin[dam],type[LOOKBOOK],device[hdpi],quality[80],ImageVersion[1]&amp;call=url[file:/product/main]&quot;,&quot;visOnSale&quot;:&quot;false&quot;,&quot;vstillLifeImage&quot;:&quot;https://lp.arket.com/app006prod?set=source[/ae/fa/aefa9abaf2b4f3b4114c2a6508a96095849bdb1f.jpg],origin[dam],type[DESCRIPTIVESTILLLIFE],device[hdpi],quality[80],ImageVersion[1]&amp;call=url[file:/product/main]&quot;,&quot;vswatch&quot;:&quot;https://lp.arket.com/app006prod?set=color[DED8C5]&amp;call=url[file:/product/colorSwatch.chain]&quot;,&quot;vcolorLoc&quot;:&quot;Light Beige&quot;,&quot;vlinkPdp&quot;:&quot;/en/women/underwear-loungewear/product.linen-shorts-beige.0739734004.html&quot;,&quot;vshopNowLink&quot;:&quot;/en/productpage/_jcr_content/product.quickbuy.0739734004.html&quot;,&quot;vformattedPrice&quot;:&quot;$ 49&quot;,&quot;varticleName&quot;:&quot;Linen Shorts&quot;,&quot;vbrandName&quot;:&quot;&quot;,&quot;vatelierName&quot;:&quot;&quot;,&quot;voriginCountry&quot;:&quot;Bangladesh&quot;}],&quot;productMarkerText&quot;:&quot;&quot;,&quot;productMarkerStyle&quot;:&quot;&quot;,&quot;productMarker&quot;:&quot;&quot;,&quot;swatchesTotal&quot;:0,&quot;scentProduct&quot;:&quot;false&quot;,&quot;productMarkerColors&quot;:&quot;&quot;}"
+                             aria-hidden="false">
+                            <div class="o-product" onclick="trackProductClick(this,'.o-product')">
+                                <a href="/en/women/underwear-loungewear/product.linen-shorts-beige.0739734004.html"
+                                   target="_self" class="a-link">
+                                    <div class="image">
+                                        <div class="placeholder-wrapper">
+                                            <img alt="Linen Shorts"
+                                                  class="a-image is-hidden Resolve"
+                                                  src="//lp.arket.com/app006prod?blank=width[2],height[3],color[none]&amp;sink=format[gif]"
+                                                  data-resolvewidth="2"
+                                                  data-resolveheight="3"
+                                                  data-resolvechain="set=source[/ae/fa/aefa9abaf2b4f3b4114c2a6508a96095849bdb1f.jpg],origin[dam],type[DESCRIPTIVESTILLLIFE],ImageVersion[1]&amp;call=url[file:/product/dynamic.chain]">
+                                        </div>
+                                    </div>
+                                    <div class="description">
+                                        <div class="product-markers has-hover desktop"></div>
+                                        <div class="id">
+                                            <span class="i18n">Id</span><span></span>
+                                        </div>
+                                        <div class="product">
+                                            <span class="i18n">Product</span><span>리넨 반바지</span>
+                                        </div>
+
+                                        <div class="color"><span class="i18n">Color</span><span></span></div>
+                                        <div class="price"><span class="i18n">Price</span>
+                                            <div class="m-product-price"><span class="is-regular">49,000</span></div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="slides"
+                             data-ticket="Oy9wcm9kdWN0LWRldGFpbC1wYWdlX21jL3ByYTEvcHJhMS1jb21wZXRpbmcvcmVjb21tZW5kLWJhc2VkLW9uLXByb2R1Y3Q7Iztwcm9kdWN0X2tleTsxMDE1ODcxX2dyb3VwXzAwMl9lbl93dzsxMDE1ODcxMDAyX2VuX3d3O1NZTiQwO05PTkU6Tk9ORTs2NTs"
+                             data-varticlecode="1015871002" data-pracode="PRA1"
+                             data-product="{&quot;ticket&quot;:&quot;Oy9wcm9kdWN0LWRldGFpbC1wYWdlX21jL3ByYTEvcHJhMS1jb21wZXRpbmcvcmVjb21tZW5kLWJhc2VkLW9uLXByb2R1Y3Q7Iztwcm9kdWN0X2tleTsxMDE1ODcxX2dyb3VwXzAwMl9lbl93dzsxMDE1ODcxMDAyX2VuX3d3O1NZTiQwO05PTkU6Tk9ORTs2NTs&quot;,&quot;productKey&quot;:&quot;1015871_group_002_en_ww&quot;,&quot;categoryId&quot;:&quot;&quot;,&quot;mainCategory&quot;:&quot;Knitwear - women_knitwear_all&quot;,&quot;isNew&quot;:&quot;true&quot;,&quot;productName&quot;:&quot;Striped Cotton Jumper&quot;,&quot;variantData&quot;:[{&quot;ticket&quot;:&quot;Oy9wcm9kdWN0LWRldGFpbC1wYWdlX21jL3ByYTEvcHJhMS1jb21wZXRpbmcvcmVjb21tZW5kLWJhc2VkLW9uLXByb2R1Y3Q7Iztwcm9kdWN0X2tleTsxMDE1ODcxX2dyb3VwXzAwMl9lbl93dzsxMDE1ODcxMDAyX2VuX3d3O1NZTiQwO05PTkU6Tk9ORTs2NTs&quot;,&quot;variantKey&quot;:&quot;1015871002_en_ww&quot;,&quot;varticleCode&quot;:&quot;1015871002&quot;,&quot;vfashionImage&quot;:&quot;https://lp.arket.com/app006prod?set=source[/d3/48/d3487f96a8861920ed61100e6939063abdb381b3.jpg],origin[dam],type[LOOKBOOK],device[hdpi],quality[80],ImageVersion[1]&amp;call=url[file:/product/main]&quot;,&quot;visOnSale&quot;:&quot;false&quot;,&quot;vstillLifeImage&quot;:&quot;https://lp.arket.com/app006prod?set=source[/ca/75/ca7583afa5c5fb8146decc845cec28b05baa82d7.jpg],origin[dam],type[DESCRIPTIVESTILLLIFE],device[hdpi],quality[80],ImageVersion[1]&amp;call=url[file:/product/main]&quot;,&quot;vswatch&quot;:&quot;https://lp.arket.com/app006prod?set=color[0A041F]&amp;call=url[file:/product/colorSwatch.chain]&quot;,&quot;vcolorLoc&quot;:&quot;Off White/Dark Blue&quot;,&quot;vlinkPdp&quot;:&quot;/en/women/knitwear/product.striped-cotton-jumper-blue.1015871002.html&quot;,&quot;vshopNowLink&quot;:&quot;/en/productpage/_jcr_content/product.quickbuy.1015871002.html&quot;,&quot;vformattedPrice&quot;:&quot;$ 99&quot;,&quot;varticleName&quot;:&quot;Striped Cotton Jumper&quot;,&quot;vbrandName&quot;:&quot;&quot;,&quot;vatelierName&quot;:&quot;&quot;,&quot;voriginCountry&quot;:&quot;China&quot;}],&quot;productMarkerText&quot;:&quot;Organic cotton&quot;,&quot;productMarkerStyle&quot;:&quot;color: #000000; background-color: #ffffff; border-radius: #fffff;&quot;,&quot;productMarker&quot;:&quot;&quot;,&quot;swatchesTotal&quot;:0,&quot;scentProduct&quot;:&quot;false&quot;,&quot;productMarkerColors&quot;:&quot;#000000&quot;}"
+                             aria-hidden="false">
+                            <div class="o-product" onclick="trackProductClick(this,'.o-product')">
+                                <a href="/en/women/knitwear/product.striped-cotton-jumper-blue.1015871002.html"
+                                   target="_self" class="a-link">
+                                    <div class="image">
+                                        <div class="placeholder-wrapper">
+                                            <img alt="Striped Cotton Jumper"
+                                                  class="a-image is-hidden Resolve"
+                                                  src="//lp.arket.com/app006prod?blank=width[2],height[3],color[none]&amp;sink=format[gif]"
+                                                  data-resolvewidth="2"
+                                                  data-resolveheight="3"
+                                                  data-resolvechain="set=source[/ca/75/ca7583afa5c5fb8146decc845cec28b05baa82d7.jpg],origin[dam],type[DESCRIPTIVESTILLLIFE],ImageVersion[1]&amp;call=url[file:/product/dynamic.chain]">
+                                        </div>
+                                    </div>
+                                    <div class="description">
+                                        <div class="product-markers has-hover desktop"></div>
+                                        <div class="id"><span class="i18n">Id</span><span></span></div>
+                                        <div class="product"><span class="i18n">Product</span><span>면 잠바</span></div>
+                                        <div class="product-markers">
+                                            <div data-component="MProductMarkers" class="m-product-marker">
+                                                <div class="marker-text" style="color: #000000; background-color: #ffffff; border-radius: #fffff;">
+                                                    <span>Organic cotton</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="color"><span class="i18n">Color</span><span></span></div>
+                                        <div class="price"><span class="i18n">Price</span>
+                                            <div class="m-product-price"><span class="is-regular">99,000</span></div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="slides"
+                             data-ticket="Oy9wcm9kdWN0LWRldGFpbC1wYWdlX21jL3ByYTEvcHJhMS1jb21wZXRpbmcvcmVjb21tZW5kLWJhc2VkLW9uLXByb2R1Y3Q7Iztwcm9kdWN0X2tleTswNzM5NzM0X2dyb3VwXzAwOF9lbl93dzswNzM5NzM0MDA4X2VuX3d3O1NZTiQwO05PTkU6Tk9ORTs2NTs"
+                             data-varticlecode="0739734008" data-pracode="PRA1"
+                             data-product="{&quot;ticket&quot;:&quot;Oy9wcm9kdWN0LWRldGFpbC1wYWdlX21jL3ByYTEvcHJhMS1jb21wZXRpbmcvcmVjb21tZW5kLWJhc2VkLW9uLXByb2R1Y3Q7Iztwcm9kdWN0X2tleTswNzM5NzM0X2dyb3VwXzAwOF9lbl93dzswNzM5NzM0MDA4X2VuX3d3O1NZTiQwO05PTkU6Tk9ORTs2NTs&quot;,&quot;productKey&quot;:&quot;0739734_group_008_en_ww&quot;,&quot;categoryId&quot;:&quot;&quot;,&quot;mainCategory&quot;:&quot;Underwear &amp; Loungewear - women_underwearloungewear_all&quot;,&quot;isNew&quot;:&quot;true&quot;,&quot;productName&quot;:&quot;Linen Shorts&quot;,&quot;variantData&quot;:[{&quot;ticket&quot;:&quot;Oy9wcm9kdWN0LWRldGFpbC1wYWdlX21jL3ByYTEvcHJhMS1jb21wZXRpbmcvcmVjb21tZW5kLWJhc2VkLW9uLXByb2R1Y3Q7Iztwcm9kdWN0X2tleTswNzM5NzM0X2dyb3VwXzAwOF9lbl93dzswNzM5NzM0MDA4X2VuX3d3O1NZTiQwO05PTkU6Tk9ORTs2NTs&quot;,&quot;variantKey&quot;:&quot;0739734008_en_ww&quot;,&quot;varticleCode&quot;:&quot;0739734008&quot;,&quot;vfashionImage&quot;:&quot;https://lp.arket.com/app006prod?set=source[/4b/7a/4b7a98292c8fb72378a4e2bae9690b0f2b9b3b0c.jpg],origin[dam],type[LOOKBOOK],device[hdpi],quality[80],ImageVersion[1]&amp;call=url[file:/product/main]&quot;,&quot;visOnSale&quot;:&quot;false&quot;,&quot;vstillLifeImage&quot;:&quot;https://lp.arket.com/app006prod?set=source[/36/db/36db98375929328ed27a765daa2f50822c08084c.jpg],origin[dam],type[DESCRIPTIVESTILLLIFE],device[hdpi],quality[80],ImageVersion[1]&amp;call=url[file:/product/main]&quot;,&quot;vswatch&quot;:&quot;https://lp.arket.com/app006prod?set=color[DCD6C7]&amp;call=url[file:/product/colorSwatch.chain]&quot;,&quot;vcolorLoc&quot;:&quot;Off White/Blue&quot;,&quot;vlinkPdp&quot;:&quot;/en/women/underwear-loungewear/product.linen-shorts-beige.0739734008.html&quot;,&quot;vshopNowLink&quot;:&quot;/en/productpage/_jcr_content/product.quickbuy.0739734008.html&quot;,&quot;vformattedPrice&quot;:&quot;$ 49&quot;,&quot;varticleName&quot;:&quot;Linen Shorts&quot;,&quot;vbrandName&quot;:&quot;&quot;,&quot;vatelierName&quot;:&quot;&quot;,&quot;voriginCountry&quot;:&quot;Bangladesh&quot;}],&quot;productMarkerText&quot;:&quot;&quot;,&quot;productMarkerStyle&quot;:&quot;&quot;,&quot;productMarker&quot;:&quot;&quot;,&quot;swatchesTotal&quot;:0,&quot;scentProduct&quot;:&quot;false&quot;,&quot;productMarkerColors&quot;:&quot;&quot;}"
+                             aria-hidden="false">
+                            <div class="o-product" onclick="trackProductClick(this,'.o-product')">
+                                <a href="/en/women/underwear-loungewear/product.linen-shorts-beige.0739734008.html"
+                                   target="_self" class="a-link">
+                                    <div class="image">
+                                        <div class="placeholder-wrapper">
+                                            <img alt="Linen Shorts"
+                                                  class="a-image is-hidden Resolve"
+                                                  src="//lp.arket.com/app006prod?blank=width[2],height[3],color[none]&amp;sink=format[gif]"
+                                                  data-resolvewidth="2"
+                                                  data-resolveheight="3"
+                                                  data-resolvechain="set=source[/36/db/36db98375929328ed27a765daa2f50822c08084c.jpg],origin[dam],type[DESCRIPTIVESTILLLIFE],ImageVersion[1]&amp;call=url[file:/product/dynamic.chain]">
+                                        </div>
+                                    </div>
+                                    <div class="description">
+                                        <div class="product-markers has-hover desktop"></div>
+                                        <div class="id"><span class="i18n">Id</span><span></span></div>
+                                        <div class="product">
+                                            <span class="i18n">Product</span><span>리넨 반바지</span>
+                                        </div>
+                                        <div class="color"><span class="i18n">Color</span><span></span></div>
+                                        <div class="price"><span class="i18n">Price</span>
+                                            <div class="m-product-price"><span class="is-regular">49,000</span></div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="slides"
+                             data-ticket="Oy9wcm9kdWN0LWRldGFpbC1wYWdlX21jL3ByYTEvcHJhMS1jb21wZXRpbmcvcmVjb21tZW5kLWJhc2VkLW9uLXByb2R1Y3Q7Iztwcm9kdWN0X2tleTswNzM5NzM0X2dyb3VwXzAwM19lbl93dzswNzM5NzM0MDAzX2VuX3d3O1NZTiQwO05PTkU6Tk9ORTs2NTs"
+                             data-varticlecode="0739734003" data-pracode="PRA1"
+                             data-product="{&quot;ticket&quot;:&quot;Oy9wcm9kdWN0LWRldGFpbC1wYWdlX21jL3ByYTEvcHJhMS1jb21wZXRpbmcvcmVjb21tZW5kLWJhc2VkLW9uLXByb2R1Y3Q7Iztwcm9kdWN0X2tleTswNzM5NzM0X2dyb3VwXzAwM19lbl93dzswNzM5NzM0MDAzX2VuX3d3O1NZTiQwO05PTkU6Tk9ORTs2NTs&quot;,&quot;productKey&quot;:&quot;0739734_group_003_en_ww&quot;,&quot;categoryId&quot;:&quot;&quot;,&quot;mainCategory&quot;:&quot;Underwear &amp; Loungewear - women_underwearloungewear_all&quot;,&quot;isNew&quot;:&quot;true&quot;,&quot;productName&quot;:&quot;Linen Shorts&quot;,&quot;variantData&quot;:[{&quot;ticket&quot;:&quot;Oy9wcm9kdWN0LWRldGFpbC1wYWdlX21jL3ByYTEvcHJhMS1jb21wZXRpbmcvcmVjb21tZW5kLWJhc2VkLW9uLXByb2R1Y3Q7Iztwcm9kdWN0X2tleTswNzM5NzM0X2dyb3VwXzAwM19lbl93dzswNzM5NzM0MDAzX2VuX3d3O1NZTiQwO05PTkU6Tk9ORTs2NTs&quot;,&quot;variantKey&quot;:&quot;0739734003_en_ww&quot;,&quot;varticleCode&quot;:&quot;0739734003&quot;,&quot;vfashionImage&quot;:&quot;https://lp.arket.com/app006prod?set=source[/76/41/76411172b170256162e9044edff696ce40e57bfe.jpg],origin[dam],type[LOOKBOOK],device[hdpi],quality[80],ImageVersion[1]&amp;call=url[file:/product/main]&quot;,&quot;visOnSale&quot;:&quot;false&quot;,&quot;vstillLifeImage&quot;:&quot;https://lp.arket.com/app006prod?set=source[/4f/c8/4fc8ec68d7efe8b107e20426d2707abd0e5969ff.jpg],origin[dam],type[DESCRIPTIVESTILLLIFE],device[hdpi],quality[80],ImageVersion[1]&amp;call=url[file:/product/main]&quot;,&quot;vswatch&quot;:&quot;https://lp.arket.com/app006prod?set=color[272628]&amp;call=url[file:/product/colorSwatch.chain]&quot;,&quot;vcolorLoc&quot;:&quot;Black&quot;,&quot;vlinkPdp&quot;:&quot;/en/women/underwear-loungewear/product.linen-shorts-black.0739734003.html&quot;,&quot;vshopNowLink&quot;:&quot;/en/productpage/_jcr_content/product.quickbuy.0739734003.html&quot;,&quot;vformattedPrice&quot;:&quot;$ 49&quot;,&quot;varticleName&quot;:&quot;Linen Shorts&quot;,&quot;vbrandName&quot;:&quot;&quot;,&quot;vatelierName&quot;:&quot;&quot;,&quot;voriginCountry&quot;:&quot;Bangladesh&quot;}],&quot;productMarkerText&quot;:&quot;&quot;,&quot;productMarkerStyle&quot;:&quot;&quot;,&quot;productMarker&quot;:&quot;&quot;,&quot;swatchesTotal&quot;:0,&quot;scentProduct&quot;:&quot;false&quot;,&quot;productMarkerColors&quot;:&quot;&quot;}"
+                             aria-hidden="false">
+                            <div class="o-product" onclick="trackProductClick(this,'.o-product')">
+                                <a href="/en/women/underwear-loungewear/product.linen-shorts-black.0739734003.html"
+                                   target="_self" class="a-link">
+                                    <div class="image">
+                                        <div class="placeholder-wrapper">
+                                            <img alt="Linen Shorts"
+                                                  class="a-image is-hidden Resolve"
+                                                  src="//lp.arket.com/app006prod?blank=width[2],height[3],color[none]&amp;sink=format[gif]"
+                                                  data-resolvewidth="2"
+                                                  data-resolveheight="3"
+                                                  data-resolvechain="set=source[/4f/c8/4fc8ec68d7efe8b107e20426d2707abd0e5969ff.jpg],origin[dam],type[DESCRIPTIVESTILLLIFE],ImageVersion[1]&amp;call=url[file:/product/dynamic.chain]">
+                                        </div>
+                                    </div>
+                                    <div class="description">
+                                        <div class="product-markers has-hover desktop"></div>
+                                        <div class="id"><span class="i18n">Id</span><span></span></div>
+                                        <div class="product">
+                                            <span class="i18n">Product</span><span>리넨 반바지</span>
+                                        </div>
+                                        <div class="color"><span class="i18n">Color</span><span></span></div>
+                                        <div class="price"><span class="i18n">Price</span>
+                                            <div class="m-product-price"><span class="is-regular">49,000</span></div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="slides"
+                             data-ticket="Oy9wcm9kdWN0LWRldGFpbC1wYWdlX21jL3ByYTEvcHJhMS1jb21wZXRpbmcvcmVjb21tZW5kLWJhc2VkLW9uLXByb2R1Y3Q7Iztwcm9kdWN0X2tleTswNjA3NTMzX2dyb3VwXzAzMV9lbl93dzswNjA3NTMzMDMxX2VuX3d3O1NZTiQwO05PTkU6Tk9ORTs2NTs"
+                             data-varticlecode="0607533031" data-pracode="PRA1"
+                             data-product="{&quot;ticket&quot;:&quot;Oy9wcm9kdWN0LWRldGFpbC1wYWdlX21jL3ByYTEvcHJhMS1jb21wZXRpbmcvcmVjb21tZW5kLWJhc2VkLW9uLXByb2R1Y3Q7Iztwcm9kdWN0X2tleTswNjA3NTMzX2dyb3VwXzAzMV9lbl93dzswNjA3NTMzMDMxX2VuX3d3O1NZTiQwO05PTkU6Tk9ORTs2NTs&quot;,&quot;productKey&quot;:&quot;0607533_group_031_en_ww&quot;,&quot;categoryId&quot;:&quot;&quot;,&quot;mainCategory&quot;:&quot;Sportswear - women_sportswear_all&quot;,&quot;isNew&quot;:&quot;false&quot;,&quot;productName&quot;:&quot;Seamless™ Yoga Bra&quot;,&quot;variantData&quot;:[{&quot;ticket&quot;:&quot;Oy9wcm9kdWN0LWRldGFpbC1wYWdlX21jL3ByYTEvcHJhMS1jb21wZXRpbmcvcmVjb21tZW5kLWJhc2VkLW9uLXByb2R1Y3Q7Iztwcm9kdWN0X2tleTswNjA3NTMzX2dyb3VwXzAzMV9lbl93dzswNjA3NTMzMDMxX2VuX3d3O1NZTiQwO05PTkU6Tk9ORTs2NTs&quot;,&quot;variantKey&quot;:&quot;0607533031_en_ww&quot;,&quot;varticleCode&quot;:&quot;0607533031&quot;,&quot;vfashionImage&quot;:&quot;https://lp.arket.com/app006prod?set=source[/f4/93/f493e9dc95da368f6b62f8f7ad233e2874af0ec8.jpg],origin[dam],type[LOOKBOOK],device[hdpi],quality[80],ImageVersion[1]&amp;call=url[file:/product/main]&quot;,&quot;visOnSale&quot;:&quot;false&quot;,&quot;vstillLifeImage&quot;:&quot;https://lp.arket.com/app006prod?set=source[/ff/a2/ffa2e71aa30994e4ac872f1fc2a7942eedf5c647.jpg],origin[dam],type[DESCRIPTIVESTILLLIFE],device[hdpi],quality[80],ImageVersion[1]&amp;call=url[file:/product/main]&quot;,&quot;vswatch&quot;:&quot;https://lp.arket.com/app006prod?set=color[B7A86B]&amp;call=url[file:/product/colorSwatch.chain]&quot;,&quot;vcolorLoc&quot;:&quot;Yellow&quot;,&quot;vlinkPdp&quot;:&quot;/en/women/sportswear/product.seamless™-yoga-bra-yellow.0607533031.html&quot;,&quot;vshopNowLink&quot;:&quot;/en/productpage/_jcr_content/product.quickbuy.0607533031.html&quot;,&quot;vformattedPrice&quot;:&quot;$ 30&quot;,&quot;varticleName&quot;:&quot;Seamless™ Yoga Bra&quot;,&quot;vbrandName&quot;:&quot;&quot;,&quot;vatelierName&quot;:&quot;&quot;,&quot;voriginCountry&quot;:&quot;Turkey&quot;}],&quot;productMarkerText&quot;:&quot;Recycled material&quot;,&quot;productMarkerStyle&quot;:&quot;color: #000000; background-color: #ffffff; border-radius: 0px.;&quot;,&quot;productMarker&quot;:&quot;&quot;,&quot;swatchesTotal&quot;:0,&quot;scentProduct&quot;:&quot;false&quot;,&quot;productMarkerColors&quot;:&quot;#000000&quot;}"
+                             aria-hidden="true">
+                            <div class="o-product" onclick="trackProductClick(this,'.o-product')">
+                                <a href="/en/women/sportswear/product.seamless™-yoga-bra-yellow.0607533031.html"
+                                   target="_self" class="a-link">
+                                    <div class="image">
+                                        <div class="placeholder-wrapper">
+                                            <img alt="Seamless™ Yoga Bra"
+                                                  class="a-image is-hidden Resolve"
+                                                  src="//lp.arket.com/app006prod?blank=width[2],height[3],color[none]&amp;sink=format[gif]"
+                                                  data-resolvewidth="2"
+                                                  data-resolveheight="3"
+                                                  data-resolvechain="set=source[/ff/a2/ffa2e71aa30994e4ac872f1fc2a7942eedf5c647.jpg],origin[dam],type[DESCRIPTIVESTILLLIFE],ImageVersion[1]&amp;call=url[file:/product/dynamic.chain]">
+                                        </div>
+                                    </div>
+                                    <div class="description">
+                                        <div class="product-markers has-hover desktop"></div>
+                                        <div class="id"><span class="i18n">Id</span><span></span></div>
+                                        <div class="product"><span class="i18n">Product</span><span>Seamless™ 요가브라</span>
+                                        </div>
+                                        <div class="product-markers">
+                                            <div data-component="MProductMarkers" class="m-product-marker"
+                                                 data-component-id="c4e303eb-c000-4122-a79e-299a5fbb6a73">
+                                                <div class="marker-text"
+                                                     style="color: #000000; background-color: #ffffff; border-radius: 0px.;">
+                                                    <span>Recycled material</span></div>
+                                            </div>
+                                        </div>
+                                        <div class="color"><span class="i18n">Color</span><span></span></div>
+                                        <div class="price"><span class="i18n">Price</span>
+                                            <div class="m-product-price"><span class="is-regular">983,030</span></div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <!-- P11 PRA 1 DETAILS -->
+                                <div class="producttile-details" hidden="" data-slides-index="4">
+                                    <span class="articleCode">0607533031</span>
+                                    <span class="baseProductCode"></span>
+                                    <span class="productName">Seamless™ Yoga Bra</span>
+                                    <span class="productCategory"></span>
+                                    <span class="currencyCode"></span>
+                                    <span class="price"></span>
+                                    <span class="originalPrice"></span>
+                                    <span class="brandName"></span>
+                                    <span class="colorLoc">Yellow</span>
+                                    <span class="atelierName"></span>
+                                    <span class="originCountry"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slides"
+                             data-ticket="Oy9wcm9kdWN0LWRldGFpbC1wYWdlX21jL3ByYTEvcHJhMS1jb21wZXRpbmcvcmVjb21tZW5kLWJhc2VkLW9uLXByb2R1Y3Q7Iztwcm9kdWN0X2tleTswNjMwNjY1X2dyb3VwXzAwMl9lbl93dzswNjMwNjY1MDAyX2VuX3d3O1NZTiQwO05PTkU6Tk9ORTs2NTs"
+                             data-varticlecode="0630665002" data-pracode="PRA1"
+                             data-product="{&quot;ticket&quot;:&quot;Oy9wcm9kdWN0LWRldGFpbC1wYWdlX21jL3ByYTEvcHJhMS1jb21wZXRpbmcvcmVjb21tZW5kLWJhc2VkLW9uLXByb2R1Y3Q7Iztwcm9kdWN0X2tleTswNjMwNjY1X2dyb3VwXzAwMl9lbl93dzswNjMwNjY1MDAyX2VuX3d3O1NZTiQwO05PTkU6Tk9ORTs2NTs&quot;,&quot;productKey&quot;:&quot;0630665_group_002_en_ww&quot;,&quot;categoryId&quot;:&quot;&quot;,&quot;mainCategory&quot;:&quot;Tops - women_tops_all&quot;,&quot;isNew&quot;:&quot;true&quot;,&quot;productName&quot;:&quot;Crew-Neck T-shirt&quot;,&quot;variantData&quot;:[{&quot;ticket&quot;:&quot;Oy9wcm9kdWN0LWRldGFpbC1wYWdlX21jL3ByYTEvcHJhMS1jb21wZXRpbmcvcmVjb21tZW5kLWJhc2VkLW9uLXByb2R1Y3Q7Iztwcm9kdWN0X2tleTswNjMwNjY1X2dyb3VwXzAwMl9lbl93dzswNjMwNjY1MDAyX2VuX3d3O1NZTiQwO05PTkU6Tk9ORTs2NTs&quot;,&quot;variantKey&quot;:&quot;0630665002_en_ww&quot;,&quot;varticleCode&quot;:&quot;0630665002&quot;,&quot;vfashionImage&quot;:&quot;https://lp.arket.com/app006prod?set=source[/3f/69/3f6941f5be9c08adfcc0e098328675822a4f4460.jpg],origin[dam],type[LOOKBOOK],device[hdpi],quality[80],ImageVersion[1]&amp;call=url[file:/product/main]&quot;,&quot;visOnSale&quot;:&quot;false&quot;,&quot;vstillLifeImage&quot;:&quot;https://lp.arket.com/app006prod?set=source[/f8/e2/f8e28992fd2e4a6cd97e4b4a6d02c0e7b230a48f.jpg],origin[dam],type[DESCRIPTIVESTILLLIFE],device[hdpi],quality[80],ImageVersion[1]&amp;call=url[file:/product/main]&quot;,&quot;vswatch&quot;:&quot;https://lp.arket.com/app006prod?set=color[FFFFFF]&amp;call=url[file:/product/colorSwatch.chain]&quot;,&quot;vcolorLoc&quot;:&quot;White&quot;,&quot;vlinkPdp&quot;:&quot;/en/women/tops/product.crew-neck-t-shirt-white.0630665002.html&quot;,&quot;vshopNowLink&quot;:&quot;/en/productpage/_jcr_content/product.quickbuy.0630665002.html&quot;,&quot;vformattedPrice&quot;:&quot;$ 20&quot;,&quot;varticleName&quot;:&quot;Crew-Neck T-shirt&quot;,&quot;vbrandName&quot;:&quot;&quot;,&quot;vatelierName&quot;:&quot;&quot;,&quot;voriginCountry&quot;:&quot;Bangladesh&quot;}],&quot;productMarkerText&quot;:&quot;ARKET BASICS COLLECTION&quot;,&quot;productMarkerStyle&quot;:&quot;color: #000000; background-color: #ffffff; border-radius: 0 xp;&quot;,&quot;productMarker&quot;:&quot;&quot;,&quot;swatchesTotal&quot;:0,&quot;scentProduct&quot;:&quot;false&quot;,&quot;productMarkerColors&quot;:&quot;&quot;}"
+                             aria-hidden="true">
+                            <div class="o-product" onclick="trackProductClick(this,'.o-product')">
+                                <a href="/en/women/tops/product.crew-neck-t-shirt-white.0630665002.html"
+                                   target="_self" class="a-link">
+                                    <div class="image">
+                                        <div class="placeholder-wrapper"><img alt="Crew-Neck T-shirt"
+                                                                              class="a-image is-hidden Resolve"
+                                                                              src="//lp.arket.com/app006prod?blank=width[2],height[3],color[none]&amp;sink=format[gif]"
+                                                                              data-resolvewidth="2"
+                                                                              data-resolveheight="3"
+                                                                              data-resolvechain="set=source[/f8/e2/f8e28992fd2e4a6cd97e4b4a6d02c0e7b230a48f.jpg],origin[dam],type[DESCRIPTIVESTILLLIFE],ImageVersion[1]&amp;call=url[file:/product/dynamic.chain]">
+                                        </div>
+                                    </div>
+                                    <div class="description">
+                                        <div class="product-markers has-hover desktop"></div>
+                                        <div class="id"><span class="i18n">Id</span><span></span></div>
+                                        <div class="product"><span class="i18n">Product</span><span>크루 넥 티셔츠</span>
+                                        </div>
+                                        <div class="product-markers">
+                                            <div data-component="MProductMarkers" class="m-product-marker"
+                                                 data-component-id="c4e303eb-c000-4122-a79e-299a5fbb6a73">
+                                                <div class="marker-text"
+                                                     style="color: #000000; background-color: #ffffff; border-radius: 0 xp;">
+                                                    <span>ARKET BASICS COLLECTION</span></div>
+                                            </div>
+                                        </div>
+                                        <div class="color"><span class="i18n">Color</span><span></span></div>
+                                        <div class="price"><span class="i18n">Price</span>
+                                            <div class="m-product-price"><span class="is-regular">1,987,920</span></div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <!-- P11 PRA 1 DETAILS -->
+                                <div class="producttile-details" hidden="" data-slides-index="5">
+                                    <span class="articleCode">0630665002</span>
+                                    <span class="baseProductCode"></span>
+                                    <span class="productName">Crew-Neck T-shirt</span>
+                                    <span class="productCategory"></span>
+                                    <span class="currencyCode"></span>
+                                    <span class="price"></span>
+                                    <span class="originalPrice"></span>
+                                    <span class="brandName"></span>
+                                    <span class="colorLoc">White</span>
+                                    <span class="atelierName"></span>
+                                    <span class="originCountry"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slides"
+                             data-ticket="Oy9wcm9kdWN0LWRldGFpbC1wYWdlX21jL3ByYTEvcHJhMS1jb21wZXRpbmcvcmVjb21tZW5kLWJhc2VkLW9uLXByb2R1Y3Q7Iztwcm9kdWN0X2tleTswNzc2NTEwX2dyb3VwXzAwMV9lbl93dzswNzc2NTEwMDAxX2VuX3d3O1NZTiQwO05PTkU6Tk9ORTs2NTs"
+                             data-varticlecode="0776510001" data-pracode="PRA1"
+                             data-product="{&quot;ticket&quot;:&quot;Oy9wcm9kdWN0LWRldGFpbC1wYWdlX21jL3ByYTEvcHJhMS1jb21wZXRpbmcvcmVjb21tZW5kLWJhc2VkLW9uLXByb2R1Y3Q7Iztwcm9kdWN0X2tleTswNzc2NTEwX2dyb3VwXzAwMV9lbl93dzswNzc2NTEwMDAxX2VuX3d3O1NZTiQwO05PTkU6Tk9ORTs2NTs&quot;,&quot;productKey&quot;:&quot;0776510_group_001_en_ww&quot;,&quot;categoryId&quot;:&quot;&quot;,&quot;mainCategory&quot;:&quot;Bags &amp; Accessories - men_bagsaccessories_all&quot;,&quot;isNew&quot;:&quot;false&quot;,&quot;productName&quot;:&quot;ARKET Canvas Tote&quot;,&quot;variantData&quot;:[{&quot;ticket&quot;:&quot;Oy9wcm9kdWN0LWRldGFpbC1wYWdlX21jL3ByYTEvcHJhMS1jb21wZXRpbmcvcmVjb21tZW5kLWJhc2VkLW9uLXByb2R1Y3Q7Iztwcm9kdWN0X2tleTswNzc2NTEwX2dyb3VwXzAwMV9lbl93dzswNzc2NTEwMDAxX2VuX3d3O1NZTiQwO05PTkU6Tk9ORTs2NTs&quot;,&quot;variantKey&quot;:&quot;0776510001_en_ww&quot;,&quot;varticleCode&quot;:&quot;0776510001&quot;,&quot;vfashionImage&quot;:&quot;https://lp.arket.com/app006prod?set=source[/42/5e/425e34dafc93468edc53b2273458882efdcad62c.jpg],origin[dam],type[LOOKBOOK],device[hdpi],quality[80],ImageVersion[1]&amp;call=url[file:/product/main]&quot;,&quot;visOnSale&quot;:&quot;false&quot;,&quot;vstillLifeImage&quot;:&quot;https://lp.arket.com/app006prod?set=source[/fa/da/fada54dd40c1a711413820aa92e9583821972c7f.jpg],origin[dam],type[DESCRIPTIVESTILLLIFE],device[hdpi],quality[80],ImageVersion[4]&amp;call=url[file:/product/main]&quot;,&quot;vswatch&quot;:&quot;https://lp.arket.com/app006prod?set=color[E8E4D5]&amp;call=url[file:/product/colorSwatch.chain]&quot;,&quot;vcolorLoc&quot;:&quot;Off White&quot;,&quot;vlinkPdp&quot;:&quot;/en/men/bags-accessories/product.arket-canvas-tote-white.0776510001.html&quot;,&quot;vshopNowLink&quot;:&quot;/en/productpage/_jcr_content/product.quickbuy.0776510001.html&quot;,&quot;vformattedPrice&quot;:&quot;$ 8&quot;,&quot;varticleName&quot;:&quot;ARKET Canvas Tote&quot;,&quot;vbrandName&quot;:&quot;&quot;,&quot;vatelierName&quot;:&quot;&quot;,&quot;voriginCountry&quot;:&quot;Bangladesh&quot;}],&quot;productMarkerText&quot;:&quot;ARKET Exclusive,Organic cotton&quot;,&quot;productMarkerStyle&quot;:&quot;color: #000000; background-color: #ffffff; border-radius: 0px.;,color: #000000; background-color: #ffffff; border-radius: #fffff;&quot;,&quot;productMarker&quot;:&quot;&quot;,&quot;swatchesTotal&quot;:0,&quot;scentProduct&quot;:&quot;false&quot;,&quot;productMarkerColors&quot;:&quot;,#000000&quot;}"
+                             aria-hidden="true">
+                            <div class="o-product" onclick="trackProductClick(this,'.o-product')">
+                                <a href="/en/men/bags-accessories/product.arket-canvas-tote-white.0776510001.html"
+                                   target="_self" class="a-link">
+                                    <div class="image">
+                                        <div class="placeholder-wrapper"><img alt="ARKET Canvas Tote"
+                                                                              class="a-image is-hidden Resolve"
+                                                                              src="//lp.arket.com/app006prod?blank=width[2],height[3],color[none]&amp;sink=format[gif]"
+                                                                              data-resolvewidth="2"
+                                                                              data-resolveheight="3"
+                                                                              data-resolvechain="set=source[/fa/da/fada54dd40c1a711413820aa92e9583821972c7f.jpg],origin[dam],type[DESCRIPTIVESTILLLIFE],ImageVersion[4]&amp;call=url[file:/product/dynamic.chain]">
+                                        </div>
+                                    </div>
+                                    <div class="description">
+                                        <div class="product-markers has-hover desktop"></div>
+                                        <div class="id"><span class="i18n">Id</span><span></span></div>
+                                        <div class="product"><span class="i18n">Product</span><span>ARKET 캔버스 토트</span>
+                                        </div>
+                                        <div class="product-markers">
+                                            <div data-component="MProductMarkers" class="m-product-marker"
+                                                 data-component-id="c4e303eb-c000-4122-a79e-299a5fbb6a73">
+                                                <div class="marker-text"
+                                                     style="color: #000000; background-color: #ffffff; border-radius: #fffff;">
+                                                    <span>Organic cotton</span></div>
+                                            </div>
+                                        </div>
+                                        <div class="product-markers">
+                                            <div data-component="MProductMarkers" class="m-product-marker"
+                                                 data-component-id="c4e303eb-c000-4122-a79e-299a5fbb6a73">
+                                                <div class="marker-text"
+                                                     style="color: #000000; background-color: #ffffff; border-radius: 0px.;">
+                                                    <span>ARKET Exclusive</span></div>
+                                            </div>
+                                        </div>
+                                        <div class="color"><span class="i18n">Color</span><span></span></div>
+                                        <div class="price"><span class="i18n">Price</span>
+                                            <div class="m-product-price"><span class="is-regular">128,000</span></div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <!-- P11 PRA 1 DETAILS -->
+                                <div class="producttile-details" hidden="" data-slides-index="6">
+                                    <span class="articleCode">0776510001</span>
+                                    <span class="baseProductCode"></span>
+                                    <span class="productName">ARKET Canvas Tote</span>
+                                    <span class="productCategory"></span>
+                                    <span class="currencyCode"></span>
+                                    <span class="price"></span>
+                                    <span class="originalPrice"></span>
+                                    <span class="brandName"></span>
+                                    <span class="colorLoc">Off White</span>
+                                    <span class="atelierName"></span>
+                                    <span class="originCountry"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slides"
+                             data-ticket="Oy9wcm9kdWN0LWRldGFpbC1wYWdlX21jL3ByYTEvcHJhMS1jb21wZXRpbmcvcmVjb21tZW5kLWJhc2VkLW9uLXByb2R1Y3Q7Iztwcm9kdWN0X2tleTswOTQ2MzU0X2dyb3VwXzAwMl9lbl93dzswOTQ2MzU0MDAyX2VuX3d3O1NZTiQwO05PTkU6Tk9ORTs2NTs"
+                             data-varticlecode="0946354002" data-pracode="PRA1"
+                             data-product="{&quot;ticket&quot;:&quot;Oy9wcm9kdWN0LWRldGFpbC1wYWdlX21jL3ByYTEvcHJhMS1jb21wZXRpbmcvcmVjb21tZW5kLWJhc2VkLW9uLXByb2R1Y3Q7Iztwcm9kdWN0X2tleTswOTQ2MzU0X2dyb3VwXzAwMl9lbl93dzswOTQ2MzU0MDAyX2VuX3d3O1NZTiQwO05PTkU6Tk9ORTs2NTs&quot;,&quot;productKey&quot;:&quot;0946354_group_002_en_ww&quot;,&quot;categoryId&quot;:&quot;&quot;,&quot;mainCategory&quot;:&quot;Tailoring - women_tailoring_all&quot;,&quot;isNew&quot;:&quot;false&quot;,&quot;productName&quot;:&quot;Oversized Wool Hopsack Blazer&quot;,&quot;variantData&quot;:[{&quot;ticket&quot;:&quot;Oy9wcm9kdWN0LWRldGFpbC1wYWdlX21jL3ByYTEvcHJhMS1jb21wZXRpbmcvcmVjb21tZW5kLWJhc2VkLW9uLXByb2R1Y3Q7Iztwcm9kdWN0X2tleTswOTQ2MzU0X2dyb3VwXzAwMl9lbl93dzswOTQ2MzU0MDAyX2VuX3d3O1NZTiQwO05PTkU6Tk9ORTs2NTs&quot;,&quot;variantKey&quot;:&quot;0946354002_en_ww&quot;,&quot;varticleCode&quot;:&quot;0946354002&quot;,&quot;vfashionImage&quot;:&quot;https://lp.arket.com/app006prod?set=source[/4f/a3/4fa34243ceed301f064d362b4e790d5975e7e1a9.jpg],origin[dam],type[LOOKBOOK],device[hdpi],quality[80],ImageVersion[1]&amp;call=url[file:/product/main]&quot;,&quot;visOnSale&quot;:&quot;false&quot;,&quot;vstillLifeImage&quot;:&quot;https://lp.arket.com/app006prod?set=source[/31/d6/31d689d16fab7a98ede310912be216df4b55ad16.jpg],origin[dam],type[DESCRIPTIVESTILLLIFE],device[hdpi],quality[80],ImageVersion[1]&amp;call=url[file:/product/main]&quot;,&quot;vswatch&quot;:&quot;https://lp.arket.com/app006prod?set=color[272628]&amp;call=url[file:/product/colorSwatch.chain]&quot;,&quot;vcolorLoc&quot;:&quot;Black&quot;,&quot;vlinkPdp&quot;:&quot;/en/women/tailoring/product.oversized-wool-hopsack-blazer-black.0946354002.html&quot;,&quot;vshopNowLink&quot;:&quot;/en/productpage/_jcr_content/product.quickbuy.0946354002.html&quot;,&quot;vformattedPrice&quot;:&quot;$ 199&quot;,&quot;varticleName&quot;:&quot;Oversized Wool Hopsack Blazer&quot;,&quot;vbrandName&quot;:&quot;&quot;,&quot;vatelierName&quot;:&quot;&quot;,&quot;voriginCountry&quot;:&quot;Romania&quot;}],&quot;productMarkerText&quot;:&quot;Responsible wool &quot;,&quot;productMarkerStyle&quot;:&quot;color: #000000; background-color: #ffffff; border-radius: #fffff;&quot;,&quot;productMarker&quot;:&quot;&quot;,&quot;swatchesTotal&quot;:0,&quot;scentProduct&quot;:&quot;false&quot;,&quot;productMarkerColors&quot;:&quot;#000000&quot;}"
+                             aria-hidden="true">
+                            <div class="o-product" onclick="trackProductClick(this,'.o-product')">
+                                <a href="/en/women/tailoring/product.oversized-wool-hopsack-blazer-black.0946354002.html"
+                                   target="_self" class="a-link">
+                                    <div class="image">
+                                        <div class="placeholder-wrapper"><img alt="Oversized Wool Hopsack Blazer"
+                                                                              class="a-image is-hidden Resolve"
+                                                                              src="//lp.arket.com/app006prod?blank=width[2],height[3],color[none]&amp;sink=format[gif]"
+                                                                              data-resolvewidth="2"
+                                                                              data-resolveheight="3"
+                                                                              data-resolvechain="set=source[/31/d6/31d689d16fab7a98ede310912be216df4b55ad16.jpg],origin[dam],type[DESCRIPTIVESTILLLIFE],ImageVersion[1]&amp;call=url[file:/product/dynamic.chain]">
+                                        </div>
+                                    </div>
+                                    <div class="description">
+                                        <div class="product-markers has-hover desktop"></div>
+                                        <div class="id"><span class="i18n">Id</span><span></span></div>
+                                        <div class="product"><span class="i18n">Product</span><span>오버 사이즈 올 홉색 블레이저</span>
+                                        </div>
+                                        <div class="product-markers">
+                                            <div data-component="MProductMarkers" class="m-product-marker"
+                                                 data-component-id="c4e303eb-c000-4122-a79e-299a5fbb6a73">
+                                                <div class="marker-text"
+                                                     style="color: #000000; background-color: #ffffff; border-radius: #fffff;">
+                                                    <span>Responsible wool </span></div>
+                                            </div>
+                                        </div>
+                                        <div class="color"><span class="i18n">Color</span><span></span></div>
+                                        <div class="price"><span class="i18n">Price</span>
+                                            <div class="m-product-price"><span class="is-regular">199,990</span></div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <!-- P11 PRA 1 DETAILS -->
+                                <div class="producttile-details" hidden="" data-slides-index="7">
+                                    <span class="articleCode">0946354002</span>
+                                    <span class="baseProductCode"></span>
+                                    <span class="productName">Oversized Wool Hopsack Blazer</span>
+                                    <span class="productCategory"></span>
+                                    <span class="currencyCode"></span>
+                                    <span class="price"></span>
+                                    <span class="originalPrice"></span>
+                                    <span class="brandName"></span>
+                                    <span class="colorLoc">Black</span>
+                                    <span class="atelierName"></span>
+                                    <span class="originCountry"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slides"
+                             data-ticket="Oy9wcm9kdWN0LWRldGFpbC1wYWdlX21jL3ByYTEvcHJhMS1jb21wZXRpbmcvcmVjb21tZW5kLWJhc2VkLW9uLXByb2R1Y3Q7Iztwcm9kdWN0X2tleTswNjMwNjY1X2dyb3VwXzAzM19lbl93dzswNjMwNjY1MDMzX2VuX3d3O1NZTiQwO05PTkU6Tk9ORTs2NTs"
+                             data-varticlecode="0630665033" data-pracode="PRA1"
+                             data-product="{&quot;ticket&quot;:&quot;Oy9wcm9kdWN0LWRldGFpbC1wYWdlX21jL3ByYTEvcHJhMS1jb21wZXRpbmcvcmVjb21tZW5kLWJhc2VkLW9uLXByb2R1Y3Q7Iztwcm9kdWN0X2tleTswNjMwNjY1X2dyb3VwXzAzM19lbl93dzswNjMwNjY1MDMzX2VuX3d3O1NZTiQwO05PTkU6Tk9ORTs2NTs&quot;,&quot;productKey&quot;:&quot;0630665_group_033_en_ww&quot;,&quot;categoryId&quot;:&quot;&quot;,&quot;mainCategory&quot;:&quot;Tops - women_tops_all&quot;,&quot;isNew&quot;:&quot;true&quot;,&quot;productName&quot;:&quot;Crew-Neck T-shirt&quot;,&quot;variantData&quot;:[{&quot;ticket&quot;:&quot;Oy9wcm9kdWN0LWRldGFpbC1wYWdlX21jL3ByYTEvcHJhMS1jb21wZXRpbmcvcmVjb21tZW5kLWJhc2VkLW9uLXByb2R1Y3Q7Iztwcm9kdWN0X2tleTswNjMwNjY1X2dyb3VwXzAzM19lbl93dzswNjMwNjY1MDMzX2VuX3d3O1NZTiQwO05PTkU6Tk9ORTs2NTs&quot;,&quot;variantKey&quot;:&quot;0630665033_en_ww&quot;,&quot;varticleCode&quot;:&quot;0630665033&quot;,&quot;vfashionImage&quot;:&quot;https://lp.arket.com/app006prod?set=source[/af/e0/afe06530d3be7ae906cdd05585b3f1464bcbcbcd.jpg],origin[dam],type[LOOKBOOK],device[hdpi],quality[80],ImageVersion[1]&amp;call=url[file:/product/main]&quot;,&quot;visOnSale&quot;:&quot;false&quot;,&quot;vstillLifeImage&quot;:&quot;https://lp.arket.com/app006prod?set=source[/95/52/95528393c34b632413f95e874acc40f608fafa0a.jpg],origin[dam],type[DESCRIPTIVESTILLLIFE],device[hdpi],quality[80],ImageVersion[1]&amp;call=url[file:/product/main]&quot;,&quot;vswatch&quot;:&quot;https://lp.arket.com/app006prod?set=color[F2E8D6]&amp;call=url[file:/product/colorSwatch.chain]&quot;,&quot;vcolorLoc&quot;:&quot;Light Beige&quot;,&quot;vlinkPdp&quot;:&quot;/en/women/tops/product.crew-neck-t-shirt-white.0630665033.html&quot;,&quot;vshopNowLink&quot;:&quot;/en/productpage/_jcr_content/product.quickbuy.0630665033.html&quot;,&quot;vformattedPrice&quot;:&quot;$ 20&quot;,&quot;varticleName&quot;:&quot;Crew-Neck T-shirt&quot;,&quot;vbrandName&quot;:&quot;&quot;,&quot;vatelierName&quot;:&quot;&quot;,&quot;voriginCountry&quot;:&quot;Bangladesh&quot;}],&quot;productMarkerText&quot;:&quot;ARKET BASICS COLLECTION&quot;,&quot;productMarkerStyle&quot;:&quot;color: #000000; background-color: #ffffff; border-radius: 0 xp;&quot;,&quot;productMarker&quot;:&quot;&quot;,&quot;swatchesTotal&quot;:0,&quot;scentProduct&quot;:&quot;false&quot;,&quot;productMarkerColors&quot;:&quot;&quot;}"
+                             aria-hidden="true">
+                            <div class="o-product" onclick="trackProductClick(this,'.o-product')">
+                                <a href="/en/women/tops/product.crew-neck-t-shirt-white.0630665033.html"
+                                   target="_self" class="a-link">
+                                    <div class="image">
+                                        <div class="placeholder-wrapper"><img alt="Crew-Neck T-shirt"
+                                                                              class="a-image is-hidden Resolve"
+                                                                              src="//lp.arket.com/app006prod?blank=width[2],height[3],color[none]&amp;sink=format[gif]"
+                                                                              data-resolvewidth="2"
+                                                                              data-resolveheight="3"
+                                                                              data-resolvechain="set=source[/95/52/95528393c34b632413f95e874acc40f608fafa0a.jpg],origin[dam],type[DESCRIPTIVESTILLLIFE],ImageVersion[1]&amp;call=url[file:/product/dynamic.chain]">
+                                        </div>
+                                    </div>
+                                    <div class="description">
+                                        <div class="product-markers has-hover desktop"></div>
+                                        <div class="id"><span class="i18n">Id</span><span></span></div>
+                                        <div class="product"><span class="i18n">Product</span><span>크루 넥 티셔츠</span>
+                                        </div>
+                                        <div class="product-markers">
+                                            <div data-component="MProductMarkers" class="m-product-marker"
+                                                 data-component-id="c4e303eb-c000-4122-a79e-299a5fbb6a73">
+                                                <div class="marker-text"
+                                                     style="color: #000000; background-color: #ffffff; border-radius: 0 xp;">
+                                                    <span>ARKET BASICS COLLECTION</span></div>
+                                            </div>
+                                        </div>
+                                        <div class="color"><span class="i18n">Color</span><span></span></div>
+                                        <div class="price"><span class="i18n">Price</span>
+                                            <div class="m-product-price"><span class="is-regular">33,000</span></div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <!-- P11 PRA 1 DETAILS -->
+                                <div class="producttile-details" hidden="" data-slides-index="8">
+                                    <span class="articleCode">0630665033</span>
+                                    <span class="baseProductCode"></span>
+                                    <span class="productName">Crew-Neck T-shirt</span>
+                                    <span class="productCategory"></span>
+                                    <span class="currencyCode"></span>
+                                    <span class="price"></span>
+                                    <span class="originalPrice"></span>
+                                    <span class="brandName"></span>
+                                    <span class="colorLoc">Light Beige</span>
+                                    <span class="atelierName"></span>
+                                    <span class="originCountry"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slides"
+                             data-ticket="Oy9wcm9kdWN0LWRldGFpbC1wYWdlX21jL3ByYTEvcHJhMS1jb21wZXRpbmcvcmVjb21tZW5kLWJhc2VkLW9uLXByb2R1Y3Q7Iztwcm9kdWN0X2tleTswNjMwNjY1X2dyb3VwXzAwMV9lbl93dzswNjMwNjY1MDAxX2VuX3d3O1NZTiQwO05PTkU6Tk9ORTs2NTs"
+                             data-varticlecode="0630665001" data-pracode="PRA1"
+                             data-product="{&quot;ticket&quot;:&quot;Oy9wcm9kdWN0LWRldGFpbC1wYWdlX21jL3ByYTEvcHJhMS1jb21wZXRpbmcvcmVjb21tZW5kLWJhc2VkLW9uLXByb2R1Y3Q7Iztwcm9kdWN0X2tleTswNjMwNjY1X2dyb3VwXzAwMV9lbl93dzswNjMwNjY1MDAxX2VuX3d3O1NZTiQwO05PTkU6Tk9ORTs2NTs&quot;,&quot;productKey&quot;:&quot;0630665_group_001_en_ww&quot;,&quot;categoryId&quot;:&quot;&quot;,&quot;mainCategory&quot;:&quot;Tops - women_tops_all&quot;,&quot;isNew&quot;:&quot;true&quot;,&quot;productName&quot;:&quot;Crew-Neck T-shirt&quot;,&quot;variantData&quot;:[{&quot;ticket&quot;:&quot;Oy9wcm9kdWN0LWRldGFpbC1wYWdlX21jL3ByYTEvcHJhMS1jb21wZXRpbmcvcmVjb21tZW5kLWJhc2VkLW9uLXByb2R1Y3Q7Iztwcm9kdWN0X2tleTswNjMwNjY1X2dyb3VwXzAwMV9lbl93dzswNjMwNjY1MDAxX2VuX3d3O1NZTiQwO05PTkU6Tk9ORTs2NTs&quot;,&quot;variantKey&quot;:&quot;0630665001_en_ww&quot;,&quot;varticleCode&quot;:&quot;0630665001&quot;,&quot;vfashionImage&quot;:&quot;https://lp.arket.com/app006prod?set=source[/59/c1/59c1df35300b716f5eadf84aa0002fb437897c23.jpg],origin[dam],type[LOOKBOOK],device[hdpi],quality[80],ImageVersion[1]&amp;call=url[file:/product/main]&quot;,&quot;visOnSale&quot;:&quot;false&quot;,&quot;vstillLifeImage&quot;:&quot;https://lp.arket.com/app006prod?set=source[/22/81/2281f98d18c82f9665251fa4f9dd56678ba4ac0b.jpg],origin[dam],type[DESCRIPTIVESTILLLIFE],device[hdpi],quality[80],ImageVersion[1]&amp;call=url[file:/product/main]&quot;,&quot;vswatch&quot;:&quot;https://lp.arket.com/app006prod?set=color[272628]&amp;call=url[file:/product/colorSwatch.chain]&quot;,&quot;vcolorLoc&quot;:&quot;Black&quot;,&quot;vlinkPdp&quot;:&quot;/en/women/tops/product.crew-neck-t-shirt-black.0630665001.html&quot;,&quot;vshopNowLink&quot;:&quot;/en/productpage/_jcr_content/product.quickbuy.0630665001.html&quot;,&quot;vformattedPrice&quot;:&quot;$ 20&quot;,&quot;varticleName&quot;:&quot;Crew-Neck T-shirt&quot;,&quot;vbrandName&quot;:&quot;&quot;,&quot;vatelierName&quot;:&quot;&quot;,&quot;voriginCountry&quot;:&quot;Bangladesh&quot;}],&quot;productMarkerText&quot;:&quot;ARKET BASICS COLLECTION&quot;,&quot;productMarkerStyle&quot;:&quot;color: #000000; background-color: #ffffff; border-radius: 0 xp;&quot;,&quot;productMarker&quot;:&quot;&quot;,&quot;swatchesTotal&quot;:0,&quot;scentProduct&quot;:&quot;false&quot;,&quot;productMarkerColors&quot;:&quot;&quot;}"
+                             aria-hidden="true">
+                            <div class="o-product" onclick="trackProductClick(this,'.o-product')">
+                                <a href="/en/women/tops/product.crew-neck-t-shirt-black.0630665001.html"
+                                   target="_self" class="a-link">
+                                    <div class="image">
+                                        <div class="placeholder-wrapper"><img alt="Crew-Neck T-shirt"
+                                                                              class="a-image is-hidden Resolve"
+                                                                              src="//lp.arket.com/app006prod?blank=width[2],height[3],color[none]&amp;sink=format[gif]"
+                                                                              data-resolvewidth="2"
+                                                                              data-resolveheight="3"
+                                                                              data-resolvechain="set=source[/22/81/2281f98d18c82f9665251fa4f9dd56678ba4ac0b.jpg],origin[dam],type[DESCRIPTIVESTILLLIFE],ImageVersion[1]&amp;call=url[file:/product/dynamic.chain]">
+                                        </div>
+                                    </div>
+                                    <div class="description">
+                                        <div class="product-markers has-hover desktop"></div>
+                                        <div class="id"><span class="i18n">Id</span><span></span></div>
+                                        <div class="product"><span class="i18n">Product</span><span>크루 넥 티셔츠</span>
+                                        </div>
+                                        <div class="product-markers">
+                                            <div data-component="MProductMarkers" class="m-product-marker"
+                                                 data-component-id="c4e303eb-c000-4122-a79e-299a5fbb6a73">
+                                                <div class="marker-text"
+                                                     style="color: #000000; background-color: #ffffff; border-radius: 0 xp;">
+                                                    <span>ARKET BASICS COLLECTION</span></div>
+                                            </div>
+                                        </div>
+                                        <div class="color"><span class="i18n">Color</span><span></span></div>
+                                        <div class="price"><span class="i18n">Price</span>
+                                            <div class="m-product-price"><span class="is-regular">888,900</span></div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <!-- P11 PRA 1 DETAILS -->
+                                <div class="producttile-details" hidden="" data-slides-index="9">
+                                    <span class="articleCode">0630665001</span>
+                                    <span class="baseProductCode"></span>
+                                    <span class="productName">Crew-Neck T-shirt</span>
+                                    <span class="productCategory"></span>
+                                    <span class="currencyCode"></span>
+                                    <span class="price"></span>
+                                    <span class="originalPrice"></span>
+                                    <span class="brandName"></span>
+                                    <span class="colorLoc">Black</span>
+                                    <span class="atelierName"></span>
+                                    <span class="originCountry"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slides"
+                             data-ticket="Oy9wcm9kdWN0LWRldGFpbC1wYWdlX21jL3ByYTEvcHJhMS1jb21wZXRpbmcvcmVjb21tZW5kLWJhc2VkLW9uLXByb2R1Y3Q7Iztwcm9kdWN0X2tleTswOTY3OTQxX2dyb3VwXzAwNF9lbl93dzswOTY3OTQxMDA0X2VuX3d3O1NZTiQwO05PTkU6Tk9ORTs2NTs"
+                             data-varticlecode="0967941004" data-pracode="PRA1"
+                             data-product="{&quot;ticket&quot;:&quot;Oy9wcm9kdWN0LWRldGFpbC1wYWdlX21jL3ByYTEvcHJhMS1jb21wZXRpbmcvcmVjb21tZW5kLWJhc2VkLW9uLXByb2R1Y3Q7Iztwcm9kdWN0X2tleTswOTY3OTQxX2dyb3VwXzAwNF9lbl93dzswOTY3OTQxMDA0X2VuX3d3O1NZTiQwO05PTkU6Tk9ORTs2NTs&quot;,&quot;productKey&quot;:&quot;0967941_group_004_en_ww&quot;,&quot;categoryId&quot;:&quot;&quot;,&quot;mainCategory&quot;:&quot;Tops - women_tops_all&quot;,&quot;isNew&quot;:&quot;false&quot;,&quot;productName&quot;:&quot;Oversized Pima Cotton T-shirt&quot;,&quot;variantData&quot;:[{&quot;ticket&quot;:&quot;Oy9wcm9kdWN0LWRldGFpbC1wYWdlX21jL3ByYTEvcHJhMS1jb21wZXRpbmcvcmVjb21tZW5kLWJhc2VkLW9uLXByb2R1Y3Q7Iztwcm9kdWN0X2tleTswOTY3OTQxX2dyb3VwXzAwNF9lbl93dzswOTY3OTQxMDA0X2VuX3d3O1NZTiQwO05PTkU6Tk9ORTs2NTs&quot;,&quot;variantKey&quot;:&quot;0967941004_en_ww&quot;,&quot;varticleCode&quot;:&quot;0967941004&quot;,&quot;vfashionImage&quot;:&quot;https://lp.arket.com/app006prod?set=source[/31/a3/31a3baefe963cd365fdb02b7808e0b19f5061b3a.jpg],origin[dam],type[LOOKBOOK],device[hdpi],quality[80],ImageVersion[1]&amp;call=url[file:/product/main]&quot;,&quot;visOnSale&quot;:&quot;false&quot;,&quot;vstillLifeImage&quot;:&quot;https://lp.arket.com/app006prod?set=source[/21/19/2119b29c9a3034aac2e7e30929561939567d760c.jpg],origin[dam],type[DESCRIPTIVESTILLLIFE],device[hdpi],quality[80],ImageVersion[1]&amp;call=url[file:/product/main]&quot;,&quot;vswatch&quot;:&quot;https://lp.arket.com/app006prod?set=color[384165]&amp;call=url[file:/product/colorSwatch.chain]&quot;,&quot;vcolorLoc&quot;:&quot;Blue/White&quot;,&quot;vlinkPdp&quot;:&quot;/en/women/tops/product.oversized-pima-cotton-t-shirt-blue.0967941004.html&quot;,&quot;vshopNowLink&quot;:&quot;/en/productpage/_jcr_content/product.quickbuy.0967941004.html&quot;,&quot;vformattedPrice&quot;:&quot;$ 34&quot;,&quot;varticleName&quot;:&quot;Oversized Pima Cotton T-shirt&quot;,&quot;vbrandName&quot;:&quot;&quot;,&quot;vatelierName&quot;:&quot;&quot;,&quot;voriginCountry&quot;:&quot;Bangladesh&quot;}],&quot;productMarkerText&quot;:&quot;&quot;,&quot;productMarkerStyle&quot;:&quot;&quot;,&quot;productMarker&quot;:&quot;&quot;,&quot;swatchesTotal&quot;:0,&quot;scentProduct&quot;:&quot;false&quot;,&quot;productMarkerColors&quot;:&quot;&quot;}"
+                             aria-hidden="true">
+                            <div class="o-product" onclick="trackProductClick(this,'.o-product')">
+                                <a href="/en/women/tops/product.oversized-pima-cotton-t-shirt-blue.0967941004.html"
+                                   target="_self" class="a-link">
+                                    <div class="image">
+                                        <div class="placeholder-wrapper"><img alt="Oversized Pima Cotton T-shirt"
+                                                                              class="a-image is-hidden Resolve"
+                                                                              src="//lp.arket.com/app006prod?blank=width[2],height[3],color[none]&amp;sink=format[gif]"
+                                                                              data-resolvewidth="2"
+                                                                              data-resolveheight="3"
+                                                                              data-resolvechain="set=source[/21/19/2119b29c9a3034aac2e7e30929561939567d760c.jpg],origin[dam],type[DESCRIPTIVESTILLLIFE],ImageVersion[1]&amp;call=url[file:/product/dynamic.chain]">
+                                        </div>
+                                    </div>
+                                    <div class="description">
+                                        <div class="product-markers has-hover desktop"></div>
+                                        <div class="id"><span class="i18n">Id</span><span></span></div>
+                                        <div class="product"><span class="i18n">Product</span><span>오버사이즈 피마 티셔츠</span>
+                                        </div>
+
+                                        <div class="color"><span class="i18n">Color</span><span></span></div>
+                                        <div class="price"><span class="i18n">Price</span>
+                                            <div class="m-product-price"><span class="is-regular">444,000</span></div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <!-- P11 PRA 1 DETAILS -->
+                                <div class="producttile-details" hidden="" data-slides-index="10">
+                                    <span class="articleCode">0967941004</span>
+                                    <span class="baseProductCode"></span>
+                                    <span class="productName">Oversized Pima Cotton T-shirt</span>
+                                    <span class="productCategory"></span>
+                                    <span class="currencyCode"></span>
+                                    <span class="price"></span>
+                                    <span class="originalPrice"></span>
+                                    <span class="brandName"></span>
+                                    <span class="colorLoc">Blue/White</span>
+                                    <span class="atelierName"></span>
+                                    <span class="originCountry"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slides"
+                             data-ticket="Oy9wcm9kdWN0LWRldGFpbC1wYWdlX21jL3ByYTEvcHJhMS1jb21wZXRpbmcvcmVjb21tZW5kLWJhc2VkLW9uLXByb2R1Y3Q7Iztwcm9kdWN0X2tleTswNzM5NzM0X2dyb3VwXzAxMF9lbl93dzswNzM5NzM0MDEwX2VuX3d3O1NZTiQwO05PTkU6Tk9ORTs2NTs"
+                             data-varticlecode="0739734010" data-pracode="PRA1"
+                             data-product="{&quot;ticket&quot;:&quot;Oy9wcm9kdWN0LWRldGFpbC1wYWdlX21jL3ByYTEvcHJhMS1jb21wZXRpbmcvcmVjb21tZW5kLWJhc2VkLW9uLXByb2R1Y3Q7Iztwcm9kdWN0X2tleTswNzM5NzM0X2dyb3VwXzAxMF9lbl93dzswNzM5NzM0MDEwX2VuX3d3O1NZTiQwO05PTkU6Tk9ORTs2NTs&quot;,&quot;productKey&quot;:&quot;0739734_group_010_en_ww&quot;,&quot;categoryId&quot;:&quot;&quot;,&quot;mainCategory&quot;:&quot;&quot;,&quot;isNew&quot;:&quot;true&quot;,&quot;productName&quot;:&quot;Linen Shorts&quot;,&quot;variantData&quot;:[{&quot;ticket&quot;:&quot;Oy9wcm9kdWN0LWRldGFpbC1wYWdlX21jL3ByYTEvcHJhMS1jb21wZXRpbmcvcmVjb21tZW5kLWJhc2VkLW9uLXByb2R1Y3Q7Iztwcm9kdWN0X2tleTswNzM5NzM0X2dyb3VwXzAxMF9lbl93dzswNzM5NzM0MDEwX2VuX3d3O1NZTiQwO05PTkU6Tk9ORTs2NTs&quot;,&quot;variantKey&quot;:&quot;0739734010_en_ww&quot;,&quot;varticleCode&quot;:&quot;0739734010&quot;,&quot;visOnSale&quot;:&quot;false&quot;,&quot;vstillLifeImage&quot;:&quot;https://lp.arket.com/app006prod?set=source[/99/c2/99c2cdb1b4674754a1de37a4f4d29bf0a68c1246.jpg],origin[dam],type[DESCRIPTIVESTILLLIFE],device[hdpi],quality[80],ImageVersion[1]&amp;call=url[file:/product/main]&quot;,&quot;vswatch&quot;:&quot;https://lp.arket.com/app006prod?set=color[FFFFFF]&amp;call=url[file:/product/colorSwatch.chain]&quot;,&quot;vcolorLoc&quot;:&quot;White&quot;,&quot;vlinkPdp&quot;:&quot;/en/women/underwear-loungewear/product.linen-shorts-white.0739734010.html&quot;,&quot;vshopNowLink&quot;:&quot;/en/productpage/_jcr_content/product.quickbuy.0739734010.html&quot;,&quot;vformattedPrice&quot;:&quot;$ 49&quot;,&quot;varticleName&quot;:&quot;Linen Shorts&quot;,&quot;vbrandName&quot;:&quot;&quot;,&quot;vatelierName&quot;:&quot;&quot;,&quot;voriginCountry&quot;:&quot;Bangladesh&quot;}],&quot;productMarkerText&quot;:&quot;&quot;,&quot;productMarkerStyle&quot;:&quot;&quot;,&quot;productMarker&quot;:&quot;&quot;,&quot;swatchesTotal&quot;:0,&quot;scentProduct&quot;:&quot;false&quot;,&quot;productMarkerColors&quot;:&quot;&quot;}"
+                             aria-hidden="true">
+                            <div class="o-product" onclick="trackProductClick(this,'.o-product')">
+                                <a href="/en/women/underwear-loungewear/product.linen-shorts-white.0739734010.html"
+                                   target="_self" class="a-link">
+                                    <div class="image">
+                                        <div class="placeholder-wrapper"><img alt="Linen Shorts"
+                                                                              class="a-image is-hidden Resolve"
+                                                                              src="//lp.arket.com/app006prod?blank=width[2],height[3],color[none]&amp;sink=format[gif]"
+                                                                              data-resolvewidth="2"
+                                                                              data-resolveheight="3"
+                                                                              data-resolvechain="set=source[/99/c2/99c2cdb1b4674754a1de37a4f4d29bf0a68c1246.jpg],origin[dam],type[DESCRIPTIVESTILLLIFE],ImageVersion[1]&amp;call=url[file:/product/dynamic.chain]">
+                                        </div>
+                                    </div>
+                                    <div class="description">
+                                        <div class="product-markers has-hover desktop"></div>
+                                        <div class="id"><span class="i18n">Id</span><span></span></div>
+                                        <div class="product"><span
+                                                    class="i18n">Product</span><span>Linen Shorts</span></div>
+
+                                        <div class="color"><span class="i18n">Color</span><span></span></div>
+                                        <div class="price"><span class="i18n">Price</span>
+                                            <div class="m-product-price"><span class="is-regular">$ 49</span></div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <!-- P11 PRA 1 DETAILS -->
+                                <div class="producttile-details" hidden="" data-slides-index="11">
+                                    <span class="articleCode">0739734010</span>
+                                    <span class="baseProductCode"></span>
+                                    <span class="productName">Linen Shorts</span>
+                                    <span class="productCategory"></span>
+                                    <span class="currencyCode"></span>
+                                    <span class="price"></span>
+                                    <span class="originalPrice"></span>
+                                    <span class="brandName"></span>
+                                    <span class="colorLoc">White</span>
+                                    <span class="atelierName"></span>
+                                    <span class="originCountry"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="redils-controls">
+                    <div class="arrow-area arrow-area-left">
+                        <button type="button" class="a-button-nostyle arrow"></button>
+                    </div>
+                    <div class="arrow-area arrow-area-right">
+                        <button type="button" class="a-button-nostyle arrow"></button>
+                    </div>
+                </div>
+                <div class="pagination"></div>
+            </div>
+            <!-- //o-slider -->
+
+        </div>
+    </div>
+    <!-- //carousel -->
+    
+</div>
+
+<!-- tip : when develop this script must be delete -->
+<script type="text/javascript">
+    (function() {
+        'use strict';
+        //헤더 border-bottom 라인 숨기기
+        let tempHeader = document.querySelector('.o-header');
+        let tempHeaderWomen = tempHeader.querySelector('.departments li:nth-child(1) a')
+        tempHeaderWomen.classList.add('is-active'); //gnb 활성화
+    })();
+</script>
+<!-- //tip -->

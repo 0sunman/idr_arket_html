@@ -120,6 +120,7 @@
         </div>
     </div>
 
+    <!-- m-site-banner : 띠배너 -->
     <!--
     <div id="site-banner-id" data-component="MSiteBanner" class="m-site-banner slide-down" data-component-id="99b5970e-f57c-49a0-81af-c7dcdc255c0b" style="background-color: rgb(0, 0, 0); display: block;">
         <input type="hidden" name="startDateField" value="2021/06/10 08:10:00" id="sitebannersd">
@@ -142,6 +143,7 @@
         </div>
     </div>
     -->
+    <!-- //m-site-banner : 띠배너 -->
 
     <div class="u-no-select">
         <div class="a-overlay js-a-overlay q-opacity-0" data-component="AOverlay" data-component-id="00dc7c54-c454-4add-9da6-62430cfc116d"></div>
@@ -901,7 +903,7 @@
             <span class="country-name">배송국가</span>
             <span class="lang"></span>
         </button>
-        <a href="/ko/logout" target="_self" class="a-link bottom account logout" style="display:none;" area-hidden="true">로그아웃</a>
+        <a href="/ko/logout" target="_self" class="a-link bottom account logout" area-hidden="true">로그아웃</a>
     </div>
 
     <a href="https://www.instagram.com/arketofficial" target="_self" class="a-link follow">Follow us</a>
@@ -1457,18 +1459,25 @@
         <div class="basket-wrapper">
             <div class="added-item">
                 <div class="basket-added-image">
-                    <img class="a-image" src="//:0" alt="">
+                    <img class="a-image ResolveComplete" src="../../../static/images/temp/sample-img.jpg">
                 </div>
                 <div class="basket-added-info">
-                    <div class="basket-added-info-title i18n">Added To Bag</div>
                     <p class="a-paragraph">
-								<span class="basket-added-info-price">
-									<span class="u-price"></span>
-									<span class="u-currency"></span>
-								</span>
-                        <span class="item-title"></span>
+                        <span class="item-title">루즈핏 리넨 쇼츠</span>
+                        <div class="product-param-info second">
+                            <div class="product-params data">
+                                <div class="product-size">44</div>
+                                <div class="product-color">핑크</div>
+                                <div class="product-qty">2</div>
+                            </div>
+                        </div>
+                        <span class="basket-added-info-price">
+                            <span class="u-price is-deprecated">100,000</span>
+                            <!--<span class="u-price-discount">85,000</span>-->
+                            <span class="u-price discount total">85,000</span>
+                        </span>
                     </p>
-                    <a class="a-button checkout i18n" href="/ko/cart">View bag</a>
+                    <a class="a-button checkout i18n" href="/ko/cart">장바구니 보기</a>
                 </div>
             </div>
             <div class="no-added-item">
@@ -2451,7 +2460,7 @@
 	<p class="fc-point2">무료배송, 무료반품 혜택과 함께 새로운 상품을 찾아보세요<br class="only-pc">택배사 파업으로 인해 배송 및 반품이 지연될 수 있습니다.</p>
 	<p>배송완료 후 14일 이내 청약철회(반품)가 가능합니다.
 		단, 위생상의 이유로 속옷, 피어싱류 보석은 반품 불가합니다.
-		자세한 내용은 <a href="#" class="a-link open-lightbox" data-template="return-and-refund-policy" data-classes="is-large">반품 및 환불</a>을 확인해주세요.</p>
+		자세한 내용은 <a href="#" class="a-link open-lightbox" data-template="lp-return-refund-guide">반품 및 환불</a>을 확인해주세요.</p>
 	<h3>배송정보 안내</h3>
 	<p>
 		<span  class="desc-text">3일 내에 발송됩니다. (주말 및 공휴일 제외) 주문상품 품절/배송 지연 예상 시 유선/SMS안내</span>
@@ -2468,6 +2477,112 @@
 <!-- //m-informative-section -->
 
 <!-- handlebars-template -->
+
+<!-- 반품 및 환불 -->
+<script type="text/x-handlebars-template" id="lp-return-refund-guide">
+    <div class="lightbox-content-dft lp-return-refund-guide">
+        <div class="m-headline is-main-headline">
+            <h2 class="a-heading-2"><span>반품 및 환불</span></h2>
+        </div>
+        <div class="content">
+
+            <div class="o-accordion v2" data-component="OAccordion" data-exclusive="true" data-exclusive-group="return-refound-guide">
+                <div class="accordion-header">
+                    <a class="a-link accordion-title js-accordion-toggle" href="#none" target="_self">
+                        <h3 class="a-heading-3">반품 및 환불</h3>
+                    </a>
+                </div>
+                <div class="accordion-content">
+                    <p class="accordion-con-text">
+                        고객이 주문한 상품에 만족하기를 항상 바라지만, 마음에 들지 않을 경우 상품 수령 후 7일 이내의 경우
+                        온라인 스토어 및 고객 센터를 통한 반품 신청이 가능하며 수령 후 7일 경과, 14일 이전의 기간에는
+                        고객 센터를 통한 반품 신청만 가능합니다.
+
+                        결제 방식과 동일한 방법으로 전액이 환불됩니다. 반품 진행 시 상품이 깨끗하고 흠이 없고 모든 태그가
+                        부착되어 있어야 합니다. 특히 수영복의 경우 위생 테이프의 손상없이 부착되어 있어야 합니다.
+
+                        위생상의 이유로 속옷 및 이어링 제품은 반품이 불가합니다. (결함의 경우 제외)
+
+                        온라인 구매 상품은 매장에서 환불이 불가합니다.
+                        모든 반품 비용은 무료이나, 위생상의 이유로 속옷 및 이어링 제품은 반품이 불가합니다
+                    </p>
+                </div>
+            </div>
+
+            <div class="o-accordion v2" data-component="OAccordion" data-exclusive="true" data-exclusive-group="return-refound-guide">
+                <div class="accordion-header">
+                    <a class="a-link accordion-title js-accordion-toggle" href="#none" target="_self">
+                        <h3 class="a-heading-3">반품방법</h3>
+                    </a>
+                </div>
+                <div class="accordion-content">
+                    <p class="accordion-con-text">
+                        고객이 주문한 상품에 만족하기를 항상 바라지만, 마음에 들지 않을 경우 상품 수령 후 7일 이내의 경우
+                        온라인 스토어 및 고객 센터를 통한 반품 신청이 가능하며 수령 후 7일 경과, 14일 이전의 기간에는
+                        고객 센터를 통한 반품 신청만 가능합니다.
+
+                        결제 방식과 동일한 방법으로 전액이 환불됩니다. 반품 진행 시 상품이 깨끗하고 흠이 없고 모든 태그가
+                        부착되어 있어야 합니다. 특히 수영복의 경우 위생 테이프의 손상없이 부착되어 있어야 합니다.
+
+                        위생상의 이유로 속옷 및 이어링 제품은 반품이 불가합니다. (결함의 경우 제외)
+
+                        온라인 구매 상품은 매장에서 환불이 불가합니다.
+                        모든 반품 비용은 무료이나, 위생상의 이유로 속옷 및 이어링 제품은 반품이 불가합니다
+                    </p>
+                </div>
+            </div>
+
+            <div class="o-accordion v2" data-component="OAccordion" data-exclusive="true" data-exclusive-group="return-refound-guide">
+                <div class="accordion-header">
+                    <a class="a-link accordion-title js-accordion-toggle" href="#none" target="_self">
+                        <h3 class="a-heading-3">조심해서 착용해 주세요</h3>
+                    </a>
+                </div>
+                <div class="accordion-content">
+                    <p class="accordion-con-text">
+                        고객이 주문한 상품에 만족하기를 항상 바라지만, 마음에 들지 않을 경우 상품 수령 후 7일 이내의 경우
+                        온라인 스토어 및 고객 센터를 통한 반품 신청이 가능하며 수령 후 7일 경과, 14일 이전의 기간에는
+                        고객 센터를 통한 반품 신청만 가능합니다.
+
+                        결제 방식과 동일한 방법으로 전액이 환불됩니다. 반품 진행 시 상품이 깨끗하고 흠이 없고 모든 태그가
+                        부착되어 있어야 합니다. 특히 수영복의 경우 위생 테이프의 손상없이 부착되어 있어야 합니다.
+
+                        위생상의 이유로 속옷 및 이어링 제품은 반품이 불가합니다. (결함의 경우 제외)
+
+                        온라인 구매 상품은 매장에서 환불이 불가합니다.
+                        모든 반품 비용은 무료이나, 위생상의 이유로 속옷 및 이어링 제품은 반품이 불가합니다
+                    </p>
+                </div>
+            </div>
+
+            <div class="o-accordion v2" data-component="OAccordion" data-exclusive="true" data-exclusive-group="return-refound-guide">
+                <div class="accordion-header">
+                    <a class="a-link accordion-title js-accordion-toggle" href="#none" target="_self">
+                        <h3 class="a-heading-3">환불</h3>
+                    </a>
+                </div>
+                <div class="accordion-content">
+                    <p class="accordion-con-text">
+                        고객이 주문한 상품에 만족하기를 항상 바라지만, 마음에 들지 않을 경우 상품 수령 후 7일 이내의 경우
+                        온라인 스토어 및 고객 센터를 통한 반품 신청이 가능하며 수령 후 7일 경과, 14일 이전의 기간에는
+                        고객 센터를 통한 반품 신청만 가능합니다.
+
+                        결제 방식과 동일한 방법으로 전액이 환불됩니다. 반품 진행 시 상품이 깨끗하고 흠이 없고 모든 태그가
+                        부착되어 있어야 합니다. 특히 수영복의 경우 위생 테이프의 손상없이 부착되어 있어야 합니다.
+
+                        위생상의 이유로 속옷 및 이어링 제품은 반품이 불가합니다. (결함의 경우 제외)
+
+                        온라인 구매 상품은 매장에서 환불이 불가합니다.
+                        모든 반품 비용은 무료이나, 위생상의 이유로 속옷 및 이어링 제품은 반품이 불가합니다
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</script>
+<!-- //반품 및 환불 -->
+
 <script type="text/x-handlebars-template" id="service-join-fact-confirm">
 	<p>서비스 가입사실 확인</p>
 </script>

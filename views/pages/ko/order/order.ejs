@@ -1,0 +1,330 @@
+<main data-component="OPageContent" class="o-page-content cofs-page page-cart ng-scope" ng-controller="CartContextController">
+
+    <div class="o-order-confirmation" data-component="OCart">
+        <!-- order-sheet-info -->
+        <div class="order-sheet-info">
+
+            <!-- orderer-info-bx -->
+            <h2 class="a-heading-2">주문고객정보</h2>
+            <ul class="dft-bx line-bx orderer-info-bx">
+                <li>
+                    <span class="orderer">홍길동</span>
+                    <a class="a-link a-link-udln orderer" href="#" target="_self">수정</a>
+                </li>
+                <li><span class="orderer-phone">010-1234-5678</span></li>
+                <li>
+                    <span class="orderer-email">arket@gmail.com</span>
+                </li>
+            </ul>
+            <!-- //orderer-info-bx -->
+
+            <!-- delivery-info-bx -->
+            <h2 class="a-heading-2">배송지정보</h2>
+            <div class="dft-bx line-bx delivery-info-bx">
+                <div class="radio-button-list">
+                    <div class="m-radio-button v3">
+                        <input type="radio" class="a-radio-button" id="delivery-input-cate1" name="delivery-input-cate" checked>
+                        <label class="a-label js-a-label u-no-select custom-radio" for="delivery-input-cate1"></label>
+                        <label class="a-label js-a-label label-text" for="delivery-input-cate1">배송지 목록</label>
+                    </div>
+
+                    <div class="m-radio-button v3">
+                        <input type="radio" class="a-radio-button" id="delivery-input-cate2" name="delivery-input-cate">
+                        <label class="a-label js-a-label u-no-select custom-radio" for="delivery-input-cate2"></label>
+                        <label class="a-label js-a-label label-text" for="delivery-input-cate2">새로 입력</label>
+                    </div>
+                </div>
+
+                <ul class="my-delivery-list">
+                    <li>
+                        <div class="m-radio-button v3">
+                            <input type="radio" class="a-radio-button" id="delivery-item-radio1" name="delivery-item-radio">
+                            <label class="a-label js-a-label u-no-select custom-radio" for="delivery-item-radio1"></label>
+                            <label class="a-label js-a-label label-text" for="delivery-item-radio1">
+                                <div class="delivery-item">
+                                    <p class="item-top">
+                                        <span class="name">홍길동</span>
+                                        <span class="basic-label">[기본배송지]</span>
+                                        <a class="a-link a-link-udln delivery-item-edit" href="#" target="_self">수정</a>
+                                    </p>
+                                    <p class="phone-num">010-6841-9653</p>
+                                    <p class="phone-num">010-6841-9653</p>
+                                    <p class="address">서울시 강남구 테헤란로 98길, 현대백화점 404호</p>
+                                </div>
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="m-radio-button v3">
+                            <input type="radio" class="a-radio-button" id="delivery-item-radio2" name="delivery-item-radio">
+                            <label class="a-label js-a-label u-no-select custom-radio" for="delivery-item-radio2"></label>
+                            <label class="a-label js-a-label label-text" for="delivery-item-radio2">
+                                <div class="delivery-item">
+                                    <p class="item-top">
+                                        <span class="name">홍길동</span>
+                                        <a class="a-link a-link-udln delivery-item-edit" href="#" target="_self">수정</a>
+                                        <a class="a-link a-link-udln delivery-item-del" href="#" target="_self">삭제</a>
+                                    </p>
+                                    <p class="phone-num">010-6841-9653</p>
+                                    <p class="phone-num">010-6841-9653</p>
+                                    <p class="address">서울시 강남구 테헤란로 98길, 현대백화점 404호</p>
+                                </div>
+                            </label>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="delivery-request">
+                    <p class="dft-bx-tit">배송시 요청사항</p>
+                    <div class="m-dropdown v3">
+                        <label class="a-label js-a-label" for="delivery-msg-dropdown"></label>
+                        <select name="selectSize" id="delivery-msg-dropdown">
+                            <option class="a-option">배송시 요청사항을 선택해주세요.</option>
+                            <option class="a-option">배송 전 연락바랍니다.</option>
+                            <option class="a-option">택배 함에 놔주세요</option>
+                            <option class="a-option">집 앞에 놔주세요.</option>
+                            <option class="a-option">빠른 배송 부탁 드립니다.</option>
+                            <option class="a-option">부재 시 경비실에 맡겨주세요.</option>
+                            <option class="a-option">휴대폰으로 연락 부탁 드립니다.</option>
+                        </select>
+                        <span class="a-icon-accordion a-icon-arrow-down-small"></span>
+                    </div>
+                    
+                    <div class="m-input v3" data-component="MInput">
+                        <input class="a-input js-a-input"
+                               type="text"
+                               name="delivery-requset-msg"
+                               id="delivery-requset-msg"
+                               placeholder="기타 내용을 입력해 주세요">
+                        <label class="a-label js-a-label" for="delivery-requset-msg" data-placeholder=""></label>
+                        <div class="text-count-bx">
+                            <span class="text-count">0</span>
+                            <span class="text-total-count">/30자</span>
+                        </div>
+                    </div>
+                    <p class="guide-text">주문시 입력한 배송지는 자동으로 배송지목록에 추가됩니다.</p>
+                </div>
+            </div>
+            <!-- delivery-info-bx -->
+
+            <!-- discount-info-bx -->
+            <h2 class="a-heading-2">할인</h2>
+            <div class="dft-bx line-bx discount-info-bx">
+                <p class="dft-bx-tit">예치금</p>
+                <div class="m-input v2" data-component="MInput">
+                    <input class="a-input js-a-input v2"
+                           type="numpber"
+                           name="delivery-requset-msg"
+                           id="delivery-requset-msg"
+                           placeholder="기타 내용을 입력해 주세요">
+                    <label class="a-label js-a-label" for="delivery-requset-msg" data-placeholder=""></label>
+                    <a class="a-link a-link-udln" href="#" target="_self">모두 사용</a>
+                    <p class="deposit-price">52,090</p>
+                </div>
+                <p class="guide-text">예치금 사용 기본 단위는 10원이며, 1회 사용 금액 은 제한이 없습니다.</p>
+                <p class="dft-bx-tit promotion-info-tit"><b>프로모션 코드</b></p>
+                <ul class="promotion-info-bx first">
+                    <li>
+                        <span class="discount-name">50% 할인 프로모션 쿠폰</span>
+                        <span class="discount-price">415,789</span>
+                    </li>
+                </ul>
+                <ul class="promotion-info-bx">
+                    <li>
+                        <span class="discount-name"><b>임직원 카드할인</b></span>
+                        <span class="discount-price">25,789</span>
+                    </li>
+                </ul>
+            </div>
+            <!-- //discount-info-bx -->
+
+            <!-- pay-info-bx -->
+            <h2 class="a-heading-2">결제</h2>
+            <div class="dft-bx line-bx pay-info-bx">
+                <div class="radio-button-list vertical">
+                    <div class="m-radio-button v3">
+                        <input type="radio" class="a-radio-button" id="pay-way-radio1" name="pay-way-radio">
+                        <label class="a-label js-a-label u-no-select custom-radio" for="pay-way-radio1"></label>
+                        <label class="a-label js-a-label label-text" for="pay-way-radio1">카드결제</label>
+                    </div>
+                    <div class="m-radio-button v3">
+                        <input type="radio" class="a-radio-button" id="pay-way-radio2" name="pay-way-radio">
+                        <label class="a-label js-a-label u-no-select custom-radio" for="pay-way-radio2"></label>
+                        <label class="a-label js-a-label label-text" for="pay-way-radio2">무통장입금</label>
+                    </div>
+                    <div class="m-radio-button v3">
+                        <input type="radio" class="a-radio-button" id="pay-way-radio3" name="pay-way-radio">
+                        <label class="a-label js-a-label u-no-select custom-radio" for="pay-way-radio3"></label>
+                        <label class="a-label js-a-label label-text" for="pay-way-radio3">실시간 계좌이체</label>
+                    </div>
+                    <div class="m-radio-button v3">
+                        <input type="radio" class="a-radio-button" id="pay-way-radio4" name="pay-way-radio">
+                        <label class="a-label js-a-label u-no-select custom-radio" for="pay-way-radio4"></label>
+                        <label class="a-label js-a-label label-text" for="pay-way-radio4">휴대폰결제</label>
+                    </div>
+                    <div class="m-radio-button v3">
+                        <input type="radio" class="a-radio-button" id="pay-way-radio5" name="pay-way-radio">
+                        <label class="a-label js-a-label u-no-select custom-radio" for="pay-way-radio5"></label>
+                        <label class="a-label js-a-label label-text" for="pay-way-radio5">네이버페이</label>
+                    </div>
+                    <!--
+                    <div class="m-radio-button v3">
+                        <input type="radio" class="a-radio-button" id="pay-way-radio6" name="pay-way-radio">
+                        <label class="a-label js-a-label u-no-select custom-radio" for="pay-way-radio6"></label>
+                        <label class="a-label js-a-label label-text" for="pay-way-radio6">페이코</label>
+                    </div>
+                    <div class="m-radio-button v3">
+                        <input type="radio" class="a-radio-button" id="pay-way-radio7" name="pay-way-radio">
+                        <label class="a-label js-a-label u-no-select custom-radio" for="pay-way-radio7"></label>
+                        <label class="a-label js-a-label label-text" for="pay-way-radio7">토스</label>
+                    </div>
+                    -->
+                </div>
+            </div>
+            <!-- //pay-info-bx -->
+
+        </div>
+        <!-- //order-sheet-info -->
+
+        <!-- order-summary-section -->
+        <div class="order-summary-section">
+            <h2 class="a-heading-2 order-summary-heading">
+                주문 상품
+                <a class="a-link a-link-udln cart-item-edit" href="#" target="_self">장바구니 수정</a>
+            </h2>
+
+
+            <!-- order-summary-info -->
+            <div class="order-summary-info">
+                <div class="m-order-summary-row u-clearfix">
+                    <div class="product-image">
+                        <!--<img class="a-image" alt="product image" src="http://pava-0341648599.s3-eu-west-1.amazonaws.com/images/571a2ab9834df503009f067f/men_shoes_adrian-grain-black-thumbnail-thumbnail-big.jpg">-->
+                        <img class="a-image" alt="product image" src="<%= pageInfo.root %>/images/temp/men_shoes_01.jpg">
+                    </div>
+                    <div class="product-info">
+                        <!--
+                        <div class="quantity-section">
+                            <span class="quantity-label" tabindex="0"></span>
+                            <span class="quantity">1</span>
+                        </div>
+                        -->
+                        <div class="product-item-info first">
+                            <div class="product-details">
+                                <div class="product-name">해리 블랙 슈즈</div>
+                            </div>
+                        </div>
+                        <div class="product-param-info second">
+                            <div class="product-params data">
+                                <div class="product-size">44</div>
+                                <div class="product-color">Black</div>
+                                <div class="product-qty">2</div>
+                            </div>
+                        </div>
+                        <div class="product-param-price fourth">
+                            <div class="product-params data">
+                                <div class="product-price">195,000</div>
+                                <div class="product-total">95,000</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="m-order-summary-row u-clearfix">
+                    <div class="product-image">
+                        <!-- <img class="a-image" alt="product image" src="http://pava-0341648599.s3-eu-west-1.amazonaws.com/images/55f88dcce517704a05ab1da5/boy-vintage-thumbnail-big.jpg">-->
+                        <img class="a-image" alt="product image" src="<%= pageInfo.root %>/images/temp/boy-vintage-thumbnail-big.jpg">
+                    </div>
+                    <div class="product-info">
+                        <!--
+                        <div class="quantity-section">
+                            <span class="quantity-label" tabindex="0"></span>
+                            <span class="quantity">2</span>
+                        </div>
+                        -->
+                        <div class="product-item-info first">
+                            <div class="product-details">
+                                <div class="product-name">고렐 진 블루</div>
+                            </div>
+                        </div>
+                        <div class="product-param-info second">
+                            <div class="product-params data">
+                                <div class="product-size">26/32</div>
+                                <div class="product-color">Blue</div>
+                                <div class="product-qty">4</div>
+                            </div>
+                        </div>
+                        <div class="product-param-price fourth">
+                            <div class="product-params data">
+                                <div class="product-price is-deprecated">100,000</div>
+                                <div class="product-discount">85,000</div>
+                                <div class="product-total">85,000</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--
+                <div class="m-hazmat-wrap">
+                    <span class="m-hazmat-v2 fire">
+                        <span class="hazmat-label">이 제품은 인화성 물질을 포함하고 있으므로 제공된 서비스에 대한 특별 규칙이 적용됩니다.</span>
+                    </span>
+                    <span class="m-hazmat-v2 warning">
+                        <span class="hazmat-label">경고! 화재로부터 격리 할 것. 이 기호가 표시된항목은 "The Nightwear Safetly Regulations1987"의 가연성 성능 요구 사항을 준수 할 필요가 없으므로 이러한 요구 사항에 대해 테스트하지 않았습니다.</span>
+                    </span>
+                </div>
+                -->
+
+                <div class="order-summary-price">
+                    <div class="o-order-summary lightbox-summary">
+                        <div class="order-value-section">
+                            <span class="order-value-label">총 상품금액</span>
+                            <span class="order-value price-won">190,000</span>
+                        </div>
+                        <div class="discount-section">
+                            <span class="discount-label">총 할인금액</span>
+                            <span class="discount price-won">-100,000</span>
+                        </div>
+                        <div class="staff-discount-section">
+                            <span class="staff-discount-label">임직원 할인</span>
+                            <span class="staff-discount price-won">-4,000</span>
+                        </div>
+                        <div class="shipping-section">
+                            <span class="shipping-label">배송비</span>
+                            <span class="shipping price-won">2,500</span>
+                        </div>
+                        <div class="total-section">
+                            <span class="total-label">총 결제금액</span>
+                            <span class="total price-won">9,983,500</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //order-summary-info -->
+
+            <!-- pay-policy-bx -->
+            <div class="dft-bx line-bx pay-policy-bx">
+                <p class="dft-bx-tit">채무지급 보증안내</p>
+                <p class="desc-text">
+                    고객님의 안전거래를 위해 현금결제 시 우리은행과 <a href="#" class="a-link open-lightbox" data-template="" data-classes="is-large">채무지급보증 계약을 체결하여</a> 안전거래를 보장하고 있습니다.
+                    <a href="#" class="a-link a-link-udln open-lightbox" data-template="service-join-fact-confirm" data-classes="is-large">[서비스 가입사실 확인]</a>
+                </p>
+                <div class="pay-policy-agree">
+                    <span class="m-checkbox v2 u-clearfix" id="checkbox1">
+                        <input class="a-checkbox" type="checkbox" id="checkbox_checkbox1">
+                        <label class="a-label js-a-label custom-box" for="checkbox_checkbox1" tabindex="0"></label>
+                        <label class="a-label js-a-label" for="checkbox_checkbox1">주문하실 상품의 상품명, 가격, 배송정보를 확인하였으며, 이에 동의합니다.</label>
+                    </span>
+                </div>
+            </div>
+            <!-- //pay-policy-bx -->
+
+            <a class="a-button is-primary is-checkout-options checkout-button" href="/views/common/views/pages/checkout/checkout-guest-options.html">결제하기</a>
+
+            <%# m-informative-section %>
+            <%- include ("../../../common/md-m-informative-section.ejs") %>
+
+        </div>
+        <!-- //order-summary-section -->
+        
+    </div>
+
+</main>

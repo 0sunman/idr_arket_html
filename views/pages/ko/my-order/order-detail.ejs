@@ -1,0 +1,246 @@
+<div data-component="OPageContent" class="o-page-content cofs-page">
+    <span id="content" tabindex="-1" class="access-content">Content of the page</span>
+
+    <!-- o-my-page -->
+    <div class="o-my-page">
+
+        <%# md-o-my-page-navigation %>
+        <%- include ("../../../common/md-o-my-page-navigation.ejs") %>
+
+        <!-- my-order-delivery-content -->
+        <div class="my-order-delivery-content detail u-clearfix">
+
+            <h3 class="a-heading-3 sub">주문/배송 상세보기</h3>
+            <!-- order-detail-info-bx -->
+            <div class="dft-bx line-bx order-detail-info-bx">
+                <ul class="dot-ul">
+                    <li>
+                        <dt>주문번호</dt>
+                        <dd class="number">2150260062361</dd>
+                    </li>
+                    <li>
+                        <dt>주문일</dt>
+                        <dd>2021-05-29</dd>
+                    </li>
+                    <li>
+                        <dt>주문고객</dt>
+                        <dd>
+                            홍길동 (abscd32@gmail.com, 010-8765-3243)
+                            <div class="order-history-hide">
+                                <a class="a-link a-link-udln btn-order-list-hide" href="#none" target="_self">주문내역숨김</a>
+                                <a class="a-link open-lightbox btn-order-list-hide-guide" href="#none" target="_self" data-template="order-list-hide" data-classes="is-large">
+                                    <span class="a-icon-question"></span>
+                                </a>
+                            </div>
+                        </dd>
+                    </li>
+                </ul>
+            </div>
+            <script type="text/x-handlebars-template" id="order-list-hide">
+                가이드
+            </script>
+            <!-- //order-detail-info-bx -->
+
+            <h3 class="a-heading-3 sub">주문상품</h3>
+            <!-- my-orders-list-wrap -->
+            <div class="my-orders-list-wrap">
+
+                <!-- my-order-list -->
+                <div class="my-order-list">
+
+                    <div class="order-list-ul-header">
+                        <ul class="product-list-ul">
+                            <li class="m-order-summary-row">상품정보/옵션정보</li>
+                            <li class="order-price">결제금액</li>
+                            <li class="order-status">주문상태</li>
+                        </ul>
+                    </div>
+                    <ul class="order-list-ul">
+                        <li>
+                            <!-- order-list-item -->
+                            <div class="order-list-item">
+                                <ul class="product-list-ul">
+                                    <li>
+                                        <!-- product-list-item -->
+                                        <div class="product-list-item">
+                                            <div class="m-order-summary-row">
+                                                <div class="product-image">
+                                                    <!--<img class="a-image product-image" alt="image description" src="http://pava-0341648599.s3-eu-west-1.amazonaws.com/images/55f8861ee517704a05ab1b11/boy-vintage-thumbnail-big.jpg">-->
+                                                    <img class="a-image product-image" alt="image description" src="<%= pageInfo.root %>/images/temp/boy-vintage-thumbnail-big.jpg">
+                                                </div>
+                                                <div class="product-info">
+                                                    <div class="product-item-info first">
+                                                        <div class="product-details">
+                                                            <div class="product-name">해리 블랙 슈즈해리 블랙 슈즈해리 블랙 슈즈</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product-param-info second">
+                                                        <div class="product-params data">
+                                                            <div class="product-size">44</div>
+                                                            <div class="product-color">블루</div>
+                                                            <div class="product-quantity">2</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product-param-btns fourth">
+                                                        <a href="#none" class="a-link a-link-udln">옵션변경</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="order-price"><span>1,303,800</span></div>
+                                            <div class="order-status"><span>주문접수</span></div>
+                                            <div class="order-btns">
+                                                <a href="#none" class="a-link a-link-udln">주문취소</a>
+                                            </div>
+                                        </div>
+                                        <!-- //product-list-item -->
+                                    </li>
+                                </ul>
+
+                            </div>
+                            <!-- //order-list-item -->
+                        </li>
+                    </ul>
+
+                </div>
+                <!-- //my-order-list -->
+
+            </div>
+            <!-- //my-orders-list-wrap -->
+
+            <!-- grid-line-wrap -->
+            <div class="grid-line-wrap">
+                <!-- grid-line-item -->
+                <div class="grid-line-item orders-recipient-info-bx">
+                    <h3 class="a-heading-3 sub">
+                        받는사람정보
+                        <a class="a-link a-link-udln btn-change-delivery" href="#none" target="_self">배송지변경</a>
+                    </h3>
+                    <ul class="o-info-line-box col-2-1">
+                        <li>
+                            <span class="f-type1">받는사람</span>
+                            <span class="f-type1">홍길동</span>
+                        </li>
+                        <li>
+                            <span class="f-type1">휴대폰</span>
+                            <span class="f-type1">010-6800-6740</span>
+                        </li>
+                        <li>
+                            <span class="f-type1">추가연락처</span>
+                            <span class="f-type1">010-6800-6740</span>
+                        </li>
+                        <li>
+                            <span class="f-type1">배송지주소</span>
+                            <span class="f-type1">서울시 영등포구 당산동 11안길103호</span>
+                        </li>
+                        <li>
+                            <span class="f-type1">요청사항</span>
+                            <span class="f-type1">빠른배송부탁드립니다.현관앞에 두고 가주세요~</span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- //grid-line-item -->
+
+                <!-- grid-line-item -->
+                <div class="grid-line-item orders-pay-info-bx">
+                    <h3 class="a-heading-3 sub">결제정보</h3>
+                    <ul class="o-info-line-box col-2-1">
+                        <li>
+                            <span class="f-type1">주문금액</span>
+                            <span class="f-type2 price-won">1,390,000</span>
+                        </li>
+                        <li>
+                            <span class="f-type1">배송비</span>
+                            <span class="f-type2 price-won">2,500</span>
+                        </li>
+                        <li>
+                            <span class="f-type1">할인금액</span>
+                            <span class="f-type2 price-won">- 90,000</span>
+                        </li>
+                        <li>
+                            <span class="f-type1">총 결제금액</span>
+                            <span class="f-type2 price-won">789,000</span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- //grid-line-item -->
+            </div>
+            <!-- //grid-line-wrap -->
+
+            <!-- grid-line-wrap -->
+            <div class="grid-line-wrap">
+                <!-- grid-line-item -->
+                <div class="grid-line-item orders-pay-way-bx">
+                    <h3 class="a-heading-3 sub">
+                        결제수단
+                        <a class="a-link a-link-udln btn-pay-way" href="#none" target="_self">결제수단변경</a>
+                    </h3>
+                    <ul class="o-info-line-box col-3-1">
+                        <li>
+                            <span class="f-type1">신용카드</span>
+                            <span class="f-type1">현대카드 할부 3개월</span>
+                            <span class="f-type2 price-won">1,390,000</span>
+                        </li>
+                        <li>
+                            <span class="f-type1">무통장입금</span>
+                            <span class="f-type2 price-won">0</span>
+                        </li>
+                        <li>
+                            <span class="f-type1">예치금</span>
+                            <span class="f-type2 price-won">- 390,000</span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- //grid-line-item -->
+
+                <!-- grid-line-item -->
+                <div class="grid-line-item orders-approval-list-bx">
+                    <h3 class="a-heading-3 sub">승인내역</h3>
+                    <ul class="o-info-line-box col-3-2">
+                        <li>
+                            <span class="f-type1">2021-05-26 11:20:14</span>
+                            <span class="f-type1">신용카드</span>
+                            <span class="f-type2 price-won">90,000</span>
+                        </li>
+                        <li>
+                            <span class="f-type1">2021-05-26 11:20:14</span>
+                            <span class="f-type1">신용카드</span>
+                            <span class="f-type2 price-won">2,500</span>
+                        </li>
+                        <li>
+                            <span class="f-type1">2021-05-26 11:20:14</span>
+                            <span class="f-type1">신용카드+현금결제</span>
+                            <span class="f-type2 price-won">- 90,000</span>
+                        </li>
+                        <li>
+                            <span class="f-type1">2021-05-26 11:20:14</span>
+                            <span class="f-type1">예치금</span>
+                            <span class="f-type2 price-won">789,000</span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- //grid-line-item -->
+            </div>
+            <!-- //grid-line-wrap -->
+
+            <a class="a-button page-btn" href="#">목록으로 이동</a>
+
+        </div>
+        <!-- //my-order-delivery-content -->
+    
+    </div>
+    <!-- //o-my-page -->
+</div>
+
+<!-- tip : when develop this script must be delete -->
+<script type="text/javascript">
+    (function() {
+        'use strict';
+        //탭활성화
+        let tabMydetailsr = document.querySelector('.menu-my-details');
+        let tabMyorders = document.querySelector('.menu-my-orders');
+        if(tabMyorders){
+            tabMyorders.parentNode.classList.add('is-active');
+        }
+    })();
+</script>
+<!-- //tip -->

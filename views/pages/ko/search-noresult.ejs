@@ -1,0 +1,69 @@
+<div data-component="OPageContent" class="o-page-content is-extended">
+
+    <div class="parbase sdp-component left-component is-search">
+        <p class="a-paragraph search-results-title">
+            <span class="search-text">드레스&nbsp;</span>
+        </p>
+    </div>
+
+    <div class="o-width">
+        <div class="parbase sdp-component product-listing align-below">
+
+            <!-- m-notification -->
+            <div class="m-notification is-inline">
+                <div class="content">죄송합니다.<br class="only-m"> 입력하신 검색어에 맞는 상품을 찾을 수 없습니다. <br>맞춤법이 틀렸거나 너무 구체적인 검색어의 경우<br class="only-m">검색 결과가 맞지 않게 나올 수 있으니<br class="only-m"> 다른 검색어로 검색해 주세요.</div>
+            </div>
+            <!-- //m-notification -->
+
+            <!-- o-product-listing -->
+            <div id="lazyLoadSpan">
+                <div id="reloadProducts" class="o-product-listing fixed-columns-5 center-aligned u-align-center">
+                </div>
+            </div>
+            <span id="lazyDiv">
+            </span>
+            <!-- //o-product-listing -->
+        </div>
+    </div>
+
+    <!-- o-pra-component -->
+    <div class="o-slider-cofs o-pra-component o-product-slider has-spacers in-search"
+         data-component="OSliderCofs"
+         data-slides-desktop="4"
+         data-slides-tablet="3"
+         data-slides-mobile="2"
+         data-text-prev="prev"
+         data-text-next="next">
+        <h2 class="a-heading-2 slider-title u-align-center">추천상품</h2>
+
+        <!-- slider -->
+        <div class="slider">
+            <%# md-o-product-cofs-item3 %>
+            <%- include ("../../common/md-o-product-cofs-item3.ejs") %>
+            <%- include ("../../common/md-o-product-cofs-item3.ejs") %>
+        </div>
+        <!-- //slider -->
+
+    </div>
+    <!-- //o-pra-component -->
+    
+</div>
+
+<!-- handlebars-template -->
+<script type="text/x-handlebars-template" id="o-quick-buy">
+    <%# hndl-o-quick-buy %>
+    <%- include ("../../common/hndl-o-quick-buy.ejs") %>
+</script>
+<!-- handlebars-template -->
+
+<!-- tip : when develop this script must be delete -->
+<script type="text/javascript">
+    (function() {
+        'use strict';
+        setTimeout(function(){
+            let tempOsearchIcon = tempHeader.querySelector('.search-icon.a-icon');
+            tempOsearchIcon.click();
+        },1000);
+    })();
+</script>
+<!-- //tip -->

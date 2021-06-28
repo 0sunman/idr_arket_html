@@ -1,0 +1,68 @@
+<style>
+p.gnbcheck{text-align: center; margin-top: 30px;}
+.markup-list-wrap {display:flex;}
+.markup-list-l,
+.markup-list-r {padding:50px;padding-top:0px;}
+div[class^="markup-list-"] {width:100%;}
+div[class^="markup-list-"] h4 {text-transform:capitalize;}
+</style>
+<p class='gnbcheck'>* Markup List *</p>
+<div class="markup-list-wrap">
+    <% if(!pageInfo.isLocalExPath){ %>
+    <div class='markup-list-l'>
+        <h2>Express</h2>
+        <%
+            let tempListType = 'index';
+            pageList.forEach(function(data, idx){
+                if(tempListType != data.type){
+                    if(idx != 0){
+        %>
+        </ul>
+        <%
+                    }
+        %>
+        <h4><%= data.type %></h4>
+        <ul id='<%= data.type %>'>
+        <%
+                }
+                if(idx != 0){
+        %>
+            <li>
+                <a href='<%= data.url %>' target="_blank"><%= data.title %></a>
+            </li>
+        <%
+                }
+                tempListType = data.type;
+            })
+        %>
+    </div>
+    <% } else if(pageInfo.isLocalExPath) { %>
+    <div class='markup-list-r'>
+        <h2>Local</h2>
+        <%
+            let tempListType2 = 'index';
+            pageList.forEach(function(data,idx){
+                if(tempListType2 != data.type){
+                    if(idx != 0){
+        %>
+        </ul>
+        <%
+                }
+        %>
+                <h4><%= data.type %></h4>
+                <ul id='<%= data.type %>'>
+        <%
+                }
+                if(idx != 0){
+        %>
+                    <li>
+                        <a href='dist/<%= data.pageurl.replace(/(.ejs)$/,'') %>.html' target="_blank"><%= data.title %></a>
+                    </li>
+        <%
+                }
+                tempListType2 = data.type;
+            })
+        %>
+    </div>
+    <% } %>
+</div>

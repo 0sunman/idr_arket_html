@@ -1,0 +1,255 @@
+<div data-component="OPageContent" class="o-page-content cofs-page">
+    <span id="content" tabindex="-1" class="access-content">Content of the page</span>
+
+    <!-- o-my-page -->
+    <div class="o-my-page">
+
+        <%# md-o-my-page-navigation %>
+        <%- include ("../../../common/md-o-my-page-navigation.ejs") %>
+        
+        <!-- my-order-delivery-content -->
+        <div class="my-order-delivery-content u-clearfix">
+
+            <h3 class="a-heading-3 sub">주문/배송</h3>
+            <!-- my-orders-list-wrap -->
+            <div class="my-orders-list-wrap">
+
+                <%# md-my-orderlist-listoption-dropdown %>
+                <%- include ("../../../common/md-my-orderlist-listoption-dropdown") %>
+
+                <!-- my-order-list -->
+                <div class="my-order-list">
+
+                    <div class="order-list-ul-header">
+                        <div class="order-info">주문일/주문번호</div>
+                        <ul class="product-list-ul">
+                            <li class="m-order-summary-row">상품정보/옵션정보</li>
+                            <li class="order-price">결제금액</li>
+                            <li class="order-status">주문상태</li>
+                            <li class="order-btns">취소/반품</li>
+                        </ul>
+                    </div>
+                    <ul class="order-list-ul">
+                        <li>
+                            <!-- order-list-item -->
+                            <div class="order-list-item">
+                                <div class="order-info">
+                                    <span class="date">2021-05-26</span>
+                                    <span class="order-number">2105263226320</span>
+                                    <span class="order-detail">
+                                        <a href="#none" class="a-link a-link-arrow">상세보기</a>
+                                    </span>
+                                </div>
+                                <ul class="product-list-ul">
+                                    <li>
+                                        <!-- product-list-item -->
+                                        <div class="product-list-item">
+                                            <div class="m-order-summary-row">
+                                                <div class="product-image">
+                                                    <img class="a-image product-image" alt="image description" src="<%= pageInfo.root %>/images/temp/boy-vintage-thumbnail-big.jpg">
+                                                </div>
+                                                <div class="product-info">
+                                                    <div class="product-item-info first">
+                                                        <div class="product-details">
+                                                            <div class="product-name">해리 블랙 슈즈해리 블랙 슈즈해리 블랙 슈즈</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product-param-info second">
+                                                        <div class="product-params data">
+                                                            <div class="product-size">44</div>
+                                                            <div class="product-color">블루</div>
+                                                            <div class="product-quantity">2</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product-param-btns fourth">
+                                                        <a href="#none" class="a-link a-link-udln open-lightbox" data-template="cart-product-option-change">옵션변경</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="order-price"><span>1,303,800</span></div>
+                                            <div class="order-status"><span>주문접수</span></div>
+                                            <div class="order-btns">
+                                                <a href="#none" class="a-link a-link-udln">주문취소</a>
+                                            </div>
+                                        </div>
+                                        <!-- //product-list-item -->
+                                    </li>
+                                </ul>
+
+                            </div>
+                            <!-- //order-list-item -->
+                        </li>
+                        <li>
+                            <!-- order-list-item -->
+                            <div class="order-list-item">
+                                <div class="order-info">
+                                    <span class="date">2021-05-26</span>
+                                    <span class="order-number">2105263226320</span>
+                                    <span class="order-detail">
+                                        <a href="#none" class="a-link a-link-arrow">상세보기</a>
+                                    </span>
+                                </div>
+                                <ul class="product-list-ul">
+                                    <li>
+                                        <!-- product-list-item -->
+                                        <div class="product-list-item">
+                                            <div class="m-order-summary-row">
+                                                <div class="product-image">
+                                                    <img class="a-image product-image" alt="image description" src="<%= pageInfo.root %>/images/temp/boy-vintage-thumbnail-big.jpg">
+                                                </div>
+                                                <div class="product-info">
+                                                    <div class="product-item-info first">
+                                                        <div class="product-details">
+                                                            <div class="product-name">해리 블랙 슈즈해리 블랙 슈즈해리 블랙 슈즈</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product-param-info second">
+                                                        <div class="product-params data">
+                                                            <div class="product-size">44</div>
+                                                            <div class="product-color">블루</div>
+                                                            <div class="product-quantity">2</div>
+                                                        </div>
+                                                    </div>
+                                                    <!--
+                                                    <div class="product-param-btns fourth">
+                                                        <a href="#none" class="a-link a-link-udln open-lightbox" data-template="cart-product-option-change">옵션변경</a>
+                                                    </div>
+                                                    -->
+                                                </div>
+                                            </div>
+                                            <div class="order-price"><span>1,303,800</span></div>
+                                            <div class="order-status"><span>상품준비</span></div>
+                                            <div class="order-btns">
+                                                <a href="#none" class="a-link a-link-udln open-lightbox" data-template="cart-order-cancle-unable">주문취소</a>
+                                            </div>
+                                        </div>
+                                        <!-- //product-list-item -->
+                                    </li>
+                                    <li>
+                                        <!-- product-list-item -->
+                                        <div class="product-list-item">
+                                            <div class="m-order-summary-row">
+                                                <div class="product-image">
+                                                    <img class="a-image product-image" alt="image description" src="<%= pageInfo.root %>/images/temp/boy-vintage-thumbnail-big.jpg">
+                                                </div>
+                                                <div class="product-info">
+                                                    <div class="product-item-info first">
+                                                        <div class="product-details">
+                                                            <div class="product-name">해리 블랙 슈즈해리 블랙 슈즈해리 블랙 슈즈</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product-param-info second">
+                                                        <div class="product-params data">
+                                                            <div class="product-size">44</div>
+                                                            <div class="product-color">블루</div>
+                                                            <div class="product-quantity">2</div>
+                                                        </div>
+                                                    </div>
+                                                    <!--
+                                                    <div class="product-param-btns fourth">
+                                                        <a href="#none" class="a-link a-link-udln open-lightbox" data-template="cart-product-option-change">옵션변경</a>
+                                                    </div>
+                                                    -->
+                                                </div>
+                                            </div>
+                                            <div class="order-price"><span>1,303,800</span></div>
+                                            <div class="order-status"><span>주문접수</span></div>
+                                            <div class="order-btns">
+                                                <a href="#none" class="a-link a-link-udln">반품신청</a>
+                                            </div>
+                                        </div>
+                                        <!-- //product-list-item -->
+                                    </li>
+                                </ul>
+
+                            </div>
+                            <!-- //order-list-item -->
+                        </li>
+                        <li>
+                            <!-- order-list-item -->
+                            <div class="order-list-item">
+                                <div class="order-info">
+                                    <span class="date">2021-05-26</span>
+                                    <span class="order-number">2105263226320</span>
+                                    <span class="order-detail">
+                                        <a href="#none" class="a-link a-link-arrow">상세보기</a>
+                                    </span>
+                                </div>
+                                <ul class="product-list-ul">
+                                    <li>
+                                        <!-- product-list-item -->
+                                        <div class="product-list-item">
+                                            <div class="m-order-summary-row">
+                                                <div class="product-image">
+                                                    <img class="a-image product-image" alt="image description" src="<%= pageInfo.root %>/images/temp/boy-vintage-thumbnail-big.jpg">
+                                                </div>
+                                                <div class="product-info">
+                                                    <div class="product-item-info first">
+                                                        <div class="product-details">
+                                                            <div class="product-name">해리 블랙 슈즈해리 블랙 슈즈해리 블랙 슈즈</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product-param-info second">
+                                                        <div class="product-params data">
+                                                            <div class="product-size">44</div>
+                                                            <div class="product-color">블루</div>
+                                                            <div class="product-quantity">2</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product-param-btns fourth">
+                                                        <a href="#none" class="a-link a-link-udln open-lightbox" data-template="cart-product-option-change">옵션변경</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="order-price"><span>1,303,800</span></div>
+                                            <div class="order-status">
+                                                <span class="past">상품배송</span>
+                                                <a href="#none" class="a-link a-link-udln">배송추적</a>
+                                            </div>
+                                            <div class="order-btns">
+                                                <a href="#none" class="a-link a-link-udln">주문취소</a>
+                                            </div>
+                                        </div>
+                                        <!-- //product-list-item -->
+                                    </li>
+                                </ul>
+
+                            </div>
+                            <!-- //order-list-item -->
+                        </li>
+                    </ul>
+
+                </div>
+                <!-- //my-order-list -->
+
+            </div>
+            <!-- //my-orders-list-wrap -->
+
+        </div>
+        <!-- //my-order-delivery-content -->
+
+    </div>
+    <!-- //o-my-page -->
+</div>
+
+<!-- handlebars-template -->
+<%# hndl-cart-product-option-change %>
+<%- include ("../../../common/hndl-cart-product-option-change.ejs") %>
+
+<%# hndl-cart-order-cancle-unable %>
+<%- include ("../../../common/hndl-cart-order-cancle-unable.ejs") %>
+<!-- handlebars-template -->
+
+<!-- tip : when develop this script must be delete -->
+<script type="text/javascript">
+    (function() {
+        'use strict';
+        //탭활성화
+        let tabMydetailsr = document.querySelector('.menu-my-details');
+        let tabMyorders = document.querySelector('.menu-my-orders');
+        if(tabMyorders){
+            tabMyorders.parentNode.classList.add('is-active');
+        }
+    })();
+</script>
+<!-- //tip -->

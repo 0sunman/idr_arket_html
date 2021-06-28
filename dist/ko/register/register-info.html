@@ -120,6 +120,7 @@
         </div>
     </div>
 
+    <!-- m-site-banner : 띠배너 -->
     <!--
     <div id="site-banner-id" data-component="MSiteBanner" class="m-site-banner slide-down" data-component-id="99b5970e-f57c-49a0-81af-c7dcdc255c0b" style="background-color: rgb(0, 0, 0); display: block;">
         <input type="hidden" name="startDateField" value="2021/06/10 08:10:00" id="sitebannersd">
@@ -142,6 +143,7 @@
         </div>
     </div>
     -->
+    <!-- //m-site-banner : 띠배너 -->
 
     <div class="u-no-select">
         <div class="a-overlay js-a-overlay q-opacity-0" data-component="AOverlay" data-component-id="00dc7c54-c454-4add-9da6-62430cfc116d"></div>
@@ -901,7 +903,7 @@
             <span class="country-name">배송국가</span>
             <span class="lang"></span>
         </button>
-        <a href="/ko/logout" target="_self" class="a-link bottom account logout" style="display:none;" area-hidden="true">로그아웃</a>
+        <a href="/ko/logout" target="_self" class="a-link bottom account logout" area-hidden="true">로그아웃</a>
     </div>
 
     <a href="https://www.instagram.com/arketofficial" target="_self" class="a-link follow">Follow us</a>
@@ -1457,18 +1459,25 @@
         <div class="basket-wrapper">
             <div class="added-item">
                 <div class="basket-added-image">
-                    <img class="a-image" src="//:0" alt="">
+                    <img class="a-image ResolveComplete" src="../../../static/images/temp/sample-img.jpg">
                 </div>
                 <div class="basket-added-info">
-                    <div class="basket-added-info-title i18n">Added To Bag</div>
                     <p class="a-paragraph">
-								<span class="basket-added-info-price">
-									<span class="u-price"></span>
-									<span class="u-currency"></span>
-								</span>
-                        <span class="item-title"></span>
+                        <span class="item-title">루즈핏 리넨 쇼츠</span>
+                        <div class="product-param-info second">
+                            <div class="product-params data">
+                                <div class="product-size">44</div>
+                                <div class="product-color">핑크</div>
+                                <div class="product-qty">2</div>
+                            </div>
+                        </div>
+                        <span class="basket-added-info-price">
+                            <span class="u-price is-deprecated">100,000</span>
+                            <!--<span class="u-price-discount">85,000</span>-->
+                            <span class="u-price discount total">85,000</span>
+                        </span>
                     </p>
-                    <a class="a-button checkout i18n" href="/ko/cart">View bag</a>
+                    <a class="a-button checkout i18n" href="/ko/cart">장바구니 보기</a>
                 </div>
             </div>
             <div class="no-added-item">
@@ -2195,7 +2204,7 @@
 
                                     <div class="radio-button-list">
                                         <div class="m-radio-button v2">
-                                            <input type="radio" class="a-radio-button" id="agreement1" name="agreement" checked>
+                                            <input type="radio" class="a-radio-button" id="agreement1" name="agreement">
                                             <label class="a-label js-a-label u-no-select custom-radio" for="agreement1"></label>
                                             <label class="a-label js-a-label label-text" for="agreement1">동의합니다.</label>
                                         </div>
@@ -2242,19 +2251,19 @@
                                     <p class="description">* 동의하지 않으셔도 회원가입이 가능하나, 상품 및 마케팅 안내를 받으실 수 없습니다.</p>
                                     <div class="radio-button-list">
                                         <div class="m-radio-button v2">
-                                            <input type="radio" class="a-radio-button" id="agreement-opt1-1" name="agreement-opt1" checked>
+                                            <input type="radio" class="a-radio-button rd-toggle" id="agreement-opt1-1" name="agreement-opt1" data-toggle-target="rd-toggle-con-1">
                                             <label class="a-label js-a-label u-no-select custom-radio" for="agreement-opt1-1"></label>
                                             <label class="a-label js-a-label label-text" for="agreement-opt1-1">동의합니다.</label>
                                         </div>
 
                                         <div class="m-radio-button v2">
-                                            <input type="radio" class="a-radio-button" id="agreement1-2" name="agreement-opt1">
+                                            <input type="radio" class="a-radio-button rd-toggle" id="agreement1-2" name="agreement-opt1" data-toggle-target="rd-toggle-con-2">
                                             <label class="a-label js-a-label u-no-select custom-radio" for="agreement1-2"></label>
                                             <label class="a-label js-a-label label-text" for="agreement1-2">동의하지 않습니다.</label>
                                         </div>
                                     </div>
                                     <!--  체크박스 : SMS/이메일 수신 -->
-                                    <div class="marketing-agree">
+                                    <div class="marketing-agree rd-toggle-con rd-toggle-con-1 is-hidden-strong" data-name="agreement-opt1" >
                                         <span class="m-checkbox v2 u-clearfix" id="">
                                             <input class="a-checkbox" type="checkbox" id="checkbox-sms">
                                             <label class="a-label js-a-label custom-box" for="checkbox-sms" tabindex="0"></label>
@@ -2309,7 +2318,7 @@
                                     <p class="description">* 선택사항은 동의하지 않으실 수 있으나, 할인행사/이벤트 등의 안내서비스가 제한됩니다.</p>
                                     <div class="radio-button-list">
                                         <div class="m-radio-button v2">
-                                            <input type="radio" class="a-radio-button" id="agreement-opt2-1" name="agreement-opt2" checked>
+                                            <input type="radio" class="a-radio-button" id="agreement-opt2-1" name="agreement-opt2">
                                             <label class="a-label js-a-label u-no-select custom-radio" for="agreement-opt2-1"></label>
                                             <label class="a-label js-a-label label-text" for="agreement-opt2-1">동의합니다.</label>
                                         </div>
@@ -2322,12 +2331,12 @@
                                     </div>
                                 </div> <!-- // 테이블03 : [선택사항 2] - 마케팅 수신 목적 제3자 정보 제공 동의 -->
                                 <div class="m-checkbox dis-flex">
-                                    <h2 class="a-heading-2">이용약관 및 개인정보 처리방침</h2>
+                                    <h2 class="a-heading-5">이용약관 및 개인정보 처리방침</h2>
                                     <span class="a-label policiesText">
-                                         <a href="#" id="registerLink" class="a-link policiesLink" target="_self">전문보기</a>
+                                         <a href="#" id="registerLink" class="a-link policiesLink open-lightbox" data-template="lp-join-policy" target="_self">전문보기</a>
                                     </span>
                                 </div>
-                                <p class="info-1">이용약관 및 개인정보 수집 및 이용에 대한 내용을 확인하고 동의합니다.</p>
+                                <p class="info-">이용약관 및 개인정보 수집 및 이용에 대한 내용을 확인하고 동의합니다.</p>
                             </div>
                             <button type="submit" id="registerButton" class="a-button is-primary pc-margin">
                                 <span>동의하고 회원가입</span>
@@ -2361,6 +2370,115 @@
         </div>
     </div>
 </div>
+
+<!-- handlebars-template -->
+
+<!-- 전문보기 -->
+<script type="text/x-handlebars-template" id="lp-join-policy">
+    <div class="lightbox-content-dft lp-join-policy">
+        <div class="m-headline is-main-headline">
+            <h2 class="a-heading-2"><span>전문보기</span></h2>
+        </div>
+        <div class="content">
+
+            <div class="tab-btn-wrap">
+                <a href="#none" class="a-tab" data-target="a-tab-con-1">이용약관</a>
+                <a href="#none" class="a-tab" data-target="a-tab-con-2">개인정보처리방침</a>
+            </div>
+            
+            <div class="policy-wrap a-tab-con a-tab-con-1">
+                이용약관
+                
+                제1조 목적
+이 약관은 주식회사 현대백화점(이하 “회사”라 합니다)가 운영하는 온라인몰, ARKET 등의 사이트(이하 통칭하여 “온라인몰”이라 합니다)에서 제공하는 인터넷 관련 서비스(이하 “서비스”라 합니다)를 이용함에 있어, “회사”와 “이용자”의 권리, 의무 및 책임사항을 규정함을 목적으로 합니다.
+제2조 정의
+① “온라인몰”이란 “회사”가 재화 또는 용역(이하 “재화 등”이라 합니다)을 이용자에게 제공하기 위하여 컴퓨터 등 정보통신설비를 이용하여 재화 등을 거래할 수 있도록 설정한 가상의 영업장을 말하며, 아울러 ”온라인몰”을 운영하는 사업자의 의미로도 사용합니다.
+② “이용자”란 “온라인몰”에 접속하여 이 약관에 따라 “온라인몰”이제공하는 서비스를 이용하는 자를 통칭합니다.
+③ ”회원”이라 함은 “온라인몰”에 회원등록을 한 자로서, 계속적으로 “온라인몰”이 제공하는 서비스를 이용할 수 있는 자를 말합니다.
+④ ”비회원”이라 함은 회원에 가입하지 않고 “온라인몰”이제공하는 서비스를 이용하는 자를 말합니다.
+⑤ “휴면회원”이라 함은 “온라인몰” 최종 접속일로부터
+제1조 목적
+이 약관은 주식회사 현대백화점(이하 “회사”라 합니다)가 운영하는 온라인몰, ARKET 등의 사이트(이하 통칭하여 “온라인몰”이라 합니다)에서 제공하는 인터넷 관련 서비스(이하 “서비스”라 합니다)를 이용함에 있어, “회사”와 “이용자”의 권리, 의무 및 책임사항을 규정함을 목적으로 합니다.
+제2조 정의
+① “온라인몰”이란 “회사”가 재화 또는 용역(이하 “재화 등”이라 합니다)을 이용자에게 제공하기 위하여 컴퓨터 등 정보통신설비를 이용하여 재화 등을 거래할 수 있도록 설정한 가상의 영업장을 말하며, 아울러 ”온라인몰”을 운영하는 사업자의 의미로도 사용합니다.
+② “이용자”란 “온라인몰”에 접속하여 이 약관에 따라 “온라인몰”이제공하는 서비스를 이용하는 자를 통칭합니다.
+③ ”회원”이라 함은 “온라인몰”에 회원등록을 한 자로서, 계속적으로 “온라인몰”이 제공하는 서비스를 이용할 수 있는 자를 말합니다.
+④ ”비회원”이라 함은 회원에 가입하지 않고 “온라인몰”이제공하는 서비스를 이용하는 자를 말합니다.
+⑤ “휴면회원”이라 함은 “온라인몰” 최종 접속일로부터
+제1조 목적
+이 약관은 주식회사 현대백화점(이하 “회사”라 합니다)가 운영하는 온라인몰, ARKET 등의 사이트(이하 통칭하여 “온라인몰”이라 합니다)에서 제공하는 인터넷 관련 서비스(이하 “서비스”라 합니다)를 이용함에 있어, “회사”와 “이용자”의 권리, 의무 및 책임사항을 규정함을 목적으로 합니다.
+제2조 정의
+① “온라인몰”이란 “회사”가 재화 또는 용역(이하 “재화 등”이라 합니다)을 이용자에게 제공하기 위하여 컴퓨터 등 정보통신설비를 이용하여 재화 등을 거래할 수 있도록 설정한 가상의 영업장을 말하며, 아울러 ”온라인몰”을 운영하는 사업자의 의미로도 사용합니다.
+② “이용자”란 “온라인몰”에 접속하여 이 약관에 따라 “온라인몰”이제공하는 서비스를 이용하는 자를 통칭합니다.
+③ ”회원”이라 함은 “온라인몰”에 회원등록을 한 자로서, 계속적으로 “온라인몰”이 제공하는 서비스를 이용할 수 있는 자를 말합니다.
+④ ”비회원”이라 함은 회원에 가입하지 않고 “온라인몰”이제공하는 서비스를 이용하는 자를 말합니다.
+⑤ “휴면회원”이라 함은 “온라인몰” 최종 접속일로부터
+제1조 목적
+이 약관은 주식회사 현대백화점(이하 “회사”라 합니다)가 운영하는 온라인몰, ARKET 등의 사이트(이하 통칭하여 “온라인몰”이라 합니다)에서 제공하는 인터넷 관련 서비스(이하 “서비스”라 합니다)를 이용함에 있어, “회사”와 “이용자”의 권리, 의무 및 책임사항을 규정함을 목적으로 합니다.
+제2조 정의
+① “온라인몰”이란 “회사”가 재화 또는 용역(이하 “재화 등”이라 합니다)을 이용자에게 제공하기 위하여 컴퓨터 등 정보통신설비를 이용하여 재화 등을 거래할 수 있도록 설정한 가상의 영업장을 말하며, 아울러 ”온라인몰”을 운영하는 사업자의 의미로도 사용합니다.
+② “이용자”란 “온라인몰”에 접속하여 이 약관에 따라 “온라인몰”이제공하는 서비스를 이용하는 자를 통칭합니다.
+③ ”회원”이라 함은 “온라인몰”에 회원등록을 한 자로서, 계속적으로 “온라인몰”이 제공하는 서비스를 이용할 수 있는 자를 말합니다.
+④ ”비회원”이라 함은 회원에 가입하지 않고 “온라인몰”이제공하는 서비스를 이용하는 자를 말합니다.
+⑤ “휴면회원”이라 함은 “온라인몰” 최종 접속일로부터
+제1조 목적
+이 약관은 주식회사 현대백화점(이하 “회사”라 합니다)가 운영하는 온라인몰, ARKET 등의 사이트(이하 통칭하여 “온라인몰”이라 합니다)에서 제공하는 인터넷 관련 서비스(이하 “서비스”라 합니다)를 이용함에 있어, “회사”와 “이용자”의 권리, 의무 및 책임사항을 규정함을 목적으로 합니다.
+제2조 정의
+① “온라인몰”이란 “회사”가 재화 또는 용역(이하 “재화 등”이라 합니다)을 이용자에게 제공하기 위하여 컴퓨터 등 정보통신설비를 이용하여 재화 등을 거래할 수 있도록 설정한 가상의 영업장을 말하며, 아울러 ”온라인몰”을 운영하는 사업자의 의미로도 사용합니다.
+② “이용자”란 “온라인몰”에 접속하여 이 약관에 따라 “온라인몰”이제공하는 서비스를 이용하는 자를 통칭합니다.
+③ ”회원”이라 함은 “온라인몰”에 회원등록을 한 자로서, 계속적으로 “온라인몰”이 제공하는 서비스를 이용할 수 있는 자를 말합니다.
+④ ”비회원”이라 함은 회원에 가입하지 않고 “온라인몰”이제공하는 서비스를 이용하는 자를 말합니다.
+⑤ “휴면회원”이라 함은 “온라인몰” 최종 접속일로부터
+제1조 목적
+이 약관은 주식회사 현대백화점(이하 “회사”라 합니다)가 운영하는 온라인몰, ARKET 등의 사이트(이하 통칭하여 “온라인몰”이라 합니다)에서 제공하는 인터넷 관련 서비스(이하 “서비스”라 합니다)를 이용함에 있어, “회사”와 “이용자”의 권리, 의무 및 책임사항을 규정함을 목적으로 합니다.
+제2조 정의
+① “온라인몰”이란 “회사”가 재화 또는 용역(이하 “재화 등”이라 합니다)을 이용자에게 제공하기 위하여 컴퓨터 등 정보통신설비를 이용하여 재화 등을 거래할 수 있도록 설정한 가상의 영업장을 말하며, 아울러 ”온라인몰”을 운영하는 사업자의 의미로도 사용합니다.
+② “이용자”란 “온라인몰”에 접속하여 이 약관에 따라 “온라인몰”이제공하는 서비스를 이용하는 자를 통칭합니다.
+③ ”회원”이라 함은 “온라인몰”에 회원등록을 한 자로서, 계속적으로 “온라인몰”이 제공하는 서비스를 이용할 수 있는 자를 말합니다.
+④ ”비회원”이라 함은 회원에 가입하지 않고 “온라인몰”이제공하는 서비스를 이용하는 자를 말합니다.
+⑤ “휴면회원”이라 함은 “온라인몰” 최종 접속일로부터
+제1조 목적
+이 약관은 주식회사 현대백화점(이하 “회사”라 합니다)가 운영하는 온라인몰, ARKET 등의 사이트(이하 통칭하여 “온라인몰”이라 합니다)에서 제공하는 인터넷 관련 서비스(이하 “서비스”라 합니다)를 이용함에 있어, “회사”와 “이용자”의 권리, 의무 및 책임사항을 규정함을 목적으로 합니다.
+제2조 정의
+① “온라인몰”이란 “회사”가 재화 또는 용역(이하 “재화 등”이라 합니다)을 이용자에게 제공하기 위하여 컴퓨터 등 정보통신설비를 이용하여 재화 등을 거래할 수 있도록 설정한 가상의 영업장을 말하며, 아울러 ”온라인몰”을 운영하는 사업자의 의미로도 사용합니다.
+② “이용자”란 “온라인몰”에 접속하여 이 약관에 따라 “온라인몰”이제공하는 서비스를 이용하는 자를 통칭합니다.
+③ ”회원”이라 함은 “온라인몰”에 회원등록을 한 자로서, 계속적으로 “온라인몰”이 제공하는 서비스를 이용할 수 있는 자를 말합니다.
+④ ”비회원”이라 함은 회원에 가입하지 않고 “온라인몰”이제공하는 서비스를 이용하는 자를 말합니다.
+⑤ “휴면회원”이라 함은 “온라인몰” 최종 접속일로부터
+            </div>
+
+            <div class="policy-wrap a-tab-con a-tab-con-2">
+                개인정보처리방침
+                
+                개인정보약관
+제1조 목적
+이 약관은 주식회사 현대백화점(이하 “회사”라 합니다)가 운영하는 온라인몰, ARKET 등의 사이트(이하 통칭하여 “온라인몰”이라 합니다)에서 제공하는 인터넷 관련 서비스(이하 “서비스”라 합니다)를 이용함에 있어, “회사”와 “이용자”의 권리, 의무 및 책임사항을 규정함을 목적으로 합니다.
+제2조 정의
+
+            </div>
+
+            <!--
+            <button class="a-button is-primary js-close-button" type="button"><span>확인</span></button>
+            -->
+
+        </div>
+    </div>
+    <script>
+        (function() {
+            renewCommon.aTab.init();
+
+            setTimeout(function(){
+                //.a-tab click trigger
+                let lightboxWrap = document.querySelector('.lightbox-wrapper');
+                lightboxWrap.scrollTop = 0;
+                document.querySelector('.a-tab:nth-child(1)').click();
+            },100);
+
+        })();
+    </script>
+</script>
+<!-- //전문보기 -->
+<!-- //handlebars-template -->
     <!-- //o-page-content -->
 
     <!-- footer -->

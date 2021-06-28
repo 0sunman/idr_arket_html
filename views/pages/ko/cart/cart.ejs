@@ -1,0 +1,486 @@
+<main data-component="OPageContent" class="o-page-content cofs-page page-cart" ng-controller="CartContextController">
+
+    <div class="o-cart" data-component="OCart">
+        <!-- cart-items -->
+        <div class="cart-items">
+            <h2 class="a-heading-2 cart-items-heading">장바구니</h2>
+
+            <!-- o-cart-item -->
+            <div class="o-cart-item" data-component="OCartItem">
+                <div class="content-wrapper u-clearfix cart-wrapper">
+                    <div class="cart-image-wrapper">
+                        <a class="a-link" href="#" target="_self">
+                            <!--<img class="a-image product-image"
+                                 ng-src="https://lp.arket.com/app006prod%3Fset%3Dsource%5B%2F31%2Fd6%2F31d689d16fab7a98ede310912be216df4b55ad16.jpg%5D%2Corigin%5Bdam%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cdevice%5Bhdpi%5D%2Cquality%5B80%5D%2CImageVersion%5B1%5D%26call%3Durl%5Bfile%3A%2Fproduct%2Fmain%5D&amp;call=url%5Bfile:/product/cart%5D"
+                                 alt="Oversized Wool Hopsack Blazer"
+                                 src="https://lp.arket.com/app006prod%3Fset%3Dsource%5B%2F31%2Fd6%2F31d689d16fab7a98ede310912be216df4b55ad16.jpg%5D%2Corigin%5Bdam%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cdevice%5Bhdpi%5D%2Cquality%5B80%5D%2CImageVersion%5B1%5D%26call%3Durl%5Bfile%3A%2Fproduct%2Fmain%5D&amp;call=url%5Bfile:/product/cart%5D">
+                                 -->
+                            <img class="a-image product-image"
+                                 alt="Oversized Wool Hopsack Blazer"
+                                 src="<%= pageInfo.root %>/images/temp/sample-img.jpg">
+                        </a>
+                    </div>
+                    <div class="cart-item-info">
+                        <!--<span class="brand"></span>-->
+                        <span class="product-name">캐리오버 블랙</span>
+                        <!--
+                        <div class="markers">
+                            <div class="m-product-marker" data-component="MProductMarkers">
+                                <div class="marker-text product-marker">
+                                    <span>online exclusive</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="markers">
+                            <div class="m-product-marker" data-component="MProductMarkers"></div>
+                        </div>
+                        <span class="product-id">222333-553</span>
+                        -->
+                        <div class="price-section">
+                            <span class="is-deprecated price">18,000</span>
+                            <span class="is-reduced">14,000</span>
+                        </div>
+                        <div class="size-section">
+                            <span class="size-label"></span>
+                            <span class="size">M</span>
+                            <span class="low-stock">품절임박</span>
+                        </div>
+                        <div class="color-section">
+                            <span class="color-label"></span>
+                            <span class="color">Black</span>
+                        </div>
+                        <div class="quantity-section">
+                            <span class="quantity-label last-item"
+                                  data-index="0"
+                                  onclick="TealiumUtils.trackUpdateItem($(this).data('index'), this);"
+                                  tabindex="0"></span>
+                            <div class="m-dropdown" data-component="MDropdown">
+                                <button class="a-button-nostyle placeholder"
+                                        type="button"
+                                        aria-label="filter expand/close"
+                                        aria-haspopup="true"
+                                        aria-expanded="false"
+                                        tabindex="-1">
+                                    <span>1</span>
+                                </button>
+                                <button type="button" class="a-button-nostyle a-icon-close"
+                                        data-index="0"
+                                        aria-label="close"
+                                        onclick="TealiumUtils.trackUpdateItem($(this).data('index'), this);">
+                                </button>
+                                <input type="hidden" name="selectQty" value="1" data-last-value="1"
+                                       data-variant-code="0946354002007" class="js-input"
+                                       onchange="angular.element(this).scope().updateQuantity($(this).data('variant-code'),this.value, this);">
+                                <button class="a-button-nostyle a-icon-arrow-down-small"
+                                        type="button"
+                                        role="button"
+                                        aria-label="expand/close"
+                                        tabindex="-1"
+                                        data-index="0"
+                                        onclick="TealiumUtils.trackUpdateItem($(this).data('index'), this);">
+                                </button>
+                                <ul class="list-wrapper">
+                                    <li>
+                                        <ul class="options" data-index="0">
+                                            <li class="a-option is-selected" data-value="1">1</li>
+                                            <li class="a-option" data-value="2">2</li>
+                                            <li class="a-option" data-value="3">3</li>
+                                            <li class="a-option" data-value="4">4</li>
+                                            <li class="a-option" data-value="5">5</li>
+                                            <li class="a-option" data-value="6">6</li>
+                                            <li class="a-option" data-value="7">7</li>
+                                            <li class="a-option" data-value="8">8</li>
+                                            <li class="a-option" data-value="9">9</li>
+                                            <li class="a-option" data-value="10">10</li>
+                                            <li class="a-option" data-value="11">11</li>
+                                            <li class="a-option" data-value="12">12</li>
+                                            <li class="a-option" data-value="13">13</li>
+                                            <li class="a-option" data-value="14">14</li>
+                                            <li class="a-option" data-value="15">15</li>
+                                        </ul>
+                                        <ul class="bottom-option">
+                                            <li>Cancel</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <span class="error-msg"></span>
+                            </div>
+                        </div>
+                        <button class="a-button-nostyle remove"
+                                type="button"
+                                aria-label="remove item"
+                                data-index="0"
+                                onclick="TealiumUtils.trackRemoveItem($(this).data('index'));">
+                        </button>
+                        <div class="total-section">
+                            <span class="total-label">총</span>
+                            <span class="total">124,000</span>
+                        </div>
+                        <!--<span class="m-hazmat">
+                            <img class="a-image hazmat-image"
+                                 alt="flamable warning icon"
+                                 src="../../../org/etc/designs/appeaser/p11/clientlibs/pattern-lib/images/icon-hazmat.png"
+                                 aria-label="hazardous materials">
+                            <span class="hazmat-label">This product contains flammable substances and is therefore subject to special rules for the services rendered.</span>
+                        </span>-->
+                    </div>
+
+                </div>
+            </div>
+            <!-- //o-cart-item -->
+
+            <!-- o-cart-item -->
+            <div class="o-cart-item has-multiple-quantity" data-component="OCartItem">
+                <div class="content-wrapper u-clearfix cart-wrapper">
+                    <div class="cart-image-wrapper">
+                        <a class="a-link" href="#" target="_self">
+                            <!--<img class="a-image product-image"
+                                 ng-src="https://lp.arket.com/app006prod%3Fset%3Dsource%5B%2F31%2Fd6%2F31d689d16fab7a98ede310912be216df4b55ad16.jpg%5D%2Corigin%5Bdam%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cdevice%5Bhdpi%5D%2Cquality%5B80%5D%2CImageVersion%5B1%5D%26call%3Durl%5Bfile%3A%2Fproduct%2Fmain%5D&amp;call=url%5Bfile:/product/cart%5D"
+                                 alt="Oversized Wool Hopsack Blazer"
+                                 src="https://lp.arket.com/app006prod%3Fset%3Dsource%5B%2F31%2Fd6%2F31d689d16fab7a98ede310912be216df4b55ad16.jpg%5D%2Corigin%5Bdam%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cdevice%5Bhdpi%5D%2Cquality%5B80%5D%2CImageVersion%5B1%5D%26call%3Durl%5Bfile%3A%2Fproduct%2Fmain%5D&amp;call=url%5Bfile:/product/cart%5D">
+                                 -->
+                            <img class="a-image product-image"
+                                 alt="Oversized Wool Hopsack Blazer"
+                                 src="<%= pageInfo.root %>/images/temp/sample-img.jpg">
+                        </a>
+                    </div>
+                    <div class="cart-item-info">
+                        <span class="product-name">캐리오버 블랙</span>
+                        <div class="size-section">
+                            <span class="size-label"></span>
+                            <span class="size">M</span>
+                        </div>
+                        <div class="color-section">
+                            <span class="color-label"></span>
+                            <span class="color">Black</span>
+                        </div>
+                        <div class="quantity-section">
+                            <span class="quantity-label"></span>
+                            <div class="m-dropdown" data-component="MDropdown">
+                                <button class="a-button-nostyle placeholder"
+                                        type="button"
+                                        aria-label="filter expand/close"
+                                        aria-haspopup="true"
+                                        aria-expanded="false">
+                                    <span>2</span>
+                                </button>
+                                <button class="a-button-nostyle a-icon-close" type="button" aria-label="close"></button>
+                                <input class="js-input" name="selectQty" value="2" type="text">
+                                <button class="a-button-nostyle a-icon-arrow-down-small"
+                                        type="button"
+                                        role="button"
+                                        aria-label="expand/close"
+                                        tabindex="-1">
+                                </button>
+                                <ul class="list-wrapper">
+                                    <li>
+                                        <ul class="options">
+                                            <li class="a-option" data-value="1">1</li>
+                                            <li class="a-option is-selected" data-value="2">2</li>
+                                            <li class="a-option" data-value="3">3</li>
+                                            <li class="a-option" data-value="4">4</li>
+                                            <li class="a-option" data-value="5">5</li>
+                                        </ul>
+                                        <ul class="bottom-option">
+                                            <li>Cancel</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <span class="error-msg"></span>
+                            </div>
+                        </div>
+                        <button class="a-button-nostyle remove" type="button" aria-label="remove item"></button>
+                        <div class="total-section">
+                            <span class="total-label">총</span>
+                            <span class="total">14,000</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //o-cart-item -->
+
+            <!-- o-cart-item -->
+            <div class="o-cart-item is-hazmat" data-component="OCartItem">
+                <div class="content-wrapper u-clearfix cart-wrapper">
+                    <div class="cart-image-wrapper">
+                        <a class="a-link" href="#" target="_self">
+                            <!--<img class="a-image product-image"
+                                 ng-src="https://lp.arket.com/app006prod%3Fset%3Dsource%5B%2F31%2Fd6%2F31d689d16fab7a98ede310912be216df4b55ad16.jpg%5D%2Corigin%5Bdam%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cdevice%5Bhdpi%5D%2Cquality%5B80%5D%2CImageVersion%5B1%5D%26call%3Durl%5Bfile%3A%2Fproduct%2Fmain%5D&amp;call=url%5Bfile:/product/cart%5D"
+                                 alt="Oversized Wool Hopsack Blazer"
+                                 src="https://lp.arket.com/app006prod%3Fset%3Dsource%5B%2F31%2Fd6%2F31d689d16fab7a98ede310912be216df4b55ad16.jpg%5D%2Corigin%5Bdam%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cdevice%5Bhdpi%5D%2Cquality%5B80%5D%2CImageVersion%5B1%5D%26call%3Durl%5Bfile%3A%2Fproduct%2Fmain%5D&amp;call=url%5Bfile:/product/cart%5D">
+                                 -->
+                            <img class="a-image product-image"
+                                 alt="Oversized Wool Hopsack Blazer"
+                                 src="<%= pageInfo.root %>/images/temp/sample-img.jpg">
+                        </a>
+                    </div>
+                    <div class="cart-item-info">
+                        <span class="brand"></span>
+                        <span class="product-name">캐리오버 블랙</span>
+                        <div class="size-section">
+                            <span class="size-label"></span>
+                            <span class="size">M</span>
+                            <span class="low-stock">품절임박</span>
+                        </div>
+                        <div class="color-section">
+                            <span class="color-label"></span>
+                            <span class="color">Black</span>
+                        </div>
+                        <div class="quantity-section">
+                            <span class="quantity-label"></span>
+                            <div class="m-dropdown" data-component="MDropdown">
+                                <button class="a-button-nostyle placeholder" type="button"
+                                        aria-label="filter expand/close" aria-haspopup="true" aria-expanded="false">
+                                    <span>1</span>
+                                </button>
+                                <button class="a-button-nostyle a-icon-close" type="button" aria-label="close"></button>
+                                <input class="js-input" name="selectQty" value="1" type="text">
+                                <button class="a-button-nostyle a-icon-arrow-down-small" type="button" role="button"
+                                        aria-label="expand/close" tabindex="-1"></button>
+                                <ul class="list-wrapper">
+                                    <li>
+                                        <ul class="options">
+                                            <li class="a-option is-selected" data-value="1">1</li>
+                                            <li class="a-option" data-value="2">2</li>
+                                            <li class="a-option" data-value="3">3</li>
+                                            <li class="a-option" data-value="4">4</li>
+                                            <li class="a-option" data-value="5">5</li>
+                                        </ul>
+                                        <ul class="bottom-option">
+                                            <li>Cancel</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <span class="error-msg"></span>
+                            </div>
+                        </div>
+                        <button class="a-button-nostyle remove" type="button" aria-label="remove item"></button>
+                        <div class="total-section">
+                            <span class="total-label">총</span>
+                            <span class="total">14,000</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //o-cart-item -->
+
+            <!-- o-cart-item -->
+            <div class="o-cart-item" data-component="OCartItem">
+                <div class="content-wrapper u-clearfix cart-wrapper">
+                    <div class="cart-image-wrapper">
+                        <a class="a-link" href="#" target="_self">
+                            <!--<img class="a-image product-image"
+                                 ng-src="https://lp.arket.com/app006prod%3Fset%3Dsource%5B%2F31%2Fd6%2F31d689d16fab7a98ede310912be216df4b55ad16.jpg%5D%2Corigin%5Bdam%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cdevice%5Bhdpi%5D%2Cquality%5B80%5D%2CImageVersion%5B1%5D%26call%3Durl%5Bfile%3A%2Fproduct%2Fmain%5D&amp;call=url%5Bfile:/product/cart%5D"
+                                 alt="Oversized Wool Hopsack Blazer"
+                                 src="https://lp.arket.com/app006prod%3Fset%3Dsource%5B%2F31%2Fd6%2F31d689d16fab7a98ede310912be216df4b55ad16.jpg%5D%2Corigin%5Bdam%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cdevice%5Bhdpi%5D%2Cquality%5B80%5D%2CImageVersion%5B1%5D%26call%3Durl%5Bfile%3A%2Fproduct%2Fmain%5D&amp;call=url%5Bfile:/product/cart%5D">
+                                 -->
+                            <img class="a-image product-image" alt="Oversized Wool Hopsack Blazer" src="<%= pageInfo.root %>/images/temp/sample-img.jpg">
+                        </a>
+                    </div>
+                    <div class="cart-item-info">
+                        <span class="product-name">캐리오버 블랙</span>
+                        <div class="size-section">
+                            <span class="size-label"></span>
+                            <span class="size">M</span>
+                        </div>
+                        <div class="color-section">
+                            <span class="color-label"></span>
+                            <span class="color">Black</span>
+                        </div>
+                        <div class="quantity-section">
+                            <span class="quantity-label"></span>
+                            <div class="m-dropdown" data-component="MDropdown">
+                                <button class="a-button-nostyle placeholder" type="button"
+                                        aria-label="filter expand/close" aria-haspopup="true" aria-expanded="false">
+                                    <span>1</span>
+                                </button>
+                                <button class="a-button-nostyle a-icon-close" type="button" aria-label="close"></button>
+                                <input class="js-input" name="selectQty" value="1" type="text">
+                                <button class="a-button-nostyle a-icon-arrow-down-small" type="button" role="button"
+                                        aria-label="expand/close" tabindex="-1"></button>
+                                <ul class="list-wrapper">
+                                    <li>
+                                        <ul class="options">
+                                            <li class="a-option is-selected" data-value="1">1</li>
+                                            <li class="a-option" data-value="2">2</li>
+                                            <li class="a-option" data-value="3">3</li>
+                                            <li class="a-option" data-value="4">4</li>
+                                            <li class="a-option" data-value="5">5</li>
+                                        </ul>
+                                        <ul class="bottom-option">
+                                            <li>Cancel</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <span class="error-msg"></span>
+                            </div>
+                        </div>
+                        <button class="a-button-nostyle remove" type="button" aria-label="remove item"></button>
+                        <div class="total-section">
+                            <span class="total-label">총</span>
+                            <span class="total">14,000</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //o-cart-item -->
+            
+        </div>
+        <!-- //cart-items -->
+
+        <!-- order-summary-section -->
+        <div class="order-summary-section">
+            <h2 class="a-heading-2 order-summary-heading">주문 요약</h2>
+            <div class="o-order-summary">
+                <div class="order-value-section">
+                    <span class="order-value-label">총 상품금액</span>
+                    <span class="order-value price-won">12,190,000</span>
+                </div>
+                <div class="discount-section">
+                    <span class="discount-label">할인금액</span>
+                    <span class="discount price-won">-100,000</span>
+                </div>
+                <div class="staff-discount-section">
+                    <span class="staff-discount-label">임직원 할인</span>
+                    <span class="staff-discount price-won">-4,000</span>
+                </div>
+                <div class="shipping-section">
+                    <span class="shipping-label">배송비</span>
+                    <span class="shipping price-won">2,500</span>
+                </div>
+                <form class="o-cart-discount-code has-discount" data-component="OCartDiscountCode">
+                    <button class="a-button-nostyle title" type="button">프로모션 코드를 입력하시겠습니까?
+                        <span class="a-icon-arrow-down" role="button" aria-label="expand/close"></span>
+                    </button>
+                    <div class="code-area">
+                        <button class="a-button-nostyle cancel" type="button"></button>
+                        <div class="m-input" data-component="MInput">
+                            <label class="a-label js-a-label" for="cart-discount-code">프로모션 코드</label>
+                            <input class="a-input js-a-input" placeholder="프로모션 코드" type="text" value="" name="cart-discount-code" id="cart-discount-code">
+                            <label class="a-label js-a-label" for="cart-discount-code" data-placeholder="Voucher code">프로모션 코드</label>
+                            <p class="a-paragraph error-text">프로모션 코드가 정확하지 않습니다.</p>
+                        </div>
+                        <button class="a-button add">
+                            <span>확인</span>
+                        </button>
+                        <div class="discount-code">
+                            <div class="text">
+                                <span class="added-code-label">50% 할인적용</span>
+                                <span class="added-code">ABC-DEF-EXAMPLE</span>
+                            </div>
+                            <a class="a-link remove" href="#" target="_self">적용취소</a>
+                        </div>
+                        <span class="discount-error-message">프로모션 코드를 입력해주세요</span>
+                    </div>
+                </form>
+                <div class="total-section">
+                    <span class="total-label">총 결제 예정 금액</span>
+                    <span class="total price-won">83,500</span>
+                </div>
+            </div>
+            <a class="a-button is-primary is-checkout-options checkout-button"
+               href="/views/common/views/pages/checkout/checkout-guest-options.html">주문하기
+            </a>
+            <!--
+            <div class="a-payment-icons" data-component="APaymentIcons">
+                <h3 class="a-heading-3">결제 가능 수단</h3>
+                <div class="a-payment-icon klarna" tabindex="0" aria-label="KLARNA"></div>
+                <div class="a-payment-icon mastercard" tabindex="0" aria-label="MASTERCARD"></div>
+                <div class="a-payment-icon visa" tabindex="0" aria-label="VISA"></div>
+                <div class="a-payment-icon amex" tabindex="0" aria-label="AMEX"></div>
+                <div class="a-payment-icon paypal" tabindex="0" aria-label="PAYPAL"></div>
+            </div>
+
+            <span class="m-hazmat">
+                <img class="a-image hazmat-image"
+                     alt="flamable warning icon"
+                     src="<%= pageInfo.root %>/org/etc/designs/appeaser/p11/clientlibs/pattern-lib/images/icon-hazmat.png"
+                     aria-label="hazardous materials">
+                <span class="hazmat-label">이 제품에는 인화성 물질이 포함되어 있으므로 제공되는 서비스에 대한 특별 규칙이 적용됩니다.</span>
+            </span>
+            -->
+
+            <%# m-informative-section %>
+            <%- include ("../../../common/md-m-informative-section.ejs") %>
+
+        </div>
+        <!-- //order-summary-section -->
+
+        <!-- o-cart-sticky -->
+        <div class="o-cart-sticky" data-component="OCartSticky">
+            <div class="order-total-section has-discount">
+                <div class="order-total-default">
+                    <div class="order-total">
+                        <span class="order-value-label"></span>
+                        <span class="order-value price-won">1,950,000</span>
+                    </div>
+                </div>
+                <div class="order-total-discount">
+                    <div class="order-total">
+                        <span class="order-value-label"></span>
+                        <span class="order-value price-won">1,950,000</span>
+                    </div>
+                    <div class="order-discount">
+                        <span class="discount-label"></span>
+                        <span class="discount"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="order-checkout-section">
+                <a class="a-button is-primary checkout-button" href="/views/common/views/pages/checkout/checkout-guest-options.html">주문하기</a>
+            </div>
+        </div>
+        <!-- //o-cart-sticky -->
+
+        <!-- o-pra-component -->
+        <div class="o-slider-cofs o-pra-component o-product-slider has-spacers"
+             data-component="OSliderCofs"
+             data-slides-desktop="3"
+             data-slides-tablet="3"
+             data-slides-mobile="2"
+             data-text-prev="prev"
+             data-text-next="next">
+            <h2 class="a-heading-2 slider-title u-align-center">You may also like</h2>
+
+            <!-- slider -->
+            <div class="slider">
+                <%# md-o-product-cofs-item3 %>
+                <%- include ("../../../common/md-o-product-cofs-item3.ejs") %>
+                <%- include ("../../../common/md-o-product-cofs-item3.ejs") %>
+            </div>
+            <!-- //slider -->
+
+        </div>
+        <!-- //o-pra-component -->
+
+        <!-- o-pra-component -->
+        <div class="o-slider-cofs o-pra-component o-product-slider has-spacers"
+             data-component="OSliderCofs"
+             data-slides-desktop="3"
+             data-slides-tablet="3"
+             data-slides-mobile="2"
+             data-text-prev="prev"
+             data-text-next="next">
+            <h2 class="a-heading-2 slider-title u-align-center">추천상품</h2>
+
+            <!-- slider -->
+            <div class="slider">
+                <%# md-o-product-cofs-item3 %>
+                <%- include ("../../../common/md-o-product-cofs-item3.ejs") %>
+                <%- include ("../../../common/md-o-product-cofs-item3.ejs") %>
+            </div>
+            <!-- //slider -->
+            
+        </div>
+        <!-- //o-pra-component -->
+        
+    </div>
+
+</main>
+
+<!-- handlebars-template -->
+<script type="text/x-handlebars-template" id="o-quick-buy">
+    <%# hndl-o-quick-buy %>
+    <%- include ("../../../common/hndl-o-quick-buy.ejs") %>
+</script>
+<!-- handlebars-template -->

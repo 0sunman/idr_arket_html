@@ -120,6 +120,7 @@
         </div>
     </div>
 
+    <!-- m-site-banner : 띠배너 -->
     <!--
     <div id="site-banner-id" data-component="MSiteBanner" class="m-site-banner slide-down" data-component-id="99b5970e-f57c-49a0-81af-c7dcdc255c0b" style="background-color: rgb(0, 0, 0); display: block;">
         <input type="hidden" name="startDateField" value="2021/06/10 08:10:00" id="sitebannersd">
@@ -142,6 +143,7 @@
         </div>
     </div>
     -->
+    <!-- //m-site-banner : 띠배너 -->
 
     <div class="u-no-select">
         <div class="a-overlay js-a-overlay q-opacity-0" data-component="AOverlay" data-component-id="00dc7c54-c454-4add-9da6-62430cfc116d"></div>
@@ -901,7 +903,7 @@
             <span class="country-name">배송국가</span>
             <span class="lang"></span>
         </button>
-        <a href="/ko/logout" target="_self" class="a-link bottom account logout" style="display:none;" area-hidden="true">로그아웃</a>
+        <a href="/ko/logout" target="_self" class="a-link bottom account logout" area-hidden="true">로그아웃</a>
     </div>
 
     <a href="https://www.instagram.com/arketofficial" target="_self" class="a-link follow">Follow us</a>
@@ -1457,18 +1459,25 @@
         <div class="basket-wrapper">
             <div class="added-item">
                 <div class="basket-added-image">
-                    <img class="a-image" src="//:0" alt="">
+                    <img class="a-image ResolveComplete" src="../../static/images/temp/sample-img.jpg">
                 </div>
                 <div class="basket-added-info">
-                    <div class="basket-added-info-title i18n">Added To Bag</div>
                     <p class="a-paragraph">
-								<span class="basket-added-info-price">
-									<span class="u-price"></span>
-									<span class="u-currency"></span>
-								</span>
-                        <span class="item-title"></span>
+                        <span class="item-title">루즈핏 리넨 쇼츠</span>
+                        <div class="product-param-info second">
+                            <div class="product-params data">
+                                <div class="product-size">44</div>
+                                <div class="product-color">핑크</div>
+                                <div class="product-qty">2</div>
+                            </div>
+                        </div>
+                        <span class="basket-added-info-price">
+                            <span class="u-price is-deprecated">100,000</span>
+                            <!--<span class="u-price-discount">85,000</span>-->
+                            <span class="u-price discount total">85,000</span>
+                        </span>
                     </p>
-                    <a class="a-button checkout i18n" href="/ko/cart">View bag</a>
+                    <a class="a-button checkout i18n" href="/ko/cart">장바구니 보기</a>
                 </div>
             </div>
             <div class="no-added-item">
@@ -2042,7 +2051,7 @@
     <!-- //handlebars-template -->
 
     <!-- o-page-content -->
-    <div data-component="OPageContent" class="o-page-content is-extended" data-component-id="">
+    <div data-component="OPageContent" class="o-page-content is-extended">
 
     <div class="parbase sdp-component left-component is-search">
         <p class="a-paragraph search-results-title">
@@ -2069,8 +2078,440 @@
             <!-- //o-product-listing -->
         </div>
     </div>
+
+    <!-- o-pra-component -->
+    <div class="o-slider-cofs o-pra-component o-product-slider has-spacers in-search"
+         data-component="OSliderCofs"
+         data-slides-desktop="4"
+         data-slides-tablet="3"
+         data-slides-mobile="2"
+         data-text-prev="prev"
+         data-text-next="next">
+        <h2 class="a-heading-2 slider-title u-align-center">추천상품</h2>
+
+        <!-- slider -->
+        <div class="slider">
+            
+            <!-- o-product-cofs -->
+<div class="o-product-cofs">
+    <a class="a-link no-styling full-area-link"
+       href="/views/themes/stories/views/pages/product-detail/product-detail-coat.html"
+       title="Body Jacket Socks"
+       target="_self"></a>
+    <div class="image-holder">
+        <!--<img class="a-image product-image"
+             ng-src="https://lp.arket.com/app006prod?set=source[/67/51/6751a46e1d0ae3af87e975ad2972450d05e36874.jpg],origin[dam],type[DESCRIPTIVESTILLLIFE],device[hdpi],quality[80],ImageVersion[1]&amp;call=url[file:/product/main]"
+             alt="Ribbed Racer Tank"
+             src="https://lp.arket.com/app006prod?set=source[/67/51/6751a46e1d0ae3af87e975ad2972450d05e36874.jpg],origin[dam],type[DESCRIPTIVESTILLLIFE],device[hdpi],quality[80],ImageVersion[1]&amp;call=url[file:/product/main]">
+        -->
+        <img class="a-image product-image"
+             alt="Ribbed Racer Tank"
+             src="../../static/images/temp/app006prod-0.jpg">
+        <button class="a-button is-quickbuy open-lightbox no-states" data-template="o-quick-buy" data-nopadding="true" data-classes="is-medium is-flexible">
+            <span>Quickshop</span>
+        </button>
+    </div>
+    <div class="description">
+        <!--
+        <div class="product-variants">
+            <span>3 변형</span>
+        </div>
+        -->
+        <div class="m-product-marker m-product-markers" data-component="MProductMarkersCofs">
+            <div class="markers-wrapper">
+                <div class="marker-text product-marker">
+                    <span>organic cotton</span>
+                </div>
+                <!--
+                <div class="marker-text promo-marker">
+                    <span>3 FOR 2</span>
+                </div>
+                -->
+            </div>
+        </div>
+        <!--
+        <div class="marker-label temp-marker new-marker">
+            <span>NEW</span>
+        </div>
+        -->
+        <h3 class="a-heading-3 product-title">보디 자켓</h3>
+        <div class="m-product-price">
+            <span class="price-won">12,250,000</span>
+        </div>
+    </div>
+</div>
+<!-- //o-product-cofs -->
+
+<!-- o-product-cofs -->
+<div class="o-product-cofs">
+    <a class="a-link no-styling full-area-link"
+       href="/views/themes/stories/views/pages/product-detail/product-detail-coat.html"
+       title="Body Jacket Socks" target="_self"></a>
+    <div class="image-holder">
+        <!--
+        <img class="a-image product-image"
+             ng-src="https://lp.arket.com/app006prod?set=source[/6a/bc/6abc64acf13267c82f8dcfa92c5720cc3a0f1be6.jpg],origin[dam],type[DESCRIPTIVESTILLLIFE],device[hdpi],quality[80],ImageVersion[1]&amp;call=url[file:/product/main]"
+             alt="Crew-Neck T-shirt"
+             src="https://lp.arket.com/app006prod?set=source[/6a/bc/6abc64acf13267c82f8dcfa92c5720cc3a0f1be6.jpg],origin[dam],type[DESCRIPTIVESTILLLIFE],device[hdpi],quality[80],ImageVersion[1]&amp;call=url[file:/product/main]">
+        -->
+        <img class="a-image product-image"
+             alt="Ribbed Racer Tank"
+             src="../../static/images/temp/app006prod-1.jpg">
+        <button class="a-button is-quickbuy open-lightbox no-states" data-template="o-quick-buy"
+                data-nopadding="true" data-classes="is-medium is-flexible">
+            <span>Quickshop</span>
+        </button>
+    </div>
+    <div class="description">
+        <div class="m-product-marker m-product-markers" data-component="MProductMarkersCofs">
+            <div class="markers-wrapper">
+                <div class="marker-text product-marker">
+                    <span>organic cotton</span>
+                </div>
+            </div>
+        </div>
+        <h3 class="a-heading-3 product-title">보디 자켓</h3>
+        <div class="m-product-price">
+            <span class="is-regular">50,000</span>
+            <span class="show-percentage-off">50%</span>
+        </div>
+    </div>
+</div>
+<!-- //o-product-cofs -->
+
+<!-- o-product-cofs -->
+<div class="o-product-cofs">
+    <a class="a-link no-styling full-area-link"
+       href="/views/themes/stories/views/pages/product-detail/product-detail-coat.html"
+       title="Body Jacket Socks" target="_self"></a>
+    <div class="image-holder">
+        <!--
+        <img class="a-image product-image"
+             ng-src="https://lp.arket.com/app006prod?set=source[/41/ab/41ab8d8f2e6551549a6f5cd948d6fd49494dc53e.jpg],origin[dam],type[DESCRIPTIVESTILLLIFE],device[hdpi],quality[80],ImageVersion[1]&amp;call=url[file:/product/main]"
+             alt="Rib Strap Top"
+             src="https://lp.arket.com/app006prod?set=source[/41/ab/41ab8d8f2e6551549a6f5cd948d6fd49494dc53e.jpg],origin[dam],type[DESCRIPTIVESTILLLIFE],device[hdpi],quality[80],ImageVersion[1]&amp;call=url[file:/product/main]">
+         -->
+        <img class="a-image product-image"
+             alt="Ribbed Racer Tank"
+             src="../../static/images/temp/app006prod-2.jpg">
+        <button class="a-button is-quickbuy open-lightbox no-states"
+                data-template="o-quick-buy"
+                data-nopadding="true"
+                data-classes="is-medium is-flexible">
+            <span>Quickshop</span>
+        </button>
+    </div>
+    <div class="description">
+        <div class="m-product-marker m-product-markers" data-component="MProductMarkersCofs">
+            <div class="markers-wrapper">
+                <div class="marker-text product-marker">
+                    <span>organic cotton</span>
+                </div>
+            </div>
+        </div>
+        <h3 class="a-heading-3 product-title">보디 자켓</h3>
+        <div class="m-product-price">
+            <span class="is-deprecated">50,000</span>
+            <span class="is-reduced">40,000</span>
+        </div>
+    </div>
+</div>
+<!-- //o-product-cofs -->
+
+<!-- o-product-cofs -->
+<div class="o-product-cofs">
+    <a class="a-link no-styling full-area-link"
+       href="/views/themes/stories/views/pages/product-detail/product-detail-coat.html"
+       title="Body Jacket Socks"
+       target="_self"></a>
+    <div class="image-holder">
+        <!--
+        <img class="a-image product-image"
+             ng-src="https://lp.arket.com/app006prod?set=source[/95/52/95528393c34b632413f95e874acc40f608fafa0a.jpg],origin[dam],type[DESCRIPTIVESTILLLIFE],device[hdpi],quality[80],ImageVersion[1]&amp;call=url[file:/product/main]"
+             alt="Crew-Neck T-shirt"
+             src="https://lp.arket.com/app006prod?set=source[/95/52/95528393c34b632413f95e874acc40f608fafa0a.jpg],origin[dam],type[DESCRIPTIVESTILLLIFE],device[hdpi],quality[80],ImageVersion[1]&amp;call=url[file:/product/main]">
+         -->
+        <img class="a-image product-image"
+             alt="Ribbed Racer Tank"
+             src="../../static/images/temp/app006prod-3.jpg">
+        <button class="a-button is-quickbuy open-lightbox no-states" data-template="o-quick-buy" data-nopadding="true" data-classes="is-medium is-flexible">
+            <span>Quickshop</span>
+        </button>
+    </div>
+    <div class="description">
+        <div class="m-product-marker m-product-markers" data-component="MProductMarkersCofs">
+            <div class="markers-wrapper">
+                <div class="marker-text product-marker">
+                    <span>ogarnic</span>
+                </div>
+            </div>
+        </div>
+        <h3 class="a-heading-3 product-title">보디 자켓</h3>
+        <div class="m-product-price">
+            <span class="is-deprecated">50,000</span>
+            <span class="is-reduced">40,000</span>
+        </div>
+    </div>
+</div>
+<!-- //o-product-cofs -->
+            <!-- o-product-cofs -->
+<div class="o-product-cofs">
+    <a class="a-link no-styling full-area-link"
+       href="/views/themes/stories/views/pages/product-detail/product-detail-coat.html"
+       title="Body Jacket Socks"
+       target="_self"></a>
+    <div class="image-holder">
+        <!--<img class="a-image product-image"
+             ng-src="https://lp.arket.com/app006prod?set=source[/67/51/6751a46e1d0ae3af87e975ad2972450d05e36874.jpg],origin[dam],type[DESCRIPTIVESTILLLIFE],device[hdpi],quality[80],ImageVersion[1]&amp;call=url[file:/product/main]"
+             alt="Ribbed Racer Tank"
+             src="https://lp.arket.com/app006prod?set=source[/67/51/6751a46e1d0ae3af87e975ad2972450d05e36874.jpg],origin[dam],type[DESCRIPTIVESTILLLIFE],device[hdpi],quality[80],ImageVersion[1]&amp;call=url[file:/product/main]">
+        -->
+        <img class="a-image product-image"
+             alt="Ribbed Racer Tank"
+             src="../../static/images/temp/app006prod-0.jpg">
+        <button class="a-button is-quickbuy open-lightbox no-states" data-template="o-quick-buy" data-nopadding="true" data-classes="is-medium is-flexible">
+            <span>Quickshop</span>
+        </button>
+    </div>
+    <div class="description">
+        <!--
+        <div class="product-variants">
+            <span>3 변형</span>
+        </div>
+        -->
+        <div class="m-product-marker m-product-markers" data-component="MProductMarkersCofs">
+            <div class="markers-wrapper">
+                <div class="marker-text product-marker">
+                    <span>organic cotton</span>
+                </div>
+                <!--
+                <div class="marker-text promo-marker">
+                    <span>3 FOR 2</span>
+                </div>
+                -->
+            </div>
+        </div>
+        <!--
+        <div class="marker-label temp-marker new-marker">
+            <span>NEW</span>
+        </div>
+        -->
+        <h3 class="a-heading-3 product-title">보디 자켓</h3>
+        <div class="m-product-price">
+            <span class="price-won">12,250,000</span>
+        </div>
+    </div>
+</div>
+<!-- //o-product-cofs -->
+
+<!-- o-product-cofs -->
+<div class="o-product-cofs">
+    <a class="a-link no-styling full-area-link"
+       href="/views/themes/stories/views/pages/product-detail/product-detail-coat.html"
+       title="Body Jacket Socks" target="_self"></a>
+    <div class="image-holder">
+        <!--
+        <img class="a-image product-image"
+             ng-src="https://lp.arket.com/app006prod?set=source[/6a/bc/6abc64acf13267c82f8dcfa92c5720cc3a0f1be6.jpg],origin[dam],type[DESCRIPTIVESTILLLIFE],device[hdpi],quality[80],ImageVersion[1]&amp;call=url[file:/product/main]"
+             alt="Crew-Neck T-shirt"
+             src="https://lp.arket.com/app006prod?set=source[/6a/bc/6abc64acf13267c82f8dcfa92c5720cc3a0f1be6.jpg],origin[dam],type[DESCRIPTIVESTILLLIFE],device[hdpi],quality[80],ImageVersion[1]&amp;call=url[file:/product/main]">
+        -->
+        <img class="a-image product-image"
+             alt="Ribbed Racer Tank"
+             src="../../static/images/temp/app006prod-1.jpg">
+        <button class="a-button is-quickbuy open-lightbox no-states" data-template="o-quick-buy"
+                data-nopadding="true" data-classes="is-medium is-flexible">
+            <span>Quickshop</span>
+        </button>
+    </div>
+    <div class="description">
+        <div class="m-product-marker m-product-markers" data-component="MProductMarkersCofs">
+            <div class="markers-wrapper">
+                <div class="marker-text product-marker">
+                    <span>organic cotton</span>
+                </div>
+            </div>
+        </div>
+        <h3 class="a-heading-3 product-title">보디 자켓</h3>
+        <div class="m-product-price">
+            <span class="is-regular">50,000</span>
+            <span class="show-percentage-off">50%</span>
+        </div>
+    </div>
+</div>
+<!-- //o-product-cofs -->
+
+<!-- o-product-cofs -->
+<div class="o-product-cofs">
+    <a class="a-link no-styling full-area-link"
+       href="/views/themes/stories/views/pages/product-detail/product-detail-coat.html"
+       title="Body Jacket Socks" target="_self"></a>
+    <div class="image-holder">
+        <!--
+        <img class="a-image product-image"
+             ng-src="https://lp.arket.com/app006prod?set=source[/41/ab/41ab8d8f2e6551549a6f5cd948d6fd49494dc53e.jpg],origin[dam],type[DESCRIPTIVESTILLLIFE],device[hdpi],quality[80],ImageVersion[1]&amp;call=url[file:/product/main]"
+             alt="Rib Strap Top"
+             src="https://lp.arket.com/app006prod?set=source[/41/ab/41ab8d8f2e6551549a6f5cd948d6fd49494dc53e.jpg],origin[dam],type[DESCRIPTIVESTILLLIFE],device[hdpi],quality[80],ImageVersion[1]&amp;call=url[file:/product/main]">
+         -->
+        <img class="a-image product-image"
+             alt="Ribbed Racer Tank"
+             src="../../static/images/temp/app006prod-2.jpg">
+        <button class="a-button is-quickbuy open-lightbox no-states"
+                data-template="o-quick-buy"
+                data-nopadding="true"
+                data-classes="is-medium is-flexible">
+            <span>Quickshop</span>
+        </button>
+    </div>
+    <div class="description">
+        <div class="m-product-marker m-product-markers" data-component="MProductMarkersCofs">
+            <div class="markers-wrapper">
+                <div class="marker-text product-marker">
+                    <span>organic cotton</span>
+                </div>
+            </div>
+        </div>
+        <h3 class="a-heading-3 product-title">보디 자켓</h3>
+        <div class="m-product-price">
+            <span class="is-deprecated">50,000</span>
+            <span class="is-reduced">40,000</span>
+        </div>
+    </div>
+</div>
+<!-- //o-product-cofs -->
+
+<!-- o-product-cofs -->
+<div class="o-product-cofs">
+    <a class="a-link no-styling full-area-link"
+       href="/views/themes/stories/views/pages/product-detail/product-detail-coat.html"
+       title="Body Jacket Socks"
+       target="_self"></a>
+    <div class="image-holder">
+        <!--
+        <img class="a-image product-image"
+             ng-src="https://lp.arket.com/app006prod?set=source[/95/52/95528393c34b632413f95e874acc40f608fafa0a.jpg],origin[dam],type[DESCRIPTIVESTILLLIFE],device[hdpi],quality[80],ImageVersion[1]&amp;call=url[file:/product/main]"
+             alt="Crew-Neck T-shirt"
+             src="https://lp.arket.com/app006prod?set=source[/95/52/95528393c34b632413f95e874acc40f608fafa0a.jpg],origin[dam],type[DESCRIPTIVESTILLLIFE],device[hdpi],quality[80],ImageVersion[1]&amp;call=url[file:/product/main]">
+         -->
+        <img class="a-image product-image"
+             alt="Ribbed Racer Tank"
+             src="../../static/images/temp/app006prod-3.jpg">
+        <button class="a-button is-quickbuy open-lightbox no-states" data-template="o-quick-buy" data-nopadding="true" data-classes="is-medium is-flexible">
+            <span>Quickshop</span>
+        </button>
+    </div>
+    <div class="description">
+        <div class="m-product-marker m-product-markers" data-component="MProductMarkersCofs">
+            <div class="markers-wrapper">
+                <div class="marker-text product-marker">
+                    <span>ogarnic</span>
+                </div>
+            </div>
+        </div>
+        <h3 class="a-heading-3 product-title">보디 자켓</h3>
+        <div class="m-product-price">
+            <span class="is-deprecated">50,000</span>
+            <span class="is-reduced">40,000</span>
+        </div>
+    </div>
+</div>
+<!-- //o-product-cofs -->
+        </div>
+        <!-- //slider -->
+
+    </div>
+    <!-- //o-pra-component -->
     
 </div>
+
+<!-- handlebars-template -->
+<script type="text/x-handlebars-template" id="o-quick-buy">
+    
+    <div class="o-quick-buy" data-component="OQuickBuy">
+    <form class="o-form add-to-cart" data-component="OForm" action="/someURL" method="POST">
+        <div class="m-headline is-main-headline u-align-center">
+            <h2 class="a-heading-2">
+                <span class="heading-cap">추천상품상세</span>
+            </h2>
+        </div>
+        <div class="content">
+            <div class="m-product-image">
+                <div class="cross"></div>
+                <div class="placeholder-wrapper">
+                    <!--<img class="a-image product-image is-hidden" alt="image description" src="//:0" data-src="http://pava-0341648599.s3-eu-west-1.amazonaws.com/images/57bff610ce2d320300110c32/21968704-origpic-2a275c-thumbnail-big.jpg">-->
+                    <img class="a-image product-image is-hidden"
+                         alt="image description"
+                         src="//:0"
+                         data-src="../../static/images/temp/app006prod-3.jpg">
+                </div>
+            </div>
+            <div class="m-product-price">
+                <span class="product-name u-ellipsis">코튼 유틸리티 재킷</span>
+                <span class="price price-won">34,900</span>
+            </div>
+
+            <div class="size">
+                <h4 class="a-heading-4">사이즈</h4>
+                <a class="a-link view-more" href="views/themes/p11/views/pages/product-detail/product-detail-coat.html" target="_self">
+                    상품페이지로 보기
+                </a>
+                <div class="a-size-swatch" data-component="ASizeSwatch">
+                    <input class="a-input js-input" name="selectSize">
+                    <button class="a-button-nostyle size-options longer-size in-stock first-size-swatch" type="button" data-value="32/33">
+                        <span>32/33</span>
+                        <p class="a-paragraph low-stock">
+                            <span>품절임박</span>
+                        </p>
+                    </button>
+                    <button class="a-button-nostyle size-options in-stock low-in-stock" type="button" data-value="34">
+                        <span>34</span>
+                        <p class="a-paragraph low-stock">
+                            <span>품절임박</span>
+                        </p>
+                    </button>
+                    <button class="a-button-nostyle size-options longer-size out-of-stock" type="button" data-value="36/38" tabindex="-1">
+                        <span>36/38</span>
+                    </button>
+                    <button class="a-button-nostyle size-options in-stock low-in-stock" type="button" data-value="38">
+                        <span>38</span>
+                        <p class="a-paragraph low-stock">
+                            <span>품절임박</span>
+                        </p>
+                    </button>
+                    <button class="a-button-nostyle size-options in-stock low-in-stock" type="button" data-value="40">
+                        <span>40</span>
+                        <p class="a-paragraph low-stock">
+                            <span>품절임박</span>
+                        </p>
+                    </button>
+                    <button class="a-button-nostyle size-options in-stock low-in-stock" type="button" data-value="46">
+                        <span>46</span>
+                        <p class="a-paragraph low-stock">
+                            <span>품절임박</span>
+                        </p>
+                    </button>
+                    <button class="a-button-nostyle size-options in-stock low-in-stock" type="button" data-value="48">
+                        <span>48</span>
+                        <p class="a-paragraph low-stock">
+                            <span>품절임박</span>
+                        </p>
+                    </button>
+                    <button class="a-button-nostyle size-options in-stock low-in-stock" type="button" data-value="50">
+                        <span>50</span>
+                        <p class="a-paragraph low-stock">
+                            <span>품절임박</span>
+                        </p>
+                    </button>
+                </div>
+            </div>
+
+            <button class="a-button add-to-cart" data-text-default="ADD TO CART" data-text-disabled="CHOOSE SIZE FIRST">
+                <span>장바구니 담기</span>
+            </button>
+        </div>
+</div>
+</script>
+<!-- handlebars-template -->
 
 <!-- tip : when develop this script must be delete -->
 <script type="text/javascript">

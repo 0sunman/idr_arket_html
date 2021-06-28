@@ -120,6 +120,7 @@
         </div>
     </div>
 
+    <!-- m-site-banner : 띠배너 -->
     <!--
     <div id="site-banner-id" data-component="MSiteBanner" class="m-site-banner slide-down" data-component-id="99b5970e-f57c-49a0-81af-c7dcdc255c0b" style="background-color: rgb(0, 0, 0); display: block;">
         <input type="hidden" name="startDateField" value="2021/06/10 08:10:00" id="sitebannersd">
@@ -142,6 +143,7 @@
         </div>
     </div>
     -->
+    <!-- //m-site-banner : 띠배너 -->
 
     <div class="u-no-select">
         <div class="a-overlay js-a-overlay q-opacity-0" data-component="AOverlay" data-component-id="00dc7c54-c454-4add-9da6-62430cfc116d"></div>
@@ -901,7 +903,7 @@
             <span class="country-name">배송국가</span>
             <span class="lang"></span>
         </button>
-        <a href="/ko/logout" target="_self" class="a-link bottom account logout" style="display:none;" area-hidden="true">로그아웃</a>
+        <a href="/ko/logout" target="_self" class="a-link bottom account logout" area-hidden="true">로그아웃</a>
     </div>
 
     <a href="https://www.instagram.com/arketofficial" target="_self" class="a-link follow">Follow us</a>
@@ -1457,18 +1459,25 @@
         <div class="basket-wrapper">
             <div class="added-item">
                 <div class="basket-added-image">
-                    <img class="a-image" src="//:0" alt="">
+                    <img class="a-image ResolveComplete" src="../../../static/images/temp/sample-img.jpg">
                 </div>
                 <div class="basket-added-info">
-                    <div class="basket-added-info-title i18n">Added To Bag</div>
                     <p class="a-paragraph">
-								<span class="basket-added-info-price">
-									<span class="u-price"></span>
-									<span class="u-currency"></span>
-								</span>
-                        <span class="item-title"></span>
+                        <span class="item-title">루즈핏 리넨 쇼츠</span>
+                        <div class="product-param-info second">
+                            <div class="product-params data">
+                                <div class="product-size">44</div>
+                                <div class="product-color">핑크</div>
+                                <div class="product-qty">2</div>
+                            </div>
+                        </div>
+                        <span class="basket-added-info-price">
+                            <span class="u-price is-deprecated">100,000</span>
+                            <!--<span class="u-price-discount">85,000</span>-->
+                            <span class="u-price discount total">85,000</span>
+                        </span>
                     </p>
-                    <a class="a-button checkout i18n" href="/ko/cart">View bag</a>
+                    <a class="a-button checkout i18n" href="/ko/cart">장바구니 보기</a>
                 </div>
             </div>
             <div class="no-added-item">
@@ -2088,7 +2097,7 @@
                             <div class="sns-list">
                                 <ul>
                                     <li>
-                                        <a href="#">
+                                        <a href="#none">
                                             <div class="icontab">
                                                 <span class="icon kakao"></span>
                                             </div>
@@ -2098,7 +2107,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#">
+                                        <a href="#none">
                                             <div class="icontab">
                                                 <span class="icon facebook"></span>
                                             </div>
@@ -2108,7 +2117,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#">
+                                        <a href="#none">
                                             <div class="icontab">
                                                 <span class="icon google"></span>
                                             </div>
@@ -2117,8 +2126,9 @@
                                             </div>
                                         </a>
                                     </li>
+                                    <!-- 휴대폰 인증 -->
                                     <li>
-                                        <a href="#">
+                                        <a href="#none" class="accordion-tit" data-target="accrdn-1">
                                             <div class="icontab">
                                                 <span class="icon phone"></span>
                                             </div>
@@ -2126,9 +2136,9 @@
                                                 <span class="caption">휴대폰</span>
                                             </div>
                                         </a>
-                                    </li>
+                                    </li><!--// 휴대폰 인증 -->
                                     <li>
-                                        <a href="#">
+                                        <a href="#none" class="accordion-tit" data-target="accrdn-2">
                                             <div class="icontab">
                                                 <span class="icon mail"></span>
                                             </div>
@@ -2140,6 +2150,96 @@
                                 </ul>
                             </div>
                         </div><!-- // 개인계정 인증 -->
+
+                        <!-- 아코디언 1 :  휴대폰 인증 -->
+                        <div class="accordion-con phone accrdn-1">
+                            <form methode="post" data-component="OForm">
+                                <h2 class="a-heading-2">
+                                    <span>휴대폰 인증</span>
+                                </h2>
+                                <div class="content">
+                                    <div class="m-input with-button" data-component="MInput">
+                                        <input class="a-input js-a-input"
+                                               placeholder="휴대폰번호 입력"
+                                               type="tel"
+                                               value=""
+                                               pattern=""
+                                               name="phone-number"
+                                               id="phone-number"
+                                               required=""
+                                               data-validation-required-text="휴대폰번호를 입력해 주세요."
+                                               data-validation-pattern-text="휴대폰번호는 숫자만 입력 가능합니다.">
+                                        <button class="a-button is-primary sm" type="button"><span>인증번호 받기</span></button>
+                                        <label class="a-label js-a-label" for="phone-number" data-placeholder=""></label>
+                                    </div>
+                                    <div class="m-input with-button" data-component="MInput">
+                                        <input class="a-input js-a-input"
+                                               placeholder="인증번호 입력"
+                                               type="tel"
+                                               value=""
+                                               pattern=""
+                                               name="certify-number"
+                                               id="certify-number"
+                                               data-validation-required-text="인증번호를 입력해 주세요."
+                                               data-validation-pattern-text="인증번호가 정확하지 않습니다.다시 확인해주세요.">
+                                        <button class="a-button is-primary sm" type="button"><span>휴대폰 인증</span></button>
+                                        <label class="a-label js-a-label" for="certify-number" data-placeholder=""></label>
+                                        <p class="certify-time">유효시간 <span class="time-m">03</span>:<span class="time-s">00</span></p>
+                                    </div>
+                                    <p class="guide-text">
+                                        <span class="desc-text2">휴대폰으로 발송된 인증번호를 유효시간 내 입력해 주시고, 인증번호가도착하지 않을 시 재발송을 해주세요.</span><br>
+                                        <span class="desc-text2">입력한 휴대폰번호는 보안 시스템을 통해 안전하게 관리됩니다.</span>
+                                    </p>
+                                </div>
+                            </form>
+                        </div><!-- // 아코디언 1 :  휴대폰 인증 -->
+
+                        <!-- 아코디언 2 :  이메일 인증 -->
+                        <div class="accordion-con mail accrdn-2">
+                            <form methode="post" data-component="OForm">
+                                <h2 class="a-heading-2">
+                                    <span>이메일 인증</span>
+                                </h2>
+                                <div class="content">
+                                    <div class="m-input" data-component="MInput">
+                                        <input class="a-input js-a-input"
+                                               placeholder="이메일 주소 입력"
+                                               type="text"
+                                               value=""
+                                               pattern=""
+                                               name="emailHead"
+                                               id="emailHead"
+                                               required=""
+                                               data-validation-required-text="이메일을 입력해 주세요."
+                                               data-validation-pattern-text="이메일 형식이 틀렸습니다. 다시 확인하고 입력해 주세요.">
+                                        <label class="a-label js-a-label" for="emailHead" data-placeholder=""></label>
+                                    </div>
+                                    <div class="m-dropdown">
+                                        <label class="a-label js-a-label" for="emailDomain"></label>
+                                        <select class="option-wrap"name="selectMailDomain" id="emailDomain">
+                                            <option class="a-option">직접입력</option>
+                                            <option class="a-option">@naver.com</option>
+                                            <option class="a-option">@daum.net</option>
+                                            <option class="a-option">@nate.com</option>
+                                            <option class="a-option">@gmail.com</option>
+                                            <option class="a-option">@hanmail.net</option>
+                                            <option class="a-option">@hotmail.com</option>
+                                        </select>
+                                        <span class="a-icon-accordion a-icon-arrow-down-small"></span>
+                                    </div>
+                                </div>
+                                <!-- btn 01 : 동의하고 인증 -->
+                                <button type="submit" id="" class="a-button is-primary">
+                                    <span>동의하고 인증하기</span>
+                                </button>
+                                <!-- // btn 01 : 동의하고 인증 -->
+                                <!-- btn 02 : 인증메일 재발송/인증완료 -->
+                                <div class="button-container col-2 none">
+                                    <button type="submit" class="a-button"><span>인증메일 재발송</span></button>
+                                    <button type="submit" class="a-button is-primary"><span>인증완료</span></button>
+                                </div><!-- // btn 02 : 인증메일 재발송/인증완료 -->
+                            </form>
+                        </div><!-- // 아코디언 2 :  이메일 인증 -->
                     </div><!-- // 신규추가 내용 : 회원가입 1.간편인증 -->
                 </div>
             </div>

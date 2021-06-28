@@ -1,0 +1,233 @@
+<div data-component="OPageContent" class="o-page-content cofs-page">
+    <span id="content" tabindex="-1" class="access-content">Content of the page</span>
+
+    <div class="o-my-page">
+
+        <%# md-o-my-page-navigation %>
+        <%- include ("../../../common/md-o-my-page-navigation.ejs") %>
+
+        <h2 data-component="PageTitle" class="a-heading-2 title">회원정보</h2>
+        <div class="my-account-content u-clearfix ng-scope" ng-controller="MyProfileController as myProfileCtrl">
+
+            <!-- o-my-details-summary -->
+            <div id="profileSummary" class="o-my-details summary">
+
+                <div class="data-sections">
+                    <div class="data-section name">
+                        <div class="name-label">이름</div>
+                        <div class="name-value ng-binding">Ryu SH</div>
+                    </div>
+
+                    <div class="data-section email">
+                        <div class="email-label">이메일</div>
+                        <div class="email-value ng-binding">seunghyun87.ryu@gmail.com</div>
+                    </div>
+                    <div class="data-section phone">
+                        <div class="phone-label">전화번호</div>
+                        <div class="phone-value ng-binding">+82</div>
+                    </div>
+
+                    <div class="data-section staff-card-section" aria-hidden="true">
+                        <div class="staff-card-label">Staff card</div>
+                        <div class="staff-card-value ng-binding"></div>
+                    </div>
+
+                    <div class="data-section newsletter">
+                        <div class="newsletter-label">뉴스레터 구독?</div>
+                        <div class="newsletter-value">
+                            <input type="hidden" name="frequencyFashionNews" init-from-form="" value="REG" ng-model="profile.frequencyFashionNews" class="ng-pristine ng-untouched ng-valid">
+                            Yes
+                        </div>
+                    </div>
+                </div>
+
+                <!-- tip: ng-click 이벤트 구현이 어려워 임시로 jquery 로 toggle 기능 구현 -->
+                <!--<a class="a-button edit-button" id="editProfile" href="javascript:attachStaffCardEvent(0);" ng-click="copyProfile(); showDiv('myProfileForm','profileSummary')">편집</a>-->
+                <a class="a-button edit-button" id="editProfile" href="javascript:showDiv('myProfileForm','profileSummary');">편집</a>
+
+                <a href="javascript:void(0);" class="a-button change-password-button" onclick="TealiumUtils.trackResetPwdButton(this);window.location.href='update-password'">비밀번호 변경하기</a>
+
+            </div>
+            <!-- //o-my-details-summary -->
+
+            <!-- o-my-details -->
+            <form data-component="OMyDetails OForm" class="o-form o-my-details ng-pristine ng-valid-pattern ng-valid-maxlength ng-valid-email ng-invalid ng-invalid-required is-hidden" data-notify-unsaved-changes="true" data-manually-submit="true" id="myProfileForm" name="accountProfileForm">
+                <input type="hidden" name="frequencyFashionNews" init-from-form="" value="REG" ng-model="profile.frequencyFashionNews" class="ng-pristine ng-untouched ng-valid">
+                <div class="input-wrapper">
+                    <div class="m-error js-m-error is-hidden">
+                        <span id="errorLabel" class="has-error"></span>
+                    </div>
+
+                    <!-- attributes related to the phone field -->
+                    <div data-component="MInput" class="m-input no-description first-name is-filled" data-validate="firstname" placeholder="First name">
+                        <label class="a-label js-a-label">이름</label>
+                        <input class="a-input js-a-input ng-pristine ng-untouched ng-valid ng-valid-required ng-valid-pattern ng-valid-maxlength" type="text" name="firstName" init-from-form="" value="Ryu" ng-model="profile.firstName" maxlength="150" required="" placeholder="First name" data-validation-required-text="Please enter a first name" data-validation-pattern-text="Please enter a first name" data-validation-maxlen-text="First name is too long" pattern="^(?:\s*)[^:;]+(\s+[^\s\d:;]+)*(?:\s*)$" id="firstName">
+                        <label class="a-label js-a-label" data-placeholder="Name">이름</label>
+                    </div>
+
+                    <!-- attributes related to the phone field -->
+                    <div data-component="MInput" class="m-input no-description last-name is-filled" data-validate="lastname" placeholder="Last name">
+                        <label class="a-label js-a-label">성</label>
+                        <input class="a-input js-a-input ng-pristine ng-untouched ng-valid ng-valid-required ng-valid-pattern ng-valid-maxlength" type="text" name="lastName" init-from-form="" value="SH" ng-model="profile.lastName" maxlength="150" required="" placeholder="Last name" data-validation-required-text="Please enter a last name" data-validation-pattern-text="Please enter a last name" data-validation-maxlen-text="First name is too long" pattern="^(?:\s*)[^:;]+(\s+[^\s\d:;]+)*(?:\s*)$" id="lastName">
+                        <label class="a-label js-a-label" data-placeholder="Last name">성</label>
+                    </div>
+
+                    <div data-component="MInput" class="m-input email-field is-filled" data-validate="email" placeholder="Email">
+                        <label class="a-label js-a-label">이메일</label>
+                        <input class="a-input js-a-input ng-pristine ng-untouched ng-valid ng-valid-email ng-valid-required ng-valid-pattern ng-valid-maxlength" type="email" name="uid" ng-model="profile.uid" init-from-form="" maxlength="" required="" placeholder="Email" data-validation-required-text="Please enter a valid email address." data-validation-pattern-text="Please enter a valid email address." value="seunghyun87.ryu@gmail.com" data-validation-maxlen-text="" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$">
+                        <label class="a-label js-a-label" data-placeholder="Email">Email</label>
+                    </div>
+
+                    <script type="text/x-handlebars-template" id="m-input-phone">
+                        <div data-component="MInput" class="m-input m-input-phone-number" maxlength="150" placeholder="">
+                            <label class="a-label js-a-label"></label>
+                            <input placeholder="" class="a-input input-country-code"
+                                   type=""
+                                   maxlength="150"
+                                   value="+82"
+                                   ng-model="profile.prefix"
+                                   name=""
+                                   readonly="readonly"
+                                   pattern="^(?:\s*).*(?:\s*)$"
+                                   data-validation-required-text=""
+                                   data-validation-pattern-text=""/>
+                            <input placeholder="" class="a-input js-a-input input-phone-number"
+                                   type="tel"
+                                   ng-model="profile.cellPhone"
+                                   pattern="^(?:\s*)(^\d{5,15}$)(?:\s*)$"
+                                   data-validation-required-text=""
+                                   data-validation-pattern-text=""
+                                   maxlength="15"
+                                   data-validation-maxlen-text=""/>
+                            <label class="a-label js-a-label" data-placeholder=""></label>
+                        </div>
+                    </script>
+
+                    <script type="text/x-handlebars-template" id="m-input-password">
+                        <div data-component="MInput" class="m-input " placeholder="Enter your password">
+                            <label class="a-label js-a-label">Enter your password</label>
+                            <input placeholder="Enter your password" class="a-input js-a-input"
+                                   id="password"
+                                   name="password"
+                                   type="password"
+                                   ng-model="profile.password"
+                                   value=""
+                                   name="password"
+                                   required
+                                   pattern="^[^ ]{6,25}$"
+                                   data-validation-required-text="You need to enter your password to change your email address"
+                                   data-validation-pattern-text="Password may not contain any spaces"/>
+                            <label class="a-label js-a-label target-for-error" data-placeholder="New password again">New
+                                password again</label>
+                            <button type="button" class="a-button-nostyle toggle-password-state password-visible" data-show-text="Show" data-hide-text="Hide">
+                                Show
+                            </button>
+                        </div>
+                    </script>
+
+                    <div data-component="MInput" class="m-input password-field password" disabled="" placeholder="비밀번호를 입력하세요">
+                        <label class="a-label js-a-label">비밀번호를 입력하세요</label>
+                        <input placeholder="Enter your password" class="a-input js-a-input ng-pristine ng-untouched ng-invalid ng-invalid-required ng-valid-pattern" disabled="" id="password" name="password" type="password" ng-model="profile.password" value="" required="" pattern="^[^ ]{6,25}$" data-validation-required-text="You need to enter your password to change your email address" data-validation-pattern-text="Password may not contain any spaces">
+                        <label class="a-label js-a-label target-for-error" data-placeholder="New password again">비밀번호 확인</label>
+                        <button type="button" class="a-button-nostyle toggle-password-state password-visible" data-show-text="Show" data-hide-text="Hide">
+                            Show
+                        </button>
+                    </div>
+
+                    <!-- attributes related to the phone field -->
+                    <div data-component="MInput" class="m-input no-description m-input-phone-number" data-validate="" placeholder="전화번호">
+                        <label class="a-label js-a-label">전화번호</label>
+                        <input class="a-input input-country-code ng-pristine ng-untouched ng-valid ng-valid-pattern ng-valid-maxlength" type="tel" name="prefix" init-from-form="" value="+82" ng-model="profile.prefix" maxlength="" data-validation-required-text="Prefix invalid " data-validation-pattern-text="Prefix invalid " data-validation-maxlen-text="" pattern="^(?:\s*).*(?:\s*)$" id="user-country-code-number" readonly="readonly"><input class="a-input js-a-input input-phone-number ng-pristine ng-untouched ng-valid ng-valid-pattern" type="tel" name="cellPhone" init-from-form="" value="" ng-model="profile.cellPhone" placeholder="Phone number" data-validation-required-text="Please enter a phone number" data-validation-pattern-text="Please enter a vaild phone number" pattern="^(?:\s*)(^\d{5,15}$)(?:\s*)$">
+                        <label class="a-label js-a-label" data-placeholder="Phone number ">전화번호</label>
+                    </div>
+
+                    <div data-component="MLinkToggle" class="m-link-toggle staff-card-toggle">
+                        <a href="javascript:void(0);" target="_self" class="a-link js-a-link">직원 카드가 있다면, 여기에 카드번호를 입력하세요.</a>
+                        <div class="m-link-toggle-block js-m-link-toggle-block">
+
+                            <!-- attributes related to the phone field -->
+                            <div data-component="MInput" class="m-input no-description staff-card" data-validate="" placeholder="직원? 클릭">
+                                <label class="a-label js-a-label">직원? 클릭</label>
+                                <input class="a-input js-a-input ng-pristine ng-untouched ng-valid ng-valid-pattern ng-valid-maxlength" type="" name="hmStaffCardId" init-from-form="" value="" ng-model="profile.hmStaffCardId" maxlength="25" placeholder="Staff? Click here" data-validation-required-text="" data-validation-pattern-text="Staff card invalid" data-validation-maxlen-text="25" pattern="[a-zA-Z0-9-]+" id="updateProfileForm-hmStaffCardId" aria-hidden="true" tabindex="-1">
+                                <label class="a-label js-a-label" data-placeholder="Staff card">직원카드</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="m-radio-button-group">
+                        <fieldset>
+                            <legend>뉴스레터 구독</legend>
+                            <div class="m-radio-button u-clearfix">
+                                <input type="radio" class="a-radio-button ng-pristine ng-untouched ng-valid" id="no" name="newsletterSubscription" data-ng-model="profile.frequencyFashionNews" value="NON">
+                                <label class="a-label js-a-label u-no-select custom-radio" for="no" tabindex="0"></label>
+                                <label class="a-label js-a-label label-text" for="no">아니오</label>
+                            </div>
+                            <div class="m-radio-button u-clearfix">
+                                <input type="radio" class="a-radio-button ng-pristine ng-untouched ng-valid" id="yes" data-ng-model="profile.frequencyFashionNews" name="newsletterSubscription" value="REG">
+                                <label class="a-label js-a-label u-no-select custom-radio" for="yes"></label>
+                                <label class="a-label js-a-label label-text" for="yes">예</label>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                    <div class="newsletter-label" style="">
+                        <label class="a-label js-a-label policy-label">Yes, I would like to receive promotions from
+                            Arket a brand of the H&amp;M Group. I confirm that I’m 18 years or older. I consent to let H&amp;M
+                            Group to process my personal data in order to provide me with personalised promotions in my
+                            social media feed, email and through SMS in accordance with the
+                            <a href="javascript:void(0);" target="_self" class="a-link privacy-notice" data-template="privacyPolicy" data-classes="is-privacy-policy" ng-click="openPopup('privacy-notice/direct-marketing.html', 'privacyPolicy', 'richtextWrapper', 'privacyPolicyContent')">
+                                privacy notice
+                            </a>
+                            .
+                        </label>
+                    </div>
+                    <label class="a-label js-a-label policy-label">
+                        ARKET <a href="javascript:void(0);" target="_self" class="a-link privacy-policy" data-template="privacyPolicy" data-classes="is-privacy-policy" ng-click="openPopup('privacy-notice/account.html', 'privacyPolicy', 'richtextWrapper', 'privacyPolicyContent')">개인 정보 고지</a>에 따라 개인 계정을 관리하기 위해 개인 데이터를 사용합니다.
+                    </label>
+                </div>
+                <div class="button-container">
+                    <button ng-click="postProfile()" type="submit" class="a-button is-primary btn-save-details" id="saveProfileDetails" data-default-state-text="Save details" data-saved-state-text="text.account.details.saved">
+                        <span id="saveButtonLabel">저장하기</span>
+                    </button>
+
+                    <!-- tip: ng-click 이벤트 구현이 어려워 임시로 jquery 로 toggle 기능 구현 -->
+                    <!--<a id="cancelButton" class="a-button is-primary is-secondary btn-cancel" href="javascript:void(0);" ng-click="resetProfile(); showDiv('profileSummary','myProfileForm'); updateStaffCardVisibility()">취소</a>-->
+                    <a id="cancelButton" class="a-button is-primary is-secondary btn-cancel" href="javascript:showDiv('profileSummary','myProfileForm');void(0);">취소</a>
+                </div>
+            </form>
+            <!-- //o-my-details -->
+
+        </div>
+
+        <script type="text/x-handlebars-template" data-template="privacyPolicy" id="privacyPolicy">
+            <p class="a-paragraph no-margin q-color-white" style="color:black" id="privacyPolicyContent"></p>
+        </script>
+
+        <script>
+            function attachStaffCardEvent() {
+                $(".staff-card-toggle").removeAttr("data-component-id");
+                appeaser.scan();
+            }
+        </script>
+    </div>
+</div>
+
+<!-- tip : when develop this script must be delete -->
+<script type="text/javascript">
+    //ng-click 이벤트 구현이 어려워 임시로 jquery 로 toggle 기능 구현
+    function showDiv(obj1,obj2){
+        $('#'+obj1).removeClass('is-hidden');
+        $('#'+obj2).addClass('is-hidden');
+    }
+    
+    (function() {
+        'use strict';
+        //탭활성화
+        let tabMydetailsr = document.querySelector('.menu-my-details');
+        let tabMyorders = document.querySelector('.menu-my-orders');
+        if(tabMydetailsr){
+            tabMydetailsr.parentNode.classList.add('is-active');
+        }
+    })();
+</script>
+<!-- //tip -->

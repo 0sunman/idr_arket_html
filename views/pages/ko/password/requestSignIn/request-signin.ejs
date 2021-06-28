@@ -1,0 +1,41 @@
+<div data-component="OPageContent" class="o-page-content cofs-page">
+    <span id="content" tabindex="-1" class="access-content">Content of the page</span>
+    <div class="o-forgot-password n-find-idpw">
+        <div class="forgot-password-form">
+            <form id="forgotpassword-form" name="forgottenPwdForm" novalidate="true" data-component="OForm" class="o-form ng-pristine ng-valid" method="post">
+                <h2 class="a-heading-2">비밀번호 찾기</h2>
+                <p class="data">ARKET을 방문해 주셔서 감사합니다. 고객님의 정보를 편리하고 안전하게 찾을 수 있도록 도와드리겠습니다.</p>
+                    <!-- 신규추가 내용 : 비밀번호 찾기 -->
+                    <div class="n-wrap">
+                        <!-- input : 아이디 -->
+                        <div data-component="MInput" class="m-input">
+                            <label class="a-label js-a-label" for="id">아이디</label>
+                            <input class="a-input js-a-input" id="id" name="id" type="text" pattern="" placeholder="아이디" data-validation-required-text="아이디를 입력해주세요." required="">
+                            <label class="a-label js-a-label" for="id"></label>
+                        </div><!-- // input : 아이디 -->
+
+                        <!-- input : 이름 -->
+                        <div data-component="MInput" class="m-input">
+                            <label class="a-label js-a-label" for="name">이름</label>
+                            <input class="a-input js-a-input" id="name" name="name" type="text" pattern="" placeholder="이름" data-validation-required-text="이름을 입력해 주세요." data-validation-pattern-text="이름은 한글 또는 영문만 입력 가능합니다." required="">
+                            <label class="a-label js-a-label"  for="name"></label>
+                        </div><!-- // input : 이름 -->
+
+                        <!-- input : 생년월일 -->
+                        <div data-component="MInput" class="m-input">
+                            <label class="a-label js-a-label" for="birthday">생년월일</label>
+                            <input class="a-input js-a-input" id="birthday" name="birthday" type="tel" pattern="" placeholder="생년월일" data-validation-required-text="생년월일을 입력해 주세요." data-validation-pattern-text="올바른 날짜형식이 아닙니다.(예: 19880512)" maxlength="8" required="">
+                            <label class="a-label js-a-label" for="birthday"></label>
+                            <p class="guide-text">생년월일 8자리를 입력해 주세요.(예:19880512)</p>
+                        </div><!-- // input : 생년월일 -->
+
+                        <button type="submit" id="forgottenButton" class="a-button is-primary">
+                            <span>인증하기</span>
+                        </button>
+                    </div><!--// 신규추가 내용 : 비밀번호 찾기 -->
+            </form>
+        </div>
+        <%# input error문구 동작 %>
+        <%- include ("../../../../common/md-o-input-error.ejs") %>
+    </div>
+</div>
