@@ -1605,7 +1605,7 @@ html.no-touchevents .m-input.has-error .a-input, .alternative-style-option .m-in
 .monthly-plan-bx { align-items: center; }
 .monthly-plan-bx .m-dropdown { max-width: 200px; width: 70%; }
 @media (min-width: 769px) { .monthly-plan-bx { justify-content: flex-start; }
-  .monthly-plan-bx .m-dropdown { margin-left: 20px; } }
+  .monthly-plan-bx span { display: inline-block; margin-right: 20px; } }
 
 .m-hazmat-wrap { padding-top: 25px; padding-bottom: 25px; border-bottom: 1px solid #000; }
 
