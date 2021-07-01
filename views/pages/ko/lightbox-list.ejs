@@ -39,10 +39,46 @@
         </li>
     </ul>
 
-    <h3 class="lightbox-list-tit">장바구니</h3>
+    <h3 class="lightbox-list-tit">장바구니/주문서</h3>
     <ul class="lightbox-list-wrap">
         <li>
+            <button class="a-button is-outlined open-lightbox" data-template="lp-cart-count-change" data-classes="alert"><span>장바구니 수량 변경</span></button>
+        </li>
+        <li>
+            <button class="a-button is-outlined open-lightbox" data-template="lp-order-info-agree" data-classes="alert"><span>주문내용동의</span></button>
+        </li>
+        <li>
+            <button class="a-button is-outlined open-lightbox" data-template="lp-find-address"><span>주소검색</span></button>
+        </li>
+        <li>
+            <button class="a-button is-outlined open-lightbox" data-template="lp-find-address-standard"><span>주소검색 - 표준주소</span></button>
+        </li>
+        <li>
+            <button class="a-button is-outlined open-lightbox" data-template="lp-dlvr-list-del" data-classes="alert"><span>배송지목록 > 삭제</span></button>
+        </li>
+        <li>
+            <button class="a-button is-outlined open-lightbox" data-template="lp-deposit-account-guide" data-classes="alert"><span>무통장입금 전용계좌 안내</span></button>
+        </li>
+        <li>
+            <button class="a-button is-outlined open-lightbox" data-template="lp-deposit-account-guide-nonmbr" data-classes="alert"><span>무통장입금 전용계좌 안내(비회원)</span></button>
+        </li>
+        <li>
+            <button class="a-button is-outlined open-lightbox" data-template="lp-verification-way"><span>본인인증 방법 선택</span></button>
+        </li>
+        <li>
+            <button class="a-button is-outlined open-lightbox" data-template="lp-nonmbr-order-info-agree"><span>비회원 주문 정보수집 동의</span></button>
+        </li>
+        <li>
+            <button class="a-button is-outlined open-lightbox" data-template="lp-orderer-info" data-classes="alert"><span>주문고객정보</span></button>
+        </li>
+        <li>
             <button class="a-button is-outlined open-lightbox" data-template="lp-return-refund-guide"><span>반품 및 환불</span></button>
+        </li>
+        <li>
+            <button class="a-button is-outlined open-lightbox" data-template="lp-pay-processing" data-classes="alert"><span>결제진행중</span></button>
+        </li>
+        <li>
+            <button class="a-button is-outlined open-lightbox" data-template="lp-pay-processing-ex" data-classes="alert"><span>결제진행중-외부</span></button>
         </li>
     </ul>
 </div>
@@ -118,9 +154,9 @@
     <div class="lightbox-content-dft lp-phone-certify-guide">
         <h2 class="a-heading-2"><span>휴대폰 인증</span></h2>
         <div class="content">
-            <div class="m-input is-readonly with-button" data-component="MInput">
+            <div class="m-input v3 is-readonly with-button" data-component="MInput">
                 <input class="a-input js-a-input"
-                       placeholder="phone-number"
+                       placeholder="휴대폰번호 입력"
                        type="text"
                        value="010-****-1234"
                        name="phone-number"
@@ -130,7 +166,7 @@
                 <button class="a-button is-primary sm" type="button"><span>인증번호 받기</span></button>
                 <label class="a-label js-a-label" for="phone-number" data-placeholder=""></label>
             </div>
-            <div class="m-input with-button" data-component="MInput">
+            <div class="m-input v3 with-button" data-component="MInput">
                 <input class="a-input js-a-input"
                        placeholder="인증번호 입력"
                        type="tel"
@@ -216,9 +252,45 @@
 <!-- 비밀번호 변경 완료 -->
 
 <%# 비회원 주문조회 %>
-<%- include ("../../common/hndl-lp-order-search-nonmbr.ejs") %>
+<%- include ("../../handlebars/hndl-lp-order-search-nonmbr.ejs") %>
+
+<%# 장바구니 수량 변경 %>
+<%- include ("../../handlebars/hndl-lp-cart-count-change.ejs") %>
+
+<%# 주문내용동의 %>
+<%- include ("../../handlebars/hndl-lp-order-info-agree.ejs") %>
+
+<%# 주소검색 %>
+<%- include ("../../handlebars/hndl-lp-find-address.ejs") %>
+
+<%# 주소검색-표준주소 %>
+<%- include ("../../handlebars/hndl-lp-find-address-standard.ejs") %>
+
+<%# 배송지목록 > 삭제 %>
+<%- include ("../../handlebars/hndl-lp-dlvr-list-del.ejs") %>
+
+<%# 무통장입금 전용계좌 안내 %>
+<%- include ("../../handlebars/hndl-lp-deposit-account-guide.ejs") %>
+
+<%# 무통장입금 전용계좌 안내(비회원) %>
+<%- include ("../../handlebars/hndl-lp-deposit-account-guide-nonmbr.ejs") %>
+
+<%# 비회원 주문 정보수집 동의 %>
+<%- include ("../../handlebars/hndl-lp-nonmbr-order-info-agree.ejs") %>
+
+<%# 본인인증 방법 선택 %>
+<%- include ("../../handlebars/hndl-lp-verification-way.ejs") %>
+
+<%# 주문고객정보 %>
+<%- include ("../../handlebars/hndl-lp-orderer-info.ejs") %>
 
 <%# 반품 및 환불 %>
-<%- include ("../../common/hndl-lp-return-refund-guide.ejs") %>
+<%- include ("../../handlebars/hndl-lp-return-refund-guide.ejs") %>
+
+<%# 결제진행중 %>
+<%- include ("../../handlebars/hndl-lp-pay-processing.ejs") %>
+
+<%# 결제진행중-외부 %>
+<%- include ("../../handlebars/hndl-lp-pay-processing-ex.ejs") %>
 
 <!-- //handlebars-template -->

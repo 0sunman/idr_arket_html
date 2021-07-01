@@ -1,0 +1,186 @@
+<main data-component="OPageContent" class="o-page-content cofs-page">
+
+    <div class="o-order-confirmation">
+        <!-- order-sheet-info -->
+        <div class="order-sheet-info">
+
+            <!-- orderer-info-bx -->
+            <h2 class="a-heading-2">주문고객정보</h2>
+            <div class="dft-bx line-bx orderer-info-bx">
+                <form class="o-form" data-component="OForm" action="/someURL" method="POST">
+                    <div class="m-input v3" data-component="MInput">
+                        <label class="a-label js-a-label" for="orderer-name">이름</label>
+                        <input class="a-input js-a-input"
+                               placeholder="이름(필수)"
+                               type="text"
+                               value=""
+                               name="orderer-name"
+                               id="orderer-name"
+                               pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                               data-validation-required-text="이름을 입력하세요."
+                               data-validation-pattern-text="">
+                        <label class="a-label js-a-label" for="orderer-name" data-placeholder=""></label>
+                    </div>
+                    <div class="email-input-bx">
+                        <div class="m-input v3" data-component="MInput">
+                            <label class="a-label js-a-label" for="orderer-email">이메일</label>
+                            <input class="a-input js-a-input"
+                                   placeholder="이메일(필수)"
+                                   type="email"
+                                   value=""
+                                   pattern=""
+                                   name="orderer-email"
+                                   id="orderer-email"
+                                   required=""
+                                   data-validation-required-text="이메일을 입력해 주세요.필수"
+                                   data-validation-pattern-text="">
+                            <label class="a-label js-a-label" for="orderer-email" data-placeholder=""></label>
+                        </div>
+                        <div class="m-dropdown v3">
+                            <label class="a-label js-a-label" for="emailDomain"></label>
+                            <select class="option-wrap"name="selectMailDomain" id="emailDomain">
+                                <option class="a-option">직접입력</option>
+                                <option class="a-option">@naver.com</option>
+                                <option class="a-option">@daum.net</option>
+                                <option class="a-option">@nate.com</option>
+                                <option class="a-option">@gmail.com</option>
+                                <option class="a-option">@hanmail.net</option>
+                                <option class="a-option">@hotmail.com</option>
+                            </select>
+                            <span class="a-icon-accordion a-icon-arrow-down-small"></span>
+                        </div>
+                    </div>
+                    <div class="m-input v3" data-component="MInput">
+                        <label class="a-label js-a-label" for="orderer-phone">휴대폰 번호</label>
+                        <input class="a-input js-a-input"
+                               placeholder="휴대폰 번호"
+                               type="tel"
+                               value="010-6841-9653"
+                               name="orderer-phone"
+                               id="orderer-phone"
+                               pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                               data-validation-required-text="휴대폰 번호을 입력하세요."
+                               data-validation-pattern-text="올바른 전화번호 형식이 아닙니다.">
+                        <label class="a-label js-a-label" for="orderer-phone" data-placeholder=""></label>
+                    </div>
+                    <a class="a-button is-primary" href="#none">본인인증</a>
+                </form>
+            </div>
+            <!-- //orderer-info-bx -->
+
+            <!-- delivery-info-bx -->
+            <h2 class="a-heading-2">배송지정보</h2>
+            <div class="dft-bx line-bx delivery-info-bx">
+
+                <%# md-my-delivery-input %>
+                <%- include ("../../../common/md-my-delivery-input-nonmbr.ejs") %>
+
+                <%# md-delivery-request %>
+                <%- include ("../../../common/md-delivery-request.ejs") %>
+
+            </div>
+            <!-- delivery-info-bx -->
+
+            <%# md-pay-info-bx : 결제 %>
+            <%- include ("../../../common/md-pay-info-bx.ejs") %>
+
+            <!-- pay-policy-bx -->
+            <div class="dft-bx line-bx pay-private-bx">
+                <div class="pay-private-agree">
+                    <span class="m-checkbox v2 u-clearfix" id="checkbox1">
+                        <input class="a-checkbox" type="checkbox" id="chck-private-agree">
+                        <label class="a-label js-a-label custom-box" for="chck-private-agree" tabindex="0"></label>
+                        <label class="a-label js-a-label" for="chck-private-agree">
+                            비회원 개인정보 수집 이용에 대한 내용을 확인하였으며, 이에 동의합니다. <br>
+                            <a href="#none" class="a-link">[내용보기]</a>
+                        </label>
+                    </span>
+                </div>
+                <div class="pay-private-desc">
+                    <div class="m-input v3" data-component="MInput">
+                        <label class="a-label js-a-label" for="nonmbr-order-pw">비회원용 주문 비밀번호</label>
+                        <input class="a-input js-a-input"
+                               placeholder="비밀번호"
+                               type="password"
+                               value=""
+                               name="nonmbr-order-pw"
+                               id="nonmbr-order-pw"
+                               pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                               data-validation-required-text="비밀번호를 입력하세요"
+                               data-validation-pattern-text="">
+                        <label class="a-label js-a-label" for="nonmbr-order-pw" data-placeholder=""></label>
+                    </div>
+                    <p class="desc-text">결제완료 후 주문내역을 확인을 위해 사용하는 비밀번호 입니다.</p>
+                    <p class="desc-text">8~10자리 영문, 숫자, 특수문자 중 2가지 조합으로 입력해주세요.</p>
+                </div>
+            </div>
+            <!-- //pay-policy-bx -->
+
+        </div>
+        <!-- //order-sheet-info -->
+
+        <!-- order-summary-section -->
+        <div class="order-summary-section">
+            <h2 class="a-heading-2 order-summary-heading">
+                주문 상품
+                <a class="a-link a-link-udln cart-item-edit" href="#" target="_self">장바구니 수정</a>
+            </h2>
+
+            <%# md-order-summary-info %>
+            <%- include ("../../../common/md-order-summary-info.ejs") %>
+
+            <%# md-pay-policy-bx %>
+            <%- include ("../../../common/md-pay-policy-bx.ejs") %>
+
+            <a class="a-button is-primary is-checkout-options checkout-button" href="/views/common/views/pages/checkout/checkout-guest-options.html">결제하기</a>
+
+            <%# md-m-informative-section %>
+            <%- include ("../../../common/md-m-informative-section.ejs") %>
+
+        </div>
+        <!-- //order-summary-section -->
+        
+    </div>
+
+</main>
+
+<!-- handlebars-template -->
+<%# 배송지목록 > 삭제 %>
+<%- include ("../../../handlebars/hndl-lp-dlvr-list-del.ejs") %>
+<!-- //handlebars-template -->
+
+<!-- tip : when develop this script must be delete -->
+<script type="text/javascript">
+    (function() {
+        'use strict';
+        //탭활성화
+        let btnDlvrEdit = document.querySelectorAll('.delivery-item-edit');
+        let btnDlvrDel = document.querySelectorAll('.delivery-item-del');
+        if(btnDlvrEdit) {
+            Array.prototype.slice.call(btnDlvrEdit).forEach( function (_obj) {
+                _obj.addEventListener('click', function (_evt) {
+                    _evt.preventDefault();
+                    _evt.stopPropagation();
+                    let tempLi = this.closest('li');
+                    if(tempLi && !tempLi.classList.contains('mode-edit')){
+                        tempLi.classList.add('mode-edit')
+                    }
+                });
+            });
+        }
+        let btnDlvrEditCancle = document.querySelectorAll('.btn-my-dlvr-cancle');
+        if(btnDlvrEditCancle){
+            Array.prototype.slice.call(btnDlvrEditCancle).forEach( function (_obj) {
+                _obj.addEventListener('click', function (_evt) {
+                    _evt.preventDefault();
+                    _evt.stopPropagation();
+                    let tempLi = this.closest('li');
+                    if(tempLi && tempLi.classList.contains('mode-edit')){
+                        tempLi.classList.remove('mode-edit')
+                    }
+                });
+            });
+        }
+    })();
+</script>
+<!-- //tip -->

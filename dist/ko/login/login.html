@@ -1010,7 +1010,7 @@
     <div class="sns-list">
         <ul>
             <li>
-                <a href="#">
+                <a href="#none">
                     <div class="icontab">
                         <span class="icon naver"></span>
                     </div>
@@ -1020,7 +1020,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="#none">
                     <div class="icontab">
                         <span class="icon kakao"></span>
                     </div>
@@ -1030,7 +1030,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="#none">
                     <div class="icontab">
                         <span class="icon facebook"></span>
                     </div>
@@ -1040,7 +1040,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="#none">
                     <div class="icontab">
                         <span class="icon google"></span>
                     </div>
@@ -1056,7 +1056,7 @@
 
     <!--비회원 주문 조회(링크) - 비회원 주문조회 팝업 노출 -->
     <div class="non-member">
-        <a href="#" >비회원주문조회</a>
+        <a href="#none" >비회원주문조회</a>
     </div>
 </div>
 <!-- //SNS 간편로그인 신규추가 -->
@@ -2051,7 +2051,7 @@
     <!-- //handlebars-template -->
 
     <!-- o-page-content -->
-    <div data-component="OPageContent" class="o-page-content cofs-page" data-component-id="">
+    <div data-component="OPageContent" class="o-page-content cofs-page">
     <span id="content" tabindex="-1" class="access-content">Content of the page</span>
     <div class="o-sign-in-wrapper">
         
@@ -2073,52 +2073,49 @@
 </ul>
 <!-- // 활성화 탭 표기 : 로그인-->
             <div class="o-sign-in alternative-style-option">
-                <form id="loginForm" data-component="OForm" class="o-form ng-pristine ng-valid is-touched" action="/en/j_spring_security_check" method="post" onsubmit="TealiumUtils.trackTryLoginRegister('login');" data-component-id="009f29be-5da1-4f9c-b757-92fb82f98a52">
+                <form class="o-form" data-component="OForm" id="loginForm" method="post">
                     <div class="m-error js-m-error is-hidden">
                         <label class="a-label js-a-label has-error"></label>
                     </div>
                     <!-- input : 아이디 또는 이메일 -->
-                    <div data-component="MInput" class="m-input" data-validate="email" placeholder="아이디 또는 이메일" data-component-id="9d189dc9-195b-4333-afef-400540f39200">
-                        <label for="j_username" class="a-label js-a-label">아이디 또는 이메일</label>
-                        <input id="j_username" name="j_username" data-validation-required-text="아이디 또는 이메일을 입력해주세요." pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" data-validation-pattern-text="아이디 또는 이메일을 입력해 주세요." placeholder="아이디 또는 이메일" type="email" class="a-input js-a-input" required="required" value="">
-                        <label for="j_username" class="a-label js-a-label" aria-hidden="true"></label>
+                    <div data-component="MInput" class="m-input">
+                        <label class="a-label js-a-label" for="id">아이디 또는 이메일</label>
+                        <input class="a-input js-a-input" id="id" name="id" type="text" pattern="" placeholder="아이디 또는 이메일" data-validation-required-text="아이디를 입력해주세요." data-validation-pattern-text="입력하신 아이디가 맞지 않습니다." required="">
+                        <label class="a-label js-a-label" for="id"></label>
                     </div><!-- // input : 아이디 또는 이메일 -->
+
                     <!-- input : 비밀번호 -->
-                    <div data-component="MInput" class="m-input password password-with-label is-filled" data-validate="" placeholder="비밀번호" data-component-id="a4d73460-5906-4ebd-8415-c276f79698cf">
-                        <label for="j_password" class="a-label js-a-label">비밀번호</label>
-                        <input id="j_password" name="j_password" data-validation-required-text="비밀번호를 입력해주세요." pattern="^[^ ]{5,35}$" data-validation-pattern-text="Password must be maximum 25 characters Password must be minimum 6 characters" placeholder="비밀번호" type="password" class="a-input js-a-input" required="required" value="">
-                        <label class="a-label js-a-label" for="sign-in-password" data-placeholder=""></label>
+                    <div data-component="MInput" class="m-input password">
+                        <label class="a-label js-a-label" for="password" >비밀번호</label>
+                        <input class="a-input js-a-input" id="password" name="password" type="password" pattern="" placeholder="비밀번호" data-validation-required-text="비밀번호를 입력해주세요."  data-validation-pattern-text="입력하신 비밀번호가 맞지 않습니다." required="">
+                        <label class="a-label js-a-label" for="password"></label>
                     </div><!-- // input : 비밀번호 -->
 
                     <div class="checkbox-input">
                         <span class="m-checkbox u-clearfix" id="rememberme">
-                            <input type="checkbox" class="a-checkbox" id="checkbox_rememberme" name="_spring_security_remember_me">
-                            <label class="a-label js-a-label custom-box" for="checkbox_rememberme" tabindex="0"></label>
+                            <input type="checkbox" class="a-checkbox" id="checkbox_rememberme" name="checkbox_rememberme">
+                            <label class="a-label js-a-label custom-box" for="checkbox_rememberme"></label>
                             <label class="a-label js-a-label" for="checkbox_rememberme">아이디 저장</label>
                         </span>
                     </div>
 
                     <!-- 아이디 찾기, 비밀번호 찾기 - 해당 페이지로 이동 -->
                     <div class="link-holder v2">
-                        <a href="#" target="_self" class="a-link forgot-password bo-b" onclick="">아이디찾기</a>
-                        <a href="/en/password/requestSignIn" target="_self" class="a-link forgot-password bo-b" onclick="TealiumUtils.trackForgotButton();">비밀번호찾기</a>
+                        <a href="#none" target="_self" class="a-link forgot-password bo-b">아이디찾기</a>
+                        <a href="#none" target="_self" class="a-link forgot-password bo-b">비밀번호찾기</a>
                     </div>
 
                     <button type="submit" class="a-button is-primary">
                         <span>로그인</span>
                     </button>
 
-                    <div>
-                        <input type="hidden" name="CSRFToken" value="c2f40bc3-ceae-4e07-9b10-874a8c07f3fc">
-                    </div>
-                    
                     
                     <!-- SNS 간편로그인 신규추가 -->
 <div class="social-login-container">
     <div class="sns-list">
         <ul>
             <li>
-                <a href="#">
+                <a href="#none">
                     <div class="icontab">
                         <span class="icon naver"></span>
                     </div>
@@ -2128,7 +2125,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="#none">
                     <div class="icontab">
                         <span class="icon kakao"></span>
                     </div>
@@ -2138,7 +2135,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="#none">
                     <div class="icontab">
                         <span class="icon facebook"></span>
                     </div>
@@ -2148,7 +2145,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="#none">
                     <div class="icontab">
                         <span class="icon google"></span>
                     </div>
@@ -2164,11 +2161,10 @@
 
     <!--비회원 주문 조회(링크) - 비회원 주문조회 팝업 노출 -->
     <div class="non-member">
-        <a href="#" >비회원주문조회</a>
+        <a href="#none" >비회원주문조회</a>
     </div>
 </div>
 <!-- //SNS 간편로그인 신규추가 -->
-
                 </form>
             </div>
         </div><!--// is-sign-in-tabs -->

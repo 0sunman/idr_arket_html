@@ -1,4 +1,6 @@
-@import url(frontend.renew.v1.css);
-@import url(frontend.renew.v2.css);
+@import url(renew.display.css);
+@import url(renew.v1.css);
+@import url(renew.v2.css);
+@import url(renew.v3.css);
 
 /*# sourceMappingURL=frontend.renew.css.map */

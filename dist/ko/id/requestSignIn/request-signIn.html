@@ -1010,7 +1010,7 @@
     <div class="sns-list">
         <ul>
             <li>
-                <a href="#">
+                <a href="#none">
                     <div class="icontab">
                         <span class="icon naver"></span>
                     </div>
@@ -1020,7 +1020,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="#none">
                     <div class="icontab">
                         <span class="icon kakao"></span>
                     </div>
@@ -1030,7 +1030,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="#none">
                     <div class="icontab">
                         <span class="icon facebook"></span>
                     </div>
@@ -1040,7 +1040,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="#none">
                     <div class="icontab">
                         <span class="icon google"></span>
                     </div>
@@ -1056,7 +1056,7 @@
 
     <!--비회원 주문 조회(링크) - 비회원 주문조회 팝업 노출 -->
     <div class="non-member">
-        <a href="#" >비회원주문조회</a>
+        <a href="#none" >비회원주문조회</a>
     </div>
 </div>
 <!-- //SNS 간편로그인 신규추가 -->
@@ -2065,38 +2065,44 @@
                     <!-- input : 이름 -->
                     <div data-component="MInput" class="m-input">
                         <label class="a-label js-a-label" for="name">이름</label>
-                        <input class="a-input js-a-input" id="name" name="name" type="text" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" placeholder="이름" data-validation-required-text="이름을 입력해 주세요." data-validation-pattern-text="이름은 한글 또는 영문만 입력 가능합니다.">
+                        <input class="a-input js-a-input" id="name" name="name" type="text" pattern="" placeholder="이름" data-validation-required-text="이름을 입력해 주세요." data-validation-pattern-text="이름은 한글 또는 영문만 입력 가능합니다.">
                         <label class="a-label js-a-label"  for="name"></label>
                     </div><!-- // input : 이름 -->
 
                     <!-- input : 생년월일 -->
                     <div data-component="MInput" class="m-input">
                         <label class="a-label js-a-label" for="birthday">생년월일</label>
-                        <input class="a-input js-a-input" id="birthday" name="birthday" type="tel" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" placeholder="생년월일" data-validation-required-text="생년월일을 입력해 주세요." data-validation-pattern-text="올바른 날짜형식이 아닙니다." maxlength="8">
+                        <input class="a-input js-a-input" id="birthday" name="birthday" type="tel" pattern="" placeholder="생년월일" data-validation-required-text="생년월일을 입력해 주세요." data-validation-pattern-text="올바른 날짜형식이 아닙니다." maxlength="8">
                         <label class="a-label js-a-label" for="birthday"></label>
                         <p class="guide-text">생년월일을 -없이 입력해주세요(예:19880512)</p>
                     </div><!-- // input : 생년월일 -->
-
-                    <button type="submit" id="forgottenButton" class="a-button is-primary">
-                        <span>확인</span>
-                    </button>
                 </div>
+
+                <!-- button -->
+                <button type="submit" id="forgottenButton" class="a-button is-primary">
+                    <span>확인</span>
+                </button><!-- // button -->
+
             </form>
         </div>
-        <script>
-            $(document).ready(function(){
-                if(!($.trim($("#errorLabel").html())=='')){
-                    $('#errorBox').removeClass('is-hidden');
-                    $('#errorBox').addClass("m-error");
-                }
-                $("#forgottenButton").click(function(){
-                    $("#errorLabel").empty();
-                    $("#errorBox").addClass("is-hidden");
-                });
-            })
-        </script>
-    </div>
-    <!-- //n-find-idpw -->
+        
+        <!-- input error text 관련.js -->
+<script>
+    $(document).ready(function(){
+        if(!($.trim($("#errorLabel").html())=='')){
+            $('#errorBox').removeClass('is-hidden');
+            $('#errorBox').addClass("m-error");
+        }
+        $("#forgottenButton").click(function(){
+            $("#errorLabel").empty();
+            $("#errorBox").addClass("is-hidden");
+        });
+    })
+</script><!--// input error text 관련.js -->
+
+
+
+    </div> <!-- //n-find-idpw -->
 
 </div>
 

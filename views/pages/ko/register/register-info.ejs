@@ -1,13 +1,13 @@
-<div data-component="OPageContent" class="o-page-content cofs-page" data-component-id="">
+<div data-component="OPageContent" class="o-page-content cofs-page">
     <span id="content" tabindex="-1" class="access-content">Content of the page</span>
     <div class="o-sign-in-wrapper">
         <%# 로그인 또는 회원가입 타이틀 %>
         <%- include ("../../../common/md-o-sign-in-heading.ejs") %>
-        <div class="is-sign-in-tabs ">
+        <div class="is-sign-in-tabs">
             <%# 로그인, 회원가입 활성화 탭 표기 %>
             <%- include ("../../../common/md-m-tablist-02.ejs") %>
-            <div class="o-registration empty-registration alternative-style-option ng-scope" data-ng-controller="RegisterController">
-                <form method="post" id="registration-form" novalidate="true" class="responsive form-section o-form ng-pristine ng-valid-email ng-invalid ng-invalid-required ng-valid-pattern ng-valid-maxlength" data-component="OForm" data-manually-submit="true" data-component-id="7efb5d57-d1fa-46ed-9ebf-df6684af2852">
+            <div class="o-registration empty-registration">
+                <form class="o-form" data-component="OForm" id="registration-form" method="post">
                     <div class="o-registration-form v2">
                         <%# 회원가입 관련 안내 문구 %>
                         <%- include ("../../../common/md-o-registration-info.ejs") %>
@@ -20,60 +20,60 @@
                             </div>
                             <!-- input : 인증완료 계정 표기 -->
                             <div class="auth-select">
-                                <p class="info-1"><span>[이메일인증]</span>으로 인증 완료되었습니다.</p>
-                                <div data-component="MInput" class="m-input r-only" data-validate="">
-                                    <input id="" name="email" type="text" class="a-input js-a-input" value="pk666@hanmail.net" readonly="readonly" >
+                                <p class="info-1"><span>[이메일인증]</span> 으로 인증 완료되었습니다.</p>
+                                <div data-component="MInput" class="m-input r-only">
+                                    <input class="a-input js-a-input" type="text" value="pk666@hanmail.net" readonly="readonly">
                                 </div>
-                                <span class="m-checkbox v2 u-clearfix dis-block" id="">
+                                <span class="m-checkbox v2 u-clearfix">
                                         <input class="a-checkbox" type="checkbox" id="checkbox-personal">
-                                        <label class="a-label js-a-label custom-box" for="checkbox-personal" tabindex="0"></label>
+                                        <label class="a-label js-a-label custom-box" for="checkbox-personal"></label>
                                         <label class="a-label js-a-label" for="checkbox-personal">위 메일주소를 아이디로 사용</label>
                                 </span>
                             </div><!-- // input : 인증완료 계정 표기 -->
 
                             <!-- input : 아이디 또는 이메일 -->
-                            <div data-component="MInput" class="m-input int-id" data-validate="email" data-component-id="9d189dc9-195b-4333-afef-400540f39200">
-                                <label for="j_username" class="a-label js-a-label">아이디 또는 이메일</label>
-                                <input id="j_username" name="j_username" data-validation-required-text="아이디를 입력해주세요." pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" data-validation-pattern-text="아이디는 4~20자 영문/숫자 또는  email만 가능합니다." placeholder="아이디 또는 이메일" type="id" class="a-input js-a-input" required="required" value="">
-                                <label for="j_username" class="a-label js-a-label"></label>
-                                <a class="a-button s-btn" href="#">중복확인</a>
+                            <div data-component="MInput" class="m-input with-button">
+                                <label class="a-label js-a-label" for="id">아이디 또는 이메일</label>
+                                <input class="a-input js-a-input" id="id" name="id" type="text" pattern="" placeholder="아이디 또는 이메일" data-validation-required-text="아이디를 입력해주세요." data-validation-pattern-text="아이디는 4~20자 영문/숫자 또는  email만 가능합니다." required="">
+                                <button class="a-button is-primary sm" type="button"><span>중복확인</span></button>
+                                <label class="a-label js-a-label" for="id"></label>
                             </div><!-- // input : 아이디 또는 이메일 -->
 
                             <!-- input : 비밀번호 -->
-                            <div data-component="MInput" class="m-input password password-with-label" data-component-id="a4d73460-5906-4ebd-8415-c276f79698cf">
-                                <label for="j_password" class="a-label js-a-label">비밀번호</label>
-                                <input id="j_password" name="j_password" data-validation-required-text="비밀번호를 입력해주세요." pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" data-validation-pattern-text="동일한 영문자와 숫자를 연속해서 3자 이상 사용할 수 없습니다." placeholder="비밀번호" type="password" class="a-input js-a-input" required="required" value="">
-                                <label class="a-label js-a-label" for="sign-in-password"></label>
-                                <p class="guide-text">10~30자 이내로 영문자, 숫자, 특수문자 중 2가지 이상포함</p>
+                            <div data-component="MInput" class="m-input password">
+                                <label class="a-label js-a-label" for="password">비밀번호</label>
+                                <input class="a-input js-a-input" id="password" name="password" type="password" pattern="" placeholder="비밀번호" data-validation-required-text="비밀번호를 입력해주세요." data-validation-pattern-text="8~30자 이내로 영문자, 숫자, 특수문자 중 2가지 이상 포함해주세요." required="">
+                                <label class="a-label js-a-label" for="password"></label>
+                                <p class="guide-text">8~30자 이내로 영문자, 숫자, 특수문자<br class="only-pc"/>중 2가지 이상 포함</p>
                             </div><!-- // input : 비밀번호 -->
 
                             <!-- input : 비밀번호 확인 -->
-                            <div data-component="MInput" class="m-input password-repeat password" data-validation-match-field="password" data-component-id="24622822-f267-4591-b67f-15fb45f58d87">
-                                <label class="a-label js-a-label">비밀번호 확인</label>
-                                <input class="a-input js-a-input ng-pristine ng-untouched ng-invalid ng-invalid-required" type="password" id="checkPwd" name="checkPwd" required="" placeholder="비밀번호 확인" data-validation-required-text="비밀번호를 재입력해주세요." data-validation-match-field-text="입력하신 정보가 일치하지 않습니다. 확인 후 다시 입력해 주세요." ng-model="registerForm.checkPwd">
-                                <label class="a-label js-a-label"></label>
+                            <div data-component="MInput" class="m-input password password-repeat " data-validation-match-field="password">
+                                <label class="a-label js-a-label" for="checkPwd">비밀번호 확인</label>
+                                <input class="a-input js-a-input" id="checkPwd" name="checkPwd" type="password" placeholder="비밀번호 확인" data-validation-required-text="비밀번호를 재입력해주세요." data-validation-match-field-text="입력하신 정보가 일치하지 않습니다. 확인 후 다시 입력해 주세요." required="" >
+                                <label class="a-label js-a-label" for="checkPwd"></label>
                             </div><!-- // input : 비밀번호 확인 -->
 
                             <!-- input : 이름 -->
-                            <div data-component="MInput" class="m-input mt-30">
-                                <label for="j_username" class="a-label js-a-label">이름</label>
-                                <input id="j_username" name="j_username" data-validation-required-text="이름을 입력해 주세요." pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" data-validation-pattern-text="이름은 한글 또는 영문만 입력 가능합니다." placeholder="이름" type="text" class="a-input js-a-input" required="required" value="">
-                                <label for="j_username" class="a-label js-a-label"></label>
+                            <div data-component="MInput" class="m-input">
+                                <label class="a-label js-a-label" for="name" >이름</label>
+                                <input class="a-input js-a-input" id="name" name="name" type="text" pattern="" placeholder="이름" data-validation-required-text="이름을 입력해 주세요." data-validation-pattern-text="이름은 한글 또는 영문만 입력 가능합니다." required="">
+                                <label class="a-label js-a-label" for="name"></label>
                             </div><!-- // input : 이름 -->
 
                             <!-- input : 생년월일 -->
-                            <div data-component="MInput" class="m-input birthday">
-                                <label for="j_username" class="a-label js-a-label">생년월일</label>
-                                <input id="j_username" name="j_username" data-validation-required-text="생년월일을 입력해주세요." pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" data-validation-pattern-text="올바른 날짜형식이 아닙니다." placeholder="생년월일" type="text" class="a-input js-a-input" required="required" value="" maxlength="8">
-                                <label for="j_username" class="a-label js-a-label"></label>
-                                <p class="guide-text">생년월일 8자리를 입력해 주세요.(예:19880512)</p>
+                            <div data-component="MInput" class="m-input">
+                                <label class="a-label js-a-label" for="birthday">생년월일</label>
+                                <input class="a-input js-a-input" id="birthday" name="birthday" type="text" pattern="" placeholder="생년월일" data-validation-required-text="생년월일을 입력해주세요." data-validation-pattern-text="올바른 날짜형식이 아닙니다.(예:20150115)" maxlength="8" required="">
+                                <label class="a-label js-a-label" for="birthday"></label>
+                                <p class="guide-text">생년월일 8자리를 입력해 주세요.(예:20150115)</p>
                             </div><!-- // input : 생년월일 -->
 
                             <!-- input : 휴대폰번호 -->
                             <div data-component="MInput" class="m-input">
-                                <label for="j_username" class="a-label js-a-label">휴대폰번호</label>
-                                <input id="j_username" name="j_username" data-validation-required-text="휴대폰번호를 입력해 주세요" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" data-validation-pattern-text="휴대폰 번호를 정확히 입력해 주세요." placeholder="휴대폰번호" type="tel" class="a-input js-a-input" required="required" value="">
-                                <label for="j_username" class="a-label js-a-label"></label>
+                                <label class="a-label js-a-label" for="phone">휴대폰번호</label>
+                                <input class="a-input js-a-input" id="phone" name="phone" type="tel" pattern="" placeholder="휴대폰번호" data-validation-required-text="휴대폰번호를 입력해 주세요" data-validation-pattern-text="휴대폰 번호를 정확히 입력해 주세요."  required="">
+                                <label class="a-label js-a-label" for="phone"></label>
                                 <p class="guide-text">‘-’를 빼고 휴대폰번호를 입력해 주세요</p>
                             </div><!-- // input : 휴대폰번호 -->
 
@@ -81,9 +81,9 @@
                                 <h2 class="a-heading-2">개인정보 수집.이용동의</h2>
                                 <!--  체크박스 : 전체동의 -->
                                 <div class="all-agree">
-                                    <span class="m-checkbox v2 u-clearfix" id="">
+                                    <span class="m-checkbox v2 u-clearfix">
                                         <input class="a-checkbox" type="checkbox" id="checkbox-all">
-                                        <label class="a-label js-a-label custom-box" for="checkbox-all" tabindex="0"></label>
+                                        <label class="a-label js-a-label custom-box" for="checkbox-all"></label>
                                         <label class="a-label js-a-label" for="checkbox-all">전체동의</label>
                                     </span>
                                 </div>
@@ -186,20 +186,35 @@
                                             <label class="a-label js-a-label label-text" for="agreement1-2">동의하지 않습니다.</label>
                                         </div>
                                     </div>
-                                    <!--  체크박스 : SMS/이메일 수신 -->
-                                    <div class="marketing-agree rd-toggle-con rd-toggle-con-1 is-hidden-strong" data-name="agreement-opt1" >
-                                        <span class="m-checkbox v2 u-clearfix" id="">
-                                            <input class="a-checkbox" type="checkbox" id="checkbox-sms">
-                                            <label class="a-label js-a-label custom-box" for="checkbox-sms" tabindex="0"></label>
-                                            <label class="a-label js-a-label" for="checkbox-sms">SMS수신</label>
-                                        </span>
-
-                                        <span class="m-checkbox v2 u-clearfix" id="">
-                                            <input class="a-checkbox" type="checkbox" id="checkbox-email">
-                                            <label class="a-label js-a-label custom-box" for="checkbox-email" tabindex="0"></label>
-                                            <label class="a-label js-a-label" for="checkbox-email">이메일수신</label>
-                                        </span>
-                                    </div><!-- // 체크박스 : SMS/이메일 수신 -->
+                                    <!--  체크박스 : 마케팅 정보 수신동의 -->
+                                    <div class="marketing-agree rd-toggle-con rd-toggle-con-1 is-hidden-strong" data-name="agreement-opt1">
+                                        <!-- 라디오버튼 : 성별 -->
+                                        <div class="radio-button-list">
+                                            <div class="m-radio-button v2">
+                                                <input type="radio" class="a-radio-button" id="male" name="gender">
+                                                <label class="a-label js-a-label u-no-select custom-radio" for="male"></label>
+                                                <label class="a-label js-a-label label-text" for="male">남성</label>
+                                            </div>
+                                            <div class="m-radio-button v2">
+                                                <input type="radio" class="a-radio-button" id="female" name="gender">
+                                                <label class="a-label js-a-label u-no-select custom-radio" for="female"></label>
+                                                <label class="a-label js-a-label label-text" for="female">여성</label>
+                                            </div>
+                                        </div> <!-- // 라디오버튼 : 성별 -->
+                                        <!--  체크박스 : SMS/이메일 수신 -->
+                                        <div class="checkbox-list">
+                                            <span class="m-checkbox v2 u-clearfix">
+                                                <input class="a-checkbox" type="checkbox" id="checkbox-sms">
+                                                <label class="a-label js-a-label custom-box" for="checkbox-sms" tabindex="0"></label>
+                                                <label class="a-label js-a-label" for="checkbox-sms">SMS수신</label>
+                                            </span>
+                                            <span class="m-checkbox v2 u-clearfix">
+                                                <input class="a-checkbox" type="checkbox" id="checkbox-email">
+                                                <label class="a-label js-a-label custom-box" for="checkbox-email" tabindex="0"></label>
+                                                <label class="a-label js-a-label" for="checkbox-email">이메일수신</label>
+                                            </span>
+                                        </div><!-- // 체크박스 : SMS/이메일 수신 -->
+                                    </div><!-- // 체크박스 : 마케팅 정보 수신동의 -->
                                 </div><!-- // 테이블02 : [선택사항 1] - ARKTE 마케팅 정보 수신동의 -->
 
                                 <!-- 테이블03 : [선택사항 2] - 마케팅 수신 목적 제3자 정보 제공 동의 -->
@@ -254,19 +269,20 @@
                                         </div>
                                     </div>
                                 </div> <!-- // 테이블03 : [선택사항 2] - 마케팅 수신 목적 제3자 정보 제공 동의 -->
-                                <div class="m-checkbox dis-flex">
-                                    <h2 class="a-heading-5">이용약관 및 개인정보 처리방침</h2>
-                                    <span class="a-label policiesText">
+                                <div class="m-checkbox policy-select">
+                                    <h2 class="text-1">이용약관 및 개인정보 처리방침</h2>
+                                    <span class="a-label">
                                          <a href="#" id="registerLink" class="a-link policiesLink open-lightbox" data-template="lp-join-policy" target="_self">전문보기</a>
                                     </span>
+                                    <p class="text-2">이용약관 및 개인정보 수집 및 이용에 대한 내용을 확인하고 동의합니다.</p>
                                 </div>
-                                <p class="info-">이용약관 및 개인정보 수집 및 이용에 대한 내용을 확인하고 동의합니다.</p>
                             </div>
-                            <button type="submit" id="registerButton" class="a-button is-primary pc-margin">
+                            <button type="submit" id="registerButton" class="a-button is-primary">
                                 <span>동의하고 회원가입</span>
                             </button>
                         </div><!-- // 신규추가 내용 : 회원가입 2.가입정보입력 -->
                     </div>
+
                     <script type="text/html" data-template="select-country" id="select-country">
                         <div class="m-change-country-lightbox">
                             <h2 class="a-heading-2">YOU ARE ABOUT TO CHANGE YOUR LOCATION</h2>
@@ -297,5 +313,5 @@
 
 <!-- handlebars-template -->
 <%# 전문보기 %>
-<%- include ("../../../common/hndl-lp-join-policy.ejs") %>
+<%- include ("../../../handlebars/hndl-lp-join-policy.ejs") %>
 <!-- //handlebars-template -->

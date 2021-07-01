@@ -1,16 +1,8 @@
 <div data-component="OPageContent" class="o-page-content">
-    <div class="coremetricsPageId" hidden="">women | new arrivals</div>
-    <div class="coremetricsPageType" hidden="">subdepartment</div>
-    <div class="coremetricsCategoryId" hidden="">women_newarrivals</div>
-    <div class="coremetricsCategoryPath" hidden="">women_newarrivals</div>
 
     <div class="parbase sdp-component left-component">
-        <!-- m-breadcrumb -->
-        <nav aria-label="breadcrumbs" class="m-breadcrumb" data-component="MBreadCrumb">
-            <%# m-breadcrumb %>
-            <%- include ("../../../common/md-m-breadcrumb.ejs") %>
-        </nav>
-        <!-- //m-breadcrumb -->
+        <%# m-breadcrumb %>
+        <%- include ("../../../common/md-m-breadcrumb.ejs") %>
     </div>
 
     <h1 class="a-heading-1 seo-heading ">
@@ -18,32 +10,30 @@
     </h1>
 
     <div class="parbase sdp-component local-navigation">
-        <div data-component="OLocalNavigation" class="o-local-navigation" style="opacity: 1;"
-             data-component-id="5609d614-dcf6-4c07-817d-3b38ac9e41c0">
+        <!-- o-local-navigation -->
+        <div data-component="OLocalNavigation" class="o-local-navigation">
             <button type="button" class="a-button-nostyle show-more-left-btn"></button>
             <span class="nav-title"></span>
             <ul>
                 <li class="is-selected">
-                    <a href="/en/women/new-arrivals.html" target="_self" class="a-link" data-title="New arrivals"
-                       tabindex="0">
+                    <a href="/en/women/new-arrivals.html" target="_self" class="a-link" data-title="New arrivals" tabindex="0">
                         All New arrivals
                     </a>
                 </li>
                 <li>
-                    <a href="/en/women/new-arrivals/shoes-accessories.html" target="_self" class="a-link"
-                       data-title="Shoes &amp; accessories" tabindex="0">
+                    <a href="/en/women/new-arrivals/shoes-accessories.html" target="_self" class="a-link" data-title="슈즈 &amp; 액세서리" tabindex="0">
                         슈즈 &amp; 액세서리
                     </a>
                 </li>
                 <li>
-                    <a href="#none" target="_self" class="a-link"
-                       data-title="Shoes &amp; accessories" tabindex="0">
+                    <a href="#none" target="_self" class="a-link" data-title="드레스" tabindex="0">
                         드레스
                     </a>
                 </li>
             </ul>
             <button type="button" class="a-button-nostyle show-more-right-btn"></button>
         </div>
+        <!-- //o-local-navigation -->
     </div>
 
     <div class="o-width wc-100">
@@ -55,10 +45,8 @@
             <!-- o-product-listing -->
 			<div id="lazyLoadSpan">
 				<div id="reloadProducts" class="o-product-listing has-upper-body-images fixed-columns-4 u-align-center">
-					<span id="product-listing-data-storage" data-entries="" hidden=""></span>
-
 					<%# md-o-product-listing-product-list %>
-					<%- include ("../../../common/md-o-product-listing-product-list.ejs") %>
+					<%- include ("../../../common/md-o-product-listing-product-list-30ea.ejs") %>
 				</div>
 
 			</div>
@@ -119,6 +107,5 @@
     </div>
     <!-- //o-teaser-container -->
 
-    <div class="splash parbase">
-    </div>
+    <div class="splash parbase"></div>
 </div>

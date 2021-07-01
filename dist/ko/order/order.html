@@ -1010,7 +1010,7 @@
     <div class="sns-list">
         <ul>
             <li>
-                <a href="#">
+                <a href="#none">
                     <div class="icontab">
                         <span class="icon naver"></span>
                     </div>
@@ -1020,7 +1020,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="#none">
                     <div class="icontab">
                         <span class="icon kakao"></span>
                     </div>
@@ -1030,7 +1030,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="#none">
                     <div class="icontab">
                         <span class="icon facebook"></span>
                     </div>
@@ -1040,7 +1040,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="#none">
                     <div class="icontab">
                         <span class="icon google"></span>
                     </div>
@@ -1056,7 +1056,7 @@
 
     <!--비회원 주문 조회(링크) - 비회원 주문조회 팝업 노출 -->
     <div class="non-member">
-        <a href="#" >비회원주문조회</a>
+        <a href="#none" >비회원주문조회</a>
     </div>
 </div>
 <!-- //SNS 간편로그인 신규추가 -->
@@ -2051,9 +2051,9 @@
     <!-- //handlebars-template -->
 
     <!-- o-page-content -->
-    <main data-component="OPageContent" class="o-page-content cofs-page page-cart ng-scope" ng-controller="CartContextController">
+    <main data-component="OPageContent" class="o-page-content cofs-page">
 
-    <div class="o-order-confirmation" data-component="OCart">
+    <div class="o-order-confirmation">
         <!-- order-sheet-info -->
         <div class="order-sheet-info">
 
@@ -2074,89 +2074,1280 @@
             <!-- delivery-info-bx -->
             <h2 class="a-heading-2">배송지정보</h2>
             <div class="dft-bx line-bx delivery-info-bx">
+
+                <!-- radio-button-list -->
                 <div class="radio-button-list">
                     <div class="m-radio-button v3">
-                        <input type="radio" class="a-radio-button" id="delivery-input-cate1" name="delivery-input-cate" checked>
+                        <input type="radio" class="a-radio-button rd-toggle" id="delivery-input-cate1" name="delivery-input-cate" checked data-toggle-target="rd-toggle-con-list">
                         <label class="a-label js-a-label u-no-select custom-radio" for="delivery-input-cate1"></label>
                         <label class="a-label js-a-label label-text" for="delivery-input-cate1">배송지 목록</label>
                     </div>
 
                     <div class="m-radio-button v3">
-                        <input type="radio" class="a-radio-button" id="delivery-input-cate2" name="delivery-input-cate">
+                        <input type="radio" class="a-radio-button rd-toggle" id="delivery-input-cate2" name="delivery-input-cate" data-toggle-target="rd-toggle-con-new">
                         <label class="a-label js-a-label u-no-select custom-radio" for="delivery-input-cate2"></label>
                         <label class="a-label js-a-label label-text" for="delivery-input-cate2">새로 입력</label>
                     </div>
                 </div>
+                <!-- //radio-button-list -->
 
-                <ul class="my-delivery-list">
-                    <li>
-                        <div class="m-radio-button v3">
-                            <input type="radio" class="a-radio-button" id="delivery-item-radio1" name="delivery-item-radio">
-                            <label class="a-label js-a-label u-no-select custom-radio" for="delivery-item-radio1"></label>
-                            <label class="a-label js-a-label label-text" for="delivery-item-radio1">
-                                <div class="delivery-item">
-                                    <p class="item-top">
-                                        <span class="name">홍길동</span>
-                                        <span class="basic-label">[기본배송지]</span>
-                                        <a class="a-link a-link-udln delivery-item-edit" href="#" target="_self">수정</a>
-                                    </p>
-                                    <p class="phone-num">010-6841-9653</p>
-                                    <p class="phone-num">010-6841-9653</p>
-                                    <p class="address">서울시 강남구 테헤란로 98길, 현대백화점 404호</p>
-                                </div>
-                            </label>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="m-radio-button v3">
-                            <input type="radio" class="a-radio-button" id="delivery-item-radio2" name="delivery-item-radio">
-                            <label class="a-label js-a-label u-no-select custom-radio" for="delivery-item-radio2"></label>
-                            <label class="a-label js-a-label label-text" for="delivery-item-radio2">
-                                <div class="delivery-item">
-                                    <p class="item-top">
-                                        <span class="name">홍길동</span>
-                                        <a class="a-link a-link-udln delivery-item-edit" href="#" target="_self">수정</a>
-                                        <a class="a-link a-link-udln delivery-item-del" href="#" target="_self">삭제</a>
-                                    </p>
-                                    <p class="phone-num">010-6841-9653</p>
-                                    <p class="phone-num">010-6841-9653</p>
-                                    <p class="address">서울시 강남구 테헤란로 98길, 현대백화점 404호</p>
-                                </div>
-                            </label>
-                        </div>
-                    </li>
-                </ul>
+                <!-- rd-toggle-con : 배송지목록 -->
+                <div class="rd-toggle-con rd-toggle-con-list" data-name="delivery-input-cate">
+                    <ul class="my-delivery-list">
+                        <li>
+                            <div class="m-radio-button v3">
+                                <input type="radio" class="a-radio-button" id="delivery-item-radio1" name="delivery-item-radio">
+                                <label class="a-label js-a-label u-no-select custom-radio" for="delivery-item-radio1"></label>
+                                <label class="a-label js-a-label label-text" for="delivery-item-radio1">
+                                    <div class="delivery-item">
+                                        <p class="item-top">
+                                            <span class="name">홍길동</span>
+                                            <span class="basic-label">[기본배송지]</span>
+                                            <a class="a-link a-link-udln delivery-item-edit" href="#none" target="_self">수정</a>
+                                        </p>
+                                        <p class="phone-num">010-6841-9653</p>
+                                        <p class="phone-num">010-6841-9653</p>
+                                        <p class="address">서울시 강남구 테헤란로 98길, 현대백화점 404호</p>
+                                    </div>
+                                </label>
+                            </div>
+                            
+                            <!-- 배송지수정 -->
+<form class="o-form" data-component="OForm" action="" method="POST">
+    <div class="my-delivery-input">
+        <div class="m-input v3" data-component="MInput">
+            <label class="a-label js-a-label" for="my-dlvr-name">이름(필수)</label>
+            <input class="a-input js-a-input"
+                   placeholder="이름(필수)"
+                   type="text"
+                   value="홍길동"
+                   name="my-dlvr-name"
+                   id="my-dlvr-name"
+                   pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                   data-validation-required-text="이름을 입력하세요."
+                   data-validation-pattern-text="주문고객 이름은 한글, 영문만 가능합니다">
+            <label class="a-label js-a-label" for="my-dlvr-name" data-placeholder=""></label>
+        </div>
 
-                <div class="delivery-request">
-                    <p class="dft-bx-tit">배송시 요청사항</p>
-                    <div class="m-dropdown v3">
-                        <label class="a-label js-a-label" for="delivery-msg-dropdown"></label>
-                        <select name="selectSize" id="delivery-msg-dropdown">
-                            <option class="a-option">배송시 요청사항을 선택해주세요.</option>
-                            <option class="a-option">배송 전 연락바랍니다.</option>
-                            <option class="a-option">택배 함에 놔주세요</option>
-                            <option class="a-option">집 앞에 놔주세요.</option>
-                            <option class="a-option">빠른 배송 부탁 드립니다.</option>
-                            <option class="a-option">부재 시 경비실에 맡겨주세요.</option>
-                            <option class="a-option">휴대폰으로 연락 부탁 드립니다.</option>
+        <div class="m-input v3" data-component="MInput">
+            <label class="a-label js-a-label" for="my-dlvr-phone">휴대폰 번호</label>
+            <input class="a-input js-a-input"
+                   placeholder="휴대폰 번호"
+                   type="tel"
+                   value="010-6841-9653"
+                   name="my-dlvr-phone"
+                   id="my-dlvr-phone"
+                   pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                   data-validation-required-text="휴대폰 번호을 입력하세요."
+                   data-validation-pattern-text="올바른 전화번호 형식이 아닙니다.">
+            <label class="a-label js-a-label" for="my-dlvr-phone" data-placeholder=""></label>
+        </div>
+
+        <div class="m-input v3" data-component="MInput">
+            <label class="a-label js-a-label" for="my-dlvr-phone2">추가연락처</label>
+            <input class="a-input js-a-input"
+                   placeholder="추가연락처"
+                   type="tel"
+                   value="010-6841-9653"
+                   name="my-dlvr-phone2"
+                   id="my-dlvr-phone2"
+                   pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                   data-validation-required-text="휴대폰 번호을 입력하세요."
+                   data-validation-pattern-text="올바른 전화번호 형식이 아닙니다.">
+            <label class="a-label js-a-label" for="my-dlvr-phone2" data-placeholder=""></label>
+        </div>
+
+        <div class="m-input v3 is-readonly with-button" data-component="MInput">
+            <label class="a-label js-a-label" for="my-dlvr-zipcode">우편번호</label>
+            <input class="a-input js-a-input"
+                   placeholder="우편번호"
+                   type="text"
+                   value="12345"
+                   name="my-dlvr-zipcode"
+                   id="my-dlvr-zipcode"
+                   readonly="readonly"
+                   required="">
+            <button class="a-button is-primary sm open-lightbox" type="button" data-template="lp-find-address"><span>찾기</span></button>
+            <label class="a-label js-a-label" for="my-dlvr-zipcode" data-placeholder=""></label>
+        </div>
+
+        <div class="m-input v3 is-readonly" data-component="MInput">
+            <label class="a-label js-a-label" for="my-dlvr-address1">기본주소</label>
+            <input class="a-input js-a-input"
+                   placeholder="기본주소"
+                   type="text"
+                   value="서울시 영등포구 양평로 21길 26"
+                   name="my-dlvr-address1"
+                   id="my-dlvr-address1"
+                   readonly="readonly">
+            <label class="a-label js-a-label" for="my-dlvr-address1" data-placeholder=""></label>
+        </div>
+
+        <div class="m-input v3" data-component="MInput">
+            <label class="a-label js-a-label" for="my-dlvr-address2">상세주소</label>
+            <input class="a-input js-a-input"
+                   placeholder="상세주소"
+                   type="text"
+                   value="현대백화점 19층"
+                   name="my-dlvr-address2"
+                   id="my-dlvr-address2"
+                   data-validation-required-text="배송지 주소를 입력해 주세요">
+            <label class="a-label js-a-label" for="my-dlvr-address2" data-placeholder=""></label>
+        </div>
+
+        <div class="set-default-delivery">
+            <span class="m-checkbox v2 u-clearfix" id="checkbox1">
+                <input class="a-checkbox" type="checkbox" id="chck-set-default-dlvr">
+                <label class="a-label js-a-label custom-box" for="chck-set-default-dlvr" tabindex="0"></label>
+                <label class="a-label js-a-label" for="chck-set-default-dlvr">기본배송지 설정</label>
+            </span>
+        </div>
+
+        <div class="button-container col-2">
+            <button type="button" class="a-button is-outlined btn-my-dlvr-cancle">취소</button>
+            <button type="submit" class="a-button is-primary btn-my-dlvr-save">확인</button>
+        </div>
+
+    </div>
+</form>
+<!-- //배송지수정 -->
+
+<!-- handlebars-template -->
+
+<!-- lp-find-address -->
+<script type="text/x-handlebars-template" id="lp-find-address">
+    <!-- tip : step1, step2, step3 유무로 con-step1, con-step2, con-step3 토글 -->
+    <div class="lightbox-content-dft lp-find-address step1">
+        <div class="m-headline is-main-headline">
+            <h2 class="a-heading-2"><span>주소 검색</span></h2>
+        </div>
+        <div class="content">
+            <form class="o-form" data-component="OForm" action="" method="POST">
+                <p class="guide-text sm">찾고자 하는 주소를 입력하신 후 검색을 누르세요.</p>
+                <div class="m-input v3 with-button" data-component="MInput">
+                    <input class="a-input js-a-input"
+                           placeholder="구의강변로"
+                           type="text"
+                           name="address-keyword"
+                           id="address-keyword"
+                           required=""
+                           data-validation-required-text="검색할 주소를 입력해주세요"
+                           data-validation-pattern-text="지역명을 입력해주세요">
+                    <button class="a-button is-primary sm btn-address-search" type="submit"><span>검색</span></button>
+                    <label class="a-label js-a-label" for="address-keyword" data-placeholder=""></label>
+                </div>
+                <p class="guide-text sm">예: 동(읍/면)명 또는 도로명주소(건물번호/ 건물명)일부 군사지역은 배송이 불가능할 수 있습니다.</p>
+            </form>
+
+            <!-- con-step2 -->
+            <div class="con-step2">
+                <div class="justify-bx">
+                    <div class="m-dropdown v3 cate-address-select">
+                        <label class="a-label js-a-label" for="cate-si-do"></label>
+                        <select name="selectSize" id="cate-si-do">
+                            <option class="a-option">시/도</option>
+                            <option class="a-option">경기도</option>
+                            <option class="a-option">강원도</option>
+                            <option class="a-option">충청북도</option>
                         </select>
                         <span class="a-icon-accordion a-icon-arrow-down-small"></span>
                     </div>
-                    
-                    <div class="m-input v3" data-component="MInput">
-                        <input class="a-input js-a-input"
-                               type="text"
-                               name="delivery-requset-msg"
-                               id="delivery-requset-msg"
-                               placeholder="기타 내용을 입력해 주세요">
-                        <label class="a-label js-a-label" for="delivery-requset-msg" data-placeholder=""></label>
-                        <div class="text-count-bx">
-                            <span class="text-count">0</span>
-                            <span class="text-total-count">/30자</span>
-                        </div>
+                    <div class="m-dropdown v3 cate-address-select">
+                        <label class="a-label js-a-label" for="cate-gun-gu"></label>
+                        <select name="selectSize" id="cate-si-do">
+                            <option class="a-option">군/구</option>
+                            <option class="a-option">구로구</option>
+                            <option class="a-option">양천구</option>
+                            <option class="a-option">마포구</option>
+                        </select>
+                        <span class="a-icon-accordion a-icon-arrow-down-small"></span>
                     </div>
-                    <p class="guide-text">주문시 입력한 배송지는 자동으로 배송지목록에 추가됩니다.</p>
                 </div>
+
+                <!-- 주소검색결과 -->
+                <ul class="find-address-result">
+                    <li>
+                        <a href="#none">
+                            <div class="address-item">
+                                <div class="gubun">도로명<br>지번</div>
+                                <div class="address-text">
+                                    <p>서울시 광진구 구의강변로 1</p>
+                                    <p>서울시 광진구 구의동 624-1</p>
+                                </div>
+                                <div class="zip-code"><span>05116</span></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none">
+                            <div class="address-item">
+                                <div class="gubun">도로명<br>지번</div>
+                                <div class="address-text">
+                                    <p>서울시 광진구 구의강변로 1</p>
+                                    <p>서울시 광진구 구의동 624-1</p>
+                                </div>
+                                <div class="zip-code"><span>05116</span></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none">
+                            <div class="address-item">
+                                <div class="gubun">도로명<br>지번</div>
+                                <div class="address-text">
+                                    <p>서울시 광진구 구의강변로 1</p>
+                                    <p>서울시 광진구 구의동 624-1</p>
+                                </div>
+                                <div class="zip-code"><span>05116</span></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none">
+                            <div class="address-item">
+                                <div class="gubun">도로명<br>지번</div>
+                                <div class="address-text">
+                                    <p>서울시 광진구 구의강변로 1</p>
+                                    <p>서울시 광진구 구의동 624-1</p>
+                                </div>
+                                <div class="zip-code"><span>05116</span></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none">
+                            <div class="address-item">
+                                <div class="gubun">도로명<br>지번</div>
+                                <div class="address-text">
+                                    <p>서울시 광진구 구의강변로 1</p>
+                                    <p>서울시 광진구 구의동 624-1</p>
+                                </div>
+                                <div class="zip-code"><span>05116</span></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none">
+                            <div class="address-item">
+                                <div class="gubun">도로명<br>지번</div>
+                                <div class="address-text">
+                                    <p>서울시 광진구 구의강변로 1</p>
+                                    <p>서울시 광진구 구의동 624-1</p>
+                                </div>
+                                <div class="zip-code"><span>05116</span></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none">
+                            <div class="address-item">
+                                <div class="gubun">도로명<br>지번</div>
+                                <div class="address-text">
+                                    <p>서울시 광진구 구의강변로 1</p>
+                                    <p>서울시 광진구 구의동 624-1</p>
+                                </div>
+                                <div class="zip-code"><span>05116</span></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none">
+                            <div class="address-item">
+                                <div class="gubun">도로명<br>지번</div>
+                                <div class="address-text">
+                                    <p>서울시 광진구 구의강변로 1</p>
+                                    <p>서울시 광진구 구의동 624-1</p>
+                                </div>
+                                <div class="zip-code"><span>05116</span></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none">
+                            <div class="address-item">
+                                <div class="gubun">도로명<br>지번</div>
+                                <div class="address-text">
+                                    <p>서울시 광진구 구의강변로 1</p>
+                                    <p>서울시 광진구 구의동 624-1</p>
+                                </div>
+                                <div class="zip-code"><span>05116</span></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none">
+                            <div class="address-item">
+                                <div class="gubun">도로명<br>지번</div>
+                                <div class="address-text">
+                                    <p>서울시 광진구 구의강변로 1</p>
+                                    <p>서울시 광진구 구의동 624-1</p>
+                                </div>
+                                <div class="zip-code"><span>05116</span></div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <!-- //주소검색결과 -->
+
+                <!-- 주소검색결과 없을 경우 -->
+                <div class="find-address-result">
+                    <p class="empty-item">검색된 주소가 업습니다.</p>
+                </div>
+                <!-- //주소검색결과 없을 경우 -->
+            </div>
+            <!-- //con-step2 -->
+
+            <!-- con-step3 -->
+            <div class="con-step3">
+                <p class="tit-text">상세주소 입력</p>
+                <p class="guide-text sm">저장하고 싶은 방식의 주소를 선택하시고 나머지 주소를 입력해 주세요</p>
+
+                <!-- 주소검색선택 -->
+                <ul class="find-address-result">
+                    <li>
+                        <div class="address-item mode-select">
+                            <div class="m-radio-button v3">
+                                <input type="radio" class="a-radio-button" id="dlvr-address-type-1" name="dlvr-address-type">
+                                <label class="a-label js-a-label u-no-select custom-radio" for="dlvr-address-type-1"></label>
+                            </div>
+                            <div class="gubun"><label class="a-label js-a-label label-text" for="dlvr-address-type-1">도로명</label></div>
+                            <div class="address-text">
+                                <p><label class="a-label js-a-label label-text" for="dlvr-address-type-1">서울시 광진구 구의강변로 1 서울시 광진구 구의강변로 1서울시 광진구 구의강변로 1</label></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="address-item mode-select">
+                            <div class="m-radio-button v3">
+                                <input type="radio" class="a-radio-button" id="dlvr-address-type-2" name="dlvr-address-type">
+                                <label class="a-label js-a-label u-no-select custom-radio" for="dlvr-address-type-2"></label>
+                            </div>
+                            <div class="gubun"><label class="a-label js-a-label label-text" for="dlvr-address-type-2">지번</label></div>
+                            <div class="address-text">
+                                <p><label class="a-label js-a-label label-text" for="dlvr-address-type-2">서울시 광진구 구의강변로 1</label></p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <!-- //주소검색선택 -->
+
+                <div class="m-input v3" data-component="MInput">
+                    <input class="a-input js-a-input"
+                           placeholder="상세주소를 입력해 주세요."
+                           type="text"
+                           name="detail-address"
+                           id="detail-address"
+                           required=""
+                           data-validation-required-text="상세주소를 입력해 주세요">
+                    <label class="a-label js-a-label" for="detail-address" data-placeholder=""></label>
+                </div>
+
+                <div class="button-container col-2">
+                    <button class="a-button is-outlined js-close-button" type="button">
+                        <span>취소</span>
+                    </button>
+                    <button class="a-button is-primary btn-save" type="button">
+                        <span>확인</span>
+                    </button>
+                </div>
+
+            </div>
+            <!-- //con-step3 -->
+            
+        </div>
+    </div>
+
+    <!-- tip : when develop this script must be delete -->
+    <script type="text/javascript">
+        (function() {
+            setTimeout(function(){
+                let btnAddressSearch = document.querySelector('.btn-address-search');
+                if(btnAddressSearch) {
+                    btnAddressSearch.addEventListener('click', function (_evt) {
+                        _evt.preventDefault();
+                        _evt.stopPropagation();
+                        let tempWrap = this.closest('.lp-find-address');
+                        if(tempWrap && !tempWrap.classList.contains('step2')){
+                            tempWrap.classList.add('step2')
+                        }
+                        if(tempWrap && tempWrap.classList.contains('step3')){
+                            tempWrap.classList.remove('step3')
+                        }
+                    });
+                }
+                let aTagAddressItem = document.querySelectorAll('.find-address-result li a');
+                if(aTagAddressItem){
+                    Array.prototype.slice.call(aTagAddressItem).forEach( function (_obj) {
+                        _obj.addEventListener('click', function (_evt) {
+                            _evt.preventDefault();
+                            _evt.stopPropagation();
+                            let tempWrap = this.closest('.lp-find-address');
+                            if(tempWrap && tempWrap.classList.contains('step2')){
+                                tempWrap.classList.remove('step2')
+                            }
+                            if(tempWrap && !tempWrap.classList.contains('step3')){
+                                tempWrap.classList.add('step3')
+                            }
+                        });
+                    });
+                }
+            },100);
+        })();
+    </script>
+    <!-- //tip -->
+
+</script>
+<!-- //lp-find-address -->
+
+
+
+
+<!-- //handlebars-template -->
+                        </li>
+                        <li>
+                            <div class="m-radio-button v3">
+                                <input type="radio" class="a-radio-button" id="delivery-item-radio2" name="delivery-item-radio">
+                                <label class="a-label js-a-label u-no-select custom-radio" for="delivery-item-radio2"></label>
+                                <label class="a-label js-a-label label-text" for="delivery-item-radio2">
+                                    <div class="delivery-item">
+                                        <p class="item-top">
+                                            <span class="name">홍길동</span>
+                                            <a class="a-link a-link-udln delivery-item-edit" href="#none" target="_self">수정</a>
+                                            <a class="a-link a-link-udln delivery-item-del open-lightbox" href="#none" target="_self" data-template="lp-dlvr-list-del" data-classes="alert">삭제</a>
+                                        </p>
+                                        <p class="phone-num">010-6841-9653</p>
+                                        <p class="phone-num">010-6841-9653</p>
+                                        <p class="address">서울시 강남구 테헤란로 98길, 현대백화점 404호</p>
+                                    </div>
+                                </label>
+                            </div>
+                            
+                            <!-- 배송지수정 -->
+<form class="o-form" data-component="OForm" action="" method="POST">
+    <div class="my-delivery-input">
+        <div class="m-input v3" data-component="MInput">
+            <label class="a-label js-a-label" for="my-dlvr-name">이름(필수)</label>
+            <input class="a-input js-a-input"
+                   placeholder="이름(필수)"
+                   type="text"
+                   value="홍길동"
+                   name="my-dlvr-name"
+                   id="my-dlvr-name"
+                   pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                   data-validation-required-text="이름을 입력하세요."
+                   data-validation-pattern-text="주문고객 이름은 한글, 영문만 가능합니다">
+            <label class="a-label js-a-label" for="my-dlvr-name" data-placeholder=""></label>
+        </div>
+
+        <div class="m-input v3" data-component="MInput">
+            <label class="a-label js-a-label" for="my-dlvr-phone">휴대폰 번호</label>
+            <input class="a-input js-a-input"
+                   placeholder="휴대폰 번호"
+                   type="tel"
+                   value="010-6841-9653"
+                   name="my-dlvr-phone"
+                   id="my-dlvr-phone"
+                   pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                   data-validation-required-text="휴대폰 번호을 입력하세요."
+                   data-validation-pattern-text="올바른 전화번호 형식이 아닙니다.">
+            <label class="a-label js-a-label" for="my-dlvr-phone" data-placeholder=""></label>
+        </div>
+
+        <div class="m-input v3" data-component="MInput">
+            <label class="a-label js-a-label" for="my-dlvr-phone2">추가연락처</label>
+            <input class="a-input js-a-input"
+                   placeholder="추가연락처"
+                   type="tel"
+                   value="010-6841-9653"
+                   name="my-dlvr-phone2"
+                   id="my-dlvr-phone2"
+                   pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                   data-validation-required-text="휴대폰 번호을 입력하세요."
+                   data-validation-pattern-text="올바른 전화번호 형식이 아닙니다.">
+            <label class="a-label js-a-label" for="my-dlvr-phone2" data-placeholder=""></label>
+        </div>
+
+        <div class="m-input v3 is-readonly with-button" data-component="MInput">
+            <label class="a-label js-a-label" for="my-dlvr-zipcode">우편번호</label>
+            <input class="a-input js-a-input"
+                   placeholder="우편번호"
+                   type="text"
+                   value="12345"
+                   name="my-dlvr-zipcode"
+                   id="my-dlvr-zipcode"
+                   readonly="readonly"
+                   required="">
+            <button class="a-button is-primary sm open-lightbox" type="button" data-template="lp-find-address"><span>찾기</span></button>
+            <label class="a-label js-a-label" for="my-dlvr-zipcode" data-placeholder=""></label>
+        </div>
+
+        <div class="m-input v3 is-readonly" data-component="MInput">
+            <label class="a-label js-a-label" for="my-dlvr-address1">기본주소</label>
+            <input class="a-input js-a-input"
+                   placeholder="기본주소"
+                   type="text"
+                   value="서울시 영등포구 양평로 21길 26"
+                   name="my-dlvr-address1"
+                   id="my-dlvr-address1"
+                   readonly="readonly">
+            <label class="a-label js-a-label" for="my-dlvr-address1" data-placeholder=""></label>
+        </div>
+
+        <div class="m-input v3" data-component="MInput">
+            <label class="a-label js-a-label" for="my-dlvr-address2">상세주소</label>
+            <input class="a-input js-a-input"
+                   placeholder="상세주소"
+                   type="text"
+                   value="현대백화점 19층"
+                   name="my-dlvr-address2"
+                   id="my-dlvr-address2"
+                   data-validation-required-text="배송지 주소를 입력해 주세요">
+            <label class="a-label js-a-label" for="my-dlvr-address2" data-placeholder=""></label>
+        </div>
+
+        <div class="set-default-delivery">
+            <span class="m-checkbox v2 u-clearfix" id="checkbox1">
+                <input class="a-checkbox" type="checkbox" id="chck-set-default-dlvr">
+                <label class="a-label js-a-label custom-box" for="chck-set-default-dlvr" tabindex="0"></label>
+                <label class="a-label js-a-label" for="chck-set-default-dlvr">기본배송지 설정</label>
+            </span>
+        </div>
+
+        <div class="button-container col-2">
+            <button type="button" class="a-button is-outlined btn-my-dlvr-cancle">취소</button>
+            <button type="submit" class="a-button is-primary btn-my-dlvr-save">확인</button>
+        </div>
+
+    </div>
+</form>
+<!-- //배송지수정 -->
+
+<!-- handlebars-template -->
+
+<!-- lp-find-address -->
+<script type="text/x-handlebars-template" id="lp-find-address">
+    <!-- tip : step1, step2, step3 유무로 con-step1, con-step2, con-step3 토글 -->
+    <div class="lightbox-content-dft lp-find-address step1">
+        <div class="m-headline is-main-headline">
+            <h2 class="a-heading-2"><span>주소 검색</span></h2>
+        </div>
+        <div class="content">
+            <form class="o-form" data-component="OForm" action="" method="POST">
+                <p class="guide-text sm">찾고자 하는 주소를 입력하신 후 검색을 누르세요.</p>
+                <div class="m-input v3 with-button" data-component="MInput">
+                    <input class="a-input js-a-input"
+                           placeholder="구의강변로"
+                           type="text"
+                           name="address-keyword"
+                           id="address-keyword"
+                           required=""
+                           data-validation-required-text="검색할 주소를 입력해주세요"
+                           data-validation-pattern-text="지역명을 입력해주세요">
+                    <button class="a-button is-primary sm btn-address-search" type="submit"><span>검색</span></button>
+                    <label class="a-label js-a-label" for="address-keyword" data-placeholder=""></label>
+                </div>
+                <p class="guide-text sm">예: 동(읍/면)명 또는 도로명주소(건물번호/ 건물명)일부 군사지역은 배송이 불가능할 수 있습니다.</p>
+            </form>
+
+            <!-- con-step2 -->
+            <div class="con-step2">
+                <div class="justify-bx">
+                    <div class="m-dropdown v3 cate-address-select">
+                        <label class="a-label js-a-label" for="cate-si-do"></label>
+                        <select name="selectSize" id="cate-si-do">
+                            <option class="a-option">시/도</option>
+                            <option class="a-option">경기도</option>
+                            <option class="a-option">강원도</option>
+                            <option class="a-option">충청북도</option>
+                        </select>
+                        <span class="a-icon-accordion a-icon-arrow-down-small"></span>
+                    </div>
+                    <div class="m-dropdown v3 cate-address-select">
+                        <label class="a-label js-a-label" for="cate-gun-gu"></label>
+                        <select name="selectSize" id="cate-si-do">
+                            <option class="a-option">군/구</option>
+                            <option class="a-option">구로구</option>
+                            <option class="a-option">양천구</option>
+                            <option class="a-option">마포구</option>
+                        </select>
+                        <span class="a-icon-accordion a-icon-arrow-down-small"></span>
+                    </div>
+                </div>
+
+                <!-- 주소검색결과 -->
+                <ul class="find-address-result">
+                    <li>
+                        <a href="#none">
+                            <div class="address-item">
+                                <div class="gubun">도로명<br>지번</div>
+                                <div class="address-text">
+                                    <p>서울시 광진구 구의강변로 1</p>
+                                    <p>서울시 광진구 구의동 624-1</p>
+                                </div>
+                                <div class="zip-code"><span>05116</span></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none">
+                            <div class="address-item">
+                                <div class="gubun">도로명<br>지번</div>
+                                <div class="address-text">
+                                    <p>서울시 광진구 구의강변로 1</p>
+                                    <p>서울시 광진구 구의동 624-1</p>
+                                </div>
+                                <div class="zip-code"><span>05116</span></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none">
+                            <div class="address-item">
+                                <div class="gubun">도로명<br>지번</div>
+                                <div class="address-text">
+                                    <p>서울시 광진구 구의강변로 1</p>
+                                    <p>서울시 광진구 구의동 624-1</p>
+                                </div>
+                                <div class="zip-code"><span>05116</span></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none">
+                            <div class="address-item">
+                                <div class="gubun">도로명<br>지번</div>
+                                <div class="address-text">
+                                    <p>서울시 광진구 구의강변로 1</p>
+                                    <p>서울시 광진구 구의동 624-1</p>
+                                </div>
+                                <div class="zip-code"><span>05116</span></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none">
+                            <div class="address-item">
+                                <div class="gubun">도로명<br>지번</div>
+                                <div class="address-text">
+                                    <p>서울시 광진구 구의강변로 1</p>
+                                    <p>서울시 광진구 구의동 624-1</p>
+                                </div>
+                                <div class="zip-code"><span>05116</span></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none">
+                            <div class="address-item">
+                                <div class="gubun">도로명<br>지번</div>
+                                <div class="address-text">
+                                    <p>서울시 광진구 구의강변로 1</p>
+                                    <p>서울시 광진구 구의동 624-1</p>
+                                </div>
+                                <div class="zip-code"><span>05116</span></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none">
+                            <div class="address-item">
+                                <div class="gubun">도로명<br>지번</div>
+                                <div class="address-text">
+                                    <p>서울시 광진구 구의강변로 1</p>
+                                    <p>서울시 광진구 구의동 624-1</p>
+                                </div>
+                                <div class="zip-code"><span>05116</span></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none">
+                            <div class="address-item">
+                                <div class="gubun">도로명<br>지번</div>
+                                <div class="address-text">
+                                    <p>서울시 광진구 구의강변로 1</p>
+                                    <p>서울시 광진구 구의동 624-1</p>
+                                </div>
+                                <div class="zip-code"><span>05116</span></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none">
+                            <div class="address-item">
+                                <div class="gubun">도로명<br>지번</div>
+                                <div class="address-text">
+                                    <p>서울시 광진구 구의강변로 1</p>
+                                    <p>서울시 광진구 구의동 624-1</p>
+                                </div>
+                                <div class="zip-code"><span>05116</span></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none">
+                            <div class="address-item">
+                                <div class="gubun">도로명<br>지번</div>
+                                <div class="address-text">
+                                    <p>서울시 광진구 구의강변로 1</p>
+                                    <p>서울시 광진구 구의동 624-1</p>
+                                </div>
+                                <div class="zip-code"><span>05116</span></div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <!-- //주소검색결과 -->
+
+                <!-- 주소검색결과 없을 경우 -->
+                <div class="find-address-result">
+                    <p class="empty-item">검색된 주소가 업습니다.</p>
+                </div>
+                <!-- //주소검색결과 없을 경우 -->
+            </div>
+            <!-- //con-step2 -->
+
+            <!-- con-step3 -->
+            <div class="con-step3">
+                <p class="tit-text">상세주소 입력</p>
+                <p class="guide-text sm">저장하고 싶은 방식의 주소를 선택하시고 나머지 주소를 입력해 주세요</p>
+
+                <!-- 주소검색선택 -->
+                <ul class="find-address-result">
+                    <li>
+                        <div class="address-item mode-select">
+                            <div class="m-radio-button v3">
+                                <input type="radio" class="a-radio-button" id="dlvr-address-type-1" name="dlvr-address-type">
+                                <label class="a-label js-a-label u-no-select custom-radio" for="dlvr-address-type-1"></label>
+                            </div>
+                            <div class="gubun"><label class="a-label js-a-label label-text" for="dlvr-address-type-1">도로명</label></div>
+                            <div class="address-text">
+                                <p><label class="a-label js-a-label label-text" for="dlvr-address-type-1">서울시 광진구 구의강변로 1 서울시 광진구 구의강변로 1서울시 광진구 구의강변로 1</label></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="address-item mode-select">
+                            <div class="m-radio-button v3">
+                                <input type="radio" class="a-radio-button" id="dlvr-address-type-2" name="dlvr-address-type">
+                                <label class="a-label js-a-label u-no-select custom-radio" for="dlvr-address-type-2"></label>
+                            </div>
+                            <div class="gubun"><label class="a-label js-a-label label-text" for="dlvr-address-type-2">지번</label></div>
+                            <div class="address-text">
+                                <p><label class="a-label js-a-label label-text" for="dlvr-address-type-2">서울시 광진구 구의강변로 1</label></p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <!-- //주소검색선택 -->
+
+                <div class="m-input v3" data-component="MInput">
+                    <input class="a-input js-a-input"
+                           placeholder="상세주소를 입력해 주세요."
+                           type="text"
+                           name="detail-address"
+                           id="detail-address"
+                           required=""
+                           data-validation-required-text="상세주소를 입력해 주세요">
+                    <label class="a-label js-a-label" for="detail-address" data-placeholder=""></label>
+                </div>
+
+                <div class="button-container col-2">
+                    <button class="a-button is-outlined js-close-button" type="button">
+                        <span>취소</span>
+                    </button>
+                    <button class="a-button is-primary btn-save" type="button">
+                        <span>확인</span>
+                    </button>
+                </div>
+
+            </div>
+            <!-- //con-step3 -->
+            
+        </div>
+    </div>
+
+    <!-- tip : when develop this script must be delete -->
+    <script type="text/javascript">
+        (function() {
+            setTimeout(function(){
+                let btnAddressSearch = document.querySelector('.btn-address-search');
+                if(btnAddressSearch) {
+                    btnAddressSearch.addEventListener('click', function (_evt) {
+                        _evt.preventDefault();
+                        _evt.stopPropagation();
+                        let tempWrap = this.closest('.lp-find-address');
+                        if(tempWrap && !tempWrap.classList.contains('step2')){
+                            tempWrap.classList.add('step2')
+                        }
+                        if(tempWrap && tempWrap.classList.contains('step3')){
+                            tempWrap.classList.remove('step3')
+                        }
+                    });
+                }
+                let aTagAddressItem = document.querySelectorAll('.find-address-result li a');
+                if(aTagAddressItem){
+                    Array.prototype.slice.call(aTagAddressItem).forEach( function (_obj) {
+                        _obj.addEventListener('click', function (_evt) {
+                            _evt.preventDefault();
+                            _evt.stopPropagation();
+                            let tempWrap = this.closest('.lp-find-address');
+                            if(tempWrap && tempWrap.classList.contains('step2')){
+                                tempWrap.classList.remove('step2')
+                            }
+                            if(tempWrap && !tempWrap.classList.contains('step3')){
+                                tempWrap.classList.add('step3')
+                            }
+                        });
+                    });
+                }
+            },100);
+        })();
+    </script>
+    <!-- //tip -->
+
+</script>
+<!-- //lp-find-address -->
+
+
+
+
+<!-- //handlebars-template -->
+                        </li>
+                    </ul>
+                </div>
+                <!-- //rd-toggle-con : 배송지목록 -->
+
+                <!-- rd-toggle-con : 새로입력 -->
+                <div class="rd-toggle-con rd-toggle-con-new is-hidden-strong"  data-name="delivery-input-cate">
+                    
+                    <!-- 배송지새로입력 -->
+<form class="o-form" data-component="OForm" action="" method="POST">
+    <div class="my-delivery-input">
+        <div class="m-input v3" data-component="MInput">
+            <label class="a-label js-a-label" for="my-dlvr-name">이름(필수)</label>
+            <input class="a-input js-a-input"
+                   placeholder="이름(필수)"
+                   type="text"
+                   value=""
+                   name="my-dlvr-name"
+                   id="my-dlvr-name"
+                   pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                   data-validation-required-text="이름을 입력하세요."
+                   data-validation-pattern-text="주문고객 이름은 한글, 영문만 가능합니다">
+            <label class="a-label js-a-label" for="my-dlvr-name" data-placeholder=""></label>
+        </div>
+
+        <div class="m-input v3" data-component="MInput">
+            <label class="a-label js-a-label" for="my-dlvr-phone">휴대폰 번호</label>
+            <input class="a-input js-a-input"
+                   placeholder="휴대폰 번호"
+                   type="tel"
+                   value=""
+                   name="my-dlvr-phone"
+                   id="my-dlvr-phone"
+                   pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                   data-validation-required-text="휴대폰 번호을 입력하세요."
+                   data-validation-pattern-text="올바른 전화번호 형식이 아닙니다.">
+            <label class="a-label js-a-label" for="my-dlvr-phone" data-placeholder=""></label>
+        </div>
+
+        <div class="m-input v3" data-component="MInput">
+            <label class="a-label js-a-label" for="my-dlvr-phone2">추가연락처</label>
+            <input class="a-input js-a-input"
+                   placeholder="추가연락처"
+                   type="tel"
+                   value=""
+                   name="my-dlvr-phone2"
+                   id="my-dlvr-phone2"
+                   pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                   data-validation-required-text="휴대폰 번호을 입력하세요."
+                   data-validation-pattern-text="올바른 전화번호 형식이 아닙니다.">
+            <label class="a-label js-a-label" for="my-dlvr-phone2" data-placeholder=""></label>
+        </div>
+
+        <div class="m-input v3 is-readonly with-button" data-component="MInput">
+            <label class="a-label js-a-label" for="my-dlvr-zipcode">우편번호</label>
+            <input class="a-input js-a-input"
+                   placeholder="우편번호"
+                   type="text"
+                   name="my-dlvr-zipcode"
+                   id="my-dlvr-zipcode"
+                   readonly="readonly"
+                   required="">
+            <button class="a-button is-primary sm open-lightbox" type="button" data-template="lp-find-address"><span>찾기</span></button>
+            <label class="a-label js-a-label" for="my-dlvr-zipcode" data-placeholder=""></label>
+        </div>
+
+        <div class="m-input v3 is-readonly" data-component="MInput">
+            <label class="a-label js-a-label" for="my-dlvr-address1">기본주소</label>
+            <input class="a-input js-a-input"
+                   placeholder="기본주소"
+                   type="text"
+                   value=""
+                   name="my-dlvr-address1"
+                   id="my-dlvr-address1"
+                   readonly="readonly">
+            <label class="a-label js-a-label" for="my-dlvr-address1" data-placeholder=""></label>
+        </div>
+
+        <div class="m-input v3" data-component="MInput">
+            <label class="a-label js-a-label" for="my-dlvr-address2">상세주소</label>
+            <input class="a-input js-a-input"
+                   placeholder="상세주소"
+                   type="text"
+                   value=""
+                   name="my-dlvr-address2"
+                   id="my-dlvr-address2"
+                   data-validation-required-text="배송지 주소를 입력해 주세요">
+            <label class="a-label js-a-label" for="my-dlvr-address2" data-placeholder=""></label>
+        </div>
+
+        <div class="set-default-delivery">
+            <span class="m-checkbox v2 u-clearfix" id="checkbox1">
+                <input class="a-checkbox" type="checkbox" id="check-set-default-dlvr">
+                <label class="a-label js-a-label custom-box" for="check-set-default-dlvr" tabindex="0"></label>
+                <label class="a-label js-a-label" for="check-set-default-dlvr">기본배송지 설정</label>
+            </span>
+        </div>
+
+        <div class="button-container">
+            <button type="submit" class="a-button is-primary btn-my-dlvr-add">확인</button>
+        </div>
+
+    </div>
+</form>
+<!-- //배송지새로입력 -->
+
+<!-- handlebars-template -->
+
+<!-- lp-find-address -->
+<script type="text/x-handlebars-template" id="lp-find-address">
+    <!-- tip : step1, step2, step3 유무로 con-step1, con-step2, con-step3 토글 -->
+    <div class="lightbox-content-dft lp-find-address step1">
+        <div class="m-headline is-main-headline">
+            <h2 class="a-heading-2"><span>주소 검색</span></h2>
+        </div>
+        <div class="content">
+            <form class="o-form" data-component="OForm" action="" method="POST">
+                <p class="guide-text sm">찾고자 하는 주소를 입력하신 후 검색을 누르세요.</p>
+                <div class="m-input v3 with-button" data-component="MInput">
+                    <input class="a-input js-a-input"
+                           placeholder="구의강변로"
+                           type="text"
+                           name="address-keyword"
+                           id="address-keyword"
+                           required=""
+                           data-validation-required-text="검색할 주소를 입력해주세요"
+                           data-validation-pattern-text="지역명을 입력해주세요">
+                    <button class="a-button is-primary sm btn-address-search" type="submit"><span>검색</span></button>
+                    <label class="a-label js-a-label" for="address-keyword" data-placeholder=""></label>
+                </div>
+                <p class="guide-text sm">예: 동(읍/면)명 또는 도로명주소(건물번호/ 건물명)일부 군사지역은 배송이 불가능할 수 있습니다.</p>
+            </form>
+
+            <!-- con-step2 -->
+            <div class="con-step2">
+                <div class="justify-bx">
+                    <div class="m-dropdown v3 cate-address-select">
+                        <label class="a-label js-a-label" for="cate-si-do"></label>
+                        <select name="selectSize" id="cate-si-do">
+                            <option class="a-option">시/도</option>
+                            <option class="a-option">경기도</option>
+                            <option class="a-option">강원도</option>
+                            <option class="a-option">충청북도</option>
+                        </select>
+                        <span class="a-icon-accordion a-icon-arrow-down-small"></span>
+                    </div>
+                    <div class="m-dropdown v3 cate-address-select">
+                        <label class="a-label js-a-label" for="cate-gun-gu"></label>
+                        <select name="selectSize" id="cate-si-do">
+                            <option class="a-option">군/구</option>
+                            <option class="a-option">구로구</option>
+                            <option class="a-option">양천구</option>
+                            <option class="a-option">마포구</option>
+                        </select>
+                        <span class="a-icon-accordion a-icon-arrow-down-small"></span>
+                    </div>
+                </div>
+
+                <!-- 주소검색결과 -->
+                <ul class="find-address-result">
+                    <li>
+                        <a href="#none">
+                            <div class="address-item">
+                                <div class="gubun">도로명<br>지번</div>
+                                <div class="address-text">
+                                    <p>서울시 광진구 구의강변로 1</p>
+                                    <p>서울시 광진구 구의동 624-1</p>
+                                </div>
+                                <div class="zip-code"><span>05116</span></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none">
+                            <div class="address-item">
+                                <div class="gubun">도로명<br>지번</div>
+                                <div class="address-text">
+                                    <p>서울시 광진구 구의강변로 1</p>
+                                    <p>서울시 광진구 구의동 624-1</p>
+                                </div>
+                                <div class="zip-code"><span>05116</span></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none">
+                            <div class="address-item">
+                                <div class="gubun">도로명<br>지번</div>
+                                <div class="address-text">
+                                    <p>서울시 광진구 구의강변로 1</p>
+                                    <p>서울시 광진구 구의동 624-1</p>
+                                </div>
+                                <div class="zip-code"><span>05116</span></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none">
+                            <div class="address-item">
+                                <div class="gubun">도로명<br>지번</div>
+                                <div class="address-text">
+                                    <p>서울시 광진구 구의강변로 1</p>
+                                    <p>서울시 광진구 구의동 624-1</p>
+                                </div>
+                                <div class="zip-code"><span>05116</span></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none">
+                            <div class="address-item">
+                                <div class="gubun">도로명<br>지번</div>
+                                <div class="address-text">
+                                    <p>서울시 광진구 구의강변로 1</p>
+                                    <p>서울시 광진구 구의동 624-1</p>
+                                </div>
+                                <div class="zip-code"><span>05116</span></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none">
+                            <div class="address-item">
+                                <div class="gubun">도로명<br>지번</div>
+                                <div class="address-text">
+                                    <p>서울시 광진구 구의강변로 1</p>
+                                    <p>서울시 광진구 구의동 624-1</p>
+                                </div>
+                                <div class="zip-code"><span>05116</span></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none">
+                            <div class="address-item">
+                                <div class="gubun">도로명<br>지번</div>
+                                <div class="address-text">
+                                    <p>서울시 광진구 구의강변로 1</p>
+                                    <p>서울시 광진구 구의동 624-1</p>
+                                </div>
+                                <div class="zip-code"><span>05116</span></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none">
+                            <div class="address-item">
+                                <div class="gubun">도로명<br>지번</div>
+                                <div class="address-text">
+                                    <p>서울시 광진구 구의강변로 1</p>
+                                    <p>서울시 광진구 구의동 624-1</p>
+                                </div>
+                                <div class="zip-code"><span>05116</span></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none">
+                            <div class="address-item">
+                                <div class="gubun">도로명<br>지번</div>
+                                <div class="address-text">
+                                    <p>서울시 광진구 구의강변로 1</p>
+                                    <p>서울시 광진구 구의동 624-1</p>
+                                </div>
+                                <div class="zip-code"><span>05116</span></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none">
+                            <div class="address-item">
+                                <div class="gubun">도로명<br>지번</div>
+                                <div class="address-text">
+                                    <p>서울시 광진구 구의강변로 1</p>
+                                    <p>서울시 광진구 구의동 624-1</p>
+                                </div>
+                                <div class="zip-code"><span>05116</span></div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <!-- //주소검색결과 -->
+
+                <!-- 주소검색결과 없을 경우 -->
+                <div class="find-address-result">
+                    <p class="empty-item">검색된 주소가 업습니다.</p>
+                </div>
+                <!-- //주소검색결과 없을 경우 -->
+            </div>
+            <!-- //con-step2 -->
+
+            <!-- con-step3 -->
+            <div class="con-step3">
+                <p class="tit-text">상세주소 입력</p>
+                <p class="guide-text sm">저장하고 싶은 방식의 주소를 선택하시고 나머지 주소를 입력해 주세요</p>
+
+                <!-- 주소검색선택 -->
+                <ul class="find-address-result">
+                    <li>
+                        <div class="address-item mode-select">
+                            <div class="m-radio-button v3">
+                                <input type="radio" class="a-radio-button" id="dlvr-address-type-1" name="dlvr-address-type">
+                                <label class="a-label js-a-label u-no-select custom-radio" for="dlvr-address-type-1"></label>
+                            </div>
+                            <div class="gubun"><label class="a-label js-a-label label-text" for="dlvr-address-type-1">도로명</label></div>
+                            <div class="address-text">
+                                <p><label class="a-label js-a-label label-text" for="dlvr-address-type-1">서울시 광진구 구의강변로 1 서울시 광진구 구의강변로 1서울시 광진구 구의강변로 1</label></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="address-item mode-select">
+                            <div class="m-radio-button v3">
+                                <input type="radio" class="a-radio-button" id="dlvr-address-type-2" name="dlvr-address-type">
+                                <label class="a-label js-a-label u-no-select custom-radio" for="dlvr-address-type-2"></label>
+                            </div>
+                            <div class="gubun"><label class="a-label js-a-label label-text" for="dlvr-address-type-2">지번</label></div>
+                            <div class="address-text">
+                                <p><label class="a-label js-a-label label-text" for="dlvr-address-type-2">서울시 광진구 구의강변로 1</label></p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <!-- //주소검색선택 -->
+
+                <div class="m-input v3" data-component="MInput">
+                    <input class="a-input js-a-input"
+                           placeholder="상세주소를 입력해 주세요."
+                           type="text"
+                           name="detail-address"
+                           id="detail-address"
+                           required=""
+                           data-validation-required-text="상세주소를 입력해 주세요">
+                    <label class="a-label js-a-label" for="detail-address" data-placeholder=""></label>
+                </div>
+
+                <div class="button-container col-2">
+                    <button class="a-button is-outlined js-close-button" type="button">
+                        <span>취소</span>
+                    </button>
+                    <button class="a-button is-primary btn-save" type="button">
+                        <span>확인</span>
+                    </button>
+                </div>
+
+            </div>
+            <!-- //con-step3 -->
+            
+        </div>
+    </div>
+
+    <!-- tip : when develop this script must be delete -->
+    <script type="text/javascript">
+        (function() {
+            setTimeout(function(){
+                let btnAddressSearch = document.querySelector('.btn-address-search');
+                if(btnAddressSearch) {
+                    btnAddressSearch.addEventListener('click', function (_evt) {
+                        _evt.preventDefault();
+                        _evt.stopPropagation();
+                        let tempWrap = this.closest('.lp-find-address');
+                        if(tempWrap && !tempWrap.classList.contains('step2')){
+                            tempWrap.classList.add('step2')
+                        }
+                        if(tempWrap && tempWrap.classList.contains('step3')){
+                            tempWrap.classList.remove('step3')
+                        }
+                    });
+                }
+                let aTagAddressItem = document.querySelectorAll('.find-address-result li a');
+                if(aTagAddressItem){
+                    Array.prototype.slice.call(aTagAddressItem).forEach( function (_obj) {
+                        _obj.addEventListener('click', function (_evt) {
+                            _evt.preventDefault();
+                            _evt.stopPropagation();
+                            let tempWrap = this.closest('.lp-find-address');
+                            if(tempWrap && tempWrap.classList.contains('step2')){
+                                tempWrap.classList.remove('step2')
+                            }
+                            if(tempWrap && !tempWrap.classList.contains('step3')){
+                                tempWrap.classList.add('step3')
+                            }
+                        });
+                    });
+                }
+            },100);
+        })();
+    </script>
+    <!-- //tip -->
+
+</script>
+<!-- //lp-find-address -->
+
+
+
+
+<!-- //handlebars-template -->
+                </div>
+                <!-- //rd-toggle-con : 새로입력 -->
+
+                
+                <!-- delivery-request -->
+<div class="delivery-request">
+    <p class="dft-bx-tit">배송시 요청사항</p>
+    <div class="m-dropdown v3">
+        <label class="a-label js-a-label" for="delivery-msg-dropdown"></label>
+        <select name="selectSize" id="delivery-msg-dropdown">
+            <option class="a-option">배송시 요청사항을 선택해주세요.</option>
+            <option class="a-option">배송 전 연락바랍니다.</option>
+            <option class="a-option">택배 함에 놔주세요</option>
+            <option class="a-option">집 앞에 놔주세요.</option>
+            <option class="a-option">빠른 배송 부탁 드립니다.</option>
+            <option class="a-option">부재 시 경비실에 맡겨주세요.</option>
+            <option class="a-option">휴대폰으로 연락 부탁 드립니다.</option>
+        </select>
+        <span class="a-icon-accordion a-icon-arrow-down-small"></span>
+    </div>
+
+    <div class="m-input v3" data-component="MInput">
+        <label class="a-label js-a-label" for="delivery-requset-msg">기타 내용을 입력해 주세요</label>
+        <input class="a-input js-a-input"
+               type="text"
+               name="delivery-requset-msg"
+               id="delivery-requset-msg"
+               placeholder="기타 내용을 입력해 주세요">
+        <label class="a-label js-a-label" for="delivery-requset-msg" data-placeholder=""></label>
+        <div class="text-count-bx">
+            <span class="text-count">0</span>
+            <span class="text-total-count">/30자</span>
+        </div>
+    </div>
+    <p class="guide-text">주문시 입력한 배송지는 자동으로 배송지목록에 추가됩니다.</p>
+</div>
+<!-- //delivery-request -->
+
             </div>
             <!-- delivery-info-bx -->
 
@@ -2164,12 +3355,12 @@
             <h2 class="a-heading-2">할인</h2>
             <div class="dft-bx line-bx discount-info-bx">
                 <p class="dft-bx-tit">예치금</p>
-                <div class="m-input v2" data-component="MInput">
-                    <input class="a-input js-a-input v2"
+                <div class="m-input v3" data-component="MInput">
+                    <input class="a-input js-a-input v3"
                            type="numpber"
                            name="delivery-requset-msg"
                            id="delivery-requset-msg"
-                           placeholder="기타 내용을 입력해 주세요">
+                           placeholder="0">
                     <label class="a-label js-a-label" for="delivery-requset-msg" data-placeholder=""></label>
                     <a class="a-link a-link-udln" href="#" target="_self">모두 사용</a>
                     <p class="deposit-price">52,090</p>
@@ -2184,57 +3375,458 @@
                 </ul>
                 <ul class="promotion-info-bx">
                     <li>
-                        <span class="discount-name"><b>임직원 카드할인</b></span>
+                        <span class="discount-name"><b>임직원 할인</b></span>
                         <span class="discount-price">25,789</span>
                     </li>
                 </ul>
             </div>
             <!-- //discount-info-bx -->
 
+            
             <!-- pay-info-bx -->
-            <h2 class="a-heading-2">결제</h2>
-            <div class="dft-bx line-bx pay-info-bx">
-                <div class="radio-button-list vertical">
-                    <div class="m-radio-button v3">
-                        <input type="radio" class="a-radio-button" id="pay-way-radio1" name="pay-way-radio">
-                        <label class="a-label js-a-label u-no-select custom-radio" for="pay-way-radio1"></label>
-                        <label class="a-label js-a-label label-text" for="pay-way-radio1">카드결제</label>
-                    </div>
-                    <div class="m-radio-button v3">
-                        <input type="radio" class="a-radio-button" id="pay-way-radio2" name="pay-way-radio">
-                        <label class="a-label js-a-label u-no-select custom-radio" for="pay-way-radio2"></label>
-                        <label class="a-label js-a-label label-text" for="pay-way-radio2">무통장입금</label>
-                    </div>
-                    <div class="m-radio-button v3">
-                        <input type="radio" class="a-radio-button" id="pay-way-radio3" name="pay-way-radio">
-                        <label class="a-label js-a-label u-no-select custom-radio" for="pay-way-radio3"></label>
-                        <label class="a-label js-a-label label-text" for="pay-way-radio3">실시간 계좌이체</label>
-                    </div>
-                    <div class="m-radio-button v3">
-                        <input type="radio" class="a-radio-button" id="pay-way-radio4" name="pay-way-radio">
-                        <label class="a-label js-a-label u-no-select custom-radio" for="pay-way-radio4"></label>
-                        <label class="a-label js-a-label label-text" for="pay-way-radio4">휴대폰결제</label>
-                    </div>
-                    <div class="m-radio-button v3">
-                        <input type="radio" class="a-radio-button" id="pay-way-radio5" name="pay-way-radio">
-                        <label class="a-label js-a-label u-no-select custom-radio" for="pay-way-radio5"></label>
-                        <label class="a-label js-a-label label-text" for="pay-way-radio5">네이버페이</label>
-                    </div>
-                    <!--
-                    <div class="m-radio-button v3">
-                        <input type="radio" class="a-radio-button" id="pay-way-radio6" name="pay-way-radio">
-                        <label class="a-label js-a-label u-no-select custom-radio" for="pay-way-radio6"></label>
-                        <label class="a-label js-a-label label-text" for="pay-way-radio6">페이코</label>
-                    </div>
-                    <div class="m-radio-button v3">
-                        <input type="radio" class="a-radio-button" id="pay-way-radio7" name="pay-way-radio">
-                        <label class="a-label js-a-label u-no-select custom-radio" for="pay-way-radio7"></label>
-                        <label class="a-label js-a-label label-text" for="pay-way-radio7">토스</label>
-                    </div>
-                    -->
+<h2 class="a-heading-2">결제</h2>
+<div class="dft-bx line-bx pay-info-bx">
+    <div class="radio-button-list vertical">
+
+        <!-- rd-toggle : 카드결제 -->
+        <div class="m-radio-button v3">
+            <input type="radio" class="a-radio-button rd-toggle" id="pay-way-radio1" name="pay-way-radio" data-toggle-target="rd-toggle-pay-credit">
+            <label class="a-label js-a-label u-no-select custom-radio" for="pay-way-radio1"></label>
+            <label class="a-label js-a-label label-text" for="pay-way-radio1">카드결제</label>
+        </div>
+        <!-- rd-toggle-con -->
+        <div class="rd-toggle-con rd-toggle-pay-credit is-hidden-strong" data-name="pay-way-radio">
+
+            <div class="radio-button-list horizon line-bx">
+                <div class="m-radio-button v3">
+                    <input type="radio" class="a-radio-button rd-toggle" id="pay-way-credit-samsung" name="pay-way-credit" data-toggle-target="rd-toggle-credit-samsung">
+                    <label class="a-label js-a-label u-no-select custom-radio" for="pay-way-credit-samsung"></label>
+                    <label class="a-label js-a-label label-text" for="pay-way-credit-samsung">삼성카드</label>
+                </div>
+                <div class="m-radio-button v3">
+                    <input type="radio" class="a-radio-button rd-toggle" id="pay-way-credit-kb" name="pay-way-credit" data-toggle-target="rd-toggle-credit-kb">
+                    <label class="a-label js-a-label u-no-select custom-radio" for="pay-way-credit-kb"></label>
+                    <label class="a-label js-a-label label-text" for="pay-way-credit-kb">KB국민카드</label>
+                </div>
+                <div class="m-radio-button v3">
+                    <input type="radio" class="a-radio-button rd-toggle" id="pay-way-credit-hyundai" name="pay-way-credit" data-toggle-target="rd-toggle-credit-hyundai">
+                    <label class="a-label js-a-label u-no-select custom-radio" for="pay-way-credit-hyundai"></label>
+                    <label class="a-label js-a-label label-text" for="pay-way-credit-hyundai">현대카드</label>
+                </div>
+                <div class="m-radio-button v3">
+                    <input type="radio" class="a-radio-button rd-toggle" id="pay-way-credit-shinhan" name="pay-way-credit" data-toggle-target="rd-toggle-credit-shinhan">
+                    <label class="a-label js-a-label u-no-select custom-radio" for="pay-way-credit-shinhan"></label>
+                    <label class="a-label js-a-label label-text" for="pay-way-credit-shinhan">신한카드</label>
+                </div>
+                <div class="m-radio-button v3">
+                    <input type="radio" class="a-radio-button rd-toggle" id="pay-way-credit-bc" name="pay-way-credit" data-toggle-target="rd-toggle-credit-bc">
+                    <label class="a-label js-a-label u-no-select custom-radio" for="pay-way-credit-bc"></label>
+                    <label class="a-label js-a-label label-text" for="pay-way-credit-bc">BC카드</label>
+                </div>
+                <div class="m-radio-button v3">
+                    <input type="radio" class="a-radio-button rd-toggle" id="pay-way-credit-nh" name="pay-way-credit" data-toggle-target="rd-toggle-credit-nh">
+                    <label class="a-label js-a-label u-no-select custom-radio" for="pay-way-credit-nh"></label>
+                    <label class="a-label js-a-label label-text" for="pay-way-credit-nh">NH농협카드</label>
+                </div>
+                <div class="m-radio-button v3">
+                    <input type="radio" class="a-radio-button rd-toggle" id="pay-way-credit-keb" name="pay-way-credit" data-toggle-target="rd-toggle-credit-keb">
+                    <label class="a-label js-a-label u-no-select custom-radio" for="pay-way-credit-keb"></label>
+                    <label class="a-label js-a-label label-text" for="pay-way-credit-keb">KEB하나카드</label>
+                </div>
+                <div class="m-radio-button v3">
+                    <input type="radio" class="a-radio-button rd-toggle" id="pay-way-credit-lotte" name="pay-way-credit" data-toggle-target="rd-toggle-credit-lotte">
+                    <label class="a-label js-a-label u-no-select custom-radio" for="pay-way-credit-lotte"></label>
+                    <label class="a-label js-a-label label-text" for="pay-way-credit-lotte">롯데카드</label>
+                </div>
+                <div class="m-radio-button v3">
+                    <input type="radio" class="a-radio-button rd-toggle" id="pay-way-credit-kakao" name="pay-way-credit" data-toggle-target="rd-toggle-credit-kakao">
+                    <label class="a-label js-a-label u-no-select custom-radio" for="pay-way-credit-kakao"></label>
+                    <label class="a-label js-a-label label-text" for="pay-way-credit-kakao">카카오뱅크</label>
+                </div>
+                <div class="m-radio-button v3">
+                    <input type="radio" class="a-radio-button rd-toggle" id="pay-way-credit-kbank" name="pay-way-credit" data-toggle-target="rd-toggle-credit-kbank">
+                    <label class="a-label js-a-label u-no-select custom-radio" for="pay-way-credit-kbank"></label>
+                    <label class="a-label js-a-label label-text" for="pay-way-credit-kbank">케이뱅크카드</label>
+                </div>
+                <div class="m-radio-button v3">
+                    <input type="radio" class="a-radio-button rd-toggle" id="pay-way-credit-hpoint" name="pay-way-credit" data-toggle-target="rd-toggle-credit-hpoint">
+                    <label class="a-label js-a-label u-no-select custom-radio" for="pay-way-credit-hpoint"></label>
+                    <label class="a-label js-a-label label-text" for="pay-way-credit-hpoint">H.Point KB카드</label>
                 </div>
             </div>
-            <!-- //pay-info-bx -->
+
+            <!-- rd-toggle-con -->
+            <div class="rd-toggle-con depth2 rd-toggle-credit-samsung is-hidden-strong" data-name="pay-way-credit">
+                <div class="line-bx">
+                    <p class="guide-text">[삼성카드 결제시 <span class="fc-point2">5%</span> 할인으로 <span class="fc-point2">3,310원</span> 청구 예정]</p>
+                    <div class="monthly-plan-bx justify-bx">
+                        <span>할부선택</span>
+                        <div class="m-dropdown v3">
+                            <label class="a-label js-a-label" for=""></label>
+                            <select name="selectSize" id="select-monthly-plan">
+                                <option class="a-option">일시불</option>
+                            </select>
+                            <span class="a-icon-accordion a-icon-arrow-down-small"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //rd-toggle-con -->
+
+            <!-- rd-toggle-con -->
+            <div class="rd-toggle-con depth2 rd-toggle-credit-hyundai is-hidden-strong" data-name="pay-way-credit">
+                <div class="line-bx">
+                    <div class="monthly-plan-bx justify-bx">
+                        <span>할부선택</span>
+                        <div class="m-dropdown v3">
+                            <label class="a-label js-a-label" for=""></label>
+                            <select name="selectSize" id="select-monthly-plan">
+                                <option class="a-option">일시불</option>
+                            </select>
+                            <span class="a-icon-accordion a-icon-arrow-down-small"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //rd-toggle-con -->
+
+            <!-- rd-toggle-con -->
+            <div class="rd-toggle-con depth2 rd-toggle-credit-bc is-hidden-strong" data-name="pay-way-credit">
+                <div class="line-bx">
+                    <p class="tit-text">BC카드종류</p>
+                    <p class="desc-text">교보증권, 유진투자증권, 미래에셋증권, 유안타증권, DB금융투자, SK증권, NH투자증권, 코나카드,토스카드, 산림조합, 한국투자증권, 은행카드</p>
+                </div>
+            </div>
+            <!-- //rd-toggle-con -->
+
+            <!-- rd-toggle-con -->
+            <div class="rd-toggle-con depth2 rd-toggle-credit-hpoint is-hidden-strong" data-name="pay-way-credit">
+                <div class="line-bx">
+                    <p class="tit-text">H.Point 추가적립</p>
+                    <p class="guide-text">결제금액 최대 1.5% H.Point 추가적립(기본적립율 포함 최대 1.65% 적립)<br>카드대금 결제일 다음주 첫 영업일 적립</p>
+                </div>
+            </div>
+            <!-- //rd-toggle-con -->
+
+        </div>
+        <!-- //rd-toggle-con -->
+        <!-- //rd-toggle : 카드결제 -->
+
+        <!-- rd-toggle : 무통장입금 -->
+        <div class="m-radio-button v3">
+            <input type="radio" class="a-radio-button rd-toggle" id="pay-way-radio2" name="pay-way-radio" data-toggle-target="rd-toggle-pay-deposit">
+            <label class="a-label js-a-label u-no-select custom-radio" for="pay-way-radio2"></label>
+            <label class="a-label js-a-label label-text" for="pay-way-radio2">무통장입금</label>
+        </div>
+        <!-- rd-toggle-con -->
+        <div class="rd-toggle-con rd-toggle-pay-deposit is-hidden-strong" data-name="pay-way-radio">
+
+            <div class="radio-button-list horizon line-bx">
+                <div class="m-radio-button v3">
+                    <input type="radio" class="a-radio-button" id="pay-way-deposit-nh" name="pay-way-deposit">
+                    <label class="a-label js-a-label u-no-select custom-radio" for="pay-way-deposit-nh"></label>
+                    <label class="a-label js-a-label label-text" for="pay-way-deposit-nh">NH농협</label>
+                </div>
+                <div class="m-radio-button v3">
+                    <input type="radio" class="a-radio-button" id="pay-way-deposit-kb" name="pay-way-deposit">
+                    <label class="a-label js-a-label u-no-select custom-radio" for="pay-way-deposit-kb"></label>
+                    <label class="a-label js-a-label label-text" for="pay-way-deposit-kb">KB국민</label>
+                </div>
+                <div class="m-radio-button v3">
+                    <input type="radio" class="a-radio-button" id="pay-way-deposit-woori" name="pay-way-deposit">
+                    <label class="a-label js-a-label u-no-select custom-radio" for="pay-way-deposit-woori"></label>
+                    <label class="a-label js-a-label label-text" for="pay-way-deposit-woori">우리</label>
+                </div>
+                <div class="m-radio-button v3">
+                    <input type="radio" class="a-radio-button" id="pay-way-deposit-shinhan" name="pay-way-deposit">
+                    <label class="a-label js-a-label u-no-select custom-radio" for="pay-way-deposit-shinhan"></label>
+                    <label class="a-label js-a-label label-text" for="pay-way-deposit-shinhan">신한</label>
+                </div>
+                <div class="m-radio-button v3">
+                    <input type="radio" class="a-radio-button" id="pay-way-deposit-ibk" name="pay-way-deposit">
+                    <label class="a-label js-a-label u-no-select custom-radio" for="pay-way-deposit-ibk"></label>
+                    <label class="a-label js-a-label label-text" for="pay-way-deposit-ibk">IBK기업</label>
+                </div>
+                <div class="m-radio-button v3">
+                    <input type="radio" class="a-radio-button" id="pay-way-deposit-daegu" name="pay-way-deposit">
+                    <label class="a-label js-a-label u-no-select custom-radio" for="pay-way-deposit-daegu"></label>
+                    <label class="a-label js-a-label label-text" for="pay-way-deposit-daegu">대구</label>
+                </div>
+                <div class="m-radio-button v3">
+                    <input type="radio" class="a-radio-button" id="pay-way-deposit-busan" name="pay-way-deposit">
+                    <label class="a-label js-a-label u-no-select custom-radio" for="pay-way-deposit-busan"></label>
+                    <label class="a-label js-a-label label-text" for="pay-way-deposit-busan">부산</label>
+                </div>
+                <div class="m-radio-button v3">
+                    <input type="radio" class="a-radio-button" id="pay-way-deposit-post" name="pay-way-deposit">
+                    <label class="a-label js-a-label u-no-select custom-radio" for="pay-way-deposit-post"></label>
+                    <label class="a-label js-a-label label-text" for="pay-way-deposit-post">우체구</label>
+                </div>
+                <div class="m-radio-button v3">
+                    <input type="radio" class="a-radio-button" id="pay-way-deposit-keb" name="pay-way-deposit">
+                    <label class="a-label js-a-label u-no-select custom-radio" for="pay-way-deposit-keb"></label>
+                    <label class="a-label js-a-label label-text" for="pay-way-deposit-keb">KEB하나</label>
+                </div>
+                <div class="m-radio-button v3">
+                    <input type="radio" class="a-radio-button" id="pay-way-deposit-kyungnam" name="pay-way-deposit">
+                    <label class="a-label js-a-label u-no-select custom-radio" for="pay-way-deposit-kyungnam"></label>
+                    <label class="a-label js-a-label label-text" for="pay-way-deposit-kyungnam">경남</label>
+                </div>
+            </div>
+
+            <div class="rd-toggle-con depth2">
+                <div class="line-bx">
+                    <p class="tit-text">입금자명</p>
+                    <div class="m-input v3" data-component="MInput">
+                        <input class="a-input js-a-input v3"
+                               type="text"
+                               name="deposit-sender"
+                               id="deposit-sender"
+                               value="홍길동">
+                        <label class="a-label js-a-label" for="delivery-requset-msg" data-placeholder=""></label>
+                    </div>
+                    <p class="desc-text">무통장입금 정보는 결제 시 보여집니다.</p>
+                    <p class="desc-text">무통장입금계좌번호는 주문접수 후 즉 시 주문하시는 분의 휴대폰번호와 이메일로 자동 발송됩니다.</p>
+                </div>
+            </div>
+
+            
+            <!-- rd-toggle-con : depth2 -->
+<div class="rd-toggle-con depth2">
+    <div class="line-bx">
+        <div class="tit-text">현금영수증 신청</div>
+        <div class="radio-button-list horizon">
+            <div class="m-radio-button v3">
+                <input type="radio" class="a-radio-button rd-toggle" id="pay-way-cash-receipt-1" name="pay-way-cash-receipt" data-toggle-target="rd-toggle-cash-receipt-1">
+                <label class="a-label js-a-label u-no-select custom-radio" for="pay-way-cash-receipt-1"></label>
+                <label class="a-label js-a-label label-text" for="pay-way-cash-receipt-1">소득공제용</label>
+            </div>
+            <div class="m-radio-button v3">
+                <input type="radio" class="a-radio-button rd-toggle" id="pay-way-cash-receipt-2" name="pay-way-cash-receipt" data-toggle-target="rd-toggle-cash-receipt-2">
+                <label class="a-label js-a-label u-no-select custom-radio" for="pay-way-cash-receipt-2"></label>
+                <label class="a-label js-a-label label-text" for="pay-way-cash-receipt-2">지출증빙용</label>
+            </div>
+            <div class="m-radio-button v3">
+                <input type="radio" class="a-radio-button rd-toggle" id="pay-way-cash-receipt-3" name="pay-way-cash-receipt" checked>
+                <label class="a-label js-a-label u-no-select custom-radio" for="pay-way-cash-receipt-3"></label>
+                <label class="a-label js-a-label label-text" for="pay-way-cash-receipt-3">신청안함</label>
+            </div>
+        </div>
+
+        <!-- rd-toggle-con -->
+        <div class="rd-toggle-con depth3 rd-toggle-cash-receipt-1 is-hidden-strong" data-name="pay-way-cash-receipt">
+            <div class="m-input v3" data-component="MInput">
+                <label class="a-label js-a-label" for="cash-receipt-phone">휴대폰 번호</label>
+                <input class="a-input js-a-input"
+                       placeholder="휴대폰 번호"
+                       type="tel"
+                       name="cash-receipt-phone"
+                       id="cash-receipt-phone"
+                       pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                       data-validation-required-text="휴대폰 번호을 입력하세요."
+                       data-validation-pattern-text="올바른 전화번호 형식이 아닙니다.">
+                <label class="a-label js-a-label" for="cash-receipt-phone" data-placeholder=""></label>
+            </div>
+        </div>
+        <!-- //rd-toggle-con -->
+
+        <!-- rd-toggle-con -->
+        <div class="rd-toggle-con depth3 rd-toggle-cash-receipt-2 is-hidden-strong" data-name="pay-way-cash-receipt">
+            <div class="m-input v3" data-component="MInput">
+                <label class="a-label js-a-label" for="cash-receipt-biznum">사업자등록번호</label>
+                <input class="a-input js-a-input"
+                       placeholder="사업자등록번호"
+                       type="tel"
+                       name="cash-receipt-biznum"
+                       id="cash-receipt-biznum"
+                       pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                       data-validation-required-text="사업자등록번호을 입력하세요."
+                       data-validation-pattern-text="올바른 사업자등록번호 형식이 아닙니다.">
+                <label class="a-label js-a-label" for="cash-receipt-biznum" data-placeholder=""></label>
+            </div>
+        </div>
+        <!-- //rd-toggle-con -->
+
+    </div>
+</div>
+<!-- rd-toggle-con : depth2 -->
+
+        </div>
+        <!-- //rd-toggle-con-->
+        <!-- //rd-toggle : 무통장입금 -->
+
+        <!-- rd-toggle : 무통장입금(전용계좌번호) -->
+        <div class="m-radio-button v3">
+            <input type="radio" class="a-radio-button rd-toggle" id="pay-way-radio2-1" name="pay-way-radio" data-toggle-target="rd-toggle-pay-deposit-private">
+            <label class="a-label js-a-label u-no-select custom-radio" for="pay-way-radio2-1"></label>
+            <label class="a-label js-a-label label-text" for="pay-way-radio2-1">무통장입금</label>
+        </div>
+        <!-- rd-toggle-con -->
+        <div class="rd-toggle-con rd-toggle-pay-deposit-private is-hidden-strong" data-name="pay-way-radio">
+            <div class="rd-toggle-con depth2">
+                <div class="line-bx">
+                    <p class="desc-text">전용계좌 변경은 마이페이지에서 변경 가능합니다</p>
+                    <div class="flex-bx">
+                        <span class="tit-text">입금금액</span>
+                        <span class="price-won">12,960,652</span>
+                    </div>
+                    <div class="flex-bx">
+                        <span class="tit-text">입금은행</span>
+                        <span>NH농협 <br class="only-m">2560-2890-2310-5</span>
+                    </div>
+                    <div class="flex-bx">
+                        <span class="tit-text">입금자명</span>
+                        <span>홍길동</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //rd-toggle-con -->
+        <!-- //rd-toggle : 무통장입금(전용계좌번호) -->
+
+        <!-- rd-toggle : 실시간계좌이체 -->
+        <div class="m-radio-button v3">
+            <input type="radio" class="a-radio-button rd-toggle" id="pay-way-radio3" name="pay-way-radio" data-toggle-target="rd-toggle-pay-account-transfer">
+            <label class="a-label js-a-label u-no-select custom-radio" for="pay-way-radio3"></label>
+            <label class="a-label js-a-label label-text" for="pay-way-radio3">실시간 계좌이체</label>
+        </div>
+        <!-- rd-toggle-con -->
+        <div class="rd-toggle-con rd-toggle-pay-account-transfer is-hidden-strong" data-name="pay-way-radio">
+            <div class="rd-toggle-con depth2">
+                <div class="line-bx">
+                    <div class="justify-bx">
+                        <span class="tit-text">결제금액</span>
+                        <span class="price-won">12,960,652</span>
+                    </div>
+                    <p class="desc-text">폰뱅킹, 인터넷 뱅킹에 가입하신 고객만 사용 가능합니다. 계좌이체 수수료는 더현대에서 부담합니다.</p>
+                    <p class="desc-text">[결제하기] 버튼을 선택하시면 온라인 계좌이체 화면으로 연결되어 결제를 진행할 수 있습니다.</p>
+                </div>
+            </div>
+            
+            <!-- rd-toggle-con : depth2 -->
+<div class="rd-toggle-con depth2">
+    <div class="line-bx">
+        <div class="tit-text">현금영수증 신청</div>
+        <div class="radio-button-list horizon">
+            <div class="m-radio-button v3">
+                <input type="radio" class="a-radio-button rd-toggle" id="pay-way-cash-receipt-accnt-1" name="pay-way-cash-receipt-accnt" data-toggle-target="rd-toggle-cash-receipt-accnt-1">
+                <label class="a-label js-a-label u-no-select custom-radio" for="pay-way-cash-receipt-accnt-1"></label>
+                <label class="a-label js-a-label label-text" for="pay-way-cash-receipt-accnt-1">소득공제용</label>
+            </div>
+            <div class="m-radio-button v3">
+                <input type="radio" class="a-radio-button rd-toggle" id="pay-way-cash-receipt-accnt-2" name="pay-way-cash-receipt-accnt" data-toggle-target="rd-toggle-cash-receipt-accnt-2">
+                <label class="a-label js-a-label u-no-select custom-radio" for="pay-way-cash-receipt-accnt-2"></label>
+                <label class="a-label js-a-label label-text" for="pay-way-cash-receipt-accnt-2">지출증빙용</label>
+            </div>
+            <div class="m-radio-button v3">
+                <input type="radio" class="a-radio-button rd-toggle" id="pay-way-cash-receipt-accnt-3" name="pay-way-cash-receipt-accnt" checked>
+                <label class="a-label js-a-label u-no-select custom-radio" for="pay-way-cash-receipt-accnt-3"></label>
+                <label class="a-label js-a-label label-text" for="pay-way-cash-receipt-accnt-3">신청안함</label>
+            </div>
+        </div>
+
+        <!-- rd-toggle-con -->
+        <div class="rd-toggle-con depth3 rd-toggle-cash-receipt-accnt-1 is-hidden-strong" data-name="pay-way-cash-receipt-accnt">
+            <div class="m-input v3" data-component="MInput">
+                <label class="a-label js-a-label" for="cash-receipt-accnt-phone">휴대폰 번호</label>
+                <input class="a-input js-a-input"
+                       placeholder="휴대폰 번호"
+                       type="tel"
+                       name="cash-receipt-accnt-phone"
+                       id="cash-receipt-accnt-phone"
+                       pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                       data-validation-required-text="휴대폰 번호을 입력하세요."
+                       data-validation-pattern-text="올바른 전화번호 형식이 아닙니다.">
+                <label class="a-label js-a-label" for="cash-receipt-accnt-phone" data-placeholder=""></label>
+            </div>
+        </div>
+        <!-- //rd-toggle-con -->
+
+        <!-- rd-toggle-con -->
+        <div class="rd-toggle-con depth3 rd-toggle-cash-receipt-accnt-2 is-hidden-strong" data-name="pay-way-cash-receipt-accnt">
+            <div class="m-input v3" data-component="MInput">
+                <label class="a-label js-a-label" for="cash-receipt-accnt-biznum">사업자등록번호</label>
+                <input class="a-input js-a-input"
+                       placeholder="사업자등록번호"
+                       type="tel"
+                       name="cash-receipt-accnt-biznum"
+                       id="cash-receipt-accnt-biznum"
+                       pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                       data-validation-required-text="사업자등록번호을 입력하세요."
+                       data-validation-pattern-text="올바른 사업자등록번호 형식이 아닙니다.">
+                <label class="a-label js-a-label" for="cash-receipt-accnt-biznum" data-placeholder=""></label>
+            </div>
+        </div>
+        <!-- //rd-toggle-con -->
+
+    </div>
+</div>
+<!-- rd-toggle-con : depth2 -->
+        </div>
+        <!-- //rd-toggle-con -->
+        <!-- //rd-toggle : 실시간계좌이체 -->
+
+        <!-- rd-toggle : 휴대폰결제 -->
+        <div class="m-radio-button v3">
+            <input type="radio" class="a-radio-button rd-toggle" id="pay-way-radio4" name="pay-way-radio" data-toggle-target="rd-toggle-pay-mobile">
+            <label class="a-label js-a-label u-no-select custom-radio" for="pay-way-radio4"></label>
+            <label class="a-label js-a-label label-text" for="pay-way-radio4">휴대폰결제</label>
+        </div>
+        <!-- rd-toggle-con -->
+        <div class="rd-toggle-con rd-toggle-pay-mobile is-hidden-strong" data-name="pay-way-radio">
+            <div class="rd-toggle-con depth2">
+                <div class="line-bx">
+                    <div class="justify-bx">
+                        <span class="tit-text">결제금액</span>
+                        <span class="price-won">12,960,652</span>
+                    </div>
+                    <p class="desc-text">휴대폰으로 결제하신 금액은 다음달 휴대폰 요금에 함께 청구됩니다.<br>(한도: 이동통신사 및 개인마다 다름)</p>
+                </div>
+            </div>
+        </div>
+        <!-- //rd-toggle-con -->
+        <!-- //rd-toggle : 휴대폰결제 -->
+
+        <!-- rd-toggle : 네이버페이 -->
+        <div class="m-radio-button v3">
+            <input type="radio" class="a-radio-button rd-toggle" id="pay-way-radio5" name="pay-way-radio" data-toggle-target="rd-toggle-pay-naverpay">
+            <label class="a-label js-a-label u-no-select custom-radio" for="pay-way-radio5"></label>
+            <label class="a-label js-a-label label-text" for="pay-way-radio5">네이버페이</label>
+        </div>
+        <!-- rd-toggle-con -->
+        <div class="rd-toggle-con rd-toggle-pay-naverpay is-hidden-strong" data-name="pay-way-radio">
+            <div class="rd-toggle-con depth2">
+                <div class="line-bx">
+                    <div class="justify-bx">
+                        <span class="tit-text">결제금액</span>
+                        <span class="price-won">12,960,652</span>
+                    </div>
+                    <p class="desc-text">주문 변경 시 카드사 혜택 및 할부 적용 여부는 해당 카드사 정책에 따라 변경될 수 있습니다.</p>
+                    <p class="desc-text">네이버페이는 네이버ID로 별도 앱 설치 없이 신용카드 또는 은행계좌정보를 등록 하여 네이버페이 비밀번호로 결제할 수 있는 간편결제 서비스입니다.</p>
+                    <p class="desc-text">결제 가능한 신용카드: 신한, 삼성, 현대, BC, 국민, 하나, 롯데, NH농협, 씨티, 카카오뱅크</p>
+                    <p class="desc-text">결제 가능한 은행: NH농협, 국민, 신한, 우리, 기업, SC제일, 부산, 경남, 수협, 우체국, 미래에셋대우, 광주, 대구, 전북, 새마을금고, 제주은행, 신협, 하나은행, 케이뱅크, 카카오뱅크, 삼성증권, KDB 산업은행, 씨티은행, SBI은행, 유안타증권,  유진투자증권</p>
+                    <p class="desc-text">네이버페이 카드 간편결제는 네이버페이에서 제공하는 카드사 별 무이자, 청구할인 혜택을 받을 수 있습니다.</p>
+                </div>
+            </div>
+        </div>
+        <!-- //rd-toggle-con-->
+        <!-- //rd-toggle : 네이버페이 -->
+
+        <!--
+        <div class="m-radio-button v3">
+            <input type="radio" class="a-radio-button" id="pay-way-radio6" name="pay-way-radio">
+            <label class="a-label js-a-label u-no-select custom-radio" for="pay-way-radio6"></label>
+            <label class="a-label js-a-label label-text" for="pay-way-radio6">페이코</label>
+        </div>
+        <div class="m-radio-button v3">
+            <input type="radio" class="a-radio-button" id="pay-way-radio7" name="pay-way-radio">
+            <label class="a-label js-a-label u-no-select custom-radio" for="pay-way-radio7"></label>
+            <label class="a-label js-a-label label-text" for="pay-way-radio7">토스</label>
+        </div>
+        -->
+    </div>
+</div>
+<!-- //pay-info-bx -->
 
         </div>
         <!-- //order-sheet-info -->
@@ -2246,129 +3838,130 @@
                 <a class="a-link a-link-udln cart-item-edit" href="#" target="_self">장바구니 수정</a>
             </h2>
 
-
+            
             <!-- order-summary-info -->
-            <div class="order-summary-info">
-                <div class="m-order-summary-row u-clearfix">
-                    <div class="product-image">
-                        <!--<img class="a-image" alt="product image" src="http://pava-0341648599.s3-eu-west-1.amazonaws.com/images/571a2ab9834df503009f067f/men_shoes_adrian-grain-black-thumbnail-thumbnail-big.jpg">-->
-                        <img class="a-image" alt="product image" src="../../../static/images/temp/men_shoes_01.jpg">
-                    </div>
-                    <div class="product-info">
-                        <!--
-                        <div class="quantity-section">
-                            <span class="quantity-label" tabindex="0"></span>
-                            <span class="quantity">1</span>
-                        </div>
-                        -->
-                        <div class="product-item-info first">
-                            <div class="product-details">
-                                <div class="product-name">해리 블랙 슈즈</div>
-                            </div>
-                        </div>
-                        <div class="product-param-info second">
-                            <div class="product-params data">
-                                <div class="product-size">44</div>
-                                <div class="product-color">Black</div>
-                                <div class="product-qty">2</div>
-                            </div>
-                        </div>
-                        <div class="product-param-price fourth">
-                            <div class="product-params data">
-                                <div class="product-price">195,000</div>
-                                <div class="product-total">95,000</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="m-order-summary-row u-clearfix">
-                    <div class="product-image">
-                        <!-- <img class="a-image" alt="product image" src="http://pava-0341648599.s3-eu-west-1.amazonaws.com/images/55f88dcce517704a05ab1da5/boy-vintage-thumbnail-big.jpg">-->
-                        <img class="a-image" alt="product image" src="../../../static/images/temp/boy-vintage-thumbnail-big.jpg">
-                    </div>
-                    <div class="product-info">
-                        <!--
-                        <div class="quantity-section">
-                            <span class="quantity-label" tabindex="0"></span>
-                            <span class="quantity">2</span>
-                        </div>
-                        -->
-                        <div class="product-item-info first">
-                            <div class="product-details">
-                                <div class="product-name">고렐 진 블루</div>
-                            </div>
-                        </div>
-                        <div class="product-param-info second">
-                            <div class="product-params data">
-                                <div class="product-size">26/32</div>
-                                <div class="product-color">Blue</div>
-                                <div class="product-qty">4</div>
-                            </div>
-                        </div>
-                        <div class="product-param-price fourth">
-                            <div class="product-params data">
-                                <div class="product-price is-deprecated">100,000</div>
-                                <div class="product-discount">85,000</div>
-                                <div class="product-total">85,000</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!--
-                <div class="m-hazmat-wrap">
-                    <span class="m-hazmat-v2 fire">
-                        <span class="hazmat-label">이 제품은 인화성 물질을 포함하고 있으므로 제공된 서비스에 대한 특별 규칙이 적용됩니다.</span>
-                    </span>
-                    <span class="m-hazmat-v2 warning">
-                        <span class="hazmat-label">경고! 화재로부터 격리 할 것. 이 기호가 표시된항목은 "The Nightwear Safetly Regulations1987"의 가연성 성능 요구 사항을 준수 할 필요가 없으므로 이러한 요구 사항에 대해 테스트하지 않았습니다.</span>
-                    </span>
-                </div>
-                -->
-
-                <div class="order-summary-price">
-                    <div class="o-order-summary lightbox-summary">
-                        <div class="order-value-section">
-                            <span class="order-value-label">총 상품금액</span>
-                            <span class="order-value price-won">190,000</span>
-                        </div>
-                        <div class="discount-section">
-                            <span class="discount-label">총 할인금액</span>
-                            <span class="discount price-won">-100,000</span>
-                        </div>
-                        <div class="staff-discount-section">
-                            <span class="staff-discount-label">임직원 할인</span>
-                            <span class="staff-discount price-won">-4,000</span>
-                        </div>
-                        <div class="shipping-section">
-                            <span class="shipping-label">배송비</span>
-                            <span class="shipping price-won">2,500</span>
-                        </div>
-                        <div class="total-section">
-                            <span class="total-label">총 결제금액</span>
-                            <span class="total price-won">9,983,500</span>
-                        </div>
-                    </div>
+<div class="order-summary-info">
+    <div class="m-order-summary-row u-clearfix">
+        <div class="product-image">
+            <!--<img class="a-image" alt="product image" src="http://pava-0341648599.s3-eu-west-1.amazonaws.com/images/571a2ab9834df503009f067f/men_shoes_adrian-grain-black-thumbnail-thumbnail-big.jpg">-->
+            <img class="a-image" alt="product image" src="../../../static/images/temp/men_shoes_01.jpg">
+        </div>
+        <div class="product-info">
+            <!--
+            <div class="quantity-section">
+                <span class="quantity-label" tabindex="0"></span>
+                <span class="quantity">1</span>
+            </div>
+            -->
+            <div class="product-item-info first">
+                <div class="product-details">
+                    <div class="product-name">해리 블랙 슈즈</div>
                 </div>
             </div>
-            <!-- //order-summary-info -->
+            <div class="product-param-info second">
+                <div class="product-params data">
+                    <div class="product-size">44</div>
+                    <div class="product-color">Black</div>
+                    <div class="product-qty">2</div>
+                </div>
+            </div>
+            <div class="product-param-price fourth">
+                <div class="product-params data">
+                    <div class="product-price">195,000</div>
+                    <div class="product-total">95,000</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="m-order-summary-row u-clearfix">
+        <div class="product-image">
+            <!-- <img class="a-image" alt="product image" src="http://pava-0341648599.s3-eu-west-1.amazonaws.com/images/55f88dcce517704a05ab1da5/boy-vintage-thumbnail-big.jpg">-->
+            <img class="a-image" alt="product image" src="../../../static/images/temp/boy-vintage-thumbnail-big.jpg">
+        </div>
+        <div class="product-info">
+            <!--
+            <div class="quantity-section">
+                <span class="quantity-label" tabindex="0"></span>
+                <span class="quantity">2</span>
+            </div>
+            -->
+            <div class="product-item-info first">
+                <div class="product-details">
+                    <div class="product-name">고렐 진 블루</div>
+                </div>
+            </div>
+            <div class="product-param-info second">
+                <div class="product-params data">
+                    <div class="product-size">26/32</div>
+                    <div class="product-color">Blue</div>
+                    <div class="product-qty">4</div>
+                </div>
+            </div>
+            <div class="product-param-price fourth">
+                <div class="product-params data">
+                    <div class="product-price is-deprecated">100,000</div>
+                    <div class="product-discount">85,000</div>
+                    <div class="product-total">85,000</div>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <!--
+    <div class="m-hazmat-wrap">
+        <span class="m-hazmat-v2 fire">
+            <span class="hazmat-label">이 제품은 인화성 물질을 포함하고 있으므로 제공된 서비스에 대한 특별 규칙이 적용됩니다.</span>
+        </span>
+        <span class="m-hazmat-v2 warning">
+            <span class="hazmat-label">경고! 화재로부터 격리 할 것. 이 기호가 표시된항목은 "The Nightwear Safetly Regulations1987"의 가연성 성능 요구 사항을 준수 할 필요가 없으므로 이러한 요구 사항에 대해 테스트하지 않았습니다.</span>
+        </span>
+    </div>
+    -->
+
+    <div class="order-summary-price">
+        <div class="o-order-summary lightbox-summary">
+            <div class="order-value-section">
+                <span class="order-value-label">총 상품금액</span>
+                <span class="order-value price-won">190,000</span>
+            </div>
+            <div class="discount-section">
+                <span class="discount-label">총 할인금액</span>
+                <span class="discount price-won">-100,000</span>
+            </div>
+            <div class="staff-discount-section">
+                <span class="staff-discount-label">임직원 할인</span>
+                <span class="staff-discount price-won">-4,000</span>
+            </div>
+            <div class="shipping-section">
+                <span class="shipping-label">배송비</span>
+                <span class="shipping price-won">2,500</span>
+            </div>
+            <div class="total-section">
+                <span class="total-label">총 결제금액</span>
+                <span class="total price-won">9,983,500</span>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //order-summary-info -->
+
+            
             <!-- pay-policy-bx -->
-            <div class="dft-bx line-bx pay-policy-bx">
-                <p class="dft-bx-tit">채무지급 보증안내</p>
-                <p class="desc-text">
-                    고객님의 안전거래를 위해 현금결제 시 우리은행과 <a href="#" class="a-link open-lightbox" data-template="" data-classes="is-large">채무지급보증 계약을 체결하여</a> 안전거래를 보장하고 있습니다.
-                    <a href="#" class="a-link a-link-udln open-lightbox" data-template="service-join-fact-confirm" data-classes="is-large">[서비스 가입사실 확인]</a>
-                </p>
-                <div class="pay-policy-agree">
-                    <span class="m-checkbox v2 u-clearfix" id="checkbox1">
-                        <input class="a-checkbox" type="checkbox" id="checkbox_checkbox1">
-                        <label class="a-label js-a-label custom-box" for="checkbox_checkbox1" tabindex="0"></label>
-                        <label class="a-label js-a-label" for="checkbox_checkbox1">주문하실 상품의 상품명, 가격, 배송정보를 확인하였으며, 이에 동의합니다.</label>
-                    </span>
-                </div>
-            </div>
-            <!-- //pay-policy-bx -->
+<div class="dft-bx line-bx pay-policy-bx">
+    <p class="dft-bx-tit">채무지급 보증안내</p>
+    <p class="desc-text">
+        고객님의 안전거래를 위해 현금결제 시 우리은행과 <a href="#" class="a-link open-lightbox" data-template="" data-classes="is-large">채무지급보증 계약을 체결하여</a> 안전거래를 보장하고 있습니다.
+        <a href="#" class="a-link a-link-udln open-lightbox" data-template="service-join-fact-confirm" data-classes="is-large">[서비스 가입사실 확인]</a>
+    </p>
+    <div class="pay-policy-agree">
+        <span class="m-checkbox v2 u-clearfix" id="checkbox1">
+            <input class="a-checkbox" type="checkbox" id="chck-order-info-agree">
+            <label class="a-label js-a-label custom-box" for="chck-order-info-agree" tabindex="0"></label>
+            <label class="a-label js-a-label" for="chck-order-info-agree">주문하실 상품의 상품명, 가격, 배송정보를 확인하였으며, 이에 동의합니다.</label>
+        </span>
+    </div>
+</div>
+<!-- //pay-policy-bx -->
 
             <a class="a-button is-primary is-checkout-options checkout-button" href="/views/common/views/pages/checkout/checkout-guest-options.html">결제하기</a>
 
@@ -2412,18 +4005,14 @@
                     </a>
                 </div>
                 <div class="accordion-content">
-                    <p class="accordion-con-text">
-                        고객이 주문한 상품에 만족하기를 항상 바라지만, 마음에 들지 않을 경우 상품 수령 후 7일 이내의 경우
-                        온라인 스토어 및 고객 센터를 통한 반품 신청이 가능하며 수령 후 7일 경과, 14일 이전의 기간에는
-                        고객 센터를 통한 반품 신청만 가능합니다.
-
-                        결제 방식과 동일한 방법으로 전액이 환불됩니다. 반품 진행 시 상품이 깨끗하고 흠이 없고 모든 태그가
-                        부착되어 있어야 합니다. 특히 수영복의 경우 위생 테이프의 손상없이 부착되어 있어야 합니다.
-
+                    <p class="accordion-con-text">고객이 주문한 상품에 만족하기를 항상 바라지만, 마음에 들지 않을 경우 상품 수령 후 7일 이내의 경우 온라인 스토어 및 고객 센터를 통한 반품 신청이 가능하며 수령 후
+                        7일 경과, 14일 이전의 기간에는 고객 센터를 통한 반품 신청만 가능합니다.
+                        결제 방식과 동일한 방법으로 전액이 환불됩니다. 반품 진행 시 상품이 깨끗하고 흠이 없고 모든 태그가 부착되어 있어야 합니다. 특히 수영복의 경우 위생 테이프의 손상없이
+                        부착되어 있어야 합니다.
                         위생상의 이유로 속옷 및 이어링 제품은 반품이 불가합니다. (결함의 경우 제외)
-
                         온라인 구매 상품은 매장에서 환불이 불가합니다.
                         모든 반품 비용은 무료이나, 위생상의 이유로 속옷 및 이어링 제품은 반품이 불가합니다
+
                     </p>
                 </div>
             </div>
@@ -2435,18 +4024,11 @@
                     </a>
                 </div>
                 <div class="accordion-content">
-                    <p class="accordion-con-text">
-                        고객이 주문한 상품에 만족하기를 항상 바라지만, 마음에 들지 않을 경우 상품 수령 후 7일 이내의 경우
-                        온라인 스토어 및 고객 센터를 통한 반품 신청이 가능하며 수령 후 7일 경과, 14일 이전의 기간에는
-                        고객 센터를 통한 반품 신청만 가능합니다.
+                    <p class="accordion-con-text">상품 회수가 완료되면 14일 이내에 환불받을 수 있습니다. 현금으로 결제했다면 반품 완료 시 SMS가 전송됩니다.
 
-                        결제 방식과 동일한 방법으로 전액이 환불됩니다. 반품 진행 시 상품이 깨끗하고 흠이 없고 모든 태그가
-                        부착되어 있어야 합니다. 특히 수영복의 경우 위생 테이프의 손상없이 부착되어 있어야 합니다.
+                        - 반품 회수 택배사는 CJ대한통운으로 진행되며, 타 택배사를 이용하는 경우 환불이 지연될 수 있습니다.
 
-                        위생상의 이유로 속옷 및 이어링 제품은 반품이 불가합니다. (결함의 경우 제외)
-
-                        온라인 구매 상품은 매장에서 환불이 불가합니다.
-                        모든 반품 비용은 무료이나, 위생상의 이유로 속옷 및 이어링 제품은 반품이 불가합니다
+                        - 기타 다른 방법으로 반품하는 경우 환불이 지연될 수 있습니다.
                     </p>
                 </div>
             </div>
@@ -2458,18 +4040,9 @@
                     </a>
                 </div>
                 <div class="accordion-content">
-                    <p class="accordion-con-text">
-                        고객이 주문한 상품에 만족하기를 항상 바라지만, 마음에 들지 않을 경우 상품 수령 후 7일 이내의 경우
-                        온라인 스토어 및 고객 센터를 통한 반품 신청이 가능하며 수령 후 7일 경과, 14일 이전의 기간에는
-                        고객 센터를 통한 반품 신청만 가능합니다.
+                    <p class="accordion-con-text">반품은 상품이 완전한 상태여야 가능합니다. 다시 말해, 상품은 데오드란트나 향수 또는 화장 자국 등이 없이 깨끗해야 하고, 닳거나 빨래한 적도 없는 상태여야 합니다. 판매 불가 상태로 반환된 상품은 환불되지 않으며 고객에게 반송될 수 있습니다.
 
-                        결제 방식과 동일한 방법으로 전액이 환불됩니다. 반품 진행 시 상품이 깨끗하고 흠이 없고 모든 태그가
-                        부착되어 있어야 합니다. 특히 수영복의 경우 위생 테이프의 손상없이 부착되어 있어야 합니다.
-
-                        위생상의 이유로 속옷 및 이어링 제품은 반품이 불가합니다. (결함의 경우 제외)
-
-                        온라인 구매 상품은 매장에서 환불이 불가합니다.
-                        모든 반품 비용은 무료이나, 위생상의 이유로 속옷 및 이어링 제품은 반품이 불가합니다
+                        신발은 바닥이 손상되지 않도록 표면이 부드러운 카펫이 깔린 곳에서 착용 바랍니다. 반품을 결심했으면 배송된 신발 상자에 상품을 넣어주세요. 상자도 상품의 일부입니다. 그리고 또 다른 두꺼운 상자에 넣어 포장해주세요. 배송 시 사용된 외부 포장 상자를 그대로 사용하는 것을 추천합니다.
                     </p>
                 </div>
             </div>
@@ -2481,18 +4054,23 @@
                     </a>
                 </div>
                 <div class="accordion-content">
-                    <p class="accordion-con-text">
-                        고객이 주문한 상품에 만족하기를 항상 바라지만, 마음에 들지 않을 경우 상품 수령 후 7일 이내의 경우
-                        온라인 스토어 및 고객 센터를 통한 반품 신청이 가능하며 수령 후 7일 경과, 14일 이전의 기간에는
-                        고객 센터를 통한 반품 신청만 가능합니다.
+                    <p class="accordion-con-text">카드 결제:
+                        ARKET에서 반품 처리 진행이 완료된 후 은행에서 환불 절차가 진행됩니다. 카드 환급은 은행 처리 시간에 따라 영업일 기준 최대 10일 정도 소요됩니다. 이러한 점은 ARKET이 해결할 수 없는 점 양해 바랍니다.
 
-                        결제 방식과 동일한 방법으로 전액이 환불됩니다. 반품 진행 시 상품이 깨끗하고 흠이 없고 모든 태그가
-                        부착되어 있어야 합니다. 특히 수영복의 경우 위생 테이프의 손상없이 부착되어 있어야 합니다.
+                        현금(무통장 입금) 결제:
+                        9시-15시 사이에 접수된 환불은 당일에 처리되며, 15시 이후 또는 다음날 9시까지 접수된 환불은 다음날에 처리됩니다. 토/일요일 및 공휴일의 환불 접수는 마지막 공휴일 기준 다음날에 처리됩니다.
 
-                        위생상의 이유로 속옷 및 이어링 제품은 반품이 불가합니다. (결함의 경우 제외)
+                        현금(실시간 계좌 이체) 결제:
+                        영업일 기준 다음날에 환불이 진행됩니다.
 
-                        온라인 구매 상품은 매장에서 환불이 불가합니다.
-                        모든 반품 비용은 무료이나, 위생상의 이유로 속옷 및 이어링 제품은 반품이 불가합니다
+                        간편결제:
+                        등록된 카드사 또는 계좌에 따라 다르나, 계좌의 경우 영업일 기준 다음날에 환불 절차가 진행됩니다.
+
+                        휴대폰 결제:
+                        주문 당월에 반품 신청 시 당월결제 내역에서 취소됩니다. 다음 달에 취소 시에는 현금 환불만 가능하며, 영업일 기준(토, 일, 공휴일 제외) 익일 환불이 진행됩니다.
+
+                        예치금:
+                        ARKET 에서 반품 처리 진행이 완료된 후 바로 부여됩니다.
                     </p>
                 </div>
             </div>
@@ -2513,6 +4091,58 @@
     </div>
 
 </main>
+
+<!-- handlebars-template -->
+
+<!-- 배송지목록 > 삭제 -->
+<script type="text/x-handlebars-template" id="lp-dlvr-list-del">
+    <div class="lightbox-content-dft lp-dlvr-list-del">
+        <h2 class="a-heading-2"><span>해당 배송지 정보를 삭제하시겠습니까?</span></h2>
+        <div class="content"></div>
+        <div class="button-container col-2">
+            <button class="a-button is-outlined js-close-button" type="button"><span>취소</span></button>
+            <button class="a-button is-primary" type="button"><span>확인</span></button>
+        </div>
+    </div>
+</script>
+<!-- //배송지목록 > 삭제 -->
+<!-- //handlebars-template -->
+
+<!-- tip : when develop this script must be delete -->
+<script type="text/javascript">
+    (function() {
+        'use strict';
+        //탭활성화
+        let btnDlvrEdit = document.querySelectorAll('.delivery-item-edit');
+        let btnDlvrDel = document.querySelectorAll('.delivery-item-del');
+        if(btnDlvrEdit) {
+            Array.prototype.slice.call(btnDlvrEdit).forEach( function (_obj) {
+                _obj.addEventListener('click', function (_evt) {
+                    _evt.preventDefault();
+                    _evt.stopPropagation();
+                    let tempLi = this.closest('li');
+                    if(tempLi && !tempLi.classList.contains('mode-edit')){
+                        tempLi.classList.add('mode-edit')
+                    }
+                });
+            });
+        }
+        let btnDlvrEditCancle = document.querySelectorAll('.btn-my-dlvr-cancle');
+        if(btnDlvrEditCancle){
+            Array.prototype.slice.call(btnDlvrEditCancle).forEach( function (_obj) {
+                _obj.addEventListener('click', function (_evt) {
+                    _evt.preventDefault();
+                    _evt.stopPropagation();
+                    let tempLi = this.closest('li');
+                    if(tempLi && tempLi.classList.contains('mode-edit')){
+                        tempLi.classList.remove('mode-edit')
+                    }
+                });
+            });
+        }
+    })();
+</script>
+<!-- //tip -->
     <!-- //o-page-content -->
 
     <!-- footer -->

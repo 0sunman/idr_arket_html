@@ -1,48 +1,45 @@
-<div data-component="OPageContent" class="o-page-content cofs-page" data-component-id="">
-    <span id="content" tabindex="-1" class="access-content">Content of the page</span>
+<div data-component="OPageContent" class="o-page-content cofs-page">
+    <span id="content" class="access-content">Content of the page</span>
     <div class="o-sign-in-wrapper">
-        <%# 로그인 또는 회원가입 타이틀 %>
-        <%- include ("../../../common/md-o-sign-in-heading.ejs") %>
+        <div class="sign-in-heading">
+            <h2 class="a-heading-2">회원가입</h2>
+        </div>
         <div class="is-sign-in-tabs">
-            <%# 로그인, 회원가입 활성화 탭 표기 %>
-            <%- include ("../../../common/md-m-tablist-02.ejs") %>
-            <div class="o-registration empty-registration alternative-style-option ng-scope" data-ng-controller="RegisterController">
-                <form method="post" id="registration-form" novalidate="true" class="responsive form-section o-form ng-pristine ng-valid-email ng-invalid ng-invalid-required ng-valid-pattern ng-valid-maxlength" data-component="OForm" data-manually-submit="true" data-component-id="7efb5d57-d1fa-46ed-9ebf-df6684af2852">
-                    <div class="o-registration-form v2">
+            <div class="o-registration empty-registration alternative-style-option ng-scope">
+                <form method="post" data-component="OForm">
+                    <div class="o-registration-form v2 ma-t-20">
                         <%# 회원가입 관련 안내 문구 %>
                         <%- include ("../../../common/md-o-registration-info.ejs") %>
-                        <%# 회원가입 단계 표기 %>
-                        <%- include ("../../../common/md-o-registration-01.ejs") %>
                         <!-- 신규추가 내용 : 회원가입 1.간편인증(기존계정 존재) -->
                         <div class="n-wrap step-1-2">
                             <h2 class="title">개인계정연결 안내</h2>
-                            <div class="in-service"><span>honggildong@hmall.com</span>계정이 아이디 또는 이메일 주소로 사용 중 입니다.</div>
+                            <div class="in-service"><span>honggildong@hmall.com</span> 계정이 아이디 또는 이메일 주소로 사용 중 입니다.</div>
 
                             <p>기존의 계정에 로그인 해서 SNS계정을 연결하시면, 하나의  계정으로 회원/주문 정보를 통합 관리할 수 있습니다.<br class="only-m"/>개인 계정 연결 및 해제는 마이페이지에서 가능합니다.</p>
                             <p>연동을 위한 아이디와 비밀번호를 입력해주세요.</p>
 
                             <!-- input : 아이디 또는 이메일 -->
-                            <div data-component="MInput" class="m-input id" data-validate="email" placeholder="아이디 또는 이메일">
-                                <label for="j_username" class="a-label js-a-label">아이디 또는 이메일</label>
-                                <input id="j_username" name="j_username" data-validation-required-text="아이디를 입력해 주세요." pattern="" data-validation-pattern-text="아이디 또는 이메일을 입력해 주세요." placeholder="아이디 또는 이메일" type="email" class="a-input js-a-input" required="required" value="">
-                                <label for="j_username" class="a-label js-a-label" aria-hidden="true"></label>
+                            <div data-component="MInput" class="m-input">
+                                <label class="a-label js-a-label" for="id">아이디 또는 이메일</label>
+                                <input class="a-input js-a-input" id="id" name="id" type="text" pattern="" placeholder="아이디 또는 이메일" data-validation-required-text="아이디를 입력해 주세요." data-validation-pattern-text="입력하신 아이디가 맞지 않습니다." required="">
+                                <label class="a-label js-a-label" for="id"></label>
                             </div><!-- // input : 아이디 또는 이메일 -->
 
                             <!-- input : 비밀번호 -->
-                            <div data-component="MInput" class="m-input password password-with-label" data-validate="" placeholder="비밀번호" data-component-id="a4d73460-5906-4ebd-8415-c276f79698cf">
-                                <label for="j_password" class="a-label js-a-label">비밀번호</label>
-                                <input id="j_password" name="j_password" data-validation-required-text="비밀번호를 입력해주세요." pattern="^[^ ]{5,35}$" data-validation-pattern-text="비밀번호를 입력해주세요." placeholder="비밀번호" type="password" class="a-input js-a-input" required="required" value="">
-                                <label class="a-label js-a-label" for="sign-in-password" data-placeholder=""></label>
+                            <div data-component="MInput" class="m-input">
+                                <label class="a-label js-a-label" for="password">비밀번호</label>
+                                <input class="a-input js-a-input" id="password" name="password" type="password" pattern="" placeholder="비밀번호" data-validation-required-text="비밀번호를 입력해주세요." data-validation-pattern-text="입력하신 비밀번호가 맞지 않습니다."required="">
+                                <label class="a-label js-a-label" for="password"></label>
                             </div><!-- // input : 비밀번호 -->
 
-                            <button type="submit" id="registerButton" class="a-button is-primary">
+                            <button type="submit" class="a-button is-primary">
                                 <span>연결하기</span>
                             </button>
-                            <!-- 아이디 찾기, 비밀번호 찾기 - 해당 페이지로 이동 -->
+
                             <div class="link-holder">
-                                <a href="#" target="_self" class="a-link a-link-udln forgot-id" onclick="">아이디찾기</a>
-                                <a href="#" target="_self" class="a-link a-link-udln forgot-pw" onclick="">비밀번호찾기</a>
-                                <a href="#" target="_self" class="a-link a-link-udln register">회원가입</a>
+                                <a href="#none" class="a-link a-link-udln forgot-id">아이디찾기</a>
+                                <a href="#none" class="a-link a-link-udln forgot-pw">비밀번호찾기</a>
+                                <a href="#none" class="a-link a-link-udln register">회원가입</a>
                             </div>
                         </div><!-- // 신규추가 내용 : 회원가입 1.간편인증(기존계정 존재) -->
                     </div>

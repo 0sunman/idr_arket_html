@@ -78,10 +78,13 @@ renewCommon = (function(doc, win){
 
     //rd-toggle
     obj.rdToggle = {
-        resetActive: function(){
+        resetActive: function(_name){
             let rdToggleCon = doc.querySelectorAll('.rd-toggle-con');
             Array.prototype.slice.call(rdToggleCon).forEach( function (_obj) {
-                _obj.classList.add("is-hidden-strong");
+                if(_obj.getAttribute('data-name') == _name){
+                    _obj.classList.add("is-hidden-strong");
+                }
+
             });
         },
         init: function(){
@@ -89,11 +92,13 @@ renewCommon = (function(doc, win){
             if(rdToggle) {
                 Array.prototype.slice.call(rdToggle).forEach( function (_obj) {
                     _obj.addEventListener('change', function (_evt) {
-                        renewCommon.rdToggle.resetActive();
                         let _this = this;
                         let _targetName = this.getAttribute('name');
                         let _targetClass = this.getAttribute('data-toggle-target');
                         let _targetCon = doc.querySelector('.' + _targetClass);
+
+                        renewCommon.rdToggle.resetActive(_targetName);
+
                         if(_targetCon){
                             let _targetConName = _targetCon.getAttribute('data-name');
                             if(_this.checked  && _targetName == _targetConName){

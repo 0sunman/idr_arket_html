@@ -1010,7 +1010,7 @@
     <div class="sns-list">
         <ul>
             <li>
-                <a href="#">
+                <a href="#none">
                     <div class="icontab">
                         <span class="icon naver"></span>
                     </div>
@@ -1020,7 +1020,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="#none">
                     <div class="icontab">
                         <span class="icon kakao"></span>
                     </div>
@@ -1030,7 +1030,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="#none">
                     <div class="icontab">
                         <span class="icon facebook"></span>
                     </div>
@@ -1040,7 +1040,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="#none">
                     <div class="icontab">
                         <span class="icon google"></span>
                     </div>
@@ -1056,7 +1056,7 @@
 
     <!--비회원 주문 조회(링크) - 비회원 주문조회 팝업 노출 -->
     <div class="non-member">
-        <a href="#" >비회원주문조회</a>
+        <a href="#none" >비회원주문조회</a>
     </div>
 </div>
 <!-- //SNS 간편로그인 신규추가 -->
@@ -2053,9 +2053,11 @@
     <!-- o-page-content -->
     <div data-component="OPageContent" class="o-page-content cofs-page">
     <span id="content" tabindex="-1" class="access-content">Content of the page</span>
+
+    <!-- n-find-idpw -->
     <div class="o-forgot-password n-find-idpw">
         <div class="forgot-password-form">
-            <form id="forgotpassword-form" name="forgottenPwdForm" novalidate="true" data-component="OForm" class="o-form ng-pristine ng-valid" method="post">
+            <form class="o-form" data-component="OForm" id="forgotpassword-form" name="forgottenPwdForm"   method="post">
                 <h2 class="a-heading-2">비밀번호 찾기</h2>
                 <p class="data">ARKET을 방문해 주셔서 감사합니다. 고객님의 정보를 편리하고 안전하게 찾을 수 있도록 도와드리겠습니다.</p>
                     <!-- 신규추가 내용 : 비밀번호 찾기 -->
@@ -2079,13 +2081,14 @@
                             <label class="a-label js-a-label" for="birthday">생년월일</label>
                             <input class="a-input js-a-input" id="birthday" name="birthday" type="tel" pattern="" placeholder="생년월일" data-validation-required-text="생년월일을 입력해 주세요." data-validation-pattern-text="올바른 날짜형식이 아닙니다.(예: 19880512)" maxlength="8" required="">
                             <label class="a-label js-a-label" for="birthday"></label>
-                            <p class="guide-text">생년월일 8자리를 입력해 주세요.(예:19880512)</p>
+                            <p class="guide-text">생년월일 8자리를 입력해 주세요.(예: 19880512)</p>
                         </div><!-- // input : 생년월일 -->
-
-                        <button type="submit" id="forgottenButton" class="a-button is-primary">
-                            <span>인증하기</span>
-                        </button>
                     </div><!--// 신규추가 내용 : 비밀번호 찾기 -->
+
+                    <!-- button -->
+                    <button type="submit" class="a-button is-primary" id="forgottenButton" >
+                        <span>인증하기</span>
+                    </button><!-- // button -->
             </form>
         </div>
         
@@ -2105,7 +2108,8 @@
 
 
 
-    </div>
+    </div><!-- // n-find-idpw -->
+
 </div>
 
     <!-- //o-page-content -->

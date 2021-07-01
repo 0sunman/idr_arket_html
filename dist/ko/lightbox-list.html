@@ -1010,7 +1010,7 @@
     <div class="sns-list">
         <ul>
             <li>
-                <a href="#">
+                <a href="#none">
                     <div class="icontab">
                         <span class="icon naver"></span>
                     </div>
@@ -1020,7 +1020,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="#none">
                     <div class="icontab">
                         <span class="icon kakao"></span>
                     </div>
@@ -1030,7 +1030,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="#none">
                     <div class="icontab">
                         <span class="icon facebook"></span>
                     </div>
@@ -1040,7 +1040,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="#none">
                     <div class="icontab">
                         <span class="icon google"></span>
                     </div>
@@ -1056,7 +1056,7 @@
 
     <!--비회원 주문 조회(링크) - 비회원 주문조회 팝업 노출 -->
     <div class="non-member">
-        <a href="#" >비회원주문조회</a>
+        <a href="#none" >비회원주문조회</a>
     </div>
 </div>
 <!-- //SNS 간편로그인 신규추가 -->
@@ -2092,10 +2092,46 @@
         </li>
     </ul>
 
-    <h3 class="lightbox-list-tit">장바구니</h3>
+    <h3 class="lightbox-list-tit">장바구니/주문서</h3>
     <ul class="lightbox-list-wrap">
         <li>
+            <button class="a-button is-outlined open-lightbox" data-template="lp-cart-count-change" data-classes="alert"><span>장바구니 수량 변경</span></button>
+        </li>
+        <li>
+            <button class="a-button is-outlined open-lightbox" data-template="lp-order-info-agree" data-classes="alert"><span>주문내용동의</span></button>
+        </li>
+        <li>
+            <button class="a-button is-outlined open-lightbox" data-template="lp-find-address"><span>주소검색</span></button>
+        </li>
+        <li>
+            <button class="a-button is-outlined open-lightbox" data-template="lp-find-address-standard"><span>주소검색 - 표준주소</span></button>
+        </li>
+        <li>
+            <button class="a-button is-outlined open-lightbox" data-template="lp-dlvr-list-del" data-classes="alert"><span>배송지목록 > 삭제</span></button>
+        </li>
+        <li>
+            <button class="a-button is-outlined open-lightbox" data-template="lp-deposit-account-guide" data-classes="alert"><span>무통장입금 전용계좌 안내</span></button>
+        </li>
+        <li>
+            <button class="a-button is-outlined open-lightbox" data-template="lp-deposit-account-guide-nonmbr" data-classes="alert"><span>무통장입금 전용계좌 안내(비회원)</span></button>
+        </li>
+        <li>
+            <button class="a-button is-outlined open-lightbox" data-template="lp-verification-way"><span>본인인증 방법 선택</span></button>
+        </li>
+        <li>
+            <button class="a-button is-outlined open-lightbox" data-template="lp-nonmbr-order-info-agree"><span>비회원 주문 정보수집 동의</span></button>
+        </li>
+        <li>
+            <button class="a-button is-outlined open-lightbox" data-template="lp-orderer-info" data-classes="alert"><span>주문고객정보</span></button>
+        </li>
+        <li>
             <button class="a-button is-outlined open-lightbox" data-template="lp-return-refund-guide"><span>반품 및 환불</span></button>
+        </li>
+        <li>
+            <button class="a-button is-outlined open-lightbox" data-template="lp-pay-processing" data-classes="alert"><span>결제진행중</span></button>
+        </li>
+        <li>
+            <button class="a-button is-outlined open-lightbox" data-template="lp-pay-processing-ex" data-classes="alert"><span>결제진행중-외부</span></button>
         </li>
     </ul>
 </div>
@@ -2171,9 +2207,9 @@
     <div class="lightbox-content-dft lp-phone-certify-guide">
         <h2 class="a-heading-2"><span>휴대폰 인증</span></h2>
         <div class="content">
-            <div class="m-input is-readonly with-button" data-component="MInput">
+            <div class="m-input v3 is-readonly with-button" data-component="MInput">
                 <input class="a-input js-a-input"
-                       placeholder="phone-number"
+                       placeholder="휴대폰번호 입력"
                        type="text"
                        value="010-****-1234"
                        name="phone-number"
@@ -2183,7 +2219,7 @@
                 <button class="a-button is-primary sm" type="button"><span>인증번호 받기</span></button>
                 <label class="a-label js-a-label" for="phone-number" data-placeholder=""></label>
             </div>
-            <div class="m-input with-button" data-component="MInput">
+            <div class="m-input v3 with-button" data-component="MInput">
                 <input class="a-input js-a-input"
                        placeholder="인증번호 입력"
                        type="tel"
@@ -2312,6 +2348,554 @@
 <!-- //비회원 주문조회 -->
 
 
+<!-- 장바구니 수량 변경 -->
+<script type="text/x-handlebars-template" id="lp-cart-count-change">
+    <div class="lightbox-content-dft lp-cart-count-change">
+        <h2 class="a-heading-2"><span>장바구니에 담긴 상품의<br>주문 가능 수량이 변경되었습니다</span></h2>
+        <div class="content"></div>
+        <button class="a-button is-primary js-close-button" type="button"><span>확인</span></button>
+    </div>
+</script>
+<!-- //장바구니 수량 변경 -->
+
+
+<!-- 주문내용동의 -->
+<script type="text/x-handlebars-template" id="lp-order-info-agree">
+    <div class="lightbox-content-dft lp-order-info-agree">
+        <h2 class="a-heading-2"><span>주문 내용에 동의해주셔야<br>결제가 가능합니다</span></h2>
+        <div class="content"></div>
+        <button class="a-button is-primary js-close-button" type="button"><span>확인</span></button>
+    </div>
+</script>
+<!-- //주문내용동의 -->
+
+
+<!-- lp-find-address -->
+<script type="text/x-handlebars-template" id="lp-find-address">
+    <!-- tip : step1, step2, step3 유무로 con-step1, con-step2, con-step3 토글 -->
+    <div class="lightbox-content-dft lp-find-address step1">
+        <div class="m-headline is-main-headline">
+            <h2 class="a-heading-2"><span>주소 검색</span></h2>
+        </div>
+        <div class="content">
+            <form class="o-form" data-component="OForm" action="" method="POST">
+                <p class="guide-text sm">찾고자 하는 주소를 입력하신 후 검색을 누르세요.</p>
+                <div class="m-input v3 with-button" data-component="MInput">
+                    <input class="a-input js-a-input"
+                           placeholder="구의강변로"
+                           type="text"
+                           name="address-keyword"
+                           id="address-keyword"
+                           required=""
+                           data-validation-required-text="검색할 주소를 입력해주세요"
+                           data-validation-pattern-text="지역명을 입력해주세요">
+                    <button class="a-button is-primary sm btn-address-search" type="submit"><span>검색</span></button>
+                    <label class="a-label js-a-label" for="address-keyword" data-placeholder=""></label>
+                </div>
+                <p class="guide-text sm">예: 동(읍/면)명 또는 도로명주소(건물번호/ 건물명)일부 군사지역은 배송이 불가능할 수 있습니다.</p>
+            </form>
+
+            <!-- con-step2 -->
+            <div class="con-step2">
+                <div class="justify-bx">
+                    <div class="m-dropdown v3 cate-address-select">
+                        <label class="a-label js-a-label" for="cate-si-do"></label>
+                        <select name="selectSize" id="cate-si-do">
+                            <option class="a-option">시/도</option>
+                            <option class="a-option">경기도</option>
+                            <option class="a-option">강원도</option>
+                            <option class="a-option">충청북도</option>
+                        </select>
+                        <span class="a-icon-accordion a-icon-arrow-down-small"></span>
+                    </div>
+                    <div class="m-dropdown v3 cate-address-select">
+                        <label class="a-label js-a-label" for="cate-gun-gu"></label>
+                        <select name="selectSize" id="cate-si-do">
+                            <option class="a-option">군/구</option>
+                            <option class="a-option">구로구</option>
+                            <option class="a-option">양천구</option>
+                            <option class="a-option">마포구</option>
+                        </select>
+                        <span class="a-icon-accordion a-icon-arrow-down-small"></span>
+                    </div>
+                </div>
+
+                <!-- 주소검색결과 -->
+                <ul class="find-address-result">
+                    <li>
+                        <a href="#none">
+                            <div class="address-item">
+                                <div class="gubun">도로명<br>지번</div>
+                                <div class="address-text">
+                                    <p>서울시 광진구 구의강변로 1</p>
+                                    <p>서울시 광진구 구의동 624-1</p>
+                                </div>
+                                <div class="zip-code"><span>05116</span></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none">
+                            <div class="address-item">
+                                <div class="gubun">도로명<br>지번</div>
+                                <div class="address-text">
+                                    <p>서울시 광진구 구의강변로 1</p>
+                                    <p>서울시 광진구 구의동 624-1</p>
+                                </div>
+                                <div class="zip-code"><span>05116</span></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none">
+                            <div class="address-item">
+                                <div class="gubun">도로명<br>지번</div>
+                                <div class="address-text">
+                                    <p>서울시 광진구 구의강변로 1</p>
+                                    <p>서울시 광진구 구의동 624-1</p>
+                                </div>
+                                <div class="zip-code"><span>05116</span></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none">
+                            <div class="address-item">
+                                <div class="gubun">도로명<br>지번</div>
+                                <div class="address-text">
+                                    <p>서울시 광진구 구의강변로 1</p>
+                                    <p>서울시 광진구 구의동 624-1</p>
+                                </div>
+                                <div class="zip-code"><span>05116</span></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none">
+                            <div class="address-item">
+                                <div class="gubun">도로명<br>지번</div>
+                                <div class="address-text">
+                                    <p>서울시 광진구 구의강변로 1</p>
+                                    <p>서울시 광진구 구의동 624-1</p>
+                                </div>
+                                <div class="zip-code"><span>05116</span></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none">
+                            <div class="address-item">
+                                <div class="gubun">도로명<br>지번</div>
+                                <div class="address-text">
+                                    <p>서울시 광진구 구의강변로 1</p>
+                                    <p>서울시 광진구 구의동 624-1</p>
+                                </div>
+                                <div class="zip-code"><span>05116</span></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none">
+                            <div class="address-item">
+                                <div class="gubun">도로명<br>지번</div>
+                                <div class="address-text">
+                                    <p>서울시 광진구 구의강변로 1</p>
+                                    <p>서울시 광진구 구의동 624-1</p>
+                                </div>
+                                <div class="zip-code"><span>05116</span></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none">
+                            <div class="address-item">
+                                <div class="gubun">도로명<br>지번</div>
+                                <div class="address-text">
+                                    <p>서울시 광진구 구의강변로 1</p>
+                                    <p>서울시 광진구 구의동 624-1</p>
+                                </div>
+                                <div class="zip-code"><span>05116</span></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none">
+                            <div class="address-item">
+                                <div class="gubun">도로명<br>지번</div>
+                                <div class="address-text">
+                                    <p>서울시 광진구 구의강변로 1</p>
+                                    <p>서울시 광진구 구의동 624-1</p>
+                                </div>
+                                <div class="zip-code"><span>05116</span></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none">
+                            <div class="address-item">
+                                <div class="gubun">도로명<br>지번</div>
+                                <div class="address-text">
+                                    <p>서울시 광진구 구의강변로 1</p>
+                                    <p>서울시 광진구 구의동 624-1</p>
+                                </div>
+                                <div class="zip-code"><span>05116</span></div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <!-- //주소검색결과 -->
+
+                <!-- 주소검색결과 없을 경우 -->
+                <div class="find-address-result">
+                    <p class="empty-item">검색된 주소가 업습니다.</p>
+                </div>
+                <!-- //주소검색결과 없을 경우 -->
+            </div>
+            <!-- //con-step2 -->
+
+            <!-- con-step3 -->
+            <div class="con-step3">
+                <p class="tit-text">상세주소 입력</p>
+                <p class="guide-text sm">저장하고 싶은 방식의 주소를 선택하시고 나머지 주소를 입력해 주세요</p>
+
+                <!-- 주소검색선택 -->
+                <ul class="find-address-result">
+                    <li>
+                        <div class="address-item mode-select">
+                            <div class="m-radio-button v3">
+                                <input type="radio" class="a-radio-button" id="dlvr-address-type-1" name="dlvr-address-type">
+                                <label class="a-label js-a-label u-no-select custom-radio" for="dlvr-address-type-1"></label>
+                            </div>
+                            <div class="gubun"><label class="a-label js-a-label label-text" for="dlvr-address-type-1">도로명</label></div>
+                            <div class="address-text">
+                                <p><label class="a-label js-a-label label-text" for="dlvr-address-type-1">서울시 광진구 구의강변로 1 서울시 광진구 구의강변로 1서울시 광진구 구의강변로 1</label></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="address-item mode-select">
+                            <div class="m-radio-button v3">
+                                <input type="radio" class="a-radio-button" id="dlvr-address-type-2" name="dlvr-address-type">
+                                <label class="a-label js-a-label u-no-select custom-radio" for="dlvr-address-type-2"></label>
+                            </div>
+                            <div class="gubun"><label class="a-label js-a-label label-text" for="dlvr-address-type-2">지번</label></div>
+                            <div class="address-text">
+                                <p><label class="a-label js-a-label label-text" for="dlvr-address-type-2">서울시 광진구 구의강변로 1</label></p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <!-- //주소검색선택 -->
+
+                <div class="m-input v3" data-component="MInput">
+                    <input class="a-input js-a-input"
+                           placeholder="상세주소를 입력해 주세요."
+                           type="text"
+                           name="detail-address"
+                           id="detail-address"
+                           required=""
+                           data-validation-required-text="상세주소를 입력해 주세요">
+                    <label class="a-label js-a-label" for="detail-address" data-placeholder=""></label>
+                </div>
+
+                <div class="button-container col-2">
+                    <button class="a-button is-outlined js-close-button" type="button">
+                        <span>취소</span>
+                    </button>
+                    <button class="a-button is-primary btn-save" type="button">
+                        <span>확인</span>
+                    </button>
+                </div>
+
+            </div>
+            <!-- //con-step3 -->
+            
+        </div>
+    </div>
+
+    <!-- tip : when develop this script must be delete -->
+    <script type="text/javascript">
+        (function() {
+            setTimeout(function(){
+                let btnAddressSearch = document.querySelector('.btn-address-search');
+                if(btnAddressSearch) {
+                    btnAddressSearch.addEventListener('click', function (_evt) {
+                        _evt.preventDefault();
+                        _evt.stopPropagation();
+                        let tempWrap = this.closest('.lp-find-address');
+                        if(tempWrap && !tempWrap.classList.contains('step2')){
+                            tempWrap.classList.add('step2')
+                        }
+                        if(tempWrap && tempWrap.classList.contains('step3')){
+                            tempWrap.classList.remove('step3')
+                        }
+                    });
+                }
+                let aTagAddressItem = document.querySelectorAll('.find-address-result li a');
+                if(aTagAddressItem){
+                    Array.prototype.slice.call(aTagAddressItem).forEach( function (_obj) {
+                        _obj.addEventListener('click', function (_evt) {
+                            _evt.preventDefault();
+                            _evt.stopPropagation();
+                            let tempWrap = this.closest('.lp-find-address');
+                            if(tempWrap && tempWrap.classList.contains('step2')){
+                                tempWrap.classList.remove('step2')
+                            }
+                            if(tempWrap && !tempWrap.classList.contains('step3')){
+                                tempWrap.classList.add('step3')
+                            }
+                        });
+                    });
+                }
+            },100);
+        })();
+    </script>
+    <!-- //tip -->
+
+</script>
+<!-- //lp-find-address -->
+
+
+
+
+
+
+<!-- lp-find-address -->
+<script type="text/x-handlebars-template" id="lp-find-address-standard">
+    <div class="lightbox-content-dft lp-find-address step1">
+        <div class="m-headline is-main-headline">
+            <h2 class="a-heading-2"><span>주소 검색</span></h2>
+        </div>
+        <div class="content">
+
+            <!-- con-step4 -->
+            <div class="con-step4">
+                <p class="guide-text sm">입력하신 주소에 해당하는 표준주소가 있습니다.아래 표준주소로 바꾸시겠습니까?</p>
+
+                <!-- 주소검색선택 -->
+                <ul class="find-address-result">
+                    <li>
+                        <div class="address-item mode-select-standard">
+                            <div class="m-radio-button v3">
+                                <input type="radio" class="a-radio-button" id="dlvr-address-type-1" name="dlvr-address-type">
+                                <label class="a-label js-a-label u-no-select custom-radio" for="dlvr-address-type-1"></label>
+                            </div>
+                            <div class="address-text">
+                                <p>
+                                    <label class="a-label js-a-label label-text" for="dlvr-address-type-1">
+                                        <span class="zip">[입력한주소] 12365</span>
+                                        서울시 광진구 구의강변로 1 서울시 광진구 구의강변로 1서울시 광진구 구의강변로 1
+                                    </label>
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="address-item mode-select-standard">
+                            <div class="m-radio-button v3">
+                                <input type="radio" class="a-radio-button" id="dlvr-address-type-2" name="dlvr-address-type">
+                                <label class="a-label js-a-label u-no-select custom-radio" for="dlvr-address-type-2"></label>
+                            </div>
+                            <div class="address-text">
+                                <p>
+                                    <label class="a-label js-a-label label-text" for="dlvr-address-type-2">
+                                        <span class="zip">[표준주소] 14652 (123-456)</span>
+                                        서울시 광진구 구의강변로 1
+                                    </label>
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <!-- //주소검색선택 -->
+
+                <div class="button-container col-2">
+                    <button class="a-button is-outlined js-close-button" type="button">
+                        <span>취소</span>
+                    </button>
+                    <button class="a-button is-primary btn-save" type="button">
+                        <span>확인</span>
+                    </button>
+                </div>
+
+            </div>
+            <!-- //con-4 -->
+            
+        </div>
+    </div>
+</script>
+<!-- //lp-find-address -->
+
+
+
+
+
+
+<!-- 배송지목록 > 삭제 -->
+<script type="text/x-handlebars-template" id="lp-dlvr-list-del">
+    <div class="lightbox-content-dft lp-dlvr-list-del">
+        <h2 class="a-heading-2"><span>해당 배송지 정보를 삭제하시겠습니까?</span></h2>
+        <div class="content"></div>
+        <div class="button-container col-2">
+            <button class="a-button is-outlined js-close-button" type="button"><span>취소</span></button>
+            <button class="a-button is-primary" type="button"><span>확인</span></button>
+        </div>
+    </div>
+</script>
+<!-- //배송지목록 > 삭제 -->
+
+
+<!-- 무통장 입금 전용계좌 안내 -->
+<script type="text/x-handlebars-template" id="lp-deposit-account-guide">
+    <div class="lightbox-content-dft lp-deposit-account-guide">
+        <div class="m-headline is-main-headline">
+            <h2 class="a-heading-2"><span>무통장 입금 전용계좌 안내</span></h2>
+        </div>
+        <div class="content">
+            <ul class="o-info-line-box col-2-1">
+                <li>
+                    <span class="f-type1">입금금액</span>
+                    <span class="f-type1 price-won">12,390,000</span>
+                </li>
+                <li>
+                    <span class="f-type1">입금자명</span>
+                    <span class="f-type1">이민호</span>
+                </li>
+                <li>
+                    <span class="f-type1">입금은행</span>
+                    <span class="f-type1">우리은행 <span>2560-3980-2391-49</span></span>
+                </li>
+                <li>
+                    <span class="f-type1">예금주명</span>
+                    <span class="f-type1">현대백화점몰</span>
+                </li>
+                <li>
+                    <span class="f-type1">입금기한</span>
+                    <span class="f-type1">2021년 07월03일 <br><br> - 기한 내 입금하지 못하면 주문이 자동으로 취소됩니다.</span>
+                </li>
+            </ul>
+            <p class="desc-text">상품대금은 1회성 계좌로 입금해야 하며, 비회원 무통장입금 결제의 경우 일회성 가상계좌로 운용되며 해당 주문 건에 한해서만 유효합니다. 입금완료 후 해당 계좌는 사용하실 수 없습니다.</p>
+        </div>
+        <div class="button-container col-2">
+            <button class="a-button is-outlined js-close-button" type="button"><span>취소</span></button>
+            <button class="a-button is-primary" type="button"><span>확인</span></button>
+        </div>
+    </div>
+</script>
+<!-- //무통장 입금 전용계좌 안내 -->
+
+
+<!-- 무통장 입금 전용계좌 안내 -->
+<script type="text/x-handlebars-template" id="lp-deposit-account-guide-nonmbr">
+    <div class="lightbox-content-dft lp-deposit-account-guide">
+        <div class="m-headline is-main-headline">
+            <h2 class="a-heading-2"><span>무통장 입금 전용계좌 안내</span></h2>
+        </div>
+        <div class="content">
+            <ul class="o-info-line-box col-2-1">
+                <li>
+                    <span class="f-type1">입금금액</span>
+                    <span class="f-type1 price-won">12,390,000</span>
+                </li>
+                <li>
+                    <span class="f-type1">입금자명</span>
+                    <span class="f-type1">이민호</span>
+                </li>
+                <li>
+                    <span class="f-type1">입금은행</span>
+                    <span class="f-type1">우리은행 <span>2560-3980-2391-49</span></span>
+                </li>
+                <li>
+                    <span class="f-type1">예금주명</span>
+                    <span class="f-type1">현대백화점몰</span>
+                </li>
+                <li>
+                    <span class="f-type1">입금기한</span>
+                    <span class="f-type1">2021년 07월03일 <br><br> - 기한 내 입금하지 못하면 주문이 자동으로 취소됩니다.</span>
+                </li>
+            </ul>
+            <p class="desc-text">상품대금은 1회성 계좌로 입금해야 하며, 비회원 무통장입금 결제의 경우 일회성 가상계좌로 운용되며 해당 주문 건에 한해서만 유효합니다. 입금완료 후 해당 계좌는 사용하실 수 없습니다.</p>
+        </div>
+        <div class="button-container col-2">
+            <button class="a-button is-outlined js-close-button" type="button"><span>취소</span></button>
+            <button class="a-button is-primary" type="button"><span>확인</span></button>
+        </div>
+    </div>
+</script>
+<!-- //무통장 입금 전용계좌 안내 -->
+
+
+<!-- 비회원 주문 정보수집 동의 -->
+<script type="text/x-handlebars-template" id="lp-nonmbr-order-info-agree">
+    <div class="lightbox-content-dft lp-nonmbr-order-info-agree">
+        <div class="m-headline is-main-headline">
+            <h2 class="a-heading-2"><span>비회원 주문 정보수집 동의</span></h2>
+        </div>
+        <div class="content">
+            <p class="guide-text sm">상품의 주문 및 배송을 위해 다음의 개인정보 수집 이용에 동의 후 원활한 서비스 이용이 가능합니다.</p>
+        </div>
+    </div>
+</script>
+<!-- //비회원 주문 정보수집 동의 -->
+
+
+<!-- 본인인증 방법 선택 -->
+<script type="text/x-handlebars-template" id="lp-verification-way">
+    <div class="lightbox-content-dft lp-verification-way">
+        <h2 class="a-heading-2"><span>본인인증 방법 선택</span></h2>
+        <div class="content">
+            <div class="button-container col-2">
+                <button class="a-button is-outlined" type="button"><span>휴대폰 인증</span></button>
+                <button class="a-button is-outlined" type="button"><span>I-PIN 인증</span></button>
+            </div>
+            <p class="long-text">본인인증시 유의사항
+                본인인증 서비스는 신용정보 취급정식 인가 업체인 (주)드림시큐리티 /(주)서울신용
+                평가정보에서 제공합니다.
+
+                본인인증에 문제가 있는 경우
+                (주)드림시큐리티 (02-1899-4134)  / (주)서울신용평가정보 (1577-1006) 으로 문의
+                하여 주시기 바랍니다.
+
+                위 인증방법이 모두 실패하셨을 경우, ARKET 고객센터 [1800-2765]으로 문의하여
+                주시기 바랍니다.
+            </p>
+        </div>
+    </div>
+</script>
+<!-- //본인인증 방법 선택 -->
+
+
+<!-- 주문고객정보 -->
+<script type="text/x-handlebars-template" id="lp-orderer-info">
+    <div class="lightbox-content-dft lp-orderer-info">
+        <h2 class="a-heading-2"><span>주문 고객정보</span></h2>
+        <div class="content">
+            <form class="o-form" data-component="OForm" action="" method="POST">
+                <div class="m-input v3" data-component="MInput">
+                    <label class="a-label js-a-label" for="orderer-name">이름</label>
+                    <input class="a-input js-a-input"
+                           placeholder="이름 입력"
+                           type="text"
+                           value="홍길동"
+                           name="orderer-name"
+                           id="orderer-name"
+                           required=""
+                           data-validation-required-text="이름을 입력해주세요"
+                           data-validation-pattern-text="주문고객 이름은 한글, 영문만 가능합니다">
+                    <label class="a-label js-a-label" for="orderer-name" data-placeholder=""></label>
+                </div>
+                <p class="guide-text sm">E-mail, 연락처 정보는 회원정보에서 변경 가능합니다.</p>
+            </form>
+        </div>
+        <div class="button-container col-2">
+            <button class="a-button is-outlined js-close-button" type="button"><span>취소</span></button>
+            <button class="a-button is-primary" type="button"><span>확인</span></button>
+        </div>
+    </div>
+</script>
+<!-- //주문고객정보 -->
+
+
 <!-- 반품 및 환불 -->
 <script type="text/x-handlebars-template" id="lp-return-refund-guide">
     <div class="lightbox-content-dft lp-return-refund-guide">
@@ -2327,18 +2911,14 @@
                     </a>
                 </div>
                 <div class="accordion-content">
-                    <p class="accordion-con-text">
-                        고객이 주문한 상품에 만족하기를 항상 바라지만, 마음에 들지 않을 경우 상품 수령 후 7일 이내의 경우
-                        온라인 스토어 및 고객 센터를 통한 반품 신청이 가능하며 수령 후 7일 경과, 14일 이전의 기간에는
-                        고객 센터를 통한 반품 신청만 가능합니다.
-
-                        결제 방식과 동일한 방법으로 전액이 환불됩니다. 반품 진행 시 상품이 깨끗하고 흠이 없고 모든 태그가
-                        부착되어 있어야 합니다. 특히 수영복의 경우 위생 테이프의 손상없이 부착되어 있어야 합니다.
-
+                    <p class="accordion-con-text">고객이 주문한 상품에 만족하기를 항상 바라지만, 마음에 들지 않을 경우 상품 수령 후 7일 이내의 경우 온라인 스토어 및 고객 센터를 통한 반품 신청이 가능하며 수령 후
+                        7일 경과, 14일 이전의 기간에는 고객 센터를 통한 반품 신청만 가능합니다.
+                        결제 방식과 동일한 방법으로 전액이 환불됩니다. 반품 진행 시 상품이 깨끗하고 흠이 없고 모든 태그가 부착되어 있어야 합니다. 특히 수영복의 경우 위생 테이프의 손상없이
+                        부착되어 있어야 합니다.
                         위생상의 이유로 속옷 및 이어링 제품은 반품이 불가합니다. (결함의 경우 제외)
-
                         온라인 구매 상품은 매장에서 환불이 불가합니다.
                         모든 반품 비용은 무료이나, 위생상의 이유로 속옷 및 이어링 제품은 반품이 불가합니다
+
                     </p>
                 </div>
             </div>
@@ -2350,18 +2930,11 @@
                     </a>
                 </div>
                 <div class="accordion-content">
-                    <p class="accordion-con-text">
-                        고객이 주문한 상품에 만족하기를 항상 바라지만, 마음에 들지 않을 경우 상품 수령 후 7일 이내의 경우
-                        온라인 스토어 및 고객 센터를 통한 반품 신청이 가능하며 수령 후 7일 경과, 14일 이전의 기간에는
-                        고객 센터를 통한 반품 신청만 가능합니다.
+                    <p class="accordion-con-text">상품 회수가 완료되면 14일 이내에 환불받을 수 있습니다. 현금으로 결제했다면 반품 완료 시 SMS가 전송됩니다.
 
-                        결제 방식과 동일한 방법으로 전액이 환불됩니다. 반품 진행 시 상품이 깨끗하고 흠이 없고 모든 태그가
-                        부착되어 있어야 합니다. 특히 수영복의 경우 위생 테이프의 손상없이 부착되어 있어야 합니다.
+                        - 반품 회수 택배사는 CJ대한통운으로 진행되며, 타 택배사를 이용하는 경우 환불이 지연될 수 있습니다.
 
-                        위생상의 이유로 속옷 및 이어링 제품은 반품이 불가합니다. (결함의 경우 제외)
-
-                        온라인 구매 상품은 매장에서 환불이 불가합니다.
-                        모든 반품 비용은 무료이나, 위생상의 이유로 속옷 및 이어링 제품은 반품이 불가합니다
+                        - 기타 다른 방법으로 반품하는 경우 환불이 지연될 수 있습니다.
                     </p>
                 </div>
             </div>
@@ -2373,18 +2946,9 @@
                     </a>
                 </div>
                 <div class="accordion-content">
-                    <p class="accordion-con-text">
-                        고객이 주문한 상품에 만족하기를 항상 바라지만, 마음에 들지 않을 경우 상품 수령 후 7일 이내의 경우
-                        온라인 스토어 및 고객 센터를 통한 반품 신청이 가능하며 수령 후 7일 경과, 14일 이전의 기간에는
-                        고객 센터를 통한 반품 신청만 가능합니다.
+                    <p class="accordion-con-text">반품은 상품이 완전한 상태여야 가능합니다. 다시 말해, 상품은 데오드란트나 향수 또는 화장 자국 등이 없이 깨끗해야 하고, 닳거나 빨래한 적도 없는 상태여야 합니다. 판매 불가 상태로 반환된 상품은 환불되지 않으며 고객에게 반송될 수 있습니다.
 
-                        결제 방식과 동일한 방법으로 전액이 환불됩니다. 반품 진행 시 상품이 깨끗하고 흠이 없고 모든 태그가
-                        부착되어 있어야 합니다. 특히 수영복의 경우 위생 테이프의 손상없이 부착되어 있어야 합니다.
-
-                        위생상의 이유로 속옷 및 이어링 제품은 반품이 불가합니다. (결함의 경우 제외)
-
-                        온라인 구매 상품은 매장에서 환불이 불가합니다.
-                        모든 반품 비용은 무료이나, 위생상의 이유로 속옷 및 이어링 제품은 반품이 불가합니다
+                        신발은 바닥이 손상되지 않도록 표면이 부드러운 카펫이 깔린 곳에서 착용 바랍니다. 반품을 결심했으면 배송된 신발 상자에 상품을 넣어주세요. 상자도 상품의 일부입니다. 그리고 또 다른 두꺼운 상자에 넣어 포장해주세요. 배송 시 사용된 외부 포장 상자를 그대로 사용하는 것을 추천합니다.
                     </p>
                 </div>
             </div>
@@ -2396,18 +2960,23 @@
                     </a>
                 </div>
                 <div class="accordion-content">
-                    <p class="accordion-con-text">
-                        고객이 주문한 상품에 만족하기를 항상 바라지만, 마음에 들지 않을 경우 상품 수령 후 7일 이내의 경우
-                        온라인 스토어 및 고객 센터를 통한 반품 신청이 가능하며 수령 후 7일 경과, 14일 이전의 기간에는
-                        고객 센터를 통한 반품 신청만 가능합니다.
+                    <p class="accordion-con-text">카드 결제:
+                        ARKET에서 반품 처리 진행이 완료된 후 은행에서 환불 절차가 진행됩니다. 카드 환급은 은행 처리 시간에 따라 영업일 기준 최대 10일 정도 소요됩니다. 이러한 점은 ARKET이 해결할 수 없는 점 양해 바랍니다.
 
-                        결제 방식과 동일한 방법으로 전액이 환불됩니다. 반품 진행 시 상품이 깨끗하고 흠이 없고 모든 태그가
-                        부착되어 있어야 합니다. 특히 수영복의 경우 위생 테이프의 손상없이 부착되어 있어야 합니다.
+                        현금(무통장 입금) 결제:
+                        9시-15시 사이에 접수된 환불은 당일에 처리되며, 15시 이후 또는 다음날 9시까지 접수된 환불은 다음날에 처리됩니다. 토/일요일 및 공휴일의 환불 접수는 마지막 공휴일 기준 다음날에 처리됩니다.
 
-                        위생상의 이유로 속옷 및 이어링 제품은 반품이 불가합니다. (결함의 경우 제외)
+                        현금(실시간 계좌 이체) 결제:
+                        영업일 기준 다음날에 환불이 진행됩니다.
 
-                        온라인 구매 상품은 매장에서 환불이 불가합니다.
-                        모든 반품 비용은 무료이나, 위생상의 이유로 속옷 및 이어링 제품은 반품이 불가합니다
+                        간편결제:
+                        등록된 카드사 또는 계좌에 따라 다르나, 계좌의 경우 영업일 기준 다음날에 환불 절차가 진행됩니다.
+
+                        휴대폰 결제:
+                        주문 당월에 반품 신청 시 당월결제 내역에서 취소됩니다. 다음 달에 취소 시에는 현금 환불만 가능하며, 영업일 기준(토, 일, 공휴일 제외) 익일 환불이 진행됩니다.
+
+                        예치금:
+                        ARKET 에서 반품 처리 진행이 완료된 후 바로 부여됩니다.
                     </p>
                 </div>
             </div>
@@ -2416,6 +2985,30 @@
     </div>
 </script>
 <!-- //반품 및 환불 -->
+
+
+<!-- 결제진행중 -->
+<script type="text/x-handlebars-template" id="lp-pay-processing">
+    <div class="lightbox-content-dft lp-pay-processing">
+        <div class="content">
+            <img class="a-image loading-img" src="../../static/images/common/loading.svg" alt="loading">
+            <p class="tit-text lg">결제 진행 중입니다.</p>
+            <p class="tit-text">창을 닫거나, 새로 고침 시 주문오류가 발생할 수 있습니다</p>
+        </div>
+    </div>
+</script>
+<!-- //결제진행중 -->
+
+
+<!-- 결제진행중-외부 -->
+<script type="text/x-handlebars-template" id="lp-pay-processing-ex">
+    <div class="lightbox-content-dft lp-pay-processing-ex">
+        <div class="content">
+            <p class="tit-text lg">결제 서비스가 진행중입니다. <br>잠시만 기다려 주시기 바랍니다.</p>
+        </div>
+    </div>
+</script>
+<!-- //결제진행중-외부-->
 
 <!-- //handlebars-template -->
     <!-- //o-page-content -->

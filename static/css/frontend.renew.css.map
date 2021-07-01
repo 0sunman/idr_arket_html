@@ -1,6 +1,6 @@
 {
 "version": 3,
-"mappings": "AACQ,kCAAuB;AAC7B,kCAAuB",
+"mappings": "AACQ,8BAAmB;AACzB,yBAAc;AACd,yBAAc;AACd,yBAAc",
 "sources": ["../../dev/css_dev/frontend.renew.scss"],
 "names": [],
 "file": "frontend.renew.css"
