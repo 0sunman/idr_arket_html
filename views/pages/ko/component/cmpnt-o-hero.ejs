@@ -1,0 +1,414 @@
+<div data-component="OPageContent" class="o-page-content guide-content">
+
+    <!-- description-box -->
+    <div class="description-box full-width">
+        <h2 class="a-heading-1">
+            <strong class="a-strong">o-hero</strong>
+        </h2>
+        <div class="m-informative-section">
+            <h3>Description</h3>
+
+            <h3>.full-width</h3>
+            <p>margin-left:0, margin-right:0, .o-hero 태그에 명시</p>
+
+            <h3>.double-image</h3>
+            <p>아이템 2개를 50% 사이즈로 노출할 때, .o-hero 태그에 명시</p>
+
+            <h3>.single-image</h3>
+            <p>아이템 1개를 full사이즈로 노출할 때, .o-hero 태그에 명시</p>
+
+            <h3>.has-hidden-video</h3>
+            <p>
+                해당 클래스가 있으면, .a-vimeo-video 태그가 숨겨짐<br>
+                비디오 배경이미지 : .takeover-background 태그 인라인 스타일로 적용 <br>
+                비디오 URL : .a-vimeo-video 태그에 iframe src 속성에 인라인 스타일로 적용
+            </p>
+
+            <h3>.o-text-block</h3>
+            <p>
+                텍스트 내용 : .heading-cap / .heading-value 태그 내 삽입 <br>
+                텍스트 색상 : .o-text-block 블럭에 인라인 스타일로 적용
+            </p>
+
+            <h3>.cta-wrapper</h3>
+            <p>
+                cta 링크 : .a-link 태그 내 href 속성에 삽입 <br>
+                cta 텍스트 : .a-link 태그 내 삽입 <br>
+                cta 텍스트색상, 배경색상 : .cta-wrapper 태그에 인라인 스타일로 적용(ex> --cta-color:black; --text-color:white;)
+            </p>
+
+            <h3>.is-left-aligned</h3>
+            <p>
+                아이템 1개를 좌측에 노출할 때 .o-hero 태그에 명시 <br>
+                배경컬러 : .o-hero 블럭에 인라인 스타일로 적용
+            </p>
+
+            <h3>.is-right-aligned</h3>
+            <p>
+                아이템 1개를 우측에 노출할 때 .o-hero 태그에 명시 <br>
+                배경컬러 : .o-hero 블럭에 인라인 스타일로 적용
+            </p>
+        </div>
+
+    </div>
+    <!-- //description-box -->
+
+    <!----------------------->
+
+    <!-- a-heading -->
+    <h2 class="a-heading-2 is-main-heading">
+        <span class="heading-cap">type</span>
+        <span class="a-tag is-department">2 Background</span>
+    </h2>
+    <!-- //a-heading -->
+    <!-- o-hero -->
+    <!-- to Dev [toggle Class] : full-width, double-image, single-image, is-hidden-video, is-left-aligned, is-right-aligned -->
+    <!-- to Dev [inline Style] : background-color -->
+    <div class="o-hero is-takeover full-width hero-takeover double-image" data-component="OHero">
+        <div class="takeover-wrapper">
+            <div class="textblock-container">
+
+                <!-- to Dev [toggle Class] : disable-bg, q-bg-transparent -->
+                <!-- to Dev [inline Style] : color -->
+                <div class="o-text-block disable-bg" style="color:#000">
+                    <div class="heading-wrapper">
+                        <div class="m-headline">
+
+                            <!-- to Dev [toggle Class] : large-font -->
+                            <h1 class="a-heading-1 large-font">
+                                <span class="heading-cap">women</span>
+                                <span class="heading-value">Striped collection</span>
+                            </h1>
+                        </div>
+                    </div>
+
+                    <!-- to Dev [inline Style] : --cta-color, --text-color -->
+                    <div class="cta-wrapper" style="--cta-color:black; --text-color:white;">
+                        <div class="o-tag-cloud">
+                            <ul class="tags-container">
+                                <li class="tag">
+                                    <a class="a-link" href="#none">
+                                        Shop now
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="image-wrapper">
+            <a href="/en/women/c/striped-collection.html" target="_self" class="a-link">
+                <!-- to Dev [inline Style] : background-image -->
+                <div class="takeover-background" style="background-image:url(<%= pageInfo.root %>/images/component/21203_W_Towelling-Summer-Stripes_04_WEB.jpg)"></div>
+            </a>
+            <a href="/en/women/c/striped-collection.html" target="_self" class="a-link">
+                <!-- to Dev [inline Style] : background-image -->
+                <div class="takeover-background" style="background-image: url(<%= pageInfo.root %>/images/component/21203_W_Towelling-Summer-Stripes_08_WEB.jpg); float:right"></div>
+            </a>
+        </div>
+    </div>
+    <!-- //o-hero -->
+
+    <!----------------------->
+
+    <!-- a-heading -->
+    <h2 class="a-heading-2 is-main-heading">
+        <span class="heading-cap">type</span>
+        <span class="a-tag is-department">1 Background</span>
+    </h2>
+    <!-- //a-heading -->
+    <!-- o-hero -->
+    <!-- to Dev [toggle Class] : full-width, double-image, single-image, is-hidden-video, is-left-aligned, is-right-aligned -->
+    <!-- to Dev [inline Style] : background-color -->
+    <div class="o-hero is-takeover full-width hero-takeover single-image" data-component="OHero">
+        <div class="takeover-wrapper">
+            <div class="textblock-container">
+
+                <!-- to Dev [toggle Class] : disable-bg, q-bg-transparent -->
+                <!-- to Dev [inline Style] : color -->
+                <div class="o-text-block disable-bg" style="color:#000">
+                    <div class="heading-wrapper">
+                        <div class="m-headline">
+
+                            <!-- to Dev [toggle Class] : large-font -->
+                            <h1 class="a-heading-1 large-font">
+                                <span class="heading-cap">women</span>
+                                <span class="heading-value">Striped collection</span>
+                            </h1>
+                        </div>
+                    </div>
+
+                    <!-- to Dev [inline Style] : --cta-color, --text-color -->
+                    <div class="cta-wrapper" style="--cta-color:black; --text-color:white;">
+                        <div class="o-tag-cloud">
+                            <ul class="tags-container">
+                                <li class="tag">
+                                    <a class="a-link" href="#none">
+                                        Shop now
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="image-wrapper">
+            <!--
+            <a href="/en/women/c/striped-collection.html" target="_self" class="a-link">
+                <div class="takeover-background" style="background-image:url(<%= pageInfo.root %>/images/component/21203_W_Towelling-Summer-Stripes_04_WEB.jpg)"></div>
+            </a>
+            -->
+            <a href="/en/women/c/striped-collection.html" target="_self" class="a-link">
+                <!-- to Dev [inline Style] : background-image -->
+                <div class="takeover-background" style="background-image: url(<%= pageInfo.root %>/images/component/21203_W_Towelling-Summer-Stripes_08_WEB.jpg); float:right"></div>
+            </a>
+        </div>
+    </div>
+    <!-- //o-hero -->
+
+    <!----------------------->
+
+    <!-- a-heading -->
+    <h2 class="a-heading-2 is-main-heading">
+        <span class="heading-cap">type</span>
+        <span class="a-tag is-department">1 Background</span> - video
+    </h2>
+    <!-- //a-heading -->
+    <!-- o-hero -->
+    <!-- to Dev [toggle Class] : full-width, double-image, single-image, is-hidden-video, is-left-aligned, is-right-aligned -->
+    <!-- to Dev [inline Style] : background-color -->
+    <div class="o-hero full-width is-takeover single-image has-hidden-video" style="background-color: lightgrey;" data-component="OHero">
+        <div class="takeover-wrapper">
+            <div class="textblock-container">
+
+                <!-- to Dev [toggle Class] : disable-bg, q-bg-transparent -->
+                <!-- to Dev [inline Style] : color -->
+                <div class="o-text-block q-bg-transparent">
+                    <div class="heading-wrapper">
+                        <div class="video-play-button q-color-white"></div>
+                    </div>
+                    <div class="text-wrapper"></div>
+                    <div class="caption-wrapper"></div>
+                </div>
+            </div>
+        </div>
+        <div class="image-wrapper">
+            <div class="takeover-background" style="background-image: url(<%= pageInfo.root %>/images/component/takeover_3.jpg)">
+                <div class="a-vimeo-video" data-component="AVimeoVideo">
+                    <iframe src="https://player.vimeo.com/video/179859217?autoplay=0&amp;amp;loop=0&amp;amp;color=ffffff&amp;amp;title=0&amp;amp;byline=0&amp;amp;portrait=0&amp;autopause=0" width="640" height="360" frameborder="0" allowfullscreen="" style="height: 100%; width:100%; border: 0;"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //o-hero -->
+
+    <!----------------------->
+
+    <!-- a-heading -->
+    <h2 class="a-heading-2 is-main-heading">
+        <span class="heading-cap">type</span>
+        <span class="a-tag is-department">left-align styling</span>
+    </h2>
+    <!-- //a-heading -->
+    <!-- o-hero -->
+    <!-- to Dev [toggle Class] : full-width, double-image, single-image, is-hidden-video, is-left-aligned, is-right-aligned -->
+    <!-- to Dev [inline Style] : background-color -->
+    <div class="o-hero is-takeover full-width is-left-aligned" style="background-color: lightgrey;">
+        <div class="takeover-wrapper">
+            <div class="textblock-container">
+
+                <!-- to Dev [toggle Class] : disable-bg, q-bg-transparent -->
+                <!-- to Dev [inline Style] : color -->
+                <div class="o-text-block">
+                    <div class="heading-wrapper">
+                        <div class="m-headline">
+
+                            <!-- to Dev [toggle Class] : large-font -->
+                            <h1 class="a-heading-1">
+                                <span class="heading-cap">TitleDate</span>
+                                <span class="heading-cap">TitleCaption</span>
+                                <span class="heading-value">TitleContent</span>
+                            </h1>
+                        </div>
+                    </div>
+                    <div class="text-wrapper">
+                        <p class="a-paragraph text-content">Default title, default body text, Continues link, On
+                            transparent box, image is left-aligned. The scent of the tropical vetiver grass differs
+                            based on the region where it is grown. The soil, sun and cultivation determine its quality.
+                            Vetiver oil from Haiti is more floral, while Indonesian grass has a smokier tone. The scent
+                            also improves with time, peaking after about two years of ageing
+                            <a class="a-link with-anchor" href="#" target="_self">Continues</a>
+                        </p>
+                    </div>
+                    <div class="caption-wrapper">
+                        <div class="caption-container">
+                            <span class="caption-title">Caption 1</span>
+                            <span class="caption-content">Content 1</span>
+                        </div>
+                        <div class="caption-container">
+                            <span class="caption-title">Caption 2</span>
+                            <span class="caption-content">Content 2</span>
+                        </div>
+                        <div class="caption-container">
+                            <span class="caption-title">Caption 3</span>
+                            <span class="caption-content with-spacing">01/12/18</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="image-wrapper">
+            <!-- to Dev [inline Style] : background-image -->
+            <div class="takeover-background" style="background-image: url(<%= pageInfo.root %>/images/component/takeover_4.jpg)"></div>
+        </div>
+    </div>
+    <!-- //o-hero -->
+
+    <!----------------------->
+
+    <!-- a-heading -->
+    <h2 class="a-heading-2 is-main-heading">
+        <span class="heading-cap">type</span>
+        <span class="a-tag is-department">right-align styling</span>
+    </h2>
+    <!-- //a-heading -->
+    <!-- o-hero -->
+    <!-- to Dev [toggle Class] : full-width, double-image, single-image, is-hidden-video, is-left-aligned, is-right-aligned -->
+    <!-- to Dev [inline Style] : background-color -->
+    <div class="o-hero is-takeover full-width is-right-aligned" style="background-color: lightgrey;">
+        <div class="takeover-wrapper">
+            <div class="textblock-container">
+
+                <!-- to Dev [toggle Class] : disable-bg, q-bg-transparent -->
+                <!-- to Dev [inline Style] : color -->
+                <div class="o-text-block">
+                    <div class="heading-wrapper">
+                        <div class="m-headline">
+
+                            <!-- to Dev [toggle Class] : large-font -->
+                            <h1 class="a-heading-1">
+                                <span class="heading-cap">TitleDate</span>
+                                <span class="heading-cap">TitleCaption</span>
+                                <span class="heading-value">TitleContent</span>
+                            </h1>
+                        </div>
+                    </div>
+                    <div class="text-wrapper">
+                        <p class="a-paragraph text-content">Default title, default body text, Continues link, On
+                            transparent box, image is left-aligned. The scent of the tropical vetiver grass differs
+                            based on the region where it is grown. The soil, sun and cultivation determine its quality.
+                            Vetiver oil from Haiti is more floral, while Indonesian grass has a smokier tone. The scent
+                            also improves with time, peaking after about two years of ageing
+                            <a class="a-link with-anchor" href="#" target="_self">Continues</a>
+                        </p>
+                    </div>
+                    <div class="caption-wrapper">
+                        <div class="caption-container">
+                            <span class="caption-title">Caption 1</span>
+                            <span class="caption-content">Content 1</span>
+                        </div>
+                        <div class="caption-container">
+                            <span class="caption-title">Caption 2</span>
+                            <span class="caption-content is-hidden">Content 2</span>
+                        </div>
+                        <div class="caption-container">
+                            <span class="caption-title">Caption 3</span>
+                            <span class="caption-content with-spacing">01/12/18</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="image-wrapper">
+            <!-- to Dev [inline Style] : background-image -->
+            <div class="takeover-background" style="background-image: url(<%= pageInfo.root %>/images/component/takeover_4.jpg)"></div>
+        </div>
+    </div>
+    <!-- //o-hero -->
+
+    <!----------------------->
+
+    <!-- description-box -->
+    <div class="description-box full-width">
+        <h2 class="a-heading-1">
+            <strong class="a-strong">o-slider</strong>
+        </h2>
+        <div class="m-informative-section">
+            <h3>Description</h3>
+
+            <h3>:data-pagination</h3>
+            <p>false : pagination 없음 <br>true : bullet pagination 사용 <br>thumb : 썸네일 pagination 사용</p>
+
+            <h3>:data-floating-pagination</h3>
+            <p>이미지 하단 설명문구 추가 사용 (추가 코드 필요)</p>
+
+            <h3>.has-white-arrows</h3>
+            <p>화살표 버튼 색상을 #fff 변경<p>
+
+            <h3>:data-pagination-pre</h3>
+            <p>text-pagination 에서 사용<p>
+
+            <p class="fc-point2o">※.slide-cont, .slides 태그 사이는 공백이 없어야 합니다.</p>
+
+        </div>
+
+    </div>
+    <!-- //description-box -->
+
+    <!----------------------->
+
+    <!-- a-heading -->
+    <h2 class="a-heading-2 is-main-heading">
+        <span class="heading-cap">type</span>
+        <span class="a-tag is-department">single-image styling with slider</span>
+    </h2>
+    <!-- //a-heading -->
+    <!-- o-hero -->
+    <!-- to Dev [toggle Class] : full-width, double-image, single-image, is-hidden-video, is-left-aligned, is-right-aligned -->
+    <!-- to Dev [inline Style] : background-color -->
+    <div class="o-hero is-takeover full-width single-image" style="background-color: lightgrey;">
+        <div class="image-wrapper">
+
+            <!-- o-slider -->
+            <!-- to Dev [toggle Class] : has-white-arrows -->
+            <!-- to Dev [toggle Prop] : data-pagination, data-floating-pagination -->
+            <div class="o-slider" data-component="OSlider" data-pagination="true">
+                <div class="redils">
+                    <div class="slide-cont"><!--
+                        --><!-- to Dev [toggle Prop] : data-pagination-pre --><!--
+                        --><div class="slides">
+                            <div class="takeover-background" style="background-image: url(<%= pageInfo.root %>/images/component/takeover_1.jpg)"></div>
+                        </div><!--
+                        --><div class="slides">
+                            <div class="takeover-background" style="background-image: url(<%= pageInfo.root %>/images/component/takeover_2.jpg)"></div>
+                        </div><!--
+                        --><div class="slides">
+                            <div class="takeover-background" style="background-image: url(<%= pageInfo.root %>/images/component/takeover_3.jpg)"></div>
+                        </div><!--
+                        --><div class="slides">
+                            <div class="takeover-background" style="background-image: url(<%= pageInfo.root %>/images/component/takeover_4.jpg)"></div>
+                        </div><!--
+                    --></div>
+                </div>
+                <div class="redils-controls">
+                    <div class="arrow-area arrow-area-left">
+                        <button class="a-button-nostyle arrow" type="button"></button>
+                    </div>
+                    <div class="arrow-area arrow-area-right">
+                        <button class="a-button-nostyle arrow" type="button"></button>
+                    </div>
+                </div>
+                <div class="pagination"></div>
+            </div>
+            <!-- o-slider -->
+
+        </div>
+    </div>
+    <!-- //o-hero -->
+        
+</div>
