@@ -1,26 +1,24 @@
 <div data-component="OProductDetailsSelection" class="o-product-details-selection">
     <div class="markers-container">
-        <div data-component="MProductMarkers" class="m-product-marker promo-marker-wrapper" id="productMarkers"></div>
+        <div data-component="MProductMarkers" class="m-product-marker promo-marker-wrapper" id="productMarkers">
+            <div class="marker-text product-marker">Arket basics collection</div>
+        </div>
     </div>
-    <div class="show-percentage-off is-visible"><span>50% 할인</span></div>
+    <!--<div class="show-percentage-off is-visible"><span>50% 할인</span></div>-->
     <div class="product-name-price-wrapper">
         <h1 class="a-heading-3">
             <span id="productTitle">리넨 반바지</span>
         </h1>
         <div class="m-product-price" id="product-price">
             <span id="productPrice" class="is-regular price-value">49,000</span>
-<!--            <span class="is-deprecated">60€</span>-->
-<!--            <span class="is-reduced">50€</span>-->
+            <!-- <span class="is-deprecated">60€</span>-->
+            <!-- <span class="is-reduced">50€</span>-->
         </div>
     </div>
-    <hm-comparative-price id="comparative-price" class="comparative-price" unit="" price-per-unit="">
-        <span>50ml</span>
-        <span>100ml</span>
-    </hm-comparative-price>
-
+    
     <div class="product-size-wrapper" id="sizesDropdown">
         <h4 class="a-heading-4">사이즈</h4>
-        <a class="a-link size-guide-link open-lightbox" href="#" target="_self" data-template="size-guide-template" data-classes="is-large">사이즈 가이드</a>
+        <a class="a-link size-guide-link open-lightbox" href="#" target="_self" data-template="lp-size-guide" data-classes="is-large">사이즈 가이드</a>
         <div class="a-size-swatch" id="size" data-component="ASizeSwatch">
             <input class="a-input js-input" name="selectSize" data-value="" value="">
             <input name="lowfield" data-lowcheck="true" data-lowtext="LOW IN STOCK" class="a-input js-input" id="lowinstockfield" type="hidden">
@@ -57,6 +55,10 @@
                 <p class="a-paragraph low-stock"><span>low-in-stock</span></p>
             </button>
         </div>
+    </div>
+    <div class="model-tip">
+        <span class="t1">model tip!</span>
+        <span class="t2">163cm/45kg/55size/235mm</span>
     </div>
     <button class="a-button add-to-cart"
             data-text-default="장바구니 담기"

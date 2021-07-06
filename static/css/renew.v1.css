@@ -5,7 +5,7 @@
 /* ========================================================== */
 /* ---------------------------------------------------------- */
 /* frontend.min overwrite s ================================= */
-.ryu { width: 110%; }
+.o-width:not(.wc-25) .o-image-listing.cols-3 .image-container:nth-child(n+4) { margin-top: 3px; }
 
 /* frontend.min overwrite e ================================= */
 

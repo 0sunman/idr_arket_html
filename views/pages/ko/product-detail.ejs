@@ -137,43 +137,34 @@
                 <%# md-o-product-details-selection %>
                 <%- include ("../../common/md-o-product-details-selection.ejs") %>
 
-                <div class="trail instore parbase">
-                    <!-- o-availability -->
-                    <div data-component="OAvailability" class="o-availability is-visible">
-                        <h6 class="a-heading-6 i18n">Availability</h6>
-                        <div class="o-availability-content">
-                            <button type="button" class="a-button-nostyle online-label availability-label in-stock">
-                                <span class="a-svg-package">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="35" viewBox="0 0 30 35" id="package" y="103">
-                                        <path d="M15 1L1 9.113V25.33l14 8.112 14-8.11V9.11L15 1zm.037 15.07l-4.516-2.623L21.487 7.07l4.528 2.625-10.977 6.375zm4.457-10.154L8.53 12.292l-4.508-2.62L15 3.313l4.494 2.604zM3 11.393l11 6.388v12.772L3 24.178V11.393zM16 30.55V17.824l11-6.388v12.743L16 30.55z"
-                                              fill="#231f20"></path>
-                                    </svg>
-                                </span>
-                                <span class="i18n">Online</span>
-                            </button>
-                            <div class="a-tooltip has-animation">
-                                <h6 class="a-heading-6 i18n">Online availability</h6>
-                                <p class="a-paragraph" id="online-stock-par"></p>
-                            </div>
+                <!-- m-product-shipping-info -->
+                <div data-component="MShippingInfo" class="m-product-shipping-info">
+                    <div class="info-short is-richtext" data-content="localizedTTT">무료배송 | 무료반품</div>
+                    <div class="a-tooltip">
+                        <div class="is-richtext" data-content="localized">
+                            <h3>택배</h3>
+                            <p>영업일 기준 1~3일 내 배송
+                                배송비 무료 | 무료 반품</p>
+
+                            <p>목적지: 대한민국 | 배송료 무료 영업일 기준 1~3일 소요됩니다.
+                                반품 배송비 무료</p>
+
+                            <p>배송에 대한 자세한 내용은 여기를 클릭하십시오.
+                                우리의 반품 및 환불 정책에 대한 자세한 내용은 <a href="#none">여기</a>를 참조하십시오.</p>
+
+                            <p>일부 군사지역은 배송이 불가능할 수 있습니다.</p>
+
+                            <p>위생상의 이유로 속옷 및 이어링 제품은 반품이 불가합니다.
+                                (결함의 경우 제외)</p>
                         </div>
-                        <div class="o-availability-content">
-                            <button type="button" class="a-button-nostyle instore-label availability-label" onclick="stockStatus()">
-                                <span class="a-bag-icon js-a-bag-icon sm-scale">
-                                    <span class="wrapper">
-                                        <span class="handle"></span>
-                                        <span class="quantity"></span>
-                                    </span>
-                                </span>
-                                <span class="i18n">In Store</span>
-                            </button>
-                            <div id="dataStoreCountry" class="a-tooltip has-animation">
-                                <a href="#" target="_self" class="a-link open-lightbox other-countries i18n"
-                                   data-template="other-countries" data-classes="is-large">Other market</a>
-                            </div>
-                        </div>
+                        <p><a href="#" target="_self"></a></p>
                     </div>
-                    <!-- //o-availability -->
                 </div>
+                <!-- //m-product-shipping-info -->
+
+                <!-- o-availability -->
+                <div data-component="OAvailability" class="o-availability is-visible"></div>
+                <!-- //o-availability -->
 
                 <!-- o-product-attributes -->
                 <div data-component="OProductAttributes" class="o-product-attributes">
@@ -187,20 +178,35 @@
                             <div data-component="OAccordion" class="o-accordion pdp align-left full-width" data-exclusive="true" data-exclusive-group="pdpPage" data-component-id="1b7c8531-4de9-4c30-bfa5-de1253ee894a">
                                 <div class="accordion-header">
                                     <a href="#" target="_self" class="a-link accordion-title js-accordion-toggle">
-                                        <span class="pdp-value" id="made-in-title i18n">Made in&nbsp;Bangladesh</span>
+                                        <span class="pdp-value" id="made-in-title i18n">제조국 중국</span>
                                     </a>
                                 </div>
                                 <div class="accordion-content">
                                     <div class="accordion-inner-content">
                                         <div class="m-made-in">
                                             <div class="made-in-content made-in" id="made-in-content">
-                                                <span class="pdp-label i18n">Made in</span>
+                                                <span class="pdp-label i18n">제조국</span>
                                                 <div class="made-in-value">
-                                                    <span id="made-in-region-name">Bangladesh</span>
+                                                    <span id="made-in-region-name">중국</span>
                                                 </div>
-                                            </div><div class="made-in-content supplier" id="made-in-supplier"><span class="pdp-label">Supplier</span><div class="made-in-value"><span>Flamingo Fashions</span></div></div><div class="made-in-content factory" id="made-in-factory"><span class="pdp-label">Factory</span><div class="made-in-value"><span>Flamingo Fashions Unit 2</span><div class="address"><p class="a-paragraph"> Bangladesh</p></div></div></div>
-
-
+                                            </div>
+                                            <!--
+                                            <div class="made-in-content supplier" id="made-in-supplier">
+                                                <span class="pdp-label">Supplier</span>
+                                                <div class="made-in-value">
+                                                    <span>Flamingo Fashions</span>
+                                                </div>
+                                            </div>
+                                            <div class="made-in-content factory" id="made-in-factory">
+                                                <span class="pdp-label">Factory</span>
+                                                <div class="made-in-value">
+                                                    <span>Flamingo Fashions Unit 2</span>
+                                                    <div class="address">
+                                                        <p class="a-paragraph"> Bangladesh</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            -->
                                             <p class="is-richtext a-paragraph made-in-information"></p>
                                         </div>
                                     </div>
@@ -211,14 +217,16 @@
                             <div data-component="OAccordion" class="o-accordion pdp align-left full-width" data-exclusive="true" data-exclusive-group="pdpPage" data-component-id="9db61ca8-32d8-47af-96a2-1b4a80450d95">
                                 <div class="accordion-header">
                                     <a href="#" target="_self" class="a-link accordion-title js-accordion-toggle">
-                                        <span class="pdp-value i18n">Care Instructions</span>
+                                        <span class="pdp-value i18n">취급 시 주의사항</span>
                                     </a>
                                 </div>
                                 <div class="accordion-content">
-                                    <div class="m-care-instructions">
-                                        <p class="a-paragraph" id="careDetail">
-                                            중간 온도에서 철분, 무 염소 표백제 만 드라이 클리닝, 40 ° C 이하에서 세척, 라인 건조.
-                                        </p>
+                                    <div class="accordion-inner-content">
+                                        <div class="m-care-instructions">
+                                            <p class="a-paragraph" id="careDetail">
+                                                중간 온도에서 철분, 무 염소 표백제 만 드라이 클리닝, 40 ° C 이하에서 세척, 라인 건조.
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -234,7 +242,6 @@
                                 <li>합성 손잡이는 최대 260 ° C의 온도를 견디며 확실한 그립을 제공합니다.</li>
                                 <li>빠르고 편리한 청소를위한 식기 세척기 사용 가능</li>
                                 <li>Made in France123123</li>
-                                <li><a class="a-link essential-info-link open-lightbox" href="#" target="_self" data-template="essential-info-template" data-classes="is-large">상품 필수 표시 정보</a></li>
                             </ul>
                         </div>
                         <div class="list-container">
@@ -245,35 +252,13 @@
                                 </li>
                             </ul>
                         </div>
-                        <!--
-                        <span class="m-hazmat bg-transparent">
-                            <img class="a-image hazmat-image" alt="flamable warning icon" src="<%= pageInfo.root %>/org/etc/designs/appeaser/p11/clientlibs/pattern-lib/images/icon-hazmat.png" aria-label="hazardous materials">
-                            <span class="hazmat-label">이 제품에는 가연성 물질이 포함되어 있으므로 제공되는 서비스에 대한 특별 규정이 적용됩니다.</span>
-                        </span>
-                        <div class="ingredients-container">
-                            <p class="a-paragraph is-ingredients">성분: 이 제품에는 가연성 물질이 포함되어 있으므로 제공되는 서비스에 대한 특별 규정이 적용됩니다.</p>
+                        <div class="link-wrap">
+                            <a class="a-link a-link-udln essential-info-link open-lightbox" href="#" target="_self" data-template="lp-prd-essential-info" data-classes="is-large">상품 필수 표시 정보</a>
                         </div>
-                        -->
                     </div>
                     
                 </div>
                 <!-- //o-product-attributes -->
-
-                <!-- m-product-shipping-info -->
-                <div data-component="MShippingInfo" class="m-product-shipping-info absolute-position">
-                    <div class="info-short is-richtext" data-content="localizedTTT">무료배송</div>
-                    <div class="a-tooltip">
-                        <div class="is-richtext" data-content="localized"><h3>택배</h3>
-                            <p>영업일 기준 3-5 일, 20 USD / 200 USD 이상 무료</p>
-                            <p>총 주문 금액에는 현지 판매 세 (VAT)가 포함되어 있지 않습니다. 추가 요금이 적용될 수 있습니다. <a href="https://www.arket.com/language-masters/en/customer-service/delivery-methods.html">여기</a>에 서배송비에 대해 자세히 알아보십시오.</p>
-                            <p>우리는 공휴일을 제외하고 월요일-토요일을 배달합니다. 성수기 및 세일 기간에는 배송이 조금 더 오래 걸릴 수 있습니다. <a href="/content/p11/en/customer-service/delivery-methods.html">배송</a>에 대해 자세히 알아보십시오.</p>
-                            <h3>안전한 결제</h3>
-                            <p>카드, Klarna 및 PayPal.</p>
-                        </div>
-                        <p><a href="#" target="_self"></a></p>
-                    </div>
-                </div>
-                <!-- //m-product-shipping-info -->
 
             </div>
             <!-- //left-panel -->
@@ -303,8 +288,8 @@
                                 </a>
                             </label>
                             <p class="a-paragraph sold-out-swatch">SOLD OUT</p>
-                        </div>
-                        <div data-id="swatch_0739734004" id="swatch_0739734004" class="a-swatch js-swatch">
+                        </div><!--
+                        --><div data-id="swatch_0739734004" id="swatch_0739734004" class="a-swatch js-swatch">
                             <label id="swatchLabel" class="a-label swatch-label js-a-label">
                                 <input type="radio">
                                 <a class="a-button-nostyle a-link">
@@ -322,8 +307,8 @@
                                 </a>
                             </label>
                             <p class="a-paragraph sold-out-swatch">SOLD OUT</p>
-                        </div>
-                        <div data-id="swatch_0739734008" id="swatch_0739734008" class="a-swatch js-swatch ">
+                        </div><!--
+                        --><div data-id="swatch_0739734008" id="swatch_0739734008" class="a-swatch js-swatch is-sold-out is-disabled">
                             <label id="swatchLabel" class="a-label swatch-label js-a-label">
                                 <input type="radio">
                                 <a  class="a-button-nostyle a-link">
@@ -341,8 +326,8 @@
                                 </a>
                             </label>
                             <p class="a-paragraph sold-out-swatch">SOLD OUT</p>
-                        </div>
-                        <div data-id="swatch_0739734009" id="swatch_0739734009" class="a-swatch js-swatch is-selected">
+                        </div><!--
+                        --><div data-id="swatch_0739734009" id="swatch_0739734009" class="a-swatch js-swatch is-selected">
                             <label id="swatchLabel" class="a-label swatch-label js-a-label">
                                 <input type="radio">
                                 <a class="a-button-nostyle a-link">
@@ -360,8 +345,8 @@
                                 </a>
                             </label>
                             <p class="a-paragraph sold-out-swatch">SOLD OUT</p>
-                        </div>
-                        <div data-id="swatch_0739734010" id="swatch_0739734010" class="a-swatch js-swatch ">
+                        </div><!--
+                        --><div data-id="swatch_0739734010" id="swatch_0739734010" class="a-swatch js-swatch ">
                             <label id="swatchLabel" class="a-label swatch-label js-a-label">
                                 <input type="radio">
                                 <a  class="a-button-nostyle a-link">
@@ -379,8 +364,8 @@
                                 </a>
                             </label>
                             <p class="a-paragraph sold-out-swatch">SOLD OUT</p>
-                        </div>
-                        <div data-id="swatch_0739734001" id="swatch_0739734001" class="a-swatch js-swatch is-discontinued is-disabled">
+                        </div><!--
+                        --><div data-id="swatch_0739734001" id="swatch_0739734001" class="a-swatch js-swatch is-discontinued is-disabled">
                             <label id="swatchLabel" class="a-label swatch-label js-a-label">
                                 <input type="radio">
                                 <a class="a-button-nostyle a-link">
@@ -397,8 +382,8 @@
                                 </a>
                             </label>
                             <p class="a-paragraph dis-continued-swatch">ARCHIVED ITEM</p>
-                        </div>
-                        <div data-id="swatch_0739734002" id="swatch_0739734002" class="a-swatch js-swatch is-discontinued is-disabled">
+                        </div><!--
+                        --><div data-id="swatch_0739734002" id="swatch_0739734002" class="a-swatch js-swatch is-discontinued is-disabled">
                             <label id="swatchLabel" class="a-label swatch-label js-a-label">
                                 <input type="radio">
                                 <a class="a-button-nostyle a-link">
@@ -421,7 +406,7 @@
                 </div>
                 
                 <div class="swatch-container material-swatch-container">
-                    <div data-component="MSwatches" class="m-swatches swatch-panel-container" data-component-id="213cf414-54fe-41b5-b12c-c9e248203c50">
+                    <div data-component="MSwatches" class="m-swatches swatch-panel-container">
                         <h4 class="a-heading-4 i18n">Materials</h4>
                         <div class="a-link-swatch selected">
                             <a target="_self" class="a-link">
@@ -434,297 +419,6 @@
 
             </div>
             <!-- //right-panel -->
-
-            <div class="data-container">
-                <div data-apptusvalue="women_campaigns_2020_linen_collection"></div>
-                <div data-apptusvalue="women_underwearloungewear_all"></div>
-                <div data-type="product" data-code="212087-380"
-                     data-icon="//lp.arket.com/app006prod?set=source[/fc/68/fc681864213ded7129b4b50ce4035e0f0a507d1f.jpg],origin[dam],type[DESCRIPTIVESTILLLIFE],device[hdpi],quality[80],ImageVersion[1]&amp;call=url[file:/product/main]"
-                     data-title="Linen Shorts">
-                </div>
-            </div>
-
-            <!-- lightbox-con : size-guide-template -->
-            <script type="text/x-handlebars-template" id="size-guide-template">
-                <div class="o-sizeguide">
-                    <div class="intro parbase">
-                        <div class="o-sizeguide">
-                            <div>
-                                <div id="sizeguideIntroID" class="is-richtext">
-                                    <div class="freeHTML-sizeguide"><h1 class="freeHTML-sizeguide-title">Clothing</h1>
-                                        <div class="freeHTML-sizeguide-information"><p>Measure yourself</p>
-                                            <table class="freeHTML-sizeguide-information-text">
-                                                <tbody>
-                                                <tr>
-                                                    <th>Chest</th>
-                                                    <td>Measure around the fullest part of the bust, while wearing a bra
-                                                        that fits.
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Waist</th>
-                                                    <td>Measure around the narrowest part of the waist.</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Hips</th>
-                                                    <td>Measure around the fullest part of the hips.</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Inside leg</th>
-                                                    <td>Measure from the top of the inside leg down to the floor.</td>
-                                                </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                        <div class="freeHTML-sizeguide-chart"><p class="freeHTML-sizeguide-chartTitle">
-                                            Size Chart</p>
-                                            <input class="freeHTML-sizeguide-inputInch" type="radio"
-                                                   name="women_full_body_free_html_sizeguide"> <span
-                                                    class="freeHTML-sizeguide-titleInch">inch</span> <input
-                                                    class="freeHTML-sizeguide-inputCm" type="radio"
-                                                    name="women_full_body_free_html_sizeguide" checked="checked"> <span
-                                                    class="freeHTML-sizeguide-titleCm">cm</span>
-                                            <table class="freeHTML-sizeguide-chart-titles">
-                                                <thead>
-                                                <tr>
-                                                    <th><span>SIZE</span></th>
-                                                </tr>
-                                                </thead>
-                                                <tbody>
-                                                <tr>
-                                                    <td>eur</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>uk</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>chest</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>waist</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>hip</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>inside leg</td>
-                                                </tr>
-                                                </tbody>
-                                            </table>
-                                            <div class="freeHTML-sizeguide-overflow freeHTML-is-cm">
-                                                <table class="freeHTML-sizeguide-chart-sizes">
-                                                    <thead>
-                                                    <tr>
-                                                        <th><span>XS</span></th>
-                                                        <th><span>S</span></th>
-                                                        <th><span>M</span></th>
-                                                        <th><span>L</span></th>
-                                                    </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                    <tr>
-                                                        <td>32-34</td>
-                                                        <td>36-38</td>
-                                                        <td>40-42</td>
-                                                        <td>44-46</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>6-8</td>
-                                                        <td>10-12</td>
-                                                        <td>14-16</td>
-                                                        <td>18-20</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>76-80</td>
-                                                        <td>84-88</td>
-                                                        <td>92-96</td>
-                                                        <td>100-104</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>60-64</td>
-                                                        <td>68-72</td>
-                                                        <td>76-80</td>
-                                                        <td>84-88</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>84-88</td>
-                                                        <td>92-96</td>
-                                                        <td>100-104</td>
-                                                        <td>108-112</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>76-77</td>
-                                                        <td>78-79</td>
-                                                        <td>80-81</td>
-                                                        <td>82-83</td>
-                                                    </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                            <div class="freeHTML-sizeguide-overflow freeHTML-is-inch">
-                                                <table class="freeHTML-sizeguide-chart-sizes">
-                                                    <thead>
-                                                    <tr>
-                                                        <th><span>XS</span></th>
-                                                        <th><span>S</span></th>
-                                                        <th><span>M</span></th>
-                                                        <th><span>L</span></th>
-                                                    </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                    <tr>
-                                                        <td>32-34</td>
-                                                        <td>36-38</td>
-                                                        <td>40-42</td>
-                                                        <td>44-46</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>6-8</td>
-                                                        <td>10-12</td>
-                                                        <td>14-16</td>
-                                                        <td>18-20</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>30-31½</td>
-                                                        <td>33-34½</td>
-                                                        <td>36¼-37¾</td>
-                                                        <td>39½-41</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>23½-25¼</td>
-                                                        <td>26¾-28½</td>
-                                                        <td>30-31½</td>
-                                                        <td>33-34½</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>33-34½</td>
-                                                        <td>36¼-37¾</td>
-                                                        <td>39½-41</td>
-                                                        <td>42½-44</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>30-30½</td>
-                                                        <td>30¾-31¼</td>
-                                                        <td>31½-32</td>
-                                                        <td>32½-32¾</td>
-                                                    </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="toggle-list size-guides">
-                        <div class="listing parsys"></div>
-                    </div>
-
-                    <style>
-                        #sizePlaceholder {
-                            border-color: rgba(0, 0, 0, 0.3);
-                            background-color: rgba(255, 255, 255, 0.25);
-                            border-style: solid;
-                            border-width: 0.125rem;
-                            margin: -0.125rem;
-                            line-height: 2.875rem;
-                            color: #DDDDDD;
-                            font-size: 0.875rem;
-                            text-align: center;
-                        }
-                    </style>
-                </div>
-            </script>
-            <!-- //lightbox-con : size-guide-template -->
-
-            <!-- lightbox-con : essential-info-template -->
-            <script type="text/x-handlebars-template" id="essential-info-template">
-                <div class="scrollbar-inner scroll-content">
-                    <div class="m-change-country-lightbox false">
-
-                        <div class="information-product">
-                            <h2 class="popup_title"><b>상품 필수 표시 정보</b></h2>
-                            <table class="table-wrap border-type left">
-                                <tbody>
-                                </tbody><colgroup>
-                                <col style="width: 25%">
-                                <col>
-                            </colgroup>
-
-
-
-                                <tbody><tr>
-                                    <th scope="row">제품소재</th>
-                                    <td>100% 면</td>
-                                </tr>
-
-                                <tr>
-                                    <th scope="row">색상</th>
-                                    <td>화이트</td>
-                                </tr>
-
-                                <tr>
-                                    <th scope="row">치수</th>
-                                    <td>32, 34, 36, 38, 40, 42</td>
-                                </tr>
-
-                                <tr>
-                                    <th scope="row">제조자(수입자명)</th>
-                                    <td>COS</td>
-                                </tr>
-
-                                <tr>
-                                    <th scope="row">제조국</th>
-                                    <td>중국</td>
-                                </tr>
-
-                                <tr>
-                                    <th scope="row">세탁방법 및 취급 시 주의사항</th>
-                                    <td>기계 세탁 가능</td>
-                                </tr>
-
-                                <tr>
-                                    <th scope="row">제조연월</th>
-                                    <td>2020-07-28, 2021-01-11</td>
-                                </tr>
-
-                                <tr>
-                                    <th scope="row">품질보증기준</th>
-                                    <td>상품에 동봉되는 품질보증서 또는 공정거래위원회 고시 소비자 분쟁해결 기준에 따릅니다. 공정거래위원회 고시 소비자 분쟁 해결 기본은 품질보증서에 우선하여 진행됩니다.</td>
-                                </tr>
-
-                                <tr>
-                                    <th scope="row">A/S책임자와 전화번호</th>
-                                    <td>COS고객센터: 1800-2765</td>
-                                </tr>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                <tr>
-
-
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-
-                    </div>
-                </div>
-            </script>
-            <!-- //lightbox-con : essential-info-template -->
-
 
         </form>
     </div>
@@ -1064,8 +758,6 @@
     </div>
     <!-- //stylewith -->
 
-    <div class="dynamicarea parbase"></div>
-
     <!-- carousel -->
     <div class="o-width wc-75 carousel">
         <div class="o-pra-component is-suggestions" data-component="OPra" data-pra-panel="product-detail-page" data-pra-locale="en" data-pra-id="PRA1">
@@ -1386,12 +1078,13 @@
                                 <a href="/en/women/tailoring/product.oversized-wool-hopsack-blazer-black.0946354002.html"
                                    target="_self" class="a-link">
                                     <div class="image">
-                                        <div class="placeholder-wrapper"><img alt="Oversized Wool Hopsack Blazer"
-                                                                              class="a-image is-hidden Resolve"
-                                                                              src="//lp.arket.com/app006prod?blank=width[2],height[3],color[none]&amp;sink=format[gif]"
-                                                                              data-resolvewidth="2"
-                                                                              data-resolveheight="3"
-                                                                              data-resolvechain="set=source[/31/d6/31d689d16fab7a98ede310912be216df4b55ad16.jpg],origin[dam],type[DESCRIPTIVESTILLLIFE],ImageVersion[1]&amp;call=url[file:/product/dynamic.chain]">
+                                        <div class="placeholder-wrapper">
+                                            <img alt="Oversized Wool Hopsack Blazer"
+                                                  class="a-image is-hidden Resolve"
+                                                  src="//lp.arket.com/app006prod?blank=width[2],height[3],color[none]&amp;sink=format[gif]"
+                                                  data-resolvewidth="2"
+                                                  data-resolveheight="3"
+                                                  data-resolvechain="set=source[/31/d6/31d689d16fab7a98ede310912be216df4b55ad16.jpg],origin[dam],type[DESCRIPTIVESTILLLIFE],ImageVersion[1]&amp;call=url[file:/product/dynamic.chain]">
                                         </div>
                                     </div>
                                     <div class="description">
@@ -1438,12 +1131,13 @@
                                 <a href="/en/women/tops/product.crew-neck-t-shirt-white.0630665033.html"
                                    target="_self" class="a-link">
                                     <div class="image">
-                                        <div class="placeholder-wrapper"><img alt="Crew-Neck T-shirt"
-                                                                              class="a-image is-hidden Resolve"
-                                                                              src="//lp.arket.com/app006prod?blank=width[2],height[3],color[none]&amp;sink=format[gif]"
-                                                                              data-resolvewidth="2"
-                                                                              data-resolveheight="3"
-                                                                              data-resolvechain="set=source[/95/52/95528393c34b632413f95e874acc40f608fafa0a.jpg],origin[dam],type[DESCRIPTIVESTILLLIFE],ImageVersion[1]&amp;call=url[file:/product/dynamic.chain]">
+                                        <div class="placeholder-wrapper">
+                                            <img alt="Crew-Neck T-shirt"
+                                                  class="a-image is-hidden Resolve"
+                                                  src="//lp.arket.com/app006prod?blank=width[2],height[3],color[none]&amp;sink=format[gif]"
+                                                  data-resolvewidth="2"
+                                                  data-resolveheight="3"
+                                                  data-resolvechain="set=source[/95/52/95528393c34b632413f95e874acc40f608fafa0a.jpg],origin[dam],type[DESCRIPTIVESTILLLIFE],ImageVersion[1]&amp;call=url[file:/product/dynamic.chain]">
                                         </div>
                                     </div>
                                     <div class="description">
@@ -1490,12 +1184,13 @@
                                 <a href="/en/women/tops/product.crew-neck-t-shirt-black.0630665001.html"
                                    target="_self" class="a-link">
                                     <div class="image">
-                                        <div class="placeholder-wrapper"><img alt="Crew-Neck T-shirt"
-                                                                              class="a-image is-hidden Resolve"
-                                                                              src="//lp.arket.com/app006prod?blank=width[2],height[3],color[none]&amp;sink=format[gif]"
-                                                                              data-resolvewidth="2"
-                                                                              data-resolveheight="3"
-                                                                              data-resolvechain="set=source[/22/81/2281f98d18c82f9665251fa4f9dd56678ba4ac0b.jpg],origin[dam],type[DESCRIPTIVESTILLLIFE],ImageVersion[1]&amp;call=url[file:/product/dynamic.chain]">
+                                        <div class="placeholder-wrapper">
+                                            <img alt="Crew-Neck T-shirt"
+                                                  class="a-image is-hidden Resolve"
+                                                  src="//lp.arket.com/app006prod?blank=width[2],height[3],color[none]&amp;sink=format[gif]"
+                                                  data-resolvewidth="2"
+                                                  data-resolveheight="3"
+                                                  data-resolvechain="set=source[/22/81/2281f98d18c82f9665251fa4f9dd56678ba4ac0b.jpg],origin[dam],type[DESCRIPTIVESTILLLIFE],ImageVersion[1]&amp;call=url[file:/product/dynamic.chain]">
                                         </div>
                                     </div>
                                     <div class="description">
@@ -1542,12 +1237,13 @@
                                 <a href="/en/women/tops/product.oversized-pima-cotton-t-shirt-blue.0967941004.html"
                                    target="_self" class="a-link">
                                     <div class="image">
-                                        <div class="placeholder-wrapper"><img alt="Oversized Pima Cotton T-shirt"
-                                                                              class="a-image is-hidden Resolve"
-                                                                              src="//lp.arket.com/app006prod?blank=width[2],height[3],color[none]&amp;sink=format[gif]"
-                                                                              data-resolvewidth="2"
-                                                                              data-resolveheight="3"
-                                                                              data-resolvechain="set=source[/21/19/2119b29c9a3034aac2e7e30929561939567d760c.jpg],origin[dam],type[DESCRIPTIVESTILLLIFE],ImageVersion[1]&amp;call=url[file:/product/dynamic.chain]">
+                                        <div class="placeholder-wrapper">
+                                            <img alt="Oversized Pima Cotton T-shirt"
+                                                  class="a-image is-hidden Resolve"
+                                                  src="//lp.arket.com/app006prod?blank=width[2],height[3],color[none]&amp;sink=format[gif]"
+                                                  data-resolvewidth="2"
+                                                  data-resolveheight="3"
+                                                  data-resolvechain="set=source[/21/19/2119b29c9a3034aac2e7e30929561939567d760c.jpg],origin[dam],type[DESCRIPTIVESTILLLIFE],ImageVersion[1]&amp;call=url[file:/product/dynamic.chain]">
                                         </div>
                                     </div>
                                     <div class="description">
@@ -1642,6 +1338,14 @@
     <!-- //carousel -->
     
 </div>
+
+<!-- handlebars-template -->
+<%# 사이즈가이드 %>
+<%- include ("../../handlebars/hndl-lp-size-guide.ejs") %>
+
+<%# 상품필수정보 %>
+<%- include ("../../handlebars/hndl-lp-prd-essential-info.ejs") %>
+<!-- //handlebars-template -->
 
 <!-- tip : when develop this script must be delete -->
 <script type="text/javascript">

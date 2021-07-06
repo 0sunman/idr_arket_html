@@ -13,8 +13,9 @@
                             <!-- input : 중복 아이디 표기 -->
                             <div class="double-select">
                                 <div data-component="MInput" class="m-input with-button">
-                                    <input class="a-input js-a-input" id="id" name="id" type="text" placeholder="아이디" data-validation-required-text="아이디를 입력해주세요." value="hy1214@gmail.com" required="">
+                                    <input class="a-input js-a-input" id="id" name="id" type="text" placeholder="아이디 또는 이메일" pattern=""  data-validation-required-text="아이디를 입력해주세요." data-validation-pattern-text="이메일 형식이 틀렸습니다." value="hy1214@gmail.com" required="">
                                     <button class="a-button is-primary sm" type="button"><span>중복확인</span></button>
+                                    <label class="a-label js-a-label" for="name"></label>
                                 </div>
                                 <p class="error-text">해당 아이디는 이미 다른 고객님께서 사용 중이십니다.</p>
                             </div><!-- // input : input : 중복 아이디 표기 -->

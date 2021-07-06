@@ -15,7 +15,7 @@ div[class^="markup-list-"] h4 {text-transform:capitalize;}
             let tempListType = 'index';
             pageList.forEach(function(data, idx){
                 if(tempListType != data.type){
-                    if(idx != 0){
+                    if(idx > 1){
         %>
         </ul>
         <%
@@ -33,6 +33,11 @@ div[class^="markup-list-"] h4 {text-transform:capitalize;}
         <%
                 }
                 tempListType = data.type;
+                if(idx == (pageList.length - 1)){
+        %>
+        </ul>
+        <%
+                }
             })
         %>
     </div>
