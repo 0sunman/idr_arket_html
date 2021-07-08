@@ -48,6 +48,16 @@
                 아이템 1개를 우측에 노출할 때 .o-hero 태그에 명시 <br>
                 배경컬러 : .o-hero 블럭에 인라인 스타일로 적용
             </p>
+
+            <h3>.with-video-visible-btn</h3>
+            <p>
+                .video-play-button 버튼을 feeHtml 영역에 같이 넣어 사용시 .takeover-background 태그에 같이 사용
+            </p>
+
+            <h3>.q-color-white</h3>
+            <p>
+                .video-play-button 버튼의 색상을 #fff 변경, 기본은 #000
+            </p>
         </div>
 
     </div>
@@ -62,7 +72,7 @@
     </h2>
     <!-- //a-heading -->
     <!-- o-hero -->
-    <!-- to Dev [toggle Class] : full-width, double-image, single-image, is-hidden-video, is-left-aligned, is-right-aligned -->
+    <!-- to Dev [toggle Class] : full-width, double-image, single-image, has-hidden-video, is-left-aligned, is-right-aligned -->
     <!-- to Dev [inline Style] : background-color -->
     <div class="o-hero is-takeover full-width hero-takeover double-image" data-component="OHero">
         <div class="takeover-wrapper">
@@ -120,7 +130,7 @@
     </h2>
     <!-- //a-heading -->
     <!-- o-hero -->
-    <!-- to Dev [toggle Class] : full-width, double-image, single-image, is-hidden-video, is-left-aligned, is-right-aligned -->
+    <!-- to Dev [toggle Class] : full-width, double-image, single-image, has-hidden-video, is-left-aligned, is-right-aligned -->
     <!-- to Dev [inline Style] : background-color -->
     <div class="o-hero is-takeover full-width hero-takeover single-image" data-component="OHero">
         <div class="takeover-wrapper">
@@ -173,34 +183,115 @@
 
     <!----------------------->
 
-    <!-- a-heading -->
+    <!-- //o-hero -->
+    <!-- 플레이버튼 기능 사용 않하기로 함 : 20210708 -->
+    <!--
     <h2 class="a-heading-2 is-main-heading">
         <span class="heading-cap">type</span>
-        <span class="a-tag is-department">1 Background</span> - video
+        <span class="a-tag is-department">1 Background</span> - video(has-hidden-video)
     </h2>
-    <!-- //a-heading -->
-    <!-- o-hero -->
-    <!-- to Dev [toggle Class] : full-width, double-image, single-image, is-hidden-video, is-left-aligned, is-right-aligned -->
-    <!-- to Dev [inline Style] : background-color -->
     <div class="o-hero full-width is-takeover single-image has-hidden-video" style="background-color: lightgrey;" data-component="OHero">
         <div class="takeover-wrapper">
             <div class="textblock-container">
-
-                <!-- to Dev [toggle Class] : disable-bg, q-bg-transparent -->
-                <!-- to Dev [inline Style] : color -->
                 <div class="o-text-block q-bg-transparent">
-                    <div class="heading-wrapper">
-                        <div class="video-play-button q-color-white"></div>
-                    </div>
+                    <div class="heading-wrapper"></div>
                     <div class="text-wrapper"></div>
                     <div class="caption-wrapper"></div>
                 </div>
             </div>
         </div>
         <div class="image-wrapper">
-            <div class="takeover-background" style="background-image: url(<%= pageInfo.root %>/images/component/takeover_3.jpg)">
+            <div class="takeover-background with-video-visible-btn" style="background-image: url(<%= pageInfo.root %>/images/component/takeover_3.jpg)">
                 <div class="a-vimeo-video" data-component="AVimeoVideo">
                     <iframe src="https://player.vimeo.com/video/179859217?autoplay=0&amp;amp;loop=0&amp;amp;color=ffffff&amp;amp;title=0&amp;amp;byline=0&amp;amp;portrait=0&amp;autopause=0" width="640" height="360" frameborder="0" allowfullscreen="" style="height: 100%; width:100%; border: 0;"></iframe>
+                </div>
+                <div class="video-play-button q-color-white"></div>
+            </div>
+        </div>
+    </div>
+    -->
+    <!-- //o-hero -->
+
+    <!----------------------->
+
+    <!-- a-heading -->
+    <h2 class="a-heading-2 is-main-heading">
+        <span class="heading-cap">type</span>
+        <span class="a-tag is-department">1 Background</span> - vimeo video
+    </h2>
+    <!-- //a-heading -->
+    <!-- o-hero -->
+    <!-- to Dev [toggle Class] : full-width, double-image, single-image, has-hidden-video, is-left-aligned, is-right-aligned -->
+    <!-- to Dev [inline Style] : background-color -->
+    <div class="o-hero full-width is-takeover single-image" style="background-color: lightgrey;" data-component="OHero">
+        <div class="takeover-wrapper">
+            <div class="textblock-container">
+
+                <!-- to Dev [toggle Class] : disable-bg, q-bg-transparent -->
+                <!-- to Dev [inline Style] : color -->
+                <div class="o-text-block q-bg-transparent">
+                    <!--
+                    <div class="heading-wrapper">
+                        <div class="video-play-button q-color-white"></div>
+                    </div>
+                    -->
+                    <div class="text-wrapper"></div>
+                    <div class="caption-wrapper"></div>
+                </div>
+            </div>
+        </div>
+        <div class="image-wrapper">
+            <!-- to Dev [toggle Class] : with-video-visible-btn -->
+            <!-- to Dev [inline Style] : background-image -->
+            <!--<div class="takeover-background with-video-visible-btn" style="background-image: url(<%= pageInfo.root %>/images/component/takeover_3.jpg)">-->
+            <div class="takeover-background">
+                <!-- to Dev [toggle Prop] : data-mute(음소거재생) -->
+                <div class="a-vimeo-video" data-component="AVimeoVideo" data-mute="true">
+                    <!-- to Dev [toggle Prop] : autoplay(자동재생) -->
+                    <iframe src="https://player.vimeo.com/video/179859217?autoplay=0&amp;amp;loop=0&amp;amp;color=ffffff&amp;amp;title=0&amp;amp;byline=0&amp;amp;portrait=0&amp;autopause=0" width="640" height="360" frameborder="0" allowfullscreen="" style="height: 100%; width:100%; border: 0;"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //o-hero -->
+
+    <!----------------------->
+
+    <!-- a-heading -->
+    <h2 class="a-heading-2 is-main-heading">
+        <span class="heading-cap">type</span>
+        <span class="a-tag is-department">1 Background</span> - youtube video
+    </h2>
+    <!-- //a-heading -->
+    <!-- o-hero -->
+    <!-- to Dev [toggle Class] : full-width, double-image, single-image, has-hidden-video, is-left-aligned, is-right-aligned -->
+    <!-- to Dev [inline Style] : background-color -->
+    <div class="o-hero full-width is-takeover single-image" style="background-color: lightgrey;" data-component="OHero">
+        <div class="takeover-wrapper">
+            <div class="textblock-container">
+
+                <!-- to Dev [toggle Class] : disable-bg, q-bg-transparent -->
+                <!-- to Dev [inline Style] : color -->
+                <div class="o-text-block q-bg-transparent">
+                    <!--
+                    <div class="heading-wrapper">
+                        <div class="video-play-button q-color-white"></div>
+                    </div>
+                    -->
+                    <div class="text-wrapper"></div>
+                    <div class="caption-wrapper"></div>
+                </div>
+            </div>
+        </div>
+        <div class="image-wrapper">
+            <!-- to Dev [toggle Class] : with-video-visible-btn -->
+            <!-- to Dev [inline Style] : background-image -->
+            <!--<div class="takeover-background with-video-visible-btn" style="background-image: url(<%= pageInfo.root %>/images/component/takeover_3.jpg)">-->
+            <div class="takeover-background">
+                <!-- to Dev [toggle Prop] : data-mute -->
+                <div class="a-youtube-video" data-component="AYoutubeVideo">
+                    <!-- to Dev [toggle Prop] : autoplay(자동재생) -->
+                    <iframe style="width:100%; height:100%" id="player3" type="text/html" width="720" height="405" src="https://www.youtube.com/embed/jWAa7EigJRs?color=white&amp;autoplay=0&amp;controls=0&amp;fs=0&amp;rel=0&amp;showinfo=0&amp;enablejsapi=1&amp;origin=https://appeaser.brightstep.se" frameborder="0" allowfullscreen="" controls="0" showinfo="0" autoplay="0"></iframe>
                 </div>
             </div>
         </div>
@@ -216,7 +307,7 @@
     </h2>
     <!-- //a-heading -->
     <!-- o-hero -->
-    <!-- to Dev [toggle Class] : full-width, double-image, single-image, is-hidden-video, is-left-aligned, is-right-aligned -->
+    <!-- to Dev [toggle Class] : full-width, double-image, single-image, has-hidden-video, is-left-aligned, is-right-aligned -->
     <!-- to Dev [inline Style] : background-color -->
     <div class="o-hero is-takeover full-width is-left-aligned" style="background-color: lightgrey;">
         <div class="takeover-wrapper">
@@ -278,7 +369,7 @@
     </h2>
     <!-- //a-heading -->
     <!-- o-hero -->
-    <!-- to Dev [toggle Class] : full-width, double-image, single-image, is-hidden-video, is-left-aligned, is-right-aligned -->
+    <!-- to Dev [toggle Class] : full-width, double-image, single-image, has-hidden-video, is-left-aligned, is-right-aligned -->
     <!-- to Dev [inline Style] : background-color -->
     <div class="o-hero is-takeover full-width is-right-aligned" style="background-color: lightgrey;">
         <div class="takeover-wrapper">
@@ -369,7 +460,7 @@
     </h2>
     <!-- //a-heading -->
     <!-- o-hero -->
-    <!-- to Dev [toggle Class] : full-width, double-image, single-image, is-hidden-video, is-left-aligned, is-right-aligned -->
+    <!-- to Dev [toggle Class] : full-width, double-image, single-image, has-hidden-video, is-left-aligned, is-right-aligned -->
     <!-- to Dev [inline Style] : background-color -->
     <div class="o-hero is-takeover full-width single-image" style="background-color: lightgrey;">
         <div class="image-wrapper">
@@ -388,7 +479,17 @@
                             <div class="takeover-background" style="background-image: url(<%= pageInfo.root %>/images/component/takeover_2.jpg)"></div>
                         </div><!--
                         --><div class="slides">
-                            <div class="takeover-background" style="background-image: url(<%= pageInfo.root %>/images/component/takeover_3.jpg)"></div>
+
+                            <!-- movie -->
+                            <div class="takeover-background">
+                                <!-- to Dev [toggle Prop] : data-mute -->
+                                <div class="a-vimeo-video" data-component="AVimeoVideo">
+                                    <!-- to Dev [toggle Prop] : autoplay(자동재생) -->
+                                    <iframe src="https://player.vimeo.com/video/179859217?autoplay=0&amp;amp;loop=0&amp;amp;color=ffffff&amp;amp;title=0&amp;amp;byline=0&amp;amp;portrait=0&amp;autopause=0" width="640" height="360" frameborder="0" allowfullscreen="" style="height: 100%; width:100%; border: 0;"></iframe>
+                                </div>
+                            </div>
+                            <!-- //movie -->
+
                         </div><!--
                         --><div class="slides">
                             <div class="takeover-background" style="background-image: url(<%= pageInfo.root %>/images/component/takeover_4.jpg)"></div>
@@ -410,5 +511,5 @@
         </div>
     </div>
     <!-- //o-hero -->
-        
+     
 </div>

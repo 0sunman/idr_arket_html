@@ -2,7 +2,7 @@
     <span id="content" tabindex="-1" class="access-content">Content of the page</span>
 
     <!-- o-my-page -->
-    <div class="o-my-page">
+    <div class="o-my-page o-width wc-75">
 
         <%# md-o-my-page-navigation %>
         <%- include ("../../../common/md-o-my-page-navigation.ejs") %>
@@ -24,11 +24,10 @@
                     </li>
                     <li>
                         <dt>주문고객</dt>
-                        <dd>
-                            홍길동 (abscd32@gmail.com, 010-8765-3243)
+                        <dd>홍길동 (abscd32@gmail.com, 010-8765-3243)
                             <div class="order-history-hide">
-                                <a class="a-link a-link-udln btn-order-list-hide" href="#none" target="_self">주문내역숨김</a>
-                                <a class="a-link open-lightbox btn-order-list-hide-guide" href="#none" target="_self" data-template="order-list-hide" data-classes="is-large">
+                                <a class="a-link a-link-udln btn-order-list-hide open-lightbox" href="#none" target="_self" data-template="lp-hide-order-history" data-classes="alert">주문내역숨김</a>
+                                <a class="a-link btn-order-list-hide-guide open-lightbox" href="#none" target="_self" data-template="order-list-hide" data-classes="is-large">
                                     <span class="a-icon-question"></span>
                                 </a>
                             </div>
@@ -36,9 +35,6 @@
                     </li>
                 </ul>
             </div>
-            <script type="text/x-handlebars-template" id="order-list-hide">
-                가이드
-            </script>
             <!-- //order-detail-info-bx -->
 
             <h3 class="a-heading-3 sub">주문상품</h3>
@@ -230,6 +226,14 @@
     </div>
     <!-- //o-my-page -->
 </div>
+
+<!-- handlebars-template -->
+<script type="text/x-handlebars-template" id="order-list-hide">
+    가이드
+</script>
+<%# 주문내역 숨김 %>
+<%- include ("../../../handlebars/hndl-lp-hide-order-history.ejs") %>
+<!-- //handlebars-template -->
 
 <!-- tip : when develop this script must be delete -->
 <script type="text/javascript">

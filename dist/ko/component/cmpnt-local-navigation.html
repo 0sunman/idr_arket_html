@@ -2047,59 +2047,175 @@
     <!-- //handlebars-template -->
 
     <!-- o-page-content -->
-    <div data-component="OPageContent" class="o-page-content cofs-page">
-    <span id="content" class="access-content">Content of the page</span>
-    <div class="o-sign-in-wrapper">
-        <div class="sign-in-heading">
-            <h2 class="a-heading-2">회원가입</h2>
+    <div data-component="OPageContent" class="o-page-content guide-content">
+
+    <!-- description-box -->
+    <div class="description-box full-width">
+        <h2 class="a-heading-1">
+            <strong class="a-strong">Local-navigation</strong>
+        </h2>
+        <div class="m-informative-section">
+            <h3>Description</h3>
+
+            <h3>.is-long</h3>
+            <p>자동생성됨, 버튼이 지정한 width 값보다 넘어갈 시 사용하면, 좌우에 버튼 생성</p>
+            
         </div>
-        <div class="is-sign-in-tabs">
-            <div class="o-registration empty-registration alternative-style-option ng-scope">
-                <form method="post" data-component="OForm">
-                    <div class="o-registration-form v2 id-cnnt">
-                        
-                        <!-- 회원가입 관련 안내 문구 -->
-<p class="main-info">ARKET 온라인 스토어는 더현대닷컴이 운영 제공하는 사이트로 기존회원은 더현대닷컴 아이디와 비밀번호로 바로 이용 가능합니다.</p>
-<!-- // 회원가입 관련 안내 문구 -->
-                        <!-- 신규추가 내용 : 회원가입 1.간편인증(기존계정 존재) -->
-                        <div class="n-wrap step-1-2">
-                            <h2 class="title">개인계정연결 안내</h2>
-                            <div class="in-service"><span>honggildong@hmall.com</span> 계정이 아이디 또는 이메일 주소로 사용 중 입니다.</div>
 
-                            <p>기존의 계정에 로그인 해서 SNS계정을 연결하시면, 하나의  계정으로 회원/주문 정보를 통합 관리할 수 있습니다.<br class="only-m"/>개인 계정 연결 및 해제는 마이페이지에서 가능합니다.</p>
-                            <p>연동을 위한 아이디와 비밀번호를 입력해주세요.</p>
+    </div>
+    <!-- //description-box -->
 
-                            <!-- input : 아이디 또는 이메일 -->
-                            <div data-component="MInput" class="m-input">
-                                <label class="a-label js-a-label" for="id">아이디 또는 이메일</label>
-                                <input class="a-input js-a-input" id="id" name="id" type="text" pattern="" placeholder="아이디 또는 이메일" data-validation-required-text="아이디를 입력해 주세요." data-validation-pattern-text="입력하신 아이디가 맞지 않습니다." required="">
-                                <label class="a-label js-a-label" for="id"></label>
-                            </div><!-- // input : 아이디 또는 이메일 -->
+    <!----------------------->
 
-                            <!-- input : 비밀번호 -->
-                            <div data-component="MInput" class="m-input">
-                                <label class="a-label js-a-label" for="password">비밀번호</label>
-                                <input class="a-input js-a-input" id="password" name="password" type="password" pattern="" placeholder="비밀번호" data-validation-required-text="비밀번호를 입력해주세요." data-validation-pattern-text="입력하신 비밀번호가 맞지 않습니다."required="">
-                                <label class="a-label js-a-label" for="password"></label>
-                            </div><!-- // input : 비밀번호 -->
-
-                            <button type="submit" class="a-button is-primary">
-                                <span>연결하기</span>
-                            </button>
-
-                            <div class="link-holder">
-                                <a href="#none" class="a-link a-link-udln forgot-id">아이디찾기</a>
-                                <a href="#none" class="a-link a-link-udln forgot-pw">비밀번호찾기</a>
-                                <a href="#none" class="a-link a-link-udln register">회원가입</a>
-                            </div>
-                        </div><!-- // 신규추가 내용 : 회원가입 1.간편인증(기존계정 존재) -->
-                    </div>
-                </form>
-            </div>
+    <!-- a-heading -->
+    <h2 class="a-heading-2 is-main-heading">
+        <span class="heading-cap">type</span>
+        <span class="a-tag is-department">default</span>
+    </h2>
+    <!-- //a-heading -->
+    <!-- local-navigation-basic -->
+    <div class="sdp-component local-navigation">
+        <div class="o-local-navigation" data-component="OLocalNavigation">
+            <button class="a-button-nostyle show-more-left-btn" type="button"></button>
+            <span class="nav-title">Type</span>
+            <ul>
+                <li>
+                    <a tabindex="0" class="a-link" href="#none" target="_self" data-title="Components">
+                        All Components
+                    </a>
+                </li>
+                <li class="is-selected">
+                    <a tabindex="0" class="a-link" href="#none" target="_self" data-title="Hero">
+                        Hero
+                    </a>
+                </li>
+                <li>
+                    <a tabindex="0" class="a-link" href="#none" target="_self" data-title="Banner">
+                        Banner
+                    </a>
+                </li>
+                <li>
+                    <a tabindex="0" class="a-link" href="#none" target="_self" data-title="Breadcrumb component">
+                        Breadcrumb component
+                    </a>
+                </li>
+                <li>
+                    <a tabindex="0" class="a-link" href="#none" target="_self" data-title="Local navigation">
+                        Local navigation
+                    </a>
+                </li>
+            </ul>
+            <button class="a-button-nostyle show-more-right-btn" type="button"></button>
         </div>
     </div>
-</div>
+    <!-- // local-navigation-basic -->
 
+    <!----------------------->
+
+    <!-- a-heading -->
+    <h2 class="a-heading-2 is-main-heading">
+        <span class="heading-cap">type</span>
+        <span class="a-tag is-department">is-long</span>
+    </h2>
+    <!-- //a-heading -->
+    <!-- local-navigation-basic -->
+    <div class="sdp-component local-navigation">
+        <div class="o-local-navigation" data-component="OLocalNavigation">
+            <button class="a-button-nostyle show-more-left-btn" type="button"></button>
+            <span class="nav-title">Type</span>
+            <ul>
+                <li>
+                    <a tabindex="0" class="a-link" href="#none" target="_self" data-title="Components">
+                        All Components
+                    </a>
+                </li>
+                <li class="is-selected">
+                    <a tabindex="0" class="a-link" href="#none" target="_self" data-title="Hero">
+                        Hero
+                    </a>
+                </li>
+                <li>
+                    <a tabindex="0" class="a-link" href="#none" target="_self" data-title="Banner">
+                        Banner
+                    </a>
+                </li>
+                <li>
+                    <a tabindex="0" class="a-link" href="#none" target="_self" data-title="Breadcrumb component">
+                        Breadcrumb component
+                    </a>
+                </li>
+                <li>
+                    <a tabindex="0" class="a-link" href="#none" target="_self" data-title="Local navigation">
+                        Local navigation
+                    </a>
+                </li>
+                <li>
+                    <a tabindex="0" class="a-link" href="#none" target="_self" data-title="Focus panels">
+                        Focus panels
+                    </a>
+                </li>
+                <li>
+                    <a tabindex="0" class="a-link" href="#none" target="_self" data-title="Image component">
+                        Image component
+                    </a>
+                </li>
+                <li>
+                    <a tabindex="0" class="a-link" href="#none" target="_self" data-title="Product listings">
+                        Product listings
+                    </a>
+                </li>
+                <li>
+                    <a tabindex="0" class="a-link" href="#none" target="_self" data-title="Tag cloud">
+                        Tag cloud
+                    </a>
+                </li>
+                <li>
+                    <a tabindex="0" class="a-link" href="#none" target="_self" data-title="Text Component">
+                        Text Component
+                    </a>
+                </li>
+                <li>
+                    <a tabindex="0" class="a-link" href="#none" target="_self" data-title="Traffic divider">
+                        Traffic divider
+                    </a>
+                </li>
+                <li>
+                    <a tabindex="0" class="a-link" href="#none" target="_self" data-title="Accordion">
+                        Accordion
+                    </a>
+                </li>
+                <li>
+                    <a tabindex="0" class="a-link" href="#none" target="_self" data-title="Teaser component">
+                        Teaser component
+                    </a>
+                </li>
+                <li>
+                    <a tabindex="0" class="a-link" href="#none" target="_self" data-title="Other">
+                        Other
+                    </a>
+                </li>
+                <li>
+                    <a tabindex="0" class="a-link" href="#none" target="_self" data-title="Layout component">
+                        Layout component
+                    </a>
+                </li>
+                <li>
+                    <a tabindex="0" class="a-link" href="#none" target="_self" data-title="SDP Headline">
+                        SDP Headline
+                    </a>
+                </li>
+                <li>
+                    <a tabindex="0" class="a-link" href="#none" target="_self" data-title="Holiday toolbox">
+                        Holiday toolbox
+                    </a>
+                </li>
+            </ul>
+            <button class="a-button-nostyle show-more-right-btn" type="button"></button>
+        </div>
+    </div>
+    <!-- // local-navigation-basic -->
+    
+</div>
     <!-- //o-page-content -->
 
     <!-- footer -->

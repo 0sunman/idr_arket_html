@@ -26,7 +26,7 @@
                         <!-- input : 생년월일 -->
                         <div data-component="MInput" class="m-input">
                             <label class="a-label js-a-label" for="birthday">생년월일</label>
-                            <input class="a-input js-a-input" id="birthday" name="birthday" type="tel" pattern="" placeholder="생년월일" data-validation-required-text="생년월일을 입력해 주세요." data-validation-pattern-text="올바른 날짜형식이 아닙니다.(예: 19880512)" maxlength="8" required="">
+                            <input class="a-input js-a-input" id="birthday" name="birthday" type="tel" pattern="" placeholder="생년월일" data-validation-required-text="생년월일을 입력해 주세요." data-validation-pattern-text="생년월일을 정확히 입력해 주세요." maxlength="8" required="">
                             <label class="a-label js-a-label" for="birthday"></label>
                             <p class="guide-text">생년월일 8자리를 입력해 주세요.(예: 19880512)</p>
                         </div><!-- // input : 생년월일 -->
@@ -38,8 +38,6 @@
                     </button><!-- // button -->
             </form>
         </div>
-        <%# input error문구 동작 %>
-        <%- include ("../../../../common/md-o-input-error.ejs") %>
     </div><!-- // n-find-idpw -->
 
 </div>

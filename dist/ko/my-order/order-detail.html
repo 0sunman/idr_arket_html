@@ -2051,7 +2051,7 @@
     <span id="content" tabindex="-1" class="access-content">Content of the page</span>
 
     <!-- o-my-page -->
-    <div class="o-my-page">
+    <div class="o-my-page o-width wc-75">
 
         
         <!-- o-my-page-navigation -->
@@ -2102,11 +2102,10 @@
                     </li>
                     <li>
                         <dt>주문고객</dt>
-                        <dd>
-                            홍길동 (abscd32@gmail.com, 010-8765-3243)
+                        <dd>홍길동 (abscd32@gmail.com, 010-8765-3243)
                             <div class="order-history-hide">
-                                <a class="a-link a-link-udln btn-order-list-hide" href="#none" target="_self">주문내역숨김</a>
-                                <a class="a-link open-lightbox btn-order-list-hide-guide" href="#none" target="_self" data-template="order-list-hide" data-classes="is-large">
+                                <a class="a-link a-link-udln btn-order-list-hide open-lightbox" href="#none" target="_self" data-template="lp-hide-order-history" data-classes="alert">주문내역숨김</a>
+                                <a class="a-link btn-order-list-hide-guide open-lightbox" href="#none" target="_self" data-template="order-list-hide" data-classes="is-large">
                                     <span class="a-icon-question"></span>
                                 </a>
                             </div>
@@ -2114,9 +2113,6 @@
                     </li>
                 </ul>
             </div>
-            <script type="text/x-handlebars-template" id="order-list-hide">
-                가이드
-            </script>
             <!-- //order-detail-info-bx -->
 
             <h3 class="a-heading-3 sub">주문상품</h3>
@@ -2308,6 +2304,36 @@
     </div>
     <!-- //o-my-page -->
 </div>
+
+<!-- handlebars-template -->
+<script type="text/x-handlebars-template" id="order-list-hide">
+    가이드
+</script>
+
+<!-- 주문배송_상세_주문내역숨김 -->
+<script type="text/x-handlebars-template" id="lp-hide-order-history">
+    <div class="lightbox-content-dft">
+        <div class="m-headline is-main-headline">
+            <h2 class="a-heading-2"><span>주문내역 숨김</span></h2>
+        </div>
+        <div class="content">
+            <p class="text-box">
+                주문내역 숨김을 진행하시겠습니까?<br>
+            </p>
+            <p class="text-box">
+                홈페이지에서만 표시되지 않을 뿐 실제 고객님의<br class="only-pc">
+                주문내역은 삭제되지 않으며, 이후 반품은 고객센터<br class="only-pc">
+                전화상담을 통해서만 가능합니다.
+            </p>
+        </div>
+        <div class="button-container col-2">
+            <button class="a-button is-outlined js-close-button" type="button"><span>취소</span></button>
+            <button class="a-button is-primary" type="button"><span>변경</span></button>
+        </div>
+    </div>
+</script>
+<!-- //주문배송_상세_주문내역숨김 -->
+<!-- //handlebars-template -->
 
 <!-- tip : when develop this script must be delete -->
 <script type="text/javascript">

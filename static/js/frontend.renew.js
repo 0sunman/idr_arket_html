@@ -8,6 +8,7 @@ renewCommon = (function(doc, win){
         renewCommon.aTab.init();
         renewCommon.rdToggle.init();
         renewCommon.chckToggle.init();
+        renewCommon.infoLineToggle.init();
     }
 
     //accordion
@@ -95,17 +96,19 @@ renewCommon = (function(doc, win){
                         let _this = this;
                         let _targetName = this.getAttribute('name');
                         let _targetClass = this.getAttribute('data-toggle-target');
-                        let _targetCon = doc.querySelector('.' + _targetClass);
+                        let _targetCon = doc.querySelectorAll('.' + _targetClass);
 
                         renewCommon.rdToggle.resetActive(_targetName);
 
                         if(_targetCon){
-                            let _targetConName = _targetCon.getAttribute('data-name');
-                            if(_this.checked  && _targetName == _targetConName){
-                                _targetCon.classList.remove('is-hidden-strong');
-                            }else{
-                                _targetCon.classList.add('is-hidden-strong');
-                            }
+                            Array.prototype.slice.call(_targetCon).forEach( function (_obj) {
+                                let _targetConName = _obj.getAttribute('data-name');
+                                if(_this.checked  && _targetName == _targetConName){
+                                    _obj.classList.remove('is-hidden-strong');
+                                }else{
+                                    _obj.classList.add('is-hidden-strong');
+                                }
+                            })
                         }
                     });
                 });
@@ -129,6 +132,42 @@ renewCommon = (function(doc, win){
                             }else{
                                 _targetCon.classList.add('is-hidden-strong');
                             }
+                        }
+                    });
+                });
+            }
+        }
+    }
+
+    //info-line-toggle
+    obj.infoLineToggle = {
+        changeBtnMode: function(_obj){
+            let tempLi = _obj.closest('li');
+            console.log(tempLi.classList)
+            if(tempLi.classList.contains('mode-edit')){
+                tempLi.classList.remove('mode-edit');
+            }else{
+                tempLi.classList.add('mode-edit');
+            }
+        },
+        init: function(){
+            let toggleTrigger= doc.querySelectorAll('.btn-toggle-info-line-li');
+            if(toggleTrigger) {
+                Array.prototype.slice.call(toggleTrigger).forEach( function (_obj) {
+                    _obj.addEventListener('click', function (_evt) {
+                        _evt.preventDefault();
+                        _evt.stopPropagation();
+                        renewCommon.infoLineToggle.changeBtnMode(this);
+                        let tempUl = this.closest('ul');
+                        let tempLi = tempUl.querySelectorAll('.info-line-toggle-li');
+                        if(tempLi){
+                            Array.prototype.slice.call(tempLi).forEach( function (_obj) {
+                                if(_obj.classList.contains('mode-edit')){
+                                    _obj.classList.remove('mode-edit')
+                                }else {
+                                    _obj.classList.add('mode-edit')
+                                }
+                            })
                         }
                     });
                 });

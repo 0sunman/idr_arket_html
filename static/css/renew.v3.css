@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* ========================================================== */
 /*                                                            */
 /* file		: kim                                   	      */
@@ -6,17 +7,40 @@
 /* ---------------------------------------------------------- */
 /* frontend.min overwrite s ================================= */
 /* 마이페이지_주문배송 > 환불계좌변경 : 계좌인증성공 */
-.guide-text-pop {
-    line-height: 24px;
-    font-weight: 300;
-    font-size: 18px;
-    color: #000;
-  }
-  .guide-text-color {
-    color: #d00d00;
-  }
-  
+.guide-text-pop { line-height: 24px; font-weight: 300; font-size: 18px; color: #000; }
+
+.guide-text-color { color: #d00d00; }
+
+/* 주문배송_상세_반품 상세 정보*/
+.content .o-info-line-box-top { border-top: 0; border-color: #000; border-bottom-width: 0px; border-bottom-style: solid; }
+
+.o-info-line-box > li.left-star { -webkit-box-pack: start; -ms-flex-pack: start; justify-content: start; }
+
+.left-star .product-params { display: block; }
+
+.left-star .product-params div.product { display: inline-block; }
+
+.left-star .product-params .product-quantity::before { content: '\00D7'; display: inline-block; margin-left: 1px; }
+
+.left-star .guide-top { display: inline-block; padding-top: 15px; color: #000; }
+
+.f-type3 { font-weight: 400; font-size: 13px; color: #000; }
+
+.f-type4 { font-weight: 400; font-size: 11px; color: #000; }
+
+/*  상품필수정보  */
+.freeHTML-sizeguide-chart-info { text-align: left; }
+
+.freeHTML-sizeguide-chart-info th { border-right: 1px solid #000; }
+
+.freeHTML-sizeguide-chart-info th, .freeHTML-sizeguide-chart-info td { padding: 10px 5px; border-bottom-width: 1px; font-size: 13px; color: #000; border-bottom-style: none; font-weight: 400; }
+
+.freeHTML-sizeguide-chart-info tr:nth-child(2n-2) th, .freeHTML-sizeguide-chart-info tr:nth-child(2n-2) td { background-color: #E9E9EB; }
+
+/*배송지 변경*/
+.guide-m { margin-top: -30px; }
+
+.label-text { font-weight: 400; font-size: 13px; color: #000; }
 
 /* frontend.min overwrite e ================================= */
-
 /*# sourceMappingURL=renew.v3.css.map */

@@ -890,7 +890,7 @@ display: inline-block;
 /* ========================================================== */
 /* ---------------------------------------------------------- */
 /* frontend.min overwrite s ================================= */
-.o-navigation .category-group .a-button-nostyle, .o-navigation .category-group .a-link, .o-product-filters .clear-btn, .o-product-filters .filter-link, .o-page-content .o-width .product-listing.align-below .o-product-filters .filter-buttons .total-items, .o-product-attributes .list-container .add-comp, .a-link-pdp-essential, .o-product-attributes .attributes-top .care-el .address, .o-product-attributes .attributes-top .care-el .pdp-value, .o-product-attributes .attributes-top .made-in-el .address, .o-product-attributes .attributes-top .made-in-el .pdp-value { font-family: "Arket Sans", "Noto Sans KR", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", "Sans-Serif"; }
+.o-navigation .category-group .a-button-nostyle, .o-navigation .category-group .a-link, .o-product-filters .clear-btn, .o-product-filters .filter-link, .o-page-content .o-width .product-listing.align-below .o-product-filters .filter-buttons .total-items, .o-product-attributes .list-container .add-comp, .a-link-pdp-essential, .o-product-attributes .attributes-top .care-el .address, .o-product-attributes .attributes-top .care-el .pdp-value, .o-product-attributes .attributes-top .made-in-el .address, .o-product-attributes .attributes-top .made-in-el .pdp-valuem, .a-size-swatch .low-stock { font-family: "Arket Sans", "Noto Sans KR", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", "Sans-Serif"; }
 
 .o-product-details-selection .product-size-wrapper .a-heading-4, .o-product-details-selection .product-size-wrapper .size-guide-link, .o-product-details .left-panel .m-product-shipping-info .info-short, .o-product-cofs .m-product-markers .marker-text, .o-navigation .information-section .my-account-icon .text { font-family: "Arket Sans SC", "Noto Sans KR", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", "Sans-Serif"; }
 
@@ -950,6 +950,7 @@ html.no-touchevents .m-input, html.no-touchevents .m-dropdown, .alternative-styl
 .m-input.with-button .a-button { margin-bottom: 4px; margin-left: 10px; width: 120px; }
 .m-input.with-button .a-label, .m-input.with-button .certify-time { flex-basis: 100%; }
 .m-input.with-button .certify-time { font-weight: 300; font-size: 12px; color: #000; }
+@media (max-width: 400px) { .m-input.with-button.big-btn .a-input, .m-input.with-button.big-btn .a-button { width: 100%; margin-left: 0; } }
 .m-input.has-error .a-label:last-of-type { font-size: 12px; }
 
 .m-dropdown-filter.v2 ul { font-family: "Arket Sans", "Noto Sans KR", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", "Sans-Serif"; }
@@ -979,10 +980,6 @@ html .m-dropdown.v2 select { border-bottom: 0; }
 .a-heading-2.sub:first-child, .a-heading-3.sub:first-child, .a-heading-4.sub:first-child { margin-top: 0; }
 .a-heading-2.sub .a-link, .a-heading-3.sub .a-link, .a-heading-4.sub .a-link { position: absolute; top: 0; right: 0; font-size: 12px; }
 
-.dot-ul > li { position: relative; padding-left: 10px; font-size: 13px; line-height: 1.5em; list-style: none; }
-.dot-ul > li::before { position: absolute; top: 0; left: 0; content: "·"; font-size: 18px; line-height: 20px; vertical-align: top; padding-right: 8px; }
-.dot-ul > li.no-icon::before { display: none; }
-
 .o-cart-discount-code { margin-top: 20px; }
 .o-cart-discount-code.has-discount .error-text { display: none; }
 .o-cart-discount-code .title { color: #000; }
@@ -1009,6 +1006,8 @@ html .m-dropdown.v2 select { border-bottom: 0; }
 .m-swatches.color-panel-container .a-swatch.is-selected .swatch-title, .m-swatches.color-panel-container .a-swatch.selected .swatch-title, .m-swatches.color-panel-container .a-swatch:hover .swatch-title, .m-swatches.swatch-panel-container .a-swatch.is-selected .swatch-title, .m-swatches.swatch-panel-container .a-swatch.selected .swatch-title, .m-swatches.swatch-panel-container .a-swatch:hover .swatch-title { border: 1px solid; padding: 1px 2px; border-radius: 2px; color: black; margin: 0px 1px; }
 
 .o-zoom-slider .image-counter { bottom: 29px; }
+
+html.no-touchevents .m-input, html.no-touchevents .m-dropdown, .alternative-style-option .m-input, .alternative-style-option .m-dropdown { margin-top: 0; margin-bottom: 0; }
 
 @media (min-width: 769px) { .o-header.has-open-search .category-group { padding-top: 0; } }
 @media (max-width: 768px) { .o-page-content .o-width .product-listing.align-below .o-product-listing { padding-top: 0; } }
@@ -1053,8 +1052,8 @@ body { font-family: "Arket Sans", "Noto Sans KR", "HelveticaNeue-Light", "Helvet
 
 @media (max-width: 400px) { .only-pc { display: none; } }
 
-.a-icon-question { display: inline-block; width: 16px; height: 16px; }
-.a-icon-question::before { content: ''; display: inline-block; width: 100%; height: 100%; background: url("../images/icon/icon-question.svg") no-repeat; }
+.a-icon-question { position: relative; display: inline-block; width: 16px; height: 16px; }
+.a-icon-question::before { position: absolute; top: 0; right: 0; content: ''; display: inline-block; width: 100%; height: 100%; background: url("../images/icon/icon-question.svg") no-repeat; }
 
 .a-link-arrow { position: relative; padding-right: 7px; }
 .a-link-arrow::after { position: absolute; top: 3px; right: 0; content: ''; display: inline-block; width: 5px; height: 7px; background: url("../images/icon/icon-arrow-right.png"); background-size: contain; }
@@ -1065,13 +1064,13 @@ body { font-family: "Arket Sans", "Noto Sans KR", "HelveticaNeue-Light", "Helvet
 
 .brd-btm-bold { border-bottom: 4px solid #000; }
 
-.price-value::after, .is-regular::after, .is-reduced::after, .price-won::after { content: '원'; font-family: "Noto Sans KR"; font-size: 12px; }
+.price-value::after, .is-regular::after, .is-reduced::after, .price-won::after { content: '원'; font-family: "Noto Sans KR"; font-size: inherit; }
 
 .dft-bx { padding: 15px 4%; }
 .dft-bx .dft-bx-tit { margin-bottom: 5px; font-weight: 400; }
 .dft-bx li { padding-top: 4px; padding-bottom: 4px; }
 
-.line-bx { border: 1px solid #969696; }
+.line-bx { border: 1px solid #000; }
 
 .radio-button-list { display: flex; flex-wrap: nowrap; }
 .radio-button-list > .m-radio-button { margin-left: 18%; }
@@ -1092,16 +1091,20 @@ body { font-family: "Arket Sans", "Noto Sans KR", "HelveticaNeue-Light", "Helvet
 .desc-text2 { position: relative; display: inline-block; margin-top: 0; margin-bottom: 0; padding-left: 10px; }
 .desc-text2::before { content: '*'; display: block; position: absolute; top: 0; left: 0; }
 
+.caution-text { margin-top: 0; margin-bottom: 0; font-weight: 300; font-size: 12px; color: #cc0000; }
+
+.error-text { margin-top: 0; margin-bottom: 0; font-weight: 300; font-size: 12px; color: #cc0000; }
+
 ul.link-lst::before { display: none; }
 ul.link-lst > li { position: relative; display: inline-block; width: auto; margin-top: 0; margin-bottom: 0; margin-left: 10px; padding-top: 0; padding-right: 0; padding-left: 10px; }
 ul.link-lst > li::before { content: ''; display: inline-block; position: absolute; top: 50%; left: 0; margin-top: -4px; width: 1px; height: 8px; background: #000; }
 ul.link-lst > li:first-child { margin-left: 0; padding-left: 0; }
 ul.link-lst > li:first-child::before { display: none; }
 
-.list-option { display: flex; flex-wrap: nowrap; justify-content: flex-end; }
-.list-option .m-dropdown { margin-left: 10px; margin-bottom: 0; }
-.list-option .m-dropdown:first-child { margin-left: 0; }
-@media (min-width: 401px) { .list-option .m-dropdown { margin-left: 30px; } }
+html .list-option { display: flex; flex-wrap: nowrap; justify-content: flex-end; }
+html .list-option .m-dropdown { margin-left: 10px; margin-bottom: 0; }
+html .list-option .m-dropdown:first-child { margin-left: 0; }
+@media (min-width: 401px) { html .list-option .m-dropdown { margin-left: 20px; } }
 
 .empty-item { margin-top: 0; margin-bottom: 0; padding-top: 70px; padding-bottom: 80px; text-align: center; font-size: 12px; }
 .empty-item.left { text-align: left; }
@@ -1109,23 +1112,41 @@ ul.link-lst > li:first-child::before { display: none; }
 .o-info-line-box { padding-top: 18px; padding-bottom: 18px; border-color: #000; border-top-width: 2px; border-top-style: solid; }
 .o-info-line-box > li { padding-top: 5px; padding-bottom: 5px; display: flex; justify-content: space-between; align-items: baseline; }
 @media (min-width: 401px) { .o-info-line-box > li { padding-right: 20px; padding-left: 20px; } }
-.o-info-line-box .f-type1 { font-weight: 300; font-size: 13px; color: #787573; }
+.o-info-line-box > li.flexwrap { flex-wrap: wrap; }
+.o-info-line-box > li.info-line-toggle-li { display: none; }
+.o-info-line-box > li.info-line-toggle-li.mode-edit { display: flex; }
+.o-info-line-box .f-type1 { font-weight: 300; font-size: 13px; color: #000; }
 .o-info-line-box .f-type2 { color: #000; }
 .o-info-line-box .price-won { text-align: right; font-size: 13px; }
-.o-info-line-box.col-2 > li span { flex-basis: 50%; }
-.o-info-line-box.col-2-1 > li span:first-child { flex-basis: 30%; }
-.o-info-line-box.col-2-1 > li span:last-child { flex-basis: 70%; }
-.o-info-line-box.col-3-1 > li span:first-child { flex-basis: 30%; }
-.o-info-line-box.col-3-1 > li span:nth-child(2) { flex-basis: 40%; }
-.o-info-line-box.col-3-1 > li span:last-child { flex-basis: 30%; }
-.o-info-line-box.col-3-2 > li span:first-child { flex-basis: 40%; }
-.o-info-line-box.col-3-2 > li span:nth-child(2) { flex-basis: 30%; }
-.o-info-line-box.col-3-2 > li span:last-child { flex-basis: 30%; }
+.o-info-line-box.col-2 > li [class^="f-type"] { flex-basis: 50%; }
+.o-info-line-box.col-2-1 > li [class^="f-type"]:first-child { flex-basis: 30%; }
+.o-info-line-box.col-2-1 > li [class^="f-type"]:last-child { flex-basis: 70%; }
+.o-info-line-box.col-3-1 > li [class^="f-type"]:first-child { flex-basis: 30%; }
+.o-info-line-box.col-3-1 > li [class^="f-type"]:nth-child(2) { flex-basis: 40%; }
+.o-info-line-box.col-3-1 > li [class^="f-type"]:last-child { flex-basis: 30%; }
+.o-info-line-box.col-3-2 > li [class^="f-type"]:first-child { flex-basis: 40%; }
+.o-info-line-box.col-3-2 > li [class^="f-type"]:nth-child(2) { flex-basis: 30%; }
+.o-info-line-box.col-3-2 > li [class^="f-type"]:last-child { flex-basis: 30%; }
+
+@media (min-width: 401px) { .full .o-info-line-box.col-2-1 > li [class^="f-type"]:first-child { flex-basis: 20%; }
+  .full .o-info-line-box.col-2-1 > li [class^="f-type"]:last-child { flex-basis: 80%; } }
+
+.edit-call-btn { display: block; }
+
+.edit-cancle-btn { display: none; }
+
+.v-top { margin-bottom: auto; }
+
+.v-center { margin-top: auto; margin-bottom: auto; }
+
+.mode-edit .edit-call-btn { display: none; }
+.mode-edit .edit-cancle-btn { display: block; }
 
 .grid-line-wrap { display: flex; flex-wrap: wrap; justify-content: space-between; }
 .grid-line-wrap .grid-line-item { flex-basis: 100%; }
 @media (min-width: 401px) { .grid-line-wrap { flex-wrap: nowrap; }
-  .grid-line-wrap .grid-line-item { flex-basis: calc(50% - 12px); } }
+  .grid-line-wrap .grid-line-item:not(.full) { flex-basis: calc(50% - 12px); }
+  .grid-line-wrap .grid-line-item.no-a-heading .o-info-line-box { margin-top: 32px; } }
 
 .page-btn { margin-top: 40px; }
 
@@ -1163,6 +1184,8 @@ ul.link-lst > li:first-child::before { display: none; }
   .button-container.col-2.re-sort .a-button:not(:first-child) { margin-top: 10px; } }
 @media (min-width: 401px) { .button-container.col-2.re-sort .a-button:nth-child(1) { order: 2; }
   .button-container.col-2.re-sort .a-button:nth-child(2) { order: 1; } }
+.button-container.col-2-1 { display: flex; justify-content: center; flex-wrap: nowrap; }
+@media (min-width: 401px) { .button-container.col-2-1 .a-button { flex-basis: 50%; } }
 
 .accordion-con { display: none; }
 .accordion-con.active { display: block; }
@@ -1213,6 +1236,10 @@ ul.link-lst > li:first-child::before { display: none; }
 .view-table th, .view-table td { padding: 10px 5px; border-color: #ccc; border-bottom-width: 1px; border-bottom-style: solid; font-weight: 300; font-size: 12px; color: #000; }
 .view-table.left { text-align: left; }
 
+.dot-ul > li { position: relative; padding-left: 10px; font-size: 13px; line-height: 1.5em; list-style: none; }
+.dot-ul > li::before { position: absolute; top: 2px; left: 0; content: "·"; font-size: 18px; line-height: 20px; vertical-align: top; padding-right: 8px; }
+.dot-ul > li.no-icon::before { display: none; }
+
 /* common e ================================================= */
 /* ---------------------------------------------------------- */
 /* ========================================================== */
@@ -1257,6 +1284,7 @@ ul.link-lst > li:first-child::before { display: none; }
 @media (min-width: 631px) { .o-footer { padding-top: 40px; padding-bottom: 40px; } }
 .o-footer.o-footer-top { padding-bottom: 0; }
 .o-footer.o-footer-top::before { top: 0; box-shadow: none; border-top: 1px solid #000; }
+@media (max-width: 768px) { .o-footer.o-footer-top::before { border-top: 0; } }
 @media (min-width: 631px) { .o-footer.o-footer-top { display: block; } }
 @media (min-width: 769px) { .o-footer.o-footer-top { padding-top: 30px; padding-bottom: 30px; } }
 .o-footer.o-footer-top > ul { display: flex; flex-wrap: wrap; border-top: 1px solid #000; border-width: 1px 0 0; }
@@ -1268,7 +1296,7 @@ ul.link-lst > li:first-child::before { display: none; }
 .o-footer.o-footer-top > ul > li.li-contry { margin-top: 9px; padding-top: 17px; padding-bottom: 10px; border-top: 1px solid #000; }
 @media (max-width: 768px) { .o-footer.o-footer-top > ul::before { display: none; } }
 @media (min-width: 769px) { .o-footer.o-footer-top > ul { flex-wrap: nowrap; justify-content: center; border-top: 0; }
-  .o-footer.o-footer-top > ul > li { padding-right: 18px; padding-left: 18px; flex: unset; width: auto; }
+  .o-footer.o-footer-top > ul > li { padding-right: 18px; padding-left: 18px; flex: none; width: auto; }
   .o-footer.o-footer-top > ul > li.li-contry { border-top: 0; margin-top: 7px; padding-top: 4px; padding-bottom: 5px; } }
 .o-footer .a-link { font-size: 13px; }
 @media (min-width: 631px) { .o-footer .a-link { font-size: 13px; } }
@@ -1431,13 +1459,13 @@ html.no-touchevents .m-input.has-error .a-input, .alternative-style-option .m-in
 /* ========================================================== */
 /* ---------------------------------------------------------- */
 /* product s ================================================ */
-.m-breadcrumb li:nth-child(3) { font-size: 12px; font-family: "Arket Sans SC", "Noto Sans KR", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", "Sans-Serif"; }
+.m-breadcrumb li:nth-child(n+3) { font-size: 12px; font-family: "Arket Sans SC", "Noto Sans KR", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", "Sans-Serif"; }
 
 .a-link-pdp-essential { font-size: 13px; color: #000; font-weight: 400; }
 
-.a-link.plp-link-track .price .m-product-price span::after { content: '원'; font-family: "Noto Sans KR"; font-size: 12px; }
+.a-link.plp-link-track .price .m-product-price span::after { content: '원'; font-family: "Noto Sans KR"; font-size: inherit; }
 
-.cart-item-info .total-section .total::after { content: '원'; font-family: "Noto Sans KR"; font-size: 12px; }
+.cart-item-info .total-section .total::after { content: '원'; font-family: "Noto Sans KR"; font-size: inherit; }
 
 .o-product-details .o-product-attributes .list-container .add-comp { font-family: "Arket Sans SC", "Noto Sans KR", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", "Sans-Serif"; }
 .o-product-details .o-product-attributes .list-container .list-elements li { padding-left: 0; list-style-type: none; }
@@ -1450,7 +1478,10 @@ html.no-touchevents .m-input.has-error .a-input, .alternative-style-option .m-in
 
 .o-product-details .left-panel .m-product-shipping-info { margin-top: 0; font-size: 12px; }
 
-.o-product-details-selection .product-name-price-wrapper .m-product-price span { font-size: 14px; }
+.o-product-details-selection .product-name-price-wrapper .is-regular::after { font-size: 12px; }
+.o-product-details-selection .product-name-price-wrapper .m-product-price span { display: flex; justify-content: flex-end; font-size: 14px; }
+.o-product-details-selection .product-name-price-wrapper .m-product-price span::after { font-size: 12px; }
+.o-product-details-selection .product-name-price-wrapper .is-deprecated::before { order: 2; content: '원'; font-family: "Noto Sans KR"; font-size: 12px; }
 .o-product-details-selection .add-to-cart { margin-bottom: 0; border-top: 0; }
 
 .o-product-attributes .attributes-top .o-accordion.align-left .accordion-header .a-link { display: inline-block; width: 100%; }
@@ -1473,11 +1504,11 @@ html.no-touchevents .m-input.has-error .a-input, .alternative-style-option .m-in
 .m-cart-addition .added-item .basket-added-info .basket-added-info-price { display: inline-block; clear: both; float: none; width: 100%; }
 .m-cart-addition .added-item .basket-added-info .basket-added-info-price span { font-family: "Arket Sans SC", "Noto Sans KR", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", "Sans-Serif"; font-size: 13px; }
 .m-cart-addition .added-item .basket-added-info .basket-added-info-price .is-deprecated { float: left; text-decoration: line-through; }
-.m-cart-addition .added-item .basket-added-info .basket-added-info-price .is-deprecated::after { content: '원'; font-family: "Noto Sans KR"; font-size: 12px; }
+.m-cart-addition .added-item .basket-added-info .basket-added-info-price .is-deprecated::after { content: '원'; font-family: "Noto Sans KR"; font-size: inherit; }
 .m-cart-addition .added-item .basket-added-info .basket-added-info-price .is-deprecated::after { font-size: 10px; }
 .m-cart-addition .added-item .basket-added-info .basket-added-info-price .discount { color: #cc0000; }
 .m-cart-addition .added-item .basket-added-info .basket-added-info-price .total { float: right; }
-.m-cart-addition .added-item .basket-added-info .basket-added-info-price .total::after { content: '원'; font-family: "Noto Sans KR"; font-size: 12px; }
+.m-cart-addition .added-item .basket-added-info .basket-added-info-price .total::after { content: '원'; font-family: "Noto Sans KR"; font-size: inherit; }
 .m-cart-addition .added-item .basket-added-info .basket-added-info-price .total::after { font-size: 10px; }
 
 .product-params { display: flex; }
@@ -1540,7 +1571,7 @@ html.no-touchevents .m-input.has-error .a-input, .alternative-style-option .m-in
 .o-order-confirmation .m-order-summary-row .product-info .product-param-price.fourth { position: relative; top: unset; order: 3; }
 .o-order-confirmation .m-order-summary-row .product-info .product-param-price.fourth .is-deprecated { text-decoration: line-through; }
 .o-order-confirmation .m-order-summary-row .product-info .product-param-price.fourth .product-price, .o-order-confirmation .m-order-summary-row .product-info .product-param-price.fourth .product-discount, .o-order-confirmation .m-order-summary-row .product-info .product-param-price.fourth .product-total { font-family: "Arket Sans SC", "Noto Sans KR", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", "Sans-Serif"; }
-.o-order-confirmation .m-order-summary-row .product-info .product-param-price.fourth .product-price::after, .o-order-confirmation .m-order-summary-row .product-info .product-param-price.fourth .product-discount::after, .o-order-confirmation .m-order-summary-row .product-info .product-param-price.fourth .product-total::after { content: '원'; font-family: "Noto Sans KR"; font-size: 12px; }
+.o-order-confirmation .m-order-summary-row .product-info .product-param-price.fourth .product-price::after, .o-order-confirmation .m-order-summary-row .product-info .product-param-price.fourth .product-discount::after, .o-order-confirmation .m-order-summary-row .product-info .product-param-price.fourth .product-total::after { content: '원'; font-family: "Noto Sans KR"; font-size: inherit; }
 .o-order-confirmation .m-order-summary-row .product-info .product-param-price.fourth .product-price::after, .o-order-confirmation .m-order-summary-row .product-info .product-param-price.fourth .product-discount::after, .o-order-confirmation .m-order-summary-row .product-info .product-param-price.fourth .product-total::after { font-size: 10px; }
 .o-order-confirmation .m-order-summary-row .product-info .product-param-price.fourth .product-price { float: left; margin-left: 0; }
 .o-order-confirmation .m-order-summary-row .product-info .product-param-price.fourth .product-total { top: 0; }
@@ -1593,7 +1624,7 @@ html.no-touchevents .m-input.has-error .a-input, .alternative-style-option .m-in
 .discount-info-bx .m-input.v3 .a-link { padding-left: 5px; }
 @media (min-width: 769px) { .discount-info-bx .m-input.v3 .a-input { max-width: 280px; } }
 .discount-info-bx .deposit-price { position: absolute; top: -37px; right: 0; font-weight: 400; color: #000; }
-.discount-info-bx .deposit-price::after { content: '원'; font-family: "Noto Sans KR"; font-size: 12px; }
+.discount-info-bx .deposit-price::after { content: '원'; font-family: "Noto Sans KR"; font-size: inherit; }
 @media (min-width: 769px) { .discount-info-bx .deposit-price { display: inline-block; top: unset; right: unset; margin-top: 10px; margin-left: 20px; } }
 .discount-info-bx .guide-text { font-size: 12px; color: #afb0b5; }
 .discount-info-bx .promotion-info-tit { margin-top: 20px; color: #000; }
@@ -1602,7 +1633,7 @@ html.no-touchevents .m-input.has-error .a-input, .alternative-style-option .m-in
 @media (min-width: 769px) { .promotion-info-bx > li { justify-content: flex-start; } }
 .promotion-info-bx > li .discount-name { margin-bottom: 0; color: #000; }
 .promotion-info-bx > li .discount-price { color: #000; }
-.promotion-info-bx > li .discount-price::after { content: '원'; font-family: "Noto Sans KR"; font-size: 12px; }
+.promotion-info-bx > li .discount-price::after { content: '원'; font-family: "Noto Sans KR"; font-size: inherit; }
 @media (min-width: 769px) { .promotion-info-bx > li .discount-price { margin-left: 45px; } }
 .promotion-info-bx:not(.first) { padding-top: 10px; }
 
@@ -1681,9 +1712,10 @@ span.m-hazmat-v2.warning::before { background-image: url("../images/icon/icon-wa
 /* ---------------------------------------------------------- */
 /* mypage s ================================================= */
 .o-my-page { padding-bottom: 40px; }
+.o-my-page.o-width { padding-top: 74px; }
 
-.o-my-page-navigation .o-list ul { width: 200%; }
-.o-my-page-navigation .o-list ul li .a-link { padding: 10px 14px; font-weight: 300; font-size: 18px; }
+.o-my-page-navigation .o-list ul { width: 140%; }
+.o-my-page-navigation .o-list ul li .a-link { padding: 9px 14px; font-weight: 300; font-size: 18px; }
 .o-my-page-navigation .o-list .menu-deposit:before { background: url("../images/icon/icon-deposit.png") no-repeat; }
 @media (min-width: 769px) { .o-my-page-navigation .o-list { padding: 110px 20% 44px 20%; }
   .o-my-page-navigation .o-list ul { width: 100%; } }
@@ -1703,25 +1735,52 @@ span.m-hazmat-v2.warning::before { background-image: url("../images/icon/icon-wa
 .my-order-list .order-price { flex: 1 34%; }
 .my-order-list .order-status { flex: 1 50%; }
 .my-order-list .order-btns { flex: 1 50%; }
+.my-order-list.with-cart-item .order-list-ul > li { margin-top: 0; margin-bottom: 0; padding-top: 25px; }
+.my-order-list.with-cart-item .order-list-item { padding-bottom: 10px; }
+.my-order-list.with-cart-item .order-list-item .m-order-summary-row, .my-order-list.with-cart-item .order-list-item .order-quantity-counter, .my-order-list.with-cart-item .order-list-item .order-total-price { flex-basis: 100%; }
+.my-order-list.with-cart-item .order-list-item .m-order-summary-row { padding-top: 0; padding-bottom: 0; }
+.my-order-list.with-cart-item .order-list-item .order-quantity-counter { margin-left: 57px; max-width: 100px; }
+.my-order-list.with-cart-item .order-list-item .order-quantity-counter .o-cart-item { padding: 0; }
+.my-order-list.with-cart-item .order-list-item .order-quantity-counter .o-cart-item .cart-wrapper .cart-item-info .quantity-section .quantity-label { float: left; }
+.my-order-list.with-cart-item .order-list-item .order-quantity-counter .o-cart-item .cart-wrapper .cart-item-info .quantity-section .m-dropdown { display: inline; }
+.my-order-list.with-cart-item .order-list-item .order-quantity-counter .o-cart-item .cart-wrapper .cart-item-info .quantity-section .m-dropdown .placeholder { top: 0; font-size: 14px; }
+.my-order-list.with-cart-item .order-list-item .order-total-price { text-align: right; font-family: "Arket Currency", "Noto Sans KR", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", "Sans-Serif"; }
+.my-order-list.with-cart-item .product-list-item .order-quantity { font-size: 14px; display: none; }
+.my-order-list.with-cart-item .order-price-value, .my-order-list.with-cart-item .order-edit-price-value { font-size: 13px; }
+.my-order-list.with-cart-item .order-price-value::after, .my-order-list.with-cart-item .order-edit-price-value::after { content: '원'; font-family: "Noto Sans KR"; font-size: inherit; }
+.my-order-list.with-cart-item .order-edit-price-value { color: #cc0000; }
+.my-order-list.with-cart-item .order-edit-price-value::before { content: " / "; color: #000; }
 @media (min-width: 401px) { .my-order-list .order-info { flex: 1 20%; align-content: center; }
   .my-order-list .order-info .date, .my-order-list .order-info .order-number { flex: 1 100%; }
   .my-order-list .order-info .order-number::before { display: none; }
   .my-order-list .product-list-ul { flex: 1 80%; }
-  .my-order-list .m-order-summary-row { flex: 1 30%; }
-  .my-order-list .order-price { display: flex; justify-content: flex-end; align-items: center; flex: 1 20%; }
+  .my-order-list .m-order-summary-row { flex: 1 45%; }
+  .my-order-list .order-price { display: flex; justify-content: flex-end; align-items: center; flex: 1 25%; }
   .my-order-list .order-status { flex: 1 15%; }
   .my-order-list .order-btns { flex: 1 15%; }
-  .my-order-list .order-status, .my-order-list .order-btns { display: flex; justify-content: center; align-items: center; align-content: center; } }
+  .my-order-list .order-status, .my-order-list .order-btns { display: flex; justify-content: center; align-items: center; align-content: center; }
+  .my-order-list.with-cart-item .order-list-ul > li { padding-top: 10px; }
+  .my-order-list.with-cart-item .order-quantity, .my-order-list.with-cart-item .order-quantity-counter, .my-order-list.with-cart-item .order-total-price { display: flex; justify-content: center; align-items: center; }
+  .my-order-list.with-cart-item .order-list-item .m-order-summary-row, .my-order-list.with-cart-item .m-order-summary-row { flex-basis: 40%; }
+  .my-order-list.with-cart-item .order-list-item .order-quantity, .my-order-list.with-cart-item .order-quantity { flex-basis: 20%; }
+  .my-order-list.with-cart-item .order-list-item .order-quantity-counter, .my-order-list.with-cart-item .order-quantity-counter { flex-basis: 20%; margin-left: 0; max-width: 100%; }
+  .my-order-list.with-cart-item .order-list-item .order-total-price, .my-order-list.with-cart-item .order-total-price { flex-basis: 20%; }
+  .my-order-list.with-cart-item .order-total-price { flex-direction: column; }
+  .my-order-list.with-cart-item .order-total-price .order-edit-price-value::before { display: none; }
+  .my-order-list.with-cart-item .product-list-item { padding-top: 0; padding-bottom: 0; }
+  .my-order-list.with-cart-item .product-list-item .m-order-summary-row .product-param-info .product-params .product-quantity { display: none; }
+  .my-order-list.with-cart-item .product-list-item .order-quantity { display: flex; } }
 
 .order-list-ul-header { display: none; flex-wrap: wrap; justify-content: space-between; border-bottom: 1px solid #000; }
 .order-list-ul-header .order-info, .order-list-ul-header .product-list-ul li { padding-top: 15px; padding-bottom: 15px; text-align: center; font-size: 12px; }
+.order-list-ul-header .order-info:first-child, .order-list-ul-header .product-list-ul li:first-child { padding-left: 15px; }
 .order-list-ul-header .order-info { display: inline-block; }
 .order-list-ul-header .product-list-ul { display: flex; }
 .order-list-ul-header .product-list-ul .order-price { justify-content: center; }
-@media (min-width: 401px) { .order-list-ul-header { display: flex; flex-wrap: nowrap; padding-right: 20px; padding-left: 20px; } }
+@media (min-width: 401px) { .order-list-ul-header { display: flex; flex-wrap: nowrap; } }
 
 .order-list-ul > li { margin-bottom: 10px; padding-top: 15px; border-color: #000; border-bottom-width: 1px; border-bottom-style: solid; }
-@media (min-width: 401px) { .order-list-ul > li:not(.empty-li) { margin-bottom: 0; padding-top: 0; padding-right: 20px; padding-left: 20px; border-bottom: 1px solid #ccc; }
+@media (min-width: 401px) { .order-list-ul > li:not(.empty-li) { margin-bottom: 0; padding-top: 0; border-bottom: 1px solid #ccc; }
   .order-list-ul > li:not(.empty-li):last-child { border-bottom: 1px solid #000; } }
 .order-list-ul > li.empty-li { border-bottom: 0; }
 .order-list-ul > li.empty-li .empty-item { padding-top: 20px; padding-bottom: 20px; }
@@ -1734,17 +1793,17 @@ span.m-hazmat-v2.warning::before { background-image: url("../images/icon/icon-wa
 .product-list-ul > li:first-child { border-top: 0; }
 
 .product-list-item { display: flex; flex-wrap: wrap; }
-@media (min-width: 401px) { .product-list-item { padding-top: 30px; padding-bottom: 30px; } }
+@media (min-width: 401px) { .product-list-item { padding-top: 30px; padding-bottom: 30px; flex-wrap: nowrap; } }
 .product-list-item .m-order-summary-row { padding-top: 10px; padding-bottom: 16px; }
 .product-list-item .m-order-summary-row .product-info .product-item-info { width: calc(100% - 20px); }
-.product-list-item .m-order-summary-row .product-info .product-item-info .product-details .product-name { padding-left: 0; }
-.product-list-item .m-order-summary-row .product-param-info .product-params .product-size { font-size: 14px; }
-.product-list-item .m-order-summary-row .product-param-info .product-params .product-color { font-family: "Arket Sans SC", "Noto Sans KR", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", "Sans-Serif"; font-size: 11px; }
+.product-list-item .m-order-summary-row .product-info .product-item-info .product-details .product-name { padding-left: 0; white-space: inherit; text-overflow: initial; }
+.product-list-item .m-order-summary-row .product-param-info .product-params .product-size { font-size: 14px; line-height: initial; }
+.product-list-item .m-order-summary-row .product-param-info .product-params .product-color { font-family: "Arket Sans SC", "Noto Sans KR", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", "Sans-Serif"; font-size: 11px; line-height: initial; }
 .product-list-item .m-order-summary-row .product-param-info .product-params .product-quantity { font-family: "Arket Sans SC", "Noto Sans KR", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", "Sans-Serif"; order: 3; font-size: 13px; display: inline-block; }
 .product-list-item .m-order-summary-row .product-param-info .product-params .product-quantity::before { content: '\00D7'; display: inline-block; margin-left: 1px; }
 .product-list-item .m-order-summary-row .product-param-btns { padding-top: 10px; width: 100%; order: 3; font-size: 12px; }
-.product-list-item .order-price { padding-top: 33px; text-align: right; }
-.product-list-item .order-price span::after { content: '원'; font-family: "Noto Sans KR"; font-size: 12px; }
+.product-list-item .order-price { padding-top: 33px; font-size: 13px; text-align: right; }
+.product-list-item .order-price span::after { content: '원'; font-family: "Noto Sans KR"; font-size: inherit; }
 @media (min-width: 401px) { .product-list-item .order-price { padding-top: 0; padding-right: 6%; } }
 .product-list-item .order-status { text-align: center; }
 .product-list-item .order-status .a-link { margin-left: 10px; }
@@ -1754,25 +1813,45 @@ span.m-hazmat-v2.warning::before { background-image: url("../images/icon/icon-wa
 @media (min-width: 401px) { .product-list-item .order-status, .product-list-item .order-btns { border-top: 0; flex-wrap: wrap; }
   .product-list-item .order-status > .a-link, .product-list-item .order-btns > .a-link { text-align: center; flex-basis: 100%; margin-left: 0; } }
 
+.my-order-delivery-content .grid-line-item { margin-top: 40px; border-color: #000; border-bottom-width: 1px; border-bottom-style: solid; }
+.my-order-delivery-content .grid-line-item.refund-reason-info-bx { border-bottom: 0; }
+.my-order-delivery-content .error-text { margin-top: 5px; }
+.my-order-delivery-content .button-container:last-child { margin-top: 30px; }
 .my-order-delivery-content.detail .order-list-ul-header .m-order-summary-row { text-align: left; }
-.my-order-delivery-content.detail .grid-line-item { margin-top: 40px; border-color: #ccc; border-bottom-width: 1px; border-bottom-style: solid; }
 @media (min-width: 401px) { .my-order-delivery-content.detail .m-order-summary-row { flex-basis: 65%; }
   .my-order-delivery-content.detail .product-list-item .order-btns { display: none; } }
+.my-order-delivery-content.order-info-edit .order-list-ul-header .m-order-summary-row { text-align: left; }
+.my-order-delivery-content.order-info-edit .my-orders-list-wrap .a-button.is-outlined { margin-top: 30px; }
+.my-order-delivery-content.order-info-edit .my-orders-list-wrap .guide-text { font-size: 13px; }
+.my-order-delivery-content.order-info-edit .my-orders-list-wrap .guide-text .desc-text2 { display: block; line-height: 1.5em; margin-bottom: 5px; }
+.my-order-delivery-content.order-info-edit .o-cart-item .quantity-section { order: 1; display: inline-block; }
+.my-order-delivery-content.order-info-edit .pay-policy-bx .pay-policy-agree .m-checkbox { width: 100%; padding-top: 0; }
+.my-order-delivery-content.order-info-edit .order-pay-info-bx2 { margin-top: 20px; }
+@media (min-width: 401px) { .my-order-delivery-content.order-info-edit .my-orders-list-wrap .button-container + .guide-text { padding-left: 10%; }
+  .my-order-delivery-content.order-info-edit .order-pay-info-bx2 { margin-top: 40px; } }
+
+.o-cart-item .cart-wrapper .cart-item-info .quantity-section .placeholder:after { content: ""; }
 
 .order-detail-info-bx .btn-order-list-hide { font-size: 12px; }
-.order-detail-info-bx .btn-order-list-hide-guide { margin-left: 5px; }
 .order-detail-info-bx .dot-ul { position: relative; }
-.order-detail-info-bx .dot-ul dt, .order-detail-info-bx .dot-ul dd { font-weight: 300; color: #787573; }
+.order-detail-info-bx .dot-ul dt, .order-detail-info-bx .dot-ul dd { font-weight: 300; color: #000; }
 .order-detail-info-bx .dot-ul dd { margin-left: 0; }
 .order-detail-info-bx .dot-ul dd.number { font-weight: 400; color: #000; }
-.order-detail-info-bx .dot-ul .order-history-hide { display: none; color: #000; margin-left: 20px; }
-.order-detail-info-bx .dot-ul .order-history-hide .a-icon-question { vertical-align: sub; }
+.order-detail-info-bx .dot-ul .order-history-hide { display: none; position: relative; padding-right: 20px; color: #000; margin-left: 20px; }
+.order-detail-info-bx .dot-ul .order-history-hide .btn-order-list-hide-guide { position: absolute; top: 2px; right: 0; width: 16px; height: 16px; }
 @media (min-width: 401px) { .order-detail-info-bx .dot-ul dt, .order-detail-info-bx .dot-ul dd { display: inline-block; }
   .order-detail-info-bx .dot-ul dt { width: 60px; }
   .order-detail-info-bx .dot-ul dd::before { content: ":"; display: inline-block; margin-right: 15px; margin-left: 5px; }
   .order-detail-info-bx .dot-ul .order-history-hide { display: inline-block; } }
 
 .orders-approval-list-bx .o-info-line-box > li span:first-child { font-size: 11px; }
+
+.refund-way-info-bx .rd-toggle-con-deposit .a-input { border-color: #000; border-bottom-width: 1px; border-bottom-style: solid; }
+.refund-way-info-bx .m-input { margin-bottom: 0; }
+.refund-way-info-bx .btn-toggle-info-line-li { margin-top: 10px; width: 120px; }
+.refund-way-info-bx .btn-account-confirm { margin-top: 10px; }
+
+.refund-reason-info-bx .m-dropdown { flex-basis: 100%; }
 
 /* mypage s ================================================= */
 /* ---------------------------------------------------------- */

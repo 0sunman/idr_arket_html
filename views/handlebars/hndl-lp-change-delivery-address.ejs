@@ -1,0 +1,111 @@
+<!-- 마이페이지_주문배송_배송지변경 -->
+<script type="text/x-handlebars-template" id="lp-change-delivery-address">
+    <div class="lightbox-content-dft lp-nonmbr-order-info-agree">
+        <div class="m-headline is-main-headline">
+            <h2 class="a-heading-2"><span>배송지 변경</span></h2>
+        </div>
+        <div class="content delivery-info-bx">
+            <!-- radio-button-list -->
+            <div class="radio-button-list">
+                <div class="m-radio-button v3">
+                    <input type="radio" class="a-radio-button rd-toggle" id="delivery-input-cate1" name="delivery-input-cate" checked data-toggle-target="rd-toggle-con-list">
+                    <label class="a-label js-a-label u-no-select custom-radio" for="delivery-input-cate1"></label>
+                    <label class="a-label js-a-label label-text" for="delivery-input-cate1">배송지 목록</label>
+                </div>
+
+                <div class="m-radio-button v3">
+                    <input type="radio" class="a-radio-button rd-toggle" id="delivery-input-cate2" name="delivery-input-cate" data-toggle-target="rd-toggle-con-new">
+                    <label class="a-label js-a-label u-no-select custom-radio" for="delivery-input-cate2"></label>
+                    <label class="a-label js-a-label label-text" for="delivery-input-cate2">새로 입력</label>
+                </div>
+            </div>
+            <!-- //radio-button-list -->
+            <form method="post" data-component="OForm" class="guide-m rd-toggle-con rd-toggle-con-list">
+                <div class="o-registration-form v2" data-name="delivery-input-cate">
+                    <!-- 배송지목록 -->
+                    <div class="n-wrap kakao-wrap">
+                        <!-- input : 이름 -->
+                        <div data-component="MInput" class="m-input">
+                            <label class="a-label js-a-label" for="name" >이름</label>
+                            <input class="a-input js-a-input" id="name" name="name" type="text" value="홍길동" placeholder="이름" data-validation-required-text="이름(필수)" required="">
+                            <label class="a-label js-a-label" for="name"></label>
+                        </div><!-- // input : 이름 -->
+                        <!-- input : 휴대폰번호 -->
+                        <div data-component="MInput" class="m-input">
+                            <label class="a-label js-a-label" for="orderer-phone" >휴대폰 번호</label>
+                            <input class="a-input js-a-input" placeholder="휴대폰 번호" type="tel" value="010-6841-9653" name="orderer-phone" id="orderer-phone" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" data-validation-required-text="휴대폰 번호을 입력하세요." data-validation-pattern-text="올바른 전화번호 형식이 아닙니다.">
+                            <label class="a-label js-a-label" for="number"></label>
+                        </div><!-- // input : 휴대폰번호 -->
+                        <!-- input : 추가연락처 -->
+                        <div data-component="MInput" class="m-input">
+                            <label class="a-label js-a-label" for="orderer-phone" >추가연락처</label>
+                            <input class="a-input js-a-input" placeholder="추가연락처" type="tel" value="010-6841-9653" name="orderer-phone" id="orderer-phone" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" data-validation-required-text="휴대폰 번호을 입력하세요." data-validation-pattern-text="올바른 전화번호 형식이 아닙니다.">
+                            <label class="a-label js-a-label" for="number"></label>
+                        </div><!-- // input : 추가연락처 -->
+                        <!-- input : 우편번호 -->
+                        <div class="m-input with-button" data-component="MInput">
+                            <label class="a-label js-a-label" for="my-dlvr-zipcode">우편번호</label>
+                            <input class="a-input js-a-input"
+                                   placeholder="우편번호"
+                                   type="text"
+                                   value="12450"
+                                   name="my-dlvr-zipcode"
+                                   id="my-dlvr-zipcode"
+                                   readonly="readonly"
+                                   required="">
+                            <button class="a-button is-primary sm open-lightbox" type="button" data-template="lp-find-address"><span>찾기</span></button>
+                            <label class="a-label js-a-label" for="my-dlvr-zipcode" data-placeholder=""></label>
+                        </div><!-- input : 우편번호 -->
+                        <!-- input : 기본주소 -->
+                        <div class="m-input no-label" data-component="MInput">
+                            <label class="a-label js-a-label" for="my-dlvr-address1">기본주소</label>
+                            <input class="a-input js-a-input"
+                                   placeholder="기본주소"
+                                   type="text"
+                                   value="서울시 영등포구 양평로21길 26"
+                                   name="my-dlvr-address1"
+                                   id="my-dlvr-address1"
+                                   readonly="readonly">
+                            <label class="a-label js-a-label" for="my-dlvr-address1" data-placeholder=""></label>
+                        </div><!-- input : 기본주소 -->
+                        <!-- input : 상세주소 -->
+                        <div class="m-input no-label" data-component="MInput">
+                            <label class="a-label js-a-label" for="my-dlvr-address2">상세주소</label>
+                            <input class="a-input js-a-input"
+                                   placeholder="상세주소"
+                                   type="text"
+                                   value="2609호"
+                                   name="my-dlvr-address2"
+                                   id="my-dlvr-address2"
+                                   data-validation-required-text="배송지 주소를 입력해 주세요">
+                            <label class="a-label js-a-label" for="my-dlvr-address2" data-placeholder=""></label>
+                        </div><!-- input : 상세주소 -->
+                        <div class="set-default-delivery">
+                            <span class="m-checkbox v2 u-clearfix" id="checkbox1">
+                                <input class="a-checkbox" type="checkbox" id="check-set-default-dlvr">
+                                <label class="a-label js-a-label custom-box" for="check-set-default-dlvr" tabindex="0"></label>
+                                <label class="a-label js-a-label" for="check-set-default-dlvr">기본배송지 설정</label>
+                            </span>
+                        </div>
+                        <div class="button-container col-2">
+                            <button class="a-button is-outlined js-close-button" type="button"><span>취소</span></button>
+                            <button class="a-button is-primary" type="button"><span>확인</span></button>
+                        </div>
+                    </div><!-- // 배송지목록 -->
+                </div>
+            </form>
+        </div>
+    </div>
+</script>
+<!-- //마이페이지_주문배송_배송지변경 -->
+
+<!-- rd-toggle-con : 새로입력 -->
+<div class="rd-toggle-con rd-toggle-con-new is-hidden-strong" data-name="delivery-input-cate">
+    <%# hndl-lp-new-delivery-address %>
+    <%- include ("../handlebars/hndl-lp-new-delivery-address.ejs") %>
+</div>
+<!-- //rd-toggle-con : 새로입력 -->
+<!-- handlebars-template -->
+<%# 주소검색 %>
+<%- include ("../handlebars/hndl-lp-find-address.ejs") %>
+<!-- //handlebars-template -->

@@ -106,6 +106,21 @@
         <li>
             <button class="a-button is-outlined open-lightbox" data-template="lp-account-failure" data-classes="alert"><span>계좌인증 실패</span></button>
         </li>
+        <li>
+            <button class="a-button is-outlined open-lightbox" data-template="lp-hide-order-history" data-classes="alert"><span>주문내역 숨김</span></button>
+        </li>
+        <li>
+            <button class="a-button is-outlined open-lightbox" data-template="lp-return-details" data-classes="alert"><span>반품 상세 정보</span></button>
+        </li>
+        <li>
+            <button class="a-button is-outlined open-lightbox" data-template="lp-order-cancel-details" data-classes="alert"><span>주문취소 상세 정보</span></button>
+        </li>
+        <li>
+            <button class="a-button is-outlined open-lightbox" data-template="lp-change-delivery-address"><span>배송지변경_수정입력</span></button>
+        </li>
+        <li>
+            <button class="a-button is-outlined open-lightbox" data-template="lp-change-delivery-address"><span>배송지변경</span></button>
+        </li>
     </ul>
 </div>
 
@@ -333,5 +348,17 @@
 
 <%# 계좌인증 실패 %>
 <%- include ("../../handlebars/hndl-lp-account-failure.ejs") %>
+
+<%# 주문내역 숨김 %>
+<%- include ("../../handlebars/hndl-lp-hide-order-history.ejs") %>
+
+<%# 반품 상세 정보 %>
+<%- include ("../../handlebars/hndl-lp-return-details.ejs") %>
+
+<%# 주문취소 상세 정보 %>
+<%- include ("../../handlebars/hndl-lp-order-cancel-details.ejs") %>
+
+<%# 배송지변경 %>
+<%- include ("../../handlebars/hndl-lp-change-delivery-address.ejs") %>
 
 <!-- //handlebars-template -->
