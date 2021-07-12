@@ -2047,10 +2047,9 @@
     <!-- //handlebars-template -->
 
     <!-- o-page-content -->
-    <div data-component="OPageContent" class="o-page-content cofs-page">
-    <span id="content" tabindex="-1" class="access-content">Content of the page</span>
+    <div data-component="OPageContent" class="o-page-content cofs-page page-profile">
 
-    <div class="o-my-page">
+    <div class="o-my-page o-width wc-75">
 
         
         <!-- o-my-page-navigation -->
@@ -2062,16 +2061,16 @@
         <div class="o-list js-o-list">
             <ul>
                 <li>
-                    <a href="/en/my-account/profile" target="_self" class="a-link menu-my-details">회원정보</a>
+                    <a href="../my-account/profile.html" target="_self" class="a-link menu-my-details">회원정보</a>
                 </li>
                 <li>
-                    <a href="/en/my-account/orders" target="_self" class="a-link menu-my-orders">주문/배송</a>
+                    <a href="../my-account/order-list.html" target="_self" class="a-link menu-my-orders">주문/배송</a>
                 </li>
                 <li>
-                    <a class="a-link menu-addressbook" href="#none" target="_self">배송지관리</a>
+                    <a href="../my-delivery/delivery-list.html" target="_self" class="a-link menu-addressbook" >배송지관리</a>
                 </li>
                 <li>
-                    <a class="a-link menu-deposit" href="#none" target="_self">예치금</a>
+                    <a href="../my-balance/balance.html" target="_self" class="a-link menu-deposit" >예치금</a>
                 </li>
                 <!--
                 <li>
@@ -2084,227 +2083,430 @@
 </div>
 <!-- //o-my-page-navigation -->
 
-        <h2 data-component="PageTitle" class="a-heading-2 title">회원정보</h2>
-        <div class="my-account-content u-clearfix ng-scope" ng-controller="MyProfileController as myProfileCtrl">
+        <h2 class="a-heading-2 is-main-heading page-top-title">
+            <span>회원정보변경</span>
+            <a class="a-link a-link-udln btn-show-hidden-info open-lightbox" href="#none" target="_self" data-template="lp-show-hidden-info" data-classes="alert">가려진 정보 보기</a>
+        </h2>
 
+        <!-- my-profile-content -->
+        <div class="my-profile-content">
             <!-- o-my-details-summary -->
             <div id="profileSummary" class="o-my-details summary">
-
-                <div class="data-sections">
-                    <div class="data-section name">
-                        <div class="name-label">이름</div>
-                        <div class="name-value ng-binding">Ryu SH</div>
+                <!-- data-grids -->
+                <div class="data-grids">
+                    <div class="data-grid id">
+                        <div class="id-g-label">아이디</div>
+                        <div class="id-g-value">hy1214********</div>
                     </div>
 
-                    <div class="data-section email">
-                        <div class="email-label">이메일</div>
-                        <div class="email-value ng-binding">seunghyun87.ryu@gmail.com</div>
-                    </div>
-                    <div class="data-section phone">
-                        <div class="phone-label">전화번호</div>
-                        <div class="phone-value ng-binding">+82</div>
+                    <div class="data-grid name">
+                        <div class="name-g-label">이름</div>
+                        <div class="name-g-value">홍*동</div>
                     </div>
 
-                    <div class="data-section staff-card-section" aria-hidden="true">
-                        <div class="staff-card-label">Staff card</div>
-                        <div class="staff-card-value ng-binding"></div>
-                    </div>
-
-                    <div class="data-section newsletter">
-                        <div class="newsletter-label">뉴스레터 구독?</div>
-                        <div class="newsletter-value">
-                            <input type="hidden" name="frequencyFashionNews" init-from-form="" value="REG" ng-model="profile.frequencyFashionNews" class="ng-pristine ng-untouched ng-valid">
-                            Yes
+                    <div class="data-grid email">
+                        <div class="email-g-label">이메일</div>
+                        <div class="email-g-value">
+                            <span>hy1214****@*****</span>
+                            <a class="a-link a-link-udln btn-change toggle-bx-btn" href="#none" target="_self" data-target="email-edit"><span hidden>변경하기</span></a>
                         </div>
                     </div>
+                    <div class="data-grid full toggle-bx-con email-edit">
+                        <!-- gray-bx -->
+                        <div class="gray-bx">
+                            <div class="email-input-bx">
+                                <div class="m-input v3" data-component="MInput">
+                                    <label class="a-label js-a-label fixed" for="orderer-email">변경할 이메일 주소 입력</label>
+                                    <input class="a-input js-a-input"
+                                           placeholder="이메일 주소를 입력해 주세요"
+                                           type="email"
+                                           value=""
+                                           pattern=""
+                                           name="orderer-email"
+                                           id="orderer-email"
+                                           required=""
+                                           data-validation-required-text="이메일 주소를 입력해 주세요"
+                                           data-validation-pattern-text="">
+                                    <label class="a-label js-a-label" for="orderer-email" data-placeholder=""></label>
+                                    <p class="input-guide-text">이메일 주소를 입력해 주세요</p>
+                                </div>
+                                <div class="m-dropdown v3">
+                                    <label class="a-label js-a-label" for="emailDomain">&nbsp;</label>
+                                    <select class="option-wrap"name="selectMailDomain" id="emailDomain">
+                                        <option class="a-option">직접입력</option>
+                                        <option class="a-option">@naver.com</option>
+                                        <option class="a-option">@daum.net</option>
+                                        <option class="a-option">@nate.com</option>
+                                        <option class="a-option">@gmail.com</option>
+                                        <option class="a-option">@hanmail.net</option>
+                                        <option class="a-option">@hotmail.com</option>
+                                    </select>
+                                    <span class="a-icon-accordion a-icon-arrow-down-small"></span>
+                                </div>
+                            </div>
+                            <button class="a-button btn-certify-email toggle-bx-btn" type="button" data-target="email-edit2"><span>인증하기</span></button>
+                        </div>
+                        <!-- //gray-bx -->
+                    </div>
+                    <div class="data-grid full toggle-bx-con email-edit2">
+                        <!-- gray-bx -->
+                        <div class="gray-bx">
+                            <div class="email-input-bx">
+                                <div class="m-input v3" data-component="MInput">
+                                    <label class="a-label js-a-label fixed" for="orderer-email2">변경할 이메일 주소 입력</label>
+                                    <input class="a-input js-a-input"
+                                           placeholder="이메일 주소를 입력해 주세요"
+                                           type="email"
+                                           value="hby12345@naver.com"
+                                           pattern=""
+                                           name="orderer-email2"
+                                           id="orderer-email2"
+                                           required=""
+                                           data-validation-required-text="이메일 주소를 입력해 주세요"
+                                           data-validation-pattern-text="">
+                                    <label class="a-label js-a-label" for="orderer-email2" data-placeholder=""></label>
+                                </div>
+                                <p class="guide-text">이메일 주소 변경을 위해 입력하신 이메일 주소로 인증메일이 발송되었습니다. <br>인증완료 후 변경완료 버튼을 선택해 주세요.</p>
+                                <div class="m-dropdown v3">
+                                    <label class="a-label js-a-label" for="emailDomain">&nbsp;</label>
+                                    <select class="option-wrap"name="selectMailDomain" id="emailDomain">
+                                        <option class="a-option">직접입력</option>
+                                        <option class="a-option">@naver.com</option>
+                                        <option class="a-option">@daum.net</option>
+                                        <option class="a-option">@nate.com</option>
+                                        <option class="a-option">@gmail.com</option>
+                                        <option class="a-option">@hanmail.net</option>
+                                        <option class="a-option">@hotmail.com</option>
+                                    </select>
+                                    <span class="a-icon-accordion a-icon-arrow-down-small"></span>
+                                </div>
+                            </div>
+                            <div class="button-container col-2">
+                                <button class="a-button btn-email-resend" type="button"><span>인증메일 재발송</span></button>
+                                <button class="a-button btn-change-complete" type="button"><span>변경완료</span></button>
+                            </div>
+                        </div>
+                        <!-- //gray-bx -->
+                    </div>
+
+                    <div class="data-grid birth">
+                        <div class="birth-g-label">생년월일</div>
+                        <div class="birth-g-value">1990-01-**</div>
+                    </div>
+
+                    <div class="data-grid full phone">
+                        <div class="phone-g-label">휴대폰번호</div>
+                        <div class="phone-g-value">
+                            <span>010-****-1234</span>
+                            <a class="a-link a-link-udln btn-change toggle-bx-btn" href="#none" target="_self" data-target="phone-edit"><span hidden>변경하기</span></a>
+                        </div>
+                    </div>
+                    <div class="data-grid full toggle-bx-con phone-edit">
+                        <!-- gray-bx -->
+                        <div class="gray-bx">
+                            <div class="phone-certify-step1">
+                                <div class="m-input v3 with-button" data-component="MInput">
+                                    <label class="a-label js-a-label fixed" for="phone-number">변경할 휴대폰번호 입력</label>
+                                    <input class="a-input js-a-input"
+                                           placeholder="숫자만 입력하세요"
+                                           type="text"
+                                           name="phone-number"
+                                           id="phone-number"
+                                           required=""
+                                           data-validation-required-text="휴대폰번호를 입력해 주세요"
+                                           data-validation-pattern-text="기존 휴대폰번호와 동일한 번호입니다.">
+                                    <button class="a-button sm send-certify-num-btn" type="button"><span>인증번호 받기</span></button>
+                                    <label class="a-label js-a-label" for="phone-number" data-placeholder=""></label>
+                                </div>
+                                <p class="guide-text">
+                                    <span class="desc-text3">휴대폰으로 발송된 인증번호를 입력하세요. (3분이내)</span>
+                                    <span class="desc-text3">인증번호가 도착하지 않을 시에는 재발송을 해주세요</span></span>
+                                </p>
+                            </div>
+                            <div class="phone-certify-step2">
+                                <div class="m-input v3 with-button" data-component="MInput">
+                                    <label class="a-label js-a-label fixed" for="certify-number"></label>
+                                    <input class="a-input js-a-input"
+                                           placeholder="인증번호 입력"
+                                           type="text"
+                                           name="certify-number"
+                                           id="certify-number"
+                                           required=""
+                                           data-validation-required-text="인증번호를 입력해 주세요"
+                                           data-validation-pattern-text="">
+                                    <button class="a-button sm send-certify-num-btn" type="button"><span>인증번호 확인</span></button>
+                                    <label class="a-label js-a-label" for="certify-number" data-placeholder=""></label>
+                                    <p class="input-guide-text">인증번호를 입력해 주세요.</p>
+                                    <p class="certify-time">유효시간 <span class="time-m">03</span>:<span class="time-s">00</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- //gray-bx -->
+                    </div>
+                    <div class="data-grid full phone-agree">
+                        <div class="checkbox-list">
+                            <span class="m-checkbox v2 u-clearfix">
+                                <input class="a-checkbox" type="checkbox" id="checkbox-sms">
+                                <label class="a-label js-a-label custom-box" for="checkbox-sms" tabindex="0"></label>
+                                <label class="a-label js-a-label" for="checkbox-sms">ARKET  상품/이벤트 정보 SMS 수신 동의[선택]</label>
+                            </span>
+                            <span class="m-checkbox v2 u-clearfix">
+                                <input class="a-checkbox" type="checkbox" id="checkbox-phone">
+                                <label class="a-label js-a-label custom-box" for="checkbox-phone" tabindex="0"></label>
+                                <label class="a-label js-a-label" for="checkbox-phone">전화상담을 통한 상품/이벤트 정보 수신 동의[선택]</label>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="data-grid full password">
+                        <div class="password-g-label">
+                            <span>비밀번호</span>
+                            <a class="a-link a-link-udln btn-change toggle-bx-btn" href="#none" target="_self" data-target="password-edit"><span hidden>변경하기</span></a>
+                        </div>
+                    </div>
+
+                    <div class="data-grid full toggle-bx-con password-edit">
+                        <!-- gray-bx -->
+                        <div class="gray-bx">
+                            <!-- input : 기존 비밀번호 -->
+                            <div class="m-input v3" data-component="MInput">
+                                <label class="a-label js-a-label" for="old-password">기존 비밀번호</label>
+                                <input class="a-input js-a-input"
+                                       id="old-password"
+                                       name="old-password"
+                                       type="password"
+                                       pattern=""
+                                       placeholder="기존 비밀번호"
+                                       data-validation-required-text="기존 비밀번호를 입력해 주세요."
+                                       data-validation-pattern-text="기존 비밀번호와 동일하지 않습니다."
+                                       required="">
+                                <label class="a-label js-a-label" for="old-password"></label>
+                                <p class="input-guide-text">기존비밀번호 입력</p>
+                            </div><!-- // input : 기존 비밀번호 -->
+
+                            <!-- input : 새 비밀번호 -->
+                            <div class="m-input v3" data-component="MInput">
+                                <label class="a-label js-a-label" for="new-password">새 비밀번호</label>
+                                <input class="a-input js-a-input"
+                                       id=""
+                                       name="new-password"
+                                       type="password"
+                                       pattern=""
+                                       placeholder="새 비밀번호"
+                                       data-validation-required-text="새 비밀번호를 입력해 주세요."
+                                       data-validation-pattern-text="비밀번호는 8~30자리 이내로 입력해주세요."
+                                       required="">
+                                <label class="a-label js-a-label" for="new-password"></label>
+                                <p class="input-guide-text">8~30자 이내 영문자, 숫자, 특수문자 중 2가지 이상 포함</p>
+                            </div><!-- // input : 새 비밀번호 -->
+
+                            <!-- input : 새 비밀번호 확인 -->
+                            <div class="m-input v3" data-component="MInput" data-validation-match-field="password">
+                                <label class="a-label js-a-label" for="repeat-new-password">새 비밀번호 확인</label>
+                                <input class="a-input js-a-input"
+                                       id="repeat-new-password"
+                                       name="repeat-new-password"
+                                       type="password"
+                                       placeholder="새 비밀번호 확인"
+                                       data-validation-required-text="비밀번호를 재입력해주세요."
+                                       data-validation-match-field-text="비밀번호와 비밀번호 확인을 동일하게 입력해주세요."
+                                       required="">
+                                <label class="a-label js-a-label" for="repeat-new-password"></label>
+                                <p class="input-guide-text">새 비밀번호와 동일한 비밀번호를 입력해주세요.</p>
+                            </div><!-- // input : 새 비밀번호 확인 -->
+                            <button class="a-button btn-change-pw-confirm" type="button"><span>확인</span></button>
+                        </div>
+                        <!-- //gray-bx -->
+                    </div>
+
+                    <div class="data-grid full newsletter">
+                        <div class="newsletter-g-label">뉴스레터 구독[선택]</div>
+                        <div class="newsletter-g-value">
+                            <div class="checkbox-list">
+                                <span class="m-checkbox v2 u-clearfix">
+                                    <input class="a-checkbox" type="checkbox" id="checkbox-email">
+                                    <label class="a-label js-a-label custom-box" for="checkbox-email" tabindex="0"></label>
+                                    <label class="a-label js-a-label" for="checkbox-email">ARKET 상품/이벤트 정보 이메일 수신  동의</label>
+                                </span>
+                                <span class="m-checkbox v2 u-clearfix">
+                                    <input class="a-checkbox" type="checkbox" id="checkbox-gender">
+                                    <label class="a-label js-a-label custom-box" for="checkbox-gender" tabindex="0"></label>
+                                    <label class="a-label js-a-label" for="checkbox-gender">
+                                        성별을 마케팅 정보로 활용하는 것에 동의
+
+                                        <div class="radio-button-list">
+                                            <div class="m-radio-button v2">
+                                                <input type="radio" class="a-radio-button" id="male" name="gender">
+                                                <label class="a-label js-a-label u-no-select custom-radio" for="male"></label>
+                                                <label class="a-label js-a-label label-text" for="male">남</label>
+                                            </div>
+                                            <div class="m-radio-button v2">
+                                                <input type="radio" class="a-radio-button" id="female" name="gender">
+                                                <label class="a-label js-a-label u-no-select custom-radio" for="female"></label>
+                                                <label class="a-label js-a-label label-text" for="female">여</label>
+                                            </div>
+                                        </div>
+
+                                    </label>
+                                </span>
+                                <span class="m-checkbox v2 u-clearfix">
+                                    <input class="a-checkbox" type="checkbox" id="checkbox-third">
+                                    <label class="a-label js-a-label custom-box" for="checkbox-third" tabindex="0"></label>
+                                    <label class="a-label js-a-label" for="checkbox-third">개인정보 제3자 (H&M) 정보제공 및 국외 이전 동의[선택]</label>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="data-grid full staff-card">
+                        <div class="staff-card-g-label">
+                            임직원 카드 인증
+                            <a class="a-link a-link-udln btn-certify toggle-bx-btn" href="#none" target="_self" data-target="staff-card-edit"><span hidden>번호 인증하기</span></a>
+                        </div>
+                    </div>
+
+                    <div class="data-grid full toggle-bx-con staff-card-edit">
+                        <!-- gray-bx -->
+                        <div class="gray-bx">
+                            <div class="email-input-bx">
+                                <div class="m-input v3" data-component="MInput">
+                                    <label class="a-label js-a-label fixed" for="staff-card-number">임직원 카드 번호</label>
+                                    <input class="a-input js-a-input"
+                                           placeholder="임직원 카드 번호 입력"
+                                           type="tel"
+                                           value=""
+                                           pattern=""
+                                           name="staff-card-number"
+                                           id="staff-card-number"
+                                           required=""
+                                           data-validation-required-text="임직원 카드 번호를 입력해 주세요"
+                                           data-validation-pattern-text="">
+                                    <label class="a-label js-a-label" for="staff-card-number" data-placeholder=""></label>
+                                    <p class="input-guide-text">최소 9자리 이상 입력</p>
+                                </div>
+                            </div>
+                            <button class="a-button btn-certify-staff-card open-lightbox" data-template="lp-staff-card-save" data-classes="alert" type="button"><span>확인</span></button>
+                        </div>
+                        <!-- //gray-bx -->
+                    </div>
+
+                    <div class="data-grid full staff-card">
+                        <div class="staff-card-g-label">
+                            임직원 카드 인증
+                            <a class="a-link a-link-udln btn-change toggle-bx-btn" href="#none" target="_self" data-target="staff-card-edit"><span hidden>변경하기</span></a>
+                            <a class="a-link a-link-udln btn-del open-lightbox" data-template="lp-staff-card-del" data-classes="alert" href="#none" target="_self"><span>삭제</span></a>
+                        </div>
+                        <div class="staff-card-g-value">0123456789900</div>
+                    </div>
+
                 </div>
-
-                <!-- tip: ng-click 이벤트 구현이 어려워 임시로 jquery 로 toggle 기능 구현 -->
-                <!--<a class="a-button edit-button" id="editProfile" href="javascript:attachStaffCardEvent(0);" ng-click="copyProfile(); showDiv('myProfileForm','profileSummary')">편집</a>-->
-                <a class="a-button edit-button" id="editProfile" href="javascript:showDiv('myProfileForm','profileSummary');">편집</a>
-
-                <a href="javascript:void(0);" class="a-button change-password-button" onclick="TealiumUtils.trackResetPwdButton(this);window.location.href='update-password'">비밀번호 변경하기</a>
-
+                <!-- //data-grids -->
             </div>
+            <button class="a-button btn-profile-info-submit" type="button"><span>확인</span></button>
             <!-- //o-my-details-summary -->
-
-            <!-- o-my-details -->
-            <form data-component="OMyDetails OForm" class="o-form o-my-details ng-pristine ng-valid-pattern ng-valid-maxlength ng-valid-email ng-invalid ng-invalid-required is-hidden" data-notify-unsaved-changes="true" data-manually-submit="true" id="myProfileForm" name="accountProfileForm">
-                <input type="hidden" name="frequencyFashionNews" init-from-form="" value="REG" ng-model="profile.frequencyFashionNews" class="ng-pristine ng-untouched ng-valid">
-                <div class="input-wrapper">
-                    <div class="m-error js-m-error is-hidden">
-                        <span id="errorLabel" class="has-error"></span>
-                    </div>
-
-                    <!-- attributes related to the phone field -->
-                    <div data-component="MInput" class="m-input no-description first-name is-filled" data-validate="firstname" placeholder="First name">
-                        <label class="a-label js-a-label">이름</label>
-                        <input class="a-input js-a-input ng-pristine ng-untouched ng-valid ng-valid-required ng-valid-pattern ng-valid-maxlength" type="text" name="firstName" init-from-form="" value="Ryu" ng-model="profile.firstName" maxlength="150" required="" placeholder="First name" data-validation-required-text="Please enter a first name" data-validation-pattern-text="Please enter a first name" data-validation-maxlen-text="First name is too long" pattern="^(?:\s*)[^:;]+(\s+[^\s\d:;]+)*(?:\s*)$" id="firstName">
-                        <label class="a-label js-a-label" data-placeholder="Name">이름</label>
-                    </div>
-
-                    <!-- attributes related to the phone field -->
-                    <div data-component="MInput" class="m-input no-description last-name is-filled" data-validate="lastname" placeholder="Last name">
-                        <label class="a-label js-a-label">성</label>
-                        <input class="a-input js-a-input ng-pristine ng-untouched ng-valid ng-valid-required ng-valid-pattern ng-valid-maxlength" type="text" name="lastName" init-from-form="" value="SH" ng-model="profile.lastName" maxlength="150" required="" placeholder="Last name" data-validation-required-text="Please enter a last name" data-validation-pattern-text="Please enter a last name" data-validation-maxlen-text="First name is too long" pattern="^(?:\s*)[^:;]+(\s+[^\s\d:;]+)*(?:\s*)$" id="lastName">
-                        <label class="a-label js-a-label" data-placeholder="Last name">성</label>
-                    </div>
-
-                    <div data-component="MInput" class="m-input email-field is-filled" data-validate="email" placeholder="Email">
-                        <label class="a-label js-a-label">이메일</label>
-                        <input class="a-input js-a-input ng-pristine ng-untouched ng-valid ng-valid-email ng-valid-required ng-valid-pattern ng-valid-maxlength" type="email" name="uid" ng-model="profile.uid" init-from-form="" maxlength="" required="" placeholder="Email" data-validation-required-text="Please enter a valid email address." data-validation-pattern-text="Please enter a valid email address." value="seunghyun87.ryu@gmail.com" data-validation-maxlen-text="" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$">
-                        <label class="a-label js-a-label" data-placeholder="Email">Email</label>
-                    </div>
-
-                    <script type="text/x-handlebars-template" id="m-input-phone">
-                        <div data-component="MInput" class="m-input m-input-phone-number" maxlength="150" placeholder="">
-                            <label class="a-label js-a-label"></label>
-                            <input placeholder="" class="a-input input-country-code"
-                                   type=""
-                                   maxlength="150"
-                                   value="+82"
-                                   ng-model="profile.prefix"
-                                   name=""
-                                   readonly="readonly"
-                                   pattern="^(?:\s*).*(?:\s*)$"
-                                   data-validation-required-text=""
-                                   data-validation-pattern-text=""/>
-                            <input placeholder="" class="a-input js-a-input input-phone-number"
-                                   type="tel"
-                                   ng-model="profile.cellPhone"
-                                   pattern="^(?:\s*)(^\d{5,15}$)(?:\s*)$"
-                                   data-validation-required-text=""
-                                   data-validation-pattern-text=""
-                                   maxlength="15"
-                                   data-validation-maxlen-text=""/>
-                            <label class="a-label js-a-label" data-placeholder=""></label>
-                        </div>
-                    </script>
-
-                    <script type="text/x-handlebars-template" id="m-input-password">
-                        <div data-component="MInput" class="m-input " placeholder="Enter your password">
-                            <label class="a-label js-a-label">Enter your password</label>
-                            <input placeholder="Enter your password" class="a-input js-a-input"
-                                   id="password"
-                                   name="password"
-                                   type="password"
-                                   ng-model="profile.password"
-                                   value=""
-                                   name="password"
-                                   required
-                                   pattern="^[^ ]{6,25}$"
-                                   data-validation-required-text="You need to enter your password to change your email address"
-                                   data-validation-pattern-text="Password may not contain any spaces"/>
-                            <label class="a-label js-a-label target-for-error" data-placeholder="New password again">New
-                                password again</label>
-                            <button type="button" class="a-button-nostyle toggle-password-state password-visible" data-show-text="Show" data-hide-text="Hide">
-                                Show
-                            </button>
-                        </div>
-                    </script>
-
-                    <div data-component="MInput" class="m-input password-field password" disabled="" placeholder="비밀번호를 입력하세요">
-                        <label class="a-label js-a-label">비밀번호를 입력하세요</label>
-                        <input placeholder="Enter your password" class="a-input js-a-input ng-pristine ng-untouched ng-invalid ng-invalid-required ng-valid-pattern" disabled="" id="password" name="password" type="password" ng-model="profile.password" value="" required="" pattern="^[^ ]{6,25}$" data-validation-required-text="You need to enter your password to change your email address" data-validation-pattern-text="Password may not contain any spaces">
-                        <label class="a-label js-a-label target-for-error" data-placeholder="New password again">비밀번호 확인</label>
-                        <button type="button" class="a-button-nostyle toggle-password-state password-visible" data-show-text="Show" data-hide-text="Hide">
-                            Show
-                        </button>
-                    </div>
-
-                    <!-- attributes related to the phone field -->
-                    <div data-component="MInput" class="m-input no-description m-input-phone-number" data-validate="" placeholder="전화번호">
-                        <label class="a-label js-a-label">전화번호</label>
-                        <input class="a-input input-country-code ng-pristine ng-untouched ng-valid ng-valid-pattern ng-valid-maxlength" type="tel" name="prefix" init-from-form="" value="+82" ng-model="profile.prefix" maxlength="" data-validation-required-text="Prefix invalid " data-validation-pattern-text="Prefix invalid " data-validation-maxlen-text="" pattern="^(?:\s*).*(?:\s*)$" id="user-country-code-number" readonly="readonly"><input class="a-input js-a-input input-phone-number ng-pristine ng-untouched ng-valid ng-valid-pattern" type="tel" name="cellPhone" init-from-form="" value="" ng-model="profile.cellPhone" placeholder="Phone number" data-validation-required-text="Please enter a phone number" data-validation-pattern-text="Please enter a vaild phone number" pattern="^(?:\s*)(^\d{5,15}$)(?:\s*)$">
-                        <label class="a-label js-a-label" data-placeholder="Phone number ">전화번호</label>
-                    </div>
-
-                    <div data-component="MLinkToggle" class="m-link-toggle staff-card-toggle">
-                        <a href="javascript:void(0);" target="_self" class="a-link js-a-link">직원 카드가 있다면, 여기에 카드번호를 입력하세요.</a>
-                        <div class="m-link-toggle-block js-m-link-toggle-block">
-
-                            <!-- attributes related to the phone field -->
-                            <div data-component="MInput" class="m-input no-description staff-card" data-validate="" placeholder="직원? 클릭">
-                                <label class="a-label js-a-label">직원? 클릭</label>
-                                <input class="a-input js-a-input ng-pristine ng-untouched ng-valid ng-valid-pattern ng-valid-maxlength" type="" name="hmStaffCardId" init-from-form="" value="" ng-model="profile.hmStaffCardId" maxlength="25" placeholder="Staff? Click here" data-validation-required-text="" data-validation-pattern-text="Staff card invalid" data-validation-maxlen-text="25" pattern="[a-zA-Z0-9-]+" id="updateProfileForm-hmStaffCardId" aria-hidden="true" tabindex="-1">
-                                <label class="a-label js-a-label" data-placeholder="Staff card">직원카드</label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="m-radio-button-group">
-                        <fieldset>
-                            <legend>뉴스레터 구독</legend>
-                            <div class="m-radio-button u-clearfix">
-                                <input type="radio" class="a-radio-button ng-pristine ng-untouched ng-valid" id="no" name="newsletterSubscription" data-ng-model="profile.frequencyFashionNews" value="NON">
-                                <label class="a-label js-a-label u-no-select custom-radio" for="no" tabindex="0"></label>
-                                <label class="a-label js-a-label label-text" for="no">아니오</label>
-                            </div>
-                            <div class="m-radio-button u-clearfix">
-                                <input type="radio" class="a-radio-button ng-pristine ng-untouched ng-valid" id="yes" data-ng-model="profile.frequencyFashionNews" name="newsletterSubscription" value="REG">
-                                <label class="a-label js-a-label u-no-select custom-radio" for="yes"></label>
-                                <label class="a-label js-a-label label-text" for="yes">예</label>
-                            </div>
-                        </fieldset>
-                    </div>
-
-                    <div class="newsletter-label" style="">
-                        <label class="a-label js-a-label policy-label">Yes, I would like to receive promotions from
-                            Arket a brand of the H&amp;M Group. I confirm that I’m 18 years or older. I consent to let H&amp;M
-                            Group to process my personal data in order to provide me with personalised promotions in my
-                            social media feed, email and through SMS in accordance with the
-                            <a href="javascript:void(0);" target="_self" class="a-link privacy-notice" data-template="privacyPolicy" data-classes="is-privacy-policy" ng-click="openPopup('privacy-notice/direct-marketing.html', 'privacyPolicy', 'richtextWrapper', 'privacyPolicyContent')">
-                                privacy notice
-                            </a>
-                            .
-                        </label>
-                    </div>
-                    <label class="a-label js-a-label policy-label">
-                        ARKET <a href="javascript:void(0);" target="_self" class="a-link privacy-policy" data-template="privacyPolicy" data-classes="is-privacy-policy" ng-click="openPopup('privacy-notice/account.html', 'privacyPolicy', 'richtextWrapper', 'privacyPolicyContent')">개인 정보 고지</a>에 따라 개인 계정을 관리하기 위해 개인 데이터를 사용합니다.
-                    </label>
-                </div>
-                <div class="button-container">
-                    <button ng-click="postProfile()" type="submit" class="a-button is-primary btn-save-details" id="saveProfileDetails" data-default-state-text="Save details" data-saved-state-text="text.account.details.saved">
-                        <span id="saveButtonLabel">저장하기</span>
-                    </button>
-
-                    <!-- tip: ng-click 이벤트 구현이 어려워 임시로 jquery 로 toggle 기능 구현 -->
-                    <!--<a id="cancelButton" class="a-button is-primary is-secondary btn-cancel" href="javascript:void(0);" ng-click="resetProfile(); showDiv('profileSummary','myProfileForm'); updateStaffCardVisibility()">취소</a>-->
-                    <a id="cancelButton" class="a-button is-primary is-secondary btn-cancel" href="javascript:showDiv('profileSummary','myProfileForm');void(0);">취소</a>
-                </div>
-            </form>
-            <!-- //o-my-details -->
-
         </div>
+        <!-- //my-profile-content -->
 
-        <script type="text/x-handlebars-template" data-template="privacyPolicy" id="privacyPolicy">
-            <p class="a-paragraph no-margin q-color-white" style="color:black" id="privacyPolicyContent"></p>
-        </script>
+        <!-- link-list-wrap -->
+        <ul class="link-list-wrap">
+            <li>
+                <a class="a-link open-lightbox" data-tempate="" href="#none" target="_self">
+                    <h3 class="a-heading-3">개인계정 연결관리</h3>
+                </a>
+            </li>
+            <li>
+                <a class="a-link open-lightbox" data-tempate="" href="#none" target="_self">
+                    <h3 class="a-heading-3">환불계좌/현금영수증</h3>
+                </a>
+            </li>
+            <li>
+                <a class="a-link open-lightbox" data-tempate="" href="#none" target="_self">
+                    <h3 class="a-heading-3">영수증/세금계산서</h3>
+                </a>
+            </li>
+            <li>
+                <a class="a-link" href="#none" target="_self">
+                    <h3 class="a-heading-3">회원탈퇴</h3>
+                </a>
+            </li>
+        </ul>
+        <!-- //link-list-wrap -->
 
-        <script>
-            function attachStaffCardEvent() {
-                $(".staff-card-toggle").removeAttr("data-component-id");
-                appeaser.scan();
-            }
-        </script>
     </div>
 </div>
 
+<!-- handlebars-template -->
+
+<!-- 결제수단변경 -->
+<script type="text/x-handlebars-template" id="lp-show-hidden-info">
+    <div class="lightbox-content-dft lp-show-hidden-info">
+        <div class="m-headline is-main-headline">
+            <h2 class="a-heading-2"><span>가려진 정보 보기</span></h2>
+        </div>
+        <div class="content">
+            <p class="guide-text main">고객님의 생년월일을 입력해 주세요. <br>
+                인증 성공 시, 회원정보 화면의 **** 표시가 해제됩니다.</p>
+            <form class="o-form" data-component="OForm" action="" method="POST">
+                <div class="m-input v3" data-component="MInput">
+                    <label class="a-label js-a-label" for="birthday-num">생년월일</label>
+                    <input class="a-input js-a-input"
+                           placeholder="생년월일을 입력해주세요"
+                           type="tel"
+                           value=""
+                           name="birthday-num"
+                           id="birthday-num"
+                           required=""
+                           data-validation-required-text=""
+                           data-validation-pattern-text="">
+                    <label class="a-label js-a-label" for="birthday-num" data-placeholder=""></label>
+                </div>
+                <p class="guide-text sm">생년월일 8자리를 입력해 주세요.(예:19880512)</p>
+            </form>
+        </div>
+        <div class="button-container">
+            <button class="a-button" type="button"><span>확인</span></button>
+        </div>
+    </div>
+</script>
+<!-- //결제수단변경 -->
+
+
+<!-- 임직원카드번호저장 -->
+<script type="text/x-handlebars-template" id="lp-staff-card-save">
+    <div class="lightbox-content-dft lp-staff-card-save">
+        <h2 class="a-heading-2"><span>임직원 카드 번호를 저장하시겠습니까?</span></h2>
+        <div class="content"></div>
+        <div class="button-container col-2">
+            <button class="a-button is-outlined js-close-button" type="button"><span>취소</span></button>
+            <button class="a-button" type="button"><span>확인</span></button>
+        </div>
+    </div>
+</script>
+<!-- //임직원카드번호저장 -->
+
+
+<!-- 임직원카드번호삭제 -->
+<script type="text/x-handlebars-template" id="lp-staff-card-del">
+    <div class="lightbox-content-dft lp-staff-card-del">
+        <h2 class="a-heading-2"><span>임직원 카드 번호를 삭제하시겠습니까?</span></h2>
+        <div class="content"></div>
+        <div class="button-container col-2">
+            <button class="a-button is-outlined js-close-button" type="button"><span>취소</span></button>
+            <button class="a-button" type="button"><span>확인</span></button>
+        </div>
+    </div>
+</script>
+<!-- //임직원카드번호삭제 -->
+<!-- //handlebars-template -->
+
 <!-- tip : when develop this script must be delete -->
 <script type="text/javascript">
-    //ng-click 이벤트 구현이 어려워 임시로 jquery 로 toggle 기능 구현
-    function showDiv(obj1,obj2){
-        $('#'+obj1).removeClass('is-hidden');
-        $('#'+obj2).addClass('is-hidden');
-    }
-    
     (function() {
         'use strict';
         //탭활성화
-        let tabMydetailsr = document.querySelector('.menu-my-details');
-        let tabMyorders = document.querySelector('.menu-my-orders');
-        if(tabMydetailsr){
-            tabMydetailsr.parentNode.classList.add('is-active');
+        let activeTab = document.querySelector('.menu-my-details');
+        if(activeTab){
+            activeTab.parentNode.classList.add('is-active');
         }
     })();
 </script>

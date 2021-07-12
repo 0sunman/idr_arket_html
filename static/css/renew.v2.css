@@ -19,6 +19,9 @@
 
 .icon.mail { background-image: url(../images/icon/icon-mail-01.png); }
 
+/* underline 하단간격 */
+.n-wrap .a-link-udln { text-underline-offset: 1px; }
+
 /* registration - accordion */
 .o-registration-form.v2 .n-wrap .accordion-con { width: 100%; height: auto; background: #ffffff; border-color: #000; border-top-width: 1px; border-top-style: solid; padding-top: 40px; }
 .o-registration-form.v2 .n-wrap .accordion-con .none { display: none; }
@@ -52,12 +55,6 @@
 /* ---------------------------------------------------------- */
 /* ---------------------------------------------------------- */
 /* simple s ================================================= */
-.fs21 { font-size: 21px; }
-
-.pd25 { padding: 0px 25px; }
-
-.pb06 { padding-bottom: 6px; }
-
 /* simple e ================================================= */
 /* ---------------------------------------------------------- */
 /* ---------------------------------------------------------- */
@@ -76,16 +73,16 @@
 .o-sign-in-wrapper .sign-in-heading .a-heading-2 { font-weight: 400; font-size: 18px; color: #000; line-height: 26px; }
 .o-sign-in-wrapper .o-sign-in .o-form .password { margin-bottom: 20px; }
 .o-sign-in-wrapper .o-sign-in .o-form .checkbox-input { width: 35%; margin-bottom: 0; }
-.o-sign-in-wrapper .o-sign-in .link-holder.v2 { display: inline-block; margin-top: 0; text-align: right; }
-.o-sign-in-wrapper .o-sign-in .link-holder.v2 a { border-bottom: 1px solid #b3b3b3; line-height: 0.5em; }
-.o-sign-in-wrapper .o-sign-in .link-holder.v2 a:first-child { margin-right: 15px; right: 100px; }
-.o-sign-in-wrapper .o-sign-in .link-holder.v2 .forgot-password { width: auto; }
+.o-sign-in-wrapper .o-sign-in .o-form .checkbox-input .a-label { font-size: 12px; }
+.o-sign-in-wrapper .o-sign-in .link-holder.col-2 { display: flex; justify-content: right; width: 55%; margin-top: 0; margin-bottom: 25px; }
+@media (min-width: 769px) { .o-sign-in-wrapper .o-sign-in .link-holder.col-2 { margin-top: -2px; margin-bottom: 0; } }
+.o-sign-in-wrapper .o-sign-in .link-holder.col-2 a { position: absolute; width: auto; padding: 0; border-bottom: 1px solid #b3b3b3; font-weight: 300; font-size: 11px; color: #afb0b5; }
+.o-sign-in-wrapper .o-sign-in .link-holder.col-2 .forgot-id { right: 66px; top: -20px; margin-right: 30px; }
+.o-sign-in-wrapper .o-sign-in .link-holder.col-2 .forgot-password { bottom: 0; }
 
 /* register */
 .o-registration .o-registration-form { width: 100%; }
 @media (min-width: 769px) { .o-registration .o-registration-form { width: 80%; } }
-.o-registration .o-registration-form.ma-t-20 { margin-top: -20px; }
-@media (min-width: 769px) { .o-registration .o-registration-form.ma-t-20 { margin-top: -45px; } }
 
 /* frontend.min overwrite e ================================= */
 /* ---------------------------------------------------------- */
@@ -123,9 +120,11 @@
 /* ---------------------------------------------------------- */
 /* ---------------------------------------------------------- */
 /* register s =============================================== */
-.o-registration-form.v2 { text-align: left; font-weight: 300; font-size: 12px; color: #000; line-height: 20px; /* 회원가입 단계 표기 */ }
+.o-registration-form.v2 { text-align: left; font-weight: 300; font-size: 12px; color: #000; line-height: 20px; /* 개인계정연결 안내 페이지 간격 조절 */ /* 회원가입 단계 표기 */ }
 .o-registration-form.v2 .main-info { font-weight: 300; font-size: 12px; color: #000; line-height: 20px; margin: 50px 0 15px; }
 @media (min-width: 769px) { .o-registration-form.v2 .main-info { margin: 75px 0 35px; } }
+.o-registration-form.v2.id-cnnt { margin-top: -20px; }
+@media (min-width: 769px) { .o-registration-form.v2.id-cnnt { margin-top: -45px; } }
 .o-registration-form.v2 .step { display: flex; justify-content: space-between; color: #7b7b7b; }
 @media (min-width: 769px) { .o-registration-form.v2 .step { width: 60%; margin: 0 auto; } }
 .o-registration-form.v2 .step li { font-size: 13px; height: 30px; }
@@ -159,7 +158,7 @@
 .o-registration-form.v2 .n-wrap.step-1-2 .password { width: 100%; }
 .o-registration-form.v2 .n-wrap.step-1-2 .a-button { margin-top: 35px; }
 .o-registration-form.v2 .n-wrap.step-1-2 .link-holder { position: relative; margin-top: 20px; }
-.o-registration-form.v2 .n-wrap.step-1-2 .link-holder .a-link { margin-right: 20px; font-weight: 300; font-size: 11px; color: #7b7b7b; line-height: 26px; text-underline-offset: 4px; }
+.o-registration-form.v2 .n-wrap.step-1-2 .link-holder .a-link { margin-right: 20px; font-weight: 300; font-size: 11px; color: #7b7b7b; line-height: 26px; }
 @media (min-width: 769px) { .o-registration-form.v2 .n-wrap.step-1-2 .link-holder .a-link { margin-right: 30px; } }
 .o-registration-form.v2 .n-wrap.step-1-2 .link-holder .register { position: absolute; right: 0; margin-right: 0; font-weight: 300; font-size: 12px; color: #000; }
 @media (min-width: 769px) { .o-registration-form.v2 .n-wrap.step-1-2 .link-holder .register { position: unset; } }
@@ -229,6 +228,7 @@
 @media (min-width: 769px) { .o-registration-form.v2 .n-wrap.step-3 { margin-top: 65px; } }
 .o-registration-form.v2 .n-wrap.step-3 .info-1 { font-weight: 400; font-size: 18px; color: #000000; line-height: 26px; }
 .o-registration-form.v2 .n-wrap.step-3 .info-2 { font-weight: 400; font-size: 13px; color: #000; line-height: 20px; margin: -3px 0 50px; }
+.o-registration-form.v2 .n-wrap.step-3 .fs21 { font-size: 21px; }
 
 /* register-complete e ====================================== */
 /* ---------------------------------------------------------- */
@@ -237,11 +237,12 @@
 html.no-touchevents .n-find-idpw { padding-bottom: 70px; }
 @media (min-width: 769px) { html.no-touchevents .n-find-idpw { padding-bottom: 100px; } }
 html.no-touchevents .n-find-idpw .a-heading-2 { font-size: 18px; }
-html.no-touchevents .n-find-idpw .n-wrap { margin-top: 45px; margin-bottom: 50px; /* 페이지 별 특성이 있는 class명 지정 - 추후 삭제예정 */ }
+html.no-touchevents .n-find-idpw .n-wrap { margin-top: 45px; margin-bottom: 50px; }
 @media (min-width: 769px) { html.no-touchevents .n-find-idpw .n-wrap { margin-top: 50px; margin-bottom: 55px; } }
 html.no-touchevents .n-find-idpw .n-wrap .m-input { margin-left: auto; margin-right: auto; }
 html.no-touchevents .n-find-idpw .n-wrap .m-input .a-label:first-child { margin-bottom: 0; }
 @media (min-width: 769px) { html.no-touchevents .n-find-idpw .n-wrap .find-result-box .tit-txt + .data, html.no-touchevents .n-find-idpw .n-wrap .find-result-box .find-result-list + .data { padding-top: 25px; } }
+html.no-touchevents .n-find-idpw .n-wrap .sub-title { font-weight: 300; font-size: 18px; color: #000; }
 html.no-touchevents .n-find-idpw .n-wrap .sub-title.v2 { margin-top: -20px; padding-bottom: 30px; border-color: #000; border-bottom-width: 1px; border-bottom-style: solid; }
 @media (min-width: 769px) { html.no-touchevents .n-find-idpw .n-wrap .sub-title.v2 { margin-top: 0; padding-bottom: 50px; } }
 html.no-touchevents .n-find-idpw .n-wrap .text-content { padding-top: 15px; font-weight: 300; font-size: 12px; color: #000; }
@@ -252,8 +253,8 @@ html.no-touchevents .n-find-idpw .n-wrap .text-content .info { line-height: 22px
 html.no-touchevents .n-find-idpw .n-wrap .text-content .info.v2 { margin-top: -15px; font-weight: 300; font-size: 14px; color: #000; }
 html.no-touchevents .n-find-idpw .n-wrap .text-content .list-box li { padding-left: 10px; font-weight: 300; font-size: 12px; color: #000; line-height: 20px; text-indent: -10px; }
 @media (min-width: 769px) { html.no-touchevents .n-find-idpw .n-wrap .text-content .list-box li { padding-left: 42px; } }
-html.no-touchevents .n-find-idpw .n-wrap .text-content .list-box li .brd-btm { border-color: #000; border-bottom-width: 1px; border-bottom-style: solid; }
 html.no-touchevents .n-find-idpw .n-wrap .text-content .list-box li:before { content: "-"; padding-right: 5px; }
+html.no-touchevents .n-find-idpw .n-wrap.resting-guide .info { padding-bottom: 10px; }
 
 /* 공통 find-id-pw e ========================================= */
 /* ---------------------------------------------------------- */
@@ -266,6 +267,32 @@ html.no-touchevents .n-find-idpw .n-wrap .text-content .list-box li:before { con
 .o-forgot-password.n-find-idpw .n-wrap .data.v2 { font-weight: 400; font-size: 13px; color: #000; }
 
 /* find-pw e ================================================ */
+/* ---------------------------------------------------------- */
+/* ---------------------------------------------------------- */
+/* my-page-leave s ========================================== */
+.o-my-page { /* 회원 탈퇴 */ }
+.o-my-page .a-heading-2.title.v2 { font-weight: 300; font-size: 16px; color: #000; text-align: left; margin-top: 130px; }
+.o-my-page .leave-wrap { padding-bottom: 90px; font-weight: 300; font-size: 12px; color: #000; line-height: 20px; /* PC화면 일때 컨텐츠 가운데 정렬 공통선언 */ }
+.o-my-page .leave-wrap .txt-bold { display: inline-block; font-weight: 400; text-indent: -15px; padding-left: 15px; }
+.o-my-page .leave-wrap .txt-bold:before { content: "※"; padding-right: 5px; }
+.o-my-page .leave-wrap .subTitle-section { margin-bottom: 50px; }
+.o-my-page .leave-wrap .info-section { margin-bottom: 35px; }
+.o-my-page .leave-wrap .info-section .txt-list li { padding-left: 15px; padding-bottom: 15px; }
+.o-my-page .leave-wrap .info-section .txt-list li .txt-bold { padding-left: 0; }
+.o-my-page .leave-wrap .form-section .survey-box .radio-button-wrap { margin-bottom: 10px; }
+@media (min-width: 769px) { .o-my-page .leave-wrap .form-section .survey-box .radio-button-wrap { display: flex; flex-wrap: wrap; width: 100%; } }
+.o-my-page .leave-wrap .form-section .survey-box .radio-button-wrap .m-radio-button { min-width: 280px; padding: 5px 0px; }
+@media (min-width: 769px) { .o-my-page .leave-wrap .form-section .survey-box .radio-button-wrap .m-radio-button { width: 40%; } }
+@media (min-width: 769px) { .o-my-page .leave-wrap .form-section .survey-box .radio-button-wrap .m-radio-button:nth-child(even) { width: 60%; } }
+.o-my-page .leave-wrap .form-section .survey-box .fs12 { font-size: 12px; }
+.o-my-page .leave-wrap .form-section .textArea-box { margin-top: 10px; margin-bottom: 35px; }
+.o-my-page .leave-wrap .form-section .textArea-box .a-textarea { position: relative; width: 100%; height: 85px; font-weight: 300; font-size: 18px; color: #000; line-height: 26px; border: none; border-bottom: 1px solid #000; }
+.o-my-page .leave-wrap .form-section .textArea-box .a-textarea::placeholder { color: #afb0b5; }
+.o-my-page .leave-wrap .form-section .textArea-box .txt-byte { text-align: right; margin-top: -5px; font-weight: 300; font-size: 12px; color: #787573; }
+.o-my-page .leave-wrap .form-section .textArea-box .txt-bold { margin-top: 0px; }
+@media (min-width: 769px) { .o-my-page .leave-wrap .info-section, .o-my-page .leave-wrap .survey-box, .o-my-page .leave-wrap .textArea-box { padding-left: 75px; padding-right: 75px; } }
+
+/* my-page-leave e ========================================== */
 /* ---------------------------------------------------------- */
 /* ---------------------------------------------------------- */
 

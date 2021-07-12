@@ -1,6 +1,5 @@
 <div data-component="OPageContent" class="o-page-content cofs-page">
-    <span id="content" tabindex="-1" class="access-content">Content of the page</span>
-    <div class="o-sign-in-wrapper">
+        <div class="o-sign-in-wrapper">
         <%# 로그인 또는 회원가입 타이틀 %>
         <%- include ("../../../common/md-o-sign-in-heading.ejs") %>
         <div class="is-sign-in-tabs">
@@ -295,15 +294,6 @@
                     </script>
                     <script type="text/x-handlebars-template" data-template="privacyPolicy" id="privacyPolicy">
                         <p class="a-paragraph no-margin q-color-white" style="color:black" id="privacyPolicyContent"></p>
-                    </script>
-                    <script>
-                        if(!($.trim($("#errorLabel").html())=='')){
-                            $('#errorBox').removeClass('is-hidden');
-                        }
-                        $("#registerButton").click(function(){
-                            $("#errorLabel").empty();
-                            $("#errorBox").addClass("is-hidden");
-                        });
                     </script>
                 </form>
             </div>

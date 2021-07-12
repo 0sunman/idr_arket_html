@@ -2048,7 +2048,6 @@
 
     <!-- o-page-content -->
     <div data-component="OPageContent" class="o-page-content cofs-page">
-    <span id="content" tabindex="-1" class="access-content">Content of the page</span>
 
     <!-- n-find-idpw -->
     <div class="o-forgot-password n-find-idpw">
@@ -2075,7 +2074,7 @@
                         <!-- input : 생년월일 -->
                         <div data-component="MInput" class="m-input">
                             <label class="a-label js-a-label" for="birthday">생년월일</label>
-                            <input class="a-input js-a-input" id="birthday" name="birthday" type="tel" pattern="" placeholder="생년월일" data-validation-required-text="생년월일을 입력해 주세요." data-validation-pattern-text="올바른 날짜형식이 아닙니다.(예: 19880512)" maxlength="8" required="">
+                            <input class="a-input js-a-input" id="birthday" name="birthday" type="tel" pattern="" placeholder="생년월일" data-validation-required-text="생년월일을 입력해 주세요." data-validation-pattern-text="생년월일을 정확히 입력해 주세요." maxlength="8" required="">
                             <label class="a-label js-a-label" for="birthday"></label>
                             <p class="guide-text">생년월일 8자리를 입력해 주세요.(예: 19880512)</p>
                         </div><!-- // input : 생년월일 -->
@@ -2087,23 +2086,6 @@
                     </button><!-- // button -->
             </form>
         </div>
-        
-        <!-- input error text 관련.js -->
-<script>
-    $(document).ready(function(){
-        if(!($.trim($("#errorLabel").html())=='')){
-            $('#errorBox').removeClass('is-hidden');
-            $('#errorBox').addClass("m-error");
-        }
-        $("#forgottenButton").click(function(){
-            $("#errorLabel").empty();
-            $("#errorBox").addClass("is-hidden");
-        });
-    })
-</script><!--// input error text 관련.js -->
-
-
-
     </div><!-- // n-find-idpw -->
 
 </div>

@@ -13,6 +13,7 @@
                    data-validation-required-text="이름을 입력하세요."
                    data-validation-pattern-text="주문고객 이름은 한글, 영문만 가능합니다">
             <label class="a-label js-a-label" for="my-dlvr-name" data-placeholder=""></label>
+            <p class="input-guide-text">이름을 입력하세요</p>
         </div>
 
         <div class="m-input v3" data-component="MInput">
@@ -27,6 +28,7 @@
                    data-validation-required-text="휴대폰 번호을 입력하세요."
                    data-validation-pattern-text="올바른 전화번호 형식이 아닙니다.">
             <label class="a-label js-a-label" for="my-dlvr-phone" data-placeholder=""></label>
+            <p class="input-guide-text">- 없이 숫자만 입력하세요.</p>
         </div>
 
         <div class="m-input v3" data-component="MInput">
@@ -41,6 +43,7 @@
                    data-validation-required-text="휴대폰 번호을 입력하세요."
                    data-validation-pattern-text="올바른 전화번호 형식이 아닙니다.">
             <label class="a-label js-a-label" for="my-dlvr-phone2" data-placeholder=""></label>
+            <p class="input-guide-text">- 없이 숫자만 입력하세요.</p>
         </div>
 
         <div class="m-input v3 is-readonly with-button" data-component="MInput">
@@ -79,6 +82,7 @@
                    id="my-dlvr-address2"
                    data-validation-required-text="배송지 주소를 입력해 주세요">
             <label class="a-label js-a-label" for="my-dlvr-address2" data-placeholder=""></label>
+            <p class="input-guide-text">나머지 배송지을 입력하세요.</p>
         </div>
 
         <div class="set-default-delivery">
@@ -97,8 +101,3 @@
     </div>
 </form>
 <!-- //배송지수정 -->
-
-<!-- handlebars-template -->
-<%# 주소검색 %>
-<%- include ("../handlebars/hndl-lp-find-address.ejs") %>
-<!-- //handlebars-template -->

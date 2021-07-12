@@ -2048,7 +2048,6 @@
 
     <!-- o-page-content -->
     <div data-component="OPageContent" class="o-page-content cofs-page">
-    <span id="content" tabindex="-1" class="access-content">Content of the page</span>
 
     <!-- n-find-idpw -->
     <div class="n-find-idpw">
@@ -2080,23 +2079,6 @@
                 </button><!-- // button -->
             </form>
         </div>
-        
-        <!-- input error text 관련.js -->
-<script>
-    $(document).ready(function(){
-        if(!($.trim($("#errorLabel").html())=='')){
-            $('#errorBox').removeClass('is-hidden');
-            $('#errorBox').addClass("m-error");
-        }
-        $("#forgottenButton").click(function(){
-            $("#errorLabel").empty();
-            $("#errorBox").addClass("is-hidden");
-        });
-    })
-</script><!--// input error text 관련.js -->
-
-
-
     </div> <!-- //n-find-idpw -->
 
 </div>

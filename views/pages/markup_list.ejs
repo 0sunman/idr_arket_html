@@ -48,24 +48,29 @@ div[class^="markup-list-"] h4 {text-transform:capitalize;}
             let tempListType2 = 'index';
             pageList.forEach(function(data,idx){
                 if(tempListType2 != data.type){
-                    if(idx != 0){
+                    if(idx > 1){
         %>
         </ul>
         <%
                 }
         %>
-                <h4><%= data.type %></h4>
-                <ul id='<%= data.type %>'>
+        <h4><%= data.type %></h4>
+        <ul id='<%= data.type %>'>
         <%
                 }
                 if(idx != 0){
         %>
-                    <li>
-                        <a href='dist/<%= data.pageurl.replace(/(.ejs)$/,'') %>.html' target="_blank"><%= data.title %></a>
-                    </li>
+            <li>
+                <a href='dist/<%= data.pageurl.replace(/(.ejs)$/,'') %>.html' target="_blank"><%= data.title %></a>
+            </li>
         <%
                 }
                 tempListType2 = data.type;
+                if(idx == (pageList.length - 1)){
+        %>
+        </ul>
+        <%
+                }
             })
         %>
     </div>
