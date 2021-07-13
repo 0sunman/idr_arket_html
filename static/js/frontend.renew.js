@@ -1,4 +1,8 @@
 //renewCommon
+function lpPrint() {
+    window.print();
+}
+
 var renewCommon = renewCommon || function(){};
 renewCommon = (function(doc, win){
     var obj = {};

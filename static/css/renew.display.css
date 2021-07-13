@@ -1448,6 +1448,110 @@ html .lp-find-address .m-input { margin-top: 35px; margin-bottom: 35px; }
 /* ---------------------------------------------------------- */
 /* ========================================================== */
 /*                                                            */
+/* file		: print                                   	      */
+/*                                                            */
+/* ========================================================== */
+/* ---------------------------------------------------------- */
+/* print s ================================================== */
+.print-area-wrap { position: relative; }
+.print-area-wrap .print-text-bx { font-family: 'dotum'; font-weight: 400; font-size: 12px; }
+
+.print-receipt-tax .lightbox-wrapper { width: 720px; }
+.print-receipt-tax .print-area-wrap .print-bg-img-bx { width: 640px; }
+.print-receipt-tax .print-area-wrap .print-bg-img-bx img { width: 100%; }
+.print-receipt-tax .print-area-wrap .print-text-bx { position: absolute; top: 0; left: 0; width: calc(100% - 18px); }
+
+.lp-receipt-print-tax .text-info-ul { width: 640px; display: flex; flex-wrap: wrap; margin-bottom: 4px; }
+.lp-receipt-print-tax .text-info-ul li { display: flex; align-items: center; padding: 9px 0 10px 6px; border: 0px solid red; }
+.lp-receipt-print-tax .text-info-ul li span { display: inline-block; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.lp-receipt-print-tax .text-info-ul li.price { justify-content: flex-end; }
+.lp-receipt-print-tax .text-info-ul li.price span { letter-spacing: 0.48em; margin-right: -3px; text-overflow: initial; }
+.lp-receipt-print-tax .text-info-ul li:nth-child(1) { padding: 18px 0 18px 450px; width: 100%; }
+.lp-receipt-print-tax .text-info-ul li:nth-child(2), .lp-receipt-print-tax .text-info-ul li:nth-child(4), .lp-receipt-print-tax .text-info-ul li:nth-child(6), .lp-receipt-print-tax .text-info-ul li:nth-child(8), .lp-receipt-print-tax .text-info-ul li:nth-child(12) { padding-left: 76px; width: 30%; }
+.lp-receipt-print-tax .text-info-ul li:nth-child(3), .lp-receipt-print-tax .text-info-ul li:nth-child(5), .lp-receipt-print-tax .text-info-ul li:nth-child(7), .lp-receipt-print-tax .text-info-ul li:nth-child(9), .lp-receipt-print-tax .text-info-ul li:nth-child(13) { padding-left: 54px; width: 20%; }
+.lp-receipt-print-tax .text-info-ul li:nth-child(10), .lp-receipt-print-tax .text-info-ul li:nth-child(11), .lp-receipt-print-tax .text-info-ul li:nth-child(16), .lp-receipt-print-tax .text-info-ul li:nth-child(17) { padding-left: 76px; width: 50%; }
+.lp-receipt-print-tax .text-info-ul li:nth-child(14) { padding: 14px 0 14px 76px; width: 30%; }
+.lp-receipt-print-tax .text-info-ul li:nth-child(15) { padding: 14px 0 14px 54px; width: 20%; }
+.lp-receipt-print-tax .text-info-ul li:nth-child(18), .lp-receipt-print-tax .text-info-ul li:nth-child(19), .lp-receipt-print-tax .text-info-ul li:nth-child(20), .lp-receipt-print-tax .text-info-ul li:nth-child(21), .lp-receipt-print-tax .text-info-ul li:nth-child(22), .lp-receipt-print-tax .text-info-ul li:nth-child(23) { padding: 54px 0 0; }
+.lp-receipt-print-tax .text-info-ul li:nth-child(18), .lp-receipt-print-tax .text-info-ul li:nth-child(19), .lp-receipt-print-tax .text-info-ul li:nth-child(20), .lp-receipt-print-tax .text-info-ul li:nth-child(21) { justify-content: center; }
+.lp-receipt-print-tax .text-info-ul li:nth-child(18) { width: 6%; }
+.lp-receipt-print-tax .text-info-ul li:nth-child(19), .lp-receipt-print-tax .text-info-ul li:nth-child(20) { width: 2.6%; }
+.lp-receipt-print-tax .text-info-ul li:nth-child(21) { width: 5%; }
+.lp-receipt-print-tax .text-info-ul li:nth-child(22) { width: 24%; }
+.lp-receipt-print-tax .text-info-ul li:nth-child(23) { width: 22%; }
+.lp-receipt-print-tax .text-info-ul li:nth-child(24) { width: 36%; }
+.lp-receipt-print-tax .text-info-ul li:nth-child(25) { padding: 14px 0 14px 80px; width: 100%; }
+.lp-receipt-print-tax .text-info-ul li:nth-child(26), .lp-receipt-print-tax .text-info-ul li:nth-child(27), .lp-receipt-print-tax .text-info-ul li:nth-child(28), .lp-receipt-print-tax .text-info-ul li:nth-child(29), .lp-receipt-print-tax .text-info-ul li:nth-child(30), .lp-receipt-print-tax .text-info-ul li:nth-child(31), .lp-receipt-print-tax .text-info-ul li:nth-child(32), .lp-receipt-print-tax .text-info-ul li:nth-child(33), .lp-receipt-print-tax .text-info-ul li:nth-child(34) { padding-top: 28px; }
+.lp-receipt-print-tax .text-info-ul li:nth-child(35), .lp-receipt-print-tax .text-info-ul li:nth-child(36), .lp-receipt-print-tax .text-info-ul li:nth-child(37), .lp-receipt-print-tax .text-info-ul li:nth-child(38), .lp-receipt-print-tax .text-info-ul li:nth-child(39), .lp-receipt-print-tax .text-info-ul li:nth-child(40), .lp-receipt-print-tax .text-info-ul li:nth-child(41), .lp-receipt-print-tax .text-info-ul li:nth-child(42), .lp-receipt-print-tax .text-info-ul li:nth-child(43), .lp-receipt-print-tax .text-info-ul li:nth-child(44), .lp-receipt-print-tax .text-info-ul li:nth-child(45), .lp-receipt-print-tax .text-info-ul li:nth-child(46), .lp-receipt-print-tax .text-info-ul li:nth-child(47), .lp-receipt-print-tax .text-info-ul li:nth-child(48), .lp-receipt-print-tax .text-info-ul li:nth-child(49), .lp-receipt-print-tax .text-info-ul li:nth-child(50), .lp-receipt-print-tax .text-info-ul li:nth-child(51), .lp-receipt-print-tax .text-info-ul li:nth-child(52), .lp-receipt-print-tax .text-info-ul li:nth-child(53), .lp-receipt-print-tax .text-info-ul li:nth-child(54), .lp-receipt-print-tax .text-info-ul li:nth-child(55), .lp-receipt-print-tax .text-info-ul li:nth-child(56), .lp-receipt-print-tax .text-info-ul li:nth-child(57), .lp-receipt-print-tax .text-info-ul li:nth-child(58), .lp-receipt-print-tax .text-info-ul li:nth-child(59), .lp-receipt-print-tax .text-info-ul li:nth-child(60), .lp-receipt-print-tax .text-info-ul li:nth-child(61) { padding-top: 15px; padding-bottom: 15px; }
+.lp-receipt-print-tax .text-info-ul li:nth-child(26), .lp-receipt-print-tax .text-info-ul li:nth-child(27), .lp-receipt-print-tax .text-info-ul li:nth-child(35), .lp-receipt-print-tax .text-info-ul li:nth-child(36), .lp-receipt-print-tax .text-info-ul li:nth-child(44), .lp-receipt-print-tax .text-info-ul li:nth-child(45), .lp-receipt-print-tax .text-info-ul li:nth-child(53), .lp-receipt-print-tax .text-info-ul li:nth-child(54) { width: 3%; }
+.lp-receipt-print-tax .text-info-ul li:nth-child(28), .lp-receipt-print-tax .text-info-ul li:nth-child(37), .lp-receipt-print-tax .text-info-ul li:nth-child(46), .lp-receipt-print-tax .text-info-ul li:nth-child(55) { width: 35%; }
+.lp-receipt-print-tax .text-info-ul li:nth-child(29), .lp-receipt-print-tax .text-info-ul li:nth-child(30), .lp-receipt-print-tax .text-info-ul li:nth-child(38), .lp-receipt-print-tax .text-info-ul li:nth-child(39), .lp-receipt-print-tax .text-info-ul li:nth-child(47), .lp-receipt-print-tax .text-info-ul li:nth-child(48), .lp-receipt-print-tax .text-info-ul li:nth-child(56), .lp-receipt-print-tax .text-info-ul li:nth-child(57) { width: 6%; }
+.lp-receipt-print-tax .text-info-ul li:nth-child(31), .lp-receipt-print-tax .text-info-ul li:nth-child(40), .lp-receipt-print-tax .text-info-ul li:nth-child(49), .lp-receipt-print-tax .text-info-ul li:nth-child(58) { width: 12%; }
+.lp-receipt-print-tax .text-info-ul li:nth-child(32), .lp-receipt-print-tax .text-info-ul li:nth-child(41), .lp-receipt-print-tax .text-info-ul li:nth-child(50), .lp-receipt-print-tax .text-info-ul li:nth-child(59) { width: 17%; }
+.lp-receipt-print-tax .text-info-ul li:nth-child(33), .lp-receipt-print-tax .text-info-ul li:nth-child(42), .lp-receipt-print-tax .text-info-ul li:nth-child(51), .lp-receipt-print-tax .text-info-ul li:nth-child(60) { width: 12%; }
+.lp-receipt-print-tax .text-info-ul li:nth-child(34), .lp-receipt-print-tax .text-info-ul li:nth-child(43), .lp-receipt-print-tax .text-info-ul li:nth-child(52), .lp-receipt-print-tax .text-info-ul li:nth-child(61) { width: 6%; }
+.lp-receipt-print-tax .text-info-ul li:nth-child(62), .lp-receipt-print-tax .text-info-ul li:nth-child(63), .lp-receipt-print-tax .text-info-ul li:nth-child(64), .lp-receipt-print-tax .text-info-ul li:nth-child(65), .lp-receipt-print-tax .text-info-ul li:nth-child(66) { padding-top: 24px; }
+.lp-receipt-print-tax .text-info-ul li:nth-child(62) { width: 19%; justify-content: center; }
+.lp-receipt-print-tax .text-info-ul li:nth-child(63) { width: 16%; }
+.lp-receipt-print-tax .text-info-ul li:nth-child(64) { width: 15%; }
+.lp-receipt-print-tax .text-info-ul li:nth-child(65), .lp-receipt-print-tax .text-info-ul li:nth-child(66) { width: 14%; }
+.lp-receipt-print-tax .guide-text { text-align: left; font-size: 12px; color: #000; }
+
+.print-receipt-card .lightbox-wrapper { width: 430px; }
+.print-receipt-card .print-area-wrap .print-bg-img-bx { width: 350px; }
+.print-receipt-card .print-area-wrap .print-bg-img-bx img { width: 100%; }
+.print-receipt-card .print-area-wrap .print-text-bx { position: absolute; top: 48px; left: 9px; width: calc(100% - 18px); }
+
+.lp-receipt-print-cash .text-info-ul, .lp-receipt-print-credit .text-info-ul { width: 332px; display: flex; flex-wrap: wrap; }
+.lp-receipt-print-cash .text-info-ul li, .lp-receipt-print-credit .text-info-ul li { display: flex; align-items: center; padding: 16px 0 6px 5px; border: 0px solid red; }
+.lp-receipt-print-cash .text-info-ul li span, .lp-receipt-print-credit .text-info-ul li span { display: inline-block; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.lp-receipt-print-cash .text-info-ul li.price, .lp-receipt-print-credit .text-info-ul li.price { justify-content: flex-end; }
+.lp-receipt-print-cash .text-info-ul li.price span, .lp-receipt-print-credit .text-info-ul li.price span { letter-spacing: 0.92em; margin-right: -3px; }
+.lp-receipt-print-cash .text-info-ul li:nth-child(1), .lp-receipt-print-credit .text-info-ul li:nth-child(1) { width: 28%; }
+.lp-receipt-print-cash .text-info-ul li:nth-child(2), .lp-receipt-print-credit .text-info-ul li:nth-child(2) { width: 46%; }
+.lp-receipt-print-cash .text-info-ul li:nth-child(3), .lp-receipt-print-credit .text-info-ul li:nth-child(3) { width: 26%; }
+.lp-receipt-print-cash .text-info-ul li:nth-child(4), .lp-receipt-print-credit .text-info-ul li:nth-child(4) { width: 70%; }
+.lp-receipt-print-cash .text-info-ul li:nth-child(5), .lp-receipt-print-credit .text-info-ul li:nth-child(5) { width: 30%; }
+.lp-receipt-print-cash .text-info-ul li:nth-child(6), .lp-receipt-print-credit .text-info-ul li:nth-child(6) { width: 100%; }
+.lp-receipt-print-cash .text-info-ul li:nth-child(7), .lp-receipt-print-credit .text-info-ul li:nth-child(7) { width: 22%; }
+.lp-receipt-print-cash .text-info-ul li:nth-child(8), .lp-receipt-print-credit .text-info-ul li:nth-child(8) { width: 54%; }
+.lp-receipt-print-cash .text-info-ul li:nth-child(9), .lp-receipt-print-credit .text-info-ul li:nth-child(9) { width: 24%; }
+.lp-receipt-print-cash .text-info-ul li:nth-child(10), .lp-receipt-print-credit .text-info-ul li:nth-child(10) { width: 43%; }
+.lp-receipt-print-cash .text-info-ul li:nth-child(11), .lp-receipt-print-credit .text-info-ul li:nth-child(11) { width: 57%; }
+.lp-receipt-print-cash .text-info-ul li:nth-child(12), .lp-receipt-print-credit .text-info-ul li:nth-child(12) { width: 43%; }
+.lp-receipt-print-cash .text-info-ul li:nth-child(13), .lp-receipt-print-credit .text-info-ul li:nth-child(13) { width: 57%; }
+.lp-receipt-print-cash .text-info-ul li:nth-child(14), .lp-receipt-print-credit .text-info-ul li:nth-child(14) { width: 43%; }
+.lp-receipt-print-cash .text-info-ul li:nth-child(15), .lp-receipt-print-credit .text-info-ul li:nth-child(15) { width: 57%; }
+.lp-receipt-print-cash .text-info-ul li:nth-child(16), .lp-receipt-print-credit .text-info-ul li:nth-child(16) { width: 14%; }
+.lp-receipt-print-cash .text-info-ul li:nth-child(17), .lp-receipt-print-credit .text-info-ul li:nth-child(17) { width: 29%; }
+.lp-receipt-print-cash .text-info-ul li:nth-child(18), .lp-receipt-print-credit .text-info-ul li:nth-child(18) { width: 57%; }
+.lp-receipt-print-cash .text-info-ul li:nth-child(19), .lp-receipt-print-credit .text-info-ul li:nth-child(19) { width: 43%; }
+.lp-receipt-print-cash .text-info-ul li:nth-child(20), .lp-receipt-print-credit .text-info-ul li:nth-child(20) { width: 57%; }
+.lp-receipt-print-cash .text-info-ul li:nth-child(21), .lp-receipt-print-credit .text-info-ul li:nth-child(21) { width: 43%; }
+.lp-receipt-print-cash .text-info-ul li:nth-child(22), .lp-receipt-print-credit .text-info-ul li:nth-child(22) { width: 57%; }
+.lp-receipt-print-cash .text-info-ul li:nth-child(23), .lp-receipt-print-credit .text-info-ul li:nth-child(23) { width: 43%; }
+.lp-receipt-print-cash .text-info-ul li:nth-child(24), .lp-receipt-print-credit .text-info-ul li:nth-child(24) { width: 57%; }
+.lp-receipt-print-cash .text-info-ul li:nth-child(25), .lp-receipt-print-credit .text-info-ul li:nth-child(25) { width: 58%; }
+.lp-receipt-print-cash .text-info-ul li:nth-child(26), .lp-receipt-print-credit .text-info-ul li:nth-child(26) { width: 42%; }
+.lp-receipt-print-cash .text-info-ul li:nth-child(27), .lp-receipt-print-credit .text-info-ul li:nth-child(27) { width: 100%; }
+.lp-receipt-print-cash .text-info-ul li:nth-child(28), .lp-receipt-print-credit .text-info-ul li:nth-child(28) { width: 34%; }
+.lp-receipt-print-cash .text-info-ul li:nth-child(29), .lp-receipt-print-credit .text-info-ul li:nth-child(29) { width: 66%; }
+.lp-receipt-print-cash .text-info-ul li:nth-child(30), .lp-receipt-print-credit .text-info-ul li:nth-child(30) { width: 28%; }
+.lp-receipt-print-cash .text-info-ul li:nth-child(31), .lp-receipt-print-credit .text-info-ul li:nth-child(31) { width: 72%; }
+
+@page { size: 210mm 297mm;
+  /*A4*/
+margin: 0mm; }
+@media only print { html, body { margin: 0; padding: 0; page-break-after: avoid; page-break-before: avoid; }
+  body * { visibility: hidden; margin: 0; padding: 0; }
+  a[href]::after { content: none !important; }
+  .is-open .print-area-wrap { transform: scale(1, 1); }
+  .is-open .print-area-wrap * { visibility: visible; }
+  .is-open .print-area-wrap .not-print { visibility: hidden !important; } }
+/* print e ================================================== */
+/* ---------------------------------------------------------- */
+/* ========================================================== */
+/*                                                            */
 /* file		: etc                                   	      */
 /*                                                            */
 /* ========================================================== */
@@ -1532,6 +1636,7 @@ html.no-touchevents .m-input.has-error .a-input, .alternative-style-option .m-in
 .model-tip .t1 { font-family: "Arket Sans SC"; font-size: 14px; }
 .model-tip .t2 { font-family: "Arket Sans"; font-size: 12px; }
 
+.o-product-details .right-panel .swatch-container { border-color: #000; border-bottom-width: 1px; border-bottom-style: solid; }
 .o-product-details .left-panel .m-product-shipping-info { margin-top: 0; font-size: 12px; }
 
 .o-product-details-selection .product-name-price-wrapper .is-regular::after { font-size: 12px; }

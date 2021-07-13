@@ -272,7 +272,7 @@ html.no-touchevents .n-find-idpw .n-wrap.resting-guide .info { padding-bottom: 1
 /* my-page-leave s ========================================== */
 .o-my-page { /* 회원 탈퇴 */ }
 .o-my-page .a-heading-2.title.v2 { font-weight: 300; font-size: 16px; color: #000; text-align: left; margin-top: 130px; }
-.o-my-page .leave-wrap { padding-bottom: 90px; font-weight: 300; font-size: 12px; color: #000; line-height: 20px; /* PC화면 일때 컨텐츠 가운데 정렬 공통선언 */ }
+.o-my-page .leave-wrap { padding-bottom: 90px; font-weight: 300; font-size: 12px; color: #000; line-height: 20px; /* PC화면 일때 컨텐츠 가운데 정렬 공통선언 */ /* 회원탈퇴 완료 */ }
 .o-my-page .leave-wrap .txt-bold { display: inline-block; font-weight: 400; text-indent: -15px; padding-left: 15px; }
 .o-my-page .leave-wrap .txt-bold:before { content: "※"; padding-right: 5px; }
 .o-my-page .leave-wrap .subTitle-section { margin-bottom: 50px; }
@@ -291,8 +291,31 @@ html.no-touchevents .n-find-idpw .n-wrap.resting-guide .info { padding-bottom: 1
 .o-my-page .leave-wrap .form-section .textArea-box .txt-byte { text-align: right; margin-top: -5px; font-weight: 300; font-size: 12px; color: #787573; }
 .o-my-page .leave-wrap .form-section .textArea-box .txt-bold { margin-top: 0px; }
 @media (min-width: 769px) { .o-my-page .leave-wrap .info-section, .o-my-page .leave-wrap .survey-box, .o-my-page .leave-wrap .textArea-box { padding-left: 75px; padding-right: 75px; } }
+.o-my-page .leave-wrap.leave-complete .info-section { margin-bottom: 60px; }
 
 /* my-page-leave e ========================================== */
+/* ---------------------------------------------------------- */
+/* ---------------------------------------------------------- */
+/* my-page-popup s ========================================== */
+/* 팝업 공통 */
+.lp-social-connect .content, .lp-mbr-leave-confirm .content { text-align: left; padding-top: 0; padding-bottom: 0; }
+
+/* 개인계정 연결관리 팝업 */
+.lp-social-connect .content .sns-list li .icon { background-color: #37b978; display: inline-block; width: 37px; height: 37px; }
+.lp-social-connect .content .sns-list li .icon::before { content: url(../images/icon/icon-kakao-my.png); display: inline-block; width: 37px; height: 37px; }
+
+/* 회원탈퇴 재확인 팝업 */
+.lp-mbr-leave-confirm .content .o-info-line-box.point-cont { margin-top: 20px; margin-bottom: 25px; padding-left: 18px; border: none; background-color: #f5f5f5; }
+.lp-mbr-leave-confirm .content .o-info-line-box.point-cont li span { font-weight: 400; font-size: 14px; color: #000; }
+.lp-mbr-leave-confirm .content .o-info-line-box.point-cont li span:first-child { width: 25%; }
+.lp-mbr-leave-confirm .content .o-info-line-box.point-cont li span:last-child { width: 75%; font-weight: 300; }
+.lp-mbr-leave-confirm .content .o-info-line-box.point-cont li .coupon::after { content: '장'; font-family: "Noto Sans KR"; font-size: inherit; }
+.lp-mbr-leave-confirm .content .o-info-line-box.point-cont li .the-money::after { content: 'P'; font-family: inherit; font-size: inherit; }
+.lp-mbr-leave-confirm .content .o-info-line-box.point-cont li .price-won { text-align: left; }
+.lp-mbr-leave-confirm .content .o-info-line-box.point-cont li .star::after { content: '별'; font-family: "Noto Sans KR"; font-size: inherit; }
+.lp-mbr-leave-confirm .button-container { margin-top: 30px; }
+
+/* my-page-popup e ========================================== */
 /* ---------------------------------------------------------- */
 /* ---------------------------------------------------------- */
 

@@ -172,6 +172,21 @@
             </button>
         </li>
         <li>
+            <button class="a-button is-outlined open-lightbox" data-template="lp-social-connect">
+                <span>개인계정 연결관리</span>
+            </button>
+        </li>
+        <li>
+            <button class="a-button is-outlined open-lightbox" data-template="lp-social-connect-complete">
+                <span>개인계정 연결관리>등록완료</span>
+            </button>
+        </li>
+        <li>
+            <button class="a-button is-outlined open-lightbox" data-template="lp-social-connect-cancel">
+                <span>개인계정 연결관리>해제완료</span>
+            </button>
+        </li>
+        <li>
             <button class="a-button is-outlined open-lightbox" data-template="lp-refund-receipt-info-mng">
                 <span>notyet-환불계좌/현금영수증</span>
             </button>
@@ -187,23 +202,23 @@
             </button>
         </li>
         <li>
-            <button class="a-button is-outlined open-lightbox" data-template="lp-receipt-apply-tex">
+            <button class="a-button is-outlined open-lightbox" data-template="lp-receipt-apply-tax">
                 <span>notyet-세금계산서 신청</span>
             </button>
         </li>
         <li>
-            <button class="a-button is-outlined open-lightbox" data-template="lp-receipt-print-tex">
-                <span>notyet-세금계산서 인쇄</span>
+            <button class="a-button is-outlined open-lightbox" data-template="lp-receipt-print-tax" data-classes="print-receipt-tax">
+                <span>세금계산서 인쇄</span>
             </button>
         </li>
         <li>
-            <button class="a-button is-outlined open-lightbox" data-template="lp-receipt-print-credit">
-                <span>notyet-신용카드 영수증 인쇄</span>
+            <button class="a-button is-outlined open-lightbox" data-template="lp-receipt-print-credit" data-classes="print-receipt-card">
+                <span>신용카드 영수증 인쇄</span>
             </button>
         </li>
         <li>
-            <button class="a-button is-outlined open-lightbox" data-template="lp-receipt-print-cash">
-                <span>notyet-현금영수증 인쇄</span>
+            <button class="a-button is-outlined open-lightbox" data-template="lp-receipt-print-cash" data-classes="print-receipt-card">
+                <span>현금영수증 인쇄</span>
             </button>
         </li>
         <li>
@@ -213,7 +228,17 @@
         </li>
         <li>
             <button class="a-button is-outlined open-lightbox" data-template="lp-mbr-leave-confirm">
-                <span>notyet-회원탈퇴 재확인 팝업</span>
+                <span>회원탈퇴 > 재확인 팝업</span>
+            </button>
+        </li>
+        <li>
+            <button class="a-button is-outlined open-lightbox" data-template="lp-mbr-leave-info-refund">
+                <span>회원탈퇴 > 환불계좌등록 안내</span>
+            </button>
+        </li>
+        <li>
+            <button class="a-button is-outlined open-lightbox" data-template="lp-mbr-leave-info-order">
+                <span>회원탈퇴 > 주문/교환/반품/AS 안내</span>
             </button>
         </li>
     </ul>
@@ -522,6 +547,15 @@
 <%# 임직원카드번호삭제 %>
 <%- include ("../../handlebars/hndl-lp-staff-card-del.ejs") %>
 
+<%# 개인계정 연결관리 %>
+<%- include ("../../handlebars/hndl-lp-social-connect.ejs") %>
+
+<%# 개인계정 연결관리 > 등록 완료 %>
+<%- include ("../../handlebars/hndl-lp-social-connect-complete.ejs") %>
+
+<%# 개인계정 연결관리 > 해제 완료 %>
+<%- include ("../../handlebars/hndl-lp-social-connect-cancel.ejs") %>
+
 <%# 환불계좌/현금영수증 %>
 <%- include ("../../handlebars/hndl-lp-refund-receipt-info-mng.ejs") %>
 
@@ -532,10 +566,10 @@
 <%- include ("../../handlebars/hndl-lp-receipt-list-noresult.ejs") %>
 
 <%# 세금계산서 신청 %>
-<%- include ("../../handlebars/hndl-lp-receipt-apply-tex.ejs") %>
+<%- include ("../../handlebars/hndl-lp-receipt-apply-tax.ejs") %>
 
 <%# 세금계산서 인쇄 %>
-<%- include ("../../handlebars/hndl-lp-receipt-print-tex.ejs") %>
+<%- include ("../../handlebars/hndl-lp-receipt-print-tax.ejs") %>
 
 <%# 신용카드 영수증 인쇄 %>
 <%- include ("../../handlebars/hndl-lp-receipt-print-credit.ejs") %>
@@ -546,8 +580,14 @@
 <%# 영수증 인쇄 %>
 <%- include ("../../handlebars/hndl-lp-receipt-print.ejs") %>
 
-<%# 회원탈퇴 재확인 팝업 %>
+<%# 회원탈퇴 > 재확인 팝업 %>
 <%- include ("../../handlebars/hndl-lp-mbr-leave-confirm.ejs") %>
+
+<%# 회원탈퇴 > 환불계좌등록안내 %>
+<%- include ("../../handlebars/hndl-lp-mbr-leave-info-refund.ejs") %>
+
+<%# 회원탈퇴 > 주문/교환/반품/AS안내 %>
+<%- include ("../../handlebars/hndl-lp-mbr-leave-info-order.ejs") %>
 
 <%# 옵션변경 %>
 <%- include ("../../handlebars/hndl-cart-product-option-change.ejs") %>
