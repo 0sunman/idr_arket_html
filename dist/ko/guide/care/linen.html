@@ -983,21 +983,22 @@
                                     <label class="a-label js-a-label" for="sign-in-password" data-placeholder="" aria-hidden="true"></label>
                                     <button type="button" class="a-button-nostyle toggle-password-state password-visible" data-show-text="Show" data-hide-text="Hide">Show</button>
                                 </div>
-                                
+
+                                <div class="link-holder">
+                                    <a href="/ko/id/requestSignIn" target="_self" class="a-link forgot-id bo-b" onclick="">아이디찾기</a>
+                                    <a href="/ko/password/requestSignIn" target="_self" class="a-link forgot-password bo-b" onclick="TealiumUtils.trackForgotButton();">비밀번호찾기</a>
+                                </div>
+
+                                <!--
                                 <div class="checkbox-input">
                                     <span class="m-checkbox u-clearfix" id="rememberme">
                                         <input type="checkbox" class="a-checkbox" id="checkbox_rememberme_popup" name="_spring_security_remember_me" checked="checked">
                                         <label class="a-label js-a-label custom-box" for="checkbox_rememberme_popup" tabindex="0"></label>
-                                        <label class="a-label js-a-label" for="checkbox_rememberme_popup">아이디 저장</label>
+                                        <label class="a-label js-a-label" for="checkbox_rememberme_popup">저장하기</label>
                                     </span>
-                                    <div class="link-holder">
-                                        <a href="/ko/id/requestSignIn" target="_self" class="a-link forgot-id bo-b" onclick="">아이디찾기</a>
-                                        <a href="/ko/password/requestSignIn" target="_self" class="a-link forgot-password bo-b" onclick="TealiumUtils.trackForgotButton();">비밀번호찾기</a>
-                                    </div>
                                 </div>
+                                -->
                                 
-
-
                                 <button type="submit" class="a-button is-primary" tabindex="202">
                                     <span>로그인</span>
                                 </button>
@@ -1701,7 +1702,7 @@
                             <span>국제배송</span>
                         </a>
                     </div>
-                    <p class="a-paragraph">정확한 가격, 배송 시간 및 배송비를<br class="only-m"> 확인하려면 국가를 선택하세요.<br>상품의 가격은 구가별 가격 정책 및 세금에 따라<br class="only-m">달라 질 수 있는 점에 유의하세요.</p>
+                    <p class="a-paragraph">정확한 가격, 배송 시간 및 배송비를 확인하려면 배송 위치를 선택하세요.<br>품목 가격은 현지 시장 가격 및 세금을 반영하기 위해 배송지에 따라 다를 수 있습니다.</p>
                 </div>
             </div>
         </div>
@@ -2042,30 +2043,9 @@
     <!-- //handlebars-template -->
 
     <!-- o-page-content -->
-    <div data-component="OPageContent" class="o-page-content cofs-page">
-    <span id="content" tabindex="-1" class="access-content">Content of the page</span>
-    <div class="o-forgot-password n-find-idpw">
-        <div class="forgot-password-form">
-            <h2 class="a-heading-2">비밀번호 재설정 완료</h2>
-            <p class="data">고객님의 비밀번호 변경이 완료되었습니다.</p>
-                <!-- 신규추가 내용 : 비밀번호 재설정 완료 -->
-                <div class="n-wrap">
-                    <p class="sub-title">다시 로그인 해주세요.</p>
-                    <div class="text-content">
-                        <ul class="list-box">
-                            <li>안전한 비밀번호 관리를 위해  비밀번호는 정기적으로 변경을 해주시고 다른 사람이 비밀번호를 알 수 없도록 관리해 주세요.</li>
-                            <li>비밀번호 변경을 원하시면  <span class="brd-btm">마이페이지 > 회원정보변경</span>에서 변경하실 수 있습니다.</li>
-                            <li>궁금하신 사항이 있다면 ARKET고객센터 [1800-2765] 로 문의하여 주십시오.</li>
-                        </ul>
-                    </div>
-                    <button class="a-button is-primary">
-                        <span>로그인 하기</span>
-                    </button>
-                </div><!-- // 신규추가 내용 : 비밀번호 재설정 완료 -->
-        </div>
-    </div>
+    <div data-component="OPageContent" class="o-page-content" data-component-id="">
+    empty page
 </div>
-
     <!-- //o-page-content -->
 
     <!-- footer -->

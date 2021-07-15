@@ -6,18 +6,23 @@
 /* ========================================================== */
 /* ---------------------------------------------------------- */
 /* common s ================================================= */
-/* icon-img */
-.icon.naver { background-image: url(../images/icon/icon-naver.png); }
+/* 회원가입, 로그인 icon-img */
+.o-registration-form.v2 .icon.naver { background-image: url(../images/icon/icon-naver.png); }
+.o-registration-form.v2 .icon.kakao { background-image: url(../images/icon/icon-kakao.png); }
+.o-registration-form.v2 .icon.facebook { background-image: url(../images/icon/icon-facebook.png); }
+.o-registration-form.v2 .icon.google { background-image: url(../images/icon/icon-google.png); }
+.o-registration-form.v2 .icon.phone { background-image: url(../images/icon/icon-phone-01.png); }
+.o-registration-form.v2 .icon.mail { background-image: url(../images/icon/icon-mail-01.png); }
 
-.icon.kakao { background-image: url(../images/icon/icon-kakao.png); }
-
-.icon.facebook { background-image: url(../images/icon/icon-facebook.png); }
-
-.icon.google { background-image: url(../images/icon/icon-google.png); }
-
-.icon.phone { background-image: url(../images/icon/icon-phone-01.png); }
-
-.icon.mail { background-image: url(../images/icon/icon-mail-01.png); }
+/* login > input 공통 사항 */
+.o-sign-in .m-input, .o-registration .m-input, .o-forgot-password .m-input, .n-find-idpw .m-input { margin-top: 8px; }
+.o-sign-in .m-input .a-label:first-child, .o-registration .m-input .a-label:first-child, .o-forgot-password .m-input .a-label:first-child, .n-find-idpw .m-input .a-label:first-child { color: #7b7b7b; height: 19px; }
+.o-sign-in .m-input .a-input, .o-registration .m-input .a-input, .o-forgot-password .m-input .a-input, .n-find-idpw .m-input .a-input { padding: 0; height: 39px; line-height: 26px; font-weight: 300; font-size: 18px; color: #000000; background-color: #ffffff; }
+.o-sign-in .m-input .a-label:last-of-type, .o-registration .m-input .a-label:last-of-type, .o-forgot-password .m-input .a-label:last-of-type, .n-find-idpw .m-input .a-label:last-of-type { font-size: 12px; line-height: 20px; font-family: "Arket Sans", "Noto Sans KR", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", "Sans-Serif"; }
+.o-sign-in .m-input .guide-text, .o-registration .m-input .guide-text, .o-forgot-password .m-input .guide-text, .n-find-idpw .m-input .guide-text { margin-top: 2px; margin-bottom: 0; font-weight: 300; font-size: 12px; color: #b2b2b2; }
+.o-sign-in .m-input.r-only, .o-registration .m-input.r-only, .o-forgot-password .m-input.r-only, .n-find-idpw .m-input.r-only { min-height: inherit; }
+.o-sign-in .m-input.r-only .a-input, .o-registration .m-input.r-only .a-input, .o-forgot-password .m-input.r-only .a-input, .n-find-idpw .m-input.r-only .a-input { background-color: #E9F0FE; }
+.o-sign-in .m-input.with-button .a-button, .o-registration .m-input.with-button .a-button, .o-forgot-password .m-input.with-button .a-button, .n-find-idpw .m-input.with-button .a-button { width: 120px; margin-top: 0; margin-left: 10px; }
 
 /* underline 하단간격 */
 .n-wrap .a-link-udln { text-underline-offset: 1px; }
@@ -59,15 +64,11 @@
 /* ---------------------------------------------------------- */
 /* ---------------------------------------------------------- */
 /* frontend.min overwrite s ================================= */
-/* login > input 공통 사항 */
-.o-sign-in .m-input, .o-registration .m-input, .o-forgot-password .m-input, .n-find-idpw .m-input { margin-top: 8px; }
-.o-sign-in .m-input .a-label:first-child, .o-registration .m-input .a-label:first-child, .o-forgot-password .m-input .a-label:first-child, .n-find-idpw .m-input .a-label:first-child { color: #7b7b7b; height: 19px; }
-.o-sign-in .m-input .a-input, .o-registration .m-input .a-input, .o-forgot-password .m-input .a-input, .n-find-idpw .m-input .a-input { padding: 0; height: 39px; line-height: 26px; font-weight: 300; font-size: 18px; color: #000000; background-color: #ffffff; }
-.o-sign-in .m-input .a-label:last-of-type, .o-registration .m-input .a-label:last-of-type, .o-forgot-password .m-input .a-label:last-of-type, .n-find-idpw .m-input .a-label:last-of-type { font-size: 12px; line-height: 20px; font-family: "Arket Sans", "Noto Sans KR", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", "Sans-Serif"; }
-.o-sign-in .m-input .guide-text, .o-registration .m-input .guide-text, .o-forgot-password .m-input .guide-text, .n-find-idpw .m-input .guide-text { margin-top: 2px; margin-bottom: 0; font-weight: 300; font-size: 12px; color: #b2b2b2; }
-.o-sign-in .m-input.r-only, .o-registration .m-input.r-only, .o-forgot-password .m-input.r-only, .n-find-idpw .m-input.r-only { min-height: inherit; }
-.o-sign-in .m-input.r-only .a-input, .o-registration .m-input.r-only .a-input, .o-forgot-password .m-input.r-only .a-input, .n-find-idpw .m-input.r-only .a-input { background-color: #E9F0FE; }
-.o-sign-in .m-input.with-button .a-button, .o-registration .m-input.with-button .a-button, .o-forgot-password .m-input.with-button .a-button, .n-find-idpw .m-input.with-button .a-button { width: 120px; margin-top: 0; margin-left: 10px; }
+/* 210713 기획 > 퍼블수정 : 팝업 - 옵션변경 */
+.cart-product-option-change .a-size-swatch .size-options:last-child span { line-height: inherit; }
+
+/* 210713 기획 > 퍼블수정 : 검색 > 상품추천 영역 이미지 */
+.navigation-curtain .o-search-suggestion ul li .icon:before { display: initial; }
 
 /* login */
 .o-sign-in-wrapper .sign-in-heading .a-heading-2 { font-weight: 400; font-size: 18px; color: #000; line-height: 26px; }
@@ -301,8 +302,30 @@ html.no-touchevents .n-find-idpw .n-wrap.resting-guide .info { padding-bottom: 1
 .lp-social-connect .content, .lp-mbr-leave-confirm .content { text-align: left; padding-top: 0; padding-bottom: 0; }
 
 /* 개인계정 연결관리 팝업 */
-.lp-social-connect .content .sns-list li .icon { background-color: #37b978; display: inline-block; width: 37px; height: 37px; }
-.lp-social-connect .content .sns-list li .icon::before { content: url(../images/icon/icon-kakao-my.png); display: inline-block; width: 37px; height: 37px; }
+.lp-social-connect .is-main-headline { margin-bottom: 0; }
+.lp-social-connect .content .sns-list { margin-bottom: 18px; padding-top: 25px; padding-bottom: 25px; }
+.lp-social-connect .content .sns-list li { position: relative; padding-top: 12px; padding-bottom: 12px; }
+.lp-social-connect .content .sns-list li:first-child { padding-top: 0; }
+.lp-social-connect .content .sns-list li:first-child .mail-text { top: 32px; }
+.lp-social-connect .content .sns-list li:last-child { padding-bottom: 0; }
+@media (max-width: 400px) { .lp-social-connect .content .sns-list li [class^="f-type"] { flex-basis: 50%; } }
+@media (min-width: 769px) { .lp-social-connect .content .sns-list li { padding-left: 40px; } }
+.lp-social-connect .content .sns-list li .icon { display: flex; align-items: center; min-width: 120px; height: 37px; }
+.lp-social-connect .content .sns-list li .icon.naver.on { color: #19ce60; }
+.lp-social-connect .content .sns-list li .icon::before { content: " "; display: inline-block; width: 37px; height: 37px; padding-right: 12px; }
+.lp-social-connect .content .sns-list li .icon.naver::before { content: url(../images/icon/icon-naver-my.png); }
+.lp-social-connect .content .sns-list li .icon.naver.on::before { content: url(../images/icon/icon-naver-myConnect.png); }
+.lp-social-connect .content .sns-list li .icon.kakao::before { content: url(../images/icon/icon-kakao-my.png); }
+.lp-social-connect .content .sns-list li .icon.kakao.on::before { content: url(../images/icon/icon-kakao-myConnect.png); }
+.lp-social-connect .content .sns-list li .icon.facebook::before { content: url(../images/icon/icon-facebook-my.png); }
+.lp-social-connect .content .sns-list li .icon.facebook.on::before { content: url(../images/icon/icon-facebook-myConnect.png); }
+.lp-social-connect .content .sns-list li .icon.google::before { content: url(../images/icon/icon-google-my.png); }
+.lp-social-connect .content .sns-list li .icon.google.on::before { content: url(../images/icon/icon-google-myConnect.png); }
+.lp-social-connect .content .sns-list li .mail-text { font-weight: 300; font-size: 12px; color: #000; position: absolute; top: 44px; left: 49px; }
+@media (min-width: 401px) { .lp-social-connect .content .sns-list li .mail-text { left: 69px; } }
+@media (min-width: 769px) { .lp-social-connect .content .sns-list li .mail-text { position: inherit; padding-right: 15px; } }
+.lp-social-connect .content .sns-list li .a-link-udln { color: #000; }
+.lp-social-connect .content .sns-list li .none { display: none; }
 
 /* 회원탈퇴 재확인 팝업 */
 .lp-mbr-leave-confirm .content .o-info-line-box.point-cont { margin-top: 20px; margin-bottom: 25px; padding-left: 18px; border: none; background-color: #f5f5f5; }

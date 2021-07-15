@@ -1,10 +1,143 @@
-<!-- 결제수단변경 -->
+<!-- 영수증인쇄 -->
 <script type="text/x-handlebars-template" id="lp-receipt-print">
     <div class="lightbox-content-dft lp-receipt-print">
-        <h2 class="a-heading-2"><span>영수증 인쇄</span></h2>
-        <div class="content">
 
-        </div>
+        <div class="content">
+            <div class="print-area-wrap">
+
+                <div class="m-headline is-main-headline">
+                    <h2 class="a-heading-2"><span>영수증 (공급받는 자 보관용)</span></h2>
+                </div>
+
+                <div class="ul-bx-wrap">
+                    <div class="stamp-img">
+                        <img src="<%= pageInfo.root %>/images/print/bg-stamp.png" class="" alt="스탬프"/>
+                    </div>
+                    <div class="recipt-ul-bx">
+                        <ul class="recipt-ul">
+                            <li>
+                                <dt>주문하시는분</dt>
+                                <dd>홍길동</dd>
+                            </li>
+                            <li>
+                                <dt>회원ID</dt>
+                                <dd>abscd32@gmail.com</dd>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="recipt-ul-bx">
+                        <span>㈜현대백화점 대표 : 김형종 외 2인
+                            사업자등록번호 : 211-87-21455
+                            서울시 강남구 테헤란로 98길 12
+                            업태 : 소매업&nbsp;&nbsp;&nbsp;&nbsp;종목 : 백화점
+                        </span>
+                    </div>
+                </div> <!--ul-bx-wrap -->
+
+                <div class="line-list-wrap line-title-wrap">
+                    <h3 class="a-heading-3 sub">
+                        주문번호 : 17121200035949
+                    </h3>
+                    <div class="line-list-wrap">
+                        <ul class="list-header">
+                            <li class="col-1">결제수단</li>
+                            <li class="col-2">결제금액</li>
+                            <li class="col-3">카드번호</li>
+                            <li class="col-4">승인번호</li>
+                        </ul>
+                        <ul class="list-body">
+                            <li>
+                                <ul class="list-item">
+                                    <li class="col-1">카드</li>
+                                    <li class="col-2">
+                                        <span class="price-won">654,9000</span>
+                                    </li>
+                                    <li class="col-3">
+                                        1111-1111-****-****
+                                    </li>
+                                    <li class="col-4">
+                                        38224129
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="line-list-wrap line-title-wrap wrap-2">
+                    <h3 class="a-heading-3 sub">
+                        거래내역상세
+                    </h3>
+                    <div class="line-list-wrap">
+                        <ul class="list-header">
+                            <li class="col-1">거래일자</li>
+                            <li class="col-2">품목</li>
+                            <li class="col-3">공급가액</li>
+                            <li class="col-4">세액</li>
+                            <li class="col-5">수량</li>
+                            <li class="col-6">합계</li>
+                        </ul>
+                        <ul class="list-body">
+                            <li>
+                                <ul class="list-item">
+                                    <li class="col-1">2021-06-27</li>
+                                    <li class="col-2">
+                                        <span class="">드레이프 디테일 니티드 드레스 드레이프테일 니티드 드레스 드레이프 </span>
+                                    </li>
+                                    <li class="col-3">
+                                        <span class="price-won">654,9000</span>
+                                    </li>
+                                    <li class="col-4">
+                                        <span class="price-won">654,9000</span>
+                                    </li>
+                                    <li class="col-5">
+                                        <span>1</span>
+                                    </li>
+                                    <li class="col-6">
+                                        <span class="price-won">654,9000</span>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="grid-line-item">
+                    <ul class="o-info-line-box col-2-1">
+                        <li>
+                            <span class="f-type1">면세물품가액</span>
+                            <span class="f-type2 price-won">0</span>
+                        </li>
+                        <li>
+                            <span class="f-type1">과세물품가액</span>
+                            <span class="f-type2 price-won">10,000,000</span>
+                        </li>
+                        <li>
+                            <span class="f-type1">부가세</span>
+                            <span class="f-type2 price-won">10,000,000</span>
+                        </li>
+                        <li>
+                            <span class="f-type1">배송료</span>
+                            <span class="f-type2 price-won">0</span>
+                        </li>
+                        <li>
+                            <span class="f-type1">총합계</span>
+                            <span class="f-type2 price-won">10,000,000</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <p class="guide-text">
+                    <span class="desc-text">본 영수증은 매입세액공제용도로 사용이 불가하며, 신용카드, 현금영수증전표가 필요하실 경우 본 영수증에서 각 전표를 별도 인쇄하셔야 합니다.</span>
+                    <span class="desc-text">개별 전표가 필요하시면 전표 출력의 인쇄버튼을 클릭하시면 됩니다. </span>
+                </p>
+            </div>
+            <div class="button-container col-2">
+                <button type="button" class="a-button is-outlined js-close-button">닫기</button>
+                <button type="submit" class="a-button btn-lp-print" onClick="lpPrint();">인쇄하기</button>
+            </div>
+        </div> <!-- //content -->
     </div>
 </script>
-<!-- //결제수단변경 -->
+<!-- //영수증인쇄 -->

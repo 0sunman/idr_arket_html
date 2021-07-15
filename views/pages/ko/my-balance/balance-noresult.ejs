@@ -5,36 +5,33 @@
 
         <%# md-o-my-page-navigation %>
         <%- include ("../../../common/md-o-my-page-navigation.ejs") %>
-        <!-- my-balance-delivery-content -->
-        <div class="my-order-delivery-content u-clearfix">
-            <h3>예치금</h3>
-            <div class="in-service">사용 가능한 예치금 : 0원</div>
-            
-            <!-- <h3 class="a-heading-3 sub">예치금</h3> -->
+        <!-- balance -->
+        <div class="balance">
+            <h2 class="a-heading-2 page-top-title page-title-line">
+                <span>예치금</span>
+            </h2>
+            <div class="page-title-serve">
+                <span>사용 가능한 예치금</span>
+                <span class="f-type6">0</span>
+            </div>
 
-            <!-- my-balance-list-wrap -->
-            <div class="my-orders-list-wrap deposit-table">
+            <!-- my-table-list-wrap -->
+            <div class="my-table-list-wrap">
 
                 <%# md-my-orderlist-month-dropdown %>
-                <%- include ("../../../common/md-my-orderlist-month-dropdown") %>
+                <%- include ("../../../common/md-my-balance-month-dropdown.ejs") %>
 
-                <!-- my-balance-list -->
+                <!-- my-order-list -->
                 <div class="my-order-list">
                     <ul class="order-list-ul">
                         <li class="empty-li">
-                            <p class="empty-item left">예치금 내역이 없습니다.</p>
+                            <p class="empty-item balance-empty">예치금 내역이 없습니다.</p>
                         </li>
                     </ul>
-
-                </div>
-                <!-- //my-balance-list -->
-
-            </div>
-            <!-- //my-balance-list-wrap -->
-
-        </div>
-        <!-- //my-balance-delivery-content -->
-
+                </div> <!-- //my-order-list -->
+                
+            </div> <!-- //my-table-list-wrap -->
+        </div> <!-- //balance -->
     </div>
     <!-- //o-my-page -->
 </div>

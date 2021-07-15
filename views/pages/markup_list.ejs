@@ -1,12 +1,17 @@
 <style>
-p.gnbcheck{text-align: center; margin-top: 30px;}
+p.gnbcheck{margin-top: 30px;padding-right:50px;padding-left:50px;font-weight:700;font-size:32px;}
 .markup-list-wrap {display:flex;}
-.markup-list-l,
-.markup-list-r {padding:50px;padding-top:0px;}
-div[class^="markup-list-"] {width:100%;}
-div[class^="markup-list-"] h4 {text-transform:capitalize;}
+.markup-list-wrap ul {margin-top:0;list-style-type:square;}
+.markup-list-wrap ul li {margin-bottom:5px;}
+.markup-list-wrap h4 {margin-top:40px;margin-bottom:5px;text-transform:capitalize;}
+.markup-list-r,
+.markup-list-l {padding:0 0 50px 50px;}
+.s-ko,
+.s-en {display:inline-block;padding:2px 10px;}
+.s-ko {color:#fff;background:#333;font-size:12px;}
+.s-en {color:#000;}
 </style>
-<p class='gnbcheck'>* Markup List *</p>
+<p class='gnbcheck'>Markup List</p>
 <div class="markup-list-wrap">
     <% if(!pageInfo.isLocalExPath){ %>
     <div class='markup-list-l'>
@@ -28,7 +33,7 @@ div[class^="markup-list-"] h4 {text-transform:capitalize;}
                 if(idx != 0){
         %>
             <li>
-                <a href='<%= data.url %>' target="_blank"><%= data.title %></a>
+                <a href='<%= data.url %>' target="_blank"><span class="s-ko"><%= data.titleko %></span><span class="s-en"><%= data.title %></span></a>
             </li>
         <%
                 }
@@ -61,7 +66,7 @@ div[class^="markup-list-"] h4 {text-transform:capitalize;}
                 if(idx != 0){
         %>
             <li>
-                <a href='dist/<%= data.pageurl.replace(/(.ejs)$/,'') %>.html' target="_blank"><%= data.title %></a>
+                <a href='dist/<%= data.pageurl.replace(/(.ejs)$/,'') %>.html' target="_blank"><span class="s-ko"><%= data.titleko %></span><span class="s-en"><%= data.title %></span></a>
             </li>
         <%
                 }

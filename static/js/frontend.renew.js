@@ -3,6 +3,233 @@ function lpPrint() {
     window.print();
 }
 
+function formatDate(a) {
+    if (a < 9) {
+        return "0" + a
+    }
+    return a
+}
+
+function displaySiteBannerCountDown() {
+    var e, g = null;
+    var t = new Date();
+    if (t) {
+        var m = t.getFullYear() + "/" + formatDate(parseInt(t.getMonth() + 1)) + "/" + formatDate(t.getDate()) + " " + formatDate(t.getHours()) + ":" + formatDate(t.getMinutes()) + ":00";
+        var q = new Date(m);
+        var d = document.getElementById("sitebannercountsd");
+        var n = document.getElementById("sitebannercounted");
+        var f = false;
+        var u = false;
+        var k = false;
+        var c = false;
+        var a = false;
+        if (d && n) {
+            e = new Date(document.getElementById("sitebannercountsd").value);
+            if (e && e > q) {
+                f = true
+            }
+        }
+        if (n) {
+            g = new Date(document.getElementById("sitebannercounted").value);
+            if (g) {
+                c = true;
+                if (g <= q) {
+                    k = true
+                }
+            } else {
+                u = true
+            }
+        } else {
+            u = true
+        }
+        var i = document.getElementById("desktoptimer");
+        var j = document.getElementById("mobiletimer");
+        var h = document.getElementById("desktopMessageAfterDueDateid");
+        var r = document.getElementById("mobileMessageAfterDueDateid");
+        var s = document.getElementById("site-banner-id");
+        var b = document.getElementById("site-banner-desktop-timer");
+        if (f) {
+            s.parentNode.removeChild(s)
+        } else {
+            if (i) {
+                if (k) {
+                    if (h) {
+                        b.innerHTML = h.value
+                    } else {
+                        if (s) {
+                            b.parentNode.removeChild(b);
+                            a = true
+                        }
+                    }
+                } else {
+                    if (c && !u) {
+                        i.classList.remove("is-hidden");
+                        var p = new Date(g).getTime();
+                        var o = setInterval(function () {
+                            var x = new Date().getTime();
+
+                            var w = p - x;
+                            if (w > 0) {
+                                var E = document.getElementById("desktopdaysid");
+                                var y = document.getElementById("desktophoursid");
+                                var A = document.getElementById("desktopminutesid");
+                                var v = document.getElementById("desktopsecondsid");
+                                if (E) {
+                                    var D = Math.floor(w / (1000 * 60 * 60 * 24));
+                                    if (D == 0) {
+                                        E.className = "is-hidden"
+                                        document.getElementById("desktopdayspan").className = "is-hidden"
+                                    } else {
+                                        if (D < 10) {
+                                            D = ("0" + D).slice(-2)
+                                        }
+                                        document.getElementById("desktopdaysid").value = D
+                                    }
+                                    var B = Math.floor((w % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                                    if (B < 10) {
+                                        B = ("0" + B).slice(-2)
+                                    }
+                                    var z = Math.floor((w % (1000 * 60 * 60)) / (1000 * 60));
+                                    if (z < 10) {
+                                        z = ("0" + z).slice(-2)
+                                    }
+                                    var C = Math.floor((w % (1000 * 60)) / 1000);
+                                    if (C < 10) {
+                                        C = ("0" + C).slice(-2)
+                                    }
+                                } else {
+                                    var B = Math.floor(w / (1000 * 60 * 60));
+                                    if (B > 99) {
+                                        var B = 99
+                                    } else {
+                                        if (B < 10) {
+                                            B = ("0" + B).slice(-2)
+                                        }
+                                    }
+                                    var z = Math.floor((w % (1000 * 60 * 60)) / (1000 * 60));
+                                    if (z < 10) {
+                                        z = ("0" + z).slice(-2)
+                                    }
+                                    var C = Math.floor((w % (1000 * 60)) / 1000);
+                                    if (C < 10) {
+                                        C = ("0" + C).slice(-2)
+                                    }
+                                }
+                                if (y) {
+                                    document.getElementById("desktophoursid").value = B
+                                }
+                                if (A) {
+                                    document.getElementById("desktopminutesid").value = z
+                                }
+                                if (v) {
+                                    document.getElementById("desktopsecondsid").value = C
+                                }
+                            } else {
+                                clearInterval(o);
+                                if (h) {
+                                    document.getElementById("site-banner-desktop-timer").innerHTML = h.value
+                                } else {
+                                    if (s) {
+                                        s.parentNode.removeChild(s)
+                                    }
+                                }
+                            }
+                        }, 1000)
+                    }
+                }
+            }
+            if (j) {
+                if (k) {
+                    if (r) {
+                        document.getElementById("site-banner-mobile-timer").innerHTML = r.value
+                    } else {
+                        if (a) {
+                            s.parentNode.removeChild(s)
+                        } else {
+                            if (s && s.parentNode) {
+                                document.getElementById("site-banner-mobile-timer").parentNode.removeChild(document.getElementById("site-banner-mobile-timer"))
+                            }
+                        }
+                    }
+                } else {
+                    if (c && !u) {
+                        j.classList.remove("is-hidden");
+                        var p = new Date(g).getTime();
+                        var l = setInterval(function () {
+                            var w = new Date().getTime();
+                            var v = p - w;
+                            if (v > 0) {
+                                var y = document.getElementById("mobiledaysid");
+                                var E = document.getElementById("mobilehoursid");
+                                var C = document.getElementById("mobileminutesid");
+                                var z = document.getElementById("mobilesecondsid");
+                                if (y) {
+                                    var D = Math.floor(v / (1000 * 60 * 60 * 24));
+                                    if (D == 0) {
+                                        document.getElementById("mobiledayspan").className = "is-hidden"
+                                    } else {
+                                        if (D < 10) {
+                                            D = ("0" + D).slice(-2)
+                                        }
+                                        document.getElementById("mobiledaysid").value = D
+                                    }
+                                    var A = Math.floor((v % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                                    if (A < 10) {
+                                        A = ("0" + A).slice(-2)
+                                    }
+                                    var x = Math.floor((v % (1000 * 60 * 60)) / (1000 * 60));
+                                    if (x < 10) {
+                                        x = ("0" + x).slice(-2)
+                                    }
+                                    var B = Math.floor((v % (1000 * 60)) / 1000);
+                                    if (B < 10) {
+                                        B = ("0" + B).slice(-2)
+                                    }
+                                } else {
+                                    var A = Math.floor(v / (1000 * 60 * 60));
+                                    if (A > 99) {
+                                        var A = 99
+                                    } else {
+                                        if (A < 10) {
+                                            A = ("0" + A).slice(-2)
+                                        }
+                                    }
+                                    var x = Math.floor((v % (1000 * 60 * 60)) / (1000 * 60));
+                                    if (x < 10) {
+                                        x = ("0" + x).slice(-2)
+                                    }
+                                    var B = Math.floor((v % (1000 * 60)) / 1000);
+                                    if (B < 10) {
+                                        B = ("0" + B).slice(-2)
+                                    }
+                                }
+                                if (E) {
+                                    document.getElementById("mobilehoursid").value = A
+                                }
+                                if (C) {
+                                    document.getElementById("mobileminutesid").value = x
+                                }
+                                if (z) {
+                                    document.getElementById("mobilesecondsid").value = B
+                                }
+                            } else {
+                                clearInterval(l);
+                                if (r) {
+                                    document.getElementById("site-banner-mobile-timer").innerHTML = r.value
+                                } else {
+                                    if (s && s.parentNode) {
+                                        s.parentNode.removeChild(s)
+                                    }
+                                }
+                            }
+                        }, 1000)
+                    }
+                }
+            }
+        }
+    }
+}
+
 var renewCommon = renewCommon || function(){};
 renewCommon = (function(doc, win){
     var obj = {};
@@ -228,6 +455,40 @@ renewCommon = (function(doc, win){
                         let tempLi = this.closest('li');
                         if(tempLi && tempLi.classList.contains('mode-edit')){
                             tempLi.classList.remove('mode-edit')
+                        }
+                    });
+                });
+            }
+        }
+    }
+
+    //mode-wrap 수정, 취소버튼 클릭이벤트
+    obj.modeEditView = {
+        init: function(){
+            let editBtn = document.querySelectorAll('.mode-edit-btn');
+            if(editBtn) {
+                Array.prototype.slice.call(editBtn).forEach( function (_obj) {
+                    _obj.addEventListener('click', function (_evt) {
+                        _evt.preventDefault();
+                        _evt.stopPropagation();
+                        let tempModeWrap = this.closest('.mode-wrap');
+                        if(tempModeWrap){
+                            tempModeWrap.classList.remove('mode-view')
+                            tempModeWrap.classList.add('mode-edit')
+                        }
+                    });
+                });
+            }
+            let viewBtn = document.querySelectorAll('.mode-view-btn');
+            if(viewBtn){
+                Array.prototype.slice.call(viewBtn).forEach( function (_obj) {
+                    _obj.addEventListener('click', function (_evt) {
+                        _evt.preventDefault();
+                        _evt.stopPropagation();
+                        let tempModeWrap = this.closest('.mode-wrap');
+                        if(tempModeWrap){
+                            tempModeWrap.classList.add('mode-view')
+                            tempModeWrap.classList.remove('mode-edit')
                         }
                     });
                 });
