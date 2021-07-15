@@ -1490,6 +1490,7 @@
         
         <!-- //header -->
 
+        <!-- o-lightbox -->
         <div data-component="OLightbox" class="o-lightbox">
             <div class="lightbox-wrapper">
                 <div class="lightbox-header"></div>
@@ -1497,11 +1498,14 @@
                 <button type="button" class="a-button-nostyle m-button-icon a-icon-close js-close-button"></button>
             </div>
         </div>
+        <!-- //o-lightbox -->
 
-        <div data-component="MProductZoom" class="m-product-zoom" data-component-id="d4984f67-dbca-4f1f-bdf8-706d77e004f7">
+        <!-- m-product-zoom -->
+        <div data-component="MProductZoom" class="m-product-zoom">
             <button type="button" class="a-button-nostyle a-icon-close-circle"></button>
             <div class="img-wrapper"></div>
         </div>
+        <!-- //m-product-zoom -->
     </div>
 
     <input type="hidden" id="georguri" value="?goeorguri=%2Fen%2Findex.html">
@@ -1717,7 +1721,9 @@
     <script type="text/html" id="select-country-checkout">
         <div class="m-change-country-lightbox is-checkout">
             <h2 class="a-heading-2">Change location</h2>
-            <p class="a-paragraph">Your shopping bag will be moved to the selected location.</p><a class="a-button is-primary" href="/entrance.html?goeorguri=%2Fen%2Findex.html">Continue</a><button class="a-button is-secondary js-close-button"><span>false</span></button>
+            <p class="a-paragraph">Your shopping bag will be moved to the selected location.</p>
+            <a class="a-button is-primary" href="/entrance.html?goeorguri=%2Fen%2Findex.html">Continue</a>
+            <button class="a-button is-secondary js-close-button"><span>false</span></button>
         </div>
     </script>
 
@@ -2048,7 +2054,6 @@
 
     <!-- o-page-content -->
     <div data-component="OPageContent" class="o-page-content cofs-page">
-    <span id="content" tabindex="-1" class="access-content">Content of the page</span>
 
     <!-- o-my-page -->
     <div class="o-my-page">
@@ -2063,16 +2068,16 @@
         <div class="o-list js-o-list">
             <ul>
                 <li>
-                    <a href="/en/my-account/profile" target="_self" class="a-link menu-my-details">회원정보</a>
+                    <a href="../my-account/profile.html" target="_self" class="a-link menu-my-details">회원정보</a>
                 </li>
                 <li>
-                    <a href="/en/my-account/orders" target="_self" class="a-link menu-my-orders">주문/배송</a>
+                    <a href="../my-account/order-list.html" target="_self" class="a-link menu-my-orders">주문/배송</a>
                 </li>
                 <li>
-                    <a class="a-link menu-addressbook" href="#none" target="_self">배송지관리</a>
+                    <a href="../my-delivery/delivery-list.html" target="_self" class="a-link menu-addressbook" >배송지관리</a>
                 </li>
                 <li>
-                    <a class="a-link menu-deposit" href="#none" target="_self">예치금</a>
+                    <a href="../my-balance/balance.html" target="_self" class="a-link menu-deposit" >예치금</a>
                 </li>
                 <!--
                 <li>

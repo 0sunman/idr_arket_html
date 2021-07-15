@@ -1490,6 +1490,7 @@
         
         <!-- //header -->
 
+        <!-- o-lightbox -->
         <div data-component="OLightbox" class="o-lightbox">
             <div class="lightbox-wrapper">
                 <div class="lightbox-header"></div>
@@ -1497,11 +1498,14 @@
                 <button type="button" class="a-button-nostyle m-button-icon a-icon-close js-close-button"></button>
             </div>
         </div>
+        <!-- //o-lightbox -->
 
-        <div data-component="MProductZoom" class="m-product-zoom" data-component-id="d4984f67-dbca-4f1f-bdf8-706d77e004f7">
+        <!-- m-product-zoom -->
+        <div data-component="MProductZoom" class="m-product-zoom">
             <button type="button" class="a-button-nostyle a-icon-close-circle"></button>
             <div class="img-wrapper"></div>
         </div>
+        <!-- //m-product-zoom -->
     </div>
 
     <input type="hidden" id="georguri" value="?goeorguri=%2Fen%2Findex.html">
@@ -1717,7 +1721,9 @@
     <script type="text/html" id="select-country-checkout">
         <div class="m-change-country-lightbox is-checkout">
             <h2 class="a-heading-2">Change location</h2>
-            <p class="a-paragraph">Your shopping bag will be moved to the selected location.</p><a class="a-button is-primary" href="/entrance.html?goeorguri=%2Fen%2Findex.html">Continue</a><button class="a-button is-secondary js-close-button"><span>false</span></button>
+            <p class="a-paragraph">Your shopping bag will be moved to the selected location.</p>
+            <a class="a-button is-primary" href="/entrance.html?goeorguri=%2Fen%2Findex.html">Continue</a>
+            <button class="a-button is-secondary js-close-button"><span>false</span></button>
         </div>
     </script>
 
@@ -2048,7 +2054,6 @@
 
     <!-- o-page-content -->
     <div data-component="OPageContent" class="o-page-content cofs-page">
-    <span id="content" tabindex="-1" class="access-content">Content of the page</span>
 
     <!-- o-my-page -->
     <div class="o-my-page o-width wc-75">
@@ -2062,16 +2067,16 @@
         <div class="o-list js-o-list">
             <ul>
                 <li>
-                    <a href="/en/my-account/profile" target="_self" class="a-link menu-my-details">회원정보</a>
+                    <a href="../my-account/profile.html" target="_self" class="a-link menu-my-details">회원정보</a>
                 </li>
                 <li>
-                    <a href="/en/my-account/orders" target="_self" class="a-link menu-my-orders">주문/배송</a>
+                    <a href="../my-account/order-list.html" target="_self" class="a-link menu-my-orders">주문/배송</a>
                 </li>
                 <li>
-                    <a class="a-link menu-addressbook" href="#none" target="_self">배송지관리</a>
+                    <a href="../my-delivery/delivery-list.html" target="_self" class="a-link menu-addressbook" >배송지관리</a>
                 </li>
                 <li>
-                    <a class="a-link menu-deposit" href="#none" target="_self">예치금</a>
+                    <a href="../my-balance/balance.html" target="_self" class="a-link menu-deposit" >예치금</a>
                 </li>
                 <!--
                 <li>
@@ -2174,7 +2179,6 @@
                                         <!-- //product-list-item -->
                                     </li>
                                 </ul>
-
                             </div>
                             <!-- //order-list-item -->
                         </li>
@@ -2219,7 +2223,7 @@
                                             <div class="order-price"><span>1,303,800</span></div>
                                             <div class="order-status"><span>상품준비</span></div>
                                             <div class="order-btns">
-                                                <a href="#none" class="a-link a-link-udln open-lightbox" data-template="cart-order-cancle-unable">주문취소</a>
+                                                <!--<a href="#none" class="a-link a-link-udln open-lightbox" data-template="cart-order-cancle-unable">주문취소</a>-->
                                             </div>
                                         </div>
                                         <!-- //product-list-item -->
@@ -2252,15 +2256,14 @@
                                                 </div>
                                             </div>
                                             <div class="order-price"><span>1,303,800</span></div>
-                                            <div class="order-status"><span>주문접수</span></div>
+                                            <div class="order-status"><span>결제완료</span></div>
                                             <div class="order-btns">
-                                                <a href="#none" class="a-link a-link-udln">반품신청</a>
+                                                <a href="#none" class="a-link a-link-udln open-lightbox" data-template="cart-order-cancle-unable">주문취소</a>
                                             </div>
                                         </div>
                                         <!-- //product-list-item -->
                                     </li>
                                 </ul>
-
                             </div>
                             <!-- //order-list-item -->
                         </li>
@@ -2302,17 +2305,67 @@
                                             </div>
                                             <div class="order-price"><span>1,303,800</span></div>
                                             <div class="order-status">
-                                                <span class="past">상품배송</span>
-                                                <a href="#none" class="a-link a-link-udln">배송추적</a>
+                                                <span>상품배송</span>
+                                                <a href="#none" class="a-link a-link-udln open-lightbox" data-template="lp-delivery-trace">배송추적</a>
                                             </div>
                                             <div class="order-btns">
-                                                <a href="#none" class="a-link a-link-udln">주문취소</a>
+                                                <a href="#none" class="a-link a-link-udln">반품신청</a>
                                             </div>
                                         </div>
                                         <!-- //product-list-item -->
                                     </li>
                                 </ul>
-
+                            </div>
+                            <!-- //order-list-item -->
+                        </li>
+                        <li>
+                            <!-- order-list-item -->
+                            <div class="order-list-item">
+                                <div class="order-info">
+                                    <span class="date">2021-05-26</span>
+                                    <span class="order-number">2105263226320</span>
+                                    <span class="order-detail">
+                                        <a href="#none" class="a-link a-link-arrow">상세보기</a>
+                                    </span>
+                                </div>
+                                <ul class="product-list-ul">
+                                    <li>
+                                        <!-- product-list-item -->
+                                        <div class="product-list-item">
+                                            <div class="m-order-summary-row">
+                                                <div class="product-image">
+                                                    <img class="a-image product-image" alt="image description" src="../../../static/images/temp/boy-vintage-thumbnail-big.jpg">
+                                                </div>
+                                                <div class="product-info">
+                                                    <div class="product-item-info first">
+                                                        <div class="product-details">
+                                                            <div class="product-name">해리 블랙 슈즈해리 블랙 슈즈해리 블랙 슈즈</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product-param-info second">
+                                                        <div class="product-params data">
+                                                            <div class="product-size">44</div>
+                                                            <div class="product-color">블루</div>
+                                                            <div class="product-quantity">2</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product-param-btns fourth">
+                                                        <a href="#none" class="a-link a-link-udln open-lightbox" data-template="cart-product-option-change">옵션변경</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="order-price"><span>1,303,800</span></div>
+                                            <div class="order-status">
+                                                <span>배송완료</span>
+                                                <a href="#none" class="a-link a-link-udln open-lightbox" data-template="lp-delivery-trace">배송추적</a>
+                                            </div>
+                                            <div class="order-btns">
+                                                <a href="#none" class="a-link a-link-udln">반품취소</a>
+                                            </div>
+                                        </div>
+                                        <!-- //product-list-item -->
+                                    </li>
+                                </ul>
                             </div>
                             <!-- //order-list-item -->
                         </li>
@@ -2436,6 +2489,22 @@
         </form>
     </div>
 </script>
+
+
+<!-- 결제수단변경 -->
+<script type="text/x-handlebars-template" id="lp-delivery-trace">
+    <div class="lightbox-content-dft lp-delivery-trace">
+        <div class="m-headline is-main-headline">
+            <h2 class="a-heading-2"><span>배송추적</span></h2>
+        </div>
+        <div class="content">
+
+            <iframe src="http://www.naver.com" frameborder="0" style="width:100%;"></iframe>
+            
+        </div>
+    </div>
+</script>
+<!-- //결제수단변경 -->
 <!-- handlebars-template -->
 
 <!-- tip : when develop this script must be delete -->
@@ -2443,10 +2512,9 @@
     (function() {
         'use strict';
         //탭활성화
-        let tabMydetailsr = document.querySelector('.menu-my-details');
-        let tabMyorders = document.querySelector('.menu-my-orders');
-        if(tabMyorders){
-            tabMyorders.parentNode.classList.add('is-active');
+        let activeTab = document.querySelector('.menu-my-orders');
+        if(activeTab){
+            activeTab.parentNode.classList.add('is-active');
         }
     })();
 </script>

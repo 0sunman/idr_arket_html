@@ -1,4 +1,8 @@
 //renewCommon
+function lpPrint() {
+    window.print();
+}
+
 var renewCommon = renewCommon || function(){};
 renewCommon = (function(doc, win){
     var obj = {};
@@ -9,6 +13,8 @@ renewCommon = (function(doc, win){
         renewCommon.rdToggle.init();
         renewCommon.chckToggle.init();
         renewCommon.infoLineToggle.init();
+        renewCommon.aTooltip.init();
+        renewCommon.toggleBx.init();
     }
 
     //accordion
@@ -151,7 +157,7 @@ renewCommon = (function(doc, win){
             }
         },
         init: function(){
-            let toggleTrigger= doc.querySelectorAll('.btn-toggle-info-line-li');
+            let toggleTrigger= doc.querySelectorAll('.toggle-info-line-li-btn');
             if(toggleTrigger) {
                 Array.prototype.slice.call(toggleTrigger).forEach( function (_obj) {
                     _obj.addEventListener('click', function (_evt) {
@@ -168,6 +174,100 @@ renewCommon = (function(doc, win){
                                     _obj.classList.add('mode-edit')
                                 }
                             })
+                        }
+                    });
+                });
+            }
+        }
+    }
+
+    //aTab
+    obj.aTooltip = {
+        init: function(){
+            let openTooltipBtns = doc.querySelectorAll('.open-tooltip-btn'),
+                aTabCon = doc.querySelectorAll('.a-tab-con');
+            if(openTooltipBtns) {
+                Array.prototype.slice.call(openTooltipBtns).forEach( function (_obj) {
+                    _obj.addEventListener('click', function (_evt) {
+                        _evt.preventDefault();
+                        _evt.stopPropagation();
+                        if (this.parentNode.classList.contains("is-open")) {
+                            this.parentNode.classList.remove("is-open");
+                        }else{
+                            this.parentNode.classList.add("is-open");
+                        }
+                    });
+                });
+            }
+        }
+    }
+
+    //배송지 수정, 삭제 버튼 클릭이벤트
+    obj.deliverListEdit = {
+        init: function(){
+            let btnDlvrEdit = document.querySelectorAll('.delivery-item-edit');
+            let btnDlvrDel = document.querySelectorAll('.delivery-item-del');
+            if(btnDlvrEdit) {
+                Array.prototype.slice.call(btnDlvrEdit).forEach( function (_obj) {
+                    _obj.addEventListener('click', function (_evt) {
+                        _evt.preventDefault();
+                        _evt.stopPropagation();
+                        let tempLi = this.closest('li');
+                        if(tempLi && !tempLi.classList.contains('mode-edit')){
+                            tempLi.classList.add('mode-edit')
+                        }
+                    });
+                });
+            }
+            let btnDlvrEditCancle = document.querySelectorAll('.btn-my-dlvr-cancle');
+            if(btnDlvrEditCancle){
+                Array.prototype.slice.call(btnDlvrEditCancle).forEach( function (_obj) {
+                    _obj.addEventListener('click', function (_evt) {
+                        _evt.preventDefault();
+                        _evt.stopPropagation();
+                        let tempLi = this.closest('li');
+                        if(tempLi && tempLi.classList.contains('mode-edit')){
+                            tempLi.classList.remove('mode-edit')
+                        }
+                    });
+                });
+            }
+        }
+    }
+
+    //toggle-bx
+    obj.toggleBx = {
+        resetBtn: function(_this){
+            let toggleBxBtn = doc.querySelectorAll('.toggle-bx-btn');
+            Array.prototype.slice.call(toggleBxBtn).forEach( function (_obj) {
+                if(_obj != _this){
+                    _obj.classList.remove("active")
+                }
+            });
+        },
+        init: function(){
+            let toggleBxBtn = doc.querySelectorAll('.toggle-bx-btn'),
+                toggleBxCon = doc.querySelectorAll('.toggle-bx-con');
+            if(toggleBxBtn) {
+                Array.prototype.slice.call(toggleBxBtn).forEach( function (_obj) {
+                    _obj.addEventListener('click', function (_evt) {
+                        let _this = this;
+                        let _targetClass = this.getAttribute('data-target');
+                        let _target = doc.querySelector('.toggle-bx-con.' + _targetClass);
+                        if(_target){
+                            if(toggleBxCon) {
+                                renewCommon.toggleBx.resetBtn(_this);
+                                Array.prototype.slice.call(toggleBxCon).forEach(function (_con) {
+                                    _con.classList.remove("active")
+                                });
+                            }
+                            if (this.classList.contains("active")) {
+                                this.classList.remove("active");
+                                _target.classList.remove("active");
+                            } else {
+                                this.classList.add("active");
+                                _target.classList.add("active");
+                            }
                         }
                     });
                 });

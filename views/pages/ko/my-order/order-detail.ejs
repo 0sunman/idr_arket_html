@@ -1,5 +1,4 @@
 <div data-component="OPageContent" class="o-page-content cofs-page">
-    <span id="content" tabindex="-1" class="access-content">Content of the page</span>
 
     <!-- o-my-page -->
     <div class="o-my-page o-width wc-75">
@@ -24,16 +23,22 @@
                     </li>
                     <li>
                         <dt>주문고객</dt>
-                        <dd>홍길동 (abscd32@gmail.com, 010-8765-3243)
-                            <div class="order-history-hide">
-                                <a class="a-link a-link-udln btn-order-list-hide open-lightbox" href="#none" target="_self" data-template="lp-hide-order-history" data-classes="alert">주문내역숨김</a>
-                                <a class="a-link btn-order-list-hide-guide open-lightbox" href="#none" target="_self" data-template="order-list-hide" data-classes="is-large">
-                                    <span class="a-icon-question"></span>
-                                </a>
-                            </div>
-                        </dd>
+                        <dd>홍길동 (abscd32@gmail.com, 010-8765-3243)</dd>
                     </li>
                 </ul>
+                <div class="order-info-btns">
+                    <a class="a-link a-link-udln btn-order-list-hide open-lightbox" href="#none" target="_self" data-template="lp-hide-order-history" data-classes="alert">주문내역숨김</a>
+                    <a class="a-link btn-order-list-hide-guide open-tooltip-btn" href="#none" target="_self" data-content="localizedTTT">
+                        <span class="a-icon-question"></span>
+                    </a>
+                    <div class="a-tooltip tooltip-order-list-hide-guide">
+                        <div class="is-richtext" data-content="localized">
+                            <h3>주문내역 숨김</h3>
+                            <p>고객님의 주문내역 중 특정주문내역을 “주문/배송”내역에서 표시되지 않도록 숨기는 기능입니다. 이 기능은 “상품발송”후 15일 이후부터 또는 “주문취소” 후 사용 가능하며, 홈페이지에서만 표시되지 않을 뿐, 실제 고객님의 주문내역은 삭제되지 않습니다. “주문내역숨김” 처리가 완료된 주문의 반품/AS는 반드시 고객센터 전화상담을 통해서만 가능합니다.</p>
+                        </div>
+                        <p><a href="#" target="_self"></a></p>
+                    </div>
+                </div>
             </div>
             <!-- //order-detail-info-bx -->
 
@@ -109,7 +114,7 @@
                 <div class="grid-line-item orders-recipient-info-bx">
                     <h3 class="a-heading-3 sub">
                         받는사람정보
-                        <a class="a-link a-link-udln btn-change-delivery" href="#none" target="_self">배송지변경</a>
+                        <a class="a-link a-link-udln btn-change-delivery open-lightbox" href="#none" target="_self" data-template="lp-select-delivery-address">배송지변경</a>
                     </h3>
                     <ul class="o-info-line-box col-2-1">
                         <li>
@@ -168,7 +173,7 @@
                 <div class="grid-line-item orders-pay-way-bx">
                     <h3 class="a-heading-3 sub">
                         결제수단
-                        <a class="a-link a-link-udln btn-pay-way" href="#none" target="_self">결제수단변경</a>
+                        <a class="a-link a-link-udln btn-pay-way open-lightbox" href="#none" target="_self" data-template="lp-select-pay-way">결제수단변경</a>
                     </h3>
                     <ul class="o-info-line-box col-3-1">
                         <li>
@@ -228,11 +233,17 @@
 </div>
 
 <!-- handlebars-template -->
-<script type="text/x-handlebars-template" id="order-list-hide">
-    가이드
-</script>
 <%# 주문내역 숨김 %>
 <%- include ("../../../handlebars/hndl-lp-hide-order-history.ejs") %>
+
+<%# 배송지변경 %>
+<%- include ("../../../handlebars/hndl-lp-select-delivery-address.ejs") %>
+
+<%# 주소검색 %>
+<%- include ("../../../handlebars/hndl-lp-find-address.ejs") %>
+
+<%# 결제수단변경 %>
+<%- include ("../../../handlebars/hndl-lp-select-pay-way.ejs") %>
 <!-- //handlebars-template -->
 
 <!-- tip : when develop this script must be delete -->
@@ -240,10 +251,9 @@
     (function() {
         'use strict';
         //탭활성화
-        let tabMydetailsr = document.querySelector('.menu-my-details');
-        let tabMyorders = document.querySelector('.menu-my-orders');
-        if(tabMyorders){
-            tabMyorders.parentNode.classList.add('is-active');
+        let activeTab = document.querySelector('.menu-my-orders');
+        if(activeTab){
+            activeTab.parentNode.classList.add('is-active');
         }
     })();
 </script>

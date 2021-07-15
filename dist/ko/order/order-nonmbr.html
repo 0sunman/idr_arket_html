@@ -1490,6 +1490,7 @@
         
         <!-- //header -->
 
+        <!-- o-lightbox -->
         <div data-component="OLightbox" class="o-lightbox">
             <div class="lightbox-wrapper">
                 <div class="lightbox-header"></div>
@@ -1497,11 +1498,14 @@
                 <button type="button" class="a-button-nostyle m-button-icon a-icon-close js-close-button"></button>
             </div>
         </div>
+        <!-- //o-lightbox -->
 
-        <div data-component="MProductZoom" class="m-product-zoom" data-component-id="d4984f67-dbca-4f1f-bdf8-706d77e004f7">
+        <!-- m-product-zoom -->
+        <div data-component="MProductZoom" class="m-product-zoom">
             <button type="button" class="a-button-nostyle a-icon-close-circle"></button>
             <div class="img-wrapper"></div>
         </div>
+        <!-- //m-product-zoom -->
     </div>
 
     <input type="hidden" id="georguri" value="?goeorguri=%2Fen%2Findex.html">
@@ -1717,7 +1721,9 @@
     <script type="text/html" id="select-country-checkout">
         <div class="m-change-country-lightbox is-checkout">
             <h2 class="a-heading-2">Change location</h2>
-            <p class="a-paragraph">Your shopping bag will be moved to the selected location.</p><a class="a-button is-primary" href="/entrance.html?goeorguri=%2Fen%2Findex.html">Continue</a><button class="a-button is-secondary js-close-button"><span>false</span></button>
+            <p class="a-paragraph">Your shopping bag will be moved to the selected location.</p>
+            <a class="a-button is-primary" href="/entrance.html?goeorguri=%2Fen%2Findex.html">Continue</a>
+            <button class="a-button is-secondary js-close-button"><span>false</span></button>
         </div>
     </script>
 
@@ -2081,12 +2087,12 @@
                                    name="orderer-email"
                                    id="orderer-email"
                                    required=""
-                                   data-validation-required-text="이메일을 입력해 주세요.필수"
+                                   data-validation-required-text="이메일을 입력해 주세요"
                                    data-validation-pattern-text="">
                             <label class="a-label js-a-label" for="orderer-email" data-placeholder=""></label>
                         </div>
                         <div class="m-dropdown v3">
-                            <label class="a-label js-a-label" for="emailDomain"></label>
+                            <label class="a-label js-a-label" for="emailDomain">&nbsp;</label>
                             <select class="option-wrap"name="selectMailDomain" id="emailDomain">
                                 <option class="a-option">직접입력</option>
                                 <option class="a-option">@naver.com</option>
@@ -3300,34 +3306,6 @@
 <script type="text/javascript">
     (function() {
         'use strict';
-        //탭활성화
-        let btnDlvrEdit = document.querySelectorAll('.delivery-item-edit');
-        let btnDlvrDel = document.querySelectorAll('.delivery-item-del');
-        if(btnDlvrEdit) {
-            Array.prototype.slice.call(btnDlvrEdit).forEach( function (_obj) {
-                _obj.addEventListener('click', function (_evt) {
-                    _evt.preventDefault();
-                    _evt.stopPropagation();
-                    let tempLi = this.closest('li');
-                    if(tempLi && !tempLi.classList.contains('mode-edit')){
-                        tempLi.classList.add('mode-edit')
-                    }
-                });
-            });
-        }
-        let btnDlvrEditCancle = document.querySelectorAll('.btn-my-dlvr-cancle');
-        if(btnDlvrEditCancle){
-            Array.prototype.slice.call(btnDlvrEditCancle).forEach( function (_obj) {
-                _obj.addEventListener('click', function (_evt) {
-                    _evt.preventDefault();
-                    _evt.stopPropagation();
-                    let tempLi = this.closest('li');
-                    if(tempLi && tempLi.classList.contains('mode-edit')){
-                        tempLi.classList.remove('mode-edit')
-                    }
-                });
-            });
-        }
     })();
 </script>
 <!-- //tip -->

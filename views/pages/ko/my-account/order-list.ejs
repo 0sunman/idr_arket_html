@@ -1,5 +1,4 @@
 <div data-component="OPageContent" class="o-page-content cofs-page">
-    <span id="content" tabindex="-1" class="access-content">Content of the page</span>
 
     <!-- o-my-page -->
     <div class="o-my-page o-width wc-75">
@@ -74,7 +73,6 @@
                                         <!-- //product-list-item -->
                                     </li>
                                 </ul>
-
                             </div>
                             <!-- //order-list-item -->
                         </li>
@@ -119,7 +117,7 @@
                                             <div class="order-price"><span>1,303,800</span></div>
                                             <div class="order-status"><span>상품준비</span></div>
                                             <div class="order-btns">
-                                                <a href="#none" class="a-link a-link-udln open-lightbox" data-template="cart-order-cancle-unable">주문취소</a>
+                                                <!--<a href="#none" class="a-link a-link-udln open-lightbox" data-template="cart-order-cancle-unable">주문취소</a>-->
                                             </div>
                                         </div>
                                         <!-- //product-list-item -->
@@ -152,15 +150,14 @@
                                                 </div>
                                             </div>
                                             <div class="order-price"><span>1,303,800</span></div>
-                                            <div class="order-status"><span>주문접수</span></div>
+                                            <div class="order-status"><span>결제완료</span></div>
                                             <div class="order-btns">
-                                                <a href="#none" class="a-link a-link-udln">반품신청</a>
+                                                <a href="#none" class="a-link a-link-udln open-lightbox" data-template="cart-order-cancle-unable">주문취소</a>
                                             </div>
                                         </div>
                                         <!-- //product-list-item -->
                                     </li>
                                 </ul>
-
                             </div>
                             <!-- //order-list-item -->
                         </li>
@@ -202,17 +199,67 @@
                                             </div>
                                             <div class="order-price"><span>1,303,800</span></div>
                                             <div class="order-status">
-                                                <span class="past">상품배송</span>
-                                                <a href="#none" class="a-link a-link-udln">배송추적</a>
+                                                <span>상품배송</span>
+                                                <a href="#none" class="a-link a-link-udln open-lightbox" data-template="lp-delivery-trace">배송추적</a>
                                             </div>
                                             <div class="order-btns">
-                                                <a href="#none" class="a-link a-link-udln">주문취소</a>
+                                                <a href="#none" class="a-link a-link-udln">반품신청</a>
                                             </div>
                                         </div>
                                         <!-- //product-list-item -->
                                     </li>
                                 </ul>
-
+                            </div>
+                            <!-- //order-list-item -->
+                        </li>
+                        <li>
+                            <!-- order-list-item -->
+                            <div class="order-list-item">
+                                <div class="order-info">
+                                    <span class="date">2021-05-26</span>
+                                    <span class="order-number">2105263226320</span>
+                                    <span class="order-detail">
+                                        <a href="#none" class="a-link a-link-arrow">상세보기</a>
+                                    </span>
+                                </div>
+                                <ul class="product-list-ul">
+                                    <li>
+                                        <!-- product-list-item -->
+                                        <div class="product-list-item">
+                                            <div class="m-order-summary-row">
+                                                <div class="product-image">
+                                                    <img class="a-image product-image" alt="image description" src="<%= pageInfo.root %>/images/temp/boy-vintage-thumbnail-big.jpg">
+                                                </div>
+                                                <div class="product-info">
+                                                    <div class="product-item-info first">
+                                                        <div class="product-details">
+                                                            <div class="product-name">해리 블랙 슈즈해리 블랙 슈즈해리 블랙 슈즈</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product-param-info second">
+                                                        <div class="product-params data">
+                                                            <div class="product-size">44</div>
+                                                            <div class="product-color">블루</div>
+                                                            <div class="product-quantity">2</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product-param-btns fourth">
+                                                        <a href="#none" class="a-link a-link-udln open-lightbox" data-template="cart-product-option-change">옵션변경</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="order-price"><span>1,303,800</span></div>
+                                            <div class="order-status">
+                                                <span>배송완료</span>
+                                                <a href="#none" class="a-link a-link-udln open-lightbox" data-template="lp-delivery-trace">배송추적</a>
+                                            </div>
+                                            <div class="order-btns">
+                                                <a href="#none" class="a-link a-link-udln">반품취소</a>
+                                            </div>
+                                        </div>
+                                        <!-- //product-list-item -->
+                                    </li>
+                                </ul>
                             </div>
                             <!-- //order-list-item -->
                         </li>
@@ -231,11 +278,14 @@
 </div>
 
 <!-- handlebars-template -->
-<%# hndl-cart-product-option-change %>
+<%# 옵션변경 %>
 <%- include ("../../../handlebars/hndl-cart-product-option-change.ejs") %>
 
-<%# hndl-cart-order-cancle-unable %>
+<%# 주문취소불가 %>
 <%- include ("../../../handlebars/hndl-cart-order-cancle-unable.ejs") %>
+
+<%# 배송추적 %>
+<%- include ("../../../handlebars/hndl-lp-delivery-trace.ejs") %>
 <!-- handlebars-template -->
 
 <!-- tip : when develop this script must be delete -->
@@ -243,10 +293,9 @@
     (function() {
         'use strict';
         //탭활성화
-        let tabMydetailsr = document.querySelector('.menu-my-details');
-        let tabMyorders = document.querySelector('.menu-my-orders');
-        if(tabMyorders){
-            tabMyorders.parentNode.classList.add('is-active');
+        let activeTab = document.querySelector('.menu-my-orders');
+        if(activeTab){
+            activeTab.parentNode.classList.add('is-active');
         }
     })();
 </script>

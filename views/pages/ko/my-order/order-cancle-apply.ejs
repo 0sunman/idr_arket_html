@@ -1,5 +1,4 @@
 <div data-component="OPageContent" class="o-page-content cofs-page">
-    <span id="content" tabindex="-1" class="access-content">Content of the page</span>
 
     <!-- o-my-page -->
     <div class="o-my-page o-width wc-75">
@@ -8,7 +7,7 @@
         <%- include ("../../../common/md-o-my-page-navigation.ejs") %>
 
         <!-- my-order-delivery-content -->
-        <div class="my-order-delivery-content order-info-edit order-cancle u-clearfix">
+        <div class="my-order-delivery-content order-info-edit order-cancle-apply u-clearfix">
 
             <h3 class="a-heading-3 sub">주문취소</h3>
             <!-- order-detail-info-bx -->
@@ -120,7 +119,6 @@
                                         <!-- //product-list-item -->
                                     </li>
                                 </ul>
-
                             </div>
                             <!-- //order-list-item -->
                         </li>
@@ -198,7 +196,6 @@
                                         <!-- //product-list-item -->
                                     </li>
                                 </ul>
-
                             </div>
                             <!-- //order-list-item -->
                         </li>
@@ -237,6 +234,10 @@
                             <span class="f-type1">무통장입금</span>
                             <span class="f-type2 price-won">25,000</span>
                         </li>
+                        <li>
+                            <span class="f-type1">예치금</span>
+                            <span class="f-type2 price-won">25,000</span>
+                        </li>
                     </ul>
                 </div>
                 <!-- //grid-line-item -->
@@ -255,6 +256,10 @@
                         <li>
                             <span class="f-type1">무통장입금</span>
                             <span class="f-type2 price-won">90,000</span>
+                        </li>
+                        <li>
+                            <span class="f-type1">예치금</span>
+                            <span class="f-type2 price-won">25,000</span>
                         </li>
                     </ul>
                 </div>
@@ -306,9 +311,9 @@
                         <li class="rd-toggle-con rd-toggle-con-account" data-name="refund-way-cate">
                             <span class="f-type1">환불계좌</span>
                             <div class="f-type1">
-                                <span>우리은행   0000-0000-0000-0000 (예금주: 홍길동)</span>
-                                <button class="a-button sm edit-call-btn btn-toggle-info-line-li" type="button"><span>계좌번경</span></button>
-                                <button class="a-button is-outlined sm edit-cancle-btn btn-toggle-info-line-li" type="button"><span>취소</span></button>
+                                <span class="refund-account-text">우리은행   0000-0000-0000-0000 (예금주: 홍길동)</span>
+                                <button class="a-button sm edit-call-btn toggle-info-line-li-btn" type="button"><span>계좌번경</span></button>
+                                <button class="a-button is-outlined sm edit-cancle-btn toggle-info-line-li-btn" type="button"><span>취소</span></button>
                             </div>
                         </li>
                         <li class="rd-toggle-con rd-toggle-con-account info-line-toggle-li" data-name="refund-way-cate">
@@ -338,7 +343,7 @@
                                            name="return-account-number"
                                            id="return-account-number"
                                            placeholder="- 없이 숫자만 입력하세요">
-                                    <button class="a-button sm btn-account-confirm" type="button"><span>계좌인증</span></button>
+                                    <button class="a-button sm btn-account-confirm open-lightbox" type="button" data-template="lp-account-success"><span>계좌인증</span></button>
                                     <label class="a-label js-a-label" for="return-account-number" data-placeholder=""></label>
                                 </div>
                                 <p class="error-text">은행을 선택해 주세요.</p>
@@ -357,10 +362,10 @@
                 <div class="grid-line-item full refund-reason-info-bx">
                     <h3 class="a-heading-3 sub">취소사유</h3>
                     <ul class="o-info-line-box">
-                        <li class="flexwrap">
+                        <li class="flexwrap no-padding">
                             <div class="m-dropdown v3">
-                                <label class="a-label js-a-label" for="delivery-msg-dropdown"></label>
-                                <select name="selectSize" id="delivery-msg-dropdown">
+                                <label class="a-label js-a-label" for="refund-reason-msg-dropdown"></label>
+                                <select name="selectSize" id="refund-reason-msg-dropdown">
                                     <option class="a-option">취소사유 선택</option>
                                     <option class="a-option">제품하자</option>
                                 </select>
@@ -381,7 +386,7 @@
                     <span class="m-checkbox v2 u-clearfix" id="checkbox1">
                         <input class="a-checkbox" type="checkbox" id="chck-order-info-agree">
                         <label class="a-label js-a-label custom-box" for="chck-order-info-agree" tabindex="0"></label>
-                        <label class="a-label js-a-label" for="chck-order-info-agree">주문하실 상품의 상품명, 가격, 배송정보를 확인 하였으며, 주문취소 재결제에 동의하시겠습니까? <br>(전자상거래법 제8조 제2항)</label>
+                        <label class="a-label js-a-label" for="chck-order-info-agree">주문하실 상품의 상품명, 가격, 배송정보를 확인 하였으며, 주문취소 재결제에 동의하시겠습니까? (전자상거래법 제8조 제2항)</label>
                     </span>
                 </div>
             </div>
@@ -403,8 +408,11 @@
 </div>
 
 <!-- handlebars-template -->
-<%# 주문내역 숨김 %>
-<%- include ("../../../handlebars/hndl-lp-hide-order-history.ejs") %>
+<%# 계좌인증 성공 %>
+<%- include ("../../../handlebars/hndl-lp-account-success.ejs") %>
+
+<%# 계좌인증 실패 %>
+<%- include ("../../../handlebars/hndl-lp-account-failure.ejs") %>
 <!-- //handlebars-template -->
 
 <!-- tip : when develop this script must be delete -->
@@ -412,10 +420,9 @@
     (function() {
         'use strict';
         //탭활성화
-        let tabMydetailsr = document.querySelector('.menu-my-details');
-        let tabMyorders = document.querySelector('.menu-my-orders');
-        if(tabMyorders){
-            tabMyorders.parentNode.classList.add('is-active');
+        let activeTab = document.querySelector('.menu-my-orders');
+        if(activeTab){
+            activeTab.parentNode.classList.add('is-active');
         }
     })();
 </script>

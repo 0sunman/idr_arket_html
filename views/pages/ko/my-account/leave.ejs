@@ -1,3 +1,122 @@
-<div data-component="OPageContent" class="o-page-content" data-component-id="">
-    empty page
+<div data-component="OPageContent" class="o-page-content cofs-page" data-component-id="">
+        <!-- o-my-page -->
+    <div class="o-my-page">
+        <%# md-o-my-page-navigation %>
+        <%- include ("../../../common/md-o-my-page-navigation.ejs") %>
+
+        <h2 class="a-heading-2 is-main-heading page-top-title">
+            <span>회원탈퇴</span>
+        </h2>
+
+        <!-- membership-leave-wrap -->
+        <div class="leave-wrap">
+            <div class="subTitle-section">
+                이용해 주셔서 감사합니다.<br>
+                이용하시면서 불만족스러웠던 점을 지적해주시면 서비스 개선에 참고하도록 하겠습니다.<br>
+                회원탈퇴 시, 아래 사항을 유의해 주시기 바랍니다.
+            </div>
+
+            <!-- 회원탈퇴 확인사항-->
+            <div class="info-section">
+                <h3 class="a-heading-3 sub">회원탈퇴 확인사항</h3>
+                <ul class="txt-list">
+                    <li>
+                        <span class="txt-bold">재가입하셔도 개인정보가 복원되지 않습니다.</span><br>
+                        더현대닷컴에 가지고 계산 더머니, 예치금, 할인쿠폰 등의 혜택이 자동 삭제되며,
+                        재가입하실 경우에도 복원되지 않습니다.
+                    </li>
+                    <li>
+                        <span class="txt-bold">아이디를 재사용하실 수 없습니다.</span><br>
+                        기존에 사용하셨던 ID는 재가입 시 사용하실 수 없습니다.
+                    </li>
+                    <li>
+                        <span class="txt-bold">탈퇴 후에도 게시판형 서비스에 등록한 게시물은 그대로 남아 있습니다.</span><br>
+                        게시판 등에 올린 게시글 및 댓글은 탈퇴시 자동삭제되지 않고 남아 있습니다. 삭제를 원하시는 게시글이 있다면 탈퇴전에 삭제하시기 바랍니다.<br class="only-pc">
+                        (단, 답글이 달린 글은 삭제 불가)
+                    </li>
+                </ul>
+            </div>
+            <!-- // 회원탈퇴 확인사항-->
+
+            <!-- 설문조사 form-section -->
+            <div class="form-section u-clearfix">
+                <form class="o-form" data-component="OForm" method="post">
+
+                    <div class="survey-box">
+                        <h3 class="a-heading-3 sub">설문조사 <span class="fs12">(1개 항목만 선택해 주세요)</span></h3>
+                        <!-- 설문조사 라디오 버튼 -->
+                        <div class="radio-button-wrap">
+                            <div class="m-radio-button v3">
+                                <input type="radio" class="a-radio-button" id="survey01" name="leave-survey">
+                                <label class="a-label js-a-label u-no-select custom-radio" for="survey01"></label>
+                                <label class="a-label js-a-label label-text" for="survey01">상품의 다양성/가격/품질/불만</label>
+                            </div>
+                            <div class="m-radio-button v3">
+                                <input type="radio" class="a-radio-button" id="survey02" name="leave-survey">
+                                <label class="a-label js-a-label u-no-select custom-radio" for="survey02"></label>
+                                <label class="a-label js-a-label label-text" for="survey02">사이트의 시스템 및 에러 불만</label>
+                            </div>
+                            <div class="m-radio-button v3">
+                                <input type="radio" class="a-radio-button" id="survey03" name="leave-survey">
+                                <label class="a-label js-a-label u-no-select custom-radio" for="survey03"></label>
+                                <label class="a-label js-a-label label-text" for="survey03">회원특혜/쇼핑 혜택의 부족</label>
+                            </div>
+                            <div class="m-radio-button v3">
+                                <input type="radio" class="a-radio-button" id="survey04" name="leave-survey">
+                                <label class="a-label js-a-label u-no-select custom-radio" for="survey04"></label>
+                                <label class="a-label js-a-label label-text" for="survey04">주문취소/반품/AS불만</label>
+                            </div>
+                            <div class="m-radio-button v3">
+                                <input type="radio" class="a-radio-button" id="survey05" name="leave-survey">
+                                <label class="a-label js-a-label u-no-select custom-radio" for="survey05"></label>
+                                <label class="a-label js-a-label label-text" for="survey05">상품의 선택, 주문 등의 사용이 어려움</label>
+                            </div>
+                            <div class="m-radio-button v3">
+                                <input type="radio" class="a-radio-button" id="survey06" name="leave-survey">
+                                <label class="a-label js-a-label u-no-select custom-radio" for="survey06"></label>
+                                <label class="a-label js-a-label label-text" for="survey06">자주 이용하지 않음</label>
+                            </div>
+                        </div>
+                        <!-- // 설문조사 라디오 버튼 -->
+                        <p class="txt-bold">위의 항목 이외에 기타 불만사항이나 의견이 있으시면 기재 부탁 드립니다.</p>
+                    </div>
+
+                    <div class="textArea-box">
+                        <textarea class="a-textarea" rows="3" cols="50" placeholder="내용을 입력해 주세요"></textarea>
+                        <p class="txt-byte">(0/1000byte)</p>
+                        <p class="txt-bold">진행중인 주문, 반품이 있을 시 회원 탈퇴가 불가능 합니다. 해당 사항을 완료 후 탈퇴를 하실 수 있습니다.</p>
+                    </div>
+                    <!-- button-container -->
+                    <div class="button-container col-2">
+                        <a href="#none" class="a-button is-outlined"><span>취소</span></a>
+                        <a href="#none" class="a-button is-primary"><span>회원탈퇴</span></a>
+                    </div><!-- //button-container -->
+                </form>
+            </div>
+            <!-- // 설문조사 form-wrap  -->
+        </div>
+        <!-- // membership-leave-wrap -->
+    </div>
+    <!-- // o-my-page -->
+
 </div>
+
+<!-- tip : when develop this script must be delete -->
+<script type="text/javascript">
+    //ng-click 이벤트 구현이 어려워 임시로 jquery 로 toggle 기능 구현
+    function showDiv(obj1,obj2){
+        $('#'+obj1).removeClass('is-hidden');
+        $('#'+obj2).addClass('is-hidden');
+    }
+
+    (function() {
+        'use strict';
+        //탭활성화
+        let tabMydetailsr = document.querySelector('.menu-my-details');
+        let tabMyorders = document.querySelector('.menu-my-orders');
+        if(tabMydetailsr){
+            tabMydetailsr.parentNode.classList.add('is-active');
+        }
+    })();
+</script>
+<!-- //tip -->

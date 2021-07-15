@@ -20,83 +20,13 @@
 
             <!-- delivery-info-bx -->
             <h2 class="a-heading-2">배송지정보</h2>
-            <div class="dft-bx line-bx delivery-info-bx">
-
-                <!-- radio-button-list -->
-                <div class="radio-button-list">
-                    <div class="m-radio-button v3">
-                        <input type="radio" class="a-radio-button rd-toggle" id="delivery-input-cate1" name="delivery-input-cate" checked data-toggle-target="rd-toggle-con-list">
-                        <label class="a-label js-a-label u-no-select custom-radio" for="delivery-input-cate1"></label>
-                        <label class="a-label js-a-label label-text" for="delivery-input-cate1">배송지 목록</label>
-                    </div>
-
-                    <div class="m-radio-button v3">
-                        <input type="radio" class="a-radio-button rd-toggle" id="delivery-input-cate2" name="delivery-input-cate" data-toggle-target="rd-toggle-con-new">
-                        <label class="a-label js-a-label u-no-select custom-radio" for="delivery-input-cate2"></label>
-                        <label class="a-label js-a-label label-text" for="delivery-input-cate2">새로 입력</label>
-                    </div>
-                </div>
-                <!-- //radio-button-list -->
-
-                <!-- rd-toggle-con : 배송지목록 -->
-                <div class="rd-toggle-con rd-toggle-con-list" data-name="delivery-input-cate">
-                    <ul class="my-delivery-list">
-                        <li>
-                            <div class="m-radio-button v3">
-                                <input type="radio" class="a-radio-button" id="delivery-item-radio1" name="delivery-item-radio">
-                                <label class="a-label js-a-label u-no-select custom-radio" for="delivery-item-radio1"></label>
-                                <label class="a-label js-a-label label-text" for="delivery-item-radio1">
-                                    <div class="delivery-item">
-                                        <p class="item-top">
-                                            <span class="name">홍길동</span>
-                                            <span class="basic-label">[기본배송지]</span>
-                                            <a class="a-link a-link-udln delivery-item-edit" href="#none" target="_self">수정</a>
-                                        </p>
-                                        <p class="phone-num">010-6841-9653</p>
-                                        <p class="phone-num">010-6841-9653</p>
-                                        <p class="address">서울시 강남구 테헤란로 98길, 현대백화점 404호</p>
-                                    </div>
-                                </label>
-                            </div>
-                            <%# md-my-delivery-input %>
-                            <%- include ("../../../common/md-my-delivery-input-edit.ejs") %>
-                        </li>
-                        <li>
-                            <div class="m-radio-button v3">
-                                <input type="radio" class="a-radio-button" id="delivery-item-radio2" name="delivery-item-radio">
-                                <label class="a-label js-a-label u-no-select custom-radio" for="delivery-item-radio2"></label>
-                                <label class="a-label js-a-label label-text" for="delivery-item-radio2">
-                                    <div class="delivery-item">
-                                        <p class="item-top">
-                                            <span class="name">홍길동</span>
-                                            <a class="a-link a-link-udln delivery-item-edit" href="#none" target="_self">수정</a>
-                                            <a class="a-link a-link-udln delivery-item-del open-lightbox" href="#none" target="_self" data-template="lp-dlvr-list-del" data-classes="alert">삭제</a>
-                                        </p>
-                                        <p class="phone-num">010-6841-9653</p>
-                                        <p class="phone-num">010-6841-9653</p>
-                                        <p class="address">서울시 강남구 테헤란로 98길, 현대백화점 404호</p>
-                                    </div>
-                                </label>
-                            </div>
-                            <%# md-my-delivery-input %>
-                            <%- include ("../../../common/md-my-delivery-input-edit.ejs") %>
-                        </li>
-                    </ul>
-                </div>
-                <!-- //rd-toggle-con : 배송지목록 -->
-
-                <!-- rd-toggle-con : 새로입력 -->
-                <div class="rd-toggle-con rd-toggle-con-new is-hidden-strong" data-name="delivery-input-cate">
-                    <%# md-my-delivery-input %>
-                    <%- include ("../../../common/md-my-delivery-input.ejs") %>
-                </div>
-                <!-- //rd-toggle-con : 새로입력 -->
-
-                <%# md-delivery-request %>
-                <%- include ("../../../common/md-delivery-request.ejs") %>
+            <div class="dft-bx line-bx">
+                
+                <%# md-deliver-info-bx : 배송지 목록 %>
+                <%- include ("../../../common/md-delivery-info-bx.ejs") %>
 
             </div>
-            <!-- delivery-info-bx -->
+            <!-- //delivery-info-bx -->
 
             <!-- discount-info-bx -->
             <h2 class="a-heading-2">할인</h2>
@@ -163,40 +93,18 @@
 <!-- handlebars-template -->
 <%# 배송지목록 > 삭제 %>
 <%- include ("../../../handlebars/hndl-lp-dlvr-list-del.ejs") %>
+
+<%# 주소검색 %>
+<%- include ("../../../handlebars/hndl-lp-find-address.ejs") %>
 <!-- //handlebars-template -->
 
 <!-- tip : when develop this script must be delete -->
 <script type="text/javascript">
     (function() {
-        'use strict';
-        //탭활성화
-        let btnDlvrEdit = document.querySelectorAll('.delivery-item-edit');
-        let btnDlvrDel = document.querySelectorAll('.delivery-item-del');
-        if(btnDlvrEdit) {
-            Array.prototype.slice.call(btnDlvrEdit).forEach( function (_obj) {
-                _obj.addEventListener('click', function (_evt) {
-                    _evt.preventDefault();
-                    _evt.stopPropagation();
-                    let tempLi = this.closest('li');
-                    if(tempLi && !tempLi.classList.contains('mode-edit')){
-                        tempLi.classList.add('mode-edit')
-                    }
-                });
-            });
-        }
-        let btnDlvrEditCancle = document.querySelectorAll('.btn-my-dlvr-cancle');
-        if(btnDlvrEditCancle){
-            Array.prototype.slice.call(btnDlvrEditCancle).forEach( function (_obj) {
-                _obj.addEventListener('click', function (_evt) {
-                    _evt.preventDefault();
-                    _evt.stopPropagation();
-                    let tempLi = this.closest('li');
-                    if(tempLi && tempLi.classList.contains('mode-edit')){
-                        tempLi.classList.remove('mode-edit')
-                    }
-                });
-            });
-        }
+        setTimeout(function(){
+            //배송지 수정, 삭제 버튼 클릭이벤트
+            renewCommon.deliverListEdit.init();
+        },300)
     })();
 </script>
 <!-- //tip -->
