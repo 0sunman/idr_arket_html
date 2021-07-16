@@ -1,23 +1,20 @@
 <!-- m-breadcrumb -->
-<nav aria-label="breadcrumbs" class="m-breadcrumb" data-component="MBreadCrumb">
-	<ol class="breadcrumb-container" itemscope="" itemtype="http://schema.org/BreadcrumbList">
-		<li itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
-			<a class="a-link" href="<%= pageInfo.root %>/<%= pageInfo.lang %>/index.html" target="_self" itemprop="item">
-				<span itemprop="name">ARKET</span>
+<nav class="m-breadcrumb" data-component="MBreadCrumb">
+	<ol class="breadcrumb-container">
+		<li>
+			<a class="a-link" href="<%= pageInfo.root %>/<%= pageInfo.lang %>/index.html" target="_self">
+				<span>ARKET</span>
 			</a>
-			<meta itemprop="position" content="1">
 		</li>
-		<li itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
-			<a class="a-link" href="#none" target="_self" itemprop="item" aria-current="page" data-no-click="true">
-				<span itemprop="name">Women</span>
+		<li>
+			<a class="a-link" href="#none" target="_self">
+				<span>Women</span>
 			</a>
-			<meta itemprop="position" content="2">
 		</li>
-		<li itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
-			<a class="a-link subcategory" target="_self" itemprop="item" aria-current="page" data-no-click="true">
-				<span itemprop="name">드레스</span>
+		<li>
+			<a class="a-link subcategory" target="_self" data-no-click="true">
+				<span>드레스</span>
 			</a>
-			<meta itemprop="position" content="2">
 		</li>
 	</ol>
 </nav>

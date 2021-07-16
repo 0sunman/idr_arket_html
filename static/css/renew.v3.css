@@ -6,22 +6,19 @@
 /* ========================================================== */
 /* ---------------------------------------------------------- */
 /* frontend.min overwrite s ================================= */
-/* 마이페이지_주문배송 > 환불계좌변경 : 계좌인증성공 */
+/* lightbox-list > 마이페이지_주문배송 > 환불계좌변경 : 계좌인증성공,실패 */
 .guide-text-pop { line-height: 24px; font-weight: 300; font-size: 18px; color: #000; }
 
 .guide-text-color { color: #d00d00; }
 
-/* 주문배송_상세_반품 상세 정보*/
+/* lightbox-list > 마이페이지_주문배송 > 반품상세정보*/
 .content .o-info-line-box-top { border-top: 0; border-color: #000; border-bottom-width: 0px; border-bottom-style: solid; }
 
-.o-info-line-box > li.left-star { -webkit-box-pack: start; -ms-flex-pack: start; justify-content: start; }
+.o-info-line-box > li.left-star { justify-content: start; }
 
 .left-star .product-params { display: block; }
-
 .left-star .product-params div.product { display: inline-block; }
-
 .left-star .product-params .product-quantity::before { content: '\00D7'; display: inline-block; margin-left: 1px; }
-
 .left-star .guide-top { display: inline-block; padding-top: 15px; color: #000; }
 
 .f-type3 { font-weight: 400; font-size: 13px; color: #000; }
@@ -32,36 +29,31 @@
 
 .f-type6 { font-weight: 400; font-size: 14px; color: #000; }
 
-/*  상품필수정보  */
+/* lightbox-list > 상품 > 상품필수정보  */
 .freeHTML-sizeguide-chart-info { text-align: left; }
-
 .freeHTML-sizeguide-chart-info th { border-right: 1px solid #000; }
-
 .freeHTML-sizeguide-chart-info th, .freeHTML-sizeguide-chart-info td { padding: 10px 5px; border-bottom-width: 1px; font-size: 13px; color: #000; border-bottom-style: none; font-weight: 400; }
 
 .freeHTML-sizeguide-chart-info tr:nth-child(2n-2) th, .freeHTML-sizeguide-chart-info tr:nth-child(2n-2) td { background-color: #E9E9EB; }
 
-/*배송지 변경_수정입력*/
+/* lightbox-list > 마이페이지_주문배송 > 배송지 변경_수정입력*/
 .guide-m { margin-top: -30px; }
 
-.label-text { font-weight: 400; font-size: 13px; color: #000; }
+.lp-select-delivery-address .label-text { font-weight: 400; font-size: 13px; color: #000; }
 
 .guide-txt-bottom { font-weight: 300; font-size: 12px; color: #afb0b5; }
 
 .o-form .my-delivery-input .guide-20 { margin-top: 20px; }
 
-/*배송지변경_선택*/
+/* lightbox-list > 마이페이지_주문배송 > 배송지변경_선택*/
 .delivery-bx div.radio-button-list { margin-bottom: 5px; }
-
 .delivery-bx li { padding-top: 4px; padding-bottom: 4px; }
 
 .guide-p { padding: 16px 0 10px 0; font-weight: 300; font-size: 13px; color: #000; }
 
 /*마이페이지_예치금_기간별 보기*/
 .term-tit { margin-top: 8px; }
-
 .term-tit .tit-txt { font-weight: 400; font-size: 12px; color: #000; }
-
 .term-tit .tit-txt::after { content: ":"; display: inline-block; margin-right: 5px; margin-left: 3px; }
 
 .balance-drop div.list-term { margin-left: 6px; margin-left: 5px; }
@@ -70,130 +62,84 @@
 .a-heading-2.page-top-title.page-title-line { border-bottom: 1px solid #000; margin-bottom: 0px; }
 
 .page-title-serve { border-bottom: 1px solid #000; padding: 25px 0px; line-height: 20px; text-align: center; font-weight: 400; font-size: 12px; color: #000; }
-
 .page-title-serve span:first-child::after { content: ":"; display: inline-block; margin-right: 5px; margin-left: 3px; }
-
 .page-title-serve span:last-child::after { content: '원'; font-family: "Noto Sans KR"; font-size: inherit; }
 
 /*마이페이지_예치금*/
 .my-table-list-wrap { position: relative; margin-top: 20px; }
-
 @media (min-width: 769px) { .my-table-list-wrap { margin-top: 60px; } }
-
 .my-table-list-wrap .order-list-ul-header { display: none; }
+@media (min-width: 769px) { .my-table-list-wrap .order-list-ul-header { display: flex; } }
 
-@media (min-width: 769px) { .my-table-list-wrap .order-list-ul-header { display: -webkit-box; display: -ms-flexbox; display: flex; } }
-
-.my-table-list-ul { display: -webkit-box; display: -ms-flexbox; display: flex; padding: 15px 0; }
-
-@media (min-width: 769px) { .my-table-list-ul { -webkit-box-flex: 1; -ms-flex: 1 80%; flex: 1 80%; } }
-
+.my-table-list-ul { display: flex; padding: 15px 0; }
+@media (min-width: 769px) { .my-table-list-ul { flex: 1 80%; } }
 .my-table-list-ul li { text-align: center; font-size: 12px; }
-
 .my-table-list-ul .table-li-date { padding-left: 0px; display: inline-block; }
-
-@media (min-width: 769px) { .my-table-list-ul .table-li-date { -webkit-box-flex: 1; -ms-flex: 1 15%; flex: 1 15%; -ms-flex-line-pack: center; align-content: center; } }
-
-.my-table-list-ul .table-li-num { -webkit-box-flex: 1; -ms-flex: 1 66%; flex: 1 66%; display: inline-block; }
-
-@media (min-width: 769px) { .my-table-list-ul .table-li-num { -webkit-box-flex: 1; -ms-flex: 1 15%; flex: 1 15%; -ms-flex-line-pack: center; align-content: center; } }
-
+@media (min-width: 769px) { .my-table-list-ul .table-li-date { flex: 1 15%; align-content: center; } }
+.my-table-list-ul .table-li-num { flex: 1 66%; display: inline-block; }
+@media (min-width: 769px) { .my-table-list-ul .table-li-num { flex: 1 15%; align-content: center; } }
 .my-table-list-ul .table-li-content { width: 61%; }
-
-@media (min-width: 769px) { .my-table-list-ul .table-li-content { -webkit-box-flex: 1; -ms-flex: 1 45%; flex: 1 45%; -ms-flex-line-pack: center; align-content: center; } }
-
-.my-table-list-ul .table-li-price { -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
-
-@media (min-width: 769px) { .my-table-list-ul .table-li-price { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-flex: 1; -ms-flex: 1 15%; flex: 1 15%; } }
+@media (min-width: 769px) { .my-table-list-ul .table-li-content { flex: 1 45%; align-content: center; } }
+.my-table-list-ul .table-li-price { justify-content: center; }
+@media (min-width: 769px) { .my-table-list-ul .table-li-price { display: flex; align-items: center; flex: 1 15%; } }
 
 .deposit-list-ul > li { border-color: #000; border-bottom-width: 1px; border-bottom-style: solid; }
 
-.deposit-list-item { display: -webkit-box; display: -ms-flexbox; display: flex; }
-
-.deposit-list-item .my-table-list-ul { -webkit-box-flex: 1; -ms-flex: 1 100%; flex: 1 100%; -ms-flex-wrap: wrap; flex-wrap: wrap; padding: 15px 0; }
-
-.deposit-list-item .my-table-list-ul .table-li-date { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-flex: 1; -ms-flex: 1 15%; flex: 1 15%; -ms-flex-wrap: nowrap; flex-wrap: nowrap; }
-
-@media (min-width: 769px) { .deposit-list-item .my-table-list-ul .table-li-date { -ms-flex-line-pack: center; align-content: center; -ms-flex-wrap: wrap; flex-wrap: wrap; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; } }
-
-.deposit-list-item .my-table-list-ul .table-li-num { display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-wrap: nowrap; flex-wrap: nowrap; }
-
-@media (min-width: 769px) { .deposit-list-item .my-table-list-ul .table-li-num { -ms-flex-wrap: wrap; flex-wrap: wrap; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; } }
-
+.deposit-list-item { display: flex; }
+.deposit-list-item .my-table-list-ul { flex: 1 100%; flex-wrap: wrap; padding: 15px 0; }
+.deposit-list-item .my-table-list-ul .table-li-date { display: flex; flex: 1 15%; flex-wrap: nowrap; }
+@media (min-width: 769px) { .deposit-list-item .my-table-list-ul .table-li-date { align-content: center; flex-wrap: wrap; justify-content: center; } }
+.deposit-list-item .my-table-list-ul .table-li-num { display: flex; flex-wrap: nowrap; }
+@media (min-width: 769px) { .deposit-list-item .my-table-list-ul .table-li-num { flex-wrap: wrap; justify-content: center; } }
 .deposit-list-item .my-table-list-ul .table-li-content { text-align: left; padding-top: 10px; }
-
-@media (min-width: 769px) { .deposit-list-item .my-table-list-ul .table-li-content { width: auto; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-flow: row wrap; flex-flow: row wrap; padding: 5px 0; position: relative; text-align: center; } }
-
-.deposit-list-item .my-table-list-ul .table-li-price { padding-top: 10px; -webkit-box-flex: 1; -ms-flex: 1 25%; flex: 1 25%; text-align: right; }
-
-@media (min-width: 769px) { .deposit-list-item .my-table-list-ul .table-li-price { padding-top: 0px; -webkit-box-flex: 1; -ms-flex: 1 15%; flex: 1 15%; } }
-
+@media (min-width: 769px) { .deposit-list-item .my-table-list-ul .table-li-content { width: auto; flex-flow: row wrap; padding: 5px 0; position: relative; text-align: center; } }
+.deposit-list-item .my-table-list-ul .table-li-price { padding-top: 10px; flex: 1 25%; text-align: right; }
+@media (min-width: 769px) { .deposit-list-item .my-table-list-ul .table-li-price { padding-top: 0px; flex: 1 15%; } }
 .deposit-list-item .my-table-list-ul .table-li-price::after { content: '원'; font-family: "Noto Sans KR"; font-size: inherit; }
 
 /*마이페이지_예치금_내역없음*/
 .balance-empty { padding: 30px 0; }
 
-/*마이페이지_회원정보_영수증-세금계산서_인쇄*/
+/*lightbox-list > 마이페이지_회원정보_영수증_인쇄*/
 .stamp-img { position: absolute; right: 0px; top: -8px; }
 
 .lp-receipt-print .content { text-align: left; }
-
 .lp-receipt-print .content .print-area-wrap h2 { text-align: center; }
 
-.ul-bx-wrap { position: relative; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; font-weight: 400; font-size: 12px; color: #000; }
-
-.ul-bx-wrap .recipt-ul-bx:last-child { -ms-flex-preferred-size: 25%; flex-basis: 25%; text-align: left; }
+.ul-bx-wrap { position: relative; display: flex; justify-content: space-between; font-weight: 400; font-size: 12px; color: #000; }
+.ul-bx-wrap .recipt-ul-bx:last-child { flex-basis: 25%; text-align: left; }
 
 .recipt-ul { position: relative; }
-
 .recipt-ul li { position: relative; padding-left: 10px; font-size: 13px; line-height: 1.5em; list-style: none; padding: 2px 0; }
-
 .recipt-ul li dd, .recipt-ul li dt { display: inline-block; margin: 0; }
-
 .recipt-ul li dt::after { content: ":"; display: inline-block; margin-left: 5px; }
 
 .line-title-wrap { margin-top: 25px; border: 0; text-align: center; }
-
 .line-title-wrap h3.sub { text-align: left; font-weight: 400; font-size: 12px; color: #000; margin-top: 16px; }
 
-.lp-receipt-print .line-list-wrap .col-1, .lp-receipt-print .line-list-wrap .col-4 { -ms-flex-preferred-size: 14%; flex-basis: 14%; }
+.lp-receipt-print .line-list-wrap .col-1, .lp-receipt-print .line-list-wrap .col-4 { flex-basis: 14%; }
+.lp-receipt-print .line-list-wrap .col-3 { flex-basis: 19%; }
+.lp-receipt-print .line-list-wrap .list-body .list-item { justify-content: space-between; }
 
-.lp-receipt-print .line-list-wrap .col-3 { -ms-flex-preferred-size: 19%; flex-basis: 19%; }
-
-.lp-receipt-print .line-list-wrap .list-body .list-item { -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; }
-
-.lp-receipt-print .wrap-2 .list-header .col-1 { -ms-flex-preferred-size: 16%; flex-basis: 16%; }
-
-.lp-receipt-print .wrap-2 .list-header .col-2 { -ms-flex-preferred-size: 25%; flex-basis: 25%; }
-
-.lp-receipt-print .wrap-2 .list-header .col-5 { -ms-flex-preferred-size: 9%; flex-basis: 9%; }
-
-.lp-receipt-print .wrap-2 .list-header .col-6 { -ms-flex-preferred-size: 11%; flex-basis: 11%; }
-
-.lp-receipt-print .wrap-2 .list-body .col-1 { -ms-flex-preferred-size: 16%; flex-basis: 16%; }
-
-.lp-receipt-print .wrap-2 .list-body .col-2 { -ms-flex-preferred-size: 25%; flex-basis: 25%; }
-
-.lp-receipt-print .wrap-2 .list-body .col-5 { -ms-flex-preferred-size: 9%; flex-basis: 9%; }
-
-.lp-receipt-print .wrap-2 .list-body .col-6 { -ms-flex-preferred-size: 12%; flex-basis: 12%; }
+.lp-receipt-print .wrap-2 .list-header .col-1 { flex-basis: 16%; }
+.lp-receipt-print .wrap-2 .list-header .col-2 { flex-basis: 25%; }
+.lp-receipt-print .wrap-2 .list-header .col-5 { flex-basis: 9%; }
+.lp-receipt-print .wrap-2 .list-header .col-6 { flex-basis: 11%; }
+.lp-receipt-print .wrap-2 .list-body .col-1 { flex-basis: 16%; }
+.lp-receipt-print .wrap-2 .list-body .col-2 { flex-basis: 25%; }
+.lp-receipt-print .wrap-2 .list-body .col-5 { flex-basis: 9%; }
+.lp-receipt-print .wrap-2 .list-body .col-6 { flex-basis: 12%; }
 
 .lp-receipt-print .guide-text { margin-bottom: 45px; }
-
 .lp-receipt-print .guide-text .desc-text { display: block; margin-top: 8px; margin-bottom: 8px; }
-
 .lp-receipt-print .guide-text .desc-text::after { content: '※'; display: block; position: absolute; top: 0; left: -2px; }
-
 .lp-receipt-print .guide-text .desc-text::before { content: ''; display: block; }
-
 .lp-receipt-print .o-info-line-box { border-top: 0; border-color: #ccc; border-bottom-width: 1px; border-bottom-style: solid; }
-
-.lp-receipt-print .o-info-line-box li { padding-right: 0px; padding-left: 0px; -webkit-box-pack: end; -ms-flex-pack: end; justify-content: flex-end; }
-
-.lp-receipt-print .o-info-line-box.col-2-1 > li [class^="f-type"]:first-child { -ms-flex-preferred-size: 19%; flex-basis: 19%; }
-
-.lp-receipt-print .o-info-line-box.col-2-1 > li [class^="f-type"]:last-child { -ms-flex-preferred-size: 16%; flex-basis: 16%; }
+.lp-receipt-print .o-info-line-box li { padding-right: 0px; padding-left: 0px; justify-content: flex-end; }
+.lp-receipt-print .o-info-line-box.col-2-1 > li [class^="f-type"]:first-child { flex-basis: 19%; }
+.lp-receipt-print .o-info-line-box.col-2-1 > li [class^="f-type"]:last-child { flex-basis: 16%; }
 
 /*lp-receipt-print*/
 /* frontend.min overwrite e ================================= */
+
 /*# sourceMappingURL=renew.v3.css.map */

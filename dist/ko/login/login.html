@@ -2106,15 +2106,60 @@
 </div>
 <!-- //SNS 간편로그인 신규추가 -->
 
-                    <!--비회원 주문 조회(링크) - 비회원 주문조회 팝업 노출 -->
-                    <div class="a-link btn-non-member a-link-udln">
-                        <a href="#none" >비회원주문조회</a>
-                    </div><!-- // 비회원 주문 조회(링크) - 비회원 주문조회 팝업 노출 -->
+                    <!-- 비회원 주문조회 팝업 버튼 -->
+                    <div class="btn-non-member">
+                        <a class="a-link a-link-udln open-lightbox" href="#none" target="_self" data-template="lp-order-search-nonmbr" data-classes="alert">비회원주문조회</a>
+                    </div><!--  비회원 주문조회 팝업 버튼 -->
                 </form>
             </div>
         </div><!--// is-sign-in-tabs -->
     </div><!--// o-sign-in-wrapper-->
 </div>
+
+<!-- handlebars-template -->
+
+<!-- 비회원 주문조회 -->
+<script type="text/x-handlebars-template" id="lp-order-search-nonmbr">
+    <div class="lightbox-content-dft lp-order-search-nonmbr">
+        <h2 class="a-heading-2"><span>비회원 주문조회</span></h2>
+        <div class="content">
+            <div class="m-input" data-component="MInput">
+                <input class="a-input js-a-input"
+                       placeholder="주문번호"
+                       type="tel"
+                       value=""
+                       pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                       name="order-search-num"
+                       id="order-search-num"
+                       data-validation-required-text="주문번호를 입력해수세요">
+                <label class="a-label js-a-label" for="order-search-num" data-placeholder=""></label>
+            </div>
+            <div class="m-input" data-component="MInput">
+                <input class="a-input js-a-input"
+                       placeholder="비밀번호"
+                       type="tel"
+                       value=""
+                       pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                       name="order-search-pw"
+                       id="order-search-pw"
+                       data-validation-required-text="비밀번호를 입력해수세요"
+                       data-validation-pattern-text="입력하신 주문번호 또는 비밀번호가 맞지 않습니다.">
+                <label class="a-label js-a-label" for="order-search-pw" data-placeholder=""></label>
+            </div>
+            <button class="a-button is-primary" type="button"><span>주문배송조회</span></button>
+            <p class="guide-text">
+                주문번호가 기억나지 않으신다면,<br>ARKET 고객센터 [1522-0176]로 문의주십시오.
+            </p>
+            <div class="link-wrap">
+                <a href="#none" class="a-link">회원이 아니신가요?</a>
+                <a href="#none" class="a-link a-link-udln">회원가입</a>
+            </div>
+        </div>
+
+    </div>
+</script>
+<!-- //비회원 주문조회 -->
+<!-- // handlebars-template -->
     <!-- //o-page-content -->
 
     <!-- footer -->
@@ -2199,7 +2244,7 @@
                 <br>
                 <span>홈페이지/앱 문의 : <a href="mailto:customerservice.kr@cosstores.com" class="a-link">customerservice.kr@cosstores.com</a></span>
                 <span> / </span>
-                <span>고객센터 : 1800-2765</span>
+                <span>고객센터 : 1522-0176</span>
                 <span> / </span>
                 <span>호스팅서비스 : (주)현대백화점</span>
                 <span class="txt-copy"><span>CopyrightⓒHyundai Department Store. </span><br class="only-m"><span>All rights reserved.</span></span>

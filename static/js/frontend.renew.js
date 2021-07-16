@@ -3,6 +3,9 @@ function lpPrint() {
     window.print();
 }
 
+function resetHeaderMarginTop() {
+    document.querySelector('.o-header').style.marginTop = 0;
+}
 function formatDate(a) {
     if (a < 9) {
         return "0" + a
@@ -50,6 +53,7 @@ function displaySiteBannerCountDown() {
         var b = document.getElementById("site-banner-desktop-timer");
         if (f) {
             s.parentNode.removeChild(s)
+            resetHeaderMarginTop();
         } else {
             if (i) {
                 if (k) {
@@ -58,6 +62,7 @@ function displaySiteBannerCountDown() {
                     } else {
                         if (s) {
                             b.parentNode.removeChild(b);
+                            resetHeaderMarginTop();
                             a = true
                         }
                     }
@@ -131,6 +136,7 @@ function displaySiteBannerCountDown() {
                                 } else {
                                     if (s) {
                                         s.parentNode.removeChild(s)
+                                        resetHeaderMarginTop();
                                     }
                                 }
                             }
@@ -145,6 +151,7 @@ function displaySiteBannerCountDown() {
                     } else {
                         if (a) {
                             s.parentNode.removeChild(s)
+                            resetHeaderMarginTop();
                         } else {
                             if (s && s.parentNode) {
                                 document.getElementById("site-banner-mobile-timer").parentNode.removeChild(document.getElementById("site-banner-mobile-timer"))
@@ -166,6 +173,7 @@ function displaySiteBannerCountDown() {
                                 if (y) {
                                     var D = Math.floor(v / (1000 * 60 * 60 * 24));
                                     if (D == 0) {
+                                        y.className = "is-hidden"
                                         document.getElementById("mobiledayspan").className = "is-hidden"
                                     } else {
                                         if (D < 10) {
@@ -219,6 +227,7 @@ function displaySiteBannerCountDown() {
                                 } else {
                                     if (s && s.parentNode) {
                                         s.parentNode.removeChild(s)
+                                        resetHeaderMarginTop();
                                     }
                                 }
                             }

@@ -14,5 +14,8 @@
 .test { width: 100%; }
 
 /* frontend.min overwrite e ================================= */
+.cs-contents { clear: both; padding: 40px 0 100px; min-height: 420px; }
+.cs-contents .o-accordion-wrap { margin-top: 80px; border-color: #ccc; border-top-width: 1px; border-top-style: solid; }
+.cs-contents .o-accordion-wrap .o-accordion.v2 .accordion-con-text { border-top: 0; }
 
 /*# sourceMappingURL=renew.v1.css.map */

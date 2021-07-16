@@ -1,3 +1,62 @@
-<div data-component="OPageContent" class="o-page-content" data-component-id="">
-    empty page
+<div data-component="OPageContent" class="o-page-content">
+
+    <!-- m-breadcrumb -->
+    <div class="sdp-component left-component">
+        <nav aria-label="breadcrumbs" class="m-breadcrumb" data-component="MBreadCrumb">
+            <ol class="breadcrumb-container">
+                <li>
+                    <a class="a-link" href="<%= pageInfo.root %>/<%= pageInfo.lang %>/index.html">
+                        <span>ARKET</span>
+                    </a>
+                </li>
+                <li itemprop="itemListElement">
+                    <a class="a-link" href="<%= pageInfo.root %>/<%= pageInfo.lang %>/customer-service.html">
+                        <span>고객서비스</span>
+                    </a>
+                </li>
+                <li itemprop="itemListElement">
+                    <a class="a-link" href="#none" data-no-click="true">
+                        <span>배송정보</span>
+                    </a>
+                </li>
+            </ol>
+        </nav>
+    </div>
+    <!-- //m-breadcrumb -->
+
+    <h1 class="a-heading-1 seo-heading"><span>배송정보</span></h1>
+
+    <%# md-o-local-navigation-cs %>
+    <%- include ("../../../common/md-o-local-navigation-cs.ejs") %>
+
+    <!-- cs-contents -->
+    <div class="o-width wc-50 cs-contents">
+        <div class="is-richtext"><p>&nbsp;</p>
+            <p>
+                주문한 내용과 현황을 ARKET > 마이페이지의 ‘주문/배송’에서 찾아볼 수 있습니다.<br>
+                <br>
+                ARKET은 현재 빠른 배송 서비스를 제공하지 않습니다. 서비스가 가능해지면, 주문 시 배송 옵션으로 제공될 것입니다.<br>
+                <br>
+                일부 군사 지역으로의 배송이 불가능할 수 있습니다.
+            </p>
+        </div>
+    </div>
+    <!-- //cs-contents -->
+
+    <%# md-o-teaser %>
+    <%- include ("../../../common/md-o-teaser.ejs") %>
+
 </div>
+
+<!-- tip : when develop this script must be delete -->
+<script type="text/javascript">
+    (function() {
+        'use strict';
+        //탭활성화
+        let activeTab = document.querySelectorAll('.o-local-navigation > ul > li');
+        if(activeTab){
+            activeTab[1].classList.add('is-selected');
+        }
+    })();
+</script>
+<!-- //tip -->

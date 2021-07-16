@@ -1,0 +1,68 @@
+<div data-component="OPageContent" class="o-page-content">
+    
+    <!-- m-breadcrumb -->
+    <div class="sdp-component left-component">
+        <nav aria-label="breadcrumbs" class="m-breadcrumb" data-component="MBreadCrumb">
+            <ol class="breadcrumb-container">
+                <li>
+                    <a class="a-link" href="<%= pageInfo.root %>/<%= pageInfo.lang %>/index.html">
+                        <span>ARKET</span>
+                    </a>
+                </li>
+                <li itemprop="itemListElement">
+                    <a class="a-link" href="<%= pageInfo.root %>/<%= pageInfo.lang %>/customer-service.html">
+                        <span>고객서비스</span>
+                    </a>
+                </li>
+                <li itemprop="itemListElement">
+                    <a class="a-link" href="#none" data-no-click="true">
+                        <span>고객문의</span>
+                    </a>
+                </li>
+            </ol>
+        </nav>
+    </div>
+    <!-- //m-breadcrumb -->
+
+    <h1 class="a-heading-1 seo-heading"><span>고객문의</span></h1>
+
+    <%# md-o-local-navigation-cs %>
+    <%- include ("../../common/md-o-local-navigation-cs.ejs") %>
+
+    <div class="o-width wc-50 cs-contents">
+        <div class="is-richtext"><p>&nbsp;</p>
+            <p>
+                ARKET은 여러분의 의견을 환영합니다. 문의 사항에 대해 언제든지 도울 준비가 되어 있습니다.<br>
+                <br>
+                오프라인 매장에 대해 궁금한 사항은 ‘매장 찾기’ 메뉴에 나오는 연락처를 통해 직접 문의할 수 있습니다.<br>
+                <br>
+                온라인 주문에 대한 문의는 아래 번호나 이메일 주소로 연락해주세요.<br>
+                1522-0176(유선전화 요금은 유료입니다.)<br>
+                <br>
+                이메일 문의: customerservice.kr@arket.com<br>
+                <br>
+                최근 문의가 급증하여 답변에 평소보다 많은 시간이 소요될 수 있습니다. 긴급한 사항은 메일보다 전화 문의를 권장합니다.<br>
+                <br>
+                ARKET온라인 고객서비스센터 운영 시간<br>
+                월요일 - 일요일: 09:00 - 21:00 KST<br>
+            </p>
+        </div>
+    </div>
+
+    <%# md-o-teaser %>
+    <%- include ("../../common/md-o-teaser.ejs") %>
+
+</div>
+
+<!-- tip : when develop this script must be delete -->
+<script type="text/javascript">
+    (function() {
+        'use strict';
+        //탭활성화
+        let activeTab = document.querySelectorAll('.o-local-navigation > ul > li');
+        if(activeTab){
+            activeTab[0].classList.add('is-selected');
+        }
+    })();
+</script>
+<!-- //tip -->

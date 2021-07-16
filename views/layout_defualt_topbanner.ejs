@@ -68,15 +68,15 @@
     <div id="site-banner-id" data-component="MSiteBanner" class="m-site-banner slide-down" style="background-color: rgb(0, 0, 0);">
         <input type="hidden" name="startDateField" value="2021/06/10 08:10:00" id="sitebannercountsd">
         <input type="hidden" name="endDateField" value="2021/9/13 18:45:00" id="sitebannercounted">
+<!--        <input type="hidden" name="endDateField" value="2021/7/16 16:04:39" id="sitebannercounted">-->
         <div>
             <!-- to Dev [toggle Class] : site-banner-desktop, site-banner-mobile  -->
-            <div class="a-paragraph site-banner-desktop is-richtext" style="padding-top:15px;padding-bottom:15px;color:#FFFFFF">
+            <div id="site-banner-desktop-timer" class="a-paragraph site-banner-desktop is-richtext" style="padding-top:15px;padding-bottom:15px;color:#FFFFFF">
                 <a title="ARKET SALE" href="/en/sale.html">SALE —</a>
                 U
                 <a href="/en/sale.html">p to 50% off |</a>
                 <a title="Women SALE" href="/en/women/sale.html">Women,</a>
                 <a title="Men SALE" href="/en/men/sale.html">Men,</a>
-                <a title="Children SALE" href="/en/children/sale.html">Children</a>
                 <a title="Homeware SALE" href="/en/homeware/sale.html">&amp; Homeware</a>
                 &nbsp;&nbsp;
                 <section id="desktoptimer">
@@ -92,17 +92,28 @@
             </div>
 
             <!-- to Dev [toggle Class] : site-banner-desktop, site-banner-mobile  -->
-            <div class="a-paragraph site-banner-mobile is-richtext" style="padding-top:10px;padding-bottom:10px;color:#FFFFFF">
+            <div id="site-banner-mobile-timer" class="a-paragraph site-banner-mobile is-richtext" style="padding-top:10px;padding-bottom:10px;color:#FFFFFF">
                 <a href="/en/sale.html">SALE —</a>
                 U
                 <a href="/en/sale.html">p to 50% off</a>
+                <br>
+                <section id="mobiletimer">
+                    <input class="sitebannertimer" id="mobiledaysid" value="01">
+                    <span id="mobiledayspan" class="timeLabel">D</span>
+                    <input class="sitebannertimer" id="mobilehoursid" value="43">
+                    <span class="timeLabel">H</span>
+                    <input class="sitebannertimer" id="mobileminutesid" value="21">
+                    <span class="timeLabel">M</span>
+                    <input class="sitebannertimer" id="mobilesecondsid" value="55">
+                    <span class="timeLabel">S</span>
+                </section>
             </div>
         </div>
     </div>
     <script>
         setTimeout(function(){
             displaySiteBannerCountDown();
-        },3000);
+        },1200);
     </script>
     <!-- //m-site-banner : 띠배너 -->
 

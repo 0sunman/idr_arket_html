@@ -45,12 +45,17 @@
                     <%# SNS 간편로그인 신규추가 %>
                     <%- include ("../../../common/md-o-sns-area.ejs") %>
 
-                    <!--비회원 주문 조회(링크) - 비회원 주문조회 팝업 노출 -->
-                    <div class="a-link btn-non-member a-link-udln">
-                        <a href="#none" >비회원주문조회</a>
-                    </div><!-- // 비회원 주문 조회(링크) - 비회원 주문조회 팝업 노출 -->
+                    <!-- 비회원 주문조회 팝업 버튼 -->
+                    <div class="btn-non-member">
+                        <a class="a-link a-link-udln open-lightbox" href="#none" target="_self" data-template="lp-order-search-nonmbr" data-classes="alert">비회원주문조회</a>
+                    </div><!--  비회원 주문조회 팝업 버튼 -->
                 </form>
             </div>
         </div><!--// is-sign-in-tabs -->
     </div><!--// o-sign-in-wrapper-->
 </div>
+
+<!-- handlebars-template -->
+<%# 비회원 주문조회 %>
+<%- include ("../../../handlebars/hndl-lp-order-search-nonmbr.ejs") %>
+<!-- // handlebars-template -->
