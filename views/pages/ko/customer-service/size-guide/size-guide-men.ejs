@@ -30,7 +30,7 @@
     <%- include ("../../../../common/md-o-local-navigation-size-guide.ejs") %>
 
     <!-- cs-contents -->
-    <div class="o-width wc-75 cs-contents">
+    <div class="o-width wc-50 cs-contents">
 
         <!-- freeHTML-sizeguide -->
         <div class="freeHTML-sizeguide">
@@ -38,9 +38,9 @@
 
             <!-- information -->
             <div class="freeHTML-sizeguide-information">
-                <p>사이즈 차트는 여러분이 적합한 사이즈를 찾는 데 도움이 되는 안내서입니다. 많은 상품들이 유니크한 방식으로 디자인 되어있으니, 설명란에 나와 있는 특정 제품의 길이와 측정치도 참조하시기를 권해드립니다.</p>
+                <p class="txt">사이즈 차트는 여러분이 적합한 사이즈를 찾는 데 도움이 되는 안내서입니다. 많은 상품들이 유니크한 방식으로 디자인 되어있으니, 설명란에 나와 있는 특정 제품의 길이와 측정치도 참조하시기를 권해드립니다.</p>
                 <br>
-                <p>신체 치수 측정 방법</p>
+                <p>측정 방법</p>
                 <table class="freeHTML-sizeguide-information-text">
                     <tbody>
                     <tr>
@@ -54,37 +54,117 @@
 
             <!-- chart -->
             <div class="freeHTML-sizeguide-chart">
-                <p class="freeHTML-sizeguide-chartTitle">사이즈 표</p>
+                <p class="freeHTML-sizeguide-chartTitle">사이즈 변환</p>
+                
+                <table class="freeHTML-sizeguide-chart-titles">
+                    <tbody>
+                    <tr>
+                        <td>EU/IT</td>
+                    </tr>
+                    <tr>
+                        <td>UK</td>
+                    </tr>
+                    <tr>
+                        <td>FR</td>
+                    </tr>
+                    <tr>
+                        <td>US</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="freeHTML-sizeguide-overflow freeHTML-is-cm">
+                    <table class="freeHTML-sizeguide-chart-sizes">
+                        <tbody>
+                        <tr>
+                            <td>36</td>
+                            <td>37</td>
+                            <td>38</td>
+                            <td>39</td>
+                            <td>40</td>
+                            <td>41</td>
+                        </tr>
+                        <tr>
+                            <td>3.5</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>6</td>
+                            <td>6.5</td>
+                            <td>7.5</td>
+                        </tr>
+                        <tr>
+                            <td>37</td>
+                            <td>38</td>
+                            <td>39</td>
+                            <td>40</td>
+                            <td>41</td>
+                            <td>42</td>
+                        </tr>
+                        <tr>
+                            <td>5.5</td>
+                            <td>6</td>
+                            <td>7</td>
+                            <td>8</td>
+                            <td>8.5</td>
+                            <td>9.5</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- //chart -->
 
-                <input class="freeHTML-sizeguide-inputInch" type="radio" name="women_full_body_free_html_sizeguide">
+        </div>
+        <!-- //freeHTML-sizeguide -->
+
+        <!-- freeHTML-sizeguide -->
+        <div class="freeHTML-sizeguide">
+            <h1 class="freeHTML-sizeguide-title">셔츠</h1>
+
+            <!-- information -->
+            <div class="freeHTML-sizeguide-information">
+                <p>측정 방법</p>
+                <table class="freeHTML-sizeguide-information-text">
+                    <tbody>
+                    <tr>
+                        <th>가슴</th>
+                        <td>가슴의 가장 큰 부분을 측정합니다.</td>
+                    </tr>
+                    <tr>
+                        <th>허리</th>
+                        <td>허리의 가장 좁은 부분을 측정합니다.</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- //information -->
+
+            <!-- chart -->
+            <div class="freeHTML-sizeguide-chart">
+                <p class="freeHTML-sizeguide-chartTitle">사이즈 차트</p>
+
+                <input class="freeHTML-sizeguide-inputInch" type="radio" name="rd-sizeguide-men-shirt">
                 <span class="freeHTML-sizeguide-titleInch">inch</span>
-                <input class="freeHTML-sizeguide-inputCm" type="radio" name="women_full_body_free_html_sizeguide" checked="checked">
+                <input class="freeHTML-sizeguide-inputCm" type="radio" name="rd-sizeguide-men-shirt" checked="checked">
                 <span class="freeHTML-sizeguide-titleCm">cm</span>
 
                 <table class="freeHTML-sizeguide-chart-titles">
                     <thead>
                     <tr>
-                        <th><span>SIZE</span></th>
+                        <th><span>사이즈</span></th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
-                        <td>eur</td>
+                        <td>EUR</td>
                     </tr>
                     <tr>
-                        <td>uk</td>
+                        <td>UK</td>
                     </tr>
                     <tr>
-                        <td>chest</td>
+                        <td>가슴둘레</td>
                     </tr>
                     <tr>
-                        <td>waist</td>
-                    </tr>
-                    <tr>
-                        <td>hip</td>
-                    </tr>
-                    <tr>
-                        <td>inside leg</td>
+                        <td>허리둘레</td>
                     </tr>
                     </tbody>
                 </table>
@@ -100,40 +180,28 @@
                         </thead>
                         <tbody>
                         <tr>
-                            <td>32-34</td>
-                            <td>36-38</td>
-                            <td>40-42</td>
+                            <td>42</td>
                             <td>44-46</td>
+                            <td>48-50</td>
+                            <td>52-54</td>
                         </tr>
                         <tr>
-                            <td>6-8</td>
-                            <td>10-12</td>
-                            <td>14-16</td>
-                            <td>18-20</td>
+                            <td>13½/14</td>
+                            <td>14½/15</td>
+                            <td>15¼/15¾</td>
+                            <td>16/16½</td>
                         </tr>
                         <tr>
-                            <td>76-80</td>
-                            <td>84-88</td>
-                            <td>92-96</td>
-                            <td>100-104</td>
+                            <td>80-84</td>
+                            <td>88-92</td>
+                            <td>96-100</td>
+                            <td>104-108</td>
                         </tr>
                         <tr>
-                            <td>60-64</td>
                             <td>68-72</td>
                             <td>76-80</td>
                             <td>84-88</td>
-                        </tr>
-                        <tr>
-                            <td>84-88</td>
                             <td>92-96</td>
-                            <td>100-104</td>
-                            <td>108-112</td>
-                        </tr>
-                        <tr>
-                            <td>76-77</td>
-                            <td>78-79</td>
-                            <td>80-81</td>
-                            <td>82-83</td>
                         </tr>
                         </tbody>
                     </table>
@@ -150,40 +218,28 @@
                         </thead>
                         <tbody>
                         <tr>
-                            <td>32-34</td>
-                            <td>36-38</td>
-                            <td>40-42</td>
+                            <td>42</td>
                             <td>44-46</td>
+                            <td>48-50</td>
+                            <td>52-54</td>
                         </tr>
                         <tr>
-                            <td>6-8</td>
-                            <td>10-12</td>
-                            <td>14-16</td>
-                            <td>18-20</td>
+                            <td>13½/14</td>
+                            <td>14½/15</td>
+                            <td>15¼/15¾</td>
+                            <td>16/16½</td>
                         </tr>
                         <tr>
+                            <td>31½-33</td>
+                            <td>34½-36¼</td>
+                            <td>37¾-39½</td>
+                            <td>41-42½</td>
+                        </tr>
+                        <tr>
+                            <td>26¾-28¼</td>
                             <td>30-31½</td>
                             <td>33-34½</td>
                             <td>36¼-37¾</td>
-                            <td>39½-41</td>
-                        </tr>
-                        <tr>
-                            <td>23½-25¼</td>
-                            <td>26¾-28½</td>
-                            <td>30-31½</td>
-                            <td>33-34½</td>
-                        </tr>
-                        <tr>
-                            <td>33-34½</td>
-                            <td>36¼-37¾</td>
-                            <td>39½-41</td>
-                            <td>42½-44</td>
-                        </tr>
-                        <tr>
-                            <td>30-30½</td>
-                            <td>30¾-31¼</td>
-                            <td>31½-32</td>
-                            <td>32½-32¾</td>
                         </tr>
                         </tbody>
                     </table>
@@ -193,7 +249,887 @@
 
         </div>
         <!-- //freeHTML-sizeguide -->
-        
+
+        <!-- freeHTML-sizeguide -->
+        <div class="freeHTML-sizeguide">
+            <h1 class="freeHTML-sizeguide-title">상의</h1>
+
+            <!-- information -->
+            <div class="freeHTML-sizeguide-information">
+                <p>측정 방법</p>
+                <table class="freeHTML-sizeguide-information-text">
+                    <tbody>
+                    <tr>
+                        <th>가슴</th>
+                        <td>가슴의 가장 큰 부분을 측정합니다.</td>
+                    </tr>
+                    <tr>
+                        <th>허리</th>
+                        <td>허리의 가장 좁은 부분을 측정합니다.</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- //information -->
+
+            <!-- chart -->
+            <div class="freeHTML-sizeguide-chart">
+                <p class="freeHTML-sizeguide-chartTitle">사이즈 차트</p>
+
+                <input class="freeHTML-sizeguide-inputInch" type="radio" name="rd-sizeguide-men-top">
+                <span class="freeHTML-sizeguide-titleInch">inch</span>
+                <input class="freeHTML-sizeguide-inputCm" type="radio" name="rd-sizeguide-men-top" checked="checked">
+                <span class="freeHTML-sizeguide-titleCm">cm</span>
+
+                <table class="freeHTML-sizeguide-chart-titles">
+                    <thead>
+                    <tr>
+                        <th><span>SIZE</span></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>EUR</td>
+                    </tr>
+                    <tr>
+                        <td>UK</td>
+                    </tr>
+                    <tr>
+                        <td>가슴둘레</td>
+                    </tr>
+                    <tr>
+                        <td>허리둘레</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="freeHTML-sizeguide-overflow freeHTML-is-cm">
+                    <table class="freeHTML-sizeguide-chart-sizes">
+                        <thead>
+                        <tr>
+                            <th><span>XS</span></th>
+                            <th><span>S</span></th>
+                            <th><span>M</span></th>
+                            <th><span>L</span></th>
+                            <th><span>XL</span></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>42</td>
+                            <td>44-46</td>
+                            <td>48-50</td>
+                            <td>52-54</td>
+                            <td>56-58</td>
+                        </tr>
+                        <tr>
+                            <td>32R</td>
+                            <td>34R-36R</td>
+                            <td>38R-40R</td>
+                            <td>42R-44R</td>
+                            <td>46R-48R</td>
+                        </tr>
+                        <tr>
+                            <td>84</td>
+                            <td>88-92</td>
+                            <td>96-100</td>
+                            <td>104-108</td>
+                            <td>112-116</td>
+                        </tr>
+                        <tr>
+                            <td>72</td>
+                            <td>76-80</td>
+                            <td>84-88</td>
+                            <td>92-96</td>
+                            <td>100-104</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="freeHTML-sizeguide-overflow freeHTML-is-inch">
+                    <table class="freeHTML-sizeguide-chart-sizes">
+                        <thead>
+                        <tr>
+                            <th><span>XS</span></th>
+                            <th><span>S</span></th>
+                            <th><span>M</span></th>
+                            <th><span>L</span></th>
+                            <th><span>XL</span></th>
+                            <th><span>XXL</span></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>42</td>
+                            <td>44-46</td>
+                            <td>48-50</td>
+                            <td>52-54</td>
+                            <td>56-58</td>
+                            <td>60-62</td>
+                        </tr>
+                        <tr>
+                            <td>32R</td>
+                            <td>34R-36R</td>
+                            <td>38R-40R</td>
+                            <td>42R-44R</td>
+                            <td>46R-48R</td>
+                            <td>50R-52R</td>
+                        </tr>
+                        <tr>
+                            <td>33</td>
+                            <td>34½-36¼</td>
+                            <td>37¾-39½</td>
+                            <td>41-42½</td>
+                            <td>44-45½</td>
+                            <td>47¼-48¾</td>
+                        </tr>
+                        <tr>
+                            <td>28¼</td>
+                            <td>30-31½</td>
+                            <td>33-34½</td>
+                            <td>36¼-37¾</td>
+                            <td>39½-41</td>
+                            <td>42½-44</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- //chart -->
+
+        </div>
+        <!-- //freeHTML-sizeguide -->
+
+        <!-- freeHTML-sizeguide -->
+        <div class="freeHTML-sizeguide">
+            <h1 class="freeHTML-sizeguide-title">바지</h1>
+
+            <!-- information -->
+            <div class="freeHTML-sizeguide-information">
+                <p>측정 방법</p>
+                <table class="freeHTML-sizeguide-information-text">
+                    <tbody>
+                    <tr>
+                        <th>허리</th>
+                        <td>허리의 가장 좁은 부분을 측정합니다.</td>
+                    </tr>
+                    <tr>
+                        <th>엉덩이</th>
+                        <td>엉덩이의 가장 큰 부분 주위를 측정하십시오.</td>
+                    </tr>
+                    <tr>
+                        <th>다리<br class="only-m">안쪽길이</th>
+                        <td>다리 안쪽의 가장 윗부분부터 바닥까지 측정하세요.</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- //information -->
+
+            <!-- chart -->
+            <div class="freeHTML-sizeguide-chart">
+                <p class="freeHTML-sizeguide-chartTitle">사이즈 차트</p>
+
+                <input class="freeHTML-sizeguide-inputInch" type="radio" name="rd-sizeguide-men-trousers">
+                <span class="freeHTML-sizeguide-titleInch">inch</span>
+                <input class="freeHTML-sizeguide-inputCm" type="radio" name="rd-sizeguide-men-trousers" checked="checked">
+                <span class="freeHTML-sizeguide-titleCm">cm</span>
+
+                <table class="freeHTML-sizeguide-chart-titles">
+                    <thead>
+                    <tr>
+                        <th><span>사이즈</span></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>EUR</td>
+                    </tr>
+                    <tr>
+                        <td>UK</td>
+                    </tr>
+                    <tr>
+                        <td>가슴둘레</td>
+                    </tr>
+                    <tr>
+                        <td>허리둘레</td>
+                    </tr>
+                    <tr>
+                        <td>다리 안쪽길이</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="freeHTML-sizeguide-overflow freeHTML-is-cm">
+                    <table class="freeHTML-sizeguide-chart-sizes">
+                        <thead>
+                        <tr>
+                            <th><span>XS</span></th>
+                            <th><span>S</span></th>
+                            <th><span>M</span></th>
+                            <th><span>L</span></th>
+                            <th><span>XL</span></th>
+                            <th><span>XXL</span></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>42</td>
+                            <td>44-46</td>
+                            <td>48-50</td>
+                            <td>52-54</td>
+                            <td>56-58</td>
+                            <td>42</td>
+                        </tr>
+                        <tr>
+                            <td>28R</td>
+                            <td>30R-32R</td>
+                            <td>33R-34R</td>
+                            <td>36R-38R</td>
+                            <td>40R-42R</td>
+                            <td>28R</td>
+                        </tr>
+                        <tr>
+                            <td>72</td>
+                            <td>76-80</td>
+                            <td>84-88</td>
+                            <td>92-96</td>
+                            <td>100-104</td>
+                            <td>72</td>
+                        </tr>
+                        <tr>
+                            <td>90</td>
+                            <td>93-96</td>
+                            <td>99-102</td>
+                            <td>105-108</td>
+                            <td>111-114</td>
+                            <td>90</td>
+                        </tr>
+                        <tr>
+                            <td>81</td>
+                            <td>81-82</td>
+                            <td>82-83</td>
+                            <td>83-84</td>
+                            <td>85</td>
+                            <td>81</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="freeHTML-sizeguide-overflow freeHTML-is-inch">
+                    <table class="freeHTML-sizeguide-chart-sizes">
+                        <thead>
+                        <tr>
+                            <th><span>XS</span></th>
+                            <th><span>S</span></th>
+                            <th><span>M</span></th>
+                            <th><span>L</span></th>
+                            <th><span>XL</span></th>
+                            <th><span>XXL</span></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>42</td>
+                            <td>44-46</td>
+                            <td>48-50</td>
+                            <td>52-54</td>
+                            <td>56-58</td>
+                            <td>42</td>
+                        </tr>
+                        <tr>
+                            <td>28R</td>
+                            <td>30R-32R</td>
+                            <td>33R-34R</td>
+                            <td>36R-38R</td>
+                            <td>40R-42R</td>
+                            <td>28R</td>
+                        </tr>
+                        <tr>
+                            <td>28¼</td>
+                            <td>30-31½</td>
+                            <td>33-34½</td>
+                            <td>36¼-37¾</td>
+                            <td>39½-41</td>
+                            <td>28¼</td>
+                        </tr>
+                        <tr>
+                            <td>35½</td>
+                            <td>36½-37¾</td>
+                            <td>39-40</td>
+                            <td>41¼-42½</td>
+                            <td>43¾-44¾</td>
+                            <td>35½</td>
+                        </tr>
+                        <tr>
+                            <td>31¾</td>
+                            <td>32</td>
+                            <td>32¼-32½</td>
+                            <td>33</td>
+                            <td>33¼-33½</td>
+                            <td>31¾</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- //chart -->
+
+        </div>
+        <!-- //freeHTML-sizeguide -->
+
+        <!-- freeHTML-sizeguide -->
+        <div class="freeHTML-sizeguide">
+            <h1 class="freeHTML-sizeguide-title">청바지</h1>
+
+            <!-- information -->
+            <div class="freeHTML-sizeguide-information">
+                <p>측정 방법</p>
+                <table class="freeHTML-sizeguide-information-text">
+                    <tbody>
+                    <tr>
+                        <th>허리</th>
+                        <td>허리의 가장 좁은 부분을 측정합니다.</td>
+                    </tr>
+                    <tr>
+                        <th>엉덩이</th>
+                        <td>엉덩이의 가장 큰 부분 주위를 측정하십시오.</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- //information -->
+
+            <!-- chart -->
+            <div class="freeHTML-sizeguide-chart">
+                <p class="freeHTML-sizeguide-chartTitle">사이즈 차트</p>
+
+                <table class="freeHTML-sizeguide-chart-titles">
+                    <thead>
+                    <tr>
+                        <th><span>사이즈</span></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>허리(cm)</td>
+                    </tr>
+                    <tr>
+                        <td>엉덩이(cm)</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="freeHTML-sizeguide-overflow">
+                    <table class="freeHTML-sizeguide-chart-sizes">
+                        <thead>
+                        <tr>
+                            <th><span>28</span></th>
+                            <th><span>29</span></th>
+                            <th><span>30</span></th>
+                            <th><span>31</span></th>
+                            <th><span>32</span></th>
+                            <th><span>33</span></th>
+                            <th><span>34</span></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>73.5</td>
+                            <td>76</td>
+                            <td>78.5</td>
+                            <td>81</td>
+                            <td>83.5</td>
+                            <td>86</td>
+                            <td>88.5</td>
+                        </tr>
+                        <tr>
+                            <td>89.5</td>
+                            <td>92</td>
+                            <td>94.5</td>
+                            <td>97</td>
+                            <td>99.5</td>
+                            <td>102</td>
+                            <td>104.5</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- //chart -->
+
+            <!-- chart -->
+            <div class="freeHTML-sizeguide-chart">
+                <p class="freeHTML-sizeguide-chartTitle">사이즈 변환</p>
+
+                <table class="freeHTML-sizeguide-chart-titles">
+                    <thead>
+                    <tr>
+                        <th><span>사이즈</span></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>S-L</td>
+                    </tr>
+                    <tr>
+                        <td>EUR</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="freeHTML-sizeguide-overflow">
+                    <table class="freeHTML-sizeguide-chart-sizes">
+                        <thead>
+                        <tr>
+                            <th><span>28</span></th>
+                            <th><span>29</span></th>
+                            <th><span>30</span></th>
+                            <th><span>31</span></th>
+                            <th><span>32</span></th>
+                            <th><span>33</span></th>
+                            <th><span>34</span></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>S</td>
+                            <td>S</td>
+                            <td>S</td>
+                            <td>M</td>
+                            <td>M</td>
+                            <td>M</td>
+                            <td>L</td>
+                        </tr>
+                        <tr>
+                            <td>46</td>
+                            <td>46</td>
+                            <td>48</td>
+                            <td>48</td>
+                            <td>50</td>
+                            <td>50</td>
+                            <td>52</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- //chart -->
+
+        </div>
+        <!-- //freeHTML-sizeguide -->
+
+        <!-- freeHTML-sizeguide -->
+        <div class="freeHTML-sizeguide">
+            <h1 class="freeHTML-sizeguide-title">벨트</h1>
+
+            <!-- information -->
+            <div class="freeHTML-sizeguide-information">
+                <p>측정 방법</p>
+                <table class="freeHTML-sizeguide-information-text">
+                    <tbody>
+                    <tr>
+                        <th>허리</th>
+                        <td>허리의 가장 좁은 부분을 측정합니다.</td>
+                    </tr>
+                    <tr>
+                        <th>엉덩이</th>
+                        <td>엉덩이의 가장 큰 부분 주위를 측정하십시오.</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- //information -->
+
+            <!-- chart -->
+            <div class="freeHTML-sizeguide-chart">
+                <p class="freeHTML-sizeguide-chartTitle">사이즈 차트</p>
+
+                <table class="freeHTML-sizeguide-chart-titles">
+                    <thead>
+                    <tr>
+                        <th><span>크기</span></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>길이(cm)</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="freeHTML-sizeguide-overflow">
+                    <table class="freeHTML-sizeguide-chart-sizes">
+                        <thead>
+                        <tr>
+                            <th><span>S</span></th>
+                            <th><span>M</span></th>
+                            <th><span>L</span></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>84.5</td>
+                            <td>92</td>
+                            <td>99.5</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- //chart -->
+        </div>
+        <!-- //freeHTML-sizeguide -->
+
+        <!-- freeHTML-sizeguide -->
+        <div class="freeHTML-sizeguide">
+            <h1 class="freeHTML-sizeguide-title">장갑</h1>
+
+           <!-- information -->
+            <div class="freeHTML-sizeguide-information">
+                <p>측정 방법</p>
+                <table class="freeHTML-sizeguide-information-text">
+                    <tbody>
+                    <tr>
+                        <th>손바닥<br class="only-m">둘레</th>
+                        <td>손바닥의 가장 넓은 부분을 측정합니다.</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- //information -->
+
+            <!-- chart -->
+            <div class="freeHTML-sizeguide-chart">
+                <p class="freeHTML-sizeguide-chartTitle">사이즈 차트</p>
+
+                <input class="freeHTML-sizeguide-inputInch" type="radio" name="rd-sizeguide-men-gloves">
+                <span class="freeHTML-sizeguide-titleInch">inch</span>
+                <input class="freeHTML-sizeguide-inputCm" type="radio" name="rd-sizeguide-men-gloves" checked="checked">
+                <span class="freeHTML-sizeguide-titleCm">cm</span>
+
+                <table class="freeHTML-sizeguide-chart-titles">
+                    <thead>
+                    <tr>
+                        <th><span>크기</span></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>손바닥 둘레</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="freeHTML-sizeguide-overflow freeHTML-is-cm">
+                    <table class="freeHTML-sizeguide-chart-sizes">
+                        <thead>
+                        <tr>
+                            <th><span>XS</span></th>
+                            <th><span>S</span></th>
+                            <th><span>M</span></th>
+                            <th><span>L</span></th>
+                            <th><span>XL</span></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>20,1</td>
+                            <td>20,9</td>
+                            <td>21,7</td>
+                            <td>22,5</td>
+                            <td>23,3</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="freeHTML-sizeguide-overflow freeHTML-is-inch">
+                    <table class="freeHTML-sizeguide-chart-sizes">
+                        <thead>
+                        <tr>
+                            <th><span>XS</span></th>
+                            <th><span>S</span></th>
+                            <th><span>M</span></th>
+                            <th><span>L</span></th>
+                            <th><span>XL</span></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>7,9</td>
+                            <td>8,2</td>
+                            <td>8,5</td>
+                            <td>8,6</td>
+                            <td>9,2</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- //chart -->
+
+        </div>
+        <!-- //freeHTML-sizeguide -->
+
+        <!-- freeHTML-sizeguide -->
+        <div class="freeHTML-sizeguide">
+            <h1 class="freeHTML-sizeguide-title">수영복</h1>
+            <h2><br>Swimtrunks (Elasticated waist)</h2>
+            <!-- information -->
+            <div class="freeHTML-sizeguide-information">
+                <p>측정 방법</p>
+                <table class="freeHTML-sizeguide-information-text">
+                    <tbody>
+                    <tr>
+                        <th>허리</th>
+                        <td>허리의 가장 좁은 부분을 측정합니다.</td>
+                    </tr>
+                    <tr>
+                        <th>엉덩이</th>
+                        <td>엉덩이의 가장 큰 부분 주위를 측정하십시오.</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- //information -->
+
+            <!-- chart -->
+            <div class="freeHTML-sizeguide-chart">
+                <p class="freeHTML-sizeguide-chartTitle">사이즈 차트</p>
+
+                <input class="freeHTML-sizeguide-inputInch" type="radio" name="rd-sizeguide-men-swimtrunks">
+                <span class="freeHTML-sizeguide-titleInch">inch</span>
+                <input class="freeHTML-sizeguide-inputCm" type="radio" name="rd-sizeguide-men-swimtrunks" checked="checked">
+                <span class="freeHTML-sizeguide-titleCm">cm</span>
+
+                <table class="freeHTML-sizeguide-chart-titles">
+                    <thead>
+                    <tr>
+                        <th><span>사이즈</span></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>EUR</td>
+                    </tr>
+                    <tr>
+                        <td>UK</td>
+                    </tr>
+                    <tr>
+                        <td>Extended</td>
+                    </tr>
+                    <tr>
+                        <td>Relaxed</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="freeHTML-sizeguide-overflow freeHTML-is-cm">
+                    <table class="freeHTML-sizeguide-chart-sizes">
+                        <thead>
+                        <tr>
+                            <th><span>XS</span></th>
+                            <th><span>S</span></th>
+                            <th><span>M</span></th>
+                            <th><span>L</span></th>
+                            <th><span>XL</span></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>42</td>
+                            <td>44-46</td>
+                            <td>48-50</td>
+                            <td>52-54</td>
+                            <td>56-58</td>
+                        </tr>
+                        <tr>
+                            <td>28R</td>
+                            <td>30R-32R</td>
+                            <td>33R-34R</td>
+                            <td>36R-38R</td>
+                            <td>40R-42R</td>
+                        </tr>
+                        <tr>
+                            <td>91</td>
+                            <td>99</td>
+                            <td>107</td>
+                            <td>115</td>
+                            <td>123</td>
+                        </tr>
+                        <tr>
+                            <td>58</td>
+                            <td>66</td>
+                            <td>74</td>
+                            <td>82</td>
+                            <td>90</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="freeHTML-sizeguide-overflow freeHTML-is-inch">
+                    <table class="freeHTML-sizeguide-chart-sizes">
+                        <thead>
+                        <tr>
+                            <th><span>XS</span></th>
+                            <th><span>S</span></th>
+                            <th><span>M</span></th>
+                            <th><span>L</span></th>
+                            <th><span>XL</span></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>42</td>
+                            <td>44-46</td>
+                            <td>48-50</td>
+                            <td>52-54</td>
+                            <td>56-58</td>
+                        </tr>
+                        <tr>
+                            <td>28R</td>
+                            <td>30R-32R</td>
+                            <td>33R-34R</td>
+                            <td>36R-38R</td>
+                            <td>40R-42R</td>
+                        </tr>
+                        <tr>
+                            <td>35.8</td>
+                            <td>39</td>
+                            <td>42.1</td>
+                            <td>45.25</td>
+                            <td>48.4</td>
+                        </tr>
+                        <tr>
+                            <td>21.25</td>
+                            <td>26</td>
+                            <td>29.1</td>
+                            <td>32.25</td>
+                            <td>35.4</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- //chart -->
+
+            <h2>Swimshort (Tailored waist)</h2>
+            <!-- information -->
+            <div class="freeHTML-sizeguide-information">
+                <p>측정 방법</p>
+                <table class="freeHTML-sizeguide-information-text">
+                    <tbody>
+                    <tr>
+                        <th>허리</th>
+                        <td>허리의 가장 좁은 부분을 측정합니다.</td>
+                    </tr>
+                    <tr>
+                        <th>엉덩이</th>
+                        <td>엉덩이의 가장 큰 부분 주위를 측정하십시오.</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- //information -->
+
+            <!-- chart -->
+            <div class="freeHTML-sizeguide-chart">
+                <p class="freeHTML-sizeguide-chartTitle">사이즈 차트</p>
+
+                <input class="freeHTML-sizeguide-inputInch" type="radio" name="rd-sizeguide-men-swimshort">
+                <span class="freeHTML-sizeguide-titleInch">inch</span>
+                <input class="freeHTML-sizeguide-inputCm" type="radio" name="rd-sizeguide-men-swimshort" checked="checked">
+                <span class="freeHTML-sizeguide-titleCm">cm</span>
+
+                <table class="freeHTML-sizeguide-chart-titles">
+                    <thead>
+                    <tr>
+                        <th><span>사이즈</span></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>EUR</td>
+                    </tr>
+                    <tr>
+                        <td>UK</td>
+                    </tr>
+                    <tr>
+                        <td>Waist</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="freeHTML-sizeguide-overflow freeHTML-is-cm">
+                    <table class="freeHTML-sizeguide-chart-sizes">
+                        <thead>
+                        <tr>
+                            <th><span>46</span></th>
+                            <th><span>48</span></th>
+                            <th><span>50</span></th>
+                            <th><span>52</span></th>
+                            <th><span>54</span></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>42</td>
+                            <td>44-46</td>
+                            <td>48-50</td>
+                            <td>52-54</td>
+                            <td>56-58</td>
+                        </tr>
+                        <tr>
+                            <td>28R</td>
+                            <td>30R-32R</td>
+                            <td>33R-34R</td>
+                            <td>36R-38R</td>
+                            <td>40R-42R</td>
+                        </tr>
+                        <tr>
+                            <td>83</td>
+                            <td>87</td>
+                            <td>91</td>
+                            <td>95</td>
+                            <td>99</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="freeHTML-sizeguide-overflow freeHTML-is-inch">
+                    <table class="freeHTML-sizeguide-chart-sizes">
+                        <thead>
+                        <tr>
+                            <th><span>46</span></th>
+                            <th><span>48</span></th>
+                            <th><span>50</span></th>
+                            <th><span>52</span></th>
+                            <th><span>54</span></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>42</td>
+                            <td>44-46</td>
+                            <td>48-50</td>
+                            <td>52-54</td>
+                            <td>56-58</td>
+                        </tr>
+                        <tr>
+                            <td>28R</td>
+                            <td>30R-32R</td>
+                            <td>33R-34R</td>
+                            <td>36R-38R</td>
+                            <td>40R-42R</td>
+                        </tr>
+                        <tr>
+                            <td>32.7</td>
+                            <td>34.25</td>
+                            <td>35.8</td>
+                            <td>37.4</td>
+                            <td>39</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- //chart -->
+
+        </div>
+        <!-- //freeHTML-sizeguide -->
+
     </div>
     <!-- //cs-contents -->
 

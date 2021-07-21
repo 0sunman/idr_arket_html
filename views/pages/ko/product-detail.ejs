@@ -161,11 +161,24 @@
                                     </a>
                                 </div>
                                 <div class="accordion-content">
-                                    <div class="accordion-inner-content">
-                                        <div class="m-care-instructions">
-                                            <p class="a-paragraph" id="careDetail">
-                                                중간 온도에서 철분, 무 염소 표백제 만 드라이 클리닝, 40 ° C 이하에서 세척, 라인 건조.
-                                            </p>
+                                    <div class="m-care-instructions">
+                                        <!-- 취급시 주의사항-세탁관련 아이콘표기 -->
+                                        <ul class="wash-wrap">
+                                            <!-- 세탁 -->
+                                            <!-- to Dev [toggle Class] : a-wash-icon-hand, a-wash-icon-nowashing, a-wash-icon-30-gentle, a-wash-icon-30, a-wash-icon-40-gentle, a-wash-icon-40, a-wash-icon-60 -->
+                                            <li class="a-wash-icon-30-gentle"></li>
+                                            <!-- 표백 -->
+                                            <!-- to Dev [toggle Class] : a-wash-icon-nobleach, a-wash-icon-bleach -->
+                                            <li class="a-wash-icon-nobleach"></li>
+                                            <!-- 다림질 -->
+                                            <!-- to Dev [toggle Class] : a-wash-icon-noiron, a-wash-icon-iron-1, a-wash-icon-iron-2, a-wash-icon-iron-3-->
+                                            <li class="a-wash-icon-iron-1"></li>
+                                            <!-- 드라이 클리닝 -->
+                                            <!-- to Dev [toggle Class] : a-wash-icon-nodryclean, a-wash-icon-dryclean -->
+                                            <li class="a-wash-icon-dryclean"></li>
+                                        </ul>
+                                        <div class="a-paragraph" id="careDetail">
+                                           중온 다림질, 드라이 클리닝 금지, 비 염소 표백제 만 사용,<br class="only-pc">40 ° C 이하에서 세탁, 라인 건조
                                         </div>
                                     </div>
                                 </div>
@@ -175,20 +188,19 @@
 
                     <div class="attributes-bottom">
                         <div class="description-container">
-                            <p class="a-paragraph">Lorem Ipsum은 인쇄 및 조판 업계의 더미 텍스트입니다. Lorem Ipsum은 알려지지 않은 프린터가 유형의 갤리를 가져 와서 유형 표본 책을 만들기 위해 스크램블 한 1500 년대 이후로 업계의 표준 더미 텍스트였습니다.</p>
+                            <p class="a-paragraph">캐주얼한 디자인에 클래식한 감각을 더해 완성된 반소매 티셔츠입니다. 순수 코튼 소재로 만들어졌으며, 언제나 함께하기 좋은 에센셜 아이템입니다.</p>
                             <ul class="list-elements">
-                                <li>일정하고 균일 한 열에 최적화</li>
-                                <li>에나멜 인테리어는 밝은 모래 ㅂ색상으로 요리하는 동안 음식을 쉽게 모니터링 할 수있어 끈적임과 타는 현상이 줄어 듭니다.</li>
-                                <li>합성 손잡이는 최대 260 ° C의 온도를 견디며 확실한 그립을 제공합니다.</li>
-                                <li>빠르고 편리한 청소를위한 식기 세척기 사용 가능</li>
-                                <li>Made in France123123</li>
+                                <li>레귤러 핏</li>
+                                <li>반소매</li>
+                                <li>탑스티칭으로 깔끔하게 마감된 가장자리</li>
+                                <li>Women > 탑</li>
                             </ul>
                         </div>
                         <div class="list-container">
-                            <span class="add-comp">Composition</span>
+                            <span class="add-comp">제품소재</span>
                             <ul id="details-list" class="list-elements">
                                 <li class="list-desc">
-                                    <span class="text"> : Linen 100%</span>
+                                    <span class="text"> : 100% 코튼</span>
                                 </li>
                             </ul>
                         </div>
@@ -263,7 +275,7 @@
                                     <p class="a-paragraph swatch-title" data-articlecode="0739734008">화이트/파랑</p>
                                 </a>
                             </label>
-                            <p class="a-paragraph sold-out-swatch">SOLD OUT</p>
+                            <p class="a-paragraph sold-out-swatch">품절</p>
                         </div><!--
                         --><div data-id="swatch_0739734009" id="swatch_0739734009" class="a-swatch js-swatch is-selected">
                             <label id="swatchLabel" class="a-label swatch-label js-a-label">
@@ -317,7 +329,7 @@
         <div id="osliderStyleWith" class="o-width wc-75 carousel">
 
             <div class="o-pra-component is-combine-with" style="display:block;">
-                <h2 class="a-heading-2 u-align-center is-main-heading">Style with</h2>
+                <h2 class="a-heading-2 u-align-center is-main-heading">추천상품(관련상품)</h2>
 
                 <!-- o-slider -->
                 <div data-component="OSlider"
@@ -414,7 +426,7 @@
              data-pra-panel="product-detail-page"
              data-pra-locale="en"
              data-pra-id="PRA1">
-            <h2 class="a-heading-2 u-align-center is-main-heading slider-title">Others also bought</h2>
+            <h2 class="a-heading-2 u-align-center is-main-heading slider-title">이 상품을 구매한 <br class="only-m">고객님이 구매한 상품</h2>
 
             <!-- o-slider -->
             <div data-component="OSlider"

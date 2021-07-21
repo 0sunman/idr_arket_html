@@ -745,18 +745,27 @@ display: inline-block;
 /* ---------------------------------------------------------- */
 /* sizeguide s ============================================== */
 /* CUSTOMER SERVICE SIZE GUIDE SECTION */
-.freeHTML-sizeguide { display: inline-block; text-align: left; margin-top: 40px; font-size: 13px; width: 100%; }
-.freeHTML-sizeguide th, .freeHTML-sizeguide td { text-align: left; vertical-align: top; padding: 5px 15px 5px 10px; min-width: 65px; }
+.freeHTML-sizeguide { display: inline-block; text-align: left; margin-top: 0; font-size: 13px; width: 100%; }
+.freeHTML-sizeguide th, .freeHTML-sizeguide td { text-align: left; vertical-align: middle; padding: 5px 15px 5px 10px; min-width: 65px; max-height: 32px; height: 32px; }
+@media (min-width: 769px) { .freeHTML-sizeguide { margin-top: 20px; } }
+.freeHTML-sizeguide .o-accordion.v2 .accordion-title { border-bottom: 0; }
+.freeHTML-sizeguide .o-accordion.v2 .accordion-content { border-top: 1px solid #ccc; }
+.freeHTML-sizeguide .o-accordion.v2 .accordion-content .freeHTML-sizeguide-chart:last-child { border-bottom: 0; }
 
 .o-lightbox .freeHTML-sizeguide { margin-bottom: 0; }
 
-.freeHTML-sizeguide-title { font-size: 20px; text-align: center; padding-bottom: 20px; border-bottom: 1px solid #000; margin-bottom: 0; }
+.freeHTML-sizeguide .txt { font-weight: 300; }
+
+.freeHTML-sizeguide-title { font-size: 20px; font-weight: 300; text-align: center; padding-bottom: 20px; border-bottom: 1px solid #000; margin-bottom: 0; }
 
 .freeHTML-sizeguide-information { padding: 19px 0 26px; border-bottom: 1px solid #000; margin-bottom: 26px; }
+.freeHTML-sizeguide-information .size-guide-img { text-align: center; }
+.freeHTML-sizeguide-information .size-guide-img img { width: 100%; max-width: 400px; }
 .freeHTML-sizeguide-information p { margin: 7px 0; }
 .freeHTML-sizeguide-information .freeHTML-sizeguide-information-text { width: 100%; }
-.freeHTML-sizeguide-information .freeHTML-sizeguide-information-text th { width: 8%; min-width: 105px; padding-left: 0; text-align: right; }
-.freeHTML-sizeguide-information .freeHTML-sizeguide-information-text td { width: 80%; padding-left: 0; }
+.freeHTML-sizeguide-information .freeHTML-sizeguide-information-text th, .freeHTML-sizeguide-information .freeHTML-sizeguide-information-text td { font-size: 12px; vertical-align: top; }
+.freeHTML-sizeguide-information .freeHTML-sizeguide-information-text th { width: 20%; max-width: 120px; padding-left: 0; text-align: right; }
+.freeHTML-sizeguide-information .freeHTML-sizeguide-information-text td { width: 80%; padding-left: 0; font-weight: 300; }
 
 .freeHTML-sizeguide-chart { position: relative; border-bottom: 1px solid #000; padding-bottom: 26px; margin-bottom: 26px; }
 .freeHTML-sizeguide-chart .freeHTML-sizeguide-inputInch { position: absolute; right: 30px; top: 0; z-index: 20; opacity: 0; cursor: pointer; width: 40px; height: 20px; }
@@ -770,9 +779,10 @@ display: inline-block;
 .o-lightbox .freeHTML-sizeguide-chart-sizes { margin-right: 20px; }
 
 /* CUSTOMER SERVICE SIZE GUIDE TABLES */
+.freeHTML-sizeguide-chart .freeHTML-sizeguide-chartTitle { margin-bottom: 6px; }
 .freeHTML-sizeguide-chart tr:nth-child(2n-1) td { background-color: #E9E9EB; }
 .freeHTML-sizeguide-chart th { padding-left: 0; padding-right: 0; }
-.freeHTML-sizeguide-chart th span { border-bottom: 1px solid #000; display: block; padding: 0 15px 10px 10px; }
+.freeHTML-sizeguide-chart th span { border-bottom: 1px solid #000; display: block; padding: 0 15px 10px 10px; max-height: 32px; height: 32px; }
 .freeHTML-sizeguide-chart th:first-child span { margin-left: 10px; padding-left: 0; }
 .freeHTML-sizeguide-chart th:last-child span { margin-right: 10px; padding-right: 0; }
 
@@ -784,9 +794,10 @@ display: inline-block;
 .freeHTML-sizeguide-chart-gridContainer { margin-bottom: 20px; }
 .freeHTML-sizeguide-chart-gridContainer::after { content: ""; display: table; clear: both; }
 
-.freeHTML-sizeguide-chart-titles { background-color: #fff; width: 105px; border-right: 1px solid #000; position: absolute; z-index: 10; }
+.freeHTML-sizeguide-chart-titles { width: 120px; position: absolute; border-right: 1px solid #000; background-color: #fff; z-index: 10; }
+.freeHTML-sizeguide-chart-titles td { white-space: nowrap; }
 
-.freeHTML-sizeguide-chart-sizes { margin-left: 105px; display: inline-block; }
+.freeHTML-sizeguide-chart-sizes { margin-left: 120px; display: inline-block; }
 
 .freeHTML-sizeguide-inputCm:checked ~ .freeHTML-is-cm { display: block; }
 .freeHTML-sizeguide-inputCm:checked ~ .freeHTML-sizeguide-titleCm { border-bottom: 1px solid #000; }
@@ -795,6 +806,12 @@ display: inline-block;
 .freeHTML-sizeguide-inputInch:checked ~ .freeHTML-is-cm { display: none; }
 .freeHTML-sizeguide-inputInch:checked ~ .freeHTML-sizeguide-titleInch { border-bottom: 1px solid #000; }
 .freeHTML-sizeguide-inputInch:checked ~ .freeHTML-is-inch { display: block; }
+
+.freeHTML-sizeguide-chart.sty2 .freeHTML-sizeguide-chart-titles, .freeHTML-sizeguide-chart.sty2 .freeHTML-sizeguide-chart-sizes { border-collapse: separate; border-spacing: 2px; }
+.freeHTML-sizeguide-chart.sty2 .freeHTML-sizeguide-chart-titles .space, .freeHTML-sizeguide-chart.sty2 .freeHTML-sizeguide-chart-sizes .space { height: 10px; background-color: #fff; }
+.freeHTML-sizeguide-chart.sty2 .freeHTML-sizeguide-chart-titles { border-right: 0; }
+.freeHTML-sizeguide-chart.sty2 .freeHTML-sizeguide-chart-titles td { padding: 0; min-width: 38px; height: 23px; text-align: center; background-color: #E9E9EB; }
+.freeHTML-sizeguide-chart.sty2 .freeHTML-sizeguide-chart-sizes td { padding-top: 0; padding-bottom: 0; height: 23px; background-color: #fff; }
 
 /* sizeguide e ============================================== */
 /* ========================================================== */
@@ -851,7 +868,7 @@ html.no-touchevents .m-input, html.no-touchevents .m-dropdown, .alternative-styl
 .m-radio-button.valign-top { align-items: flex-start; }
 .m-radio-button.valign-top.v3 .a-radio-button + .custom-radio { margin-top: 3px; }
 
-.m-input .a-input { font-size: 18px; }
+.m-input .a-input { font-size: 18px; background-color: transparent; }
 .m-input.v2 { min-height: auto; }
 .m-input.v2 .a-input { padding-right: 22px; padding-left: 22px; font-weight: 300; font-size: 13px; color: #000; background: transparent; border: 1px solid #ddd; }
 .m-input.v3 { min-height: auto; }
@@ -880,6 +897,7 @@ html.no-touchevents .m-input, html.no-touchevents .m-dropdown, .alternative-styl
 .m-input.has-error .a-label:last-of-type { font-family: "Arket Sans", "Noto Sans KR", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", "Sans-Serif"; font-size: 12px; }
 .m-input.has-error .input-guide-text { display: none; }
 
+.m-dropdown-filter .a-input { background-color: transparent; }
 .m-dropdown-filter.v2 ul { font-family: "Arket Sans", "Noto Sans KR", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", "Sans-Serif"; }
 .m-dropdown-filter.v2 ul li { font-size: 12px; }
 .m-dropdown-filter.v2.is-open .ul-container { width: 100%; border: 1px solid #ddd; }
@@ -946,6 +964,26 @@ html .m-dropdown.v2 select { border-bottom: 0; }
 
 html.no-touchevents .m-input, html.no-touchevents .m-dropdown, .alternative-style-option .m-input, .alternative-style-option .m-dropdown { margin-top: 0; margin-bottom: 0; }
 
+.o-newsletter-signup { margin-top: 90px; padding-bottom: 120px; }
+.o-newsletter-signup .a-heading-2.is-main-heading { margin-top: 0; padding-top: 0; }
+.o-newsletter-signup .a-paragraph { font-size: 12px; }
+.o-newsletter-signup .m-dropdown-filter { margin-top: 10px; }
+.o-newsletter-signup .m-dropdown-filter.global-country-dropdown .a-input { font-size: 18px; }
+.o-newsletter-signup .option-wrapper .m-radio-button { display: inline-block; margin-left: 40px; }
+.o-newsletter-signup .option-wrapper .m-radio-button:first-child { margin-left: 0; }
+.o-newsletter-signup .option-wrapper .label-text { width: auto; font-weight: 400; font-size: 16px; }
+.o-newsletter-signup .m-checkbox.v2 .a-label:not(.custom-box) { width: calc(100% - 38px); font-size: 12px; }
+@media (min-width: 401px) { .o-newsletter-signup { margin-top: 0; } }
+
+.o-newsletter-popup .m-dropdown-filter { margin-top: 10px; }
+.o-newsletter-popup .m-dropdown-filter.global-country-dropdown .a-input { font-size: 18px; }
+.o-newsletter-popup .option-wrapper { margin-bottom: 30px; }
+.o-newsletter-popup .m-checkbox.v2 .a-label:not(.custom-box) { width: calc(100% - 38px); font-size: 12px; }
+.o-newsletter-popup .a-button { margin-top: 20px; }
+
+.o-newsletter-subscription-confirmation .a-heading-2.is-main-heading { margin-top: 0; padding-top: 0; }
+.o-newsletter-subscription-confirmation .a-paragraph { padding-top: 110px; padding-bottom: 110px; font-size: 17px; text-align: center; }
+
 .a-paragraph, .is-richtext p { font-size: 13px; }
 
 @media (min-width: 769px) { .o-header.has-open-search .category-group { padding-top: 0; } }
@@ -967,6 +1005,10 @@ html.no-touchevents .m-input, html.no-touchevents .m-dropdown, .alternative-styl
 @font-face { font-family: 'Noto Sans KR'; src: url("../fonts/NotoSansKR-Black.woff2") format("woff2"), url("../fonts/NotoSansKR-Black.woff") format("woff"); font-weight: 900; font-style: normal; }
 /* font : Noto Sans KR e ==================================== */
 /* ---------------------------------------------------------- */
+/* ---------------------------------------------------------- */
+/* font : washing-icons(세탁관련 아이콘) s ===================== */
+@font-face { font-family: 'washing-icons'; src: local("../fonts/washing-icons"); src: url("../fonts/washing-icons.eof") format("eof"), url("../fonts/washing-icons.woff") format("woff"); font-weight: 100; font-style: normal; }
+/* font : washing-icons e==================================== */
 /* ========================================================== */
 /*                                                            */
 /* file		: common                                   	      */
@@ -1116,9 +1158,6 @@ html .list-option .m-dropdown-label-ex + .m-dropdown { margin-left: 0; }
 .cart-product-option-change .content .size { border-top: 0; }
 .cart-product-option-change .content .size .a-size-swatch { margin-top: 0; }
 
-.o-lightbox.alert .lightbox-wrapper { padding: 45px 20px 30px; max-width: 440px; width: 90%; height: auto; }
-.o-lightbox.alert .text-box { font-size: 14px; }
-
 .button-container { clear: both; }
 .button-container .a-button { padding-right: 0; padding-left: 0; }
 .button-container.col-2 { display: flex; justify-content: space-between; flex-wrap: nowrap; }
@@ -1222,6 +1261,28 @@ html .list-option .m-dropdown-label-ex + .m-dropdown { margin-left: 0; }
 
 .m-breadcrumb li:nth-child(n+2) { font-size: 12px; font-family: "Arket Sans SC", "Noto Sans KR", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", "Sans-Serif"; }
 
+.error-content .a-heading-1 { margin: 0; padding-top: 100px; font-size: 20px; line-height: 1.4em; text-align: center; padding-bottom: 13px; }
+.error-content .content { max-width: 650px; margin-right: auto; margin-left: auto; }
+.error-content p { margin-top: 0; margin-bottom: 0; }
+.error-content .content .text-bx { padding-right: 20px; padding-left: 20px; text-align: center; }
+.error-content .content .text-bx .main-msg { padding-top: 70px; padding-bottom: 50px; }
+.error-content .content .text-bx .t1 { font-weight: 300; font-size: 17px; line-height: 26px; color: #000; }
+.error-content .content .text-bx .t2 { font-weight: 300; font-size: 13px; line-height: 19px; color: #000; }
+.error-content .content .text-bx .t2 + .contact-us-p { padding-top: 50px; }
+.error-content .content .text-bx t3 { font-weight: 400; font-size: 13px; line-height: 19px; color: #000; }
+.error-content .content .text-bx + .button-container { margin-bottom: 50px; }
+.error-content .content .contact-us-p { padding-bottom: 20px; }
+.error-content .content .button-container { margin-top: 70px; }
+@media (max-width: 400px) { .error-content .content .button-container.col-2.w100 { flex-wrap: wrap; }
+  .error-content .content .button-container.col-2.w100 .a-button { flex-basis: 100%; margin-bottom: 10px; } }
+.error-content .content .a-link { border-bottom: 1px solid #000; }
+@media (min-width: 401px) { .error-content .a-heading-1 { padding-top: 120px; }
+  .error-content .content .text-bx .main-msg { padding-top: 90px; padding-bottom: 70px; }
+  .error-content .content .text-bx .t1 { font-size: 20px; }
+  .error-content .content .contact-us-p { padding-bottom: 0; } }
+
+.err-email-unsubscribe .content .button-container { margin-top: 0; }
+
 /* common e ================================================= */
 /* ---------------------------------------------------------- */
 /* ========================================================== */
@@ -1324,6 +1385,15 @@ html .list-option .m-dropdown-label-ex + .m-dropdown { margin-left: 0; }
 /* ========================================================== */
 /* ---------------------------------------------------------- */
 /* layer-popup s ============================================ */
+.o-lightbox.alert .lightbox-wrapper { padding: 45px 20px 30px; max-width: 440px; width: 90%; height: auto; }
+.o-lightbox.alert .text-box { font-size: 14px; }
+.o-lightbox.is-main-popup .lightbox-wrapper { padding: 0; max-width: 380px; }
+.o-lightbox.is-main-popup .lightbox-wrapper .content { padding-top: 0; padding-bottom: 0; }
+.o-lightbox.is-main-popup .lightbox-wrapper .m-button-icon { top: initial; right: 0; bottom: 0; padding-right: 15px; padding-bottom: 16px; }
+.o-lightbox.is-main-popup .lightbox-wrapper .m-button-icon::before { content: '닫기'; font-family: "Arket Sans", "Noto Sans KR", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", "Sans-Serif"; font-size: 14px; display: inline-block; padding-right: 5px; line-height: 24px; vertical-align: top; }
+.o-lightbox .option-bx { padding: 12px 15px 16px; text-align: left; }
+.o-lightbox .option-bx .a-link { font-size: 14px; color: #000; }
+
 .lightbox-content-dft { word-break: keep-all; }
 .lightbox-content-dft .m-headline.is-main-headline { margin-top: 0; }
 .lightbox-content-dft .m-headline.is-main-headline [class^=a-heading-] { border-bottom-width: 1px; }
@@ -1618,9 +1688,7 @@ html.no-touchevents .m-input.has-error .a-input, .alternative-style-option .m-in
 /* product s ================================================ */
 .a-link-pdp-essential { font-size: 13px; color: #000; font-weight: 400; }
 
-.a-link.plp-link-track .price .m-product-price span.is-deprecated { padding-right: 12px; }
-.a-link.plp-link-track .price .m-product-price span.is-deprecated::before { position: absolute; top: 0; right: 0; content: '원'; display: inline-block; font-family: "Noto Sans KR"; font-size: inherit; }
-.a-link.plp-link-track .price .m-product-price span:not(.is-deprecated)::after { content: '원'; font-family: "Noto Sans KR"; font-size: inherit; }
+.a-link.plp-link-track .price .m-product-price span::after { content: '원'; font-family: "Noto Sans KR"; font-size: inherit; }
 
 .cart-item-info .total-section .total::after { content: '원'; font-family: "Noto Sans KR"; font-size: inherit; }
 
@@ -1642,10 +1710,16 @@ html.no-touchevents .m-input.has-error .a-input, .alternative-style-option .m-in
 .o-product-details-selection .product-name-price-wrapper .is-deprecated::before { order: 2; content: '원'; font-family: "Noto Sans KR"; font-size: 12px; }
 .o-product-details-selection .add-to-cart { margin-bottom: 0; border-top: 0; }
 
+.o-product-attributes .attributes-top .o-accordion { padding-right: 0; }
 .o-product-attributes .attributes-top .o-accordion.align-left .accordion-header .a-link { display: inline-block; width: 100%; }
 .o-product-attributes .attributes-top .o-accordion.align-left .accordion-header .a-link::after { top: 2px; right: 10px; }
-.o-product-attributes .attributes-top .o-accordion.align-left .accordion-header .pdp-value { padding-left: 0; }
 .o-product-attributes .attributes-top .pdp-label, .o-product-attributes .attributes-top .pdp-value, .o-product-attributes .attributes-top .a-paragraph { font-family: "Arket Sans", "Noto Sans KR", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", "Sans-Serif"; font-size: 12px; }
+.o-product-attributes .attributes-top .made-in-el { margin-top: 10px; }
+.o-product-attributes .attributes-top .made-in-el .accordion-header .pdp-value { font-family: inherit; }
+.o-product-attributes .attributes-top .made-in-el .accordion-content { padding-top: 15px; }
+.o-product-attributes .attributes-top .care-el .accordion-content .wash-wrap { font-family: 'washing-icons'; padding: 15px; }
+.o-product-attributes .attributes-top .care-el .accordion-content .wash-wrap li { font-size: 28px; padding-right: 20px; }
+.o-product-attributes .attributes-top .care-el .accordion-content .wash-wrap li:last-child { padding-right: 0; }
 .o-product-attributes .description-container ul { margin-top: 10px; }
 
 /* product e ================================================ */
@@ -1672,6 +1746,7 @@ html.no-touchevents .m-input.has-error .a-input, .alternative-style-option .m-in
 .product-params { display: flex; }
 .product-params > * { font-family: "Arket Sans SC", "Noto Sans KR", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", "Sans-Serif"; font-size: 13px; line-height: 1.5em; }
 .product-params .product-size:after { content: ","; display: inline-block; margin-right: 4px; }
+.product-params .product-color { font-size: 11px; line-height: 2em; }
 .product-params .product-qty { order: 3; }
 .product-params .product-qty::before { content: '\00D7'; display: inline-block; margin-left: 1px; }
 
@@ -1680,9 +1755,6 @@ html.no-touchevents .m-input.has-error .a-input, .alternative-style-option .m-in
 .o-cart .order-summary-section .o-order-summary .total::after { font-size: 28px; }
 .o-cart .o-product-cofs .m-product-markers .marker-text { font-family: "Arket Sans SC", "Noto Sans KR", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", "Sans-Serif"; }
 .o-cart .o-cart-item .cart-wrapper .cart-item-info .size-section .low-stock { font-family: "Arket Sans SC", "Noto Sans KR", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", "Sans-Serif"; /* 210713 기획 > 퍼블수정 : 장바구니 > 품절 말풍선 */ left: calc(50% - 46px); }
-.o-cart .o-cart-item .cart-wrapper .cart-item-info .price-section span::before, .o-cart .o-cart-item .cart-wrapper .cart-item-info .price-section span:after { font-size: 10px; }
-.o-cart .o-cart-item .cart-wrapper .cart-item-info .price-section .is-deprecated { font-size: 11px; padding-right: 12px; }
-.o-cart .o-cart-item .cart-wrapper .cart-item-info .price-section .is-deprecated::before { position: absolute; top: 0; right: 0; content: '원'; display: inline-block; font-family: "Noto Sans KR"; font-size: inherit; }
 .o-cart.is-empty .cart-items span.cart-is-empty-label { padding-top: 55px; padding-bottom: 24px; font-size: 15px; color: #000; }
 .o-cart.is-empty .cart-items .btn-keep-shopping { margin-bottom: 55px; }
 @media (min-width: 401px) { .o-cart.is-empty .cart-items span.cart-is-empty-label { padding-top: 90px; }
@@ -1823,6 +1895,7 @@ html.no-touchevents .m-input.has-error .a-input, .alternative-style-option .m-in
 .rd-toggle-pay-account-transfer .m-input, .rd-toggle-pay-deposit .m-input { max-width: 250px; }
 
 .rd-toggle-pay-deposit-private .line-bx .desc-text { margin-bottom: 10px; }
+.rd-toggle-pay-deposit-private .line-bx .flex-bx { margin-top: 0; }
 
 .monthly-plan-bx { align-items: center; }
 .monthly-plan-bx .m-dropdown { max-width: 200px; width: 70%; }
@@ -2032,7 +2105,7 @@ span.m-hazmat-v2.warning::before { background-image: url("../images/icon/icon-wa
 .product-list-item .m-order-summary-row .product-info .product-item-info { width: calc(100% - 20px); }
 .product-list-item .m-order-summary-row .product-info .product-item-info .product-details .product-name { padding-left: 0; white-space: inherit; text-overflow: initial; }
 .product-list-item .m-order-summary-row .product-param-info .product-params .product-size { font-size: 14px; line-height: initial; }
-.product-list-item .m-order-summary-row .product-param-info .product-params .product-color { font-family: "Arket Sans SC", "Noto Sans KR", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", "Sans-Serif"; font-size: 11px; line-height: initial; }
+.product-list-item .m-order-summary-row .product-param-info .product-params .product-color { font-family: "Arket Sans SC", "Noto Sans KR", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", "Sans-Serif"; font-size: 11px; line-height: 2em; padding-right: 3px; }
 .product-list-item .m-order-summary-row .product-param-info .product-params .product-quantity { font-family: "Arket Sans SC", "Noto Sans KR", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", "Sans-Serif"; order: 3; font-size: 13px; display: inline-block; }
 .product-list-item .m-order-summary-row .product-param-info .product-params .product-quantity::before { content: '\00D7'; display: inline-block; margin-left: 1px; }
 .product-list-item .m-order-summary-row .product-param-btns { padding-top: 10px; width: 100%; order: 3; font-size: 12px; }

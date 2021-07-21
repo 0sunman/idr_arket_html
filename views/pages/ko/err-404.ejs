@@ -1,10 +1,19 @@
 <div data-component="OPageContent" class="o-page-content">
-    <div class="o-404-error">
+    <!-- error-content -->
+    <div class="error-content err-404">
         <div class="content">
-            <h1 class="a-heading-1 is-main-heading"><span class="heading-cap">404</span>Missing page</h1>
-            <p class="a-paragraph">The page you are looking for seems to be missing. Use our navigation above or
-                <a class="a-link" href="/" target="_self">
-                    click here to</a>&nbsp;return to home.</p>
+            <h1 class="a-heading-1 is-main-heading"></h1>
+            <!-- text-bx -->
+            <div class="text-bx">
+                <p class="t1 main-msg">해당하는 매장이 없습니다. 이용에 불편을 드려 죄송합니다.</p>
+                <%- include ("../../common/md-error-contact-us.ejs") %>
+            </div>
+            <!-- //text-bx -->
+            <div class="button-container col-2 w100">
+                <button type="button" class="a-button is-outlined">이전 화면</button>
+                <button type="submit" class="a-button">메인으로 이동하기</button>
+            </div>
         </div>
     </div>
+    <!-- //error-content -->
 </div>

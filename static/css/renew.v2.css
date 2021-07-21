@@ -7,12 +7,12 @@
 /* ---------------------------------------------------------- */
 /* common s ================================================= */
 /* 로그인, 회원가입 icon-img */
-.o-sign-in-wrapper .icon.naver, .o-registration-form .icon.naver { background-image: url(../images/icon/icon-naver.png); }
-.o-sign-in-wrapper .icon.kakao, .o-registration-form .icon.kakao { background-image: url(../images/icon/icon-kakao.png); }
-.o-sign-in-wrapper .icon.facebook, .o-registration-form .icon.facebook { background-image: url(../images/icon/icon-facebook.png); }
-.o-sign-in-wrapper .icon.google, .o-registration-form .icon.google { background-image: url(../images/icon/icon-google.png); }
-.o-sign-in-wrapper .icon.phone, .o-registration-form .icon.phone { background-image: url(../images/icon/icon-phone-01.png); }
-.o-sign-in-wrapper .icon.mail, .o-registration-form .icon.mail { background-image: url(../images/icon/icon-mail-01.png); }
+.o-sign-in-wrapper .icon.naver, .o-sign-in .icon.naver, .o-registration-form .icon.naver { background-image: url(../images/icon/icon-naver.png); }
+.o-sign-in-wrapper .icon.kakao, .o-sign-in .icon.kakao, .o-registration-form .icon.kakao { background-image: url(../images/icon/icon-kakao.png); }
+.o-sign-in-wrapper .icon.facebook, .o-sign-in .icon.facebook, .o-registration-form .icon.facebook { background-image: url(../images/icon/icon-facebook.png); }
+.o-sign-in-wrapper .icon.google, .o-sign-in .icon.google, .o-registration-form .icon.google { background-image: url(../images/icon/icon-google.png); }
+.o-sign-in-wrapper .icon.phone, .o-sign-in .icon.phone, .o-registration-form .icon.phone { background-image: url(../images/icon/icon-phone-01.png); }
+.o-sign-in-wrapper .icon.mail, .o-sign-in .icon.mail, .o-registration-form .icon.mail { background-image: url(../images/icon/icon-mail-01.png); }
 
 /* login > input 공통 사항 */
 .o-sign-in .m-input, .o-registration .m-input, .o-forgot-password .m-input, .n-find-idpw .m-input { margin-top: 8px; }
@@ -89,33 +89,37 @@
 /* ---------------------------------------------------------- */
 /* ---------------------------------------------------------- */
 /* login s ================================================== */
-.o-sign-in-wrapper { /* 간편가입-sns-btn */ /* 비회원 주문조회 버튼 */ /* 로그인 - 비회원 주문 */ }
-.o-sign-in-wrapper .social-login-container { width: 100%; margin: 0 auto; }
-@media (min-width: 769px) { .o-sign-in-wrapper .social-login-container { width: 80%; } }
-.o-sign-in-wrapper .social-login-container .sns-list { display: block; font-size: 0; padding: 60px 0 20px; }
-@media (min-width: 769px) { .o-sign-in-wrapper .social-login-container .sns-list { padding: 85px 0 20px; } }
-.o-sign-in-wrapper .social-login-container .sns-list ul { display: flex; flex-wrap: wrap; justify-content: space-between; margin: 0; border: 0; }
-@media (min-width: 769px) { .o-sign-in-wrapper .social-login-container .sns-list ul { flex-wrap: nowrap; } }
-.o-sign-in-wrapper .social-login-container .sns-list li { width: 50%; height: 35px; margin: 3px 0px; padding: 0px 3px; border: 0; text-align: left; }
-@media (min-width: 769px) { .o-sign-in-wrapper .social-login-container .sns-list li { width: 100%; } }
-.o-sign-in-wrapper .social-login-container .sns-list a { position: relative; display: block; width: 100%; height: 100%; text-align: left; padding: 5px; padding-left: 10px; border: 1px solid #b2b2b2; cursor: pointer; }
-.o-sign-in-wrapper .social-login-container .sns-list a .icontab { position: absolute; float: left; }
-.o-sign-in-wrapper .social-login-container .sns-list a .icon { display: inline-block; width: 24px; height: 24px; background-size: contain; }
-.o-sign-in-wrapper .social-login-container .sns-list a .captiontab { text-align: left; padding-left: 35%; width: 100%; float: left; line-height: 25px; font-weight: 300; font-size: 12px; color: #000; }
-.o-sign-in-wrapper .social-login-container .sns-list a:hover div { opacity: 0.6; }
-.o-sign-in-wrapper .social-login-container .info { font-weight: 300; font-size: 12px; color: #000; }
-@media (min-width: 769px) { .o-sign-in-wrapper .btn-non-member { width: 80%; margin: 0 auto; } }
-.o-sign-in-wrapper .btn-non-member a { font-weight: 300; font-size: 12px; color: #000; }
-@media (min-width: 631px) { .o-sign-in-wrapper .m-tablist.tabs-1-3 li { width: calc(33.3% - 9px); max-width: calc(33.3% - 9px); margin: 0 10px 0 0; }
-  .o-sign-in-wrapper .m-tablist.tabs-1-3 li:last-child { margin-right: 0; } }
-.o-sign-in-wrapper .m-tablist.tabs-1-3 li:first-child .a-link::before { content: "\e916"; }
-.o-sign-in-wrapper .m-tablist.tabs-1-3 li:nth-child(2) .a-link::before { content: "\e904"; }
-.o-sign-in-wrapper .m-tablist.tabs-1-3 li:last-child .a-link::before { content: url(../images/icon/icon-nomem-gray.png); }
-@media (min-width: 631px) { .o-sign-in-wrapper .m-tablist.tabs-1-3 li:last-child .a-link::before { top: 44px; } }
-.o-sign-in-wrapper .m-tablist.tabs-1-3 li:last-child:hover .a-link::before { content: url(../images/icon/icon-nomem-black.png); opacity: 0.6; }
-@media (min-width: 631px) { .o-sign-in-wrapper .m-tablist.tabs-1-3 li .a-link { padding: 78px 0 34px 0; max-height: 140px; } }
-.o-sign-in-wrapper .m-tablist.tabs-1-3 li .a-link::before { font-family: "Arket Icons"; font-weight: 400; }
-@media (min-width: 631px) { .o-sign-in-wrapper .m-tablist.tabs-1-3 li .a-link::before { top: 48px; } }
+/* 간편가입-sns-btn */
+.social-login-container { width: 100%; margin: 0 auto; }
+@media (min-width: 769px) { .social-login-container { width: 80%; } }
+.social-login-container .sns-list { display: block; font-size: 0; padding: 60px 0 20px; }
+@media (min-width: 769px) { .social-login-container .sns-list { padding: 85px 0 20px; } }
+.social-login-container .sns-list ul { display: flex; flex-wrap: wrap; justify-content: space-between; margin: 0; border: 0; }
+@media (min-width: 769px) { .social-login-container .sns-list ul { flex-wrap: nowrap; } }
+.social-login-container .sns-list li { width: 50%; height: 35px; margin: 3px 0px; padding: 0px 3px; border: 0; text-align: left; }
+@media (min-width: 769px) { .social-login-container .sns-list li { width: 100%; } }
+.social-login-container .sns-list a { position: relative; display: block; width: 100%; height: 100%; text-align: left; padding: 5px; padding-left: 10px; border: 1px solid #b2b2b2; cursor: pointer; }
+.social-login-container .sns-list a .icontab { position: absolute; float: left; }
+.social-login-container .sns-list a .icon { display: inline-block; width: 24px; height: 24px; background-size: contain; }
+.social-login-container .sns-list a .captiontab { text-align: left; padding-left: 35%; width: 100%; float: left; line-height: 25px; font-weight: 300; font-size: 12px; color: #000; }
+.social-login-container .sns-list a:hover div { opacity: 0.6; }
+.social-login-container .info { font-weight: 300; font-size: 12px; color: #000; }
+
+/* 비회원 주문조회 버튼 */
+@media (min-width: 769px) { .btn-non-member { width: 80%; margin: 0 auto; } }
+.btn-non-member a { font-weight: 300; font-size: 12px; color: #000; }
+
+/* 로그인 - 비회원 주문 */
+@media (min-width: 631px) { .m-tablist.tabs-1-3 li { width: calc(33.3% - 9px); max-width: calc(33.3% - 9px); margin: 0 10px 0 0; }
+  .m-tablist.tabs-1-3 li:last-child { margin-right: 0; } }
+.m-tablist.tabs-1-3 li:first-child .a-link::before { content: "\e916"; }
+.m-tablist.tabs-1-3 li:nth-child(2) .a-link::before { content: "\e904"; }
+.m-tablist.tabs-1-3 li:last-child .a-link::before { content: url(../images/icon/icon-nomem-black.png); opacity: 0.3; }
+@media (min-width: 631px) { .m-tablist.tabs-1-3 li:last-child .a-link::before { top: 44px; } }
+.m-tablist.tabs-1-3 li:last-child:hover .a-link::before { opacity: 0.7; }
+@media (min-width: 631px) { .m-tablist.tabs-1-3 li .a-link { padding: 78px 0 34px 0; max-height: 140px; } }
+.m-tablist.tabs-1-3 li .a-link::before { font-family: "Arket Icons"; font-weight: 400; }
+@media (min-width: 631px) { .m-tablist.tabs-1-3 li .a-link::before { top: 48px; } }
 
 /* login e ================================================== */
 /* ---------------------------------------------------------- */
@@ -299,7 +303,6 @@ html.no-touchevents .n-find-idpw .n-wrap.resting-guide .info { padding-bottom: 1
 /* ---------------------------------------------------------- */
 /* ---------------------------------------------------------- */
 /* my-page-popup s ========================================== */
-/* 팝업 공통 */
 .lp-social-connect .content, .lp-mbr-leave-confirm .content { text-align: left; padding-top: 0; padding-bottom: 0; }
 
 /* 개인계정 연결관리 팝업 */

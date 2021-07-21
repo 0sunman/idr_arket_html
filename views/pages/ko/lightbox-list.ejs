@@ -71,6 +71,21 @@
             </button>
         </li>
         <li>
+            <button class="a-button is-outlined open-lightbox" data-template="lp-size-guide-type1" data-classes="is-large">
+                <span>사이즈가이드 T1</span>
+            </button>
+        </li>
+        <li>
+            <button class="a-button is-outlined open-lightbox" data-template="lp-size-guide-type2-f" data-classes="is-large">
+                <span>사이즈가이드 T2-여성</span>
+            </button>
+        </li>
+        <li>
+            <button class="a-button is-outlined open-lightbox" data-template="lp-size-guide-type2-m" data-classes="is-large">
+                <span>사이즈가이드 T2-남성</span>
+            </button>
+        </li>
+        <li>
             <button class="a-button is-outlined open-lightbox" data-template="lp-prd-essential-info">
                 <span>상품 필수 표시 정보</span>
             </button>
@@ -336,6 +351,40 @@
             </button>
         </li>
     </ul>
+
+    <h3 class="lightbox-list-tit">기타</h3>
+    <ul class="lightbox-list-wrap">
+        <li>
+            <button class="a-button is-outlined open-lightbox" data-template="country-selector" data-classes="is-country-selector is-multi-language">
+                <span>배송국가</span>
+            </button>
+        </li>
+        <li>
+            <button class="a-button is-outlined open-lightbox" data-template="lp-main-popup" data-classes="is-main-popup">
+                <span>메인팝업</span>
+            </button>
+        </li>
+        <li>
+            <button class="a-button is-outlined open-lightbox" data-template="lp-mail-unsubscription-complete" data-classes="alert">
+                <span>이메일수신거부완료</span>
+            </button>
+        </li>
+        <li>
+            <button class="a-button is-outlined open-lightbox" data-template="lp-service-join-confirm" data-classes="is-large">
+                <span>서비스가입사실확인</span>
+            </button>
+        </li>
+        <li>
+            <button class="a-button is-outlined open-newsletter-ntn-lightbox">
+                <span>뉴스레터신청</span>
+            </button>
+        </li>
+        <li>
+            <button class="a-button is-outlined open-lightbox" data-template="lp-newsletter-apply-complete" data-classes="alert">
+                <span>뉴스레터 신청완료</span>
+            </button>
+        </li>
+    </ul>
 </div>
 
 <!-- handlebars-template -->
@@ -545,6 +594,15 @@
 <%# 사이즈가이드 %>
 <%- include ("../../handlebars/hndl-lp-size-guide.ejs") %>
 
+<%# 사이즈가이드 type1 %>
+<%- include ("../../handlebars/hndl-lp-size-guide-type1.ejs") %>
+
+<%# 사이즈가이드 type2 여성 %>
+<%- include ("../../handlebars/hndl-lp-size-guide-type2-f.ejs") %>
+
+<%# 사이즈가이드 type2 남성 %>
+<%- include ("../../handlebars/hndl-lp-size-guide-type2-m.ejs") %>
+
 <%# 상품필수정보 %>
 <%- include ("../../handlebars/hndl-lp-prd-essential-info.ejs") %>
 
@@ -661,5 +719,23 @@
 
 <%# 배송추적 %>
 <%- include ("../../handlebars/hndl-lp-delivery-trace.ejs") %>
+
+<%# 배송국가 %>
+<%- include ("../../handlebars/hndl-country-selector.ejs") %>
+
+<%# 메인팝업 %>
+<%- include ("../../handlebars/hndl-lp-main-popup.ejs") %>
+
+<%# 이메일수신거부완료 %>
+<%- include ("../../handlebars/hndl-lp-mail-unsubscription-complete.ejs") %>
+
+<%# 서비스가입사실확인 %>
+<%- include ("../../handlebars/hndl-lp-service-join-confirm.ejs") %>
+
+<%# 뉴스레터신청팝업 %>
+<%- include ("../../handlebars/hndl-lp-newsletter-apply.ejs") %>
+
+<%# 뉴스레터신청완료 %>
+<%- include ("../../handlebars/hndl-lp-newsletter-apply-complete.ejs") %>
 
 <!-- //handlebars-template -->
