@@ -1,3 +1,98 @@
-<div data-component="OPageContent" class="o-page-content" data-component-id="">
-    empty page
+<div data-component="OPageContent" class="o-page-content care-guide-content">
+    <div class="coremetricsPageId" hidden="">FeautureArticles_CareDenim_3</div>
+    <div class="coremetricsPageType" hidden="">FeautureArticles_CareDenim_4</div>
+    <div class="coremetricsCategoryId" hidden="">FeautureArticles_CareDenim_2</div>
+    <div class="coremetricsCategoryPath" hidden="">FeautureArticles_CareDenim_1</div>
+
+    <h1 class="a-heading-1 seo-heading">
+        <span>Denim</span>
+    </h1>
+
+    <%# md-o-local-navigation-care-guide %>
+    <%- include ("../../../../common/md-o-local-navigation-care-guide.ejs") %>
+
+    <!-- info-section -->
+    <div class="o-width wc-75">
+        <div class="o-layout">
+            <div class="layout-row-1">
+            </div>
+            <div class="layout-5">
+
+                <!-- text-box -->
+                <div class="layout-row-2">
+                    <div class="textcomponent parbase section">
+                        <div class="o-text-field is-wide is-large">
+                            <div class="text-container">
+                                <p class="a-paragraph is-richtext"></p>
+                                <p class="a-paragraph"><b>pre-washed denim</b>&nbsp; Wash jeans inside out, either by hand or in the washing machine in cold water and on a gentle cycle. Take them out of the machine as soon as possible after the programme has ended to avoid creasing. Hang to dry.</p>
+                                <p class="a-paragraph"><b>raw denim&nbsp;&nbsp;</b>One of the distinctions of raw denim is the high-contrast wear patterns that appear around zones like your knees, lap and pockets. They make raw denim very personal and are unique to your body. If you want these patterns to develop you will need to wear your jeans for a period before their first wash and wash them infrequently after that. If you prefer less contrast and an even fade throughout the fabric, wash your jeans more often.</p>
+                                <p class="a-paragraph">Turn the jeans inside out and hand wash in cold water with a mild detergent to retain as much indigo as possible. You can also wash the jeans in a machine on a gentle cycle but be sure to wash them alone or with similar colours, as the indigo dye will bleed. Do not tumble dry. Hang to dry – and put an old towel under the jeans to catch any dye that drips.</p>
+                                <p class="a-paragraph">Be careful when wearing new raw denim as the dye may transfer to light-coloured surfaces, such as shirts, underwear, canvas trainers and furniture.</p>
+                                <p class="a-paragraph"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- // text-box -->
+
+                <!-- img-box -->
+                <div class="layout-row-3">
+                    <div class="image-slideshow parbase section">
+                        <div class="o-image-listing cols-1">
+                            <div class="image-container">
+                                <div class="trackImage col-item">
+                                    <img class="a-image" src="<%= pageInfo.root %>/images/care/ARKET_19S9B2_care_2_vn.jpg">
+                                    <span class="promoIndex" hidden="">0</span>
+                                </div>
+                                <%# md-o-img-promotion-data-care %>
+                                <%- include ("../../../../common/md-o-img-promotion-data-care.ejs") %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- // img-box -->
+
+            </div>
+        </div>
+    </div>
+    <!-- // info-section -->
+
+    <!-- product-listing-section -->
+    <div class="o-width wc-100">
+        <div class="parbase sdp-component product-listing align-below">
+
+            <%# md-o-product-filters %>
+            <%#- include ("../../../../common/md-o-product-filters.ejs") %>
+
+            <!-- o-product-listing -->
+            <div id="lazyLoadSpan">
+                <div id="reloadProducts" class="o-product-listing has-upper-body-images fixed-columns-5 u-align-center">
+                    <%# md-o-product-listing-search-list %>
+                    <%- include ("../../../../common/md-o-product-listing-search-list.ejs") %>
+                </div>
+            </div>
+
+            <span id="lazyDiv">
+                <%# md-o-lazy-load %>
+                <%- include ("../../../../common/md-o-lazy-load.ejs") %>
+            </span>
+            <!-- //o-product-listing -->
+
+        </div>
+    </div>
+    <!-- // product-listing-section -->
+
 </div>
+
+<!-- tip : when develop this script must be delete -->
+<script type="text/javascript">
+    (function() {
+        'use strict';
+        //탭활성화
+        let activeTab = document.querySelectorAll('.o-local-navigation > ul > li');
+        if(activeTab){
+            activeTab[8].classList.add('is-selected');
+        }
+    })();
+</script>
+<!-- //tip -->

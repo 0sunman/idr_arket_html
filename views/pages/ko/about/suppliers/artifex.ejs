@@ -1,3 +1,62 @@
 <div data-component="OPageContent" class="o-page-content">
-    empty page
+
+    <div class="o-width title--medium about-icon wc-50">
+        <div class="m-headline with-icon u-align-center is-main-headline full-width">
+            <img class="a-image" src="<%= pageInfo.root %>/images/about/ARKET_9_GRID_Suppliers.png">
+            <h2 class="a-heading-2 ">
+                <span class="heading-cap">Suppliers</span>
+                <span class="heading-value"></span>
+            </h2>
+        </div>
+        <div class="headings" style="text-align:center;">
+            <div class="m-headline">
+                <h2 class="a-heading-2 has-margin">ARTIFEX</h2>
+            </div>
+        </div>
+    </div>
+    <div class="o-width about wc-50">
+        <div class="o-text-field two-columns ">
+            <div class="headings" style="text-align:left;">
+                <div class="m-headline">
+                    <h2 class="a-heading-2 has-margin">
+                        <span class="heading-cap">Suppliers</span>Artifex
+                        is a Romanian apparel manufacturer known for qualitative garments and its use of latest
+                        equipment.
+                    </h2>
+                </div>
+            </div>
+            <div class="text-container">
+                <p class="a-paragraph is-richtext">The fully renovated factory was founded in
+                    2005 after a Swiss couture brand merged with a local Romanian factory. Based in Focsani – on the
+                    shores of the Milcov River – Artifex’s home city has a rich textile tradition. Employing about 1,400
+                    professionals, Artifex produces women’s jackets, top skirts, pants and dresses for ARKET, as well as
+                    children’s blazers and trousers.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="o-width wc-100">
+        <style type="text/css">
+            html.no-touchevents .o-product .image:hover .a-image.default-image {
+                display: inline-block !important;
+            }
+        </style>
+
+        <div class="parbase sdp-component product-listing align-below">
+            <!-- o-product-listing -->
+            <div id="lazyLoadSpan">
+                <div id="reloadProducts" class="o-product-listing fixed-columns-5 center-aligned u-align-center">
+                    <%# md-o-product-listing-product-list %>
+                    <%- include ("../../../../common/md-o-product-listing-search-list.ejs") %>
+                </div>
+            </div>
+
+            <span id="lazyDiv">
+                <%# md-o-lazy-load %>
+                <%- include ("../../../../common/md-o-lazy-load.ejs") %>
+            </span>
+            <!-- //o-product-listing -->
+        </div>
+    </div>
+
 </div>

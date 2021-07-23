@@ -1,3 +1,108 @@
-<div data-component="OPageContent" class="o-page-content" data-component-id="">
-    empty page
+<div data-component="OPageContent" class="o-page-content care-guide-content"">
+    <div class="coremetricsPageId" hidden="">FeautureArticles_CareSilk_3</div>
+    <div class="coremetricsPageType" hidden="">FeautureArticles_CareSilk_4</div>
+    <div class="coremetricsCategoryId" hidden="">FeautureArticles_CareSilk_2</div>
+    <div class="coremetricsCategoryPath" hidden="">FeautureArticles_CareSilk_1</div>
+
+    <h1 class="a-heading-1 seo-heading">
+        <span>Silk</span>
+    </h1>
+
+    <%# md-o-local-navigation-care-guide %>
+    <%- include ("../../../../common/md-o-local-navigation-care-guide.ejs") %>
+
+    <!-- info-section -->
+    <div class="o-width wc-75">
+        <div class="o-layout">
+            <div class="layout-row-1">
+            </div>
+            <div class="layout-5">
+
+                <!-- text-box -->
+                <div class="layout-row-2">
+                    <div class="textcomponent parbase section">
+                        <div class="o-text-field is-wide is-large">
+                            <div class="headings">
+                                <div class="m-headline">
+                                    <h2 class="a-heading-2 has-margin">
+                                        <span class="heading-cap">care</span>Silk
+                                    </h2>
+                                </div>
+                            </div>
+                            <div class="text-container">
+                                <p class="a-paragraph is-richtext">
+                                    Silk is a naturally delicate fabric and should be treated as such.
+                                    Always check the instructions on the care label first – sometimes dry
+                                    cleaning is the only recommended option. If the garment is washable,
+                                    wash it by hand or by machine in a mesh washing bag. Wash in cold water
+                                    with a detergent for delicates, and avoid stretching the garment while
+                                    wet. Avoid tumble drying silk – it risks damaging the fabric.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- // text-box -->
+
+                <!-- img-box -->
+                <div class="layout-row-3">
+                    <div class="image-slideshow parbase section">
+                        <div class="o-image-listing cols-1">
+                            <div class="image-container">
+                                <div class="trackImage col-item">
+                                    <img class="a-image" src="<%= pageInfo.root %>/images/care/ARKET_19S9B2_care_1_vn.jpg" alt="Care - linen">
+                                    <span class="promoIndex" hidden="">0</span>
+                                </div>
+                                <%# md-o-img-promotion-data-care %>
+                                <%- include ("../../../../common/md-o-img-promotion-data-care.ejs") %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- // img-box -->
+
+            </div>
+        </div>
+    </div>
+    <!-- // info-section -->
+
+    <!-- product-listing-section -->
+    <div class="o-width wc-100">
+        <div class="parbase sdp-component product-listing align-below">
+
+            <%# md-o-product-filters %>
+            <%#- include ("../../../../common/md-o-product-filters.ejs") %>
+
+            <!-- o-product-listing -->
+            <div id="lazyLoadSpan">
+                <div id="reloadProducts" class="o-product-listing has-upper-body-images fixed-columns-5 u-align-center">
+                    <%# md-o-product-listing-search-list %>
+                    <%- include ("../../../../common/md-o-product-listing-search-list.ejs") %>
+                </div>
+            </div>
+
+            <span id="lazyDiv">
+                <%# md-o-lazy-load %>
+                <%- include ("../../../../common/md-o-lazy-load.ejs") %>
+            </span>
+            <!-- //o-product-listing -->
+
+        </div>
+    </div>
+    <!-- // product-listing-section -->
+
 </div>
+
+
+<!-- tip : when develop this script must be delete -->
+<script type="text/javascript">
+    (function() {
+        'use strict';
+        //탭활성화
+        let activeTab = document.querySelectorAll('.o-local-navigation > ul > li');
+        if(activeTab){
+            activeTab[3].classList.add('is-selected');
+        }
+    })();
+</script>
+<!-- //tip -->

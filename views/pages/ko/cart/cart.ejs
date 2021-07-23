@@ -22,7 +22,7 @@
                     </div>
                     <div class="cart-item-info">
                         <!--<span class="brand"></span>-->
-                        <span class="product-name">캐리오버 블랙</span>
+                        <span class="product-name">캐리오버 블랙 1</span>
                         <!--
                         <div class="markers">
                             <div class="m-product-marker" data-component="MProductMarkers">
@@ -116,13 +116,6 @@
                             <span class="total-label">총</span>
                             <span class="total">124,000</span>
                         </div>
-                        <!--<span class="m-hazmat">
-                            <img class="a-image hazmat-image"
-                                 alt="flamable warning icon"
-                                 src="../../../org/etc/designs/appeaser/p11/clientlibs/pattern-lib/images/icon-hazmat.png"
-                                 aria-label="hazardous materials">
-                            <span class="hazmat-label">This product contains flammable substances and is therefore subject to special rules for the services rendered.</span>
-                        </span>-->
                     </div>
 
                 </div>
@@ -145,7 +138,7 @@
                         </a>
                     </div>
                     <div class="cart-item-info">
-                        <span class="product-name">캐리오버 블랙</span>
+                        <span class="product-name">캐리오버 블랙 2</span>
                         <div class="size-section">
                             <span class="size-label"></span>
                             <span class="size">M</span>
@@ -199,8 +192,8 @@
             </div>
             <!-- //o-cart-item -->
 
-            <!-- o-cart-item -->
-            <div class="o-cart-item is-hazmat" data-component="OCartItem">
+            <!-- o-cart-item : 품절 -->
+            <div class="o-cart-item is-soldout" data-component="OCartItem">
                 <div class="content-wrapper u-clearfix cart-wrapper">
                     <div class="cart-image-wrapper">
                         <a class="a-link" href="#" target="_self">
@@ -216,11 +209,10 @@
                     </div>
                     <div class="cart-item-info">
                         <span class="brand"></span>
-                        <span class="product-name">캐리오버 블랙</span>
+                        <span class="product-name">캐리오버 블랙 3</span>
                         <div class="size-section">
                             <span class="size-label"></span>
                             <span class="size">M</span>
-                            <span class="low-stock">품절임박</span>
                         </div>
                         <div class="color-section">
                             <span class="color-label"></span>
@@ -231,16 +223,16 @@
                             <div class="m-dropdown" data-component="MDropdown">
                                 <button class="a-button-nostyle placeholder" type="button"
                                         aria-label="filter expand/close" aria-haspopup="true" aria-expanded="false">
-                                    <span>1</span>
+                                    <span>0</span>
                                 </button>
                                 <button class="a-button-nostyle a-icon-close" type="button" aria-label="close"></button>
-                                <input class="js-input" name="selectQty" value="1" type="text">
+                                <input class="js-input" name="selectQty" value="0" type="text">
                                 <button class="a-button-nostyle a-icon-arrow-down-small" type="button" role="button"
                                         aria-label="expand/close" tabindex="-1"></button>
                                 <ul class="list-wrapper">
                                     <li>
                                         <ul class="options">
-                                            <li class="a-option is-selected" data-value="1">1</li>
+                                            <li class="a-optiond" data-value="1">1</li>
                                             <li class="a-option" data-value="2">2</li>
                                             <li class="a-option" data-value="3">3</li>
                                             <li class="a-option" data-value="4">4</li>
@@ -258,6 +250,7 @@
                         <div class="total-section">
                             <span class="total-label">총</span>
                             <span class="total">14,000</span>
+                            <span class="sold-out-label">품절</span>
                         </div>
                     </div>
                 </div>
@@ -278,7 +271,7 @@
                         </a>
                     </div>
                     <div class="cart-item-info">
-                        <span class="product-name">캐리오버 블랙</span>
+                        <span class="product-name">캐리오버 블랙 4</span>
                         <div class="size-section">
                             <span class="size-label"></span>
                             <span class="size">M</span>
@@ -381,24 +374,6 @@
             <a class="a-button is-primary is-checkout-options checkout-button"
                href="/views/common/views/pages/checkout/checkout-guest-options.html">주문하기
             </a>
-            <!--
-            <div class="a-payment-icons" data-component="APaymentIcons">
-                <h3 class="a-heading-3">결제 가능 수단</h3>
-                <div class="a-payment-icon klarna" tabindex="0" aria-label="KLARNA"></div>
-                <div class="a-payment-icon mastercard" tabindex="0" aria-label="MASTERCARD"></div>
-                <div class="a-payment-icon visa" tabindex="0" aria-label="VISA"></div>
-                <div class="a-payment-icon amex" tabindex="0" aria-label="AMEX"></div>
-                <div class="a-payment-icon paypal" tabindex="0" aria-label="PAYPAL"></div>
-            </div>
-
-            <span class="m-hazmat">
-                <img class="a-image hazmat-image"
-                     alt="flamable warning icon"
-                     src="<%= pageInfo.root %>/org/etc/designs/appeaser/p11/clientlibs/pattern-lib/images/icon-hazmat.png"
-                     aria-label="hazardous materials">
-                <span class="hazmat-label">이 제품에는 인화성 물질이 포함되어 있으므로 제공되는 서비스에 대한 특별 규칙이 적용됩니다.</span>
-            </span>
-            -->
 
             <%# m-informative-section %>
             <%- include ("../../../common/md-m-informative-section.ejs") %>

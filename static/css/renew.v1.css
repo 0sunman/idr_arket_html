@@ -1,21 +1,10 @@
 /* ========================================================== */
 /*                                                            */
-/* file		: ryu                                   	      */
+/* file		: ryu                                    	      */
 /*                                                            */
 /* ========================================================== */
 /* ---------------------------------------------------------- */
-/* frontend.min overwrite s ================================= */
-.o-width:not(.wc-25) .o-image-listing.cols-3 .image-container:nth-child(n+4) { margin-top: 3px; }
-
-.o-hero .takeover-background.with-video-visible-btn { position: relative; }
-.o-hero .takeover-background.with-video-visible-btn .a-vimeo-video + .video-play-button { position: absolute; top: 50%; left: 50%; margin-top: -17px; margin-left: -17px; z-index: 5; }
-.o-hero:not(.has-hidden-video) .takeover-background.with-video-visible-btn .a-vimeo-video + .video-play-button { display: none; }
-
-.test { width: 100%; }
-
-/* frontend.min overwrite e ================================= */
-.cs-contents { clear: both; padding: 40px 0 100px; min-height: 420px; }
-.cs-contents .o-accordion-wrap { margin-top: 80px; border-color: #ccc; border-top-width: 1px; border-top-style: solid; }
-.cs-contents .o-accordion-wrap .o-accordion.v2 .accordion-con-text { border-top: 0; }
+/* ryu s ==================================================== */
+/* ryu e ==================================================== */
 
 /*# sourceMappingURL=renew.v1.css.map */

@@ -1,3 +1,21 @@
-<div data-component="OPageContent" class="o-page-content" data-component-id="">
-    empty page
+<div data-component="OPageContent" class="o-page-content care-guide-content">
+    <h1 class="a-heading-1 seo-heading ">
+        <span>Canvas</span>
+    </h1>
+    <%# md-o-local-navigation-care-guide %>
+    <%- include ("../../../../common/md-o-local-navigation-care-guide.ejs") %>
 </div>
+
+
+<!-- tip : when develop this script must be delete -->
+<script type="text/javascript">
+    (function() {
+        'use strict';
+        //탭활성화
+        let activeTab = document.querySelectorAll('.o-local-navigation > ul > li');
+        if(activeTab){
+            activeTab[6].classList.add('is-selected');
+        }
+    })();
+</script>
+<!-- //tip -->

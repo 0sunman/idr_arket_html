@@ -1,3 +1,131 @@
-<div data-component="OPageContent" class="o-page-content" data-component-id="">
-    empty page
+<div data-component="OPageContent" class="o-page-content care-guide-content"">
+    <div class="coremetricsPageId" hidden=""></div>
+    <div class="coremetricsPageType" hidden=""></div>
+    <div class="coremetricsCategoryId" hidden=""></div>
+    <div class="coremetricsCategoryPath" hidden=""></div>
+
+    <h1 class="a-heading-1 seo-heading">
+        <span>Jewellery</span>
+    </h1>
+
+    <%# md-o-local-navigation-care-guide %>
+    <%- include ("../../../../common/md-o-local-navigation-care-guide.ejs") %>
+
+    <!-- info-section -->
+    <div class="o-width wc-75">
+        <div class="o-layout">
+            <div class="layout-row-1">
+            </div>
+            <div class="layout-5">
+
+                <!-- text-box -->
+                <div class="layout-row-2">
+                    <div class="textcomponent parbase section">
+                        <div class="o-text-field is-wide is-large">
+                            <div class="text-container">
+                                <p class="a-paragraph is-richtext">
+                                    ARKET jewellery is a collection of high-quality yet delicate pieces plated with silver and gold. The plating process offers a beautiful, lasting sheen that can be prolonged with the right care. Here are some easy ways to maintain the lustre of your jewellery and prevent the coating from tarnishing.<br>
+                                    <br>
+                                    All silver-plated jewellery naturally develops a darker patina over time due to oxidation. To slow down the process, remove your jewellery before shower and intense workouts as moisture and sweat accelerate oxidation<br>
+                                    <br>
+                                    To protect the plating and stones from damage, avoid direct contact with perfume, soap and other beauty products while wearing your jewellery<br>
+                                    <br>
+                                    Clean your jewellery regularly with a soft microfibre cloth. If needed, use warm water to remove impurities and pat dry the pieces with a soft clean cloth<br>
+                                    <br>
+                                    Store the jewellery in a dry place, ideally in a soft-lined box to protect it from scratching and impact damage. Try to keep the pieces separate, so that they don't rub together or tangle up.<br>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- // text-box -->
+
+                <!-- img-box -->
+                <div class="layout-row-3">
+                    <div class="image-slideshow parbase section">
+                        <div class="o-image-listing cols-2">
+
+                            <div class="image-container">
+                                <div class="trackImage col-item">
+                                    <img class="a-image" src="<%= pageInfo.root %>/images/care/WEB_20Q3_JEWELRY_3.jpg">
+                                    <span class="promoIndex" hidden="">0</span>
+                                </div>
+                                <%# md-o-img-promotion-data-care %>
+                                <%- include ("../../../../common/md-o-img-promotion-data-care.ejs") %>
+                            </div>
+
+                            <div class="image-container">
+                                <div class="trackImage col-item">
+                                    <img class="a-image" src="<%= pageInfo.root %>/images/care/WEB_20Q3_JEWELRY_2.jpg">
+                                    <span class="promoIndex" hidden="">1</span>
+                                </div>
+                                <%# md-o-img-promotion-data-care %>
+                                <%- include ("../../../../common/md-o-img-promotion-data-care.ejs") %>
+                            </div>
+
+                            <div class="image-container">
+                                <div class="trackImage col-item">
+                                    <img class="a-image" src="<%= pageInfo.root %>/images/care/WEB_20Q3_JEWELRY_4.jpg">
+                                    <span class="promoIndex" hidden="">2</span>
+                                </div>
+                                <%# md-o-img-promotion-data-care %>
+                                <%- include ("../../../../common/md-o-img-promotion-data-care.ejs") %>
+                            </div>
+
+                            <div class="image-container">
+                                <div class="trackImage col-item">
+                                    <img class="a-image" src="<%= pageInfo.root %>/images/care/WEB_20Q3_JEWELRY_6.jpg">
+                                    <span class="promoIndex" hidden="">3</span>
+                                </div>
+                                <%# md-o-img-promotion-data-care %>
+                                <%- include ("../../../../common/md-o-img-promotion-data-care.ejs") %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- // img-box -->
+            </div>
+        </div>
+    </div>
+    <!-- // info-section -->
+
+    <!-- product-listing-section -->
+    <div class="o-width wc-75">
+        <div class="parbase sdp-component product-listing align-below">
+
+            <%# md-o-product-filters %>
+            <%#- include ("../../../../common/md-o-product-filters.ejs") %>
+
+            <!-- o-product-listing -->
+            <div id="lazyLoadSpan">
+                <div id="reloadProducts" class="o-product-listing has-upper-body-images fixed-columns-5 u-align-center">
+                    <%# md-o-product-listing-search-list %>
+                    <%- include ("../../../../common/md-o-product-listing-search-list.ejs") %>
+                </div>
+            </div>
+
+            <span id="lazyDiv">
+                <%# md-o-lazy-load %>
+                <%- include ("../../../../common/md-o-lazy-load.ejs") %>
+            </span>
+            <!-- //o-product-listing -->
+
+        </div>
+    </div>
+    <!-- // product-listing-section -->
+
 </div>
+
+
+<!-- tip : when develop this script must be delete -->
+<script type="text/javascript">
+    (function() {
+        'use strict';
+        //탭활성화
+        let activeTab = document.querySelectorAll('.o-local-navigation > ul > li');
+        if(activeTab){
+            activeTab[9].classList.add('is-selected');
+        }
+    })();
+</script>
+<!-- //tip -->
