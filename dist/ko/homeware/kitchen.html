@@ -30,12 +30,14 @@
     <link rel="stylesheet" href="../../../static/org/etc/designs/appeaser/p11/pattern-lib/frontend.min.1987a0f885a03ad325376517da7bed68.css" type="text/css">
 
     <!-- frontend.renew.css -->
+    <link rel="stylesheet" href="../../../static/css/jquery-ui.css" type="text/css">
     <link rel="stylesheet" href="../../../static/css/frontend.renew.css" type="text/css">
     <!-- //frontend.renew.css -->
 
     <script src="../../../static/org/etc/designs/hm/clientlibs/shared/jquery.min.98d49f2a9477a5d4f9edef7b7e9698b1.js"></script>
     <script src="../../../static/org/etc/designs/appeaser/p11/pattern-lib/frontend/js/modernizr-custom.min.js"></script>
     <script src="../../../static/org/metrics/default/touchpoint.js"></script>
+
 </head>
 
 <body data-component="OPage" class="layout-inside" id="oPage" data-locale-page-node-name="en" data-component-id="66152dea-5e9c-4757-9208-19efae8e2313">
@@ -52,8 +54,7 @@
     <div data-component="SkeletonLoading" id="lpResolveConfigs" data-lp-aspect-ratio-width="2" data-lp-aspect-ratio-height="3" data-lp-density-mobile="2" data-lp-density-tablet="2" data-lp-density-desk="2" data-lp-max-density="3" data-lp-format="webp,jpeg" data-lp-cache-threshold="50" data-lp-url="lp.arket.com" data-lp-uri="app006prod" data-lp-image-fit="containerWidth" data-lp-jpeg-quality-desktop="70" data-lp-webp-quality-mobile="70" data-lp-webp-quality-tablet="70" data-lp-jpeg-quality-tablet="70" data-lp-webp-quality-desktop="70" data-lp-jpeg-quality-mobile="70" data-component-id="6dbb0cd9-2cf4-4569-a46d-c4294b9c76a2"></div>
 
     <div class="firsttimelanguageselector first-time-language-selector">
-        <script type="text/x-handlebars-template" id="language-select">
-        </script>
+        <script type="text/x-handlebars-template" id="language-select"></script>
     </div>
 
     <span id="arketeotflag" data-arketeot-flag="true"></span>
@@ -1403,6 +1404,15 @@
                 <div class="basket-added-info">
                     <p class="a-paragraph">
                         <span class="item-title">루즈핏 리넨 쇼츠</span>
+                        <!--
+                        <div class="markers">
+                            <div class="m-product-marker" data-component="MProductMarkers">
+                                <div class="marker-text product-marker">
+                                    <span>online exclusive</span>
+                                </div>
+                            </div>
+                        </div>
+                        -->
                         <div class="product-param-info second">
                             <div class="product-params data">
                                 <div class="product-size">44</div>
@@ -2606,10 +2616,10 @@
         <div class="image">
             <div class="m-product-image">
                 <div class="cross"></div>
-                <div>
-                    <img class="a-image default-image ResolveComplete"
+                <div class="placeholder-wrapper">
+                    <img class="a-image default-image Resolve"
                          src="../../../static/images/temp/prod-detail-00.jpg">
-                    <img class="a-image hover-image ResolveComplete"
+                    <img class="a-image hover-image Resolve"
                          src="../../../static/images/temp/prod-detail-01.jpg">
                 </div>
             </div>
@@ -2625,7 +2635,7 @@
             <a href="#none" target="_self" class="a-link plp-link-track">
                 <div class="product">
                     <span class="i18n">Product</span>
-                    <span>리넨 바지4</span>
+                    <span>리넨 바지30 가운데</span>
                 </div>
             </a>
 
@@ -2699,7 +2709,7 @@
             <div class="price">
                 <span class="i18n">Price</span>
                 <div class="m-product-price">
-                    <span>14,000</span>
+                    <span class="is-regular">14,000</span>
                 </div>
             </div>
         </a>
@@ -2778,7 +2788,7 @@
         <div class="image">
             <div class="m-product-image">
                 <div class="cross"></div>
-                <div class="" style="">
+                <div class="placeholder-wrapper">
                     <!--
                     <img class="a-image default-image ResolveComplete"
                          src="https://lp.arket.com/app006prod?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&amp;set=key%5Bresolve.width%5D,value%5B250%5D&amp;set=key%5Bresolve.height%5D,value%5B10000%5D&amp;set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&amp;set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&amp;set=key%5Bresolve.format%5D,value%5Bwebp%5D&amp;set=key%5Bresolve.quality%5D,value%5B70%5D&amp;set=ImageVersion%5B1%5D,origin%5Bdam%5D,source%5B/76/41/76411172b170256162e9044edff696ce40e57bfe.jpg%5D,type%5BLOOKBOOK%5D&amp;call=url%5Bfile:/product/dynamic.chain%5D"
@@ -2898,11 +2908,11 @@
            data-ticket="Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MDk2OTQ4NF9ncm91cF8wMDFfZW5fd3c7MDk2OTQ4NDAwMV9lbl93dzs7Tk9ORTpOT05FOzU4Ow"
            data-image="SMALL">
             <div class="product-markers">
-                <div data-component="MProductMarkers" class="m-product-marker"
-                     data-component-id="a782c62f-910f-4855-8d2c-7647dada5dd3">
-                    <div class="marker-text product-marker">
-                        <span style="color: #000000; background-color: #ffffff; border-radius: #fffff;;">Ogarnic Cotton</span>
-                    </div>
+                <div data-component="MProductMarkers" class="m-product-marker">
+                    <div class="marker-text product-marker">ONLINE EXCLUSIVE</div>
+                    <!--<div class="marker-text product-marker">ORGANIC COTTON</div>-->
+                    <!--<div class="marker-text product-marker">SET OF 4</div>-->
+                    <!--<div class="marker-text product-marker">ARKET BASICS COLLECTION</div>-->
                 </div>
             </div>
         </a>
@@ -2916,7 +2926,8 @@
             <div class="price">
                 <span class="i18n">Price</span>
                 <div class="m-product-price">
-                    <span>14,000</span>
+                    <span class="is-deprecated">14,000</span>
+                    <span class="is-reduced">12,000</span>
                 </div>
             </div>
         </a>
@@ -3009,7 +3020,7 @@
         <div class="image">
             <div class="m-product-image">
                 <div class="cross"></div>
-                <div class="" style="">
+                <div class="placeholder-wrapper">
                     <!--
                     <img class="a-image default-image ResolveComplete"
                          src="https://lp.arket.com/app006prod?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&amp;set=key%5Bresolve.width%5D,value%5B250%5D&amp;set=key%5Bresolve.height%5D,value%5B10000%5D&amp;set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&amp;set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&amp;set=key%5Bresolve.format%5D,value%5Bwebp%5D&amp;set=key%5Bresolve.quality%5D,value%5B70%5D&amp;set=ImageVersion%5B1%5D,origin%5Bdam%5D,source%5B/76/41/76411172b170256162e9044edff696ce40e57bfe.jpg%5D,type%5BLOOKBOOK%5D&amp;call=url%5Bfile:/product/dynamic.chain%5D"
@@ -3129,11 +3140,11 @@
            data-ticket="Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MDk2OTQ4NF9ncm91cF8wMDFfZW5fd3c7MDk2OTQ4NDAwMV9lbl93dzs7Tk9ORTpOT05FOzU4Ow"
            data-image="SMALL">
             <div class="product-markers">
-                <div data-component="MProductMarkers" class="m-product-marker"
-                     data-component-id="a782c62f-910f-4855-8d2c-7647dada5dd3">
-                    <div class="marker-text product-marker">
-                        <span style="color: #000000; background-color: #ffffff; border-radius: #fffff;;">Ogarnic Cotton</span>
-                    </div>
+                <div data-component="MProductMarkers" class="m-product-marker">
+                    <div class="marker-text product-marker">ONLINE EXCLUSIVE</div>
+                    <!--<div class="marker-text product-marker">ORGANIC COTTON</div>-->
+                    <!--<div class="marker-text product-marker">SET OF 4</div>-->
+                    <!--<div class="marker-text product-marker">ARKET BASICS COLLECTION</div>-->
                 </div>
             </div>
         </a>
@@ -3147,7 +3158,7 @@
             <div class="price">
                 <span class="i18n">Price</span>
                 <div class="m-product-price">
-                    <span>14,000</span>
+                    <span class="is-regular">14,000</span>
                 </div>
             </div>
         </a>
@@ -3240,7 +3251,7 @@
         <div class="image">
             <div class="m-product-image">
                 <div class="cross"></div>
-                <div class="" style="">
+                <div class="placeholder-wrapper">
                     <!--
                     <img class="a-image default-image ResolveComplete"
                          src="https://lp.arket.com/app006prod?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&amp;set=key%5Bresolve.width%5D,value%5B250%5D&amp;set=key%5Bresolve.height%5D,value%5B10000%5D&amp;set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&amp;set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&amp;set=key%5Bresolve.format%5D,value%5Bwebp%5D&amp;set=key%5Bresolve.quality%5D,value%5B70%5D&amp;set=ImageVersion%5B1%5D,origin%5Bdam%5D,source%5B/76/41/76411172b170256162e9044edff696ce40e57bfe.jpg%5D,type%5BLOOKBOOK%5D&amp;call=url%5Bfile:/product/dynamic.chain%5D"
@@ -3360,11 +3371,11 @@
            data-ticket="Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MDk2OTQ4NF9ncm91cF8wMDFfZW5fd3c7MDk2OTQ4NDAwMV9lbl93dzs7Tk9ORTpOT05FOzU4Ow"
            data-image="SMALL">
             <div class="product-markers">
-                <div data-component="MProductMarkers" class="m-product-marker"
-                     data-component-id="a782c62f-910f-4855-8d2c-7647dada5dd3">
-                    <div class="marker-text product-marker">
-                        <span style="color: #000000; background-color: #ffffff; border-radius: #fffff;;">Ogarnic Cotton</span>
-                    </div>
+                <div data-component="MProductMarkers" class="m-product-marker">
+                    <div class="marker-text product-marker">ONLINE EXCLUSIVE</div>
+                    <!--<div class="marker-text product-marker">ORGANIC COTTON</div>-->
+                    <!--<div class="marker-text product-marker">SET OF 4</div>-->
+                    <!--<div class="marker-text product-marker">ARKET BASICS COLLECTION</div>-->
                 </div>
             </div>
         </a>
@@ -3378,7 +3389,7 @@
             <div class="price">
                 <span class="i18n">Price</span>
                 <div class="m-product-price">
-                    <span>14,000</span>
+                    <span class="is-regular">14,000</span>
                 </div>
             </div>
         </a>
@@ -3471,7 +3482,7 @@
         <div class="image">
             <div class="m-product-image">
                 <div class="cross"></div>
-                <div class="" style="">
+                <div class="placeholder-wrapper">
                     <!--
                     <img class="a-image default-image ResolveComplete"
                          src="https://lp.arket.com/app006prod?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&amp;set=key%5Bresolve.width%5D,value%5B250%5D&amp;set=key%5Bresolve.height%5D,value%5B10000%5D&amp;set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&amp;set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&amp;set=key%5Bresolve.format%5D,value%5Bwebp%5D&amp;set=key%5Bresolve.quality%5D,value%5B70%5D&amp;set=ImageVersion%5B1%5D,origin%5Bdam%5D,source%5B/76/41/76411172b170256162e9044edff696ce40e57bfe.jpg%5D,type%5BLOOKBOOK%5D&amp;call=url%5Bfile:/product/dynamic.chain%5D"
@@ -3591,11 +3602,11 @@
            data-ticket="Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MDk2OTQ4NF9ncm91cF8wMDFfZW5fd3c7MDk2OTQ4NDAwMV9lbl93dzs7Tk9ORTpOT05FOzU4Ow"
            data-image="SMALL">
             <div class="product-markers">
-                <div data-component="MProductMarkers" class="m-product-marker"
-                     data-component-id="a782c62f-910f-4855-8d2c-7647dada5dd3">
-                    <div class="marker-text product-marker">
-                        <span style="color: #000000; background-color: #ffffff; border-radius: #fffff;;">Ogarnic Cotton</span>
-                    </div>
+                <div data-component="MProductMarkers" class="m-product-marker">
+                    <div class="marker-text product-marker">ONLINE EXCLUSIVE</div>
+                    <!--<div class="marker-text product-marker">ORGANIC COTTON</div>-->
+                    <!--<div class="marker-text product-marker">SET OF 4</div>-->
+                    <!--<div class="marker-text product-marker">ARKET BASICS COLLECTION</div>-->
                 </div>
             </div>
         </a>
@@ -3609,7 +3620,7 @@
             <div class="price">
                 <span class="i18n">Price</span>
                 <div class="m-product-price">
-                    <span>14,000</span>
+                    <span class="is-regular">14,000</span>
                 </div>
             </div>
         </a>
@@ -3702,7 +3713,7 @@
         <div class="image">
             <div class="m-product-image">
                 <div class="cross"></div>
-                <div class="" style="">
+                <div class="placeholder-wrapper">
                     <!--
                     <img class="a-image default-image ResolveComplete"
                          src="https://lp.arket.com/app006prod?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&amp;set=key%5Bresolve.width%5D,value%5B250%5D&amp;set=key%5Bresolve.height%5D,value%5B10000%5D&amp;set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&amp;set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&amp;set=key%5Bresolve.format%5D,value%5Bwebp%5D&amp;set=key%5Bresolve.quality%5D,value%5B70%5D&amp;set=ImageVersion%5B1%5D,origin%5Bdam%5D,source%5B/76/41/76411172b170256162e9044edff696ce40e57bfe.jpg%5D,type%5BLOOKBOOK%5D&amp;call=url%5Bfile:/product/dynamic.chain%5D"
@@ -3822,11 +3833,11 @@
            data-ticket="Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MDk2OTQ4NF9ncm91cF8wMDFfZW5fd3c7MDk2OTQ4NDAwMV9lbl93dzs7Tk9ORTpOT05FOzU4Ow"
            data-image="SMALL">
             <div class="product-markers">
-                <div data-component="MProductMarkers" class="m-product-marker"
-                     data-component-id="a782c62f-910f-4855-8d2c-7647dada5dd3">
-                    <div class="marker-text product-marker">
-                        <span style="color: #000000; background-color: #ffffff; border-radius: #fffff;;">Ogarnic Cotton</span>
-                    </div>
+                <div data-component="MProductMarkers" class="m-product-marker">
+                    <div class="marker-text product-marker">ONLINE EXCLUSIVE</div>
+                    <!--<div class="marker-text product-marker">ORGANIC COTTON</div>-->
+                    <!--<div class="marker-text product-marker">SET OF 4</div>-->
+                    <!--<div class="marker-text product-marker">ARKET BASICS COLLECTION</div>-->
                 </div>
             </div>
         </a>
@@ -3840,7 +3851,7 @@
             <div class="price">
                 <span class="i18n">Price</span>
                 <div class="m-product-price">
-                    <span>14,000</span>
+                    <span class="is-regular">14,000</span>
                 </div>
             </div>
         </a>
@@ -3933,7 +3944,7 @@
         <div class="image">
             <div class="m-product-image">
                 <div class="cross"></div>
-                <div class="" style="">
+                <div class="placeholder-wrapper">
                     <!--
                     <img class="a-image default-image ResolveComplete"
                          src="https://lp.arket.com/app006prod?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&amp;set=key%5Bresolve.width%5D,value%5B250%5D&amp;set=key%5Bresolve.height%5D,value%5B10000%5D&amp;set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&amp;set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&amp;set=key%5Bresolve.format%5D,value%5Bwebp%5D&amp;set=key%5Bresolve.quality%5D,value%5B70%5D&amp;set=ImageVersion%5B1%5D,origin%5Bdam%5D,source%5B/76/41/76411172b170256162e9044edff696ce40e57bfe.jpg%5D,type%5BLOOKBOOK%5D&amp;call=url%5Bfile:/product/dynamic.chain%5D"
@@ -4053,11 +4064,11 @@
            data-ticket="Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MDk2OTQ4NF9ncm91cF8wMDFfZW5fd3c7MDk2OTQ4NDAwMV9lbl93dzs7Tk9ORTpOT05FOzU4Ow"
            data-image="SMALL">
             <div class="product-markers">
-                <div data-component="MProductMarkers" class="m-product-marker"
-                     data-component-id="a782c62f-910f-4855-8d2c-7647dada5dd3">
-                    <div class="marker-text product-marker">
-                        <span style="color: #000000; background-color: #ffffff; border-radius: #fffff;;">Ogarnic Cotton</span>
-                    </div>
+                <div data-component="MProductMarkers" class="m-product-marker">
+                    <div class="marker-text product-marker">ONLINE EXCLUSIVE</div>
+                    <!--<div class="marker-text product-marker">ORGANIC COTTON</div>-->
+                    <!--<div class="marker-text product-marker">SET OF 4</div>-->
+                    <!--<div class="marker-text product-marker">ARKET BASICS COLLECTION</div>-->
                 </div>
             </div>
         </a>
@@ -4071,7 +4082,7 @@
             <div class="price">
                 <span class="i18n">Price</span>
                 <div class="m-product-price">
-                    <span>14,000</span>
+                    <span class="is-regular">14,000</span>
                 </div>
             </div>
         </a>
@@ -4164,7 +4175,7 @@
         <div class="image">
             <div class="m-product-image">
                 <div class="cross"></div>
-                <div class="" style="">
+                <div class="placeholder-wrapper">
                     <!--
                     <img class="a-image default-image ResolveComplete"
                          src="https://lp.arket.com/app006prod?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&amp;set=key%5Bresolve.width%5D,value%5B250%5D&amp;set=key%5Bresolve.height%5D,value%5B10000%5D&amp;set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&amp;set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&amp;set=key%5Bresolve.format%5D,value%5Bwebp%5D&amp;set=key%5Bresolve.quality%5D,value%5B70%5D&amp;set=ImageVersion%5B1%5D,origin%5Bdam%5D,source%5B/76/41/76411172b170256162e9044edff696ce40e57bfe.jpg%5D,type%5BLOOKBOOK%5D&amp;call=url%5Bfile:/product/dynamic.chain%5D"
@@ -4284,11 +4295,11 @@
            data-ticket="Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MDk2OTQ4NF9ncm91cF8wMDFfZW5fd3c7MDk2OTQ4NDAwMV9lbl93dzs7Tk9ORTpOT05FOzU4Ow"
            data-image="SMALL">
             <div class="product-markers">
-                <div data-component="MProductMarkers" class="m-product-marker"
-                     data-component-id="a782c62f-910f-4855-8d2c-7647dada5dd3">
-                    <div class="marker-text product-marker">
-                        <span style="color: #000000; background-color: #ffffff; border-radius: #fffff;;">Ogarnic Cotton</span>
-                    </div>
+                <div data-component="MProductMarkers" class="m-product-marker">
+                    <div class="marker-text product-marker">ONLINE EXCLUSIVE</div>
+                    <!--<div class="marker-text product-marker">ORGANIC COTTON</div>-->
+                    <!--<div class="marker-text product-marker">SET OF 4</div>-->
+                    <!--<div class="marker-text product-marker">ARKET BASICS COLLECTION</div>-->
                 </div>
             </div>
         </a>
@@ -4302,7 +4313,7 @@
             <div class="price">
                 <span class="i18n">Price</span>
                 <div class="m-product-price">
-                    <span>14,000</span>
+                    <span class="is-regular">14,000</span>
                 </div>
             </div>
         </a>
@@ -4395,7 +4406,7 @@
         <div class="image">
             <div class="m-product-image">
                 <div class="cross"></div>
-                <div class="" style="">
+                <div class="placeholder-wrapper">
                     <!--
                     <img class="a-image default-image ResolveComplete"
                          src="https://lp.arket.com/app006prod?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&amp;set=key%5Bresolve.width%5D,value%5B250%5D&amp;set=key%5Bresolve.height%5D,value%5B10000%5D&amp;set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&amp;set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&amp;set=key%5Bresolve.format%5D,value%5Bwebp%5D&amp;set=key%5Bresolve.quality%5D,value%5B70%5D&amp;set=ImageVersion%5B1%5D,origin%5Bdam%5D,source%5B/76/41/76411172b170256162e9044edff696ce40e57bfe.jpg%5D,type%5BLOOKBOOK%5D&amp;call=url%5Bfile:/product/dynamic.chain%5D"
@@ -4515,11 +4526,11 @@
            data-ticket="Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MDk2OTQ4NF9ncm91cF8wMDFfZW5fd3c7MDk2OTQ4NDAwMV9lbl93dzs7Tk9ORTpOT05FOzU4Ow"
            data-image="SMALL">
             <div class="product-markers">
-                <div data-component="MProductMarkers" class="m-product-marker"
-                     data-component-id="a782c62f-910f-4855-8d2c-7647dada5dd3">
-                    <div class="marker-text product-marker">
-                        <span style="color: #000000; background-color: #ffffff; border-radius: #fffff;;">Ogarnic Cotton</span>
-                    </div>
+                <div data-component="MProductMarkers" class="m-product-marker">
+                    <div class="marker-text product-marker">ONLINE EXCLUSIVE</div>
+                    <!--<div class="marker-text product-marker">ORGANIC COTTON</div>-->
+                    <!--<div class="marker-text product-marker">SET OF 4</div>-->
+                    <!--<div class="marker-text product-marker">ARKET BASICS COLLECTION</div>-->
                 </div>
             </div>
         </a>
@@ -4533,7 +4544,7 @@
             <div class="price">
                 <span class="i18n">Price</span>
                 <div class="m-product-price">
-                    <span>14,000</span>
+                    <span class="is-regular">14,000</span>
                 </div>
             </div>
         </a>
@@ -4626,7 +4637,7 @@
         <div class="image">
             <div class="m-product-image">
                 <div class="cross"></div>
-                <div class="" style="">
+                <div class="placeholder-wrapper">
                     <!--
                     <img class="a-image default-image ResolveComplete"
                          src="https://lp.arket.com/app006prod?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&amp;set=key%5Bresolve.width%5D,value%5B250%5D&amp;set=key%5Bresolve.height%5D,value%5B10000%5D&amp;set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&amp;set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&amp;set=key%5Bresolve.format%5D,value%5Bwebp%5D&amp;set=key%5Bresolve.quality%5D,value%5B70%5D&amp;set=ImageVersion%5B1%5D,origin%5Bdam%5D,source%5B/76/41/76411172b170256162e9044edff696ce40e57bfe.jpg%5D,type%5BLOOKBOOK%5D&amp;call=url%5Bfile:/product/dynamic.chain%5D"
@@ -4746,11 +4757,11 @@
            data-ticket="Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MDk2OTQ4NF9ncm91cF8wMDFfZW5fd3c7MDk2OTQ4NDAwMV9lbl93dzs7Tk9ORTpOT05FOzU4Ow"
            data-image="SMALL">
             <div class="product-markers">
-                <div data-component="MProductMarkers" class="m-product-marker"
-                     data-component-id="a782c62f-910f-4855-8d2c-7647dada5dd3">
-                    <div class="marker-text product-marker">
-                        <span style="color: #000000; background-color: #ffffff; border-radius: #fffff;;">Ogarnic Cotton</span>
-                    </div>
+                <div data-component="MProductMarkers" class="m-product-marker">
+                    <div class="marker-text product-marker">ONLINE EXCLUSIVE</div>
+                    <!--<div class="marker-text product-marker">ORGANIC COTTON</div>-->
+                    <!--<div class="marker-text product-marker">SET OF 4</div>-->
+                    <!--<div class="marker-text product-marker">ARKET BASICS COLLECTION</div>-->
                 </div>
             </div>
         </a>
@@ -4764,7 +4775,7 @@
             <div class="price">
                 <span class="i18n">Price</span>
                 <div class="m-product-price">
-                    <span>14,000</span>
+                    <span class="is-regular">14,000</span>
                 </div>
             </div>
         </a>
@@ -4857,7 +4868,7 @@
         <div class="image">
             <div class="m-product-image">
                 <div class="cross"></div>
-                <div class="" style="">
+                <div class="placeholder-wrapper">
                     <!--
                     <img class="a-image default-image ResolveComplete"
                          src="https://lp.arket.com/app006prod?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&amp;set=key%5Bresolve.width%5D,value%5B250%5D&amp;set=key%5Bresolve.height%5D,value%5B10000%5D&amp;set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&amp;set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&amp;set=key%5Bresolve.format%5D,value%5Bwebp%5D&amp;set=key%5Bresolve.quality%5D,value%5B70%5D&amp;set=ImageVersion%5B1%5D,origin%5Bdam%5D,source%5B/76/41/76411172b170256162e9044edff696ce40e57bfe.jpg%5D,type%5BLOOKBOOK%5D&amp;call=url%5Bfile:/product/dynamic.chain%5D"
@@ -4977,11 +4988,11 @@
            data-ticket="Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MDk2OTQ4NF9ncm91cF8wMDFfZW5fd3c7MDk2OTQ4NDAwMV9lbl93dzs7Tk9ORTpOT05FOzU4Ow"
            data-image="SMALL">
             <div class="product-markers">
-                <div data-component="MProductMarkers" class="m-product-marker"
-                     data-component-id="a782c62f-910f-4855-8d2c-7647dada5dd3">
-                    <div class="marker-text product-marker">
-                        <span style="color: #000000; background-color: #ffffff; border-radius: #fffff;;">Ogarnic Cotton</span>
-                    </div>
+                <div data-component="MProductMarkers" class="m-product-marker">
+                    <div class="marker-text product-marker">ONLINE EXCLUSIVE</div>
+                    <!--<div class="marker-text product-marker">ORGANIC COTTON</div>-->
+                    <!--<div class="marker-text product-marker">SET OF 4</div>-->
+                    <!--<div class="marker-text product-marker">ARKET BASICS COLLECTION</div>-->
                 </div>
             </div>
         </a>
@@ -4995,7 +5006,7 @@
             <div class="price">
                 <span class="i18n">Price</span>
                 <div class="m-product-price">
-                    <span>14,000</span>
+                    <span class="is-regular">14,000</span>
                 </div>
             </div>
         </a>
@@ -5088,7 +5099,7 @@
         <div class="image">
             <div class="m-product-image">
                 <div class="cross"></div>
-                <div class="" style="">
+                <div class="placeholder-wrapper">
                     <!--
                     <img class="a-image default-image ResolveComplete"
                          src="https://lp.arket.com/app006prod?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&amp;set=key%5Bresolve.width%5D,value%5B250%5D&amp;set=key%5Bresolve.height%5D,value%5B10000%5D&amp;set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&amp;set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&amp;set=key%5Bresolve.format%5D,value%5Bwebp%5D&amp;set=key%5Bresolve.quality%5D,value%5B70%5D&amp;set=ImageVersion%5B1%5D,origin%5Bdam%5D,source%5B/76/41/76411172b170256162e9044edff696ce40e57bfe.jpg%5D,type%5BLOOKBOOK%5D&amp;call=url%5Bfile:/product/dynamic.chain%5D"
@@ -5208,11 +5219,11 @@
            data-ticket="Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MDk2OTQ4NF9ncm91cF8wMDFfZW5fd3c7MDk2OTQ4NDAwMV9lbl93dzs7Tk9ORTpOT05FOzU4Ow"
            data-image="SMALL">
             <div class="product-markers">
-                <div data-component="MProductMarkers" class="m-product-marker"
-                     data-component-id="a782c62f-910f-4855-8d2c-7647dada5dd3">
-                    <div class="marker-text product-marker">
-                        <span style="color: #000000; background-color: #ffffff; border-radius: #fffff;;">Ogarnic Cotton</span>
-                    </div>
+                <div data-component="MProductMarkers" class="m-product-marker">
+                    <div class="marker-text product-marker">ONLINE EXCLUSIVE</div>
+                    <!--<div class="marker-text product-marker">ORGANIC COTTON</div>-->
+                    <!--<div class="marker-text product-marker">SET OF 4</div>-->
+                    <!--<div class="marker-text product-marker">ARKET BASICS COLLECTION</div>-->
                 </div>
             </div>
         </a>
@@ -5226,7 +5237,7 @@
             <div class="price">
                 <span class="i18n">Price</span>
                 <div class="m-product-price">
-                    <span>14,000</span>
+                    <span class="is-regular">14,000</span>
                 </div>
             </div>
         </a>
@@ -5319,7 +5330,7 @@
         <div class="image">
             <div class="m-product-image">
                 <div class="cross"></div>
-                <div class="" style="">
+                <div class="placeholder-wrapper">
                     <!--
                     <img class="a-image default-image ResolveComplete"
                          src="https://lp.arket.com/app006prod?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&amp;set=key%5Bresolve.width%5D,value%5B250%5D&amp;set=key%5Bresolve.height%5D,value%5B10000%5D&amp;set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&amp;set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&amp;set=key%5Bresolve.format%5D,value%5Bwebp%5D&amp;set=key%5Bresolve.quality%5D,value%5B70%5D&amp;set=ImageVersion%5B1%5D,origin%5Bdam%5D,source%5B/76/41/76411172b170256162e9044edff696ce40e57bfe.jpg%5D,type%5BLOOKBOOK%5D&amp;call=url%5Bfile:/product/dynamic.chain%5D"
@@ -5439,11 +5450,11 @@
            data-ticket="Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MDk2OTQ4NF9ncm91cF8wMDFfZW5fd3c7MDk2OTQ4NDAwMV9lbl93dzs7Tk9ORTpOT05FOzU4Ow"
            data-image="SMALL">
             <div class="product-markers">
-                <div data-component="MProductMarkers" class="m-product-marker"
-                     data-component-id="a782c62f-910f-4855-8d2c-7647dada5dd3">
-                    <div class="marker-text product-marker">
-                        <span style="color: #000000; background-color: #ffffff; border-radius: #fffff;;">Ogarnic Cotton</span>
-                    </div>
+                <div data-component="MProductMarkers" class="m-product-marker">
+                    <div class="marker-text product-marker">ONLINE EXCLUSIVE</div>
+                    <!--<div class="marker-text product-marker">ORGANIC COTTON</div>-->
+                    <!--<div class="marker-text product-marker">SET OF 4</div>-->
+                    <!--<div class="marker-text product-marker">ARKET BASICS COLLECTION</div>-->
                 </div>
             </div>
         </a>
@@ -5457,7 +5468,7 @@
             <div class="price">
                 <span class="i18n">Price</span>
                 <div class="m-product-price">
-                    <span>14,000</span>
+                    <span class="is-regular">14,000</span>
                 </div>
             </div>
         </a>
@@ -5550,7 +5561,7 @@
         <div class="image">
             <div class="m-product-image">
                 <div class="cross"></div>
-                <div class="" style="">
+                <div class="placeholder-wrapper">
                     <!--
                     <img class="a-image default-image ResolveComplete"
                          src="https://lp.arket.com/app006prod?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&amp;set=key%5Bresolve.width%5D,value%5B250%5D&amp;set=key%5Bresolve.height%5D,value%5B10000%5D&amp;set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&amp;set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&amp;set=key%5Bresolve.format%5D,value%5Bwebp%5D&amp;set=key%5Bresolve.quality%5D,value%5B70%5D&amp;set=ImageVersion%5B1%5D,origin%5Bdam%5D,source%5B/76/41/76411172b170256162e9044edff696ce40e57bfe.jpg%5D,type%5BLOOKBOOK%5D&amp;call=url%5Bfile:/product/dynamic.chain%5D"
@@ -5670,11 +5681,11 @@
            data-ticket="Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MDk2OTQ4NF9ncm91cF8wMDFfZW5fd3c7MDk2OTQ4NDAwMV9lbl93dzs7Tk9ORTpOT05FOzU4Ow"
            data-image="SMALL">
             <div class="product-markers">
-                <div data-component="MProductMarkers" class="m-product-marker"
-                     data-component-id="a782c62f-910f-4855-8d2c-7647dada5dd3">
-                    <div class="marker-text product-marker">
-                        <span style="color: #000000; background-color: #ffffff; border-radius: #fffff;;">Ogarnic Cotton</span>
-                    </div>
+                <div data-component="MProductMarkers" class="m-product-marker">
+                    <div class="marker-text product-marker">ONLINE EXCLUSIVE</div>
+                    <!--<div class="marker-text product-marker">ORGANIC COTTON</div>-->
+                    <!--<div class="marker-text product-marker">SET OF 4</div>-->
+                    <!--<div class="marker-text product-marker">ARKET BASICS COLLECTION</div>-->
                 </div>
             </div>
         </a>
@@ -5688,7 +5699,7 @@
             <div class="price">
                 <span class="i18n">Price</span>
                 <div class="m-product-price">
-                    <span>14,000</span>
+                    <span class="is-regular">14,000</span>
                 </div>
             </div>
         </a>
@@ -5781,7 +5792,7 @@
         <div class="image">
             <div class="m-product-image">
                 <div class="cross"></div>
-                <div class="" style="">
+                <div class="placeholder-wrapper">
                     <!--
                     <img class="a-image default-image ResolveComplete"
                          src="https://lp.arket.com/app006prod?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&amp;set=key%5Bresolve.width%5D,value%5B250%5D&amp;set=key%5Bresolve.height%5D,value%5B10000%5D&amp;set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&amp;set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&amp;set=key%5Bresolve.format%5D,value%5Bwebp%5D&amp;set=key%5Bresolve.quality%5D,value%5B70%5D&amp;set=ImageVersion%5B1%5D,origin%5Bdam%5D,source%5B/76/41/76411172b170256162e9044edff696ce40e57bfe.jpg%5D,type%5BLOOKBOOK%5D&amp;call=url%5Bfile:/product/dynamic.chain%5D"
@@ -5901,11 +5912,11 @@
            data-ticket="Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MDk2OTQ4NF9ncm91cF8wMDFfZW5fd3c7MDk2OTQ4NDAwMV9lbl93dzs7Tk9ORTpOT05FOzU4Ow"
            data-image="SMALL">
             <div class="product-markers">
-                <div data-component="MProductMarkers" class="m-product-marker"
-                     data-component-id="a782c62f-910f-4855-8d2c-7647dada5dd3">
-                    <div class="marker-text product-marker">
-                        <span style="color: #000000; background-color: #ffffff; border-radius: #fffff;;">Ogarnic Cotton</span>
-                    </div>
+                <div data-component="MProductMarkers" class="m-product-marker">
+                    <div class="marker-text product-marker">ONLINE EXCLUSIVE</div>
+                    <!--<div class="marker-text product-marker">ORGANIC COTTON</div>-->
+                    <!--<div class="marker-text product-marker">SET OF 4</div>-->
+                    <!--<div class="marker-text product-marker">ARKET BASICS COLLECTION</div>-->
                 </div>
             </div>
         </a>
@@ -5919,7 +5930,7 @@
             <div class="price">
                 <span class="i18n">Price</span>
                 <div class="m-product-price">
-                    <span>14,000</span>
+                    <span class="is-regular">14,000</span>
                 </div>
             </div>
         </a>
@@ -6012,7 +6023,7 @@
         <div class="image">
             <div class="m-product-image">
                 <div class="cross"></div>
-                <div class="" style="">
+                <div class="placeholder-wrapper">
                     <!--
                     <img class="a-image default-image ResolveComplete"
                          src="https://lp.arket.com/app006prod?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&amp;set=key%5Bresolve.width%5D,value%5B250%5D&amp;set=key%5Bresolve.height%5D,value%5B10000%5D&amp;set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&amp;set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&amp;set=key%5Bresolve.format%5D,value%5Bwebp%5D&amp;set=key%5Bresolve.quality%5D,value%5B70%5D&amp;set=ImageVersion%5B1%5D,origin%5Bdam%5D,source%5B/76/41/76411172b170256162e9044edff696ce40e57bfe.jpg%5D,type%5BLOOKBOOK%5D&amp;call=url%5Bfile:/product/dynamic.chain%5D"
@@ -6132,11 +6143,11 @@
            data-ticket="Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MDk2OTQ4NF9ncm91cF8wMDFfZW5fd3c7MDk2OTQ4NDAwMV9lbl93dzs7Tk9ORTpOT05FOzU4Ow"
            data-image="SMALL">
             <div class="product-markers">
-                <div data-component="MProductMarkers" class="m-product-marker"
-                     data-component-id="a782c62f-910f-4855-8d2c-7647dada5dd3">
-                    <div class="marker-text product-marker">
-                        <span style="color: #000000; background-color: #ffffff; border-radius: #fffff;;">Ogarnic Cotton</span>
-                    </div>
+                <div data-component="MProductMarkers" class="m-product-marker">
+                    <div class="marker-text product-marker">ONLINE EXCLUSIVE</div>
+                    <!--<div class="marker-text product-marker">ORGANIC COTTON</div>-->
+                    <!--<div class="marker-text product-marker">SET OF 4</div>-->
+                    <!--<div class="marker-text product-marker">ARKET BASICS COLLECTION</div>-->
                 </div>
             </div>
         </a>
@@ -6150,7 +6161,7 @@
             <div class="price">
                 <span class="i18n">Price</span>
                 <div class="m-product-price">
-                    <span>14,000</span>
+                    <span class="is-regular">14,000</span>
                 </div>
             </div>
         </a>
@@ -6243,7 +6254,7 @@
         <div class="image">
             <div class="m-product-image">
                 <div class="cross"></div>
-                <div class="" style="">
+                <div class="placeholder-wrapper">
                     <!--
                     <img class="a-image default-image ResolveComplete"
                          src="https://lp.arket.com/app006prod?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&amp;set=key%5Bresolve.width%5D,value%5B250%5D&amp;set=key%5Bresolve.height%5D,value%5B10000%5D&amp;set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&amp;set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&amp;set=key%5Bresolve.format%5D,value%5Bwebp%5D&amp;set=key%5Bresolve.quality%5D,value%5B70%5D&amp;set=ImageVersion%5B1%5D,origin%5Bdam%5D,source%5B/76/41/76411172b170256162e9044edff696ce40e57bfe.jpg%5D,type%5BLOOKBOOK%5D&amp;call=url%5Bfile:/product/dynamic.chain%5D"
@@ -6363,11 +6374,11 @@
            data-ticket="Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MDk2OTQ4NF9ncm91cF8wMDFfZW5fd3c7MDk2OTQ4NDAwMV9lbl93dzs7Tk9ORTpOT05FOzU4Ow"
            data-image="SMALL">
             <div class="product-markers">
-                <div data-component="MProductMarkers" class="m-product-marker"
-                     data-component-id="a782c62f-910f-4855-8d2c-7647dada5dd3">
-                    <div class="marker-text product-marker">
-                        <span style="color: #000000; background-color: #ffffff; border-radius: #fffff;;">Ogarnic Cotton</span>
-                    </div>
+                <div data-component="MProductMarkers" class="m-product-marker">
+                    <div class="marker-text product-marker">ONLINE EXCLUSIVE</div>
+                    <!--<div class="marker-text product-marker">ORGANIC COTTON</div>-->
+                    <!--<div class="marker-text product-marker">SET OF 4</div>-->
+                    <!--<div class="marker-text product-marker">ARKET BASICS COLLECTION</div>-->
                 </div>
             </div>
         </a>
@@ -6381,7 +6392,7 @@
             <div class="price">
                 <span class="i18n">Price</span>
                 <div class="m-product-price">
-                    <span>14,000</span>
+                    <span class="is-regular">14,000</span>
                 </div>
             </div>
         </a>
@@ -6474,7 +6485,7 @@
         <div class="image">
             <div class="m-product-image">
                 <div class="cross"></div>
-                <div class="" style="">
+                <div class="placeholder-wrapper">
                     <!--
                     <img class="a-image default-image ResolveComplete"
                          src="https://lp.arket.com/app006prod?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&amp;set=key%5Bresolve.width%5D,value%5B250%5D&amp;set=key%5Bresolve.height%5D,value%5B10000%5D&amp;set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&amp;set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&amp;set=key%5Bresolve.format%5D,value%5Bwebp%5D&amp;set=key%5Bresolve.quality%5D,value%5B70%5D&amp;set=ImageVersion%5B1%5D,origin%5Bdam%5D,source%5B/76/41/76411172b170256162e9044edff696ce40e57bfe.jpg%5D,type%5BLOOKBOOK%5D&amp;call=url%5Bfile:/product/dynamic.chain%5D"
@@ -6594,11 +6605,11 @@
            data-ticket="Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MDk2OTQ4NF9ncm91cF8wMDFfZW5fd3c7MDk2OTQ4NDAwMV9lbl93dzs7Tk9ORTpOT05FOzU4Ow"
            data-image="SMALL">
             <div class="product-markers">
-                <div data-component="MProductMarkers" class="m-product-marker"
-                     data-component-id="a782c62f-910f-4855-8d2c-7647dada5dd3">
-                    <div class="marker-text product-marker">
-                        <span style="color: #000000; background-color: #ffffff; border-radius: #fffff;;">Ogarnic Cotton</span>
-                    </div>
+                <div data-component="MProductMarkers" class="m-product-marker">
+                    <div class="marker-text product-marker">ONLINE EXCLUSIVE</div>
+                    <!--<div class="marker-text product-marker">ORGANIC COTTON</div>-->
+                    <!--<div class="marker-text product-marker">SET OF 4</div>-->
+                    <!--<div class="marker-text product-marker">ARKET BASICS COLLECTION</div>-->
                 </div>
             </div>
         </a>
@@ -6612,7 +6623,7 @@
             <div class="price">
                 <span class="i18n">Price</span>
                 <div class="m-product-price">
-                    <span>14,000</span>
+                    <span class="is-regular">14,000</span>
                 </div>
             </div>
         </a>
@@ -6705,7 +6716,7 @@
         <div class="image">
             <div class="m-product-image">
                 <div class="cross"></div>
-                <div class="" style="">
+                <div class="placeholder-wrapper">
                     <!--
                     <img class="a-image default-image ResolveComplete"
                          src="https://lp.arket.com/app006prod?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&amp;set=key%5Bresolve.width%5D,value%5B250%5D&amp;set=key%5Bresolve.height%5D,value%5B10000%5D&amp;set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&amp;set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&amp;set=key%5Bresolve.format%5D,value%5Bwebp%5D&amp;set=key%5Bresolve.quality%5D,value%5B70%5D&amp;set=ImageVersion%5B1%5D,origin%5Bdam%5D,source%5B/76/41/76411172b170256162e9044edff696ce40e57bfe.jpg%5D,type%5BLOOKBOOK%5D&amp;call=url%5Bfile:/product/dynamic.chain%5D"
@@ -6825,11 +6836,11 @@
            data-ticket="Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MDk2OTQ4NF9ncm91cF8wMDFfZW5fd3c7MDk2OTQ4NDAwMV9lbl93dzs7Tk9ORTpOT05FOzU4Ow"
            data-image="SMALL">
             <div class="product-markers">
-                <div data-component="MProductMarkers" class="m-product-marker"
-                     data-component-id="a782c62f-910f-4855-8d2c-7647dada5dd3">
-                    <div class="marker-text product-marker">
-                        <span style="color: #000000; background-color: #ffffff; border-radius: #fffff;;">Ogarnic Cotton</span>
-                    </div>
+                <div data-component="MProductMarkers" class="m-product-marker">
+                    <div class="marker-text product-marker">ONLINE EXCLUSIVE</div>
+                    <!--<div class="marker-text product-marker">ORGANIC COTTON</div>-->
+                    <!--<div class="marker-text product-marker">SET OF 4</div>-->
+                    <!--<div class="marker-text product-marker">ARKET BASICS COLLECTION</div>-->
                 </div>
             </div>
         </a>
@@ -6843,7 +6854,7 @@
             <div class="price">
                 <span class="i18n">Price</span>
                 <div class="m-product-price">
-                    <span>14,000</span>
+                    <span class="is-regular">14,000</span>
                 </div>
             </div>
         </a>
@@ -6936,7 +6947,7 @@
         <div class="image">
             <div class="m-product-image">
                 <div class="cross"></div>
-                <div class="" style="">
+                <div class="placeholder-wrapper">
                     <!--
                     <img class="a-image default-image ResolveComplete"
                          src="https://lp.arket.com/app006prod?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&amp;set=key%5Bresolve.width%5D,value%5B250%5D&amp;set=key%5Bresolve.height%5D,value%5B10000%5D&amp;set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&amp;set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&amp;set=key%5Bresolve.format%5D,value%5Bwebp%5D&amp;set=key%5Bresolve.quality%5D,value%5B70%5D&amp;set=ImageVersion%5B1%5D,origin%5Bdam%5D,source%5B/76/41/76411172b170256162e9044edff696ce40e57bfe.jpg%5D,type%5BLOOKBOOK%5D&amp;call=url%5Bfile:/product/dynamic.chain%5D"
@@ -7056,11 +7067,11 @@
            data-ticket="Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MDk2OTQ4NF9ncm91cF8wMDFfZW5fd3c7MDk2OTQ4NDAwMV9lbl93dzs7Tk9ORTpOT05FOzU4Ow"
            data-image="SMALL">
             <div class="product-markers">
-                <div data-component="MProductMarkers" class="m-product-marker"
-                     data-component-id="a782c62f-910f-4855-8d2c-7647dada5dd3">
-                    <div class="marker-text product-marker">
-                        <span style="color: #000000; background-color: #ffffff; border-radius: #fffff;;">Ogarnic Cotton</span>
-                    </div>
+                <div data-component="MProductMarkers" class="m-product-marker">
+                    <div class="marker-text product-marker">ONLINE EXCLUSIVE</div>
+                    <!--<div class="marker-text product-marker">ORGANIC COTTON</div>-->
+                    <!--<div class="marker-text product-marker">SET OF 4</div>-->
+                    <!--<div class="marker-text product-marker">ARKET BASICS COLLECTION</div>-->
                 </div>
             </div>
         </a>
@@ -7074,7 +7085,7 @@
             <div class="price">
                 <span class="i18n">Price</span>
                 <div class="m-product-price">
-                    <span>14,000</span>
+                    <span class="is-regular">14,000</span>
                 </div>
             </div>
         </a>
@@ -7167,7 +7178,7 @@
         <div class="image">
             <div class="m-product-image">
                 <div class="cross"></div>
-                <div class="" style="">
+                <div class="placeholder-wrapper">
                     <!--
                     <img class="a-image default-image ResolveComplete"
                          src="https://lp.arket.com/app006prod?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&amp;set=key%5Bresolve.width%5D,value%5B250%5D&amp;set=key%5Bresolve.height%5D,value%5B10000%5D&amp;set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&amp;set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&amp;set=key%5Bresolve.format%5D,value%5Bwebp%5D&amp;set=key%5Bresolve.quality%5D,value%5B70%5D&amp;set=ImageVersion%5B1%5D,origin%5Bdam%5D,source%5B/76/41/76411172b170256162e9044edff696ce40e57bfe.jpg%5D,type%5BLOOKBOOK%5D&amp;call=url%5Bfile:/product/dynamic.chain%5D"
@@ -7287,11 +7298,11 @@
            data-ticket="Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MDk2OTQ4NF9ncm91cF8wMDFfZW5fd3c7MDk2OTQ4NDAwMV9lbl93dzs7Tk9ORTpOT05FOzU4Ow"
            data-image="SMALL">
             <div class="product-markers">
-                <div data-component="MProductMarkers" class="m-product-marker"
-                     data-component-id="a782c62f-910f-4855-8d2c-7647dada5dd3">
-                    <div class="marker-text product-marker">
-                        <span style="color: #000000; background-color: #ffffff; border-radius: #fffff;;">Ogarnic Cotton</span>
-                    </div>
+                <div data-component="MProductMarkers" class="m-product-marker">
+                    <div class="marker-text product-marker">ONLINE EXCLUSIVE</div>
+                    <!--<div class="marker-text product-marker">ORGANIC COTTON</div>-->
+                    <!--<div class="marker-text product-marker">SET OF 4</div>-->
+                    <!--<div class="marker-text product-marker">ARKET BASICS COLLECTION</div>-->
                 </div>
             </div>
         </a>
@@ -7305,7 +7316,7 @@
             <div class="price">
                 <span class="i18n">Price</span>
                 <div class="m-product-price">
-                    <span>14,000</span>
+                    <span class="is-regular">14,000</span>
                 </div>
             </div>
         </a>
@@ -7398,7 +7409,7 @@
         <div class="image">
             <div class="m-product-image">
                 <div class="cross"></div>
-                <div class="" style="">
+                <div class="placeholder-wrapper">
                     <!--
                     <img class="a-image default-image ResolveComplete"
                          src="https://lp.arket.com/app006prod?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&amp;set=key%5Bresolve.width%5D,value%5B250%5D&amp;set=key%5Bresolve.height%5D,value%5B10000%5D&amp;set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&amp;set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&amp;set=key%5Bresolve.format%5D,value%5Bwebp%5D&amp;set=key%5Bresolve.quality%5D,value%5B70%5D&amp;set=ImageVersion%5B1%5D,origin%5Bdam%5D,source%5B/76/41/76411172b170256162e9044edff696ce40e57bfe.jpg%5D,type%5BLOOKBOOK%5D&amp;call=url%5Bfile:/product/dynamic.chain%5D"
@@ -7518,11 +7529,11 @@
            data-ticket="Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MDk2OTQ4NF9ncm91cF8wMDFfZW5fd3c7MDk2OTQ4NDAwMV9lbl93dzs7Tk9ORTpOT05FOzU4Ow"
            data-image="SMALL">
             <div class="product-markers">
-                <div data-component="MProductMarkers" class="m-product-marker"
-                     data-component-id="a782c62f-910f-4855-8d2c-7647dada5dd3">
-                    <div class="marker-text product-marker">
-                        <span style="color: #000000; background-color: #ffffff; border-radius: #fffff;;">Ogarnic Cotton</span>
-                    </div>
+                <div data-component="MProductMarkers" class="m-product-marker">
+                    <div class="marker-text product-marker">ONLINE EXCLUSIVE</div>
+                    <!--<div class="marker-text product-marker">ORGANIC COTTON</div>-->
+                    <!--<div class="marker-text product-marker">SET OF 4</div>-->
+                    <!--<div class="marker-text product-marker">ARKET BASICS COLLECTION</div>-->
                 </div>
             </div>
         </a>
@@ -7536,7 +7547,7 @@
             <div class="price">
                 <span class="i18n">Price</span>
                 <div class="m-product-price">
-                    <span>14,000</span>
+                    <span class="is-regular">14,000</span>
                 </div>
             </div>
         </a>
@@ -7629,7 +7640,7 @@
         <div class="image">
             <div class="m-product-image">
                 <div class="cross"></div>
-                <div class="" style="">
+                <div class="placeholder-wrapper">
                     <!--
                     <img class="a-image default-image ResolveComplete"
                          src="https://lp.arket.com/app006prod?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&amp;set=key%5Bresolve.width%5D,value%5B250%5D&amp;set=key%5Bresolve.height%5D,value%5B10000%5D&amp;set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&amp;set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&amp;set=key%5Bresolve.format%5D,value%5Bwebp%5D&amp;set=key%5Bresolve.quality%5D,value%5B70%5D&amp;set=ImageVersion%5B1%5D,origin%5Bdam%5D,source%5B/76/41/76411172b170256162e9044edff696ce40e57bfe.jpg%5D,type%5BLOOKBOOK%5D&amp;call=url%5Bfile:/product/dynamic.chain%5D"
@@ -7749,11 +7760,11 @@
            data-ticket="Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MDk2OTQ4NF9ncm91cF8wMDFfZW5fd3c7MDk2OTQ4NDAwMV9lbl93dzs7Tk9ORTpOT05FOzU4Ow"
            data-image="SMALL">
             <div class="product-markers">
-                <div data-component="MProductMarkers" class="m-product-marker"
-                     data-component-id="a782c62f-910f-4855-8d2c-7647dada5dd3">
-                    <div class="marker-text product-marker">
-                        <span style="color: #000000; background-color: #ffffff; border-radius: #fffff;;">Ogarnic Cotton</span>
-                    </div>
+                <div data-component="MProductMarkers" class="m-product-marker">
+                    <div class="marker-text product-marker">ONLINE EXCLUSIVE</div>
+                    <!--<div class="marker-text product-marker">ORGANIC COTTON</div>-->
+                    <!--<div class="marker-text product-marker">SET OF 4</div>-->
+                    <!--<div class="marker-text product-marker">ARKET BASICS COLLECTION</div>-->
                 </div>
             </div>
         </a>
@@ -7767,7 +7778,7 @@
             <div class="price">
                 <span class="i18n">Price</span>
                 <div class="m-product-price">
-                    <span>14,000</span>
+                    <span class="is-regular">14,000</span>
                 </div>
             </div>
         </a>
@@ -7860,7 +7871,7 @@
         <div class="image">
             <div class="m-product-image">
                 <div class="cross"></div>
-                <div class="" style="">
+                <div class="placeholder-wrapper">
                     <!--
                     <img class="a-image default-image ResolveComplete"
                          src="https://lp.arket.com/app006prod?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&amp;set=key%5Bresolve.width%5D,value%5B250%5D&amp;set=key%5Bresolve.height%5D,value%5B10000%5D&amp;set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&amp;set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&amp;set=key%5Bresolve.format%5D,value%5Bwebp%5D&amp;set=key%5Bresolve.quality%5D,value%5B70%5D&amp;set=ImageVersion%5B1%5D,origin%5Bdam%5D,source%5B/76/41/76411172b170256162e9044edff696ce40e57bfe.jpg%5D,type%5BLOOKBOOK%5D&amp;call=url%5Bfile:/product/dynamic.chain%5D"
@@ -7980,11 +7991,11 @@
            data-ticket="Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MDk2OTQ4NF9ncm91cF8wMDFfZW5fd3c7MDk2OTQ4NDAwMV9lbl93dzs7Tk9ORTpOT05FOzU4Ow"
            data-image="SMALL">
             <div class="product-markers">
-                <div data-component="MProductMarkers" class="m-product-marker"
-                     data-component-id="a782c62f-910f-4855-8d2c-7647dada5dd3">
-                    <div class="marker-text product-marker">
-                        <span style="color: #000000; background-color: #ffffff; border-radius: #fffff;;">Ogarnic Cotton</span>
-                    </div>
+                <div data-component="MProductMarkers" class="m-product-marker">
+                    <div class="marker-text product-marker">ONLINE EXCLUSIVE</div>
+                    <!--<div class="marker-text product-marker">ORGANIC COTTON</div>-->
+                    <!--<div class="marker-text product-marker">SET OF 4</div>-->
+                    <!--<div class="marker-text product-marker">ARKET BASICS COLLECTION</div>-->
                 </div>
             </div>
         </a>
@@ -7998,7 +8009,7 @@
             <div class="price">
                 <span class="i18n">Price</span>
                 <div class="m-product-price">
-                    <span>14,000</span>
+                    <span class="is-regular">14,000</span>
                 </div>
             </div>
         </a>
@@ -8091,7 +8102,7 @@
         <div class="image">
             <div class="m-product-image">
                 <div class="cross"></div>
-                <div class="" style="">
+                <div class="placeholder-wrapper">
                     <!--
                     <img class="a-image default-image ResolveComplete"
                          src="https://lp.arket.com/app006prod?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&amp;set=key%5Bresolve.width%5D,value%5B250%5D&amp;set=key%5Bresolve.height%5D,value%5B10000%5D&amp;set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&amp;set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&amp;set=key%5Bresolve.format%5D,value%5Bwebp%5D&amp;set=key%5Bresolve.quality%5D,value%5B70%5D&amp;set=ImageVersion%5B1%5D,origin%5Bdam%5D,source%5B/76/41/76411172b170256162e9044edff696ce40e57bfe.jpg%5D,type%5BLOOKBOOK%5D&amp;call=url%5Bfile:/product/dynamic.chain%5D"
@@ -8211,11 +8222,11 @@
            data-ticket="Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MDk2OTQ4NF9ncm91cF8wMDFfZW5fd3c7MDk2OTQ4NDAwMV9lbl93dzs7Tk9ORTpOT05FOzU4Ow"
            data-image="SMALL">
             <div class="product-markers">
-                <div data-component="MProductMarkers" class="m-product-marker"
-                     data-component-id="a782c62f-910f-4855-8d2c-7647dada5dd3">
-                    <div class="marker-text product-marker">
-                        <span style="color: #000000; background-color: #ffffff; border-radius: #fffff;;">Ogarnic Cotton</span>
-                    </div>
+                <div data-component="MProductMarkers" class="m-product-marker">
+                    <div class="marker-text product-marker">ONLINE EXCLUSIVE</div>
+                    <!--<div class="marker-text product-marker">ORGANIC COTTON</div>-->
+                    <!--<div class="marker-text product-marker">SET OF 4</div>-->
+                    <!--<div class="marker-text product-marker">ARKET BASICS COLLECTION</div>-->
                 </div>
             </div>
         </a>
@@ -8229,7 +8240,7 @@
             <div class="price">
                 <span class="i18n">Price</span>
                 <div class="m-product-price">
-                    <span>14,000</span>
+                    <span class="is-regular">14,000</span>
                 </div>
             </div>
         </a>
@@ -8322,7 +8333,7 @@
         <div class="image">
             <div class="m-product-image">
                 <div class="cross"></div>
-                <div class="" style="">
+                <div class="placeholder-wrapper">
                     <!--
                     <img class="a-image default-image ResolveComplete"
                          src="https://lp.arket.com/app006prod?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&amp;set=key%5Bresolve.width%5D,value%5B250%5D&amp;set=key%5Bresolve.height%5D,value%5B10000%5D&amp;set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&amp;set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&amp;set=key%5Bresolve.format%5D,value%5Bwebp%5D&amp;set=key%5Bresolve.quality%5D,value%5B70%5D&amp;set=ImageVersion%5B1%5D,origin%5Bdam%5D,source%5B/76/41/76411172b170256162e9044edff696ce40e57bfe.jpg%5D,type%5BLOOKBOOK%5D&amp;call=url%5Bfile:/product/dynamic.chain%5D"
@@ -8442,11 +8453,11 @@
            data-ticket="Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MDk2OTQ4NF9ncm91cF8wMDFfZW5fd3c7MDk2OTQ4NDAwMV9lbl93dzs7Tk9ORTpOT05FOzU4Ow"
            data-image="SMALL">
             <div class="product-markers">
-                <div data-component="MProductMarkers" class="m-product-marker"
-                     data-component-id="a782c62f-910f-4855-8d2c-7647dada5dd3">
-                    <div class="marker-text product-marker">
-                        <span style="color: #000000; background-color: #ffffff; border-radius: #fffff;;">Ogarnic Cotton</span>
-                    </div>
+                <div data-component="MProductMarkers" class="m-product-marker">
+                    <div class="marker-text product-marker">ONLINE EXCLUSIVE</div>
+                    <!--<div class="marker-text product-marker">ORGANIC COTTON</div>-->
+                    <!--<div class="marker-text product-marker">SET OF 4</div>-->
+                    <!--<div class="marker-text product-marker">ARKET BASICS COLLECTION</div>-->
                 </div>
             </div>
         </a>
@@ -8460,7 +8471,7 @@
             <div class="price">
                 <span class="i18n">Price</span>
                 <div class="m-product-price">
-                    <span>14,000</span>
+                    <span class="is-regular">14,000</span>
                 </div>
             </div>
         </a>
@@ -8553,7 +8564,7 @@
         <div class="image">
             <div class="m-product-image">
                 <div class="cross"></div>
-                <div class="" style="">
+                <div class="placeholder-wrapper">
                     <!--
                     <img class="a-image default-image ResolveComplete"
                          src="https://lp.arket.com/app006prod?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&amp;set=key%5Bresolve.width%5D,value%5B250%5D&amp;set=key%5Bresolve.height%5D,value%5B10000%5D&amp;set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&amp;set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&amp;set=key%5Bresolve.format%5D,value%5Bwebp%5D&amp;set=key%5Bresolve.quality%5D,value%5B70%5D&amp;set=ImageVersion%5B1%5D,origin%5Bdam%5D,source%5B/76/41/76411172b170256162e9044edff696ce40e57bfe.jpg%5D,type%5BLOOKBOOK%5D&amp;call=url%5Bfile:/product/dynamic.chain%5D"
@@ -8673,11 +8684,11 @@
            data-ticket="Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MDk2OTQ4NF9ncm91cF8wMDFfZW5fd3c7MDk2OTQ4NDAwMV9lbl93dzs7Tk9ORTpOT05FOzU4Ow"
            data-image="SMALL">
             <div class="product-markers">
-                <div data-component="MProductMarkers" class="m-product-marker"
-                     data-component-id="a782c62f-910f-4855-8d2c-7647dada5dd3">
-                    <div class="marker-text product-marker">
-                        <span style="color: #000000; background-color: #ffffff; border-radius: #fffff;;">Ogarnic Cotton</span>
-                    </div>
+                <div data-component="MProductMarkers" class="m-product-marker">
+                    <div class="marker-text product-marker">ONLINE EXCLUSIVE</div>
+                    <!--<div class="marker-text product-marker">ORGANIC COTTON</div>-->
+                    <!--<div class="marker-text product-marker">SET OF 4</div>-->
+                    <!--<div class="marker-text product-marker">ARKET BASICS COLLECTION</div>-->
                 </div>
             </div>
         </a>
@@ -8691,7 +8702,7 @@
             <div class="price">
                 <span class="i18n">Price</span>
                 <div class="m-product-price">
-                    <span>14,000</span>
+                    <span class="is-regular">14,000</span>
                 </div>
             </div>
         </a>
@@ -8784,7 +8795,7 @@
         <div class="image">
             <div class="m-product-image">
                 <div class="cross"></div>
-                <div class="" style="">
+                <div class="placeholder-wrapper">
                     <!--
                     <img class="a-image default-image ResolveComplete"
                          src="https://lp.arket.com/app006prod?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&amp;set=key%5Bresolve.width%5D,value%5B250%5D&amp;set=key%5Bresolve.height%5D,value%5B10000%5D&amp;set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&amp;set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&amp;set=key%5Bresolve.format%5D,value%5Bwebp%5D&amp;set=key%5Bresolve.quality%5D,value%5B70%5D&amp;set=ImageVersion%5B1%5D,origin%5Bdam%5D,source%5B/76/41/76411172b170256162e9044edff696ce40e57bfe.jpg%5D,type%5BLOOKBOOK%5D&amp;call=url%5Bfile:/product/dynamic.chain%5D"
@@ -8904,11 +8915,11 @@
            data-ticket="Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MDk2OTQ4NF9ncm91cF8wMDFfZW5fd3c7MDk2OTQ4NDAwMV9lbl93dzs7Tk9ORTpOT05FOzU4Ow"
            data-image="SMALL">
             <div class="product-markers">
-                <div data-component="MProductMarkers" class="m-product-marker"
-                     data-component-id="a782c62f-910f-4855-8d2c-7647dada5dd3">
-                    <div class="marker-text product-marker">
-                        <span style="color: #000000; background-color: #ffffff; border-radius: #fffff;;">Ogarnic Cotton</span>
-                    </div>
+                <div data-component="MProductMarkers" class="m-product-marker">
+                    <div class="marker-text product-marker">ONLINE EXCLUSIVE</div>
+                    <!--<div class="marker-text product-marker">ORGANIC COTTON</div>-->
+                    <!--<div class="marker-text product-marker">SET OF 4</div>-->
+                    <!--<div class="marker-text product-marker">ARKET BASICS COLLECTION</div>-->
                 </div>
             </div>
         </a>
@@ -8922,7 +8933,7 @@
             <div class="price">
                 <span class="i18n">Price</span>
                 <div class="m-product-price">
-                    <span>14,000</span>
+                    <span class="is-regular">14,000</span>
                 </div>
             </div>
         </a>
@@ -9015,7 +9026,7 @@
         <div class="image">
             <div class="m-product-image">
                 <div class="cross"></div>
-                <div class="" style="">
+                <div class="placeholder-wrapper">
                     <!--
                     <img class="a-image default-image ResolveComplete"
                          src="https://lp.arket.com/app006prod?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&amp;set=key%5Bresolve.width%5D,value%5B250%5D&amp;set=key%5Bresolve.height%5D,value%5B10000%5D&amp;set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&amp;set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&amp;set=key%5Bresolve.format%5D,value%5Bwebp%5D&amp;set=key%5Bresolve.quality%5D,value%5B70%5D&amp;set=ImageVersion%5B1%5D,origin%5Bdam%5D,source%5B/76/41/76411172b170256162e9044edff696ce40e57bfe.jpg%5D,type%5BLOOKBOOK%5D&amp;call=url%5Bfile:/product/dynamic.chain%5D"
@@ -9135,11 +9146,11 @@
            data-ticket="Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MDk2OTQ4NF9ncm91cF8wMDFfZW5fd3c7MDk2OTQ4NDAwMV9lbl93dzs7Tk9ORTpOT05FOzU4Ow"
            data-image="SMALL">
             <div class="product-markers">
-                <div data-component="MProductMarkers" class="m-product-marker"
-                     data-component-id="a782c62f-910f-4855-8d2c-7647dada5dd3">
-                    <div class="marker-text product-marker">
-                        <span style="color: #000000; background-color: #ffffff; border-radius: #fffff;;">Ogarnic Cotton</span>
-                    </div>
+                <div data-component="MProductMarkers" class="m-product-marker">
+                    <div class="marker-text product-marker">ONLINE EXCLUSIVE</div>
+                    <!--<div class="marker-text product-marker">ORGANIC COTTON</div>-->
+                    <!--<div class="marker-text product-marker">SET OF 4</div>-->
+                    <!--<div class="marker-text product-marker">ARKET BASICS COLLECTION</div>-->
                 </div>
             </div>
         </a>
@@ -9153,7 +9164,7 @@
             <div class="price">
                 <span class="i18n">Price</span>
                 <div class="m-product-price">
-                    <span>14,000</span>
+                    <span class="is-regular">14,000</span>
                 </div>
             </div>
         </a>
@@ -9246,7 +9257,7 @@
         <div class="image">
             <div class="m-product-image">
                 <div class="cross"></div>
-                <div class="" style="">
+                <div class="placeholder-wrapper">
                     <!--
                     <img class="a-image default-image ResolveComplete"
                          src="https://lp.arket.com/app006prod?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&amp;set=key%5Bresolve.width%5D,value%5B250%5D&amp;set=key%5Bresolve.height%5D,value%5B10000%5D&amp;set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&amp;set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&amp;set=key%5Bresolve.format%5D,value%5Bwebp%5D&amp;set=key%5Bresolve.quality%5D,value%5B70%5D&amp;set=ImageVersion%5B1%5D,origin%5Bdam%5D,source%5B/76/41/76411172b170256162e9044edff696ce40e57bfe.jpg%5D,type%5BLOOKBOOK%5D&amp;call=url%5Bfile:/product/dynamic.chain%5D"
@@ -9366,11 +9377,11 @@
            data-ticket="Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MDk2OTQ4NF9ncm91cF8wMDFfZW5fd3c7MDk2OTQ4NDAwMV9lbl93dzs7Tk9ORTpOT05FOzU4Ow"
            data-image="SMALL">
             <div class="product-markers">
-                <div data-component="MProductMarkers" class="m-product-marker"
-                     data-component-id="a782c62f-910f-4855-8d2c-7647dada5dd3">
-                    <div class="marker-text product-marker">
-                        <span style="color: #000000; background-color: #ffffff; border-radius: #fffff;;">Ogarnic Cotton</span>
-                    </div>
+                <div data-component="MProductMarkers" class="m-product-marker">
+                    <div class="marker-text product-marker">ONLINE EXCLUSIVE</div>
+                    <!--<div class="marker-text product-marker">ORGANIC COTTON</div>-->
+                    <!--<div class="marker-text product-marker">SET OF 4</div>-->
+                    <!--<div class="marker-text product-marker">ARKET BASICS COLLECTION</div>-->
                 </div>
             </div>
         </a>
@@ -9384,7 +9395,7 @@
             <div class="price">
                 <span class="i18n">Price</span>
                 <div class="m-product-price">
-                    <span>14,000</span>
+                    <span class="is-regular">14,000</span>
                 </div>
             </div>
         </a>
@@ -9493,7 +9504,8 @@
     <!-- //o-page-content -->
 
     <!-- footer -->
-    <footer class="o-footer o-footer-top u-clearfix">
+    
+<footer class="o-footer o-footer-top u-clearfix">
     <ul>
         <li>
             <a class="a-link" href="#" target="_self">About ARKET</a>
@@ -9557,7 +9569,7 @@
             <p>ARKET 온라인 스토어는<br><a href="http://thehyundai.com" class="a-link a-link-udln" target="_blank">더현대닷컴</a>을 이용하고 있습니다.</p>
             <ul class="link-lst">
                 <li><a href="#none" class="a-link" target="_self">이용약관</a></li>
-                <li><a href="#none" class="a-link" target="_self">개인정보처리방침</a></li>
+                <li><a href="#none" class="a-link" target="_self"><strong>개인정보처리방침</strong></a></li>
                 <li><a href="http://www.ehyundai.com/newPortal/ir/main.do" class="a-link" target="_blank">현대백화점 그룹</a></li>
             </ul>
         </div>
@@ -9639,6 +9651,7 @@
 <!--    <script src="../../../static/org/etc/designs/appeaser/p11/clientlibs/aem-clientlibs/genericpage_Clientlib.min.44bc583ac294a90847353b251f2c46c0.js"></script>-->
 
     <!-- frontend.renew.js -->
+    <script src="../../../static/js/jquery-ui.js"></script>
     <script src="../../../static/js/frontend.renew.js"></script>
     <!-- //frontend.renew.js -->
 

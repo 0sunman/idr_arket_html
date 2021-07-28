@@ -30,12 +30,14 @@
     <link rel="stylesheet" href="../../../static/org/etc/designs/appeaser/p11/pattern-lib/frontend.min.1987a0f885a03ad325376517da7bed68.css" type="text/css">
 
     <!-- frontend.renew.css -->
+    <link rel="stylesheet" href="../../../static/css/jquery-ui.css" type="text/css">
     <link rel="stylesheet" href="../../../static/css/frontend.renew.css" type="text/css">
     <!-- //frontend.renew.css -->
 
     <script src="../../../static/org/etc/designs/hm/clientlibs/shared/jquery.min.98d49f2a9477a5d4f9edef7b7e9698b1.js"></script>
     <script src="../../../static/org/etc/designs/appeaser/p11/pattern-lib/frontend/js/modernizr-custom.min.js"></script>
     <script src="../../../static/org/metrics/default/touchpoint.js"></script>
+
 </head>
 
 <body data-component="OPage" class="layout-inside" id="oPage" data-locale-page-node-name="en" data-component-id="66152dea-5e9c-4757-9208-19efae8e2313">
@@ -52,8 +54,7 @@
     <div data-component="SkeletonLoading" id="lpResolveConfigs" data-lp-aspect-ratio-width="2" data-lp-aspect-ratio-height="3" data-lp-density-mobile="2" data-lp-density-tablet="2" data-lp-density-desk="2" data-lp-max-density="3" data-lp-format="webp,jpeg" data-lp-cache-threshold="50" data-lp-url="lp.arket.com" data-lp-uri="app006prod" data-lp-image-fit="containerWidth" data-lp-jpeg-quality-desktop="70" data-lp-webp-quality-mobile="70" data-lp-webp-quality-tablet="70" data-lp-jpeg-quality-tablet="70" data-lp-webp-quality-desktop="70" data-lp-jpeg-quality-mobile="70" data-component-id="6dbb0cd9-2cf4-4569-a46d-c4294b9c76a2"></div>
 
     <div class="firsttimelanguageselector first-time-language-selector">
-        <script type="text/x-handlebars-template" id="language-select">
-        </script>
+        <script type="text/x-handlebars-template" id="language-select"></script>
     </div>
 
     <span id="arketeotflag" data-arketeot-flag="true"></span>
@@ -1403,6 +1404,15 @@
                 <div class="basket-added-info">
                     <p class="a-paragraph">
                         <span class="item-title">루즈핏 리넨 쇼츠</span>
+                        <!--
+                        <div class="markers">
+                            <div class="m-product-marker" data-component="MProductMarkers">
+                                <div class="marker-text product-marker">
+                                    <span>online exclusive</span>
+                                </div>
+                            </div>
+                        </div>
+                        -->
                         <div class="product-param-info second">
                             <div class="product-params data">
                                 <div class="product-size">44</div>
@@ -2001,7 +2011,7 @@
         <div class="o-forgot-password n-find-idpw">
         <div class="forgot-password-form">
                 <h2 class="a-heading-2">휴면계정복구 안내</h2>
-                <!-- 신규추가 내용 : 휴먼계정 복구안내 -->
+                <!-- 신규추가 내용 : 휴면계정 복구안내 -->
                 <div class="n-wrap resting-guide">
                     <p class="sub-title">
                         <span class="user">theHyundai@hyundai.com</span> 고객님의<br class="only-m"> 아이디는 휴면계정입니다.
@@ -2018,7 +2028,7 @@
                         <p class="info">감사합니다.</p>
                         <p class="info">더 궁금하신 사항이 있다면 ARKET 고객센터 [1522-0176] 로 문의하여 주십시오.</p>
                     </div>
-                </div><!-- // 신규추가 내용 : 휴먼계정 복구안내 -->
+                </div><!-- // 신규추가 내용 : 휴면계정 복구안내 -->
 
                 <!-- button-container -->
                 <div class="button-container col-2 re-sort">
@@ -2037,7 +2047,8 @@
     <!-- //o-page-content -->
 
     <!-- footer -->
-    <footer class="o-footer o-footer-top u-clearfix">
+    
+<footer class="o-footer o-footer-top u-clearfix">
     <ul>
         <li>
             <a class="a-link" href="#" target="_self">About ARKET</a>
@@ -2101,7 +2112,7 @@
             <p>ARKET 온라인 스토어는<br><a href="http://thehyundai.com" class="a-link a-link-udln" target="_blank">더현대닷컴</a>을 이용하고 있습니다.</p>
             <ul class="link-lst">
                 <li><a href="#none" class="a-link" target="_self">이용약관</a></li>
-                <li><a href="#none" class="a-link" target="_self">개인정보처리방침</a></li>
+                <li><a href="#none" class="a-link" target="_self"><strong>개인정보처리방침</strong></a></li>
                 <li><a href="http://www.ehyundai.com/newPortal/ir/main.do" class="a-link" target="_blank">현대백화점 그룹</a></li>
             </ul>
         </div>
@@ -2183,6 +2194,7 @@
 <!--    <script src="../../../static/org/etc/designs/appeaser/p11/clientlibs/aem-clientlibs/genericpage_Clientlib.min.44bc583ac294a90847353b251f2c46c0.js"></script>-->
 
     <!-- frontend.renew.js -->
+    <script src="../../../static/js/jquery-ui.js"></script>
     <script src="../../../static/js/frontend.renew.js"></script>
     <!-- //frontend.renew.js -->
 

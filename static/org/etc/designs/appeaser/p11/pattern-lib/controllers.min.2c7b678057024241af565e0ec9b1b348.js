@@ -54,8 +54,7 @@
             return c
         }
 
-        function l(c,
-                   a, b) {
+        function l(c, a, b) {
             l = "undefined" !== typeof Reflect && Reflect.get ? Reflect.get : function (a, b, c) {
                 for (; !Object.prototype.hasOwnProperty.call(a, b) && (a = g(a), null !== a);) ;
                 if (a) return b = Object.getOwnPropertyDescriptor(a, b), b.get ? b.get.call(c) : b.value
@@ -70,11 +69,10 @@
         }
 
         function n(c, a) {
-            n = Object.setPrototypeOf ||
-                function (a, d) {
-                    a.__proto__ = d;
-                    return a
-                };
+            n = Object.setPrototypeOf || function (a, d) {
+                a.__proto__ = d;
+                return a
+            };
             return n(c, a)
         }
 
@@ -117,8 +115,7 @@
         f = function (c) {
             function a() {
                 if (!(this instanceof a)) throw new TypeError("Cannot call a class as a function");
-                var d = b.apply(this,
-                    arguments);
+                var d = b.apply(this, arguments);
                 h.default.INFO(d.constructor.name, ":: Constructor");
                 d._jQueryScopeBinding();
                 d._declareConstants();
@@ -143,73 +140,70 @@
                     this._attachSubscribers();
                     this._attachDOMListeners()
                 }
-            },
-                {
-                    key: "_jQueryScopeBinding", value: function () {
-                        this._onDOMReady = this._onDOMReady.bind(this);
-                        this._setGradient = this._setGradient.bind(this);
-                        this._show = this._show.bind(this);
-                        this._hide = this._hide.bind(this)
+            }, {
+                key: "_jQueryScopeBinding", value: function () {
+                    this._onDOMReady = this._onDOMReady.bind(this);
+                    this._setGradient = this._setGradient.bind(this);
+                    this._show = this._show.bind(this);
+                    this._hide = this._hide.bind(this)
+                }
+            }, {
+                key: "_attachSubscribers", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _attachSubscribers");
+                    this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
+                    this.subscribe(e.default.ACTION.SET_BACKDROP, this._setGradient);
+                    this.subscribe(e.default.ACTION.SHOW_BACKDROP, this._show);
+                    this.subscribe(e.default.ACTION.HIDE_BACKDROP, this._hide);
+                    this.subscribe(e.default.ACTION.ANIMATE_BACKDROP, this._animate)
+                }
+            }, {
+                key: "_detachSubscribers", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _detachSubscribers");
+                    this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
+                    this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady);
+                    this.unsubscribe(e.default.ACTION.SET_BACKDROP, this._setGradient);
+                    this.unsubscribe(e.default.ACTION.SHOW_BACKDROP, this._show);
+                    this.unsubscribe(e.default.ACTION.HIDE_BACKDROP, this._hide);
+                    this.unsubscribe(e.default.ACTION.ANIMATE_BACKDROP, this._animate)
+                }
+            }, {
+                key: "_onFrameworkReady", value: function () {
+                }
+            }, {
+                key: "_attachDOMListeners", value: function () {
+                }
+            }, {
+                key: "_detachDOMListeners", value: function () {
+                }
+            }, {
+                key: "_setGradient", value: function (a) {
+                    a.gradientClass && this.$el.addClass(a.gradientClass);
+                    a.gradientHex && this.$el.css("background", a.gradientHex)
+                }
+            }, {
+                key: "_show", value: function () {
+                    this.$el.addClass(e.default.CLASS.IS_VISIBLE_STATE)
+                }
+            }, {
+                key: "_hide", value: function () {
+                    this.$el.removeClass(e.default.CLASS.IS_VISIBLE_STATE)
+                }
+            }, {
+                key: "_animate", value: function (a) {
+                    h.default.INFO(this.constructor.name, ":: _animate");
+                    if (a && !this.$el.hasClass(a.gradientClass) && this.$el.css("background") != a.gradientHex) {
+                        var d = this.$el.eq(0).clone(), b = this.$el.parent(), c = a.gradientClass || "";
+                        d.css("opacity", 1);
+                        this.$el.addClass("is-fading-out").css("opacity", 1).delay(600).queue(function (a) {
+                            $(this).remove();
+                            a()
+                        });
+                        d.prop("class", "a-backdrop " + e.default.CLASS.IS_VISIBLE_STATE + " " + c).css("background", a.gradientHex || "");
+                        b.prepend(d);
+                        this.$el = d
                     }
-                }, {
-                    key: "_attachSubscribers", value: function () {
-                        h.default.INFO(this.constructor.name, ":: _attachSubscribers");
-                        this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
-                        this.subscribe(e.default.ACTION.SET_BACKDROP, this._setGradient);
-                        this.subscribe(e.default.ACTION.SHOW_BACKDROP, this._show);
-                        this.subscribe(e.default.ACTION.HIDE_BACKDROP, this._hide);
-                        this.subscribe(e.default.ACTION.ANIMATE_BACKDROP, this._animate)
-                    }
-                }, {
-                    key: "_detachSubscribers", value: function () {
-                        h.default.INFO(this.constructor.name, ":: _detachSubscribers");
-                        this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
-                        this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady);
-                        this.unsubscribe(e.default.ACTION.SET_BACKDROP, this._setGradient);
-                        this.unsubscribe(e.default.ACTION.SHOW_BACKDROP, this._show);
-                        this.unsubscribe(e.default.ACTION.HIDE_BACKDROP,
-                            this._hide);
-                        this.unsubscribe(e.default.ACTION.ANIMATE_BACKDROP, this._animate)
-                    }
-                }, {
-                    key: "_onFrameworkReady", value: function () {
-                    }
-                }, {
-                    key: "_attachDOMListeners", value: function () {
-                    }
-                }, {
-                    key: "_detachDOMListeners", value: function () {
-                    }
-                }, {
-                    key: "_setGradient", value: function (a) {
-                        a.gradientClass && this.$el.addClass(a.gradientClass);
-                        a.gradientHex && this.$el.css("background", a.gradientHex)
-                    }
-                }, {
-                    key: "_show", value: function () {
-                        this.$el.addClass(e.default.CLASS.IS_VISIBLE_STATE)
-                    }
-                }, {
-                    key: "_hide", value: function () {
-                        this.$el.removeClass(e.default.CLASS.IS_VISIBLE_STATE)
-                    }
-                },
-                {
-                    key: "_animate", value: function (a) {
-                        h.default.INFO(this.constructor.name, ":: _animate");
-                        if (a && !this.$el.hasClass(a.gradientClass) && this.$el.css("background") != a.gradientHex) {
-                            var d = this.$el.eq(0).clone(), b = this.$el.parent(), c = a.gradientClass || "";
-                            d.css("opacity", 1);
-                            this.$el.addClass("is-fading-out").css("opacity", 1).delay(600).queue(function (a) {
-                                $(this).remove();
-                                a()
-                            });
-                            d.prop("class", "a-backdrop " + e.default.CLASS.IS_VISIBLE_STATE + " " + c).css("background", a.gradientHex || "");
-                            b.prepend(d);
-                            this.$el = d
-                        }
-                    }
-                }]);
+                }
+            }]);
             return a
         }(p.default);
         t.exports = f
@@ -235,8 +229,7 @@
 
         function q(c, a) {
             for (var b = 0; b < a.length; b++) {
-                var d =
-                    a[b];
+                var d = a[b];
                 d.enumerable = d.enumerable || !1;
                 d.configurable = !0;
                 "value" in d && (d.writable = !0);
@@ -328,8 +321,7 @@
                     l(g(a.prototype), "destroy", this).call(this)
                 }
             }, {
-                key: "_declareConstants",
-                value: function () {
+                key: "_declareConstants", value: function () {
                     this.DATA_BACKGROUND = "data-background"
                 }
             }, {
@@ -349,8 +341,7 @@
                 }
             }, {
                 key: "_detachSubscribers", value: function () {
-                    h.default.INFO(this.constructor.name,
-                        ":: _detachSubscribers");
+                    h.default.INFO(this.constructor.name, ":: _detachSubscribers");
                     this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady);
                     this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady)
                 }
@@ -396,8 +387,7 @@
             }
         }
 
-        function r(c,
-                   a, b) {
+        function r(c, a, b) {
             a && q(c.prototype, a);
             b && q(c, b);
             return c
@@ -413,12 +403,7 @@
 
         function v(c, a) {
             if ("function" !== typeof a && null !== a) throw new TypeError("Super expression must either be null or a function");
-            c.prototype = Object.create(a && a.prototype, {
-                constructor: {
-                    value: c, writable: !0,
-                    configurable: !0
-                }
-            });
+            c.prototype = Object.create(a && a.prototype, {constructor: {value: c, writable: !0, configurable: !0}});
             a && n(c, a)
         }
 
@@ -447,8 +432,7 @@
         }
 
         function u() {
-            if ("undefined" === typeof Reflect || !Reflect.construct ||
-                Reflect.construct.sham) return !1;
+            if ("undefined" === typeof Reflect || !Reflect.construct || Reflect.construct.sham) return !1;
             if ("function" === typeof Proxy) return !0;
             try {
                 return Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {
@@ -492,8 +476,7 @@
                     this.CLASS_IS_CLOSING = "is-closing"
                 }
             }, {
-                key: "_onDOMReady",
-                value: function () {
+                key: "_onDOMReady", value: function () {
                     h.default.INFO(this.constructor.name, ":: _onDOMReady");
                     this.rmClasses = null;
                     this._attachSubscribers();
@@ -522,8 +505,7 @@
                     this.unsubscribe(e.default.ACTION.HIDE_OVERLAY, this._hide)
                 }
             }, {
-                key: "_onFrameworkReady",
-                value: function () {
+                key: "_onFrameworkReady", value: function () {
                 }
             }, {
                 key: "_attachDOMListeners", value: function () {
@@ -542,8 +524,7 @@
                     this.$el.removeClass(this.rmClasses).removeClass(this.CLASS_IS_CLOSING);
                     clearTimeout(this.delayTimer);
                     this.$el.addClass(e.default.CLASS.IS_VISIBLE_STATE);
-                    a.classes && (this.rmClasses = a.classes,
-                        this.$el.addClass(a.classes));
+                    a.classes && (this.rmClasses = a.classes, this.$el.addClass(a.classes));
                     a.keepScroll || this.publish(e.default.ACTION.DISABLE_SCROLL, {scrollCompensation: a.scrollCompensation});
                     this.publish(e.default.EVENT.ON_OVERLAY_SHOW)
                 }
@@ -606,8 +587,7 @@
             return c
         }
 
-        function l(c,
-                   a, b) {
+        function l(c, a, b) {
             l = "undefined" !== typeof Reflect && Reflect.get ? Reflect.get : function (a, b, c) {
                 for (; !Object.prototype.hasOwnProperty.call(a, b) && (a = g(a), null !== a);) ;
                 if (a) return b = Object.getOwnPropertyDescriptor(a, b), b.get ? b.get.call(c) : b.value
@@ -622,11 +602,10 @@
         }
 
         function n(c, a) {
-            n = Object.setPrototypeOf ||
-                function (a, d) {
-                    a.__proto__ = d;
-                    return a
-                };
+            n = Object.setPrototypeOf || function (a, d) {
+                a.__proto__ = d;
+                return a
+            };
             return n(c, a)
         }
 
@@ -669,8 +648,7 @@
         f = function (c) {
             function a() {
                 if (!(this instanceof a)) throw new TypeError("Cannot call a class as a function");
-                var d = b.apply(this,
-                    arguments);
+                var d = b.apply(this, arguments);
                 h.default.INFO(d.constructor.name, ":: Constructor");
                 d._declareConstants();
                 d._jQueryScopeBinding();
@@ -693,8 +671,7 @@
                 }
             }, {
                 key: "_onDOMReady", value: function () {
-                    h.default.INFO(this.constructor.name,
-                        ":: _onDOMReady");
+                    h.default.INFO(this.constructor.name, ":: _onDOMReady");
                     this._cacheDOMElements();
                     this._attachSubscribers();
                     this._attachDOMListeners();
@@ -712,8 +689,7 @@
             }, {
                 key: "_attachSubscribers", value: function () {
                     h.default.INFO(this.constructor.name, ":: _attachSubscribers");
-                    this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY,
-                        this._onFrameworkReady)
+                    this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady)
                 }
             }, {
                 key: "_detachSubscribers", value: function () {
@@ -732,16 +708,15 @@
                 key: "_detachDOMListeners", value: function () {
                     this.$background.off("load", this._onImageLoad)
                 }
-            },
-                {
-                    key: "_onImageLoad", value: function () {
-                        var a = this.$el.data("background");
-                        if (a) {
-                            var b = this.$background.get(0).currentSrc || this.$background.attr("srcset") || this.$background.attr("src");
-                            this.$el.closest("." + a).css("background-image", "url(" + b + ")")
-                        }
+            }, {
+                key: "_onImageLoad", value: function () {
+                    var a = this.$el.data("background");
+                    if (a) {
+                        var b = this.$background.get(0).currentSrc || this.$background.attr("srcset") || this.$background.attr("src");
+                        this.$el.closest("." + a).css("background-image", "url(" + b + ")")
                     }
-                }]);
+                }
+            }]);
             return a
         }(p.default);
         t.exports = f
@@ -757,15 +732,13 @@
                     return a && a.__esModule ? a : {default: a}
                 }
 
-                var q =
-                        k(f("./../themes/p11/enums.js")), r = k(f("./../js/base/sticky-component.js")),
+                var q = k(f("./../themes/p11/enums.js")), r = k(f("./../js/base/sticky-component.js")),
                     l = k(f("./../js/base/skeleton-loading.js")), p = k(f("./../js/base/site-entry-locator.js")),
                     n = k(f("./atoms/a-overlay/index")), t = k(f("./atoms/a-backdrop/index")),
                     u = k(f("./atoms/a-background-image/index")), g = k(f("./atoms/a-picture/index")),
                     h = k(f("./molecules/m-input/index")), e = k(f("./molecules/m-link-toggle/index")),
                     c = k(f("./molecules/m-tablist/index")), a = k(f("./molecules/m-swatches/index")),
-                    b = k(f("./molecules/m-copy-link/index")),
-                    d = k(f("./molecules/m-product-image/index")),
+                    b = k(f("./molecules/m-copy-link/index")), d = k(f("./molecules/m-product-image/index")),
                     x = k(f("./molecules/m-radio-button-selector/index")),
                     y = k(f("./molecules/m-product-markers/index")),
                     D = k(f("./molecules/m-product-markers-cofs/index")),
@@ -858,8 +831,7 @@
                     return a.toUpperCase()
                 })
             }).call(this)
-        }).call(this,
-            "undefined" !== typeof global ? global : "undefined" !== typeof self ? self : "undefined" !== typeof window ? window : {})
+        }).call(this, "undefined" !== typeof global ? global : "undefined" !== typeof self ? self : "undefined" !== typeof window ? window : {})
     }, {
         "./../js/base/site-entry-locator.js": 54,
         "./../js/base/skeleton-loading.js": 55,
@@ -915,8 +887,7 @@
             m = "function" === typeof Symbol && "symbol" === typeof Symbol.iterator ? function (a) {
                 return typeof a
             } : function (a) {
-                return a && "function" === typeof Symbol &&
-                a.constructor === Symbol && a !== Symbol.prototype ? "symbol" : typeof a
+                return a && "function" === typeof Symbol && a.constructor === Symbol && a !== Symbol.prototype ? "symbol" : typeof a
             };
             return m(c)
         }
@@ -943,8 +914,7 @@
 
         function l(c, a, b) {
             l = "undefined" !== typeof Reflect && Reflect.get ? Reflect.get : function (a, b, c) {
-                for (; !Object.prototype.hasOwnProperty.call(a, b) && (a = g(a), null !==
-                a);) ;
+                for (; !Object.prototype.hasOwnProperty.call(a, b) && (a = g(a), null !== a);) ;
                 if (a) return b = Object.getOwnPropertyDescriptor(a, b), b.get ? b.get.call(c) : b.value
             };
             return l(c, a, b || c)
@@ -992,10 +962,9 @@
         }
 
         function g(c) {
-            g = Object.setPrototypeOf ?
-                Object.getPrototypeOf : function (a) {
-                    return a.__proto__ || Object.getPrototypeOf(a)
-                };
+            g = Object.setPrototypeOf ? Object.getPrototypeOf : function (a) {
+                return a.__proto__ || Object.getPrototypeOf(a)
+            };
             return g(c)
         }
 
@@ -1008,8 +977,7 @@
                 h.default.INFO(d.constructor.name, ":: Constructor");
                 d._jQueryScopeBinding();
                 d._declareConstants();
-                d.subscribe(e.default.EVENT.ON_DOCUMENT_READY,
-                    d._onDOMReady);
+                d.subscribe(e.default.EVENT.ON_DOCUMENT_READY, d._onDOMReady);
                 return d
             }
 
@@ -1046,8 +1014,7 @@
             }, {
                 key: "_attachSubscribers", value: function () {
                     h.default.INFO(this.constructor.name, ":: _attachSubscribers");
-                    this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY,
-                        this._onFrameworkReady)
+                    this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady)
                 }
             }, {
                 key: "_detachSubscribers", value: function () {
@@ -1065,8 +1032,7 @@
                 }
             }, {
                 key: "_detachDOMListeners", value: function () {
-                    this.$copylink.off("click",
-                        this._onCopyLinkClick);
+                    this.$copylink.off("click", this._onCopyLinkClick);
                     this.$copylink.off("mouseleave", this._onLinkMouseleave)
                 }
             }, {
@@ -1104,8 +1070,7 @@
         }
 
         function k(a) {
-            return a &&
-            a.__esModule ? a : {default: a}
+            return a && a.__esModule ? a : {default: a}
         }
 
         function q(a, b) {
@@ -1129,8 +1094,7 @@
                 for (; !Object.prototype.hasOwnProperty.call(a, d) && (a = g(a), null !== a);) ;
                 if (a) return d = Object.getOwnPropertyDescriptor(a, d), d.get ? d.get.call(b) : d.value
             };
-            return l(a, b,
-                d || a)
+            return l(a, b, d || a)
         }
 
         function v(a, b) {
@@ -1155,8 +1119,7 @@
                     var x = g(this).constructor;
                     d = Reflect.construct(d, arguments, x)
                 } else d = d.apply(this, arguments);
-                if (!d || "object" !== m(d) &&
-                    "function" !== typeof d) {
+                if (!d || "object" !== m(d) && "function" !== typeof d) {
                     if (void 0 === this) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
                     d = this
                 }
@@ -1196,8 +1159,7 @@
                 return a
             }
 
-            v(b,
-                a);
+            v(b, a);
             var d = w(b);
             r(b, [{
                 key: "destroy", value: function () {
@@ -1227,8 +1189,7 @@
                     this.CLASS_PASSED = "passed";
                     this.CLASS_ERROR = "has-error";
                     this.CLASS_PASSWORD = "password";
-                    this.CLASS_INPUT_WITH_HELPTEXT =
-                        "input-with-helptext"
+                    this.CLASS_INPUT_WITH_HELPTEXT = "input-with-helptext"
                 }
             }, {
                 key: "_onDOMReady", value: function () {
@@ -1252,8 +1213,7 @@
                     this._onFocus = this._onFocus.bind(this);
                     this._onBlur = this._onBlur.bind(this);
                     this._onInvalid = this._onInvalid.bind(this);
-                    this._togglePasswordState =
-                        this._togglePasswordState.bind(this);
+                    this._togglePasswordState = this._togglePasswordState.bind(this);
                     this._onSubmit = this._onSubmit.bind(this)
                 }
             }, {
@@ -1279,8 +1239,7 @@
                     this.$input.on("blur", this._onBlur);
                     this.$input.on("invalid", this._onInvalid);
                     this.$togglePasswordField.on("click", this._togglePasswordState);
-                    this.$form.on("submit",
-                        this._onSubmit)
+                    this.$form.on("submit", this._onSubmit)
                 }
             }, {
                 key: "_detachDOMListeners", value: function () {
@@ -1294,91 +1253,86 @@
                 key: "_onSetErrorMessage", value: function (a) {
                     this.$input.attr("name") == a.inputName && (this.$el.addClass(e.default.CLASS.HAS_ERROR), this._displayErrorMessage(a.message), c.default.Accessibility.show(this.$placeholder))
                 }
-            },
-                {
-                    key: "_onFocus", value: function () {
-                        if (!this.hasBeenFocused) {
-                            if (this.$matchField) this.$matchField.on("blur", this._onBlur);
-                            this.hasBeenFocused = !0
-                        }
-                        this.$password && this.$helpText.length && (this.$helpText.addClass(this.CLASS_IS_VISIBLE), this.$el.addClass(this.CLASS_INPUT_WITH_HELPTEXT), this.$el.hasClass(this.CLASS_ERROR) && this.$helpText.find(this.SELECTOR_ERROR).length && (this.$helpText.find(this.SELECTOR_HELP_TIP).removeClass(this.CLASS_ERROR), this.$placeholder.text(this.$placeholder.data("placeholder"))));
-                        this.subscribe(e.default.EVENT.ON_KEY_DOWN, this._onKeyPress);
-                        this.subscribe(e.default.EVENT.ON_KEY_UP, this._onKeyUp);
-                        this.$el.addClass(e.default.CLASS.IS_ACTIVE_STATE)
+            }, {
+                key: "_onFocus", value: function () {
+                    if (!this.hasBeenFocused) {
+                        if (this.$matchField) this.$matchField.on("blur", this._onBlur);
+                        this.hasBeenFocused = !0
                     }
-                }, {
-                    key: "_onBlur", value: function () {
-                        this.unsubscribe(e.default.EVENT.ON_KEY_DOWN, this._onKeyPress);
-                        this.$input.val() || this.$input.attr("readonly") ? this.$input.val() && (this.$el.removeClass(e.default.CLASS.IS_ACTIVE_STATE), this.$el.addClass(e.default.CLASS.IS_FILLED)) : (this.$el.removeClass(e.default.CLASS.IS_ACTIVE_STATE), this.$el.removeClass(e.default.CLASS.IS_FILLED));
-                        this._checkIfInvalid() ? (this.$el.addClass(e.default.CLASS.HAS_ERROR), c.default.Accessibility.show(this.$placeholder)) : (this.$el.removeClass(e.default.CLASS.HAS_ERROR), c.default.Accessibility.hide(this.$placeholder));
-                        this.$helpText.length && this.$password && "" === this.$el.find(this.SELECTOR_A_INPUT).val() && (this.$helpText.removeClass(this.CLASS_IS_VISIBLE), this.$helpText.find(this.SELECTOR_HELP_TIP).removeClass(this.CLASS_RESET))
-                    }
-                }, {
-                    key: "_onInvalid", value: function (a) {
-                        a.preventDefault();
-                        this._checkIfInvalid() ?
-                            (this.$el.addClass(e.default.CLASS.HAS_ERROR), c.default.Accessibility.show(this.$placeholder)) : (this.$el.removeClass(e.default.CLASS.HAS_ERROR), c.default.Accessibility.hide(this.$placeholder))
-                    }
-                }, {
-                    key: "_onKeyPress", value: function () {
-                        this.$el.removeClass(e.default.CLASS.HAS_ERROR);
-                        c.default.Accessibility.hide(this.$placeholder)
-                    }
-                }, {
-                    key: "_onKeyUp", value: function () {
-                        this.$password && this.$helpText.length && this._passwordValidation(this.$el)
-                    }
-                }, {
-                    key: "_checkIfInvalid", value: function () {
-                        if (this.$input[0].validity.valueMissing) {
-                            var a =
-                                this.$input.data("validation-required-text-below") ? this.$input.data("validation-required-text-below") : this.$input.data("validation-required-text");
-                            this._displayErrorMessage(a)
-                        } else if (this.$matchField && this.$input.val() != this.$matchField.val()) this.$input[0].setCustomValidity("error"), this._displayErrorMessage(this.$input.data("validation-match-field-text")); else if (this.$input[0].validity.patternMismatch || this.$input[0].validity.typeMismatch) this._displayErrorMessage(this.$input.data("validation-pattern-text"));
-                        else if (this.$input[0].validity.tooLong) this._displayErrorMessage(this.$input.data("validation-maxlen-text")); else if (this.$input[0].validity.rangeUnderflow) this._displayErrorMessage(this.$input.data("validation-maxval-text")); else if (this.$input[0].validity.rangeOverflow) this._displayErrorMessage(this.$input.data("validation-minval-text")); else return this.$input[0].setCustomValidity(""), this.$placeholder.text(this.placeholderVal), 1 > this.placeholderVal.length && c.default.Accessibility.hide(this.$placeholder),
-                            !1;
-                        return !0
-                    }
-                }, {
-                    key: "_displayErrorMessage", value: function (a) {
-                        this.$placeholder.text(a);
-                        c.default.Accessibility.show(this.$placeholder)
-                    }
-                }, {
-                    key: "_passwordValidation", value: function (a) {
-                        var d = $(a).find(this.SELECTOR_MINIMUM_CHAR), b = $(a).find(this.SELECTOR_UPPERCASE),
-                            x = $(a).find(this.SELECTOR_NUMBER), c = $(a).find(this.SELECTOR_LOWERCASE);
-                        a = $(a).find(this.SELECTOR_A_INPUT).val();
-                        8 <= a.length ? d.removeClass(this.CLASS_ERROR).addClass(this.CLASS_PASSED) : d.removeClass(this.CLASS_PASSED);
-                        this._validateRegex(a,
-                            e.default.REGEX.UPPERCASE_CHAR) ? b.removeClass(this.CLASS_ERROR).addClass(this.CLASS_PASSED) : b.removeClass(this.CLASS_PASSED);
-                        this._validateRegex(a, e.default.REGEX.LOWERCASE_CHAR) ? c.removeClass(this.CLASS_ERROR).addClass(this.CLASS_PASSED) : c.removeClass(this.CLASS_PASSED);
-                        this._validateRegex(a, e.default.REGEX.DIGITS) ? x.removeClass(this.CLASS_ERROR).addClass(this.CLASS_PASSED) : x.removeClass(this.CLASS_PASSED)
-                    }
-                }, {
-                    key: "_validateRegex", value: function (a, d) {
-                        return d.test(a)
-                    }
-                }, {
-                    key: "_togglePasswordState",
-                    value: function (a) {
-                        a.preventDefault();
-                        a = $(a.target);
-                        var d = a.siblings(this.SELECTOR_A_INPUT);
-                        a.toggleClass(this.CLASS_PASSWORD_TOGGLE);
-                        "password" === d[0].type ? (d[0].type = "text", a.text(a.data("hide-text"))) : (d[0].type = "password", a.text(a.data("show-text")))
-                    }
-                }, {
-                    key: "_onSubmit", value: function () {
-                        this.$password && this.$el.find(this.SELECTOR_HELP_TIP_ERROR).length && this._displayErrorMessage(this.$el.find(this.SELECTOR_A_INPUT).data("password-error-text"))
-                    }
-                }]);
+                    this.$password && this.$helpText.length && (this.$helpText.addClass(this.CLASS_IS_VISIBLE), this.$el.addClass(this.CLASS_INPUT_WITH_HELPTEXT), this.$el.hasClass(this.CLASS_ERROR) && this.$helpText.find(this.SELECTOR_ERROR).length && (this.$helpText.find(this.SELECTOR_HELP_TIP).removeClass(this.CLASS_ERROR), this.$placeholder.text(this.$placeholder.data("placeholder"))));
+                    this.subscribe(e.default.EVENT.ON_KEY_DOWN, this._onKeyPress);
+                    this.subscribe(e.default.EVENT.ON_KEY_UP, this._onKeyUp);
+                    this.$el.addClass(e.default.CLASS.IS_ACTIVE_STATE)
+                }
+            }, {
+                key: "_onBlur", value: function () {
+                    this.unsubscribe(e.default.EVENT.ON_KEY_DOWN, this._onKeyPress);
+                    this.$input.val() || this.$input.attr("readonly") ? this.$input.val() && (this.$el.removeClass(e.default.CLASS.IS_ACTIVE_STATE), this.$el.addClass(e.default.CLASS.IS_FILLED)) : (this.$el.removeClass(e.default.CLASS.IS_ACTIVE_STATE), this.$el.removeClass(e.default.CLASS.IS_FILLED));
+                    this._checkIfInvalid() ? (this.$el.addClass(e.default.CLASS.HAS_ERROR), c.default.Accessibility.show(this.$placeholder)) : (this.$el.removeClass(e.default.CLASS.HAS_ERROR), c.default.Accessibility.hide(this.$placeholder));
+                    this.$helpText.length && this.$password && "" === this.$el.find(this.SELECTOR_A_INPUT).val() && (this.$helpText.removeClass(this.CLASS_IS_VISIBLE), this.$helpText.find(this.SELECTOR_HELP_TIP).removeClass(this.CLASS_RESET))
+                }
+            }, {
+                key: "_onInvalid", value: function (a) {
+                    a.preventDefault();
+                    this._checkIfInvalid() ? (this.$el.addClass(e.default.CLASS.HAS_ERROR), c.default.Accessibility.show(this.$placeholder)) : (this.$el.removeClass(e.default.CLASS.HAS_ERROR), c.default.Accessibility.hide(this.$placeholder))
+                }
+            }, {
+                key: "_onKeyPress", value: function () {
+                    this.$el.removeClass(e.default.CLASS.HAS_ERROR);
+                    c.default.Accessibility.hide(this.$placeholder)
+                }
+            }, {
+                key: "_onKeyUp", value: function () {
+                    this.$password && this.$helpText.length && this._passwordValidation(this.$el)
+                }
+            }, {
+                key: "_checkIfInvalid", value: function () {
+                    if (this.$input[0].validity.valueMissing) {
+                        var a = this.$input.data("validation-required-text-below") ? this.$input.data("validation-required-text-below") : this.$input.data("validation-required-text");
+                        this._displayErrorMessage(a)
+                    } else if (this.$matchField && this.$input.val() != this.$matchField.val()) this.$input[0].setCustomValidity("error"), this._displayErrorMessage(this.$input.data("validation-match-field-text")); else if (this.$input[0].validity.patternMismatch || this.$input[0].validity.typeMismatch) this._displayErrorMessage(this.$input.data("validation-pattern-text")); else if (this.$input[0].validity.tooLong) this._displayErrorMessage(this.$input.data("validation-maxlen-text")); else if (this.$input[0].validity.rangeUnderflow) this._displayErrorMessage(this.$input.data("validation-maxval-text")); else if (this.$input[0].validity.rangeOverflow) this._displayErrorMessage(this.$input.data("validation-minval-text")); else return this.$input[0].setCustomValidity(""), this.$placeholder.text(this.placeholderVal), 1 > this.placeholderVal.length && c.default.Accessibility.hide(this.$placeholder), !1;
+                    return !0
+                }
+            }, {
+                key: "_displayErrorMessage", value: function (a) {
+                    this.$placeholder.text(a);
+                    c.default.Accessibility.show(this.$placeholder)
+                }
+            }, {
+                key: "_passwordValidation", value: function (a) {
+                    var d = $(a).find(this.SELECTOR_MINIMUM_CHAR), b = $(a).find(this.SELECTOR_UPPERCASE),
+                        x = $(a).find(this.SELECTOR_NUMBER), c = $(a).find(this.SELECTOR_LOWERCASE);
+                    a = $(a).find(this.SELECTOR_A_INPUT).val();
+                    8 <= a.length ? d.removeClass(this.CLASS_ERROR).addClass(this.CLASS_PASSED) : d.removeClass(this.CLASS_PASSED);
+                    this._validateRegex(a, e.default.REGEX.UPPERCASE_CHAR) ? b.removeClass(this.CLASS_ERROR).addClass(this.CLASS_PASSED) : b.removeClass(this.CLASS_PASSED);
+                    this._validateRegex(a, e.default.REGEX.LOWERCASE_CHAR) ? c.removeClass(this.CLASS_ERROR).addClass(this.CLASS_PASSED) : c.removeClass(this.CLASS_PASSED);
+                    this._validateRegex(a, e.default.REGEX.DIGITS) ? x.removeClass(this.CLASS_ERROR).addClass(this.CLASS_PASSED) : x.removeClass(this.CLASS_PASSED)
+                }
+            }, {
+                key: "_validateRegex", value: function (a, d) {
+                    return d.test(a)
+                }
+            }, {
+                key: "_togglePasswordState", value: function (a) {
+                    a.preventDefault();
+                    a = $(a.target);
+                    var d = a.siblings(this.SELECTOR_A_INPUT);
+                    a.toggleClass(this.CLASS_PASSWORD_TOGGLE);
+                    "password" === d[0].type ? (d[0].type = "text", a.text(a.data("hide-text"))) : (d[0].type = "password", a.text(a.data("show-text")))
+                }
+            }, {
+                key: "_onSubmit", value: function () {
+                    this.$password && this.$el.find(this.SELECTOR_HELP_TIP_ERROR).length && this._displayErrorMessage(this.$el.find(this.SELECTOR_A_INPUT).data("password-error-text"))
+                }
+            }]);
             return b
         }(p.default);
         t.exports = f
     }, {
         "./../../../js/base/appeaser-component-base.js": 47,
-        "./../../../js/base/logger.js": 51, "./../../../themes/p11/enums.js": 65, "./../../../themes/p11/utils.js": 112
+        "./../../../js/base/logger.js": 51,
+        "./../../../themes/p11/enums.js": 65,
+        "./../../../themes/p11/utils.js": 112
     }],
     8: [function (f, t, p) {
         function m(a) {
@@ -1398,8 +1352,7 @@
         function q(a, b) {
             for (var d = 0; d < b.length; d++) {
                 var x = b[d];
-                x.enumerable =
-                    x.enumerable || !1;
+                x.enumerable = x.enumerable || !1;
                 x.configurable = !0;
                 "value" in x && (x.writable = !0);
                 Object.defineProperty(a, x.key, x)
@@ -1503,8 +1456,7 @@
                     this.$linkToggleBLock = this.$el.find(this.LINK_TOGGLE_BLOCK);
                     this._attachSubscribers();
                     this._attachDOMListeners();
-                    this.$el.hasClass(e.default.CLASS.IS_VISIBLE_STATE) || (c.default.Accessibility.hide(this.$linkToggleBLock.find(e.default.SELECTOR.FOCUSABLE_AREAS)),
-                        c.default.Accessibility.preventFocus(this.$linkToggleBLock.find(e.default.SELECTOR.FOCUSABLE_AREAS)))
+                    this.$el.hasClass(e.default.CLASS.IS_VISIBLE_STATE) || (c.default.Accessibility.hide(this.$linkToggleBLock.find(e.default.SELECTOR.FOCUSABLE_AREAS)), c.default.Accessibility.preventFocus(this.$linkToggleBLock.find(e.default.SELECTOR.FOCUSABLE_AREAS)))
                 }
             }, {
                 key: "_jQueryScopeBinding", value: function () {
@@ -1537,16 +1489,17 @@
                 key: "_onClick", value: function (a) {
                     a.preventDefault();
                     this.$el.toggleClass(e.default.CLASS.IS_VISIBLE_STATE);
-                    this.$el.hasClass(e.default.CLASS.IS_VISIBLE_STATE) ?
-                        (c.default.Accessibility.show(this.$linkToggleBLock.find(e.default.SELECTOR.FOCUSABLE_AREAS)), c.default.Accessibility.allowFocus(this.$linkToggleBLock.find(e.default.SELECTOR.FOCUSABLE_AREAS))) : (c.default.Accessibility.hide(this.$linkToggleBLock.find(e.default.SELECTOR.FOCUSABLE_AREAS)), c.default.Accessibility.preventFocus(this.$linkToggleBLock.find(e.default.SELECTOR.FOCUSABLE_AREAS)))
+                    this.$el.hasClass(e.default.CLASS.IS_VISIBLE_STATE) ? (c.default.Accessibility.show(this.$linkToggleBLock.find(e.default.SELECTOR.FOCUSABLE_AREAS)), c.default.Accessibility.allowFocus(this.$linkToggleBLock.find(e.default.SELECTOR.FOCUSABLE_AREAS))) : (c.default.Accessibility.hide(this.$linkToggleBLock.find(e.default.SELECTOR.FOCUSABLE_AREAS)), c.default.Accessibility.preventFocus(this.$linkToggleBLock.find(e.default.SELECTOR.FOCUSABLE_AREAS)))
                 }
             }]);
             return b
         }(p.default);
         t.exports = f
     }, {
-        "./../../../js/base/appeaser-component-base.js": 47, "./../../../js/base/logger.js": 51,
-        "./../../../themes/p11/enums.js": 65, "./../../../themes/p11/utils.js": 112
+        "./../../../js/base/appeaser-component-base.js": 47,
+        "./../../../js/base/logger.js": 51,
+        "./../../../themes/p11/enums.js": 65,
+        "./../../../themes/p11/utils.js": 112
     }],
     9: [function (f, t, p) {
         function m(c) {
@@ -1567,8 +1520,7 @@
             for (var b = 0; b < a.length; b++) {
                 var d = a[b];
                 d.enumerable = d.enumerable || !1;
-                d.configurable =
-                    !0;
+                d.configurable = !0;
                 "value" in d && (d.writable = !0);
                 Object.defineProperty(c, d.key, d)
             }
@@ -1657,8 +1609,7 @@
                     this._detachDOMListeners();
                     this._detachSubscribers();
                     this._detachMQHandlers();
-                    l(g(a.prototype),
-                        "destroy", this).call(this)
+                    l(g(a.prototype), "destroy", this).call(this)
                 }
             }, {
                 key: "_declareConstants", value: function () {
@@ -1692,49 +1643,46 @@
                     this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
                     this.subscribe(e.default.EVENT.ON_PRODUCT_OUT_OF_STOCK, this._onProductOutOfStock)
                 }
-            },
-                {
-                    key: "_detachSubscribers", value: function () {
-                        h.default.INFO(this.constructor.name, ":: _detachSubscribers");
-                        this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady);
-                        this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
-                        this.unsubscribe(e.default.EVENT.ON_PRODUCT_OUT_OF_STOCK, this._onProductOutOfStock)
-                    }
-                }, {
-                    key: "_onFrameworkReady", value: function () {
-                    }
-                }, {
-                    key: "_attachDOMListeners", value: function () {
-                        this.$closeOutOfStock.on("click", this._onCloseIconClick)
-                    }
-                }, {
-                    key: "_detachDOMListeners",
-                    value: function () {
-                        this.$closeOutOfStock.off("click", this._onCloseIconClick)
-                    }
-                }, {
-                    key: "_onProductOutOfStock", value: function (a) {
-                        this._showOverlay();
-                        this.$el.addClass(this.CLASS_IS_VISIBLE);
-                        this.$el.find(".a-paragraph").text(a.msg)
-                    }
-                }, {
-                    key: "_showOverlay", value: function () {
-                        this.publish(e.default.ACTION.SHOW_OVERLAY);
-                        this.$aOverlay.addClass(this.CLASS_IS_STOCK_OVERLAY)
-                    }
-                }, {
-                    key: "_hideOverlay", value: function () {
-                        this.publish(e.default.ACTION.HIDE_OVERLAY);
-                        this.$aOverlay.removeClass(this.CLASS_IS_STOCK_OVERLAY)
-                    }
-                },
-                {
-                    key: "_onCloseIconClick", value: function () {
-                        this._hideOverlay();
-                        this.$el.removeClass(this.CLASS_IS_VISIBLE)
-                    }
-                }]);
+            }, {
+                key: "_detachSubscribers", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _detachSubscribers");
+                    this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady);
+                    this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
+                    this.unsubscribe(e.default.EVENT.ON_PRODUCT_OUT_OF_STOCK, this._onProductOutOfStock)
+                }
+            }, {
+                key: "_onFrameworkReady", value: function () {
+                }
+            }, {
+                key: "_attachDOMListeners", value: function () {
+                    this.$closeOutOfStock.on("click", this._onCloseIconClick)
+                }
+            }, {
+                key: "_detachDOMListeners", value: function () {
+                    this.$closeOutOfStock.off("click", this._onCloseIconClick)
+                }
+            }, {
+                key: "_onProductOutOfStock", value: function (a) {
+                    this._showOverlay();
+                    this.$el.addClass(this.CLASS_IS_VISIBLE);
+                    this.$el.find(".a-paragraph").text(a.msg)
+                }
+            }, {
+                key: "_showOverlay", value: function () {
+                    this.publish(e.default.ACTION.SHOW_OVERLAY);
+                    this.$aOverlay.addClass(this.CLASS_IS_STOCK_OVERLAY)
+                }
+            }, {
+                key: "_hideOverlay", value: function () {
+                    this.publish(e.default.ACTION.HIDE_OVERLAY);
+                    this.$aOverlay.removeClass(this.CLASS_IS_STOCK_OVERLAY)
+                }
+            }, {
+                key: "_onCloseIconClick", value: function () {
+                    this._hideOverlay();
+                    this.$el.removeClass(this.CLASS_IS_VISIBLE)
+                }
+            }]);
             return a
         }(p.default);
         t.exports = f
@@ -1749,8 +1697,7 @@
             m = "function" === typeof Symbol && "symbol" === typeof Symbol.iterator ? function (a) {
                 return typeof a
             } : function (a) {
-                return a && "function" === typeof Symbol && a.constructor === Symbol && a !== Symbol.prototype ?
-                    "symbol" : typeof a
+                return a && "function" === typeof Symbol && a.constructor === Symbol && a !== Symbol.prototype ? "symbol" : typeof a
             };
             return m(c)
         }
@@ -1778,8 +1725,7 @@
         function l(c, a, b) {
             l = "undefined" !== typeof Reflect && Reflect.get ? Reflect.get : function (a, b, c) {
                 for (; !Object.prototype.hasOwnProperty.call(a, b) && (a = g(a), null !== a);) ;
-                if (a) return b = Object.getOwnPropertyDescriptor(a,
-                    b), b.get ? b.get.call(c) : b.value
+                if (a) return b = Object.getOwnPropertyDescriptor(a, b), b.get ? b.get.call(c) : b.value
             };
             return l(c, a, b || c)
         }
@@ -1805,8 +1751,7 @@
                 if (a) {
                     var d = g(this).constructor;
                     b = Reflect.construct(b, arguments, d)
-                } else b = b.apply(this,
-                    arguments);
+                } else b = b.apply(this, arguments);
                 if (!b || "object" !== m(b) && "function" !== typeof b) {
                     if (void 0 === this) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
                     b = this
@@ -1828,8 +1773,7 @@
 
         function g(c) {
             g = Object.setPrototypeOf ? Object.getPrototypeOf : function (a) {
-                return a.__proto__ ||
-                    Object.getPrototypeOf(a)
+                return a.__proto__ || Object.getPrototypeOf(a)
             };
             return g(c)
         }
@@ -1881,8 +1825,7 @@
                 key: "_detachSubscribers", value: function () {
                     h.default.INFO(this.constructor.name, ":: _detachSubscribers");
                     this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady);
-                    this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY,
-                        this._onFrameworkReady)
+                    this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady)
                 }
             }, {
                 key: "_onFrameworkReady", value: function () {
@@ -1905,8 +1848,7 @@
                 }
             }, {
                 key: "_onMouseMove", value: function () {
-                    this.isDragging =
-                        !0
+                    this.isDragging = !0
                 }
             }, {
                 key: "_onClick", value: function (a) {
@@ -1928,8 +1870,7 @@
             m = "function" === typeof Symbol && "symbol" === typeof Symbol.iterator ? function (a) {
                 return typeof a
             } : function (a) {
-                return a &&
-                "function" === typeof Symbol && a.constructor === Symbol && a !== Symbol.prototype ? "symbol" : typeof a
+                return a && "function" === typeof Symbol && a.constructor === Symbol && a !== Symbol.prototype ? "symbol" : typeof a
             };
             return m(c)
         }
@@ -1956,8 +1897,7 @@
 
         function l(c, a, b) {
             l = "undefined" !== typeof Reflect && Reflect.get ? Reflect.get : function (a, b, c) {
-                for (; !Object.prototype.hasOwnProperty.call(a,
-                    b) && (a = g(a), null !== a);) ;
+                for (; !Object.prototype.hasOwnProperty.call(a, b) && (a = g(a), null !== a);) ;
                 if (a) return b = Object.getOwnPropertyDescriptor(a, b), b.get ? b.get.call(c) : b.value
             };
             return l(c, a, b || c)
@@ -1982,8 +1922,7 @@
             return function () {
                 var b = g(c);
                 if (a) {
-                    var d =
-                        g(this).constructor;
+                    var d = g(this).constructor;
                     b = Reflect.construct(b, arguments, d)
                 } else b = b.apply(this, arguments);
                 if (!b || "object" !== m(b) && "function" !== typeof b) {
@@ -2006,10 +1945,9 @@
         }
 
         function g(c) {
-            g =
-                Object.setPrototypeOf ? Object.getPrototypeOf : function (a) {
-                    return a.__proto__ || Object.getPrototypeOf(a)
-                };
+            g = Object.setPrototypeOf ? Object.getPrototypeOf : function (a) {
+                return a.__proto__ || Object.getPrototypeOf(a)
+            };
             return g(c)
         }
 
@@ -2044,8 +1982,7 @@
                 }
             }, {
                 key: "_cacheDOMElements", value: function () {
-                    this.$closeElement =
-                        this.$el.find(this.SELECTOR_CLOSE);
+                    this.$closeElement = this.$el.find(this.SELECTOR_CLOSE);
                     this.$promoInfoboxElement = this.$el.find(this.SELECTOR_PROMO_INFOBOX);
                     this.$promoIconElement = this.$el.find(this.SELECTOR_PROMO_ICON)
                 }
@@ -2058,8 +1995,7 @@
             }, {
                 key: "_attachSubscribers", value: function () {
                     h.default.INFO(this.constructor.name, ":: _attachSubscribers");
-                    this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY,
-                        this._onFrameworkReady)
+                    this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady)
                 }
             }, {
                 key: "_detachSubscribers", value: function () {
@@ -2077,8 +2013,7 @@
                 }
             }, {
                 key: "_detachDOMListeners", value: function () {
-                    this.$closeElement.off("click",
-                        this._close)
+                    this.$closeElement.off("click", this._close)
                 }
             }, {
                 key: "_onDOMReady", value: function () {
@@ -2118,8 +2053,7 @@
         }
 
         function k(c) {
-            return c && c.__esModule ?
-                c : {default: c}
+            return c && c.__esModule ? c : {default: c}
         }
 
         function q(c, a) {
@@ -2146,8 +2080,7 @@
             return l(c, a, b || c)
         }
 
-        function v(c,
-                   a) {
+        function v(c, a) {
             if ("function" !== typeof a && null !== a) throw new TypeError("Super expression must either be null or a function");
             c.prototype = Object.create(a && a.prototype, {constructor: {value: c, writable: !0, configurable: !0}});
             a && n(c, a)
@@ -2170,8 +2103,7 @@
                     b = Reflect.construct(b, arguments, d)
                 } else b = b.apply(this, arguments);
                 if (!b || "object" !== m(b) && "function" !== typeof b) {
-                    if (void 0 ===
-                        this) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+                    if (void 0 === this) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
                     b = this
                 }
                 return b
@@ -2231,8 +2163,7 @@
                     this.$promoIconElement = this.$el.find(this.SELECTOR_PROMO_ICON)
                 }
             }, {
-                key: "_jQueryScopeBinding",
-                value: function () {
+                key: "_jQueryScopeBinding", value: function () {
                     this._onDOMReady = this._onDOMReady.bind(this);
                     this._close = this._close.bind(this);
                     this._onPromoIconClick = this._onPromoIconClick.bind(this)
@@ -2282,7 +2213,8 @@
         }(p.default);
         t.exports = f
     }, {
-        "./../../../js/base/appeaser-component-base.js": 47, "./../../../js/base/logger.js": 51,
+        "./../../../js/base/appeaser-component-base.js": 47,
+        "./../../../js/base/logger.js": 51,
         "./../../../themes/p11/enums.js": 65
     }],
     13: [function (f, t, p) {
@@ -2306,8 +2238,7 @@
                 x.enumerable = x.enumerable || !1;
                 x.configurable = !0;
                 "value" in x && (x.writable = !0);
-                Object.defineProperty(a,
-                    x.key, x)
+                Object.defineProperty(a, x.key, x)
             }
         }
 
@@ -2327,12 +2258,7 @@
 
         function v(a, b) {
             if ("function" !== typeof b && null !== b) throw new TypeError("Super expression must either be null or a function");
-            a.prototype = Object.create(b && b.prototype, {
-                constructor: {
-                    value: a,
-                    writable: !0, configurable: !0
-                }
-            });
+            a.prototype = Object.create(b && b.prototype, {constructor: {value: a, writable: !0, configurable: !0}});
             b && n(a, b)
         }
 
@@ -2361,8 +2287,7 @@
         }
 
         function u() {
-            if ("undefined" === typeof Reflect || !Reflect.construct ||
-                Reflect.construct.sham) return !1;
+            if ("undefined" === typeof Reflect || !Reflect.construct || Reflect.construct.sham) return !1;
             if ("function" === typeof Proxy) return !0;
             try {
                 return Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {
@@ -2384,8 +2309,7 @@
             c = k(f("./../../../themes/p11/utils.js"));
         f = function (a) {
             function b() {
-                if (!(this instanceof
-                    b)) throw new TypeError("Cannot call a class as a function");
+                if (!(this instanceof b)) throw new TypeError("Cannot call a class as a function");
                 var a = d.apply(this, arguments);
                 h.default.INFO(a.constructor.name, ":: Constructor");
                 a._jQueryScopeBinding();
@@ -2405,8 +2329,7 @@
                 }
             }, {
                 key: "_declareConstants", value: function () {
-                    this.SHOW_ANIMATION_DELAY =
-                        20;
+                    this.SHOW_ANIMATION_DELAY = 20;
                     this.HIDE_ANIMATION_DELAY = 500;
                     this.SELECTOR_RADIO_BUTTON = ".a-radio-button";
                     this.SELECTOR_CUSTOM_RADIO_BUTTONS = ".custom-radio, .label-text";
@@ -2424,8 +2347,7 @@
                 key: "_cacheDOMElements", value: function () {
                     var a = this;
                     this.$radioButtons = this.$el.find(this.SELECTOR_CUSTOM_RADIO_BUTTONS);
-                    this.toggleElements =
-                        [];
+                    this.toggleElements = [];
                     this.$radioButtons.each(function (d, b) {
                         a.toggleElements.push($($(b).siblings(a.SELECTOR_RADIO_BUTTON).data("toggle")))
                     })
@@ -2442,8 +2364,7 @@
                 }
             }, {
                 key: "_detachSubscribers", value: function () {
-                    h.default.INFO(this.constructor.name,
-                        ":: _detachSubscribers");
+                    h.default.INFO(this.constructor.name, ":: _detachSubscribers");
                     this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady);
                     this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady)
                 }
@@ -2510,8 +2431,7 @@
             }
         }
 
-        function r(c,
-                   a, b) {
+        function r(c, a, b) {
             a && q(c.prototype, a);
             b && q(c, b);
             return c
@@ -2527,12 +2447,7 @@
 
         function v(c, a) {
             if ("function" !== typeof a && null !== a) throw new TypeError("Super expression must either be null or a function");
-            c.prototype = Object.create(a && a.prototype, {
-                constructor: {
-                    value: c, writable: !0,
-                    configurable: !0
-                }
-            });
+            c.prototype = Object.create(a && a.prototype, {constructor: {value: c, writable: !0, configurable: !0}});
             a && n(c, a)
         }
 
@@ -2561,8 +2476,7 @@
         }
 
         function u() {
-            if ("undefined" === typeof Reflect || !Reflect.construct ||
-                Reflect.construct.sham) return !1;
+            if ("undefined" === typeof Reflect || !Reflect.construct || Reflect.construct.sham) return !1;
             if ("function" === typeof Proxy) return !0;
             try {
                 return Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {
@@ -2606,8 +2520,7 @@
                     this.SELECTOR_SWATCH = ".js-swatch"
                 }
             }, {
-                key: "_jQueryScopeBinding",
-                value: function () {
+                key: "_jQueryScopeBinding", value: function () {
                     this._onDOMReady = this._onDOMReady.bind(this);
                     this._onSwatchClick = this._onSwatchClick.bind(this)
                 }
@@ -2624,8 +2537,7 @@
                     this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady)
                 }
             }, {
-                key: "_detachSubscribers",
-                value: function () {
+                key: "_detachSubscribers", value: function () {
                     h.default.INFO(this.constructor.name, ":: _detachSubscribers");
                     this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
                     this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady)
@@ -2661,8 +2573,7 @@
             m = "function" === typeof Symbol && "symbol" === typeof Symbol.iterator ? function (a) {
                 return typeof a
             } : function (a) {
-                return a && "function" === typeof Symbol &&
-                a.constructor === Symbol && a !== Symbol.prototype ? "symbol" : typeof a
+                return a && "function" === typeof Symbol && a.constructor === Symbol && a !== Symbol.prototype ? "symbol" : typeof a
             };
             return m(a)
         }
@@ -2683,402 +2594,6 @@
 
         function r(a, b, d) {
             b && q(a.prototype, b);
-            d && q(a, d);
-            return a
-        }
-
-        function l(a, b, d) {
-            l = "undefined" !== typeof Reflect && Reflect.get ? Reflect.get : function (a, d, b) {
-                for (; !Object.prototype.hasOwnProperty.call(a, d) && (a = g(a), null !==
-                a);) ;
-                if (a) return d = Object.getOwnPropertyDescriptor(a, d), d.get ? d.get.call(b) : d.value
-            };
-            return l(a, b, d || a)
-        }
-
-        function v(a, b) {
-            if ("function" !== typeof b && null !== b) throw new TypeError("Super expression must either be null or a function");
-            a.prototype = Object.create(b && b.prototype, {constructor: {value: a, writable: !0, configurable: !0}});
-            b && n(a, b)
-        }
-
-        function n(a, b) {
-            n = Object.setPrototypeOf || function (a, b) {
-                a.__proto__ = b;
-                return a
-            };
-            return n(a, b)
-        }
-
-        function w(a) {
-            var b = u();
-            return function () {
-                var d = g(a);
-                if (b) {
-                    var x = g(this).constructor;
-                    d = Reflect.construct(d, arguments, x)
-                } else d = d.apply(this, arguments);
-                if (!d || "object" !== m(d) && "function" !== typeof d) {
-                    if (void 0 === this) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-                    d = this
-                }
-                return d
-            }
-        }
-
-        function u() {
-            if ("undefined" === typeof Reflect || !Reflect.construct || Reflect.construct.sham) return !1;
-            if ("function" === typeof Proxy) return !0;
-            try {
-                return Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {
-                })), !0
-            } catch (a) {
-                return !1
-            }
-        }
-
-        function g(a) {
-            g = Object.setPrototypeOf ?
-                Object.getPrototypeOf : function (a) {
-                    return a.__proto__ || Object.getPrototypeOf(a)
-                };
-            return g(a)
-        }
-
-        p = k(f("./../../../js/base/appeaser-component-base.js"));
-        var h = k(f("./../../../js/base/logger.js")), e = k(f("./../../../themes/p11/enums.js")),
-            c = k(f("./../../../themes/p11/utils.js"));
-        f = function (a) {
-            function b() {
-                if (!(this instanceof b)) throw new TypeError("Cannot call a class as a function");
-                var a = d.apply(this, arguments);
-                h.default.INFO(a.constructor.name, ":: Constructor");
-                a._jQueryScopeBinding();
-                a._declareConstants();
-                a.subscribe(e.default.EVENT.ON_DOCUMENT_READY, a._onDOMReady);
-                return a
-            }
-
-            v(b, a);
-            var d = w(b);
-            r(b, [{
-                key: "destroy", value: function () {
-                    h.default.INFO(this.constructor.name, ":: Destructor");
-                    this._detachDOMListeners();
-                    this._detachSubscribers();
-                    l(g(b.prototype), "destroy", this).call(this)
-                }
-            }, {
-                key: "_declareConstants", value: function () {
-                    this.SELECTOR_TABLIST_CONTENT = ".tablist-content";
-                    this.SELECTOR_CONTENT = ".content";
-                    this.SELECTOR_TAB = "li"
-                }
-            }, {
-                key: "_onDOMReady", value: function () {
-                    h.default.INFO(this.constructor.name, ":: _onDOMReady");
-                    var a = this.$el.data("tablist-for");
-                    this.$listItems = this.$el.find(this.SELECTOR_TAB);
-                    this.$tablistContentBox = $("".concat(this.SELECTOR_TABLIST_CONTENT, '[data-content-for\x3d"').concat(a, '"]'));
-                    c.default.Accessibility.allowFocus(this.$listItems);
-                    this._onPageloadShowActiveTabContent();
-                    this._attachSubscribers();
-                    this._attachDOMListeners()
-                }
-            }, {
-                key: "_jQueryScopeBinding", value: function () {
-                    this._onDOMReady = this._onDOMReady.bind(this);
-                    this._onListItemClick = this._onListItemClick.bind(this);
-                    this._onKeystrokeEnter =
-                        this._onKeystrokeEnter.bind(this)
-                }
-            }, {
-                key: "_attachSubscribers", value: function () {
-                    h.default.INFO(this.constructor.name, ":: _attachSubscribers");
-                    this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady)
-                }
-            }, {
-                key: "_detachSubscribers", value: function () {
-                    h.default.INFO(this.constructor.name, ":: _detachSubscribers");
-                    this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
-                    this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady)
-                }
-            }, {
-                key: "_onFrameworkReady", value: function () {
-                }
-            },
-                {
-                    key: "_attachDOMListeners", value: function () {
-                        this.$listItems.on("click", this._onListItemClick);
-                        this.$listItems.on("keydown", this._onKeystrokeEnter)
-                    }
-                }, {
-                    key: "_detachDOMListeners", value: function () {
-                        this.$listItems.off("click", this._onListItemClick)
-                    }
-                }, {
-                    key: "_onListItemClick", value: function (a) {
-                        a.preventDefault();
-                        a = $(a.currentTarget);
-                        this._toggleTabs(a.attr("data-toggle"));
-                        a.addClass(e.default.CLASS.IS_ACTIVE_STATE)
-                    }
-                }, {
-                    key: "_onKeystrokeEnter", value: function (a) {
-                        a.key.match(e.default.KEYSTROKE.ENTER) && (a.preventDefault(),
-                            this._onListItemClick(a))
-                    }
-                }, {
-                    key: "_toggleTabs", value: function (a) {
-                        this.$listItems.removeClass(e.default.CLASS.IS_ACTIVE_STATE);
-                        this.$tablistContentBox.find(this.SELECTOR_CONTENT).removeClass(e.default.CLASS.IS_ACTIVE_STATE);
-                        this.$tablistContentBox.find(a).addClass(e.default.CLASS.IS_ACTIVE_STATE)
-                    }
-                }, {
-                    key: "_onPageloadShowActiveTabContent", value: function () {
-                        var a = location.hash;
-                        if ("" !== a) {
-                            var d = this.$el.find(this.SELECTOR_TAB + '[data-toggle\x3d"' + a + '"]');
-                            d.length && (this._toggleTabs(a), d.addClass(e.default.CLASS.IS_ACTIVE_STATE))
-                        }
-                    }
-                }]);
-            return b
-        }(p.default);
-        t.exports = f
-    }, {
-        "./../../../js/base/appeaser-component-base.js": 47,
-        "./../../../js/base/logger.js": 51,
-        "./../../../themes/p11/enums.js": 65,
-        "./../../../themes/p11/utils.js": 112
-    }],
-    16: [function (f, t, p) {
-        function m(c) {
-            "@babel/helpers - typeof";
-            m = "function" === typeof Symbol && "symbol" === typeof Symbol.iterator ? function (a) {
-                return typeof a
-            } : function (a) {
-                return a && "function" === typeof Symbol && a.constructor === Symbol && a !== Symbol.prototype ? "symbol" : typeof a
-            };
-            return m(c)
-        }
-
-        function k(c) {
-            return c && c.__esModule ?
-                c : {default: c}
-        }
-
-        function q(c, a) {
-            for (var b = 0; b < a.length; b++) {
-                var d = a[b];
-                d.enumerable = d.enumerable || !1;
-                d.configurable = !0;
-                "value" in d && (d.writable = !0);
-                Object.defineProperty(c, d.key, d)
-            }
-        }
-
-        function r(c, a, b) {
-            a && q(c.prototype, a);
-            b && q(c, b);
-            return c
-        }
-
-        function l(c, a, b) {
-            l = "undefined" !== typeof Reflect && Reflect.get ? Reflect.get : function (a, b, c) {
-                for (; !Object.prototype.hasOwnProperty.call(a, b) && (a = g(a), null !== a);) ;
-                if (a) return b = Object.getOwnPropertyDescriptor(a, b), b.get ? b.get.call(c) : b.value
-            };
-            return l(c, a, b || c)
-        }
-
-        function v(c,
-                   a) {
-            if ("function" !== typeof a && null !== a) throw new TypeError("Super expression must either be null or a function");
-            c.prototype = Object.create(a && a.prototype, {constructor: {value: c, writable: !0, configurable: !0}});
-            a && n(c, a)
-        }
-
-        function n(c, a) {
-            n = Object.setPrototypeOf || function (a, d) {
-                a.__proto__ = d;
-                return a
-            };
-            return n(c, a)
-        }
-
-        function w(c) {
-            var a = u();
-            return function () {
-                var b = g(c);
-                if (a) {
-                    var d = g(this).constructor;
-                    b = Reflect.construct(b, arguments, d)
-                } else b = b.apply(this, arguments);
-                if (!b || "object" !== m(b) && "function" !== typeof b) {
-                    if (void 0 ===
-                        this) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-                    b = this
-                }
-                return b
-            }
-        }
-
-        function u() {
-            if ("undefined" === typeof Reflect || !Reflect.construct || Reflect.construct.sham) return !1;
-            if ("function" === typeof Proxy) return !0;
-            try {
-                return Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {
-                })), !0
-            } catch (c) {
-                return !1
-            }
-        }
-
-        function g(c) {
-            g = Object.setPrototypeOf ? Object.getPrototypeOf : function (a) {
-                return a.__proto__ || Object.getPrototypeOf(a)
-            };
-            return g(c)
-        }
-
-        p = k(f("./../../../js/base/appeaser-component-base.js"));
-        var h = k(f("./../../../js/base/logger.js")), e = k(f("./../../../themes/p11/enums.js"));
-        f = function (c) {
-            function a() {
-                if (!(this instanceof a)) throw new TypeError("Cannot call a class as a function");
-                var d = b.apply(this, arguments);
-                h.default.INFO(d.constructor.name, ":: Constructor");
-                d._jQueryScopeBinding();
-                d._declareConstants();
-                d.subscribe(e.default.EVENT.ON_DOCUMENT_READY, d._onDOMReady);
-                return d
-            }
-
-            v(a, c);
-            var b = w(a);
-            r(a, [{
-                key: "destroy", value: function () {
-                    h.default.INFO(this.constructor.name, ":: Destructor");
-                    this._detachDOMListeners();
-                    this._detachSubscribers();
-                    l(g(a.prototype), "destroy", this).call(this)
-                }
-            }, {
-                key: "_declareConstants", value: function () {
-                    this.SELECTOR_ADD_ELEMENT_BUTTON = ".o-add-element-button";
-                    this.SELECTOR_EDIT_BLOCK = ".edit-block";
-                    this.SELECTOR_CANCEL = ".js-cancel";
-                    this.SELECTOR_INPUT = ".a-input"
-                }
-            }, {
-                key: "_onDOMReady", value: function () {
-                    h.default.INFO(this.constructor.name, ":: _onDOMReady");
-                    this.$addButton = this.$el.find(this.SELECTOR_ADD_ELEMENT_BUTTON);
-                    this.$editBlock = this.$el.find(this.SELECTOR_EDIT_BLOCK);
-                    this.$inputs =
-                        this.$el.find(this.SELECTOR_INPUT);
-                    this._attachSubscribers();
-                    this._attachDOMListeners()
-                }
-            }, {
-                key: "_jQueryScopeBinding", value: function () {
-                    this._onDOMReady = this._onDOMReady.bind(this);
-                    this._onClickAddNewElement = this._onClickAddNewElement.bind(this);
-                    this._onClickCancel = this._onClickCancel.bind(this);
-                    this._onRadioClicked = this._onRadioClicked.bind(this)
-                }
-            }, {
-                key: "_attachSubscribers", value: function () {
-                    h.default.INFO(this.constructor.name, ":: _attachSubscribers");
-                    this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY,
-                        this._onFrameworkReady);
-                    this.subscribe(e.default.ACTION.HIDE_ADDRESS_BOX_ADD, this._close)
-                }
-            }, {
-                key: "_detachSubscribers", value: function () {
-                    h.default.INFO(this.constructor.name, ":: _detachSubscribers");
-                    this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
-                    this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady);
-                    this.unsubscribe(e.default.ACTION.HIDE_ADDRESS_BOX_ADD, this._close)
-                }
-            }, {
-                key: "_onFrameworkReady", value: function () {
-                }
-            }, {
-                key: "_attachDOMListeners", value: function () {
-                    this.$addButton.on("click",
-                        this._onClickAddNewElement);
-                    this.$el.on("click", this.SELECTOR_CANCEL, this._onClickCancel)
-                }
-            }, {
-                key: "_detachDOMListeners", value: function () {
-                    this.$addButton.on("click", this._onClickAddNewElement);
-                    this.$el.off("click", this.SELECTOR_CANCEL, this._onClickCancel)
-                }
-            }, {
-                key: "_onClickAddNewElement", value: function (a) {
-                    this._open()
-                }
-            }, {
-                key: "_onClickCancel", value: function (a) {
-                    a.preventDefault();
-                    this._close()
-                }
-            }, {
-                key: "_onRadioClicked", value: function () {
-                    this.$addButton.prop("checked") || this._close()
-                }
-            }, {
-                key: "_open", value: function () {
-                    this.$editBlock.slideDown().removeClass(e.default.CLASS.IS_HIDDEN_STATE).addClass(e.default.CLASS.IS_OPEN_STATE);
-                    this.$addButton.addClass(e.default.CLASS.IS_HIDDEN_STATE);
-                    this.$inputs.prop("disabled", !1)
-                }
-            }, {
-                key: "_close", value: function () {
-                    this.$editBlock.slideUp().removeClass(e.default.CLASS.IS_OPEN_STATE).addClass(e.default.CLASS.IS_HIDDEN_STATE);
-                    this.$addButton.removeClass(e.default.CLASS.IS_HIDDEN_STATE);
-                    this.$inputs.attr("disabled", "disabled")
-                }
-            }]);
-            return a
-        }(p.default);
-        t.exports = f
-    }, {
-        "./../../../js/base/appeaser-component-base.js": 47,
-        "./../../../js/base/logger.js": 51,
-        "./../../../themes/p11/enums.js": 65
-    }],
-    17: [function (f,
-                   t, p) {
-        function m(a) {
-            "@babel/helpers - typeof";
-            m = "function" === typeof Symbol && "symbol" === typeof Symbol.iterator ? function (a) {
-                return typeof a
-            } : function (a) {
-                return a && "function" === typeof Symbol && a.constructor === Symbol && a !== Symbol.prototype ? "symbol" : typeof a
-            };
-            return m(a)
-        }
-
-        function k(a) {
-            return a && a.__esModule ? a : {default: a}
-        }
-
-        function q(a, b) {
-            for (var d = 0; d < b.length; d++) {
-                var x = b[d];
-                x.enumerable = x.enumerable || !1;
-                x.configurable = !0;
-                "value" in x && (x.writable = !0);
-                Object.defineProperty(a, x.key, x)
-            }
-        }
-
-        function r(a, b, d) {
-            b &&
-            q(a.prototype, b);
             d && q(a, d);
             return a
         }
@@ -3144,8 +2659,7 @@
             c = k(f("./../../../themes/p11/utils.js"));
         f = function (a) {
             function b() {
-                if (!(this instanceof
-                    b)) throw new TypeError("Cannot call a class as a function");
+                if (!(this instanceof b)) throw new TypeError("Cannot call a class as a function");
                 var a = d.apply(this, arguments);
                 h.default.INFO(a.constructor.name, ":: Constructor");
                 a._jQueryScopeBinding();
@@ -3165,8 +2679,390 @@
                 }
             }, {
                 key: "_declareConstants", value: function () {
-                    this.SELECTOR_ADD_ELEMENT_BUTTON =
-                        ".o-add-element-button";
+                    this.SELECTOR_TABLIST_CONTENT = ".tablist-content";
+                    this.SELECTOR_CONTENT = ".content";
+                    this.SELECTOR_TAB = "li"
+                }
+            }, {
+                key: "_onDOMReady", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _onDOMReady");
+                    var a = this.$el.data("tablist-for");
+                    this.$listItems = this.$el.find(this.SELECTOR_TAB);
+                    this.$tablistContentBox = $("".concat(this.SELECTOR_TABLIST_CONTENT, '[data-content-for\x3d"').concat(a, '"]'));
+                    c.default.Accessibility.allowFocus(this.$listItems);
+                    this._onPageloadShowActiveTabContent();
+                    this._attachSubscribers();
+                    this._attachDOMListeners()
+                }
+            }, {
+                key: "_jQueryScopeBinding", value: function () {
+                    this._onDOMReady = this._onDOMReady.bind(this);
+                    this._onListItemClick = this._onListItemClick.bind(this);
+                    this._onKeystrokeEnter = this._onKeystrokeEnter.bind(this)
+                }
+            }, {
+                key: "_attachSubscribers", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _attachSubscribers");
+                    this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady)
+                }
+            }, {
+                key: "_detachSubscribers", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _detachSubscribers");
+                    this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
+                    this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady)
+                }
+            }, {
+                key: "_onFrameworkReady", value: function () {
+                }
+            }, {
+                key: "_attachDOMListeners", value: function () {
+                    this.$listItems.on("click", this._onListItemClick);
+                    this.$listItems.on("keydown", this._onKeystrokeEnter)
+                }
+            }, {
+                key: "_detachDOMListeners", value: function () {
+                    this.$listItems.off("click", this._onListItemClick)
+                }
+            }, {
+                key: "_onListItemClick", value: function (a) {
+                    a.preventDefault();
+                    a = $(a.currentTarget);
+                    this._toggleTabs(a.attr("data-toggle"));
+                    a.addClass(e.default.CLASS.IS_ACTIVE_STATE)
+                }
+            }, {
+                key: "_onKeystrokeEnter", value: function (a) {
+                    a.key.match(e.default.KEYSTROKE.ENTER) && (a.preventDefault(), this._onListItemClick(a))
+                }
+            }, {
+                key: "_toggleTabs", value: function (a) {
+                    this.$listItems.removeClass(e.default.CLASS.IS_ACTIVE_STATE);
+                    this.$tablistContentBox.find(this.SELECTOR_CONTENT).removeClass(e.default.CLASS.IS_ACTIVE_STATE);
+                    this.$tablistContentBox.find(a).addClass(e.default.CLASS.IS_ACTIVE_STATE)
+                }
+            }, {
+                key: "_onPageloadShowActiveTabContent", value: function () {
+                    var a = location.hash;
+                    if ("" !== a) {
+                        var d = this.$el.find(this.SELECTOR_TAB + '[data-toggle\x3d"' + a + '"]');
+                        d.length && (this._toggleTabs(a), d.addClass(e.default.CLASS.IS_ACTIVE_STATE))
+                    }
+                }
+            }]);
+            return b
+        }(p.default);
+        t.exports = f
+    }, {
+        "./../../../js/base/appeaser-component-base.js": 47,
+        "./../../../js/base/logger.js": 51,
+        "./../../../themes/p11/enums.js": 65,
+        "./../../../themes/p11/utils.js": 112
+    }],
+    16: [function (f, t, p) {
+        function m(c) {
+            "@babel/helpers - typeof";
+            m = "function" === typeof Symbol && "symbol" === typeof Symbol.iterator ? function (a) {
+                return typeof a
+            } : function (a) {
+                return a && "function" === typeof Symbol && a.constructor === Symbol && a !== Symbol.prototype ? "symbol" : typeof a
+            };
+            return m(c)
+        }
+
+        function k(c) {
+            return c && c.__esModule ? c : {default: c}
+        }
+
+        function q(c, a) {
+            for (var b = 0; b < a.length; b++) {
+                var d = a[b];
+                d.enumerable = d.enumerable || !1;
+                d.configurable = !0;
+                "value" in d && (d.writable = !0);
+                Object.defineProperty(c, d.key, d)
+            }
+        }
+
+        function r(c, a, b) {
+            a && q(c.prototype, a);
+            b && q(c, b);
+            return c
+        }
+
+        function l(c, a, b) {
+            l = "undefined" !== typeof Reflect && Reflect.get ? Reflect.get : function (a, b, c) {
+                for (; !Object.prototype.hasOwnProperty.call(a, b) && (a = g(a), null !== a);) ;
+                if (a) return b = Object.getOwnPropertyDescriptor(a, b), b.get ? b.get.call(c) : b.value
+            };
+            return l(c, a, b || c)
+        }
+
+        function v(c, a) {
+            if ("function" !== typeof a && null !== a) throw new TypeError("Super expression must either be null or a function");
+            c.prototype = Object.create(a && a.prototype, {constructor: {value: c, writable: !0, configurable: !0}});
+            a && n(c, a)
+        }
+
+        function n(c, a) {
+            n = Object.setPrototypeOf || function (a, d) {
+                a.__proto__ = d;
+                return a
+            };
+            return n(c, a)
+        }
+
+        function w(c) {
+            var a = u();
+            return function () {
+                var b = g(c);
+                if (a) {
+                    var d = g(this).constructor;
+                    b = Reflect.construct(b, arguments, d)
+                } else b = b.apply(this, arguments);
+                if (!b || "object" !== m(b) && "function" !== typeof b) {
+                    if (void 0 === this) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+                    b = this
+                }
+                return b
+            }
+        }
+
+        function u() {
+            if ("undefined" === typeof Reflect || !Reflect.construct || Reflect.construct.sham) return !1;
+            if ("function" === typeof Proxy) return !0;
+            try {
+                return Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {
+                })), !0
+            } catch (c) {
+                return !1
+            }
+        }
+
+        function g(c) {
+            g = Object.setPrototypeOf ? Object.getPrototypeOf : function (a) {
+                return a.__proto__ || Object.getPrototypeOf(a)
+            };
+            return g(c)
+        }
+
+        p = k(f("./../../../js/base/appeaser-component-base.js"));
+        var h = k(f("./../../../js/base/logger.js")), e = k(f("./../../../themes/p11/enums.js"));
+        f = function (c) {
+            function a() {
+                if (!(this instanceof a)) throw new TypeError("Cannot call a class as a function");
+                var d = b.apply(this, arguments);
+                h.default.INFO(d.constructor.name, ":: Constructor");
+                d._jQueryScopeBinding();
+                d._declareConstants();
+                d.subscribe(e.default.EVENT.ON_DOCUMENT_READY, d._onDOMReady);
+                return d
+            }
+
+            v(a, c);
+            var b = w(a);
+            r(a, [{
+                key: "destroy", value: function () {
+                    h.default.INFO(this.constructor.name, ":: Destructor");
+                    this._detachDOMListeners();
+                    this._detachSubscribers();
+                    l(g(a.prototype), "destroy", this).call(this)
+                }
+            }, {
+                key: "_declareConstants", value: function () {
+                    this.SELECTOR_ADD_ELEMENT_BUTTON = ".o-add-element-button";
+                    this.SELECTOR_EDIT_BLOCK = ".edit-block";
+                    this.SELECTOR_CANCEL = ".js-cancel";
+                    this.SELECTOR_INPUT = ".a-input"
+                }
+            }, {
+                key: "_onDOMReady", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _onDOMReady");
+                    this.$addButton = this.$el.find(this.SELECTOR_ADD_ELEMENT_BUTTON);
+                    this.$editBlock = this.$el.find(this.SELECTOR_EDIT_BLOCK);
+                    this.$inputs = this.$el.find(this.SELECTOR_INPUT);
+                    this._attachSubscribers();
+                    this._attachDOMListeners()
+                }
+            }, {
+                key: "_jQueryScopeBinding", value: function () {
+                    this._onDOMReady = this._onDOMReady.bind(this);
+                    this._onClickAddNewElement = this._onClickAddNewElement.bind(this);
+                    this._onClickCancel = this._onClickCancel.bind(this);
+                    this._onRadioClicked = this._onRadioClicked.bind(this)
+                }
+            }, {
+                key: "_attachSubscribers", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _attachSubscribers");
+                    this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
+                    this.subscribe(e.default.ACTION.HIDE_ADDRESS_BOX_ADD, this._close)
+                }
+            }, {
+                key: "_detachSubscribers", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _detachSubscribers");
+                    this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
+                    this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady);
+                    this.unsubscribe(e.default.ACTION.HIDE_ADDRESS_BOX_ADD, this._close)
+                }
+            }, {
+                key: "_onFrameworkReady", value: function () {
+                }
+            }, {
+                key: "_attachDOMListeners", value: function () {
+                    this.$addButton.on("click", this._onClickAddNewElement);
+                    this.$el.on("click", this.SELECTOR_CANCEL, this._onClickCancel)
+                }
+            }, {
+                key: "_detachDOMListeners", value: function () {
+                    this.$addButton.on("click", this._onClickAddNewElement);
+                    this.$el.off("click", this.SELECTOR_CANCEL, this._onClickCancel)
+                }
+            }, {
+                key: "_onClickAddNewElement", value: function (a) {
+                    this._open()
+                }
+            }, {
+                key: "_onClickCancel", value: function (a) {
+                    a.preventDefault();
+                    this._close()
+                }
+            }, {
+                key: "_onRadioClicked", value: function () {
+                    this.$addButton.prop("checked") || this._close()
+                }
+            }, {
+                key: "_open", value: function () {
+                    this.$editBlock.slideDown().removeClass(e.default.CLASS.IS_HIDDEN_STATE).addClass(e.default.CLASS.IS_OPEN_STATE);
+                    this.$addButton.addClass(e.default.CLASS.IS_HIDDEN_STATE);
+                    this.$inputs.prop("disabled", !1)
+                }
+            }, {
+                key: "_close", value: function () {
+                    this.$editBlock.slideUp().removeClass(e.default.CLASS.IS_OPEN_STATE).addClass(e.default.CLASS.IS_HIDDEN_STATE);
+                    this.$addButton.removeClass(e.default.CLASS.IS_HIDDEN_STATE);
+                    this.$inputs.attr("disabled", "disabled")
+                }
+            }]);
+            return a
+        }(p.default);
+        t.exports = f
+    }, {
+        "./../../../js/base/appeaser-component-base.js": 47,
+        "./../../../js/base/logger.js": 51,
+        "./../../../themes/p11/enums.js": 65
+    }],
+    17: [function (f, t, p) {
+        function m(a) {
+            "@babel/helpers - typeof";
+            m = "function" === typeof Symbol && "symbol" === typeof Symbol.iterator ? function (a) {
+                return typeof a
+            } : function (a) {
+                return a && "function" === typeof Symbol && a.constructor === Symbol && a !== Symbol.prototype ? "symbol" : typeof a
+            };
+            return m(a)
+        }
+
+        function k(a) {
+            return a && a.__esModule ? a : {default: a}
+        }
+
+        function q(a, b) {
+            for (var d = 0; d < b.length; d++) {
+                var x = b[d];
+                x.enumerable = x.enumerable || !1;
+                x.configurable = !0;
+                "value" in x && (x.writable = !0);
+                Object.defineProperty(a, x.key, x)
+            }
+        }
+
+        function r(a, b, d) {
+            b && q(a.prototype, b);
+            d && q(a, d);
+            return a
+        }
+
+        function l(a, b, d) {
+            l = "undefined" !== typeof Reflect && Reflect.get ? Reflect.get : function (a, d, b) {
+                for (; !Object.prototype.hasOwnProperty.call(a, d) && (a = g(a), null !== a);) ;
+                if (a) return d = Object.getOwnPropertyDescriptor(a, d), d.get ? d.get.call(b) : d.value
+            };
+            return l(a, b, d || a)
+        }
+
+        function v(a, b) {
+            if ("function" !== typeof b && null !== b) throw new TypeError("Super expression must either be null or a function");
+            a.prototype = Object.create(b && b.prototype, {constructor: {value: a, writable: !0, configurable: !0}});
+            b && n(a, b)
+        }
+
+        function n(a, b) {
+            n = Object.setPrototypeOf || function (a, b) {
+                a.__proto__ = b;
+                return a
+            };
+            return n(a, b)
+        }
+
+        function w(a) {
+            var b = u();
+            return function () {
+                var d = g(a);
+                if (b) {
+                    var x = g(this).constructor;
+                    d = Reflect.construct(d, arguments, x)
+                } else d = d.apply(this, arguments);
+                if (!d || "object" !== m(d) && "function" !== typeof d) {
+                    if (void 0 === this) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+                    d = this
+                }
+                return d
+            }
+        }
+
+        function u() {
+            if ("undefined" === typeof Reflect || !Reflect.construct || Reflect.construct.sham) return !1;
+            if ("function" === typeof Proxy) return !0;
+            try {
+                return Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {
+                })), !0
+            } catch (a) {
+                return !1
+            }
+        }
+
+        function g(a) {
+            g = Object.setPrototypeOf ? Object.getPrototypeOf : function (a) {
+                return a.__proto__ || Object.getPrototypeOf(a)
+            };
+            return g(a)
+        }
+
+        p = k(f("./../../../js/base/appeaser-component-base.js"));
+        var h = k(f("./../../../js/base/logger.js")), e = k(f("./../../../themes/p11/enums.js")),
+            c = k(f("./../../../themes/p11/utils.js"));
+        f = function (a) {
+            function b() {
+                if (!(this instanceof b)) throw new TypeError("Cannot call a class as a function");
+                var a = d.apply(this, arguments);
+                h.default.INFO(a.constructor.name, ":: Constructor");
+                a._jQueryScopeBinding();
+                a._declareConstants();
+                a.subscribe(e.default.EVENT.ON_DOCUMENT_READY, a._onDOMReady);
+                return a
+            }
+
+            v(b, a);
+            var d = w(b);
+            r(b, [{
+                key: "destroy", value: function () {
+                    h.default.INFO(this.constructor.name, ":: Destructor");
+                    this._detachDOMListeners();
+                    this._detachSubscribers();
+                    l(g(b.prototype), "destroy", this).call(this)
+                }
+            }, {
+                key: "_declareConstants", value: function () {
+                    this.SELECTOR_ADD_ELEMENT_BUTTON = ".o-add-element-button";
                     this.SELECTOR_CANCEL = ".js-cancel";
                     this.SELECTOR_INPUT = ".a-input";
                     this.SELECTOR_RADIO_BUTTON = ".a-radio-button"
@@ -3181,59 +3077,60 @@
                     this._attachSubscribers();
                     this._attachDOMListeners()
                 }
-            },
-                {
-                    key: "_jQueryScopeBinding", value: function () {
-                        this._onDOMReady = this._onDOMReady.bind(this);
-                        this._onRadioChanged = this._onRadioChanged.bind(this)
-                    }
-                }, {
-                    key: "_attachSubscribers", value: function () {
-                        h.default.INFO(this.constructor.name, ":: _attachSubscribers");
-                        this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady)
-                    }
-                }, {
-                    key: "_detachSubscribers", value: function () {
-                        h.default.INFO(this.constructor.name, ":: _detachSubscribers");
-                        this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
-                        this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady)
-                    }
-                }, {
-                    key: "_onFrameworkReady", value: function () {
-                    }
-                }, {
-                    key: "_attachDOMListeners", value: function () {
-                        this.$radioButtons.on("change", this._onRadioChanged)
-                    }
-                }, {
-                    key: "_detachDOMListeners", value: function () {
-                        this.$radioButtons.off("change", this._onRadioChanged)
-                    }
-                }, {
-                    key: "_onRadioChanged", value: function () {
-                        this.$addRadio.prop("checked") ? this._open() : this._close()
-                    }
-                }, {
-                    key: "_open", value: function () {
-                        this.$editBlock.slideDown().removeClass(e.default.CLASS.IS_HIDDEN_STATE).addClass(e.default.CLASS.IS_OPEN_STATE);
-                        c.default.Accessibility.show(this.$editBlock);
-                        this.$addRadio.addClass(e.default.CLASS.IS_HIDDEN_STATE);
-                        this.$inputs.prop("disabled", !1)
-                    }
-                }, {
-                    key: "_close", value: function () {
-                        this.$editBlock.slideUp().removeClass(e.default.CLASS.IS_OPEN_STATE).addClass(e.default.CLASS.IS_HIDDEN_STATE);
-                        c.default.Accessibility.hide(this.$editBlock);
-                        this.$addRadio.removeClass(e.default.CLASS.IS_HIDDEN_STATE);
-                        this.$inputs.attr("disabled", "disabled")
-                    }
-                }]);
+            }, {
+                key: "_jQueryScopeBinding", value: function () {
+                    this._onDOMReady = this._onDOMReady.bind(this);
+                    this._onRadioChanged = this._onRadioChanged.bind(this)
+                }
+            }, {
+                key: "_attachSubscribers", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _attachSubscribers");
+                    this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady)
+                }
+            }, {
+                key: "_detachSubscribers", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _detachSubscribers");
+                    this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
+                    this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady)
+                }
+            }, {
+                key: "_onFrameworkReady", value: function () {
+                }
+            }, {
+                key: "_attachDOMListeners", value: function () {
+                    this.$radioButtons.on("change", this._onRadioChanged)
+                }
+            }, {
+                key: "_detachDOMListeners", value: function () {
+                    this.$radioButtons.off("change", this._onRadioChanged)
+                }
+            }, {
+                key: "_onRadioChanged", value: function () {
+                    this.$addRadio.prop("checked") ? this._open() : this._close()
+                }
+            }, {
+                key: "_open", value: function () {
+                    this.$editBlock.slideDown().removeClass(e.default.CLASS.IS_HIDDEN_STATE).addClass(e.default.CLASS.IS_OPEN_STATE);
+                    c.default.Accessibility.show(this.$editBlock);
+                    this.$addRadio.addClass(e.default.CLASS.IS_HIDDEN_STATE);
+                    this.$inputs.prop("disabled", !1)
+                }
+            }, {
+                key: "_close", value: function () {
+                    this.$editBlock.slideUp().removeClass(e.default.CLASS.IS_OPEN_STATE).addClass(e.default.CLASS.IS_HIDDEN_STATE);
+                    c.default.Accessibility.hide(this.$editBlock);
+                    this.$addRadio.removeClass(e.default.CLASS.IS_HIDDEN_STATE);
+                    this.$inputs.attr("disabled", "disabled")
+                }
+            }]);
             return b
         }(p.default);
         t.exports = f
     }, {
         "./../../../js/base/appeaser-component-base.js": 47,
-        "./../../../js/base/logger.js": 51, "./../../../themes/p11/enums.js": 65, "./../../../themes/p11/utils.js": 112
+        "./../../../js/base/logger.js": 51,
+        "./../../../themes/p11/enums.js": 65,
+        "./../../../themes/p11/utils.js": 112
     }],
     18: [function (f, t, p) {
         function m(c) {
@@ -3253,8 +3150,7 @@
         function q(c, a) {
             for (var b = 0; b < a.length; b++) {
                 var d = a[b];
-                d.enumerable =
-                    d.enumerable || !1;
+                d.enumerable = d.enumerable || !1;
                 d.configurable = !0;
                 "value" in d && (d.writable = !0);
                 Object.defineProperty(c, d.key, d)
@@ -3345,80 +3241,76 @@
                     this._detachSubscribers();
                     l(g(a.prototype), "destroy", this).call(this)
                 }
-            },
-                {
-                    key: "_declareConstants", value: function () {
-                        this.SELECTOR_ADDRESS_EDIT = ".js-address-edit";
-                        this.SELECTOR_CANCEL_BUTTON = ".js-cancel";
-                        this.SELECTOR_INPUT = ".m-input input";
-                        this.SELECTOR_CTA = ".m-cta";
-                        this.SELECTOR_CTA_TEXT = ".m-cta .text";
-                        this.SELECTOR_ADDRESS_FORM = ".address-form"
-                    }
-                }, {
-                    key: "_onDOMReady", value: function () {
-                        h.default.INFO(this.constructor.name, ":: _onDOMReady");
-                        this.$editBtn = this.$el.find(this.SELECTOR_ADDRESS_EDIT);
-                        this.$cancelBtn = this.$el.find(this.SELECTOR_CANCEL_BUTTON);
-                        this.$input = this.$el.find(this.SELECTOR_INPUT);
-                        this.$cta = this.$el.find(this.SELECTOR_CTA);
-                        this.$ctaTextSpan = this.$el.find(this.SELECTOR_CTA_TEXT);
-                        this.$addressForm = this.$el.find(this.SELECTOR_ADDRESS_FORM);
-                        this.isEditing = !1;
-                        this._attachSubscribers();
-                        this._attachDOMListeners()
-                    }
-                }, {
-                    key: "_jQueryScopeBinding", value: function () {
-                        this._onDOMReady = this._onDOMReady.bind(this);
-                        this._onEditBtnClick = this._onEditBtnClick.bind(this);
-                        this._onCancelBtnClick = this._onCancelBtnClick.bind(this);
-                        this._onInputInput = this._onInputInput.bind(this)
-                    }
-                }, {
-                    key: "_attachSubscribers",
-                    value: function () {
-                        h.default.INFO(this.constructor.name, ":: _attachSubscribers");
-                        this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady)
-                    }
-                }, {
-                    key: "_detachSubscribers", value: function () {
-                        h.default.INFO(this.constructor.name, ":: _detachSubscribers");
-                        this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
-                        this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady)
-                    }
-                }, {
-                    key: "_onFrameworkReady", value: function () {
-                    }
-                }, {
-                    key: "_attachDOMListeners", value: function () {
-                        this.$editBtn.on("click",
-                            this._onEditBtnClick);
-                        this.$cancelBtn.on("click", this._onCancelBtnClick);
-                        this.$input.on("input", this._onInputInput)
-                    }
-                }, {
-                    key: "_detachDOMListeners", value: function () {
-                        this.$editBtn.off("click", this._onEditBtnClick);
-                        this.$cancelBtn.off("click", this._onCancelBtnClick);
-                        this.$input.off("input", this._onInputInput)
-                    }
-                }, {
-                    key: "_onInputInput", value: function () {
-                        this.$cta.hasClass(e.default.CLASS.IS_HOVER_STATE) && (this.$cta.removeClass(e.default.CLASS.IS_HOVER_STATE), this.$ctaTextSpan.html(this.$cta.data("default-state-text")))
-                    }
-                },
-                {
-                    key: "_onEditBtnClick", value: function (a) {
-                        a.preventDefault();
-                        this.isEditing ? this._onCancelBtnClick(a) : (this.$el.wrap("\x3cdiv class\x3d'edit-block is-open'\x3e\x3c/div\x3e"), this.isEditing = !0, this.$addressForm.slideToggle())
-                    }
-                }, {
-                    key: "_onCancelBtnClick", value: function (a) {
-                        a.preventDefault();
-                        this.isEditing && (this.$el.unwrap(), this.$addressForm.slideToggle(), this.isEditing = !1)
-                    }
-                }]);
+            }, {
+                key: "_declareConstants", value: function () {
+                    this.SELECTOR_ADDRESS_EDIT = ".js-address-edit";
+                    this.SELECTOR_CANCEL_BUTTON = ".js-cancel";
+                    this.SELECTOR_INPUT = ".m-input input";
+                    this.SELECTOR_CTA = ".m-cta";
+                    this.SELECTOR_CTA_TEXT = ".m-cta .text";
+                    this.SELECTOR_ADDRESS_FORM = ".address-form"
+                }
+            }, {
+                key: "_onDOMReady", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _onDOMReady");
+                    this.$editBtn = this.$el.find(this.SELECTOR_ADDRESS_EDIT);
+                    this.$cancelBtn = this.$el.find(this.SELECTOR_CANCEL_BUTTON);
+                    this.$input = this.$el.find(this.SELECTOR_INPUT);
+                    this.$cta = this.$el.find(this.SELECTOR_CTA);
+                    this.$ctaTextSpan = this.$el.find(this.SELECTOR_CTA_TEXT);
+                    this.$addressForm = this.$el.find(this.SELECTOR_ADDRESS_FORM);
+                    this.isEditing = !1;
+                    this._attachSubscribers();
+                    this._attachDOMListeners()
+                }
+            }, {
+                key: "_jQueryScopeBinding", value: function () {
+                    this._onDOMReady = this._onDOMReady.bind(this);
+                    this._onEditBtnClick = this._onEditBtnClick.bind(this);
+                    this._onCancelBtnClick = this._onCancelBtnClick.bind(this);
+                    this._onInputInput = this._onInputInput.bind(this)
+                }
+            }, {
+                key: "_attachSubscribers", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _attachSubscribers");
+                    this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady)
+                }
+            }, {
+                key: "_detachSubscribers", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _detachSubscribers");
+                    this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
+                    this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady)
+                }
+            }, {
+                key: "_onFrameworkReady", value: function () {
+                }
+            }, {
+                key: "_attachDOMListeners", value: function () {
+                    this.$editBtn.on("click", this._onEditBtnClick);
+                    this.$cancelBtn.on("click", this._onCancelBtnClick);
+                    this.$input.on("input", this._onInputInput)
+                }
+            }, {
+                key: "_detachDOMListeners", value: function () {
+                    this.$editBtn.off("click", this._onEditBtnClick);
+                    this.$cancelBtn.off("click", this._onCancelBtnClick);
+                    this.$input.off("input", this._onInputInput)
+                }
+            }, {
+                key: "_onInputInput", value: function () {
+                    this.$cta.hasClass(e.default.CLASS.IS_HOVER_STATE) && (this.$cta.removeClass(e.default.CLASS.IS_HOVER_STATE), this.$ctaTextSpan.html(this.$cta.data("default-state-text")))
+                }
+            }, {
+                key: "_onEditBtnClick", value: function (a) {
+                    a.preventDefault();
+                    this.isEditing ? this._onCancelBtnClick(a) : (this.$el.wrap("\x3cdiv class\x3d'edit-block is-open'\x3e\x3c/div\x3e"), this.isEditing = !0, this.$addressForm.slideToggle())
+                }
+            }, {
+                key: "_onCancelBtnClick", value: function (a) {
+                    a.preventDefault();
+                    this.isEditing && (this.$el.unwrap(), this.$addressForm.slideToggle(), this.isEditing = !1)
+                }
+            }]);
             return a
         }(p.default);
         t.exports = f
@@ -3452,8 +3344,7 @@
             }
         }
 
-        function r(c,
-                   a, b) {
+        function r(c, a, b) {
             a && q(c.prototype, a);
             b && q(c, b);
             return c
@@ -3469,12 +3360,7 @@
 
         function v(c, a) {
             if ("function" !== typeof a && null !== a) throw new TypeError("Super expression must either be null or a function");
-            c.prototype = Object.create(a && a.prototype, {
-                constructor: {
-                    value: c, writable: !0,
-                    configurable: !0
-                }
-            });
+            c.prototype = Object.create(a && a.prototype, {constructor: {value: c, writable: !0, configurable: !0}});
             a && n(c, a)
         }
 
@@ -3503,8 +3389,7 @@
         }
 
         function u() {
-            if ("undefined" === typeof Reflect || !Reflect.construct ||
-                Reflect.construct.sham) return !1;
+            if ("undefined" === typeof Reflect || !Reflect.construct || Reflect.construct.sham) return !1;
             if ("function" === typeof Proxy) return !0;
             try {
                 return Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {
@@ -3567,46 +3452,44 @@
                 key: "_jQueryScopeBinding", value: function () {
                     this._onDOMReady = this._onDOMReady.bind(this)
                 }
-            },
-                {
-                    key: "_attachSubscribers", value: function () {
-                        h.default.INFO(this.constructor.name, ":: _attachSubscribers");
-                        this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
-                        this.subscribe(e.default.EVENT.ON_PAGE_CONTENT_SHOW, this._refresh)
-                    }
-                }, {
-                    key: "_detachSubscribers", value: function () {
-                        h.default.INFO(this.constructor.name, ":: _detachSubscribers");
-                        this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady);
-                        this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
-                        this.unsubscribe(e.default.EVENT.ON_PAGE_CONTENT_SHOW,
-                            this._refresh)
-                    }
-                }, {
-                    key: "_onFrameworkReady", value: function () {
-                    }
-                }, {
-                    key: "_attachDOMListeners", value: function () {
-                    }
-                }, {
-                    key: "_detachDOMListeners", value: function () {
-                    }
-                }, {
-                    key: "_attachMQHandlers", value: function () {
-                    }
-                }, {
-                    key: "_detachMQHandlers", value: function () {
-                    }
-                }, {
-                    key: "_initSlider", value: function () {
-                        this.$slider.slick({
-                            prevArrow: "\x3cdiv class\x3d'" + this.CLASS_SLICK_ARROW_PREV + "'\x3e\x3c/div\x3e",
-                            nextArrow: "\x3cdiv class\x3d'" + this.CLASS_SLICK_ARROW_NEXT + "'\x3e\x3c/div\x3e",
-                            speed: 300
-                        });
-                        this.slick = this.$slider.slick("getSlick")
-                    }
-                }]);
+            }, {
+                key: "_attachSubscribers", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _attachSubscribers");
+                    this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
+                    this.subscribe(e.default.EVENT.ON_PAGE_CONTENT_SHOW, this._refresh)
+                }
+            }, {
+                key: "_detachSubscribers", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _detachSubscribers");
+                    this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady);
+                    this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
+                    this.unsubscribe(e.default.EVENT.ON_PAGE_CONTENT_SHOW, this._refresh)
+                }
+            }, {
+                key: "_onFrameworkReady", value: function () {
+                }
+            }, {
+                key: "_attachDOMListeners", value: function () {
+                }
+            }, {
+                key: "_detachDOMListeners", value: function () {
+                }
+            }, {
+                key: "_attachMQHandlers", value: function () {
+                }
+            }, {
+                key: "_detachMQHandlers", value: function () {
+                }
+            }, {
+                key: "_initSlider", value: function () {
+                    this.$slider.slick({
+                        prevArrow: "\x3cdiv class\x3d'" + this.CLASS_SLICK_ARROW_PREV + "'\x3e\x3c/div\x3e",
+                        nextArrow: "\x3cdiv class\x3d'" + this.CLASS_SLICK_ARROW_NEXT + "'\x3e\x3c/div\x3e",
+                        speed: 300
+                    });
+                    this.slick = this.$slider.slick("getSlick")
+                }
+            }]);
             return a
         }(p.default);
         t.exports = f
@@ -3630,8 +3513,7 @@
             return a && a.__esModule ? a : {default: a}
         }
 
-        function q(a,
-                   b) {
+        function q(a, b) {
             for (var d = 0; d < b.length; d++) {
                 var x = b[d];
                 x.enumerable = x.enumerable || !1;
@@ -3656,8 +3538,7 @@
         }
 
         function v(a, b) {
-            if ("function" !== typeof b &&
-                null !== b) throw new TypeError("Super expression must either be null or a function");
+            if ("function" !== typeof b && null !== b) throw new TypeError("Super expression must either be null or a function");
             a.prototype = Object.create(b && b.prototype, {constructor: {value: a, writable: !0, configurable: !0}});
             b && n(a, b)
         }
@@ -3740,8 +3621,7 @@
                     this.SELECTOR_INPUT = ".a-input";
                     this.SELECTOR_ADD_BUTTON = ".add";
                     this.SELECTOR_BTN_GET_DISCOUNT = ".a-button";
-                    this.ERROR_MESSAGE_TIMEOUT =
-                        4E3
+                    this.ERROR_MESSAGE_TIMEOUT = 4E3
                 }
             }, {
                 key: "_onDOMReady", value: function () {
@@ -3752,96 +3632,89 @@
                     this._attachDOMListeners();
                     this.$el.hasClass(e.default.CLASS.IS_ACTIVE_STATE) || (c.default.Accessibility.hide(this.$el.find(this.SELECTOR_INPUT)), c.default.Accessibility.preventFocus(this.$el.find(this.SELECTOR_INPUT)), c.default.Accessibility.hide(this.$el.find(this.SELECTOR_ADD_BUTTON)), c.default.Accessibility.preventFocus(this.$el.find(this.SELECTOR_ADD_BUTTON)))
                 }
-            },
-                {
-                    key: "_jQueryScopeBinding", value: function () {
-                        this._onDOMReady = this._onDOMReady.bind(this);
-                        this._toggleOpenClose = this._toggleOpenClose.bind(this);
-                        this._remove = this._remove.bind(this);
-                        this._disableDiscountButton = this._disableDiscountButton.bind(this);
-                        this._onInputChange = this._onInputChange.bind(this);
-                        this._onAddDiscountErrorMsg = this._onAddDiscountErrorMsg.bind(this)
-                    }
-                }, {
-                    key: "_attachSubscribers", value: function () {
-                        h.default.INFO(this.constructor.name, ":: _attachSubscribers");
-                        this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY,
-                            this._onFrameworkReady);
-                        this.subscribe(e.default.EVENT.ON_VOUCHER_CODE_ADDED, this._onVoucherCodeAdded)
-                    }
-                }, {
-                    key: "_detachSubscribers", value: function () {
-                        h.default.INFO(this.constructor.name, ":: _detachSubscribers");
-                        this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady);
-                        this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
-                        this.unsubscribe(e.default.EVENT.ON_VOUCHER_CODE_ADDED, this._onVoucherCodeAdded)
-                    }
-                }, {
-                    key: "_onFrameworkReady", value: function () {
-                    }
-                }, {
-                    key: "_attachDOMListeners",
-                    value: function () {
-                        this.$openClose.on("click", this._toggleOpenClose);
-                        this.$remove.on("click", this._remove);
-                        this.$input.on("input", this._onInputChange);
-                        this.$btnGetDiscount.on("click", this._onAddDiscountErrorMsg)
-                    }
-                }, {
-                    key: "_detachDOMListeners", value: function () {
-                        this.$openClose.off("click", this._toggleOpenClose);
-                        this.$remove.off("click", this._remove);
-                        this.$input.off("input", this._onInputChange);
-                        this.$btnGetDiscount.on("click", this._onAddDiscountErrorMsg)
-                    }
-                }, {
-                    key: "_cacheDOMElements", value: function () {
-                        this.$openClose =
-                            this.$el.find(this.SELECTOR_TITLE + "," + this.SELECTOR_CANCEL);
-                        this.$remove = this.$el.find(this.SELECTOR_REMOVE);
-                        this.$mInput = this.$el.find(this.SELECTOR_M_INPUT);
-                        this.$discountCode = this.$el.find(this.SELECTOR_DISCOUNT_CODE);
-                        this.$mAddBtn = this.$el.find(this.SELECTOR_ADD_BUTTON);
-                        this.$input = this.$el.find(this.SELECTOR_INPUT);
-                        this.$btnGetDiscount = this.$el.find(this.SELECTOR_BTN_GET_DISCOUNT)
-                    }
-                }, {
-                    key: "_remove", value: function (a) {
-                        a.preventDefault();
-                        this.$mInput.removeClass(this.CLASS_HAS_ERROR);
-                        this.$el.removeClass(this.CLASS_HAS_DISCOUNT).removeClass(e.default.CLASS.IS_ACTIVE_STATE);
-                        this.$input.val("").removeClass(e.default.CLASS.IS_FILLED)
-                    }
-                }, {
-                    key: "_onVoucherCodeAdded", value: function (a) {
-                        this.$mInput.removeClass(e.default.CLASS.HAS_ERROR);
-                        this.$discountCode.text(a);
-                        this.$el.addClass(this.CLASS_HAS_DISCOUNT)
-                    }
-                }, {
-                    key: "_toggleOpenClose", value: function () {
-                        this.$el.toggleClass(e.default.CLASS.IS_ACTIVE_STATE);
-                        this.$el.hasClass(e.default.CLASS.IS_ACTIVE_STATE) ? (this.publish(e.default.EVENT.ON_DISCOUNT_SECTION_EXPAND), c.default.Accessibility.clear(this.$el.find(this.SELECTOR_INPUT)), c.default.Accessibility.clear(this.$el.find(this.SELECTOR_ADD_BUTTON)),
-                            this.$input.focus()) : (this.publish(e.default.EVENT.ON_DISCOUNT_SECTION_COLLAPSE), c.default.Accessibility.hide(this.$el.find(this.SELECTOR_INPUT)), c.default.Accessibility.preventFocus(this.$el.find(this.SELECTOR_INPUT)), c.default.Accessibility.hide(this.$el.find(this.SELECTOR_ADD_BUTTON)), c.default.Accessibility.preventFocus(this.$el.find(this.SELECTOR_ADD_BUTTON)))
-                    }
-                }, {
-                    key: "_onAddDiscountErrorMsg", value: function (a) {
-                        var d = this;
-                        this.$btnGetDiscount.hasClass(e.default.CLASS.IS_DISABLED_STATE) ? (a.preventDefault(),
-                            a.stopPropagation(), this.$el.addClass(e.default.CLASS.HAS_ERROR), setTimeout(function () {
-                            d.$el.removeClass(e.default.CLASS.HAS_ERROR)
-                        }, this.ERROR_MESSAGE_TIMEOUT)) : this.$el.removeClass(e.default.CLASS.HAS_ERROR)
-                    }
-                }, {
-                    key: "_onInputChange", value: function (a) {
-                        0 < $(a.currentTarget).val().length ? (this.$mAddBtn.removeClass(this.CLASS_IS_DISABLED), this.$btnGetDiscount.hasClass(e.default.CLASS.IS_DISABLED_STATE) || this.$el.removeClass(e.default.CLASS.HAS_ERROR)) : this._disableDiscountButton()
-                    }
-                }, {
-                    key: "_disableDiscountButton",
-                    value: function () {
-                        this.$mAddBtn.addClass(this.CLASS_IS_DISABLED)
-                    }
-                }]);
+            }, {
+                key: "_jQueryScopeBinding", value: function () {
+                    this._onDOMReady = this._onDOMReady.bind(this);
+                    this._toggleOpenClose = this._toggleOpenClose.bind(this);
+                    this._remove = this._remove.bind(this);
+                    this._disableDiscountButton = this._disableDiscountButton.bind(this);
+                    this._onInputChange = this._onInputChange.bind(this);
+                    this._onAddDiscountErrorMsg = this._onAddDiscountErrorMsg.bind(this)
+                }
+            }, {
+                key: "_attachSubscribers", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _attachSubscribers");
+                    this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
+                    this.subscribe(e.default.EVENT.ON_VOUCHER_CODE_ADDED, this._onVoucherCodeAdded)
+                }
+            }, {
+                key: "_detachSubscribers", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _detachSubscribers");
+                    this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady);
+                    this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
+                    this.unsubscribe(e.default.EVENT.ON_VOUCHER_CODE_ADDED, this._onVoucherCodeAdded)
+                }
+            }, {
+                key: "_onFrameworkReady", value: function () {
+                }
+            }, {
+                key: "_attachDOMListeners", value: function () {
+                    this.$openClose.on("click", this._toggleOpenClose);
+                    this.$remove.on("click", this._remove);
+                    this.$input.on("input", this._onInputChange);
+                    this.$btnGetDiscount.on("click", this._onAddDiscountErrorMsg)
+                }
+            }, {
+                key: "_detachDOMListeners", value: function () {
+                    this.$openClose.off("click", this._toggleOpenClose);
+                    this.$remove.off("click", this._remove);
+                    this.$input.off("input", this._onInputChange);
+                    this.$btnGetDiscount.on("click", this._onAddDiscountErrorMsg)
+                }
+            }, {
+                key: "_cacheDOMElements", value: function () {
+                    this.$openClose = this.$el.find(this.SELECTOR_TITLE + "," + this.SELECTOR_CANCEL);
+                    this.$remove = this.$el.find(this.SELECTOR_REMOVE);
+                    this.$mInput = this.$el.find(this.SELECTOR_M_INPUT);
+                    this.$discountCode = this.$el.find(this.SELECTOR_DISCOUNT_CODE);
+                    this.$mAddBtn = this.$el.find(this.SELECTOR_ADD_BUTTON);
+                    this.$input = this.$el.find(this.SELECTOR_INPUT);
+                    this.$btnGetDiscount = this.$el.find(this.SELECTOR_BTN_GET_DISCOUNT)
+                }
+            }, {
+                key: "_remove", value: function (a) {
+                    a.preventDefault();
+                    this.$mInput.removeClass(this.CLASS_HAS_ERROR);
+                    this.$el.removeClass(this.CLASS_HAS_DISCOUNT).removeClass(e.default.CLASS.IS_ACTIVE_STATE);
+                    this.$input.val("").removeClass(e.default.CLASS.IS_FILLED)
+                }
+            }, {
+                key: "_onVoucherCodeAdded", value: function (a) {
+                    this.$mInput.removeClass(e.default.CLASS.HAS_ERROR);
+                    this.$discountCode.text(a);
+                    this.$el.addClass(this.CLASS_HAS_DISCOUNT)
+                }
+            }, {
+                key: "_toggleOpenClose", value: function () {
+                    this.$el.toggleClass(e.default.CLASS.IS_ACTIVE_STATE);
+                    this.$el.hasClass(e.default.CLASS.IS_ACTIVE_STATE) ? (this.publish(e.default.EVENT.ON_DISCOUNT_SECTION_EXPAND), c.default.Accessibility.clear(this.$el.find(this.SELECTOR_INPUT)), c.default.Accessibility.clear(this.$el.find(this.SELECTOR_ADD_BUTTON)), this.$input.focus()) : (this.publish(e.default.EVENT.ON_DISCOUNT_SECTION_COLLAPSE), c.default.Accessibility.hide(this.$el.find(this.SELECTOR_INPUT)), c.default.Accessibility.preventFocus(this.$el.find(this.SELECTOR_INPUT)), c.default.Accessibility.hide(this.$el.find(this.SELECTOR_ADD_BUTTON)), c.default.Accessibility.preventFocus(this.$el.find(this.SELECTOR_ADD_BUTTON)))
+                }
+            }, {
+                key: "_onAddDiscountErrorMsg", value: function (a) {
+                    var d = this;
+                    this.$btnGetDiscount.hasClass(e.default.CLASS.IS_DISABLED_STATE) ? (a.preventDefault(), a.stopPropagation(), this.$el.addClass(e.default.CLASS.HAS_ERROR), setTimeout(function () {
+                        d.$el.removeClass(e.default.CLASS.HAS_ERROR)
+                    }, this.ERROR_MESSAGE_TIMEOUT)) : this.$el.removeClass(e.default.CLASS.HAS_ERROR)
+                }
+            }, {
+                key: "_onInputChange", value: function (a) {
+                    0 < $(a.currentTarget).val().length ? (this.$mAddBtn.removeClass(this.CLASS_IS_DISABLED), this.$btnGetDiscount.hasClass(e.default.CLASS.IS_DISABLED_STATE) || this.$el.removeClass(e.default.CLASS.HAS_ERROR)) : this._disableDiscountButton()
+                }
+            }, {
+                key: "_disableDiscountButton", value: function () {
+                    this.$mAddBtn.addClass(this.CLASS_IS_DISABLED)
+                }
+            }]);
             return b
         }(p.default);
         t.exports = f
@@ -3857,8 +3730,7 @@
             m = "function" === typeof Symbol && "symbol" === typeof Symbol.iterator ? function (a) {
                 return typeof a
             } : function (a) {
-                return a && "function" === typeof Symbol && a.constructor === Symbol && a !== Symbol.prototype ?
-                    "symbol" : typeof a
+                return a && "function" === typeof Symbol && a.constructor === Symbol && a !== Symbol.prototype ? "symbol" : typeof a
             };
             return m(c)
         }
@@ -3886,8 +3758,7 @@
         function l(c, a, b) {
             l = "undefined" !== typeof Reflect && Reflect.get ? Reflect.get : function (a, b, c) {
                 for (; !Object.prototype.hasOwnProperty.call(a, b) && (a = g(a), null !== a);) ;
-                if (a) return b = Object.getOwnPropertyDescriptor(a,
-                    b), b.get ? b.get.call(c) : b.value
+                if (a) return b = Object.getOwnPropertyDescriptor(a, b), b.get ? b.get.call(c) : b.value
             };
             return l(c, a, b || c)
         }
@@ -3913,8 +3784,7 @@
                 if (a) {
                     var d = g(this).constructor;
                     b = Reflect.construct(b, arguments, d)
-                } else b = b.apply(this,
-                    arguments);
+                } else b = b.apply(this, arguments);
                 if (!b || "object" !== m(b) && "function" !== typeof b) {
                     if (void 0 === this) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
                     b = this
@@ -3936,8 +3806,7 @@
 
         function g(c) {
             g = Object.setPrototypeOf ? Object.getPrototypeOf : function (a) {
-                return a.__proto__ ||
-                    Object.getPrototypeOf(a)
+                return a.__proto__ || Object.getPrototypeOf(a)
             };
             return g(c)
         }
@@ -3971,8 +3840,7 @@
                     this.SELECTOR_SECTION = ".section";
                     this.SELECTOR_SCROLL_ELEMENT = "body,html";
                     this.SELECTOR_ACTIVE_SECTION = ".section:not(." + e.default.CLASS.IS_DISABLED_STATE + "):not(." + e.default.CLASS.IS_CLOSED_STATE + ")";
-                    this.SELECTOR_NOTIFICATION_CHECKBOX =
-                        ".o-delivery #delivery-sms .a-checkbox";
+                    this.SELECTOR_NOTIFICATION_CHECKBOX = ".o-delivery #delivery-sms .a-checkbox";
                     this.SELECTOR_M_PHONE_INPUT = ".o-delivery .m-input-phone-number";
                     this.SELECTOR_ABOUT_YOU_SECTION = '[data-section-name\x3d"o-about-you"]';
                     this.SELECTOR_DELIVERY_SECTION = '[data-section-name\x3d"o-delivery"]';
@@ -3998,8 +3866,7 @@
                     this.$editLink = this.$el.find(this.SELECTOR_EDIT_LINK);
                     this.$cancelLink = this.$el.find(this.SELECTOR_CANCEL_LINK);
                     this.$scrollElement = $(this.SELECTOR_SCROLL_ELEMENT);
-                    this.$notificationCheckbox =
-                        this.$el.find(this.SELECTOR_NOTIFICATION_CHECKBOX);
+                    this.$notificationCheckbox = this.$el.find(this.SELECTOR_NOTIFICATION_CHECKBOX);
                     this.$phoneInput = this.$el.find(this.SELECTOR_M_PHONE_INPUT);
                     this.$aboutYouSection = this.$el.find(this.SELECTOR_ABOUT_YOU_SECTION);
                     this.$deliverySection = this.$el.find(this.SELECTOR_DELIVERY_SECTION);
@@ -4020,8 +3887,7 @@
                 key: "_attachSubscribers", value: function () {
                     h.default.INFO(this.constructor.name, ":: _attachSubscribers");
                     this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
-                    this.subscribe(e.default.EVENT.ON_CHECKOUT_SECTION_COMPLETED,
-                        this._onSectionCompleted)
+                    this.subscribe(e.default.EVENT.ON_CHECKOUT_SECTION_COMPLETED, this._onSectionCompleted)
                 }
             }, {
                 key: "_detachSubscribers", value: function () {
@@ -4047,8 +3913,7 @@
                     this.$cancelLink.off("click", this._onCancelClick);
                     this.$notificationCheckbox.off("change", this._onNotificationCheckboxTick);
                     this.$logintab.off("click", this._onLoginTabClick);
-                    this.$registertab.off("click",
-                        this._onRegisterTabClick)
+                    this.$registertab.off("click", this._onRegisterTabClick)
                 }
             }, {
                 key: "_onEditClick", value: function (a) {
@@ -4075,8 +3940,7 @@
                 }
             }, {
                 key: "_onNotificationCheckboxTick", value: function () {
-                    this.$notificationCheckbox.prop("checked") ?
-                        this.$phoneInput.addClass(this.CLASS_IS_TICKED) : this.$phoneInput.removeClass(this.CLASS_IS_TICKED)
+                    this.$notificationCheckbox.prop("checked") ? this.$phoneInput.addClass(this.CLASS_IS_TICKED) : this.$phoneInput.removeClass(this.CLASS_IS_TICKED)
                 }
             }, {
                 key: "_scrollToSection", value: function (a) {
@@ -4134,8 +3998,7 @@
             }
         }
 
-        function r(a,
-                   b, d) {
+        function r(a, b, d) {
             b && q(a.prototype, b);
             d && q(a, d);
             return a
@@ -4151,12 +4014,7 @@
 
         function v(a, b) {
             if ("function" !== typeof b && null !== b) throw new TypeError("Super expression must either be null or a function");
-            a.prototype = Object.create(b && b.prototype, {
-                constructor: {
-                    value: a, writable: !0,
-                    configurable: !0
-                }
-            });
+            a.prototype = Object.create(b && b.prototype, {constructor: {value: a, writable: !0, configurable: !0}});
             b && n(a, b)
         }
 
@@ -4187,8 +4045,7 @@
         }
 
         function g() {
-            if ("undefined" === typeof Reflect ||
-                !Reflect.construct || Reflect.construct.sham) return !1;
+            if ("undefined" === typeof Reflect || !Reflect.construct || Reflect.construct.sham) return !1;
             if ("function" === typeof Proxy) return !0;
             try {
                 return Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {
@@ -4209,8 +4066,7 @@
         var e = k(f("./../../../themes/p11/enums.js")), c = k(f("./../../../js/utils/animate-with-class.js"));
         f = function (a) {
             function b() {
-                if (!(this instanceof
-                    b)) throw new TypeError("Cannot call a class as a function");
+                if (!(this instanceof b)) throw new TypeError("Cannot call a class as a function");
                 var a = d.apply(this, arguments);
                 console.log("Example :: constructor", a.$el);
                 a.ANIMATE_CLASS = "a-button-animate";
@@ -4221,8 +4077,7 @@
                 a._onEnterViewport = a._onEnterViewport.bind(u(a));
                 a._onExitViewport = a._onExitViewport.bind(u(a));
                 a.$el.on("click", a._onButtonClick);
-                a.subscribe(e.default.ACTION.EXAMPLE,
-                    a._onActionExample);
+                a.subscribe(e.default.ACTION.EXAMPLE, a._onActionExample);
                 a.subscribe(e.default.EVENT.ON_EXAMPLE, a._onEventExample);
                 a.scrollWatcher = scrollMonitor.create(a.$el);
                 a.scrollWatcher.enterViewport(a._onEnterViewport);
@@ -4242,8 +4097,7 @@
             var d = w(b);
             r(b, [{
                 key: "_animateButton", value: function () {
-                    (0, c.default)(this.$el,
-                        this.ANIMATE_CLASS, this._onAnimationDone)
+                    (0, c.default)(this.$el, this.ANIMATE_CLASS, this._onAnimationDone)
                 }
             }, {
                 key: "_onAnimationDone", value: function () {
@@ -4290,8 +4144,7 @@
             }, {
                 key: "destroy", value: function () {
                     l(h(b.prototype), "destroy", this).call(this);
-                    this.$el.off("click",
-                        this._onButtonClick);
+                    this.$el.off("click", this._onButtonClick);
                     this.unsubscribe(e.default.ACTION.EXAMPLE, this._onActionExample);
                     this.unsubscribe(e.default.EVENT.ON_EXAMPLE, this._onEventExample);
                     this.scrollWatcher && this.scrollWatcher.destroy();
@@ -4337,8 +4190,7 @@
             return c
         }
 
-        function l(c,
-                   a, b) {
+        function l(c, a, b) {
             l = "undefined" !== typeof Reflect && Reflect.get ? Reflect.get : function (a, b, c) {
                 for (; !Object.prototype.hasOwnProperty.call(a, b) && (a = g(a), null !== a);) ;
                 if (a) return b = Object.getOwnPropertyDescriptor(a, b), b.get ? b.get.call(c) : b.value
@@ -4353,11 +4205,10 @@
         }
 
         function n(c, a) {
-            n = Object.setPrototypeOf ||
-                function (a, d) {
-                    a.__proto__ = d;
-                    return a
-                };
+            n = Object.setPrototypeOf || function (a, d) {
+                a.__proto__ = d;
+                return a
+            };
             return n(c, a)
         }
 
@@ -4400,8 +4251,7 @@
         f = function (c) {
             function a() {
                 if (!(this instanceof a)) throw new TypeError("Cannot call a class as a function");
-                var d = b.apply(this,
-                    arguments);
+                var d = b.apply(this, arguments);
                 h.default.INFO(d.constructor.name, ":: Constructor");
                 d._jQueryScopeBinding();
                 d._declareConstants();
@@ -4442,8 +4292,7 @@
                 }
             }, {
                 key: "_attachSubscribers", value: function () {
-                    h.default.INFO(this.constructor.name,
-                        ":: _attachSubscribers");
+                    h.default.INFO(this.constructor.name, ":: _attachSubscribers");
                     this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady)
                 }
             }, {
@@ -4459,22 +4308,22 @@
                 key: "_attachDOMListeners", value: function () {
                     this.$el.on("click", this.SELECTOR_FILTER_BADGE, this._onFilterBadgeClick)
                 }
-            },
-                {
-                    key: "_detachDOMListeners", value: function () {
-                        this.$el.off("click", this.SELECTOR_FILTER_BADGE, this._onFilterBadgeClick)
-                    }
-                }, {
-                    key: "_onFilterBadgeClick", value: function (a) {
-                        a = $(a.currentTarget);
-                        a.hasClass(this.CLASS_IS_CATEGORY) ? this.publish(e.default.EVENT.ON_FILTER_BADGE_REMOVE, {clearAll: !0}) : this.publish(e.default.EVENT.ON_FILTER_BADGE_REMOVE, {filterId: a.attr("id").replace("badge-", "")})
-                    }
-                }]);
+            }, {
+                key: "_detachDOMListeners", value: function () {
+                    this.$el.off("click", this.SELECTOR_FILTER_BADGE, this._onFilterBadgeClick)
+                }
+            }, {
+                key: "_onFilterBadgeClick", value: function (a) {
+                    a = $(a.currentTarget);
+                    a.hasClass(this.CLASS_IS_CATEGORY) ? this.publish(e.default.EVENT.ON_FILTER_BADGE_REMOVE, {clearAll: !0}) : this.publish(e.default.EVENT.ON_FILTER_BADGE_REMOVE, {filterId: a.attr("id").replace("badge-", "")})
+                }
+            }]);
             return a
         }(p.default);
         t.exports = f
     }, {
-        "./../../../js/base/appeaser-component-base.js": 47, "./../../../js/base/logger.js": 51,
+        "./../../../js/base/appeaser-component-base.js": 47,
+        "./../../../js/base/logger.js": 51,
         "./../../../themes/p11/enums.js": 65
     }],
     24: [function (f, t, p) {
@@ -4498,8 +4347,7 @@
                 c.enumerable = c.enumerable || !1;
                 c.configurable = !0;
                 "value" in c && (c.writable = !0);
-                Object.defineProperty(a,
-                    c.key, c)
+                Object.defineProperty(a, c.key, c)
             }
         }
 
@@ -4519,12 +4367,7 @@
 
         function v(a, b) {
             if ("function" !== typeof b && null !== b) throw new TypeError("Super expression must either be null or a function");
-            a.prototype = Object.create(b && b.prototype, {
-                constructor: {
-                    value: a,
-                    writable: !0, configurable: !0
-                }
-            });
+            a.prototype = Object.create(b && b.prototype, {constructor: {value: a, writable: !0, configurable: !0}});
             b && n(a, b)
         }
 
@@ -4553,8 +4396,7 @@
         }
 
         function u() {
-            if ("undefined" === typeof Reflect || !Reflect.construct ||
-                Reflect.construct.sham) return !1;
+            if ("undefined" === typeof Reflect || !Reflect.construct || Reflect.construct.sham) return !1;
             if ("function" === typeof Proxy) return !0;
             try {
                 return Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {
@@ -4576,8 +4418,7 @@
             c = m(f("./../../../themes/p11/utils.js"));
         f = function (a) {
             function b() {
-                if (!(this instanceof
-                    b)) throw new TypeError("Cannot call a class as a function");
+                if (!(this instanceof b)) throw new TypeError("Cannot call a class as a function");
                 var a = d.apply(this, arguments);
                 h.default.INFO(a.constructor.name, ":: Constructor");
                 a._declareConstants();
@@ -4597,8 +4438,7 @@
                 }
             }, {
                 key: "_declareConstants", value: function () {
-                    this.SELECTOR_FORM_BUTTON =
-                        'button[type\x3d"submit"]';
+                    this.SELECTOR_FORM_BUTTON = 'button[type\x3d"submit"]';
                     this.CLASS_IS_TOUCHED = "is-touched";
                     this.CLASS_NAV_BY_TAB = "nav-by-tab";
                     this.SELECTOR_TABINDEX = "label[tabindex]";
@@ -4610,8 +4450,7 @@
                     this.SELECTOR_ERROR_SECTION = "#errorBox, .m-error";
                     this.SELECTOR_PLACEHOLDER = ".a-label:last-child";
                     this.SELECTOR_CHECKBOX_ERROR_LABEL = ".a-label.js-a-input";
-                    this.SELECTOR_CUSTOM_RADIO =
-                        ".custom-radio"
+                    this.SELECTOR_CUSTOM_RADIO = ".custom-radio"
                 }
             }, {
                 key: "_onDOMReady", value: function () {
@@ -4639,8 +4478,7 @@
                     this._onSubmitClick = this._onSubmitClick.bind(this);
                     this._onFormSubmit = this._onFormSubmit.bind(this);
                     this._onKeyUp = this._onKeyUp.bind(this);
-                    this._onKeyDown =
-                        this._onKeyDown.bind(this);
+                    this._onKeyDown = this._onKeyDown.bind(this);
                     this._onReset = this._onReset.bind(this);
                     this._checkSpaceBar = this._checkSpaceBar.bind(this);
                     this._onCheckboxInputChange = this._onCheckboxInputChange.bind(this);
@@ -4651,8 +4489,7 @@
                     h.default.INFO(this.constructor.name, ":: _attachSubscribers");
                     this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
                     this.subscribe(e.default.ACTION.SET_FORM_ERROR_MESSAGE, this._setErrorMessage);
-                    this.subscribe(e.default.EVENT.ON_PROFILE_RESET,
-                        this._clearGlobalErrorMessges);
+                    this.subscribe(e.default.EVENT.ON_PROFILE_RESET, this._clearGlobalErrorMessges);
                     this.subscribe(e.default.EVENT.ON_DETAILS_SAVED, this._clearGlobalErrorMessges)
                 }
             }, {
@@ -4678,8 +4515,7 @@
                     this.$radios.on("keydown", this._onKeyDown)
                 }
             }, {
-                key: "_detachDOMListeners",
-                value: function () {
+                key: "_detachDOMListeners", value: function () {
                     this.$cta.off("click", this._onSubmitClick);
                     this.$el.off("submit", this._onFormSubmit);
                     this.$el.off("keyup", this._onKeyUp);
@@ -4690,8 +4526,7 @@
                 }
             }, {
                 key: "_onCheckboxInputChange", value: function (a) {
-                    a.currentTarget.checkValidity() && (a = $(a.currentTarget).closest(this.SELECTOR_M_CHECKBOX), a.removeClass(e.default.CLASS.HAS_ERROR),
-                        c.default.Accessibility.hide(a.find(this.SELECTOR_CHECKBOX_ERROR_LABEL)))
+                    a.currentTarget.checkValidity() && (a = $(a.currentTarget).closest(this.SELECTOR_M_CHECKBOX), a.removeClass(e.default.CLASS.HAS_ERROR), c.default.Accessibility.hide(a.find(this.SELECTOR_CHECKBOX_ERROR_LABEL)))
                 }
             }, {
                 key: "_onSubmitClick", value: function (a) {
@@ -4703,8 +4538,7 @@
                     var b = $(a.currentTarget), c = this;
                     b.data("manually-submit") ? ($(window).off("beforeunload"), d || (a.preventDefault(), a.stopPropagation(), this.publish(e.default.EVENT.ON_FORM_SUBMISSION, a, b))) : this.publish(e.default.ACTION.FORM_VALIDATION, b, function (d) {
                         if (d) {
-                            if ($(window).off("beforeunload"),
-                            null !== a && void 0 !== k($(a.currentTarget)) && void 0 !== k($(a.currentTarget).closest("form")) && null !== $(a.currentTarget).closest("form").action) {
+                            if ($(window).off("beforeunload"), null !== a && void 0 !== k($(a.currentTarget)) && void 0 !== k($(a.currentTarget).closest("form")) && null !== $(a.currentTarget).closest("form").action) {
                                 d = $(a.currentTarget).closest("form").attr("action");
                                 var b = window.location.pathname.match(new RegExp(/[a-z]*_[A-Z]*/i));
                                 null === b && (b = "en");
@@ -4740,54 +4574,54 @@
             }, {
                 key: "_onKeyDown", value: function (a) {
                     var d = $(a.currentTarget), b = !1, x = this.$el.find(this.SELECTOR_CUSTOM_RADIO);
-                    a.key.match(e.default.KEYSTROKE.SPACEBAR) || a.key.match(e.default.KEYSTROKE.ENTER) ? (c.default.Radio.setChecked(a.currentTarget, x), d.trigger("click"), b = !0) : a.key.match(e.default.KEYSTROKE.ARROW_RIGHT) ? (c.default.Radio.setCheckedToNextItem(a.currentTarget, x), b = !0) : a.key.match(e.default.KEYSTROKE.ARROW_LEFT) ? (c.default.Radio.setCheckedToPreviousItem(a.currentTarget,
-                        x), b = !0) : a.key.match(e.default.KEYSTROKE.ARROW_DOWN) ? (c.default.Radio.setCheckedToNextItem(a.currentTarget, x), b = !0) : a.key.match(e.default.KEYSTROKE.ARROW_UP) && (c.default.Radio.setCheckedToPreviousItem(a.currentTarget, x), b = !0);
+                    a.key.match(e.default.KEYSTROKE.SPACEBAR) || a.key.match(e.default.KEYSTROKE.ENTER) ? (c.default.Radio.setChecked(a.currentTarget, x), d.trigger("click"), b = !0) : a.key.match(e.default.KEYSTROKE.ARROW_RIGHT) ? (c.default.Radio.setCheckedToNextItem(a.currentTarget, x), b = !0) : a.key.match(e.default.KEYSTROKE.ARROW_LEFT) ? (c.default.Radio.setCheckedToPreviousItem(a.currentTarget, x), b = !0) : a.key.match(e.default.KEYSTROKE.ARROW_DOWN) ? (c.default.Radio.setCheckedToNextItem(a.currentTarget, x), b = !0) : a.key.match(e.default.KEYSTROKE.ARROW_UP) && (c.default.Radio.setCheckedToPreviousItem(a.currentTarget, x), b = !0);
                     b && (a.stopPropagation(), a.preventDefault())
                 }
             }, {
                 key: "_setErrorMessage", value: function (a) {
                     this.$el.is("#" + a.formId) && a.messages.length && this._isStringValid(a.messages.join()) && (this.$errorMessage.html(a.messages.join("\x3cbr\x3e")), this.$errorSection.removeClass(e.default.CLASS.IS_HIDDEN_STATE))
                 }
-            },
-                {
-                    key: "_clearGlobalErrorMessges", value: function () {
-                        this.$errorMessage.html("");
-                        this.$errorSection.addClass(e.default.CLASS.IS_HIDDEN_STATE)
-                    }
-                }, {
-                    key: "_isStringValid", value: function (a) {
-                        return null === a.match(e.default.REGEX.PLAIN_TEXT)
-                    }
-                }, {
-                    key: "_onReset", value: function () {
-                        this.$el.removeClass(this.CLASS_IS_TOUCHED);
-                        $(window).off("beforeunload", this._onBeforeLeave);
-                        this.$el.on("keyup", this._onKeyUp)
-                    }
-                }, {
-                    key: "_onBeforeLeave", value: function (a) {
-                        a.returnValue = "Your changes will be lost if you close this section. to save your information click on the save button before closing";
-                        return a.returnValue
-                    }
-                }, {
-                    key: "_checkSpaceBar", value: function (a) {
-                        var d = $(a.currentTarget);
-                        $(this.SELECTOR_NAV_BY_TAB).removeClass(this.CLASS_NAV_BY_TAB);
-                        d.addClass(this.CLASS_NAV_BY_TAB);
-                        a.key.match(e.default.KEYSTROKE.SPACEBAR) && (a.preventDefault(), d.trigger("click"))
-                    }
-                }, {
-                    key: "_showError", value: function (a) {
-                        this.$errorSection.removeClass(e.default.CLASS.IS_HIDDEN_STATE);
-                        this.$errorMessage.text(a.registerForm.email)
-                    }
-                }]);
+            }, {
+                key: "_clearGlobalErrorMessges", value: function () {
+                    this.$errorMessage.html("");
+                    this.$errorSection.addClass(e.default.CLASS.IS_HIDDEN_STATE)
+                }
+            }, {
+                key: "_isStringValid", value: function (a) {
+                    return null === a.match(e.default.REGEX.PLAIN_TEXT)
+                }
+            }, {
+                key: "_onReset", value: function () {
+                    this.$el.removeClass(this.CLASS_IS_TOUCHED);
+                    $(window).off("beforeunload", this._onBeforeLeave);
+                    this.$el.on("keyup", this._onKeyUp)
+                }
+            }, {
+                key: "_onBeforeLeave", value: function (a) {
+                    a.returnValue = "Your changes will be lost if you close this section. to save your information click on the save button before closing";
+                    return a.returnValue
+                }
+            }, {
+                key: "_checkSpaceBar", value: function (a) {
+                    var d = $(a.currentTarget);
+                    $(this.SELECTOR_NAV_BY_TAB).removeClass(this.CLASS_NAV_BY_TAB);
+                    d.addClass(this.CLASS_NAV_BY_TAB);
+                    a.key.match(e.default.KEYSTROKE.SPACEBAR) && (a.preventDefault(), d.trigger("click"))
+                }
+            }, {
+                key: "_showError", value: function (a) {
+                    this.$errorSection.removeClass(e.default.CLASS.IS_HIDDEN_STATE);
+                    this.$errorMessage.text(a.registerForm.email)
+                }
+            }]);
             return b
         }(p.default);
         t.exports = f
     }, {
         "./../../../js/base/appeaser-component-base.js": 47,
-        "./../../../js/base/logger.js": 51, "./../../../themes/p11/enums.js": 65, "./../../../themes/p11/utils.js": 112
+        "./../../../js/base/logger.js": 51,
+        "./../../../themes/p11/enums.js": 65,
+        "./../../../themes/p11/utils.js": 112
     }],
     25: [function (f, t, p) {
         function m(c) {
@@ -4807,8 +4641,7 @@
         function q(c, a) {
             for (var b = 0; b < a.length; b++) {
                 var d = a[b];
-                d.enumerable =
-                    d.enumerable || !1;
+                d.enumerable = d.enumerable || !1;
                 d.configurable = !0;
                 "value" in d && (d.writable = !0);
                 Object.defineProperty(c, d.key, d)
@@ -4911,8 +4744,7 @@
                 }
             }, {
                 key: "_cacheDOMElements", value: function () {
-                    this.$teaser =
-                        this.$el.find(".m-free-tile");
+                    this.$teaser = this.$el.find(".m-free-tile");
                     this.scrollTop = 0;
                     this.$window = $(window);
                     this.$teaser.length && (this.teaser_offset = this.$teaser.offset().top, this.position = this.$window.height() - this.teaser_offset, this.$holder = this.$teaser.parent())
@@ -4939,8 +4771,7 @@
                 }
             }, {
                 key: "_attachDOMListeners", value: function () {
-                    "undefined" !== typeof this.$teaser && this.$teaser.length && (this.$window.on("scroll resize",
-                        this._onScroll), this.$window.on("resize", this._onResize))
+                    "undefined" !== typeof this.$teaser && this.$teaser.length && (this.$window.on("scroll resize", this._onScroll), this.$window.on("resize", this._onResize))
                 }
             }, {
                 key: "_detachDOMListeners", value: function () {
@@ -4953,8 +4784,7 @@
                 }
             }, {
                 key: "_rePosition", value: function (a) {
-                    parseInt(this.$teaser.css("margin-top")) !=
-                    a && this.$teaser.css("margin-top", a);
+                    parseInt(this.$teaser.css("margin-top")) != a && this.$teaser.css("margin-top", a);
                     0 > a ? this.$teaser.addClass("is-animating") : this.$teaser.removeClass("is-animating")
                 }
             }, {
@@ -4996,230 +4826,6 @@
                 var d = a[b];
                 d.enumerable = d.enumerable || !1;
                 d.configurable = !0;
-                "value" in d && (d.writable = !0);
-                Object.defineProperty(c,
-                    d.key, d)
-            }
-        }
-
-        function r(c, a, b) {
-            a && q(c.prototype, a);
-            b && q(c, b);
-            return c
-        }
-
-        function l(c, a, b) {
-            l = "undefined" !== typeof Reflect && Reflect.get ? Reflect.get : function (a, b, c) {
-                for (; !Object.prototype.hasOwnProperty.call(a, b) && (a = g(a), null !== a);) ;
-                if (a) return b = Object.getOwnPropertyDescriptor(a, b), b.get ? b.get.call(c) : b.value
-            };
-            return l(c, a, b || c)
-        }
-
-        function v(c, a) {
-            if ("function" !== typeof a && null !== a) throw new TypeError("Super expression must either be null or a function");
-            c.prototype = Object.create(a && a.prototype, {
-                constructor: {
-                    value: c,
-                    writable: !0, configurable: !0
-                }
-            });
-            a && n(c, a)
-        }
-
-        function n(c, a) {
-            n = Object.setPrototypeOf || function (a, d) {
-                a.__proto__ = d;
-                return a
-            };
-            return n(c, a)
-        }
-
-        function w(c) {
-            var a = u();
-            return function () {
-                var b = g(c);
-                if (a) {
-                    var d = g(this).constructor;
-                    b = Reflect.construct(b, arguments, d)
-                } else b = b.apply(this, arguments);
-                if (!b || "object" !== m(b) && "function" !== typeof b) {
-                    if (void 0 === this) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-                    b = this
-                }
-                return b
-            }
-        }
-
-        function u() {
-            if ("undefined" === typeof Reflect || !Reflect.construct ||
-                Reflect.construct.sham) return !1;
-            if ("function" === typeof Proxy) return !0;
-            try {
-                return Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {
-                })), !0
-            } catch (c) {
-                return !1
-            }
-        }
-
-        function g(c) {
-            g = Object.setPrototypeOf ? Object.getPrototypeOf : function (a) {
-                return a.__proto__ || Object.getPrototypeOf(a)
-            };
-            return g(c)
-        }
-
-        p = k(f("./../../../js/base/appeaser-component-base.js"));
-        var h = k(f("./../../../js/base/logger.js")), e = k(f("./../../../themes/p11/enums.js"));
-        f = function (c) {
-            function a() {
-                if (!(this instanceof a)) throw new TypeError("Cannot call a class as a function");
-                var d = b.apply(this, arguments);
-                h.default.INFO(d.constructor.name, ":: Constructor");
-                d._jQueryScopeBinding();
-                d._declareConstants();
-                d.subscribe(e.default.EVENT.ON_DOCUMENT_READY, d._onDOMReady);
-                return d
-            }
-
-            v(a, c);
-            var b = w(a);
-            r(a, [{
-                key: "destroy", value: function () {
-                    h.default.INFO(this.constructor.name, ":: Destructor");
-                    this._detachDOMListeners();
-                    this._detachSubscribers();
-                    l(g(a.prototype), "destroy", this).call(this)
-                }
-            }, {
-                key: "_declareConstants", value: function () {
-                    this.SELECTOR_CHANGE_ADDRESS_LINK = ".change-address";
-                    this.SELECTOR_CANCEL_CHANGE_ADDRESS_LINK =
-                        ".js-cancel-change";
-                    this.SELECTOR_ADD_ADDRESS_BUTTON = ".o-add-element-button";
-                    this.SELECTOR_NEW_ADDRESS_RADIO = ".o-address-box-add .a-radio-button";
-                    this.SELECTOR_ADDRESS_RADIO = ".o-account-box .a-radio-button";
-                    this.SELECTOR_CHANGE_ADDRESS_SECTION = ".delivery-change-address-section";
-                    this.SELECTOR_SAVE_NEW_ADDRESS_BUTTON = this.SELECTOR_CHANGE_ADDRESS_SECTION + " .a-button.is-primary";
-                    this.SELECTOR_TEXT_INPUT = ".m-input";
-                    this.CLASS_IS_CHANGING_ADDRESS = "is-changing-address"
-                }
-            }, {
-                key: "_onDOMReady", value: function () {
-                    h.default.INFO(this.constructor.name,
-                        ":: _onDOMReady");
-                    this._cacheDOMElements();
-                    this._attachSubscribers();
-                    this._attachDOMListeners()
-                }
-            }, {
-                key: "_cacheDOMElements", value: function () {
-                    this.$changeAddressLink = this.$el.find(this.SELECTOR_CHANGE_ADDRESS_LINK);
-                    this.$cancelLink = this.$el.find(this.SELECTOR_CANCEL_CHANGE_ADDRESS_LINK);
-                    this.$addAddressButton = this.$el.find(this.SELECTOR_ADD_ADDRESS_BUTTON);
-                    this.$newAddressRadio = this.$el.find(this.SELECTOR_NEW_ADDRESS_RADIO);
-                    this.$addressRadio = this.$el.find(this.SELECTOR_ADDRESS_RADIO);
-                    this.$saveNewAddressBtn =
-                        this.$el.find(this.SELECTOR_SAVE_NEW_ADDRESS_BUTTON)
-                }
-            }, {
-                key: "_jQueryScopeBinding", value: function () {
-                    this._onDOMReady = this._onDOMReady.bind(this);
-                    this._onChangeAddressLinkClick = this._onChangeAddressLinkClick.bind(this);
-                    this._onCancelLinkClick = this._onCancelLinkClick.bind(this);
-                    this._onAddressButtonClick = this._onAddressButtonClick.bind(this);
-                    this._onAddressRadioChange = this._onAddressRadioChange.bind(this);
-                    this._onSaveAddress = this._onSaveAddress.bind(this)
-                }
-            }, {
-                key: "_attachSubscribers", value: function () {
-                    h.default.INFO(this.constructor.name,
-                        ":: _attachSubscribers");
-                    this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady)
-                }
-            }, {
-                key: "_detachSubscribers", value: function () {
-                    h.default.INFO(this.constructor.name, ":: _detachSubscribers");
-                    this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
-                    this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady)
-                }
-            }, {
-                key: "_onFrameworkReady", value: function () {
-                }
-            }, {
-                key: "_attachDOMListeners", value: function () {
-                    this.$changeAddressLink.on("click", this._onChangeAddressLinkClick);
-                    this.$cancelLink.on("click", this._onCancelLinkClick);
-                    this.$addAddressButton.on("click", this._onAddressButtonClick);
-                    this.$addressRadio.on("change", this._onAddressRadioChange);
-                    this.$saveNewAddressBtn.on("click", this._onSaveAddress)
-                }
-            }, {
-                key: "_detachDOMListeners", value: function () {
-                    this.$changeAddressLink.off("click", this._onChangeAddressLinkClick);
-                    this.$cancelLink.off("click", this._onCancelLinkClick);
-                    this.$addAddressButton.off("click", this._onAddressButtonClick);
-                    this.$addressRadio.off("change", this._onAddressRadioChange);
-                    this.$saveNewAddressBtn.off("click", this._onSaveAddress)
-                }
-            }, {
-                key: "_onSaveAddress", value: function () {
-                    var a = this;
-                    this.$el.find(this.SELECTOR_CHANGE_ADDRESS_SECTION + " " + this.SELECTOR_TEXT_INPUT + " input").each(function (d, b) {
-                        if (!b.checkValidity()) return d = $(b), d.closest(a.SELECTOR_TEXT_INPUT).addClass(e.default.CLASS.HAS_ERROR), a.publish(e.default.ACTION.SCROLL_TO_FORM_ERROR_MSG, d.closest(".o-form")), !1
-                    })
-                }
-            }, {
-                key: "_onAddressRadioChange", value: function () {
-                    this.$newAddressRadio.prop("checked") || this.publish(e.default.ACTION.HIDE_ADDRESS_BOX_ADD)
-                }
-            },
-                {
-                    key: "_onAddressButtonClick", value: function () {
-                        this.$newAddressRadio.prop("checked", !0)
-                    }
-                }, {
-                    key: "_onCancelLinkClick", value: function (a) {
-                        a.preventDefault();
-                        this.publish(e.default.ACTION.ENABLE_DELIVERY_CONTINUE_BUTTON);
-                        this.$el.removeClass(this.CLASS_IS_CHANGING_ADDRESS)
-                    }
-                }, {
-                    key: "_onChangeAddressLinkClick", value: function (a) {
-                        a.preventDefault();
-                        this.publish(e.default.ACTION.DISABLE_DELIVERY_CONTINUE_BUTTON);
-                        this.$el.addClass(this.CLASS_IS_CHANGING_ADDRESS)
-                    }
-                }]);
-            return a
-        }(p.default);
-        t.exports = f
-    }, {
-        "./../../../js/base/appeaser-component-base.js": 47,
-        "./../../../js/base/logger.js": 51, "./../../../themes/p11/enums.js": 65
-    }],
-    27: [function (f, t, p) {
-        function m(c) {
-            "@babel/helpers - typeof";
-            m = "function" === typeof Symbol && "symbol" === typeof Symbol.iterator ? function (a) {
-                return typeof a
-            } : function (a) {
-                return a && "function" === typeof Symbol && a.constructor === Symbol && a !== Symbol.prototype ? "symbol" : typeof a
-            };
-            return m(c)
-        }
-
-        function k(c) {
-            return c && c.__esModule ? c : {default: c}
-        }
-
-        function q(c, a) {
-            for (var b = 0; b < a.length; b++) {
-                var d = a[b];
-                d.enumerable = d.enumerable || !1;
-                d.configurable =
-                    !0;
                 "value" in d && (d.writable = !0);
                 Object.defineProperty(c, d.key, d)
             }
@@ -5309,79 +4915,286 @@
                     this._detachSubscribers();
                     l(g(a.prototype), "destroy", this).call(this)
                 }
-            },
-                {
-                    key: "_declareConstants", value: function () {
-                    }
-                }, {
-                    key: "_onDOMReady", value: function () {
-                        h.default.INFO(this.constructor.name, ":: _onDOMReady");
-                        this._cacheDOMElements();
-                        this._attachSubscribers();
-                        this._attachDOMListeners()
-                    }
-                }, {
-                    key: "_cacheDOMElements", value: function () {
-                        this.$window = $(window)
-                    }
-                }, {
-                    key: "_jQueryScopeBinding", value: function () {
-                        h.default.INFO(this.constructor.name, ":: _jQueryScopeBinding");
-                        this._onDOMReady = this._onDOMReady.bind(this);
-                        this._onScroll = this._onScroll.bind(this)
-                    }
-                }, {
-                    key: "_attachSubscribers",
-                    value: function () {
-                        h.default.INFO(this.constructor.name, ":: _attachSubscribers");
-                        this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
-                        this.subscribe(e.default.ACTION.SHOW_SPINNER, this._onShowSpinner);
-                        this.subscribe(e.default.EVENT.ON_CONTENT_LOADED, this._onContentLoaded);
-                        this.subscribe(e.default.ACTION.HIDE_SPINNER, this._onHideSpinner)
-                    }
-                }, {
-                    key: "_detachSubscribers", value: function () {
-                        h.default.INFO(this.constructor.name, ":: _detachSubscribers");
-                        this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY,
-                            this._onFrameworkReady);
-                        this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady);
-                        this.unsubscribe(e.default.ACTION.SHOW_SPINNER, this._onShowSpinner);
-                        this.unsubscribe(e.default.EVENT.ON_CONTENT_LOADED, this._onContentLoaded);
-                        this.unsubscribe(e.default.ACTION.HIDE_SPINNER, this._onHideSpinner)
-                    }
-                }, {
-                    key: "_onFrameworkReady", value: function () {
-                    }
-                }, {
-                    key: "_attachDOMListeners", value: function () {
-                        this.$window.on("scroll", this._onScroll)
-                    }
-                }, {
-                    key: "_detachDOMListeners", value: function () {
-                        this.$window.off("scroll",
-                            this._onScroll)
-                    }
-                }, {
-                    key: "_onShowSpinner", value: function () {
-                        this.$el.addClass(e.default.CLASS.IS_VISIBLE_STATE)
-                    }
-                }, {
-                    key: "_onHideSpinner", value: function () {
-                        this.$el.removeClass(e.default.CLASS.IS_VISIBLE_STATE)
-                    }
-                }, {
-                    key: "_onContentLoaded", value: function () {
-                        this.eventPublished = !1
-                    }
-                }, {
-                    key: "_onScroll", value: function () {
-                        this.$window.scrollTop() + this.$window.height() > this.$el.offset().top && !this.eventPublished && (this.publish(e.default.ACTION.LOAD_MORE_CONTENT), this.eventPublished = !0)
-                    }
-                }]);
+            }, {
+                key: "_declareConstants", value: function () {
+                    this.SELECTOR_CHANGE_ADDRESS_LINK = ".change-address";
+                    this.SELECTOR_CANCEL_CHANGE_ADDRESS_LINK = ".js-cancel-change";
+                    this.SELECTOR_ADD_ADDRESS_BUTTON = ".o-add-element-button";
+                    this.SELECTOR_NEW_ADDRESS_RADIO = ".o-address-box-add .a-radio-button";
+                    this.SELECTOR_ADDRESS_RADIO = ".o-account-box .a-radio-button";
+                    this.SELECTOR_CHANGE_ADDRESS_SECTION = ".delivery-change-address-section";
+                    this.SELECTOR_SAVE_NEW_ADDRESS_BUTTON = this.SELECTOR_CHANGE_ADDRESS_SECTION + " .a-button.is-primary";
+                    this.SELECTOR_TEXT_INPUT = ".m-input";
+                    this.CLASS_IS_CHANGING_ADDRESS = "is-changing-address"
+                }
+            }, {
+                key: "_onDOMReady", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _onDOMReady");
+                    this._cacheDOMElements();
+                    this._attachSubscribers();
+                    this._attachDOMListeners()
+                }
+            }, {
+                key: "_cacheDOMElements", value: function () {
+                    this.$changeAddressLink = this.$el.find(this.SELECTOR_CHANGE_ADDRESS_LINK);
+                    this.$cancelLink = this.$el.find(this.SELECTOR_CANCEL_CHANGE_ADDRESS_LINK);
+                    this.$addAddressButton = this.$el.find(this.SELECTOR_ADD_ADDRESS_BUTTON);
+                    this.$newAddressRadio = this.$el.find(this.SELECTOR_NEW_ADDRESS_RADIO);
+                    this.$addressRadio = this.$el.find(this.SELECTOR_ADDRESS_RADIO);
+                    this.$saveNewAddressBtn = this.$el.find(this.SELECTOR_SAVE_NEW_ADDRESS_BUTTON)
+                }
+            }, {
+                key: "_jQueryScopeBinding", value: function () {
+                    this._onDOMReady = this._onDOMReady.bind(this);
+                    this._onChangeAddressLinkClick = this._onChangeAddressLinkClick.bind(this);
+                    this._onCancelLinkClick = this._onCancelLinkClick.bind(this);
+                    this._onAddressButtonClick = this._onAddressButtonClick.bind(this);
+                    this._onAddressRadioChange = this._onAddressRadioChange.bind(this);
+                    this._onSaveAddress = this._onSaveAddress.bind(this)
+                }
+            }, {
+                key: "_attachSubscribers", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _attachSubscribers");
+                    this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady)
+                }
+            }, {
+                key: "_detachSubscribers", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _detachSubscribers");
+                    this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
+                    this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady)
+                }
+            }, {
+                key: "_onFrameworkReady", value: function () {
+                }
+            }, {
+                key: "_attachDOMListeners", value: function () {
+                    this.$changeAddressLink.on("click", this._onChangeAddressLinkClick);
+                    this.$cancelLink.on("click", this._onCancelLinkClick);
+                    this.$addAddressButton.on("click", this._onAddressButtonClick);
+                    this.$addressRadio.on("change", this._onAddressRadioChange);
+                    this.$saveNewAddressBtn.on("click", this._onSaveAddress)
+                }
+            }, {
+                key: "_detachDOMListeners", value: function () {
+                    this.$changeAddressLink.off("click", this._onChangeAddressLinkClick);
+                    this.$cancelLink.off("click", this._onCancelLinkClick);
+                    this.$addAddressButton.off("click", this._onAddressButtonClick);
+                    this.$addressRadio.off("change", this._onAddressRadioChange);
+                    this.$saveNewAddressBtn.off("click", this._onSaveAddress)
+                }
+            }, {
+                key: "_onSaveAddress", value: function () {
+                    var a = this;
+                    this.$el.find(this.SELECTOR_CHANGE_ADDRESS_SECTION + " " + this.SELECTOR_TEXT_INPUT + " input").each(function (d, b) {
+                        if (!b.checkValidity()) return d = $(b), d.closest(a.SELECTOR_TEXT_INPUT).addClass(e.default.CLASS.HAS_ERROR), a.publish(e.default.ACTION.SCROLL_TO_FORM_ERROR_MSG, d.closest(".o-form")), !1
+                    })
+                }
+            }, {
+                key: "_onAddressRadioChange", value: function () {
+                    this.$newAddressRadio.prop("checked") || this.publish(e.default.ACTION.HIDE_ADDRESS_BOX_ADD)
+                }
+            }, {
+                key: "_onAddressButtonClick", value: function () {
+                    this.$newAddressRadio.prop("checked", !0)
+                }
+            }, {
+                key: "_onCancelLinkClick", value: function (a) {
+                    a.preventDefault();
+                    this.publish(e.default.ACTION.ENABLE_DELIVERY_CONTINUE_BUTTON);
+                    this.$el.removeClass(this.CLASS_IS_CHANGING_ADDRESS)
+                }
+            }, {
+                key: "_onChangeAddressLinkClick", value: function (a) {
+                    a.preventDefault();
+                    this.publish(e.default.ACTION.DISABLE_DELIVERY_CONTINUE_BUTTON);
+                    this.$el.addClass(this.CLASS_IS_CHANGING_ADDRESS)
+                }
+            }]);
             return a
         }(p.default);
-        t.exports =
-            f
+        t.exports = f
+    }, {
+        "./../../../js/base/appeaser-component-base.js": 47,
+        "./../../../js/base/logger.js": 51,
+        "./../../../themes/p11/enums.js": 65
+    }],
+    27: [function (f, t, p) {
+        function m(c) {
+            "@babel/helpers - typeof";
+            m = "function" === typeof Symbol && "symbol" === typeof Symbol.iterator ? function (a) {
+                return typeof a
+            } : function (a) {
+                return a && "function" === typeof Symbol && a.constructor === Symbol && a !== Symbol.prototype ? "symbol" : typeof a
+            };
+            return m(c)
+        }
+
+        function k(c) {
+            return c && c.__esModule ? c : {default: c}
+        }
+
+        function q(c, a) {
+            for (var b = 0; b < a.length; b++) {
+                var d = a[b];
+                d.enumerable = d.enumerable || !1;
+                d.configurable = !0;
+                "value" in d && (d.writable = !0);
+                Object.defineProperty(c, d.key, d)
+            }
+        }
+
+        function r(c, a, b) {
+            a && q(c.prototype, a);
+            b && q(c, b);
+            return c
+        }
+
+        function l(c, a, b) {
+            l = "undefined" !== typeof Reflect && Reflect.get ? Reflect.get : function (a, b, c) {
+                for (; !Object.prototype.hasOwnProperty.call(a, b) && (a = g(a), null !== a);) ;
+                if (a) return b = Object.getOwnPropertyDescriptor(a, b), b.get ? b.get.call(c) : b.value
+            };
+            return l(c, a, b || c)
+        }
+
+        function v(c, a) {
+            if ("function" !== typeof a && null !== a) throw new TypeError("Super expression must either be null or a function");
+            c.prototype = Object.create(a && a.prototype, {constructor: {value: c, writable: !0, configurable: !0}});
+            a && n(c, a)
+        }
+
+        function n(c, a) {
+            n = Object.setPrototypeOf || function (a, d) {
+                a.__proto__ = d;
+                return a
+            };
+            return n(c, a)
+        }
+
+        function w(c) {
+            var a = u();
+            return function () {
+                var b = g(c);
+                if (a) {
+                    var d = g(this).constructor;
+                    b = Reflect.construct(b, arguments, d)
+                } else b = b.apply(this, arguments);
+                if (!b || "object" !== m(b) && "function" !== typeof b) {
+                    if (void 0 === this) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+                    b = this
+                }
+                return b
+            }
+        }
+
+        function u() {
+            if ("undefined" === typeof Reflect || !Reflect.construct || Reflect.construct.sham) return !1;
+            if ("function" === typeof Proxy) return !0;
+            try {
+                return Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {
+                })), !0
+            } catch (c) {
+                return !1
+            }
+        }
+
+        function g(c) {
+            g = Object.setPrototypeOf ? Object.getPrototypeOf : function (a) {
+                return a.__proto__ || Object.getPrototypeOf(a)
+            };
+            return g(c)
+        }
+
+        p = k(f("./../../../js/base/appeaser-component-base.js"));
+        var h = k(f("./../../../js/base/logger.js")), e = k(f("./../../../themes/p11/enums.js"));
+        f = function (c) {
+            function a() {
+                if (!(this instanceof a)) throw new TypeError("Cannot call a class as a function");
+                var d = b.apply(this, arguments);
+                h.default.INFO(d.constructor.name, ":: Constructor");
+                d._jQueryScopeBinding();
+                d._declareConstants();
+                d.subscribe(e.default.EVENT.ON_DOCUMENT_READY, d._onDOMReady);
+                return d
+            }
+
+            v(a, c);
+            var b = w(a);
+            r(a, [{
+                key: "destroy", value: function () {
+                    h.default.INFO(this.constructor.name, ":: Destructor");
+                    this._detachDOMListeners();
+                    this._detachSubscribers();
+                    l(g(a.prototype), "destroy", this).call(this)
+                }
+            }, {
+                key: "_declareConstants", value: function () {
+                }
+            }, {
+                key: "_onDOMReady", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _onDOMReady");
+                    this._cacheDOMElements();
+                    this._attachSubscribers();
+                    this._attachDOMListeners()
+                }
+            }, {
+                key: "_cacheDOMElements", value: function () {
+                    this.$window = $(window)
+                }
+            }, {
+                key: "_jQueryScopeBinding", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _jQueryScopeBinding");
+                    this._onDOMReady = this._onDOMReady.bind(this);
+                    this._onScroll = this._onScroll.bind(this)
+                }
+            }, {
+                key: "_attachSubscribers", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _attachSubscribers");
+                    this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
+                    this.subscribe(e.default.ACTION.SHOW_SPINNER, this._onShowSpinner);
+                    this.subscribe(e.default.EVENT.ON_CONTENT_LOADED, this._onContentLoaded);
+                    this.subscribe(e.default.ACTION.HIDE_SPINNER, this._onHideSpinner)
+                }
+            }, {
+                key: "_detachSubscribers", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _detachSubscribers");
+                    this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
+                    this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady);
+                    this.unsubscribe(e.default.ACTION.SHOW_SPINNER, this._onShowSpinner);
+                    this.unsubscribe(e.default.EVENT.ON_CONTENT_LOADED, this._onContentLoaded);
+                    this.unsubscribe(e.default.ACTION.HIDE_SPINNER, this._onHideSpinner)
+                }
+            }, {
+                key: "_onFrameworkReady", value: function () {
+                }
+            }, {
+                key: "_attachDOMListeners", value: function () {
+                    this.$window.on("scroll", this._onScroll)
+                }
+            }, {
+                key: "_detachDOMListeners", value: function () {
+                    this.$window.off("scroll", this._onScroll)
+                }
+            }, {
+                key: "_onShowSpinner", value: function () {
+                    this.$el.addClass(e.default.CLASS.IS_VISIBLE_STATE)
+                }
+            }, {
+                key: "_onHideSpinner", value: function () {
+                    this.$el.removeClass(e.default.CLASS.IS_VISIBLE_STATE)
+                }
+            }, {
+                key: "_onContentLoaded", value: function () {
+                    this.eventPublished = !1
+                }
+            }, {
+                key: "_onScroll", value: function () {
+                    this.$window.scrollTop() + this.$window.height() > this.$el.offset().top && !this.eventPublished && (this.publish(e.default.ACTION.LOAD_MORE_CONTENT), this.eventPublished = !0)
+                }
+            }]);
+            return a
+        }(p.default);
+        t.exports = f
     }, {
         "./../../../js/base/appeaser-component-base.js": 47,
         "./../../../js/base/logger.js": 51,
@@ -5404,8 +5217,7 @@
 
         function q(a, b) {
             for (var d = 0; d < b.length; d++) {
-                var c =
-                    b[d];
+                var c = b[d];
                 c.enumerable = c.enumerable || !1;
                 c.configurable = !0;
                 "value" in c && (c.writable = !0);
@@ -5509,8 +5321,7 @@
                     this.SELECTOR_TABLIST_CONTENT = ".tablist-content";
                     this.SELECTOR_DROPDOWN = '[class^\x3d"m-dropdown"]';
                     this.SELECTOR_FILTER_DROPDOWN = ".m-dropdown-filter";
-                    this.SELECTOR_FOCUSABLE_CONTENT =
-                        ".a-link, button, .a-input, .gender-option, .custom-box";
+                    this.SELECTOR_FOCUSABLE_CONTENT = ".a-link, button, .a-input, .gender-option, .custom-box";
                     this.SELECTOR_CUSTOM_RADIO_BUTTONS = ".custom-radio, .label-text";
                     this.ANIMATION_DELAY = 270;
                     this.ANIMATION_DELAY_OVERLAY = 500;
@@ -5524,8 +5335,7 @@
             }, {
                 key: "_onDOMReady", value: function () {
                     h.default.INFO(this.constructor.name, ":: _onDOMReady");
-                    this.rmClasses =
-                        null;
+                    this.rmClasses = null;
                     this.$content = this.$el.find(this.SELECTOR_CONTENT);
                     this.$window = $(window);
                     this._attachSubscribers();
@@ -5542,173 +5352,159 @@
                     this._onKeyDown = this._onKeyDown.bind(this);
                     this._onCloseButtonClick = this._onCloseButtonClick.bind(this)
                 }
-            },
-                {
-                    key: "_attachSubscribers", value: function () {
-                        h.default.INFO(this.constructor.name, ":: _attachSubscribers");
-                        this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
-                        this.subscribe(e.default.ACTION.SHOW_LIGHTBOX, this._show);
-                        this.subscribe(e.default.ACTION.HIDE_LIGHTBOX, this._hide);
-                        this.subscribe(e.default.EVENT.ON_NAVIGATION_MENU_OPEN, this._setNavigationState);
-                        this.subscribe(e.default.EVENT.ON_NAVIGATION_MENU_CLOSE, this._setNavigationState)
+            }, {
+                key: "_attachSubscribers", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _attachSubscribers");
+                    this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
+                    this.subscribe(e.default.ACTION.SHOW_LIGHTBOX, this._show);
+                    this.subscribe(e.default.ACTION.HIDE_LIGHTBOX, this._hide);
+                    this.subscribe(e.default.EVENT.ON_NAVIGATION_MENU_OPEN, this._setNavigationState);
+                    this.subscribe(e.default.EVENT.ON_NAVIGATION_MENU_CLOSE, this._setNavigationState)
+                }
+            }, {
+                key: "_detachSubscribers", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _detachSubscribers");
+                    this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady);
+                    this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
+                    this.unsubscribe(e.default.ACTION.SHOW_LIGHTBOX, this._show);
+                    this.unsubscribe(e.default.ACTION.HIDE_LIGHTBOX, this._hide);
+                    this.unsubscribe(e.default.EVENT.ON_NAVIGATION_MENU_OPEN, this._setNavigationState);
+                    this.unsubscribe(e.default.EVENT.ON_NAVIGATION_MENU_CLOSE, this._setNavigationState)
+                }
+            }, {
+                key: "_onFrameworkReady", value: function () {
+                }
+            }, {
+                key: "_cacheDOMElements", value: function () {
+                    this.$body = $(this.SELECTOR_BODY);
+                    this.$cachedLightbox = $(this.SELECTOR_CONTENT).clone(!0);
+                    this.$lightboxWrapper = this.$el.find(this.SELECTOR_LIGHTBOX_WRAPPER);
+                    this.$closeBtn = this.$el.find(this.SELECTOR_CLOSE_BUTTON);
+                    $(this.SELECTOR_CONTENT).remove()
+                }
+            }, {
+                key: "_attachDOMListeners", value: function () {
+                    this.$el.on("click", this._onClick);
+                    this.$el.on("click", this.SELECTOR_CLOSE_BUTTON, this._onCloseButtonClick);
+                    this.$el.on("keydown", this.SELECTOR_CLOSE_BUTTON, this._onKeyDown)
+                }
+            }, {
+                key: "_detachDOMListeners", value: function () {
+                    this.$el.off("click", this._onClick);
+                    this.$el.off("click", this.SELECTOR_CLOSE_BUTTON, this._onCloseButtonClick);
+                    this.$el.off("keydown", this.SELECTOR_CLOSE_BUTTON, this._onKeyDown)
+                }
+            }, {
+                key: "_setNavigationState", value: function () {
+                    this.IS_NAVIGATION_OPEN = !this.IS_NAVIGATION_OPEN
+                }
+            }, {
+                key: "_onCloseButtonClick", value: function () {
+                    this.publish(e.default.EVENT.ON_LIGHTBOX_CLOSE_BTN_CLICKED);
+                    this._hide()
+                }
+            }, {
+                key: "_onClick", value: function (a) {
+                    $(a.target).hasClass(e.default.CLASS.OPEN_LIGHTBOX) || a.stopPropagation();
+                    $(a.target).is(this.$el) && (this.publish(e.default.EVENT.ON_OUTSIDE_LIGHTBOX_CLICKED), this._hide());
+                    if (this.$el.find(this.SELECTOR_FILTER_DROPDOWN).length) {
+                        a = $(a.target);
+                        var d = this.$el.find(this.SELECTOR_FILTER_DROPDOWN);
+                        !d.hasClass(e.default.CLASS.IS_OPEN_STATE) || a.closest(this.SELECTOR_DROPDOWN).length && a.closest(this.SELECTOR_DROPDOWN).is(d) || d.removeClass(e.default.CLASS.IS_OPEN_STATE)
                     }
-                }, {
-                    key: "_detachSubscribers", value: function () {
-                        h.default.INFO(this.constructor.name,
-                            ":: _detachSubscribers");
-                        this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady);
-                        this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
-                        this.unsubscribe(e.default.ACTION.SHOW_LIGHTBOX, this._show);
-                        this.unsubscribe(e.default.ACTION.HIDE_LIGHTBOX, this._hide);
-                        this.unsubscribe(e.default.EVENT.ON_NAVIGATION_MENU_OPEN, this._setNavigationState);
-                        this.unsubscribe(e.default.EVENT.ON_NAVIGATION_MENU_CLOSE, this._setNavigationState)
-                    }
-                }, {
-                    key: "_onFrameworkReady", value: function () {
-                    }
-                },
-                {
-                    key: "_cacheDOMElements", value: function () {
-                        this.$body = $(this.SELECTOR_BODY);
-                        this.$cachedLightbox = $(this.SELECTOR_CONTENT).clone(!0);
-                        this.$lightboxWrapper = this.$el.find(this.SELECTOR_LIGHTBOX_WRAPPER);
-                        this.$closeBtn = this.$el.find(this.SELECTOR_CLOSE_BUTTON);
-                        $(this.SELECTOR_CONTENT).remove()
-                    }
-                }, {
-                    key: "_attachDOMListeners", value: function () {
-                        this.$el.on("click", this._onClick);
-                        this.$el.on("click", this.SELECTOR_CLOSE_BUTTON, this._onCloseButtonClick);
-                        this.$el.on("keydown", this.SELECTOR_CLOSE_BUTTON, this._onKeyDown)
-                    }
-                },
-                {
-                    key: "_detachDOMListeners", value: function () {
-                        this.$el.off("click", this._onClick);
-                        this.$el.off("click", this.SELECTOR_CLOSE_BUTTON, this._onCloseButtonClick);
-                        this.$el.off("keydown", this.SELECTOR_CLOSE_BUTTON, this._onKeyDown)
-                    }
-                }, {
-                    key: "_setNavigationState", value: function () {
-                        this.IS_NAVIGATION_OPEN = !this.IS_NAVIGATION_OPEN
-                    }
-                }, {
-                    key: "_onCloseButtonClick", value: function () {
-                        this.publish(e.default.EVENT.ON_LIGHTBOX_CLOSE_BTN_CLICKED);
-                        this._hide()
-                    }
-                }, {
-                    key: "_onClick", value: function (a) {
-                        $(a.target).hasClass(e.default.CLASS.OPEN_LIGHTBOX) ||
-                        a.stopPropagation();
-                        $(a.target).is(this.$el) && (this.publish(e.default.EVENT.ON_OUTSIDE_LIGHTBOX_CLICKED), this._hide());
-                        if (this.$el.find(this.SELECTOR_FILTER_DROPDOWN).length) {
-                            a = $(a.target);
-                            var d = this.$el.find(this.SELECTOR_FILTER_DROPDOWN);
-                            !d.hasClass(e.default.CLASS.IS_OPEN_STATE) || a.closest(this.SELECTOR_DROPDOWN).length && a.closest(this.SELECTOR_DROPDOWN).is(d) || d.removeClass(e.default.CLASS.IS_OPEN_STATE)
-                        }
-                    }
-                }, {
-                    key: "_onKeyDown", value: function (a) {
-                        if (!a.defaultPrevented) {
-                            var d = a.currentTarget, b = !1,
-                                x = $(d).parent().find("[role\x3d'radio']");
-                            if ("sign-in" === this.$lightboxContent.data("template")) {
-                                var g = this.$lightboxContent.find("".concat(this.SELECTOR_TABLIST_CONTENT, " \x3e .is-active")).find(this.SELECTOR_FOCUSABLE_CONTENT).filter(function (a, d) {
-                                    return !d.getAttribute("aria-hidden") || "false" === d.getAttribute("aria-hidden")
-                                });
-                                var f = this.$lightboxContent.find(".m-tablist .a-link");
-                                g = $.merge(f, g)
-                            } else g = this.$lightboxContent.find(this.SELECTOR_FOCUSABLE_CONTENT).filter(function (a, d) {
-                                return !d.getAttribute("aria-hidden") ||
-                                    "false" === d.getAttribute("aria-hidden")
+                }
+            }, {
+                key: "_onKeyDown", value: function (a) {
+                    if (!a.defaultPrevented) {
+                        var d = a.currentTarget, b = !1, x = $(d).parent().find("[role\x3d'radio']");
+                        if ("sign-in" === this.$lightboxContent.data("template")) {
+                            var g = this.$lightboxContent.find("".concat(this.SELECTOR_TABLIST_CONTENT, " \x3e .is-active")).find(this.SELECTOR_FOCUSABLE_CONTENT).filter(function (a, d) {
+                                return !d.getAttribute("aria-hidden") || "false" === d.getAttribute("aria-hidden")
                             });
-                            g.push(this.$closeBtn.get(0));
-                            a.key.match(e.default.KEYSTROKE.TAB) ? a.shiftKey ? d === g[0] && (d.focus(), b = !0) : ($.inArray(d, g), d === g[g.length - 1] && (d.focus(), b = !0)) : a.key.match(e.default.KEYSTROKE.ENTER) || a.key.match(e.default.KEYSTROKE.SPACEBAR) ? "radio" === d.getAttribute("role") && (c.default.Radio.setChecked(a.currentTarget, x), $(d).find(this.SELECTOR_CUSTOM_RADIO_BUTTONS).trigger("click")) : a.key.match(e.default.KEYSTROKE.ARROW_RIGHT) ? "radio" === d.getAttribute("role") &&
-                                (c.default.Radio.setCheckedToNextItem(a.currentTarget, x), b = !0) : a.key.match(e.default.KEYSTROKE.ARROW_LEFT) ? "radio" === d.getAttribute("role") && (c.default.Radio.setCheckedToPreviousItem(a.currentTarget, x), b = !0) : a.key.match(e.default.KEYSTROKE.ESCAPE) && this._onCloseButtonClick();
-                            b && (a.stopPropagation(), a.preventDefault())
-                        }
-                    }
-                }, {
-                    key: "_clearContent", value: function () {
-                        if (this.contentHistory && 0 !== this.contentHistory.length) {
-                            var a = this.$el.find(this.SELECTOR_CONTENT + '[data-template\x3d"' + this.contentHistory[this.contentHistory.length -
-                            1].template + '"]');
-                            this.contentHistory.pop();
-                            this.__mediator.destroy(a[0]);
-                            a.remove();
-                            this.$content.css("height", "").css("width", "")
-                        }
-                    }
-                }, {
-                    key: "_hide", value: function (a) {
-                        var d = this;
-                        this.publish(e.default.EVENT.ON_BEFORE_HIDE_LIGHTBOX, this.$el.find(this.SELECTOR_LIGHTBOX_CONTENT).data("template"));
-                        1 < this.contentHistory.length ? (this._clearContent(), this._performContentSwitch()) : (this.$el.removeClass(e.default.CLASS.IS_OPEN_STATE).addClass(e.default.CLASS.IS_CLOSED_STATE), setTimeout(function () {
-                                d.$el.removeClass(d.rmClasses).removeClass(e.default.CLASS.IS_CLOSED_STATE).addClass(e.default.CLASS.IS_HIDDEN_STATE)
-                            },
-                            this.ANIMATION_DELAY), this.publish(e.default.EVENT.ON_LIGHTBOX_CLOSE, a), this.publish(e.default.EVENT.ON_LIGHTBOX_LEVEL_CHANGED, this.contentHistory.length), this.$lightboxContent = this.$el.find(this.SELECTOR_LIGHTBOX_CONTENT), this.$lightboxContent.off("keydown", this.SELECTOR_FOCUSABLE_CONTENT, this._onKeyDown), this.publish(e.default.ACTION.HIDE_OVERLAY, {
-                            animating: this.ANIMATING_OVERLAY,
-                            delay: this.ANIMATION_DELAY_OVERLAY,
-                            opacityClass: "q-opacity-95"
-                        }), setTimeout(function () {
-                            d._clearContent()
-                        }, this.ANIMATION_DELAY))
-                    }
-                },
-                {
-                    key: "_show", value: function (a) {
-                        this.contentHistory.push(a);
-                        1 < this.contentHistory.length ? this._performContentSwitch(a) : (this._openLightbox(a), this.$lightboxContent = this.$el.find(this.SELECTOR_LIGHTBOX_CONTENT), this.$lightboxContent.on("keydown", this.SELECTOR_FOCUSABLE_CONTENT, this._onKeyDown), this.$el.removeClass(e.default.CLASS.IS_HIDDEN_STATE), this.publish(e.default.EVENT.ON_LIGHTBOX_OPEN, a), this.publish(e.default.EVENT.ON_LIGHTBOX_LEVEL_CHANGED, this.contentHistory.length))
-                    }
-                }, {
-                    key: "_performContentSwitch",
-                    value: function () {
-                        var a = this;
-                        this.$el.removeClass(e.default.CLASS.IS_OPEN_STATE).addClass(e.default.CLASS.IS_CLOSED_STATE);
-                        var d = this.contentHistory[this.contentHistory.length - 1];
-                        setTimeout(function () {
-                            a.$el.removeClass(a.rmClasses);
-                            a._openLightbox(d);
-                            a.publish(e.default.EVENT.ON_LIGHTBOX_LEVEL_CHANGED, a.contentHistory.length)
-                        }, this.ANIMATION_DELAY)
-                    }
-                }, {
-                    key: "_openLightbox", value: function (a) {
-                        "undefined" !== typeof a.template ? (a.$template = $("script#" + a.template).html(), 0 === this.$el.find(this.SELECTOR_CONTENT +
-                            '[data-template\x3d"' + a.template + '"]').length && (this._fetchContent(a, {}), this.scan({pjax: !0}))) : h.default.ERROR("No content found for lightbox", JSON.stringify(a));
-                        a.classes && (this.rmClasses = a.classes, this.$el.addClass(a.classes));
-                        a.data && (void 0 !== a.data.authCode && this.$el.attr("data-authcode", a.data.authCode), void 0 !== a.data.socialChannel && this.$el.attr("data-social-channel", a.data.socialChannel));
-                        void 0 !== a.nextTemplate ? this.$el.attr("data-next-template", a.nextTemplate) : this.$el.removeAttr("data-next-template");
-                        void 0 !== a.nextClasses ? this.$el.attr("data-next-classes", a.nextClasses) : this.$el.removeAttr("data-next-classes");
-                        this.publish(e.default.ACTION.SHOW_OVERLAY, {classes: this.OVERLAY_CLASSES, keepScroll: !0});
-                        this._disableScroll();
-                        a.nopadding && this._setnopaddingStyling();
-                        this.$el.removeClass(e.default.CLASS.IS_CLOSED_STATE).addClass(e.default.CLASS.IS_OPEN_STATE);
-                        this.$el.find(this.SELECTOR_FOCUSABLE_CONTENT).filter(function (a, d) {
+                            var f = this.$lightboxContent.find(".m-tablist .a-link");
+                            g = $.merge(f, g)
+                        } else g = this.$lightboxContent.find(this.SELECTOR_FOCUSABLE_CONTENT).filter(function (a, d) {
                             return !d.getAttribute("aria-hidden") || "false" === d.getAttribute("aria-hidden")
-                        }).first().focus()
+                        });
+                        g.push(this.$closeBtn.get(0));
+                        a.key.match(e.default.KEYSTROKE.TAB) ? a.shiftKey ? d === g[0] && (d.focus(), b = !0) : ($.inArray(d, g), d === g[g.length - 1] && (d.focus(), b = !0)) : a.key.match(e.default.KEYSTROKE.ENTER) || a.key.match(e.default.KEYSTROKE.SPACEBAR) ? "radio" === d.getAttribute("role") && (c.default.Radio.setChecked(a.currentTarget, x), $(d).find(this.SELECTOR_CUSTOM_RADIO_BUTTONS).trigger("click")) : a.key.match(e.default.KEYSTROKE.ARROW_RIGHT) ? "radio" === d.getAttribute("role") && (c.default.Radio.setCheckedToNextItem(a.currentTarget, x), b = !0) : a.key.match(e.default.KEYSTROKE.ARROW_LEFT) ? "radio" === d.getAttribute("role") && (c.default.Radio.setCheckedToPreviousItem(a.currentTarget, x), b = !0) : a.key.match(e.default.KEYSTROKE.ESCAPE) && this._onCloseButtonClick();
+                        b && (a.stopPropagation(), a.preventDefault())
                     }
-                },
-                {
-                    key: "_disableScroll", value: function () {
-                        this.publish(e.default.ACTION.DISABLE_SCROLL, {
-                            forceScrollPosition: !1,
-                            $touchScrollElement: this.$lightboxWrapper
-                        })
+                }
+            }, {
+                key: "_clearContent", value: function () {
+                    if (this.contentHistory && 0 !== this.contentHistory.length) {
+                        var a = this.$el.find(this.SELECTOR_CONTENT + '[data-template\x3d"' + this.contentHistory[this.contentHistory.length - 1].template + '"]');
+                        this.contentHistory.pop();
+                        this.__mediator.destroy(a[0]);
+                        a.remove();
+                        this.$content.css("height", "").css("width", "")
                     }
-                }, {
-                    key: "_setnopaddingStyling", value: function () {
-                        this.$el.addClass(this.CLASS_NO_PADDING);
-                        this.rmClasses += " " + this.CLASS_NO_PADDING
-                    }
-                }, {
-                    key: "_fetchContent", value: function (a) {
-                        var d = 1 < arguments.length && void 0 !== arguments[1] ? arguments[1] : {},
-                            b = Handlebars.compile(a.$template);
-                        this.$cachedLightbox.clone(!0).html(b(d)).attr("data-template", a.template).insertAfter(this.$el.find(this.SELECTOR_LIGHTBOX_HEADER))
-                    }
-                }]);
+                }
+            }, {
+                key: "_hide", value: function (a) {
+                    var d = this;
+                    this.publish(e.default.EVENT.ON_BEFORE_HIDE_LIGHTBOX, this.$el.find(this.SELECTOR_LIGHTBOX_CONTENT).data("template"));
+                    1 < this.contentHistory.length ? (this._clearContent(), this._performContentSwitch()) : (this.$el.removeClass(e.default.CLASS.IS_OPEN_STATE).addClass(e.default.CLASS.IS_CLOSED_STATE), setTimeout(function () {
+                        d.$el.removeClass(d.rmClasses).removeClass(e.default.CLASS.IS_CLOSED_STATE).addClass(e.default.CLASS.IS_HIDDEN_STATE)
+                    }, this.ANIMATION_DELAY), this.publish(e.default.EVENT.ON_LIGHTBOX_CLOSE, a), this.publish(e.default.EVENT.ON_LIGHTBOX_LEVEL_CHANGED, this.contentHistory.length), this.$lightboxContent = this.$el.find(this.SELECTOR_LIGHTBOX_CONTENT), this.$lightboxContent.off("keydown", this.SELECTOR_FOCUSABLE_CONTENT, this._onKeyDown), this.publish(e.default.ACTION.HIDE_OVERLAY, {
+                        animating: this.ANIMATING_OVERLAY,
+                        delay: this.ANIMATION_DELAY_OVERLAY,
+                        opacityClass: "q-opacity-95"
+                    }), setTimeout(function () {
+                        d._clearContent()
+                    }, this.ANIMATION_DELAY))
+                }
+            }, {
+                key: "_show", value: function (a) {
+                    this.contentHistory.push(a);
+                    1 < this.contentHistory.length ? this._performContentSwitch(a) : (this._openLightbox(a), this.$lightboxContent = this.$el.find(this.SELECTOR_LIGHTBOX_CONTENT), this.$lightboxContent.on("keydown", this.SELECTOR_FOCUSABLE_CONTENT, this._onKeyDown), this.$el.removeClass(e.default.CLASS.IS_HIDDEN_STATE), this.publish(e.default.EVENT.ON_LIGHTBOX_OPEN, a), this.publish(e.default.EVENT.ON_LIGHTBOX_LEVEL_CHANGED, this.contentHistory.length))
+                }
+            }, {
+                key: "_performContentSwitch", value: function () {
+                    var a = this;
+                    this.$el.removeClass(e.default.CLASS.IS_OPEN_STATE).addClass(e.default.CLASS.IS_CLOSED_STATE);
+                    var d = this.contentHistory[this.contentHistory.length - 1];
+                    setTimeout(function () {
+                        a.$el.removeClass(a.rmClasses);
+                        a._openLightbox(d);
+                        a.publish(e.default.EVENT.ON_LIGHTBOX_LEVEL_CHANGED, a.contentHistory.length)
+                    }, this.ANIMATION_DELAY)
+                }
+            }, {
+                key: "_openLightbox", value: function (a) {
+                    "undefined" !== typeof a.template ? (a.$template = $("script#" + a.template).html(), 0 === this.$el.find(this.SELECTOR_CONTENT + '[data-template\x3d"' + a.template + '"]').length && (this._fetchContent(a, {}), this.scan({pjax: !0}))) : h.default.ERROR("No content found for lightbox", JSON.stringify(a));
+                    a.classes && (this.rmClasses = a.classes, this.$el.addClass(a.classes));
+                    a.data && (void 0 !== a.data.authCode && this.$el.attr("data-authcode", a.data.authCode), void 0 !== a.data.socialChannel && this.$el.attr("data-social-channel", a.data.socialChannel));
+                    void 0 !== a.nextTemplate ? this.$el.attr("data-next-template", a.nextTemplate) : this.$el.removeAttr("data-next-template");
+                    void 0 !== a.nextClasses ? this.$el.attr("data-next-classes", a.nextClasses) : this.$el.removeAttr("data-next-classes");
+                    this.publish(e.default.ACTION.SHOW_OVERLAY, {classes: this.OVERLAY_CLASSES, keepScroll: !0});
+                    this._disableScroll();
+                    a.nopadding && this._setnopaddingStyling();
+                    this.$el.removeClass(e.default.CLASS.IS_CLOSED_STATE).addClass(e.default.CLASS.IS_OPEN_STATE);
+                    this.$el.find(this.SELECTOR_FOCUSABLE_CONTENT).filter(function (a, d) {
+                        return !d.getAttribute("aria-hidden") || "false" === d.getAttribute("aria-hidden")
+                    }).first().focus()
+                }
+            }, {
+                key: "_disableScroll", value: function () {
+                    this.publish(e.default.ACTION.DISABLE_SCROLL, {
+                        forceScrollPosition: !1,
+                        $touchScrollElement: this.$lightboxWrapper
+                    })
+                }
+            }, {
+                key: "_setnopaddingStyling", value: function () {
+                    this.$el.addClass(this.CLASS_NO_PADDING);
+                    this.rmClasses += " " + this.CLASS_NO_PADDING
+                }
+            }, {
+                key: "_fetchContent", value: function (a) {
+                    var d = 1 < arguments.length && void 0 !== arguments[1] ? arguments[1] : {},
+                        b = Handlebars.compile(a.$template);
+                    this.$cachedLightbox.clone(!0).html(b(d)).attr("data-template", a.template).insertAfter(this.$el.find(this.SELECTOR_LIGHTBOX_HEADER))
+                }
+            }]);
             return b
         }(p.default);
         t.exports = f
@@ -5730,8 +5526,7 @@
         }
 
         function k(c) {
-            return c && c.__esModule ?
-                c : {default: c}
+            return c && c.__esModule ? c : {default: c}
         }
 
         function q(c, a) {
@@ -5758,8 +5553,7 @@
             return l(c, a, b || c)
         }
 
-        function v(c,
-                   a) {
+        function v(c, a) {
             if ("function" !== typeof a && null !== a) throw new TypeError("Super expression must either be null or a function");
             c.prototype = Object.create(a && a.prototype, {constructor: {value: c, writable: !0, configurable: !0}});
             a && n(c, a)
@@ -5782,8 +5576,7 @@
                     b = Reflect.construct(b, arguments, d)
                 } else b = b.apply(this, arguments);
                 if (!b || "object" !== m(b) && "function" !== typeof b) {
-                    if (void 0 ===
-                        this) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+                    if (void 0 === this) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
                     b = this
                 }
                 return b
@@ -5849,40 +5642,39 @@
                     h.default.INFO(this.constructor.name, ":: _jQueryScopeBinding");
                     this._onDOMReady = this._onDOMReady.bind(this)
                 }
-            },
-                {
-                    key: "_attachSubscribers", value: function () {
-                        h.default.INFO(this.constructor.name, ":: _attachSubscribers");
-                        this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
-                        this.subscribe(e.default.ACTION.SHOW_LOADER_OVERLAY, this._onShowLoaderOverlay);
-                        this.subscribe(e.default.ACTION.HIDE_LOADER_OVERLAY, this._onHideLoaderOverlay)
-                    }
-                }, {
-                    key: "_detachSubscribers", value: function () {
-                        h.default.INFO(this.constructor.name, ":: _detachSubscribers");
-                        this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
-                        this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady);
-                        this.unsubscribe(e.default.ACTION.SHOW_LOADER_OVERLAY, this._onShowLoaderOverlay);
-                        this.unsubscribe(e.default.ACTION.HIDE_LOADER_OVERLAY, this._onHideLoaderOverlay)
-                    }
-                }, {
-                    key: "_onFrameworkReady", value: function () {
-                    }
-                }, {
-                    key: "_attachDOMListeners", value: function () {
-                    }
-                }, {
-                    key: "_detachDOMListeners", value: function () {
-                    }
-                }, {
-                    key: "_onShowLoaderOverlay", value: function () {
-                        this.$el.addClass(e.default.CLASS.IS_VISIBLE_STATE)
-                    }
-                }, {
-                    key: "_onHideLoaderOverlay", value: function () {
-                        this.$el.removeClass(e.default.CLASS.IS_VISIBLE_STATE)
-                    }
-                }]);
+            }, {
+                key: "_attachSubscribers", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _attachSubscribers");
+                    this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
+                    this.subscribe(e.default.ACTION.SHOW_LOADER_OVERLAY, this._onShowLoaderOverlay);
+                    this.subscribe(e.default.ACTION.HIDE_LOADER_OVERLAY, this._onHideLoaderOverlay)
+                }
+            }, {
+                key: "_detachSubscribers", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _detachSubscribers");
+                    this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
+                    this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady);
+                    this.unsubscribe(e.default.ACTION.SHOW_LOADER_OVERLAY, this._onShowLoaderOverlay);
+                    this.unsubscribe(e.default.ACTION.HIDE_LOADER_OVERLAY, this._onHideLoaderOverlay)
+                }
+            }, {
+                key: "_onFrameworkReady", value: function () {
+                }
+            }, {
+                key: "_attachDOMListeners", value: function () {
+                }
+            }, {
+                key: "_detachDOMListeners", value: function () {
+                }
+            }, {
+                key: "_onShowLoaderOverlay", value: function () {
+                    this.$el.addClass(e.default.CLASS.IS_VISIBLE_STATE)
+                }
+            }, {
+                key: "_onHideLoaderOverlay", value: function () {
+                    this.$el.removeClass(e.default.CLASS.IS_VISIBLE_STATE)
+                }
+            }]);
             return a
         }(p.default);
         t.exports = f
@@ -5906,8 +5698,7 @@
             return a && a.__esModule ? a : {default: a}
         }
 
-        function q(a,
-                   b) {
+        function q(a, b) {
             for (var d = 0; d < b.length; d++) {
                 var c = b[d];
                 c.enumerable = c.enumerable || !1;
@@ -5932,8 +5723,7 @@
         }
 
         function v(a, b) {
-            if ("function" !== typeof b &&
-                null !== b) throw new TypeError("Super expression must either be null or a function");
+            if ("function" !== typeof b && null !== b) throw new TypeError("Super expression must either be null or a function");
             a.prototype = Object.create(b && b.prototype, {constructor: {value: a, writable: !0, configurable: !0}});
             b && n(a, b)
         }
@@ -6019,7 +5809,8 @@
                         elementType: "geometry",
                         stylers: [{color: "#f5f5f5"}, {lightness: 20}]
                     }, {
-                        featureType: "road.highway", elementType: "geometry.fill",
+                        featureType: "road.highway",
+                        elementType: "geometry.fill",
                         stylers: [{color: "#ffffff"}, {lightness: 17}]
                     }, {
                         featureType: "road.highway",
@@ -6033,9 +5824,14 @@
                         featureType: "road.local",
                         elementType: "geometry",
                         stylers: [{color: "#ffffff"}, {lightness: 16}]
-                    }, {featureType: "poi", elementType: "geometry", stylers: [{color: "#f5f5f5"}, {lightness: 21}]}, {
-                        featureType: "poi.park", elementType: "geometry", stylers: [{color: "#dedede"},
-                            {lightness: 21}]
+                    }, {
+                        featureType: "poi",
+                        elementType: "geometry",
+                        stylers: [{color: "#f5f5f5"}, {lightness: 21}]
+                    }, {
+                        featureType: "poi.park",
+                        elementType: "geometry",
+                        stylers: [{color: "#dedede"}, {lightness: 21}]
                     }, {
                         elementType: "labels.text.stroke",
                         stylers: [{visibility: "on"}, {color: "#ffffff"}, {lightness: 16}]
@@ -6051,7 +5847,8 @@
                         elementType: "geometry.fill",
                         stylers: [{color: "#fefefe"}, {lightness: 20}]
                     }, {
-                        featureType: "administrative", elementType: "geometry.stroke",
+                        featureType: "administrative",
+                        elementType: "geometry.stroke",
                         stylers: [{color: "#fefefe"}, {lightness: 17}, {weight: 1.2}]
                     }]
                 }
@@ -6080,8 +5877,7 @@
                     this._onDOMReady = this._onDOMReady.bind(this);
                     this._initMap = this._initMap.bind(this);
                     this._onInitMap = this._onInitMap.bind(this);
-                    this._centerMapOnMarker =
-                        this._centerMapOnMarker.bind(this);
+                    this._centerMapOnMarker = this._centerMapOnMarker.bind(this);
                     this._closeInfoBox = this._closeInfoBox.bind(this);
                     this._openInfoBox = this._openInfoBox.bind(this);
                     this._clearMarkers = this._clearMarkers.bind(this);
@@ -6092,8 +5888,7 @@
             }, {
                 key: "_attachSubscribers", value: function () {
                     h.default.INFO(this.constructor.name, ":: _attachSubscribers");
-                    this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY,
-                        this._onFrameworkReady);
+                    this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
                     this.subscribe(e.default.ACTION.CREATE_MAP_MARKERS, this._createMarkers);
                     this.subscribe(e.default.EVENT.ON_MAP_INITIALIZED, this._onInitMap);
                     this.subscribe(e.default.ACTION.CLOSE_MAP_INFO_BOX, this._closeInfoBox);
@@ -6109,8 +5904,7 @@
                     this.unsubscribe(e.default.EVENT.ON_MAP_INITIALIZED, this._onInitMap);
                     this.unsubscribe(e.default.ACTION.CLOSE_MAP_INFO_BOX, this._closeInfoBox);
                     this.unsubscribe(e.default.ACTION.CLEAR_MAP_MARKERS, this._clearMarkers);
-                    this.$el.data("map-interactive") && this.unsubscribe(e.default.ACTION.CENTER_MAP_ON_MARKER,
-                        this._centerMapOnMarker)
+                    this.$el.data("map-interactive") && this.unsubscribe(e.default.ACTION.CENTER_MAP_ON_MARKER, this._centerMapOnMarker)
                 }
             }, {
                 key: "_onFrameworkReady", value: function () {
@@ -6134,8 +5928,7 @@
                 key: "_closeInfoBox", value: function () {
                     var a = this;
                     this.$infoBox.addClass(e.default.CLASS.DISPLAY_NONE);
-                    $.each(this.markers, function (d,
-                                                   b) {
+                    $.each(this.markers, function (d, b) {
                         b.setIcon(a.icon);
                         b.active = !1
                     })
@@ -6179,8 +5972,7 @@
                         f.extend(l.getPosition());
                         Modernizr.touchevents || (google.maps.event.addListener(l, "mouseover", function () {
                             l.setIcon(g.iconHover);
-                            if (c) g._createToolTipTemplate(l), g.$tooltipBox.html(g.tooltipContent);
-                            else {
+                            if (c) g._createToolTipTemplate(l), g.$tooltipBox.html(g.tooltipContent); else {
                                 var a = Handlebars.compile(g.$pupTooltipTemplate.html())({title: l.title});
                                 g.$tooltipBox.html(a)
                             }
@@ -6189,8 +5981,7 @@
                             var x = g.$map.getProjection().fromLatLngToPoint(l.getPosition()),
                                 f = g.$map.getProjection().fromLatLngToPoint(g.$map.getCenter());
                             x = new google.maps.Point(Math.floor((x.x - f.x) * a + g.$mapObject.width() / 2), Math.floor((x.y - f.y) * a + g.$mapObject.height() / 2));
-                            g.TOOLTIP_HAS_FLEXIBLE_HEIGHT ? (a = x.x + g.$tooltipBox.width() / 2 + b,
-                                x = x.y - g.$tooltipBox.height() - d) : (a = x.x + b, x = x.y - d);
+                            g.TOOLTIP_HAS_FLEXIBLE_HEIGHT ? (a = x.x + g.$tooltipBox.width() / 2 + b, x = x.y - g.$tooltipBox.height() - d) : (a = x.x + b, x = x.y - d);
                             g.$tooltipBox.css({top: x + "px", left: a + "px"})
                         }), google.maps.event.addListener(l, "mouseout", function () {
                             l.active || l.setIcon(y);
@@ -6221,9 +6012,11 @@
             }, {
                 key: "_onInitMap", value: function () {
                     var a = this;
-                    this.$map = new google.maps.Map(document.getElementById(this.$el.data("map-id") ||
-                        this.DEFAULT_MAP_ID), {
-                        center: {lat: 9, lng: 10},
+                    this.$map = new google.maps.Map(document.getElementById(this.$el.data("map-id") || this.DEFAULT_MAP_ID), {
+                        center: {
+                            lat: 9,
+                            lng: 10
+                        },
                         scrollwheel: !1,
                         styles: this.STYLE_ARRAY,
                         zoom: 1,
@@ -6265,8 +6058,7 @@
         }
 
         function k(c) {
-            return c && c.__esModule ?
-                c : {default: c}
+            return c && c.__esModule ? c : {default: c}
         }
 
         function q(c, a) {
@@ -6293,8 +6085,7 @@
             return l(c, a, b || c)
         }
 
-        function v(c,
-                   a) {
+        function v(c, a) {
             if ("function" !== typeof a && null !== a) throw new TypeError("Super expression must either be null or a function");
             c.prototype = Object.create(a && a.prototype, {constructor: {value: c, writable: !0, configurable: !0}});
             a && n(c, a)
@@ -6317,8 +6108,7 @@
                     b = Reflect.construct(b, arguments, d)
                 } else b = b.apply(this, arguments);
                 if (!b || "object" !== m(b) && "function" !== typeof b) {
-                    if (void 0 ===
-                        this) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+                    if (void 0 === this) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
                     b = this
                 }
                 return b
@@ -6375,8 +6165,7 @@
                     this.SELECTOR_NEWSLETTER_LABEL = ".newsletter-label";
                     this.SELECTOR_M_INPUT = ".m-input";
                     this.SELECTOR_HELP_TEXT_EL = ".a-label:last-child";
-                    this.CLASS_EMAIL_TOUCHED =
-                        "email-touched";
+                    this.CLASS_EMAIL_TOUCHED = "email-touched";
                     this.ANIMATION_HIDE_OPTIONS = this.ANIMATION_SHOW_OPTIONS = void 0
                 }
             }, {
@@ -6417,8 +6206,7 @@
                 key: "_detachSubscribers", value: function () {
                     h.default.INFO(this.constructor.name, ":: _detachSubscribers");
                     this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady);
-                    this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY,
-                        this._onFrameworkReady);
+                    this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
                     this.unsubscribe(e.default.EVENT.ON_PROFILE_RESET, this._onProfileReset)
                 }
             }, {
@@ -6437,8 +6225,7 @@
             }, {
                 key: "_preserveInitialInputState", value: function () {
                     var a = this;
-                    this.$el.find(this.SELECTOR_M_INPUT).each(function (d,
-                                                                        b) {
+                    this.$el.find(this.SELECTOR_M_INPUT).each(function (d, b) {
                         d = $(b);
                         a.initialInputs.push({
                             el: d,
@@ -6462,8 +6249,7 @@
                 }
             }, {
                 key: "_prepareRadioBtnAnimation", value: function () {
-                    this.$radioBtnAgree.prop("checked") ||
-                    this.$newsletterLabel.hide()
+                    this.$radioBtnAgree.prop("checked") || this.$newsletterLabel.hide()
                 }
             }, {
                 key: "_onRadioBtnChange", value: function () {
@@ -6471,8 +6257,7 @@
                 }
             }, {
                 key: "_onEmailKeyUp", value: function () {
-                    this.$emailInput.val() != this.currentEmail ? (this.$passwordField.prop("disabled", !1), this.$passwordInput.prop("disabled", !1), this.$el.addClass(this.CLASS_EMAIL_TOUCHED)) : (this.$passwordField.attr("disabled", "disabled"), this.$passwordInput.attr("disabled",
-                        "disabled"), this.$el.removeClass(this.CLASS_EMAIL_TOUCHED))
+                    this.$emailInput.val() != this.currentEmail ? (this.$passwordField.prop("disabled", !1), this.$passwordInput.prop("disabled", !1), this.$el.addClass(this.CLASS_EMAIL_TOUCHED)) : (this.$passwordField.attr("disabled", "disabled"), this.$passwordInput.attr("disabled", "disabled"), this.$el.removeClass(this.CLASS_EMAIL_TOUCHED))
                 }
             }, {
                 key: "_setEmailInputValue", value: function () {
@@ -6490,7 +6275,8 @@
         }(p.default);
         t.exports = f
     }, {
-        "./../../../js/base/appeaser-component-base.js": 47, "./../../../js/base/logger.js": 51,
+        "./../../../js/base/appeaser-component-base.js": 47,
+        "./../../../js/base/logger.js": 51,
         "./../../../themes/p11/enums.js": 65
     }],
     32: [function (f, t, p) {
@@ -6514,8 +6300,7 @@
                 c.enumerable = c.enumerable || !1;
                 c.configurable = !0;
                 "value" in c && (c.writable = !0);
-                Object.defineProperty(a,
-                    c.key, c)
+                Object.defineProperty(a, c.key, c)
             }
         }
 
@@ -6535,12 +6320,7 @@
 
         function v(a, b) {
             if ("function" !== typeof b && null !== b) throw new TypeError("Super expression must either be null or a function");
-            a.prototype = Object.create(b && b.prototype, {
-                constructor: {
-                    value: a,
-                    writable: !0, configurable: !0
-                }
-            });
+            a.prototype = Object.create(b && b.prototype, {constructor: {value: a, writable: !0, configurable: !0}});
             b && n(a, b)
         }
 
@@ -6569,8 +6349,7 @@
         }
 
         function u() {
-            if ("undefined" === typeof Reflect || !Reflect.construct ||
-                Reflect.construct.sham) return !1;
+            if ("undefined" === typeof Reflect || !Reflect.construct || Reflect.construct.sham) return !1;
             if ("function" === typeof Proxy) return !0;
             try {
                 return Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {
@@ -6592,8 +6371,7 @@
             c = k(f("./../../../themes/p11/utils.js"));
         f = function (a) {
             function b() {
-                if (!(this instanceof
-                    b)) throw new TypeError("Cannot call a class as a function");
+                if (!(this instanceof b)) throw new TypeError("Cannot call a class as a function");
                 var a = d.apply(this, arguments);
                 h.default.INFO(a.constructor.name, ":: Constructor");
                 a._declareConstants();
@@ -6613,8 +6391,7 @@
                 }
             }, {
                 key: "_declareConstants", value: function () {
-                    this.SELECTOR_REMOVE_BUTTON =
-                        ".remove-button";
+                    this.SELECTOR_REMOVE_BUTTON = ".remove-button";
                     this.SELECTOR_CREATE_PASSWORD = ".create-password-field";
                     this.SELECTOR_CREATE_PW_LINK = ".create-password-link";
                     this.SELECTOR_CREATE_PW_TEXT = ".create-password-text";
@@ -6653,8 +6430,7 @@
             }, {
                 key: "_attachSubscribers", value: function () {
                     h.default.INFO(this.constructor.name, ":: _attachSubscribers");
-                    this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY,
-                        this._onFrameworkReady)
+                    this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady)
                 }
             }, {
                 key: "_detachSubscribers", value: function () {
@@ -6671,8 +6447,7 @@
                     this.$createPasswordLink.on("click", this._ajaxPostEmail)
                 }
             }, {
-                key: "_detachDOMListeners",
-                value: function () {
+                key: "_detachDOMListeners", value: function () {
                     this.$removeButton.off("click", this._removeButtonClick);
                     this.$createPasswordLink.off("click", this._ajaxPostEmail)
                 }
@@ -6775,8 +6550,7 @@
         }
 
         function v(c, a) {
-            if ("function" !==
-                typeof a && null !== a) throw new TypeError("Super expression must either be null or a function");
+            if ("function" !== typeof a && null !== a) throw new TypeError("Super expression must either be null or a function");
             c.prototype = Object.create(a && a.prototype, {constructor: {value: c, writable: !0, configurable: !0}});
             a && n(c, a)
         }
@@ -6845,84 +6619,79 @@
                     this._detachSubscribers();
                     l(g(a.prototype), "destroy", this).call(this)
                 }
-            },
-                {
-                    key: "_declareConstants", value: function () {
-                        this.LIGHTBOX_TEMPLATE = this.KEY_NEWSLETTER_VIEWED_STATE = "newsletter-signup";
-                        this.SELECTOR_SUBMIT = 'button[type\x3d"submit"]';
-                        this.SELECTOR_OPTION_SELECTED = ".a-option.is-selected";
-                        this.SELECTOR_INPUT = ".a-input.filter";
-                        this.SELECTOR_NEWSLETTER_NTN = ".is-newsletter-ntn";
-                        this.SELECTOR_DROPDOWN_FILTER = ".m-dropdown-filter";
-                        this.CLASS_IS_SELECTED = "is-selected";
-                        this.CLASS_HAS_ERROR = "has-error"
+            }, {
+                key: "_declareConstants", value: function () {
+                    this.LIGHTBOX_TEMPLATE = this.KEY_NEWSLETTER_VIEWED_STATE = "newsletter-signup";
+                    this.SELECTOR_SUBMIT = 'button[type\x3d"submit"]';
+                    this.SELECTOR_OPTION_SELECTED = ".a-option.is-selected";
+                    this.SELECTOR_INPUT = ".a-input.filter";
+                    this.SELECTOR_NEWSLETTER_NTN = ".is-newsletter-ntn";
+                    this.SELECTOR_DROPDOWN_FILTER = ".m-dropdown-filter";
+                    this.CLASS_IS_SELECTED = "is-selected";
+                    this.CLASS_HAS_ERROR = "has-error"
+                }
+            }, {
+                key: "_cacheDOMElements", value: function () {
+                    this.$window = $(window);
+                    this.$submitElement = this.$el.find(this.SELECTOR_SUBMIT);
+                    this.$dropDownFilter = this.$el.find(this.SELECTOR_DROPDOWN_FILTER)
+                }
+            }, {
+                key: "_jQueryScopeBinding", value: function () {
+                    this._onDOMReady = this._onDOMReady.bind(this);
+                    this._onBeforeNewsletterClosed = this._onBeforeNewsletterClosed.bind(this);
+                    this._onSubmitClick = this._onSubmitClick.bind(this)
+                }
+            }, {
+                key: "_attachSubscribers", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _attachSubscribers");
+                    this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
+                    this.subscribe(e.default.EVENT.ON_BEFORE_HIDE_LIGHTBOX, this._onBeforeNewsletterClosed);
+                    this.subscribe(e.default.EVENT.ON_DROPDOWN_CLOSED_FILTERS, this._closedDropdownFilter)
+                }
+            }, {
+                key: "_detachSubscribers", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _detachSubscribers");
+                    this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady);
+                    this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
+                    this.unsubscribe(e.default.EVENT.ON_BEFORE_HIDE_LIGHTBOX, this._onBeforeNewsletterClosed);
+                    this.unsubscribe(e.default.EVENT.ON_DROPDOWN_CLOSED_FILTERS, this._closedDropdownFilter)
+                }
+            }, {
+                key: "_onFrameworkReady", value: function () {
+                }
+            }, {
+                key: "_attachDOMListeners", value: function () {
+                    this.$submitElement.on("click", this._onSubmitClick)
+                }
+            }, {
+                key: "_detachDOMListeners", value: function () {
+                    this.$submitElement.off("click", this._onSubmitClick)
+                }
+            }, {
+                key: "_onDOMReady", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _onDOMReady");
+                    this._cacheDOMElements();
+                    this._attachSubscribers();
+                    this._attachDOMListeners()
+                }
+            }, {
+                key: "_onBeforeNewsletterClosed", value: function (a) {
+                    a == this.LIGHTBOX_TEMPLATE && (a = this.$el.data("expires"), void 0 != a && Cookies.set(this.KEY_NEWSLETTER_VIEWED_STATE, "viewed", {expires: a}))
+                }
+            }, {
+                key: "_onSubmitClick", value: function () {
+                    this._onBeforeNewsletterClosed(this.LIGHTBOX_TEMPLATE);
+                    if (this.$dropDownFilter.length) {
+                        if (this.$el.find(this.SELECTOR_INPUT).val() != this.$el.find(this.SELECTOR_OPTION_SELECTED).html()) return this.$dropDownFilter.addClass(e.default.CLASS.HAS_ERROR), !1;
+                        this.$dropDownFilter.removeClass(e.default.CLASS.HAS_ERROR)
                     }
-                }, {
-                    key: "_cacheDOMElements", value: function () {
-                        this.$window = $(window);
-                        this.$submitElement =
-                            this.$el.find(this.SELECTOR_SUBMIT);
-                        this.$dropDownFilter = this.$el.find(this.SELECTOR_DROPDOWN_FILTER)
-                    }
-                }, {
-                    key: "_jQueryScopeBinding", value: function () {
-                        this._onDOMReady = this._onDOMReady.bind(this);
-                        this._onBeforeNewsletterClosed = this._onBeforeNewsletterClosed.bind(this);
-                        this._onSubmitClick = this._onSubmitClick.bind(this)
-                    }
-                }, {
-                    key: "_attachSubscribers", value: function () {
-                        h.default.INFO(this.constructor.name, ":: _attachSubscribers");
-                        this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
-                        this.subscribe(e.default.EVENT.ON_BEFORE_HIDE_LIGHTBOX,
-                            this._onBeforeNewsletterClosed);
-                        this.subscribe(e.default.EVENT.ON_DROPDOWN_CLOSED_FILTERS, this._closedDropdownFilter)
-                    }
-                }, {
-                    key: "_detachSubscribers", value: function () {
-                        h.default.INFO(this.constructor.name, ":: _detachSubscribers");
-                        this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady);
-                        this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
-                        this.unsubscribe(e.default.EVENT.ON_BEFORE_HIDE_LIGHTBOX, this._onBeforeNewsletterClosed);
-                        this.unsubscribe(e.default.EVENT.ON_DROPDOWN_CLOSED_FILTERS,
-                            this._closedDropdownFilter)
-                    }
-                }, {
-                    key: "_onFrameworkReady", value: function () {
-                    }
-                }, {
-                    key: "_attachDOMListeners", value: function () {
-                        this.$submitElement.on("click", this._onSubmitClick)
-                    }
-                }, {
-                    key: "_detachDOMListeners", value: function () {
-                        this.$submitElement.off("click", this._onSubmitClick)
-                    }
-                }, {
-                    key: "_onDOMReady", value: function () {
-                        h.default.INFO(this.constructor.name, ":: _onDOMReady");
-                        this._cacheDOMElements();
-                        this._attachSubscribers();
-                        this._attachDOMListeners()
-                    }
-                }, {
-                    key: "_onBeforeNewsletterClosed", value: function (a) {
-                        a == this.LIGHTBOX_TEMPLATE &&
-                        (a = this.$el.data("expires"), void 0 != a && Cookies.set(this.KEY_NEWSLETTER_VIEWED_STATE, "viewed", {expires: a}))
-                    }
-                }, {
-                    key: "_onSubmitClick", value: function () {
-                        this._onBeforeNewsletterClosed(this.LIGHTBOX_TEMPLATE);
-                        if (this.$dropDownFilter.length) {
-                            if (this.$el.find(this.SELECTOR_INPUT).val() != this.$el.find(this.SELECTOR_OPTION_SELECTED).html()) return this.$dropDownFilter.addClass(e.default.CLASS.HAS_ERROR), !1;
-                            this.$dropDownFilter.removeClass(e.default.CLASS.HAS_ERROR)
-                        }
-                    }
-                }, {
-                    key: "_closedDropdownFilter", value: function () {
-                        this._onSubmitClick()
-                    }
-                }]);
+                }
+            }, {
+                key: "_closedDropdownFilter", value: function () {
+                    this._onSubmitClick()
+                }
+            }]);
             return a
         }(p.default);
         t.exports = f
@@ -6946,8 +6715,7 @@
             return c && c.__esModule ? c : {default: c}
         }
 
-        function q(c,
-                   a) {
+        function q(c, a) {
             for (var b = 0; b < a.length; b++) {
                 var d = a[b];
                 d.enumerable = d.enumerable || !1;
@@ -6972,8 +6740,7 @@
         }
 
         function v(c, a) {
-            if ("function" !== typeof a &&
-                null !== a) throw new TypeError("Super expression must either be null or a function");
+            if ("function" !== typeof a && null !== a) throw new TypeError("Super expression must either be null or a function");
             c.prototype = Object.create(a && a.prototype, {constructor: {value: c, writable: !0, configurable: !0}});
             a && n(c, a)
         }
@@ -7042,167 +6809,163 @@
                     this._detachSubscribers();
                     l(g(a.prototype), "destroy", this).call(this)
                 }
-            },
-                {
-                    key: "_declareConstants", value: function () {
-                        this.HANDLEBAR_SOURCE = "#olapic-gallery-slide";
-                        this.SELECTOR_CONTENT = ".js-placeholder";
-                        this.SELECTOR_OLAPIC_IMAGE = ".o-olapic-image";
-                        this.SELECTOR_USER_NAME = ".m-instagram-user \x3e .a-label";
-                        this.SELECTOR_USER_AVATAR = ".m-instagram-user \x3e .a-image";
-                        this.SELECTOR_OLAPIC_SLIDER = ".o-olapic-slider";
-                        this.SELECTOR_BUTTON_MORE = ".a-button.load-more";
-                        this.SELECTOR_USER = ".m-instagram-user \x3e .user";
-                        this.PAGE_SETTINGS = {
-                            COLS_SM: 12, TOTAL_COLS_SM: 12, COLS_MD: 24, TOTAL_COLS_MD: 24,
-                            COLS_LG: 24, TOTAL_COLS_LG: 24
-                        };
-                        this.COMPONENT_SETTINGS = {
-                            COLS_SM: 6,
-                            TOTAL_COLS_SM: 12,
-                            COLS_MD: 3,
-                            TOTAL_COLS_MD: 24,
-                            COLS_LG: 8,
-                            TOTAL_COLS_LG: 24
-                        };
-                        this.RESIZE_TIMER = void 0;
-                        this.RESIZE_TIMEOUT = 50
+            }, {
+                key: "_declareConstants", value: function () {
+                    this.HANDLEBAR_SOURCE = "#olapic-gallery-slide";
+                    this.SELECTOR_CONTENT = ".js-placeholder";
+                    this.SELECTOR_OLAPIC_IMAGE = ".o-olapic-image";
+                    this.SELECTOR_USER_NAME = ".m-instagram-user \x3e .a-label";
+                    this.SELECTOR_USER_AVATAR = ".m-instagram-user \x3e .a-image";
+                    this.SELECTOR_OLAPIC_SLIDER = ".o-olapic-slider";
+                    this.SELECTOR_BUTTON_MORE = ".a-button.load-more";
+                    this.SELECTOR_USER = ".m-instagram-user \x3e .user";
+                    this.PAGE_SETTINGS = {
+                        COLS_SM: 12,
+                        TOTAL_COLS_SM: 12,
+                        COLS_MD: 24,
+                        TOTAL_COLS_MD: 24,
+                        COLS_LG: 24,
+                        TOTAL_COLS_LG: 24
+                    };
+                    this.COMPONENT_SETTINGS = {
+                        COLS_SM: 6,
+                        TOTAL_COLS_SM: 12,
+                        COLS_MD: 3,
+                        TOTAL_COLS_MD: 24,
+                        COLS_LG: 8,
+                        TOTAL_COLS_LG: 24
+                    };
+                    this.RESIZE_TIMER = void 0;
+                    this.RESIZE_TIMEOUT = 50
+                }
+            }, {
+                key: "_cacheDOMElements", value: function () {
+                    this.settings = this.$el.data();
+                    this.settings.version = this.settings.version ? this.settings.version : "v2.2";
+                    this.settings.wrapResponses = this.settings.wrapResponses ? this.settings.wrapResponses : "1";
+                    this.$btnMore = this.$el.find(this.SELECTOR_BUTTON_MORE);
+                    this.$placeholder = this.$el.find(this.SELECTOR_CONTENT);
+                    this.$window = $(window);
+                    this.$handlebarOlapicSlideTemplate = $(this.HANDLEBAR_SOURCE).html();
+                    this.$olapicImageTemplate = $("#" + this.settings.template).html()
+                }
+            }, {
+                key: "_jQueryScopeBinding", value: function () {
+                    this._onDOMReady = this._onDOMReady.bind(this);
+                    this._onMediaFetched = this._onMediaFetched.bind(this);
+                    this._renderTemplate = this._renderTemplate.bind(this);
+                    this._openOlapicGallery = this._openOlapicGallery.bind(this);
+                    this._onResize = this._onResize.bind(this);
+                    this._onBtnMoreClick = this._onBtnMoreClick.bind(this)
+                }
+            }, {
+                key: "_attachSubscribers", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _attachSubscribers");
+                    this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
+                    this.subscribe(e.default.EVENT.ON_PAGE_RESIZE, this._onResize);
+                    this.subscribe(e.default.EVENT.ON_PAGE_CONTENT_SHOW, this._onResize);
+                    this.subscribe(e.default.ACTION.UPDATE_OLAPIC_IMAGES, this._updateOlapicImages)
+                }
+            }, {
+                key: "_detachSubscribers", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _detachSubscribers");
+                    this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
+                    this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady);
+                    this.unsubscribe(e.default.EVENT.ON_PAGE_RESIZE, this._onResize);
+                    this.unsubscribe(e.default.EVENT.ON_PAGE_CONTENT_SHOW, this._onResize);
+                    this.unsubscribe(e.default.ACTION.UPDATE_OLAPIC_IMAGES, this._updateOlapicImages)
+                }
+            }, {
+                key: "_onFrameworkReady", value: function () {
+                }
+            }, {
+                key: "_attachDOMListeners", value: function () {
+                    this.$el.on("keypress click", this.SELECTOR_OLAPIC_IMAGE, this._openOlapicGallery);
+                    this.$btnMore.on("click", this._onBtnMoreClick)
+                }
+            }, {
+                key: "_detachDOMListeners", value: function () {
+                    this.$el.off("keypress click", this.SELECTOR_OLAPIC_IMAGE, this._openOlapicGallery);
+                    this.$window.off("scroll", this.createProductUrlRequest);
+                    this.$btnMore.off("click", this._onBtnMoreClick)
+                }
+            }, {
+                key: "_onDOMReady", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _onDOMReady");
+                    this._cacheDOMElements();
+                    this._attachSubscribers();
+                    this._attachDOMListeners();
+                    if (this.settings.productId) this.$window.one("scroll", this.createProductUrlRequest.bind(this, !1)); else this.createRegularUrlRequest()
+                }
+            }, {
+                key: "_updateOlapicImages", value: function (a) {
+                    this.$el.attr("data-product-id", a);
+                    this.settings.productId = this.$el.attr("data-product-id");
+                    this.createProductUrlRequest(!0)
+                }
+            }, {
+                key: "_onBtnMoreClick", value: function () {
+                    this.fetchNext(this.settings.count)
+                }
+            }, {
+                key: "_onMediaFetched", value: function (a, b) {
+                    h.default.INFO(this.constructor.name, ":: _onMediaFetched ");
+                    this._media.media.length && (this.$el.addClass(e.default.CLASS.IS_VISIBLE_STATE), this._media.media.slice(-b).map(this._renderTemplate), this.$olapicImages = this.$el.find(this.SELECTOR_OLAPIC_IMAGE), this._onResize())
+                }
+            }, {
+                key: "_renderTemplate", value: function (a) {
+                    var d = $(this.$olapicImageTemplate);
+                    d.css({"background-image": "url(".concat(a.images.normal, ")")});
+                    d.find(this.SELECTOR_USER_NAME).text(a.uploader.name);
+                    d.find(this.SELECTOR_USER).text(a.uploader.name);
+                    d.find(this.SELECTOR_USER_AVATAR).attr("src", a.uploader.avatar_url);
+                    a = 24 == this.settings.count ? this.PAGE_SETTINGS : this.COMPONENT_SETTINGS;
+                    this.$placeholder.children().append(this._createColumn(a).append(d))
+                }
+            }, {
+                key: "_createColumn", value: function (a) {
+                    var b = $("\x3cdiv/\x3e");
+                    0 < a.COLS_SM && b.addClass("u-cols-sm-".concat(a.COLS_SM, "-").concat(a.TOTAL_COLS_SM));
+                    0 < a.COLS_MD && b.addClass("u-cols-md-".concat(a.COLS_MD, "-").concat(a.TOTAL_COLS_MD));
+                    0 < a.COLS_LG && b.addClass("u-cols-lg-".concat(a.COLS_LG, "-").concat(a.TOTAL_COLS_LG));
+                    a.SPACERS_LG && b.addClass("u-cols-".concat(a.SPACERS_LG.placement, "-lg-").concat(a.SPACERS_LG.amount, "-").concat(a.TOTAL_COLS_LG));
+                    return b
+                }
+            }, {
+                key: "_openOlapicGallery", value: function (a, b) {
+                    a.preventDefault();
+                    if ("click" === a.type || a.key.match(e.default.KEYSTROKE.ENTER)) {
+                        a = $(a.currentTarget);
+                        var d = a.data("template"), c = this.$olapicImages.index(a);
+                        this.publish(e.default.ACTION.SHOW_LIGHTBOX, {
+                            template: d,
+                            $el: a,
+                            nopadding: !0,
+                            classes: b ? b : "olapic-style"
+                        });
+                        this._initOlapicGallery(c)
                     }
-                }, {
-                    key: "_cacheDOMElements", value: function () {
-                        this.settings = this.$el.data();
-                        this.settings.version = this.settings.version ? this.settings.version : "v2.2";
-                        this.settings.wrapResponses = this.settings.wrapResponses ? this.settings.wrapResponses : "1";
-                        this.$btnMore = this.$el.find(this.SELECTOR_BUTTON_MORE);
-                        this.$placeholder = this.$el.find(this.SELECTOR_CONTENT);
-                        this.$window = $(window);
-                        this.$handlebarOlapicSlideTemplate = $(this.HANDLEBAR_SOURCE).html();
-                        this.$olapicImageTemplate = $("#" + this.settings.template).html()
-                    }
-                }, {
-                    key: "_jQueryScopeBinding", value: function () {
-                        this._onDOMReady = this._onDOMReady.bind(this);
-                        this._onMediaFetched = this._onMediaFetched.bind(this);
-                        this._renderTemplate = this._renderTemplate.bind(this);
-                        this._openOlapicGallery = this._openOlapicGallery.bind(this);
-                        this._onResize = this._onResize.bind(this);
-                        this._onBtnMoreClick = this._onBtnMoreClick.bind(this)
-                    }
-                },
-                {
-                    key: "_attachSubscribers", value: function () {
-                        h.default.INFO(this.constructor.name, ":: _attachSubscribers");
-                        this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
-                        this.subscribe(e.default.EVENT.ON_PAGE_RESIZE, this._onResize);
-                        this.subscribe(e.default.EVENT.ON_PAGE_CONTENT_SHOW, this._onResize);
-                        this.subscribe(e.default.ACTION.UPDATE_OLAPIC_IMAGES, this._updateOlapicImages)
-                    }
-                }, {
-                    key: "_detachSubscribers", value: function () {
-                        h.default.INFO(this.constructor.name, ":: _detachSubscribers");
-                        this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY,
-                            this._onFrameworkReady);
-                        this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady);
-                        this.unsubscribe(e.default.EVENT.ON_PAGE_RESIZE, this._onResize);
-                        this.unsubscribe(e.default.EVENT.ON_PAGE_CONTENT_SHOW, this._onResize);
-                        this.unsubscribe(e.default.ACTION.UPDATE_OLAPIC_IMAGES, this._updateOlapicImages)
-                    }
-                }, {
-                    key: "_onFrameworkReady", value: function () {
-                    }
-                }, {
-                    key: "_attachDOMListeners", value: function () {
-                        this.$el.on("keypress click", this.SELECTOR_OLAPIC_IMAGE, this._openOlapicGallery);
-                        this.$btnMore.on("click",
-                            this._onBtnMoreClick)
-                    }
-                }, {
-                    key: "_detachDOMListeners", value: function () {
-                        this.$el.off("keypress click", this.SELECTOR_OLAPIC_IMAGE, this._openOlapicGallery);
-                        this.$window.off("scroll", this.createProductUrlRequest);
-                        this.$btnMore.off("click", this._onBtnMoreClick)
-                    }
-                }, {
-                    key: "_onDOMReady", value: function () {
-                        h.default.INFO(this.constructor.name, ":: _onDOMReady");
-                        this._cacheDOMElements();
-                        this._attachSubscribers();
-                        this._attachDOMListeners();
-                        if (this.settings.productId) this.$window.one("scroll", this.createProductUrlRequest.bind(this,
-                            !1)); else this.createRegularUrlRequest()
-                    }
-                }, {
-                    key: "_updateOlapicImages", value: function (a) {
-                        this.$el.attr("data-product-id", a);
-                        this.settings.productId = this.$el.attr("data-product-id");
-                        this.createProductUrlRequest(!0)
-                    }
-                }, {
-                    key: "_onBtnMoreClick", value: function () {
-                        this.fetchNext(this.settings.count)
-                    }
-                }, {
-                    key: "_onMediaFetched", value: function (a, b) {
-                        h.default.INFO(this.constructor.name, ":: _onMediaFetched ");
-                        this._media.media.length && (this.$el.addClass(e.default.CLASS.IS_VISIBLE_STATE), this._media.media.slice(-b).map(this._renderTemplate),
-                            this.$olapicImages = this.$el.find(this.SELECTOR_OLAPIC_IMAGE), this._onResize())
-                    }
-                }, {
-                    key: "_renderTemplate", value: function (a) {
-                        var d = $(this.$olapicImageTemplate);
-                        d.css({"background-image": "url(".concat(a.images.normal, ")")});
-                        d.find(this.SELECTOR_USER_NAME).text(a.uploader.name);
-                        d.find(this.SELECTOR_USER).text(a.uploader.name);
-                        d.find(this.SELECTOR_USER_AVATAR).attr("src", a.uploader.avatar_url);
-                        a = 24 == this.settings.count ? this.PAGE_SETTINGS : this.COMPONENT_SETTINGS;
-                        this.$placeholder.children().append(this._createColumn(a).append(d))
-                    }
-                },
-                {
-                    key: "_createColumn", value: function (a) {
-                        var b = $("\x3cdiv/\x3e");
-                        0 < a.COLS_SM && b.addClass("u-cols-sm-".concat(a.COLS_SM, "-").concat(a.TOTAL_COLS_SM));
-                        0 < a.COLS_MD && b.addClass("u-cols-md-".concat(a.COLS_MD, "-").concat(a.TOTAL_COLS_MD));
-                        0 < a.COLS_LG && b.addClass("u-cols-lg-".concat(a.COLS_LG, "-").concat(a.TOTAL_COLS_LG));
-                        a.SPACERS_LG && b.addClass("u-cols-".concat(a.SPACERS_LG.placement, "-lg-").concat(a.SPACERS_LG.amount, "-").concat(a.TOTAL_COLS_LG));
-                        return b
-                    }
-                }, {
-                    key: "_openOlapicGallery", value: function (a, b) {
-                        a.preventDefault();
-                        if ("click" === a.type || a.key.match(e.default.KEYSTROKE.ENTER)) {
-                            a = $(a.currentTarget);
-                            var d = a.data("template"), c = this.$olapicImages.index(a);
-                            this.publish(e.default.ACTION.SHOW_LIGHTBOX, {
-                                template: d,
-                                $el: a,
-                                nopadding: !0,
-                                classes: b ? b : "olapic-style"
-                            });
-                            this._initOlapicGallery(c)
+                }
+            }, {
+                key: "_initOlapicGallery", value: function (a) {
+                    var b = $(this.SELECTOR_OLAPIC_SLIDER).slick("getSlick"),
+                        d = Handlebars.compile(this.$handlebarOlapicSlideTemplate)({media: this._media.media});
+                    b.addSlide(d);
+                    b.goTo(a, !0);
+                    this.publish(e.default.EVENT.ON_OLAPIC_SLIDES_ADDED, a)
+                }
+            }, {
+                key: "_onResize", value: function () {
+                    var a = this;
+                    clearTimeout(this.RESIZE_TIMER);
+                    this.RESIZE_TIMER = setTimeout(function () {
+                        if (a.$olapicImages) {
+                            var b = a.$olapicImages.first().width();
+                            a.$olapicImages.css("height", b)
                         }
-                    }
-                }, {
-                    key: "_initOlapicGallery", value: function (a) {
-                        var b = $(this.SELECTOR_OLAPIC_SLIDER).slick("getSlick"),
-                            d = Handlebars.compile(this.$handlebarOlapicSlideTemplate)({media: this._media.media});
-                        b.addSlide(d);
-                        b.goTo(a, !0);
-                        this.publish(e.default.EVENT.ON_OLAPIC_SLIDES_ADDED,
-                            a)
-                    }
-                }, {
-                    key: "_onResize", value: function () {
-                        var a = this;
-                        clearTimeout(this.RESIZE_TIMER);
-                        this.RESIZE_TIMER = setTimeout(function () {
-                            if (a.$olapicImages) {
-                                var b = a.$olapicImages.first().width();
-                                a.$olapicImages.css("height", b)
-                            }
-                        }, this.RESIZE_TIMEOUT)
-                    }
-                }]);
+                    }, this.RESIZE_TIMEOUT)
+                }
+            }]);
             return a
         }(p.default);
         t.exports = f
@@ -7214,12 +6977,11 @@
     35: [function (f, t, p) {
         function m(a) {
             "@babel/helpers - typeof";
-            m = "function" === typeof Symbol && "symbol" === typeof Symbol.iterator ?
-                function (a) {
-                    return typeof a
-                } : function (a) {
-                    return a && "function" === typeof Symbol && a.constructor === Symbol && a !== Symbol.prototype ? "symbol" : typeof a
-                };
+            m = "function" === typeof Symbol && "symbol" === typeof Symbol.iterator ? function (a) {
+                return typeof a
+            } : function (a) {
+                return a && "function" === typeof Symbol && a.constructor === Symbol && a !== Symbol.prototype ? "symbol" : typeof a
+            };
             return m(a)
         }
 
@@ -7244,11 +7006,10 @@
         }
 
         function l(a, b, d) {
-            l = "undefined" !== typeof Reflect && Reflect.get ? Reflect.get :
-                function (a, b, d) {
-                    for (; !Object.prototype.hasOwnProperty.call(a, b) && (a = g(a), null !== a);) ;
-                    if (a) return b = Object.getOwnPropertyDescriptor(a, b), b.get ? b.get.call(d) : b.value
-                };
+            l = "undefined" !== typeof Reflect && Reflect.get ? Reflect.get : function (a, b, d) {
+                for (; !Object.prototype.hasOwnProperty.call(a, b) && (a = g(a), null !== a);) ;
+                if (a) return b = Object.getOwnPropertyDescriptor(a, b), b.get ? b.get.call(d) : b.value
+            };
             return l(a, b, d || a)
         }
 
@@ -7263,8 +7024,7 @@
                 a.__proto__ = b;
                 return a
             };
-            return n(a,
-                b)
+            return n(a, b)
         }
 
         function w(a) {
@@ -7287,9 +7047,8 @@
             if ("undefined" === typeof Reflect || !Reflect.construct || Reflect.construct.sham) return !1;
             if ("function" === typeof Proxy) return !0;
             try {
-                return Boolean.prototype.valueOf.call(Reflect.construct(Boolean,
-                    [], function () {
-                    })), !0
+                return Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {
+                })), !0
             } catch (a) {
                 return !1
             }
@@ -7309,8 +7068,7 @@
             function b() {
                 if (!(this instanceof b)) throw new TypeError("Cannot call a class as a function");
                 var a = d.apply(this, arguments);
-                h.default.INFO(a.constructor.name,
-                    ":: Constructor");
+                h.default.INFO(a.constructor.name, ":: Constructor");
                 a._jQueryScopeBinding();
                 a._declareConstants();
                 a.subscribe(e.default.EVENT.ON_DOCUMENT_READY, a._onDOMReady);
@@ -7333,8 +7091,7 @@
                 }
             }, {
                 key: "_cacheDOMElements", value: function () {
-                    this.$slider =
-                        this.$el.find(this.SELECTOR_SLIDER)
+                    this.$slider = this.$el.find(this.SELECTOR_SLIDER)
                 }
             }, {
                 key: "_jQueryScopeBinding", value: function () {
@@ -7349,67 +7106,61 @@
                     h.default.INFO(this.constructor.name, ":: _attachSubscribers");
                     this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady)
                 }
-            },
-                {
-                    key: "_detachSubscribers", value: function () {
-                        h.default.INFO(this.constructor.name, ":: _detachSubscribers");
-                        this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
-                        this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady)
-                    }
-                }, {
-                    key: "_onFrameworkReady", value: function () {
-                    }
-                }, {
-                    key: "_attachDOMListeners", value: function () {
-                        this.$slider.on("beforeChange", this._checkArrowState)
-                    }
-                }, {
-                    key: "_detachDOMListeners", value: function () {
-                        this.$slider.off("beforeChange", this._checkArrowState);
-                        this.$nextArrow &&
-                        this.$nextArrow.off("click", this._slideToNext);
-                        this.$prevArrow && this.$prevArrow.off("click", this._slideToPrevious)
-                    }
-                }, {
-                    key: "_onDOMReady", value: function () {
-                        h.default.INFO(this.constructor.name, ":: _onDOMReady");
-                        this._cacheDOMElements();
-                        this._attachSubscribers();
-                        this._attachDOMListeners();
-                        this._initSlider()
-                    }
-                }, {
-                    key: "_initSlider", value: function () {
-                        this.$slider.slick({arrows: !1, infinite: !1, speed: 300, draggable: !1, touchMove: !1});
-                        this.slick = this.$slider.slick("getSlick");
-                        this._appendArrows();
-                        this.$slider.children().show()
-                    }
-                },
-                {
-                    key: "_appendArrows", value: function () {
-                        this.slick && 1 < this.slick.slideCount && this.$slider.append("\x3cbutton type\x3d'button' aria-label\x3d'previous item' class\x3d'product-slider-arrow slick-disabled " + e.default.CLASS.HAS_DISABLED_BUTTON_STYLE + "' tabindex\x3d'-1'\x3e\x3c/button\x3e\x3cbutton type\x3d'button' aria-label\x3d'next item' class\x3d'product-slider-arrow " + e.default.CLASS.HAS_DISABLED_BUTTON_STYLE + "'\x3e\x3c/button\x3e");
-                        this.slick && (this.$nextArrow = this.$el.find(".product-slider-arrow:last"),
-                            this.$prevArrow = this.$el.find(".product-slider-arrow:first"), this.$nextArrow.on("click", this._slideToNext), this.$prevArrow.on("click", this._slideToPrevious))
-                    }
-                }, {
-                    key: "_slideToNext", value: function () {
-                        this.$slider.slick("slickNext")
-                    }
-                }, {
-                    key: "_slideToPrevious", value: function () {
-                        this.$slider.slick("slickPrev")
-                    }
-                }, {
-                    key: "_checkArrowState", value: function (a, b, d, e) {
-                        0 === e ? (this.$prevArrow.addClass(this.CLASS_SLICK_DISABLED), c.default.Accessibility.preventFocus(this.$prevArrow), this.$nextArrow.removeClass(this.CLASS_SLICK_DISABLED),
-                            c.default.Accessibility.allowFocus(this.$nextArrow)) : e === b.slideCount - 1 ? (this.$nextArrow.addClass(this.CLASS_SLICK_DISABLED), c.default.Accessibility.preventFocus(this.$nextArrow), this.$prevArrow.removeClass(this.CLASS_SLICK_DISABLED), c.default.Accessibility.allowFocus(this.$prevArrow)) : (this.$nextArrow.removeClass(this.CLASS_SLICK_DISABLED), this.$prevArrow.removeClass(this.CLASS_SLICK_DISABLED), c.default.Accessibility.allowFocus(this.$prevArrow.add(this.$prevArrow)))
-                    }
-                }]);
+            }, {
+                key: "_detachSubscribers", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _detachSubscribers");
+                    this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
+                    this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady)
+                }
+            }, {
+                key: "_onFrameworkReady", value: function () {
+                }
+            }, {
+                key: "_attachDOMListeners", value: function () {
+                    this.$slider.on("beforeChange", this._checkArrowState)
+                }
+            }, {
+                key: "_detachDOMListeners", value: function () {
+                    this.$slider.off("beforeChange", this._checkArrowState);
+                    this.$nextArrow && this.$nextArrow.off("click", this._slideToNext);
+                    this.$prevArrow && this.$prevArrow.off("click", this._slideToPrevious)
+                }
+            }, {
+                key: "_onDOMReady", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _onDOMReady");
+                    this._cacheDOMElements();
+                    this._attachSubscribers();
+                    this._attachDOMListeners();
+                    this._initSlider()
+                }
+            }, {
+                key: "_initSlider", value: function () {
+                    this.$slider.slick({arrows: !1, infinite: !1, speed: 300, draggable: !1, touchMove: !1});
+                    this.slick = this.$slider.slick("getSlick");
+                    this._appendArrows();
+                    this.$slider.children().show()
+                }
+            }, {
+                key: "_appendArrows", value: function () {
+                    this.slick && 1 < this.slick.slideCount && this.$slider.append("\x3cbutton type\x3d'button' aria-label\x3d'previous item' class\x3d'product-slider-arrow slick-disabled " + e.default.CLASS.HAS_DISABLED_BUTTON_STYLE + "' tabindex\x3d'-1'\x3e\x3c/button\x3e\x3cbutton type\x3d'button' aria-label\x3d'next item' class\x3d'product-slider-arrow " + e.default.CLASS.HAS_DISABLED_BUTTON_STYLE + "'\x3e\x3c/button\x3e");
+                    this.slick && (this.$nextArrow = this.$el.find(".product-slider-arrow:last"), this.$prevArrow = this.$el.find(".product-slider-arrow:first"), this.$nextArrow.on("click", this._slideToNext), this.$prevArrow.on("click", this._slideToPrevious))
+                }
+            }, {
+                key: "_slideToNext", value: function () {
+                    this.$slider.slick("slickNext")
+                }
+            }, {
+                key: "_slideToPrevious", value: function () {
+                    this.$slider.slick("slickPrev")
+                }
+            }, {
+                key: "_checkArrowState", value: function (a, b, d, e) {
+                    0 === e ? (this.$prevArrow.addClass(this.CLASS_SLICK_DISABLED), c.default.Accessibility.preventFocus(this.$prevArrow), this.$nextArrow.removeClass(this.CLASS_SLICK_DISABLED), c.default.Accessibility.allowFocus(this.$nextArrow)) : e === b.slideCount - 1 ? (this.$nextArrow.addClass(this.CLASS_SLICK_DISABLED), c.default.Accessibility.preventFocus(this.$nextArrow), this.$prevArrow.removeClass(this.CLASS_SLICK_DISABLED), c.default.Accessibility.allowFocus(this.$prevArrow)) : (this.$nextArrow.removeClass(this.CLASS_SLICK_DISABLED), this.$prevArrow.removeClass(this.CLASS_SLICK_DISABLED), c.default.Accessibility.allowFocus(this.$prevArrow.add(this.$prevArrow)))
+                }
+            }]);
             return b
         }(p.default);
-        t.exports =
-            f
+        t.exports = f
     }, {
         "./../../../js/base/appeaser-component-base.js": 47,
         "./../../../js/base/logger.js": 51,
@@ -7431,8 +7182,7 @@
             return c && c.__esModule ? c : {default: c}
         }
 
-        function q(c,
-                   a) {
+        function q(c, a) {
             for (var b = 0; b < a.length; b++) {
                 var d = a[b];
                 d.enumerable = d.enumerable || !1;
@@ -7457,8 +7207,7 @@
         }
 
         function v(c, a) {
-            if ("function" !== typeof a &&
-                null !== a) throw new TypeError("Super expression must either be null or a function");
+            if ("function" !== typeof a && null !== a) throw new TypeError("Super expression must either be null or a function");
             c.prototype = Object.create(a && a.prototype, {constructor: {value: c, writable: !0, configurable: !0}});
             a && n(c, a)
         }
@@ -7527,90 +7276,87 @@
                     this._detachSubscribers();
                     l(g(a.prototype), "destroy", this).call(this)
                 }
-            },
-                {
-                    key: "_declareConstants", value: function () {
-                        this.CLASS_ACTIVE_SLIDE = "active-slide"
+            }, {
+                key: "_declareConstants", value: function () {
+                    this.CLASS_ACTIVE_SLIDE = "active-slide"
+                }
+            }, {
+                key: "_cacheDOMElements", value: function () {
+                }
+            }, {
+                key: "_jQueryScopeBinding", value: function () {
+                    this._onDOMReady = this._onDOMReady.bind(this);
+                    this._initializeActiveSlide = this._initializeActiveSlide.bind(this);
+                    this._scaleVisibleSlides = this._scaleVisibleSlides.bind(this)
+                }
+            }, {
+                key: "_attachSubscribers", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _attachSubscribers");
+                    this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
+                    this.subscribe(e.default.EVENT.ON_OLAPIC_SLIDES_ADDED, this._onSlidesAdded)
+                }
+            }, {
+                key: "_detachSubscribers", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _detachSubscribers");
+                    this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
+                    this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady);
+                    this.unsubscribe(e.default.EVENT.ON_OLAPIC_SLIDES_ADDED, this._onSlidesAdded)
+                }
+            }, {
+                key: "_onFrameworkReady", value: function () {
+                }
+            }, {
+                key: "_attachDOMListeners", value: function () {
+                }
+            }, {
+                key: "_detachDOMListeners", value: function () {
+                }
+            }, {
+                key: "_onDOMReady", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _onDOMReady");
+                    this._cacheDOMElements();
+                    this._attachSubscribers();
+                    this._attachDOMListeners();
+                    this._initSlider()
+                }
+            }, {
+                key: "_initSlider", value: function () {
+                    this.$el.slick({
+                        prevArrow: "\x3cdiv class\x3d'main-slider-arrow'\x3e\x3c/div\x3e",
+                        nextArrow: "\x3cdiv class\x3d'main-slider-arrow'\x3e\x3c/div\x3e",
+                        speed: 300
+                    });
+                    this.$el.on("afterChange", this._initializeActiveSlide);
+                    if (!Modernizr.mq(e.default.MQ.IS_DESKTOP)) this.$el.on("setPosition", this._scaleVisibleSlides)
+                }
+            }, {
+                key: "_scaleVisibleSlides", value: function () {
+                    if (this.$activeSlide) {
+                        var a = this.$activeSlide.find(".image"), b = this.$activeSlide.next().find(".image"),
+                            c = this.$activeSlide.prev().find(".image");
+                        a.height(a.width());
+                        b.height(b.width());
+                        c.height(c.width());
+                        this.$activeSlide.css("height", "");
+                        this.$el.find(".o-olapic-slide:not(.active-slide)").height(this.$activeSlide.height())
                     }
-                }, {
-                    key: "_cacheDOMElements", value: function () {
-                    }
-                }, {
-                    key: "_jQueryScopeBinding", value: function () {
-                        this._onDOMReady = this._onDOMReady.bind(this);
-                        this._initializeActiveSlide = this._initializeActiveSlide.bind(this);
-                        this._scaleVisibleSlides = this._scaleVisibleSlides.bind(this)
-                    }
-                }, {
-                    key: "_attachSubscribers", value: function () {
-                        h.default.INFO(this.constructor.name, ":: _attachSubscribers");
-                        this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY,
-                            this._onFrameworkReady);
-                        this.subscribe(e.default.EVENT.ON_OLAPIC_SLIDES_ADDED, this._onSlidesAdded)
-                    }
-                }, {
-                    key: "_detachSubscribers", value: function () {
-                        h.default.INFO(this.constructor.name, ":: _detachSubscribers");
-                        this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
-                        this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady);
-                        this.unsubscribe(e.default.EVENT.ON_OLAPIC_SLIDES_ADDED, this._onSlidesAdded)
-                    }
-                }, {
-                    key: "_onFrameworkReady", value: function () {
-                    }
-                }, {
-                    key: "_attachDOMListeners",
-                    value: function () {
-                    }
-                }, {
-                    key: "_detachDOMListeners", value: function () {
-                    }
-                }, {
-                    key: "_onDOMReady", value: function () {
-                        h.default.INFO(this.constructor.name, ":: _onDOMReady");
-                        this._cacheDOMElements();
-                        this._attachSubscribers();
-                        this._attachDOMListeners();
-                        this._initSlider()
-                    }
-                }, {
-                    key: "_initSlider", value: function () {
-                        this.$el.slick({
-                            prevArrow: "\x3cdiv class\x3d'main-slider-arrow'\x3e\x3c/div\x3e",
-                            nextArrow: "\x3cdiv class\x3d'main-slider-arrow'\x3e\x3c/div\x3e",
-                            speed: 300
-                        });
-                        this.$el.on("afterChange", this._initializeActiveSlide);
-                        if (!Modernizr.mq(e.default.MQ.IS_DESKTOP)) this.$el.on("setPosition", this._scaleVisibleSlides)
-                    }
-                }, {
-                    key: "_scaleVisibleSlides", value: function () {
-                        if (this.$activeSlide) {
-                            var a = this.$activeSlide.find(".image"), b = this.$activeSlide.next().find(".image"),
-                                c = this.$activeSlide.prev().find(".image");
-                            a.height(a.width());
-                            b.height(b.width());
-                            c.height(c.width());
-                            this.$activeSlide.css("height", "");
-                            this.$el.find(".o-olapic-slide:not(.active-slide)").height(this.$activeSlide.height())
-                        }
-                    }
-                }, {
-                    key: "_initializeActiveSlide", value: function (a,
-                                                                    b, c) {
-                        a.target == this.$el[0] && (this.$activeSlide = $(a.currentTarget).find(".o-olapic-slide[data-slick-index\x3d" + c + "]"), this.$el.find(".slick-slide").removeClass(this.CLASS_ACTIVE_SLIDE), this.$activeSlide.addClass(this.CLASS_ACTIVE_SLIDE), this.__mediator._scanNewBlock(this.$activeSlide[0]))
-                    }
-                }, {
-                    key: "_onSlidesAdded", value: function (a) {
-                        this.$activeSlide = this.$el.find("[data-slick-index\x3d" + a + "]").addClass(this.CLASS_ACTIVE_SLIDE)
-                    }
-                }]);
+                }
+            }, {
+                key: "_initializeActiveSlide", value: function (a, b, c) {
+                    a.target == this.$el[0] && (this.$activeSlide = $(a.currentTarget).find(".o-olapic-slide[data-slick-index\x3d" + c + "]"), this.$el.find(".slick-slide").removeClass(this.CLASS_ACTIVE_SLIDE), this.$activeSlide.addClass(this.CLASS_ACTIVE_SLIDE), this.__mediator._scanNewBlock(this.$activeSlide[0]))
+                }
+            }, {
+                key: "_onSlidesAdded", value: function (a) {
+                    this.$activeSlide = this.$el.find("[data-slick-index\x3d" + a + "]").addClass(this.CLASS_ACTIVE_SLIDE)
+                }
+            }]);
             return a
         }(p.default);
         t.exports = f
     }, {
         "./../../../js/base/appeaser-component-base.js": 47,
-        "./../../../js/base/logger.js": 51, "./../../../themes/p11/enums.js": 65
+        "./../../../js/base/logger.js": 51,
+        "./../../../themes/p11/enums.js": 65
     }],
     37: [function (f, t, p) {
         function m(c) {
@@ -7631,8 +7377,7 @@
             for (var b = 0; b < a.length; b++) {
                 var d = a[b];
                 d.enumerable = d.enumerable || !1;
-                d.configurable =
-                    !0;
+                d.configurable = !0;
                 "value" in d && (d.writable = !0);
                 Object.defineProperty(c, d.key, d)
             }
@@ -7751,8 +7496,7 @@
                     this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
                     this.subscribe(e.default.ACTION.SHOW_PAGE_CONTENT, this._showPageContent);
                     this.subscribe(e.default.ACTION.HIDE_PAGE_CONTENT, this._hidePageContent);
-                    this.subscribe(e.default.ACTION.UPDATE_PAGE_CONTENT_MARGIN_CONTRIBUTION,
-                        this._updateMarginMap)
+                    this.subscribe(e.default.ACTION.UPDATE_PAGE_CONTENT_MARGIN_CONTRIBUTION, this._updateMarginMap)
                 }
             }, {
                 key: "_detachSubscribers", value: function () {
@@ -7763,50 +7507,47 @@
                     this.unsubscribe(e.default.ACTION.HIDE_PAGE_CONTENT, this._hidePageContent);
                     this.unsubscribe(e.default.ACTION.UPDATE_PAGE_CONTENT_MARGIN_CONTRIBUTION, this._updateMarginMap)
                 }
-            },
-                {
-                    key: "_onFrameworkReady", value: function () {
-                    }
-                }, {
-                    key: "_attachDOMListeners", value: function () {
-                    }
-                }, {
-                    key: "_detachDOMListeners", value: function () {
-                    }
-                }, {
-                    key: "_updateMarginMap", value: function (a) {
-                        if (this.marginContributors) {
-                            for (var b = void 0, d = 0; d < this.marginContributors.length; d++) if (a.element.is(this.marginContributors[d].element) || a.element.is(this.marginContributors[d].selector)) b = this.marginContributors[d];
-                            b || (b = {
-                                element: a.element,
-                                margin: 0,
-                                selector: a.selector
-                            }, this.marginContributors.push(b));
-                            this.totalMargin +=
-                                a.margin - b.margin;
-                            a.duration ? this.$el.animate({"margin-top": this.totalMargin}, a.duration) : this.$el.css("margin-top", this.totalMargin);
-                            this.publish(e.default.EVENT.ON_PAGE_CONTENT_MARGIN_CHANGE, b.element);
-                            b.margin = a.margin
-                        } else a.duration ? this.$el.animate({"margin-top": a.margin}, a.duration) : this.$el.css("margin-top", a.margin), this.marginContributors = [{
+            }, {
+                key: "_onFrameworkReady", value: function () {
+                }
+            }, {
+                key: "_attachDOMListeners", value: function () {
+                }
+            }, {
+                key: "_detachDOMListeners", value: function () {
+                }
+            }, {
+                key: "_updateMarginMap", value: function (a) {
+                    if (this.marginContributors) {
+                        for (var b = void 0, d = 0; d < this.marginContributors.length; d++) if (a.element.is(this.marginContributors[d].element) || a.element.is(this.marginContributors[d].selector)) b = this.marginContributors[d];
+                        b || (b = {
                             element: a.element,
-                            margin: a.margin,
+                            margin: 0,
                             selector: a.selector
-                        }], this.totalMargin = a.margin
-                    }
-                }, {
-                    key: "_showPageContent", value: function () {
-                        var a = 0 < arguments.length &&
-                        void 0 !== arguments[0] ? arguments[0] : {};
-                        this.$el.css("display", "");
-                        this.publish(e.default.EVENT.ON_PAGE_CONTENT_SHOW);
-                        a.hasOwnProperty("restoreScrollPosition") && this.$window.scrollTop(a.restoreScrollPosition)
-                    }
-                }, {
-                    key: "_hidePageContent", value: function () {
-                        this.$el.hide();
-                        this.publish(e.default.EVENT.ON_PAGE_CONTENT_HIDE)
-                    }
-                }]);
+                        }, this.marginContributors.push(b));
+                        this.totalMargin += a.margin - b.margin;
+                        a.duration ? this.$el.animate({"margin-top": this.totalMargin}, a.duration) : this.$el.css("margin-top", this.totalMargin);
+                        this.publish(e.default.EVENT.ON_PAGE_CONTENT_MARGIN_CHANGE, b.element);
+                        b.margin = a.margin
+                    } else a.duration ? this.$el.animate({"margin-top": a.margin}, a.duration) : this.$el.css("margin-top", a.margin), this.marginContributors = [{
+                        element: a.element,
+                        margin: a.margin,
+                        selector: a.selector
+                    }], this.totalMargin = a.margin
+                }
+            }, {
+                key: "_showPageContent", value: function () {
+                    var a = 0 < arguments.length && void 0 !== arguments[0] ? arguments[0] : {};
+                    this.$el.css("display", "");
+                    this.publish(e.default.EVENT.ON_PAGE_CONTENT_SHOW);
+                    a.hasOwnProperty("restoreScrollPosition") && this.$window.scrollTop(a.restoreScrollPosition)
+                }
+            }, {
+                key: "_hidePageContent", value: function () {
+                    this.$el.hide();
+                    this.publish(e.default.EVENT.ON_PAGE_CONTENT_HIDE)
+                }
+            }]);
             return a
         }(p.default);
         t.exports = f
@@ -7841,8 +7582,7 @@
             }
         }
 
-        function r(a,
-                   b, d) {
+        function r(a, b, d) {
             b && q(a.prototype, b);
             d && q(a, d);
             return a
@@ -7858,12 +7598,7 @@
 
         function v(a, b) {
             if ("function" !== typeof b && null !== b) throw new TypeError("Super expression must either be null or a function");
-            a.prototype = Object.create(b && b.prototype, {
-                constructor: {
-                    value: a, writable: !0,
-                    configurable: !0
-                }
-            });
+            a.prototype = Object.create(b && b.prototype, {constructor: {value: a, writable: !0, configurable: !0}});
             b && n(a, b)
         }
 
@@ -7892,8 +7627,7 @@
         }
 
         function u() {
-            if ("undefined" === typeof Reflect || !Reflect.construct ||
-                Reflect.construct.sham) return !1;
+            if ("undefined" === typeof Reflect || !Reflect.construct || Reflect.construct.sham) return !1;
             if ("function" === typeof Proxy) return !0;
             try {
                 return Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {
@@ -7915,8 +7649,7 @@
             c = k(f("./../../../themes/p11/utils.js"));
         f = function (a) {
             function b() {
-                if (!(this instanceof
-                    b)) throw new TypeError("Cannot call a class as a function");
+                if (!(this instanceof b)) throw new TypeError("Cannot call a class as a function");
                 var a = d.apply(this, arguments);
                 h.default.INFO(a.constructor.name, ":: Constructor");
                 a._jQueryScopeBinding();
@@ -7938,8 +7671,7 @@
                 }
             }, {
                 key: "_declareConstants", value: function () {
-                    this.SELECTOR_PAGE_CONTENT =
-                        ".o-page-content";
+                    this.SELECTOR_PAGE_CONTENT = ".o-page-content";
                     this.SELECTOR_OPEN_ON_PAGELOAD = ".open-on-pageload";
                     this.SELECTOR_ERROR_MSG = ".m-error";
                     this.SELECTOR_INPUT_WITH_ERROR = ".m-input.has-error, m-checkbox.has-error, .m-dropdown.has-error";
@@ -7964,8 +7696,7 @@
                     a || (this.publish(e.default.EVENT.ON_DOCUMENT_READY), this.publish(e.default.EVENT.ON_FRAMEWORK_READY), this._scanForTemplatesToLoad())
                 }
             }, {
-                key: "_resumeEvents",
-                value: function () {
+                key: "_resumeEvents", value: function () {
                     this.publish(e.default.EVENT.ON_DOCUMENT_READY);
                     this.publish(e.default.EVENT.ON_FRAMEWORK_READY);
                     this._scanForTemplatesToLoad()
@@ -7981,8 +7712,7 @@
                     this._onKeyDown = this._onKeyDown.bind(this);
                     this._onKeyUp = this._onKeyUp.bind(this);
                     this._onResize = this._onResize.bind(this);
-                    this._onOpenLightBoxClick =
-                        this._onOpenLightBoxClick.bind(this);
+                    this._onOpenLightBoxClick = this._onOpenLightBoxClick.bind(this);
                     this._onMouseDown = this._onMouseDown.bind(this)
                 }
             }, {
@@ -7998,8 +7728,7 @@
             }, {
                 key: "_attachSubscribers", value: function () {
                     h.default.INFO(this.constructor.name, ":: _attachSubscribers");
-                    this.subscribe(e.default.ACTION.ENABLE_SCROLL,
-                        this._enableScroll);
+                    this.subscribe(e.default.ACTION.ENABLE_SCROLL, this._enableScroll);
                     this.subscribe(e.default.ACTION.DISABLE_SCROLL, this._disableScroll);
                     this.subscribe(e.default.ACTION.FORM_VALIDATION, c.default.Form.validate);
                     this.subscribe(e.default.ACTION.INPUT_VALIDATION, c.default.Form.validateInputs);
@@ -8018,8 +7747,7 @@
                 }
             }, {
                 key: "_attachDOMListeners", value: function () {
-                    var a =
-                        this;
+                    var a = this;
                     $(function () {
                         a._onDOMReady()
                     });
@@ -8048,8 +7776,7 @@
             }, {
                 key: "_onKeyDown", value: function (a) {
                     this.publish(e.default.EVENT.ON_KEY_DOWN, a);
-                    !this.keyboard_used && a.key.match(e.default.KEYSTROKE.TAB) && (this.keyboard_used = !0,
-                        this.$body.addClass(this.CLASS_IS_USING_KEYBOARD))
+                    !this.keyboard_used && a.key.match(e.default.KEYSTROKE.TAB) && (this.keyboard_used = !0, this.$body.addClass(this.CLASS_IS_USING_KEYBOARD))
                 }
             }, {
                 key: "_onKeyUp", value: function (a) {
@@ -8068,61 +7795,55 @@
                 key: "_scanForTemplatesToLoad", value: function () {
                     this._onOpenLightBoxClick()
                 }
-            },
-                {
-                    key: "_onOpenLightBoxClick", value: function (a) {
-                        if ("undefined" != typeof a) a.preventDefault(), a = $(a.currentTarget); else {
-                            a = $(this.SELECTOR_OPEN_ON_PAGELOAD).first();
-                            var b = a.data("once-showing");
-                            if (b) {
-                                if ("viewed" === Cookies.get(b)) return;
-                                Cookies.set(b, "viewed")
-                            }
+            }, {
+                key: "_onOpenLightBoxClick", value: function (a) {
+                    if ("undefined" != typeof a) a.preventDefault(), a = $(a.currentTarget); else {
+                        a = $(this.SELECTOR_OPEN_ON_PAGELOAD).first();
+                        var b = a.data("once-showing");
+                        if (b) {
+                            if ("viewed" === Cookies.get(b)) return;
+                            Cookies.set(b, "viewed")
                         }
-                        a.length && (b = a.data(), b.$el = a, b.template ? this.publish(e.default.ACTION.SHOW_LIGHTBOX, b) : h.default.INFO("Could not find template with ID: ", b.template))
                     }
-                }, {
-                    key: "_enableScroll", value: function () {
-                        var a = 0 < arguments.length && void 0 !== arguments[0] ? arguments[0] :
-                            {restoreScrollPosition: !0};
-                        !this.navOpen && this.$body.hasClass(e.default.CLASS.DISABLE_SCROLL) && (this.$body.css("margin-left", ""), this.$header.css("padding-right", ""), this.$body.removeClass(e.default.CLASS.DISABLE_SCROLL), a.restoreScrollPosition && this._scrollContentToDefaultPosition(), this.$touchScrollElement && ($("html,body").off("touchmove", this._preventDefault), this.$touchScrollElement.off("touchmove", this._filterTouchMoveEvent)), this.publish(e.default.EVENT.ON_SCROLL_ENABLED), a.restoreScrollPosition &&
-                        0 < this.previousScrollPosition && this.$window.scrollTop(this.previousScrollPosition + this.scrollCompensation))
-                    }
-                }, {
-                    key: "_disableScroll", value: function () {
-                        var a = 0 < arguments.length && void 0 !== arguments[0] ? arguments[0] : {
-                            forceScrollPosition: !0,
-                            scrollCompensation: 0
-                        };
-                        this.$body.hasClass(e.default.CLASS.DISABLE_SCROLL) || (this.scrollCompensation = a.scrollCompensation, this.previousScrollPosition = this.$window.scrollTop() - this.scrollCompensation, this.$touchScrollElement = a.$touchScrollElement, 0 > this.previousScrollPosition &&
-                        (this.previousScrollPosition = 0), this.$header.css("padding-right", this._getScrollBarWidth()), this.$body.addClass(e.default.CLASS.DISABLE_SCROLL), this.publish(e.default.EVENT.ON_SCROLL_DISABLED), a.forceScrollPosition && this._scrollContentToSavedScrollPosition(), this.$touchScrollElement && ($("html,body").on("touchmove", this._preventDefault), this.$touchScrollElement.on("touchmove", this._filterTouchMoveEvent)))
-                    }
-                }, {
-                    key: "_preventDefault", value: function (a) {
-                        a.preventDefault()
-                    }
-                }, {
-                    key: "_filterTouchMoveEvent",
-                    value: function (a) {
-                        a.stopPropagation();
-                        var b = a.currentTarget, d = b.scrollTop, c = b.scrollHeight, x = b.offsetHeight, e = d + x,
-                            g = 1 !== a.originalEvent.scale, f = window.innerWidth < window.screen.width;
-                        c > x || g || f ? 0 == d ? b.scrollTop = 1 : e == c && (b.scrollTop = d - 1) : a.preventDefault()
-                    }
-                }, {
-                    key: "_scrollContentToSavedScrollPosition", value: function () {
-                        this.$el.find(this.SELECTOR_PAGE_CONTENT).css({top: "-".concat(this.previousScrollPosition, "px")})
-                    }
-                }, {
-                    key: "_scrollContentToDefaultPosition", value: function () {
-                        this.$el.find(this.SELECTOR_PAGE_CONTENT).css({top: ""})
-                    }
-                },
-                {
-                    key: "_onMouseDown", value: function () {
-                        this.keyboard_used && (this.keyboard_used = !1, this.$body.removeClass(this.CLASS_IS_USING_KEYBOARD))
-                    }
-                }]);
+                    a.length && (b = a.data(), b.$el = a, b.template ? this.publish(e.default.ACTION.SHOW_LIGHTBOX, b) : h.default.INFO("Could not find template with ID: ", b.template))
+                }
+            }, {
+                key: "_enableScroll", value: function () {
+                    var a = 0 < arguments.length && void 0 !== arguments[0] ? arguments[0] : {restoreScrollPosition: !0};
+                    !this.navOpen && this.$body.hasClass(e.default.CLASS.DISABLE_SCROLL) && (this.$body.css("margin-left", ""), this.$header.css("padding-right", ""), this.$body.removeClass(e.default.CLASS.DISABLE_SCROLL), a.restoreScrollPosition && this._scrollContentToDefaultPosition(), this.$touchScrollElement && ($("html,body").off("touchmove", this._preventDefault), this.$touchScrollElement.off("touchmove", this._filterTouchMoveEvent)), this.publish(e.default.EVENT.ON_SCROLL_ENABLED), a.restoreScrollPosition && 0 < this.previousScrollPosition && this.$window.scrollTop(this.previousScrollPosition + this.scrollCompensation))
+                }
+            }, {
+                key: "_disableScroll", value: function () {
+                    var a = 0 < arguments.length && void 0 !== arguments[0] ? arguments[0] : {
+                        forceScrollPosition: !0,
+                        scrollCompensation: 0
+                    };
+                    this.$body.hasClass(e.default.CLASS.DISABLE_SCROLL) || (this.scrollCompensation = a.scrollCompensation, this.previousScrollPosition = this.$window.scrollTop() - this.scrollCompensation, this.$touchScrollElement = a.$touchScrollElement, 0 > this.previousScrollPosition && (this.previousScrollPosition = 0), this.$header.css("padding-right", this._getScrollBarWidth()), this.$body.addClass(e.default.CLASS.DISABLE_SCROLL), this.publish(e.default.EVENT.ON_SCROLL_DISABLED), a.forceScrollPosition && this._scrollContentToSavedScrollPosition(), this.$touchScrollElement && ($("html,body").on("touchmove", this._preventDefault), this.$touchScrollElement.on("touchmove", this._filterTouchMoveEvent)))
+                }
+            }, {
+                key: "_preventDefault", value: function (a) {
+                    a.preventDefault()
+                }
+            }, {
+                key: "_filterTouchMoveEvent", value: function (a) {
+                    a.stopPropagation();
+                    var b = a.currentTarget, d = b.scrollTop, c = b.scrollHeight, x = b.offsetHeight, e = d + x,
+                        g = 1 !== a.originalEvent.scale, f = window.innerWidth < window.screen.width;
+                    c > x || g || f ? 0 == d ? b.scrollTop = 1 : e == c && (b.scrollTop = d - 1) : a.preventDefault()
+                }
+            }, {
+                key: "_scrollContentToSavedScrollPosition", value: function () {
+                    this.$el.find(this.SELECTOR_PAGE_CONTENT).css({top: "-".concat(this.previousScrollPosition, "px")})
+                }
+            }, {
+                key: "_scrollContentToDefaultPosition", value: function () {
+                    this.$el.find(this.SELECTOR_PAGE_CONTENT).css({top: ""})
+                }
+            }, {
+                key: "_onMouseDown", value: function () {
+                    this.keyboard_used && (this.keyboard_used = !1, this.$body.removeClass(this.CLASS_IS_USING_KEYBOARD))
+                }
+            }]);
             return b
         }(p.default);
         t.exports = f
@@ -8138,8 +7859,7 @@
             m = "function" === typeof Symbol && "symbol" === typeof Symbol.iterator ? function (a) {
                 return typeof a
             } : function (a) {
-                return a &&
-                "function" === typeof Symbol && a.constructor === Symbol && a !== Symbol.prototype ? "symbol" : typeof a
+                return a && "function" === typeof Symbol && a.constructor === Symbol && a !== Symbol.prototype ? "symbol" : typeof a
             };
             return m(c)
         }
@@ -8166,692 +7886,6 @@
 
         function l(c, a, b) {
             l = "undefined" !== typeof Reflect && Reflect.get ? Reflect.get : function (a, b, c) {
-                for (; !Object.prototype.hasOwnProperty.call(a,
-                    b) && (a = g(a), null !== a);) ;
-                if (a) return b = Object.getOwnPropertyDescriptor(a, b), b.get ? b.get.call(c) : b.value
-            };
-            return l(c, a, b || c)
-        }
-
-        function v(c, a) {
-            if ("function" !== typeof a && null !== a) throw new TypeError("Super expression must either be null or a function");
-            c.prototype = Object.create(a && a.prototype, {constructor: {value: c, writable: !0, configurable: !0}});
-            a && n(c, a)
-        }
-
-        function n(c, a) {
-            n = Object.setPrototypeOf || function (a, d) {
-                a.__proto__ = d;
-                return a
-            };
-            return n(c, a)
-        }
-
-        function w(c) {
-            var a = u();
-            return function () {
-                var b = g(c);
-                if (a) {
-                    var d =
-                        g(this).constructor;
-                    b = Reflect.construct(b, arguments, d)
-                } else b = b.apply(this, arguments);
-                if (!b || "object" !== m(b) && "function" !== typeof b) {
-                    if (void 0 === this) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-                    b = this
-                }
-                return b
-            }
-        }
-
-        function u() {
-            if ("undefined" === typeof Reflect || !Reflect.construct || Reflect.construct.sham) return !1;
-            if ("function" === typeof Proxy) return !0;
-            try {
-                return Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {
-                })), !0
-            } catch (c) {
-                return !1
-            }
-        }
-
-        function g(c) {
-            g =
-                Object.setPrototypeOf ? Object.getPrototypeOf : function (a) {
-                    return a.__proto__ || Object.getPrototypeOf(a)
-                };
-            return g(c)
-        }
-
-        p = k(f("./../../../js/base/appeaser-component-base.js"));
-        var h = k(f("./../../../js/base/logger.js")), e = k(f("./../../../themes/p11/enums.js"));
-        f = function (c) {
-            function a() {
-                if (!(this instanceof a)) throw new TypeError("Cannot call a class as a function");
-                var d = b.apply(this, arguments);
-                h.default.INFO(d.constructor.name, ":: Constructor");
-                d._jQueryScopeBinding();
-                d._declareConstants();
-                d.subscribe(e.default.EVENT.ON_DOCUMENT_READY,
-                    d._onDOMReady);
-                return d
-            }
-
-            v(a, c);
-            var b = w(a);
-            r(a, [{
-                key: "destroy", value: function () {
-                    h.default.INFO(this.constructor.name, ":: Destructor");
-                    this._detachDOMListeners();
-                    this._detachSubscribers();
-                    l(g(a.prototype), "destroy", this).call(this)
-                }
-            }, {
-                key: "_declareConstants", value: function () {
-                    this.SELECTOR_PAYMENT_SELECTION = ".card-payment-option, .paypal-payment-option";
-                    this.SELECTOR_CARD_SECTION = ".card-section";
-                    this.SELECTOR_CARD_SELECTION_SECTION = ".card-selection-section";
-                    this.SELECTOR_NEW_CARD_SECTION = ".new-card-section";
-                    this.SELECTOR_RADIO_BTN_SELECT_CARD = ".card-selection-section .m-radio-button";
-                    this.SELECTOR_CVV_CONTAINER = ".card-cvv-input";
-                    this.SELECTOR_CVV = ".cvv";
-                    this.SELECTOR_CHECKBOX_NIF = ".bottom-section .nif input";
-                    this.SELECTOR_INPUT_NIF = ".bottom-section .nif-text";
-                    this.SELECTOR_CHECKBOX_FATTURA = ".bottom-section .fattura input";
-                    this.SELECTOR_INPUT_FATTURA = ".bottom-section .fattura-text";
-                    this.SELECTOR_BOTTOM_SECTION = ".bottom-section";
-                    this.SELECTOR_VISIBLE_INPUT = "input:visible, .m-dropdown:visible input";
-                    this.SELECTOR_VISIBLE_CHECKBOX =
-                        ".m-checkbox:visible input";
-                    this.SELECTOR_HIDDEN_INPUT = "input:hidden";
-                    this.SELECTOR_CHECKBOX_SAVE_CARD = ".save-card input";
-                    this.SELECTOR_LEFT_SECTION = ".left-selection-section";
-                    this.SELECTOR_RIGHT_SECTION = ".right-selection-section";
-                    this.CLASS_ADD_CARD = "add-card-option";
-                    this.CLASS_CARD_PAYMENT = "card-payment-option";
-                    this.CLASS_NOT_SELECTED = "not-selected";
-                    this.IS_CARD_SLOT_FULL = 1 < this.$el.find(".card-section .card-option").length
-                }
-            }, {
-                key: "_cacheDOMElements", value: function () {
-                    this.$radioBtnPaymentSelection =
-                        this.$el.find(this.SELECTOR_PAYMENT_SELECTION);
-                    this.$radioBtnCardSelection = this.$el.find(this.SELECTOR_RADIO_BTN_SELECT_CARD);
-                    this.$cardSection = this.$el.find(this.SELECTOR_CARD_SECTION);
-                    this.$newCardSection = this.$el.find(this.SELECTOR_NEW_CARD_SECTION);
-                    this.$checkBoxNIF = this.$el.find(this.SELECTOR_CHECKBOX_NIF);
-                    this.$inputNif = this.$el.find(this.SELECTOR_INPUT_NIF);
-                    this.$checkBoxFATTURA = this.$el.find(this.SELECTOR_CHECKBOX_FATTURA);
-                    this.$inputFattura = this.$el.find(this.SELECTOR_INPUT_FATTURA);
-                    this.$bottomSection =
-                        this.$el.find(this.SELECTOR_BOTTOM_SECTION);
-                    this.$checkBoxSaveCard = this.$el.find(this.SELECTOR_CHECKBOX_SAVE_CARD);
-                    this.$leftSection = this.$el.find(this.SELECTOR_LEFT_SECTION);
-                    this.$rightSection = this.$el.find(this.SELECTOR_RIGHT_SECTION)
-                }
-            }, {
-                key: "_jQueryScopeBinding", value: function () {
-                    this._onDOMReady = this._onDOMReady.bind(this);
-                    this._onPaymentMethodChosen = this._onPaymentMethodChosen.bind(this);
-                    this._onCardChosen = this._onCardChosen.bind(this);
-                    this._onNifCheckboxChange = this._onNifCheckboxChange.bind(this);
-                    this._onFatturaCheckboxChange = this._onFatturaCheckboxChange.bind(this)
-                }
-            }, {
-                key: "_attachSubscribers", value: function () {
-                    h.default.INFO(this.constructor.name, ":: _attachSubscribers");
-                    this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady)
-                }
-            }, {
-                key: "_detachSubscribers", value: function () {
-                    h.default.INFO(this.constructor.name, ":: _detachSubscribers");
-                    this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady);
-                    this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady)
-                }
-            },
-                {
-                    key: "_onFrameworkReady", value: function () {
-                    }
-                }, {
-                    key: "_attachDOMListeners", value: function () {
-                        this.$radioBtnPaymentSelection.on("change", this._onPaymentMethodChosen);
-                        this.$radioBtnCardSelection.on("change", this._onCardChosen);
-                        this.$checkBoxNIF.on("change", this._onNifCheckboxChange);
-                        this.$checkBoxFATTURA.on("change", this._onFatturaCheckboxChange)
-                    }
-                }, {
-                    key: "_detachDOMListeners", value: function () {
-                        this.$radioBtnPaymentSelection.off("change", this._onPaymentMethodChosen);
-                        this.$radioBtnCardSelection.off("change",
-                            this._onCardChosen);
-                        this.$checkBoxNIF.on("change", this._onNifCheckboxChange);
-                        this.$checkBoxFATTURA.on("change", this._onFatturaCheckboxChange)
-                    }
-                }, {
-                    key: "_onDOMReady", value: function () {
-                        h.default.INFO(this.constructor.name, ":: _onDOMReady");
-                        this._cacheDOMElements();
-                        this._attachSubscribers();
-                        this._attachDOMListeners();
-                        this._prepareExistingCardSection();
-                        this.$newCardSection.add(this.SELECTOR_CVV_CONTAINER).find(this.SELECTOR_HIDDEN_INPUT).prop("disabled", !0)
-                    }
-                }, {
-                    key: "_onNifCheckboxChange", value: function (a) {
-                        $(a.currentTarget).prop("checked") ?
-                            this.$inputNif.show() : this.$inputNif.hide()
-                    }
-                }, {
-                    key: "_onFatturaCheckboxChange", value: function (a) {
-                        $(a.currentTarget).prop("checked") ? this.$inputFattura.show() : this.$inputFattura.hide()
-                    }
-                }, {
-                    key: "_prepareExistingCardSection", value: function () {
-                        this.$el.find(this.SELECTOR_CARD_SELECTION_SECTION).length && this.$newCardSection.addClass(e.default.CLASS.DISPLAY_NONE)
-                    }
-                }, {
-                    key: "_onCardChosen", value: function (a) {
-                        a = $(a.currentTarget);
-                        a.parent().hasClass(this.CLASS_ADD_CARD) ? (this.$newCardSection.removeClass(e.default.CLASS.DISPLAY_NONE).find(this.SELECTOR_VISIBLE_INPUT).prop("disabled",
-                            !1), this.$el.find(this.SELECTOR_CARD_SELECTION_SECTION + " " + this.SELECTOR_CVV_CONTAINER + this.SELECTOR_CVV + " input").prop("disabled", !0), this.IS_CARD_SLOT_FULL || this.$checkBoxSaveCard.prop("disabled", !1)) : (this.$newCardSection.addClass(e.default.CLASS.DISPLAY_NONE).find(this.SELECTOR_HIDDEN_INPUT).prop("disabled", !0), a.siblings(this.SELECTOR_CVV_CONTAINER).find(this.SELECTOR_CVV).removeClass(e.default.CLASS.DISPLAY_NONE).find(this.SELECTOR_VISIBLE_INPUT).prop("disabled", !1));
-                        this.$radioBtnCardSelection.not(a).siblings(this.SELECTOR_CVV_CONTAINER).find(this.SELECTOR_CVV).find(this.SELECTOR_VISIBLE_INPUT).prop("disabled",
-                            !0);
-                        this.$radioBtnCardSelection.not(a).siblings(this.SELECTOR_CVV_CONTAINER).find(this.SELECTOR_CVV).addClass(e.default.CLASS.DISPLAY_NONE)
-                    }
-                }, {
-                    key: "_onPaymentMethodChosen", value: function (a) {
-                        $(a.currentTarget).hasClass(this.CLASS_CARD_PAYMENT) ? (this.$cardSection.show().find(this.SELECTOR_VISIBLE_INPUT + ", " + this.SELECTOR_VISIBLE_CHECKBOX).prop("disabled", !1), this.$leftSection.removeClass(this.CLASS_NOT_SELECTED), this.$rightSection.addClass(this.CLASS_NOT_SELECTED)) : (this.$cardSection.find(this.SELECTOR_VISIBLE_INPUT).add(this.$checkBoxSaveCard).prop("disabled",
-                            !0), this.$cardSection.hide(), this.$rightSection.removeClass(this.CLASS_NOT_SELECTED), this.$leftSection.addClass(this.CLASS_NOT_SELECTED));
-                        this.$bottomSection.show()
-                    }
-                }]);
-            return a
-        }(p.default);
-        t.exports = f
-    }, {
-        "./../../../js/base/appeaser-component-base.js": 47,
-        "./../../../js/base/logger.js": 51,
-        "./../../../themes/p11/enums.js": 65
-    }],
-    40: [function (f, t, p) {
-        function m(c) {
-            "@babel/helpers - typeof";
-            m = "function" === typeof Symbol && "symbol" === typeof Symbol.iterator ? function (a) {
-                return typeof a
-            } : function (a) {
-                return a &&
-                "function" === typeof Symbol && a.constructor === Symbol && a !== Symbol.prototype ? "symbol" : typeof a
-            };
-            return m(c)
-        }
-
-        function k(c) {
-            return c && c.__esModule ? c : {default: c}
-        }
-
-        function q(c, a) {
-            for (var b = 0; b < a.length; b++) {
-                var d = a[b];
-                d.enumerable = d.enumerable || !1;
-                d.configurable = !0;
-                "value" in d && (d.writable = !0);
-                Object.defineProperty(c, d.key, d)
-            }
-        }
-
-        function r(c, a, b) {
-            a && q(c.prototype, a);
-            b && q(c, b);
-            return c
-        }
-
-        function l(c, a, b) {
-            l = "undefined" !== typeof Reflect && Reflect.get ? Reflect.get : function (a, b, c) {
-                for (; !Object.prototype.hasOwnProperty.call(a,
-                    b) && (a = g(a), null !== a);) ;
-                if (a) return b = Object.getOwnPropertyDescriptor(a, b), b.get ? b.get.call(c) : b.value
-            };
-            return l(c, a, b || c)
-        }
-
-        function v(c, a) {
-            if ("function" !== typeof a && null !== a) throw new TypeError("Super expression must either be null or a function");
-            c.prototype = Object.create(a && a.prototype, {constructor: {value: c, writable: !0, configurable: !0}});
-            a && n(c, a)
-        }
-
-        function n(c, a) {
-            n = Object.setPrototypeOf || function (a, d) {
-                a.__proto__ = d;
-                return a
-            };
-            return n(c, a)
-        }
-
-        function w(c) {
-            var a = u();
-            return function () {
-                var b = g(c);
-                if (a) {
-                    var d =
-                        g(this).constructor;
-                    b = Reflect.construct(b, arguments, d)
-                } else b = b.apply(this, arguments);
-                if (!b || "object" !== m(b) && "function" !== typeof b) {
-                    if (void 0 === this) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-                    b = this
-                }
-                return b
-            }
-        }
-
-        function u() {
-            if ("undefined" === typeof Reflect || !Reflect.construct || Reflect.construct.sham) return !1;
-            if ("function" === typeof Proxy) return !0;
-            try {
-                return Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {
-                })), !0
-            } catch (c) {
-                return !1
-            }
-        }
-
-        function g(c) {
-            g =
-                Object.setPrototypeOf ? Object.getPrototypeOf : function (a) {
-                    return a.__proto__ || Object.getPrototypeOf(a)
-                };
-            return g(c)
-        }
-
-        p = k(f("./../../../js/base/appeaser-component-base.js"));
-        var h = k(f("./../../../js/base/logger.js")), e = k(f("./../../../themes/p11/enums.js"));
-        f = function (c) {
-            function a() {
-                if (!(this instanceof a)) throw new TypeError("Cannot call a class as a function");
-                var d = b.apply(this, arguments);
-                h.default.INFO(d.constructor.name, ":: Constructor");
-                d._jQueryScopeBinding();
-                d._declareConstants();
-                d.subscribe(e.default.EVENT.ON_DOCUMENT_READY,
-                    d._onDOMReady);
-                return d
-            }
-
-            v(a, c);
-            var b = w(a);
-            r(a, [{
-                key: "destroy", value: function () {
-                    h.default.INFO(this.constructor.name, ":: Destructor");
-                    this._detachDOMListeners();
-                    this._detachSubscribers();
-                    l(g(a.prototype), "destroy", this).call(this)
-                }
-            }, {
-                key: "_declareConstants", value: function () {
-                    this.SELECTOR_LOCATION_WRAPPER = ".wrapper";
-                    this.SELECTOR_RADIO_BUTTON_INPUT = ".a-radio-button"
-                }
-            }, {
-                key: "_onDOMReady", value: function () {
-                    h.default.INFO(this.constructor.name, ":: _onDOMReady");
-                    this._attachSubscribers();
-                    this._attachDOMListeners()
-                }
-            },
-                {
-                    key: "_jQueryScopeBinding", value: function () {
-                        this._onDOMReady = this._onDOMReady.bind(this);
-                        this._onMapMarkerClick = this._onMapMarkerClick.bind(this);
-                        this._onWrapperClick = this._onWrapperClick.bind(this)
-                    }
-                }, {
-                    key: "_attachSubscribers", value: function () {
-                        h.default.INFO(this.constructor.name, ":: _attachSubscribers");
-                        this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
-                        this.subscribe(e.default.EVENT.ON_MAP_MARKER_CLICK, this._onMapMarkerClick)
-                    }
-                }, {
-                    key: "_detachSubscribers", value: function () {
-                        h.default.INFO(this.constructor.name,
-                            ":: _detachSubscribers");
-                        this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
-                        this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady);
-                        this.unsubscribe(e.default.EVENT.ON_MAP_MARKER_CLICK, this._onMapMarkerClick)
-                    }
-                }, {
-                    key: "_onFrameworkReady", value: function () {
-                    }
-                }, {
-                    key: "_attachDOMListeners", value: function () {
-                        this.$el.on("click", this.SELECTOR_LOCATION_WRAPPER, this._onWrapperClick)
-                    }
-                }, {
-                    key: "_detachDOMListeners", value: function () {
-                        this.$el.off("click", this.SELECTOR_LOCATION_WRAPPER,
-                            this._onWrapperClick)
-                    }
-                }, {
-                    key: "_onMapMarkerClick", value: function (a) {
-                        this.$el.find(this.SELECTOR_LOCATION_WRAPPER + "[data-store-id\x3d'" + a + "']").find(this.SELECTOR_RADIO_BUTTON_INPUT).trigger("click")
-                    }
-                }, {
-                    key: "_onWrapperClick", value: function (a) {
-                        a = $(a.target).closest(this.SELECTOR_LOCATION_WRAPPER).data("store-id");
-                        this.publish(e.default.ACTION.CENTER_MAP_ON_MARKER, a)
-                    }
-                }]);
-            return a
-        }(p.default);
-        t.exports = f
-    }, {
-        "./../../../js/base/appeaser-component-base.js": 47,
-        "./../../../js/base/logger.js": 51,
-        "./../../../themes/p11/enums.js": 65
-    }],
-    41: [function (f, t, p) {
-        function m(a) {
-            "@babel/helpers - typeof";
-            m = "function" === typeof Symbol && "symbol" === typeof Symbol.iterator ? function (a) {
-                return typeof a
-            } : function (a) {
-                return a && "function" === typeof Symbol && a.constructor === Symbol && a !== Symbol.prototype ? "symbol" : typeof a
-            };
-            return m(a)
-        }
-
-        function k(a) {
-            return a && a.__esModule ? a : {default: a}
-        }
-
-        function q(a, b) {
-            for (var d = 0; d < b.length; d++) {
-                var c = b[d];
-                c.enumerable = c.enumerable || !1;
-                c.configurable = !0;
-                "value" in c && (c.writable = !0);
-                Object.defineProperty(a, c.key, c)
-            }
-        }
-
-        function r(a,
-                   b, d) {
-            b && q(a.prototype, b);
-            d && q(a, d);
-            return a
-        }
-
-        function l(a, b, d) {
-            l = "undefined" !== typeof Reflect && Reflect.get ? Reflect.get : function (a, b, d) {
-                for (; !Object.prototype.hasOwnProperty.call(a, b) && (a = g(a), null !== a);) ;
-                if (a) return b = Object.getOwnPropertyDescriptor(a, b), b.get ? b.get.call(d) : b.value
-            };
-            return l(a, b, d || a)
-        }
-
-        function v(a, b) {
-            if ("function" !== typeof b && null !== b) throw new TypeError("Super expression must either be null or a function");
-            a.prototype = Object.create(b && b.prototype, {
-                constructor: {
-                    value: a, writable: !0,
-                    configurable: !0
-                }
-            });
-            b && n(a, b)
-        }
-
-        function n(a, b) {
-            n = Object.setPrototypeOf || function (a, b) {
-                a.__proto__ = b;
-                return a
-            };
-            return n(a, b)
-        }
-
-        function w(a) {
-            var b = u();
-            return function () {
-                var d = g(a);
-                if (b) {
-                    var c = g(this).constructor;
-                    d = Reflect.construct(d, arguments, c)
-                } else d = d.apply(this, arguments);
-                if (!d || "object" !== m(d) && "function" !== typeof d) {
-                    if (void 0 === this) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-                    d = this
-                }
-                return d
-            }
-        }
-
-        function u() {
-            if ("undefined" === typeof Reflect || !Reflect.construct ||
-                Reflect.construct.sham) return !1;
-            if ("function" === typeof Proxy) return !0;
-            try {
-                return Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {
-                })), !0
-            } catch (a) {
-                return !1
-            }
-        }
-
-        function g(a) {
-            g = Object.setPrototypeOf ? Object.getPrototypeOf : function (a) {
-                return a.__proto__ || Object.getPrototypeOf(a)
-            };
-            return g(a)
-        }
-
-        p = k(f("./../../../js/base/appeaser-component-base.js"));
-        var h = k(f("./../../../js/base/logger.js")), e = k(f("./../../../themes/p11/enums.js")),
-            c = k(f("./../../../themes/p11/utils.js"));
-        f = function (a) {
-            function b() {
-                if (!(this instanceof
-                    b)) throw new TypeError("Cannot call a class as a function");
-                var a = d.apply(this, arguments);
-                h.default.INFO(a.constructor.name, ":: Constructor");
-                a._jQueryScopeBinding();
-                a._declareConstants();
-                a.subscribe(e.default.EVENT.ON_DOCUMENT_READY, a._onDOMReady);
-                return a
-            }
-
-            v(b, a);
-            var d = w(b);
-            r(b, [{
-                key: "destroy", value: function () {
-                    h.default.INFO(this.constructor.name, ":: Destructor");
-                    this._detachDOMListeners();
-                    this._detachSubscribers();
-                    l(g(b.prototype), "destroy", this).call(this)
-                }
-            }, {
-                key: "_declareConstants", value: function () {
-                    this.sendData =
-                        {};
-                    this.panelData = {};
-                    this.response = "undefined";
-                    this.panel = this.locale = ""
-                }
-            }, {
-                key: "_onDOMReady", value: function () {
-                    h.default.INFO(this.constructor.name, ":: _onDOMReady");
-                    this._attachSubscribers();
-                    this._cacheDOMElements();
-                    this._attachDOMListeners()
-                }
-            }, {
-                key: "_cacheDOMElements", value: function () {
-                    this.$window = $(window)
-                }
-            }, {
-                key: "_jQueryScopeBinding", value: function () {
-                    this._onDOMReady = this._onDOMReady.bind(this);
-                    this._onBeforeAjaxPost = this._onBeforeAjaxPost.bind(this);
-                    this._preparePdpSendData = this._preparePdpSendData.bind(this);
-                    this._prepareSearchSendData = this._prepareSearchSendData.bind(this);
-                    this._prepareOtherSendData = this._prepareOtherSendData.bind(this);
-                    this._extractLocale = this._extractLocale.bind(this);
-                    this._ajaxPost = this._ajaxPost.bind(this);
-                    this._parseResponse = this._parseResponse.bind(this);
-                    this._onProductClick = this._onProductClick.bind(this)
-                }
-            }, {
-                key: "_onFrameworkReady", value: function () {
-                }
-            }, {
-                key: "_attachSubscribers", value: function () {
-                    h.default.INFO(this.constructor.name, ":: _attachSubscribers");
-                    this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY,
-                        this._onFrameworkReady)
-                }
-            }, {
-                key: "_detachSubscribers", value: function () {
-                    h.default.INFO(this.constructor.name, ":: _detachSubscribers");
-                    this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady);
-                    this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady)
-                }
-            }, {
-                key: "_attachDOMListeners", value: function () {
-                }
-            }, {
-                key: "_detachDOMListeners", value: function () {
-                }
-            }, {
-                key: "_onBeforeAjaxPost", value: function () {
-                    "undefined" === typeof productArticleDetails && "undefined" === typeof displayedDefaultArticles ?
-                        h.default.WARN(this.constructor.name, ":: PRA data cannot be requested, neither productArticleDetails nor displayedDefaultArticles defined") : (this._extractLocale(), this.panel = this.$el.data("praPanel"), "product-detail-page" === this.panel ? "undefined" != typeof productArticleDetails && this._preparePdpSendData() : "search-page" === this.panel ? this._prepareSearchSendData() : this._prepareOtherSendData(), this._ajaxPost())
-                }
-            }, {
-                key: "_preparePdpSendData", value: function () {
-                    var a = "", b = "";
-                    "undefined" !== typeof productArticleDetails.baseProductCode &&
-                    (a = productArticleDetails.baseProductCode + "_" + this.locale);
-                    "undefined" !== typeof productArticleDetails.styleWithArticles && (b = productArticleDetails.styleWithArticles.join(","));
-                    this.sendData = {product_key: a, style_with_default_articles: b}
-                }
-            }, {
-                key: "_prepareSearchSendData", value: function () {
-                    var a = "", b = "", d = "";
-                    "undefined" !== typeof searchTerm && (a = searchTerm);
-                    "undefined" !== typeof displayedDefaultArticles && (b = displayedDefaultArticles);
-                    "undefined" !== typeof searchProductAsCartParam && (d = searchProductAsCartParam);
-                    this.sendData = {search_phrase: a, displayed_default_articles: b, search_results_as_cart: d}
-                }
-            }, {
-                key: "_prepareOtherSendData", value: function () {
-                    var a = "", b = "";
-                    "undefined" !== typeof departmentCategoryPaths ? a = departmentCategoryPaths : "undefined" !== typeof utag && (a = utag.data.category_id);
-                    "undefined" !== typeof displayedDefaultArticles && (b = displayedDefaultArticles);
-                    this.sendData = {department_category_path: a, displayed_default_articles: b}
-                }
-            }, {
-                key: "_extractLocale", value: function () {
-                    var a = this.$el.data("praLocale");
-                    a ? "en" ===
-                        a && (a = "en_ww") : a = window.location.pathname.match(new RegExp(/[a-z]*_[A-Z]*/i))[0];
-                    this.locale = a
-                }
-            }, {
-                key: "_ajaxPost", value: function () {
-                    var a = this;
-                    "undefined" !== typeof pra1Response ? this._parseResponse(pra1Response) : $.ajax({
-                        data: JSON.stringify(this.sendData),
-                        dataType: "json",
-                        contentType: "application/json",
-                        method: "post",
-                        timeout: 5E3,
-                        url: "/" + this.locale + "/pra/panel/" + this.panel
-                    }).done(function (b) {
-                        a.response = b;
-                        a._parseResponse()
-                    }).fail(function (b, d, c) {
-                        h.default.WARN("Ajax POST error", b, d, c);
-                        a.$el.empty()
-                    })
-                }
-            },
-                {
-                    key: "_parseResponse", value: function (a) {
-                        a = a ? a : this.response;
-                        var b = this.$el.data("praId");
-                        try {
-                            var d = a.panels.filter(function (a) {
-                                return a.attributes.panel_id === b
-                            });
-                            if (0 < d.length) {
-                                var x = d[0].panels[0];
-                                this.panelData.id = b;
-                                this.panelData.name = x.attributes.panel_name;
-                                this.panelData.products = [];
-                                for (d = 0; d < x.panels.length; d++) if (0 < x.panels[d].products.length) for (var g = 0; g < x.panels[d].products.length; g++) this.panelData.products.push(x.panels[d].products[g]); else c.default.Accessibility.hide(this.$el);
-                                this.publish(e.default.ACTION.POPULATE_DATA_ON_SUGGESTIONS,
-                                    this.panelData)
-                            } else c.default.Accessibility.hide(this.$el)
-                        } catch (A) {
-                            h.default.WARN(this.constructor.name, ":: Could not process extraction of retrieved PRA data", A, a)
-                        }
-                    }
-                }, {
-                    key: "_transformLinkToCurrentContextPath", value: function (a) {
-                        if ("undefined" !== typeof hm) return hm.multiCountry.transformLinkToCurrentContextPath(a)
-                    }
-                }, {
-                    key: "_onProductClick", value: function (a, b, d) {
-                        this.publish(e.default.EVENT.ON_PRA_PRODUCT_CLICKED, {
-                            event: a,
-                            ticket: b,
-                            productId: d,
-                            praType: this.panel
-                        })
-                    }
-                }]);
-            return b
-        }(p.default);
-        t.exports =
-            f
-    }, {
-        "./../../../js/base/appeaser-component-base.js": 47,
-        "./../../../js/base/logger.js": 51,
-        "./../../../themes/p11/enums.js": 65,
-        "./../../../themes/p11/utils.js": 112
-    }],
-    42: [function (f, t, p) {
-        function m(c) {
-            "@babel/helpers - typeof";
-            m = "function" === typeof Symbol && "symbol" === typeof Symbol.iterator ? function (a) {
-                return typeof a
-            } : function (a) {
-                return a && "function" === typeof Symbol && a.constructor === Symbol && a !== Symbol.prototype ? "symbol" : typeof a
-            };
-            return m(c)
-        }
-
-        function k(c) {
-            return c && c.__esModule ? c : {default: c}
-        }
-
-        function q(c,
-                   a) {
-            for (var b = 0; b < a.length; b++) {
-                var d = a[b];
-                d.enumerable = d.enumerable || !1;
-                d.configurable = !0;
-                "value" in d && (d.writable = !0);
-                Object.defineProperty(c, d.key, d)
-            }
-        }
-
-        function r(c, a, b) {
-            a && q(c.prototype, a);
-            b && q(c, b);
-            return c
-        }
-
-        function l(c, a, b) {
-            l = "undefined" !== typeof Reflect && Reflect.get ? Reflect.get : function (a, b, c) {
                 for (; !Object.prototype.hasOwnProperty.call(a, b) && (a = g(a), null !== a);) ;
                 if (a) return b = Object.getOwnPropertyDescriptor(a, b), b.get ? b.get.call(c) : b.value
             };
@@ -8859,8 +7893,7 @@
         }
 
         function v(c, a) {
-            if ("function" !== typeof a &&
-                null !== a) throw new TypeError("Super expression must either be null or a function");
+            if ("function" !== typeof a && null !== a) throw new TypeError("Super expression must either be null or a function");
             c.prototype = Object.create(a && a.prototype, {constructor: {value: c, writable: !0, configurable: !0}});
             a && n(c, a)
         }
@@ -8929,66 +7962,713 @@
                     this._detachSubscribers();
                     l(g(a.prototype), "destroy", this).call(this)
                 }
-            },
-                {
-                    key: "_declareConstants", value: function () {
-                        this.SELECTOR_REMOVE = ".js-confirm-remove";
-                        this.SELECTOR_CANCEL = ".js-confirm-cancel"
-                    }
-                }, {
-                    key: "_onDOMReady", value: function () {
-                        h.default.INFO(this.constructor.name, ":: _onDOMReady");
-                        this.$removeBtn = this.$el.find(this.SELECTOR_REMOVE);
-                        this.$cancelBtn = this.$el.find(this.SELECTOR_CANCEL);
-                        this._attachSubscribers();
-                        this._attachDOMListeners()
-                    }
-                }, {
-                    key: "_jQueryScopeBinding", value: function () {
-                        this._onDOMReady = this._onDOMReady.bind(this);
-                        this._onRemoveBtnClick = this._onRemoveBtnClick.bind(this);
-                        this.cancel = this.cancel.bind(this)
-                    }
-                }, {
-                    key: "_attachSubscribers", value: function () {
-                        h.default.INFO(this.constructor.name, ":: _attachSubscribers");
-                        this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady)
-                    }
-                }, {
-                    key: "_detachSubscribers", value: function () {
-                        h.default.INFO(this.constructor.name, ":: _detachSubscribers");
-                        this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
-                        this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady)
-                    }
-                }, {
-                    key: "_attachDOMListeners", value: function () {
-                        this.$removeBtn.on("click",
-                            this._onRemoveBtnClick);
-                        this.$cancelBtn.on("click", this.cancel)
-                    }
-                }, {
-                    key: "_detachDOMListeners", value: function () {
-                        this.$removeBtn.off("click", this._onRemoveBtnClick);
-                        this.$cancelBtn.off("click", this.cancel)
-                    }
-                }, {
-                    key: "_onFrameworkReady", value: function () {
-                    }
-                }, {
-                    key: "_onRemoveBtnClick", value: function () {
-                        this.publish(e.default.ACTION.HIDE_LIGHTBOX, {buttonClicked: "OK"})
-                    }
-                }, {
-                    key: "cancel", value: function () {
-                        this.publish(e.default.ACTION.HIDE_LIGHTBOX, {buttonClicked: "CANCEL"})
-                    }
-                }]);
+            }, {
+                key: "_declareConstants", value: function () {
+                    this.SELECTOR_PAYMENT_SELECTION = ".card-payment-option, .paypal-payment-option";
+                    this.SELECTOR_CARD_SECTION = ".card-section";
+                    this.SELECTOR_CARD_SELECTION_SECTION = ".card-selection-section";
+                    this.SELECTOR_NEW_CARD_SECTION = ".new-card-section";
+                    this.SELECTOR_RADIO_BTN_SELECT_CARD = ".card-selection-section .m-radio-button";
+                    this.SELECTOR_CVV_CONTAINER = ".card-cvv-input";
+                    this.SELECTOR_CVV = ".cvv";
+                    this.SELECTOR_CHECKBOX_NIF = ".bottom-section .nif input";
+                    this.SELECTOR_INPUT_NIF = ".bottom-section .nif-text";
+                    this.SELECTOR_CHECKBOX_FATTURA = ".bottom-section .fattura input";
+                    this.SELECTOR_INPUT_FATTURA = ".bottom-section .fattura-text";
+                    this.SELECTOR_BOTTOM_SECTION = ".bottom-section";
+                    this.SELECTOR_VISIBLE_INPUT = "input:visible, .m-dropdown:visible input";
+                    this.SELECTOR_VISIBLE_CHECKBOX = ".m-checkbox:visible input";
+                    this.SELECTOR_HIDDEN_INPUT = "input:hidden";
+                    this.SELECTOR_CHECKBOX_SAVE_CARD = ".save-card input";
+                    this.SELECTOR_LEFT_SECTION = ".left-selection-section";
+                    this.SELECTOR_RIGHT_SECTION = ".right-selection-section";
+                    this.CLASS_ADD_CARD = "add-card-option";
+                    this.CLASS_CARD_PAYMENT = "card-payment-option";
+                    this.CLASS_NOT_SELECTED = "not-selected";
+                    this.IS_CARD_SLOT_FULL = 1 < this.$el.find(".card-section .card-option").length
+                }
+            }, {
+                key: "_cacheDOMElements", value: function () {
+                    this.$radioBtnPaymentSelection = this.$el.find(this.SELECTOR_PAYMENT_SELECTION);
+                    this.$radioBtnCardSelection = this.$el.find(this.SELECTOR_RADIO_BTN_SELECT_CARD);
+                    this.$cardSection = this.$el.find(this.SELECTOR_CARD_SECTION);
+                    this.$newCardSection = this.$el.find(this.SELECTOR_NEW_CARD_SECTION);
+                    this.$checkBoxNIF = this.$el.find(this.SELECTOR_CHECKBOX_NIF);
+                    this.$inputNif = this.$el.find(this.SELECTOR_INPUT_NIF);
+                    this.$checkBoxFATTURA = this.$el.find(this.SELECTOR_CHECKBOX_FATTURA);
+                    this.$inputFattura = this.$el.find(this.SELECTOR_INPUT_FATTURA);
+                    this.$bottomSection = this.$el.find(this.SELECTOR_BOTTOM_SECTION);
+                    this.$checkBoxSaveCard = this.$el.find(this.SELECTOR_CHECKBOX_SAVE_CARD);
+                    this.$leftSection = this.$el.find(this.SELECTOR_LEFT_SECTION);
+                    this.$rightSection = this.$el.find(this.SELECTOR_RIGHT_SECTION)
+                }
+            }, {
+                key: "_jQueryScopeBinding", value: function () {
+                    this._onDOMReady = this._onDOMReady.bind(this);
+                    this._onPaymentMethodChosen = this._onPaymentMethodChosen.bind(this);
+                    this._onCardChosen = this._onCardChosen.bind(this);
+                    this._onNifCheckboxChange = this._onNifCheckboxChange.bind(this);
+                    this._onFatturaCheckboxChange = this._onFatturaCheckboxChange.bind(this)
+                }
+            }, {
+                key: "_attachSubscribers", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _attachSubscribers");
+                    this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady)
+                }
+            }, {
+                key: "_detachSubscribers", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _detachSubscribers");
+                    this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady);
+                    this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady)
+                }
+            }, {
+                key: "_onFrameworkReady", value: function () {
+                }
+            }, {
+                key: "_attachDOMListeners", value: function () {
+                    this.$radioBtnPaymentSelection.on("change", this._onPaymentMethodChosen);
+                    this.$radioBtnCardSelection.on("change", this._onCardChosen);
+                    this.$checkBoxNIF.on("change", this._onNifCheckboxChange);
+                    this.$checkBoxFATTURA.on("change", this._onFatturaCheckboxChange)
+                }
+            }, {
+                key: "_detachDOMListeners", value: function () {
+                    this.$radioBtnPaymentSelection.off("change", this._onPaymentMethodChosen);
+                    this.$radioBtnCardSelection.off("change", this._onCardChosen);
+                    this.$checkBoxNIF.on("change", this._onNifCheckboxChange);
+                    this.$checkBoxFATTURA.on("change", this._onFatturaCheckboxChange)
+                }
+            }, {
+                key: "_onDOMReady", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _onDOMReady");
+                    this._cacheDOMElements();
+                    this._attachSubscribers();
+                    this._attachDOMListeners();
+                    this._prepareExistingCardSection();
+                    this.$newCardSection.add(this.SELECTOR_CVV_CONTAINER).find(this.SELECTOR_HIDDEN_INPUT).prop("disabled", !0)
+                }
+            }, {
+                key: "_onNifCheckboxChange", value: function (a) {
+                    $(a.currentTarget).prop("checked") ? this.$inputNif.show() : this.$inputNif.hide()
+                }
+            }, {
+                key: "_onFatturaCheckboxChange", value: function (a) {
+                    $(a.currentTarget).prop("checked") ? this.$inputFattura.show() : this.$inputFattura.hide()
+                }
+            }, {
+                key: "_prepareExistingCardSection", value: function () {
+                    this.$el.find(this.SELECTOR_CARD_SELECTION_SECTION).length && this.$newCardSection.addClass(e.default.CLASS.DISPLAY_NONE)
+                }
+            }, {
+                key: "_onCardChosen", value: function (a) {
+                    a = $(a.currentTarget);
+                    a.parent().hasClass(this.CLASS_ADD_CARD) ? (this.$newCardSection.removeClass(e.default.CLASS.DISPLAY_NONE).find(this.SELECTOR_VISIBLE_INPUT).prop("disabled", !1), this.$el.find(this.SELECTOR_CARD_SELECTION_SECTION + " " + this.SELECTOR_CVV_CONTAINER + this.SELECTOR_CVV + " input").prop("disabled", !0), this.IS_CARD_SLOT_FULL || this.$checkBoxSaveCard.prop("disabled", !1)) : (this.$newCardSection.addClass(e.default.CLASS.DISPLAY_NONE).find(this.SELECTOR_HIDDEN_INPUT).prop("disabled", !0), a.siblings(this.SELECTOR_CVV_CONTAINER).find(this.SELECTOR_CVV).removeClass(e.default.CLASS.DISPLAY_NONE).find(this.SELECTOR_VISIBLE_INPUT).prop("disabled", !1));
+                    this.$radioBtnCardSelection.not(a).siblings(this.SELECTOR_CVV_CONTAINER).find(this.SELECTOR_CVV).find(this.SELECTOR_VISIBLE_INPUT).prop("disabled", !0);
+                    this.$radioBtnCardSelection.not(a).siblings(this.SELECTOR_CVV_CONTAINER).find(this.SELECTOR_CVV).addClass(e.default.CLASS.DISPLAY_NONE)
+                }
+            }, {
+                key: "_onPaymentMethodChosen", value: function (a) {
+                    $(a.currentTarget).hasClass(this.CLASS_CARD_PAYMENT) ? (this.$cardSection.show().find(this.SELECTOR_VISIBLE_INPUT + ", " + this.SELECTOR_VISIBLE_CHECKBOX).prop("disabled", !1), this.$leftSection.removeClass(this.CLASS_NOT_SELECTED), this.$rightSection.addClass(this.CLASS_NOT_SELECTED)) : (this.$cardSection.find(this.SELECTOR_VISIBLE_INPUT).add(this.$checkBoxSaveCard).prop("disabled", !0), this.$cardSection.hide(), this.$rightSection.removeClass(this.CLASS_NOT_SELECTED), this.$leftSection.addClass(this.CLASS_NOT_SELECTED));
+                    this.$bottomSection.show()
+                }
+            }]);
             return a
         }(p.default);
         t.exports = f
     }, {
         "./../../../js/base/appeaser-component-base.js": 47,
-        "./../../../js/base/logger.js": 51, "./../../../themes/p11/enums.js": 65
+        "./../../../js/base/logger.js": 51,
+        "./../../../themes/p11/enums.js": 65
+    }],
+    40: [function (f, t, p) {
+        function m(c) {
+            "@babel/helpers - typeof";
+            m = "function" === typeof Symbol && "symbol" === typeof Symbol.iterator ? function (a) {
+                return typeof a
+            } : function (a) {
+                return a && "function" === typeof Symbol && a.constructor === Symbol && a !== Symbol.prototype ? "symbol" : typeof a
+            };
+            return m(c)
+        }
+
+        function k(c) {
+            return c && c.__esModule ? c : {default: c}
+        }
+
+        function q(c, a) {
+            for (var b = 0; b < a.length; b++) {
+                var d = a[b];
+                d.enumerable = d.enumerable || !1;
+                d.configurable = !0;
+                "value" in d && (d.writable = !0);
+                Object.defineProperty(c, d.key, d)
+            }
+        }
+
+        function r(c, a, b) {
+            a && q(c.prototype, a);
+            b && q(c, b);
+            return c
+        }
+
+        function l(c, a, b) {
+            l = "undefined" !== typeof Reflect && Reflect.get ? Reflect.get : function (a, b, c) {
+                for (; !Object.prototype.hasOwnProperty.call(a, b) && (a = g(a), null !== a);) ;
+                if (a) return b = Object.getOwnPropertyDescriptor(a, b), b.get ? b.get.call(c) : b.value
+            };
+            return l(c, a, b || c)
+        }
+
+        function v(c, a) {
+            if ("function" !== typeof a && null !== a) throw new TypeError("Super expression must either be null or a function");
+            c.prototype = Object.create(a && a.prototype, {constructor: {value: c, writable: !0, configurable: !0}});
+            a && n(c, a)
+        }
+
+        function n(c, a) {
+            n = Object.setPrototypeOf || function (a, d) {
+                a.__proto__ = d;
+                return a
+            };
+            return n(c, a)
+        }
+
+        function w(c) {
+            var a = u();
+            return function () {
+                var b = g(c);
+                if (a) {
+                    var d = g(this).constructor;
+                    b = Reflect.construct(b, arguments, d)
+                } else b = b.apply(this, arguments);
+                if (!b || "object" !== m(b) && "function" !== typeof b) {
+                    if (void 0 === this) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+                    b = this
+                }
+                return b
+            }
+        }
+
+        function u() {
+            if ("undefined" === typeof Reflect || !Reflect.construct || Reflect.construct.sham) return !1;
+            if ("function" === typeof Proxy) return !0;
+            try {
+                return Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {
+                })), !0
+            } catch (c) {
+                return !1
+            }
+        }
+
+        function g(c) {
+            g = Object.setPrototypeOf ? Object.getPrototypeOf : function (a) {
+                return a.__proto__ || Object.getPrototypeOf(a)
+            };
+            return g(c)
+        }
+
+        p = k(f("./../../../js/base/appeaser-component-base.js"));
+        var h = k(f("./../../../js/base/logger.js")), e = k(f("./../../../themes/p11/enums.js"));
+        f = function (c) {
+            function a() {
+                if (!(this instanceof a)) throw new TypeError("Cannot call a class as a function");
+                var d = b.apply(this, arguments);
+                h.default.INFO(d.constructor.name, ":: Constructor");
+                d._jQueryScopeBinding();
+                d._declareConstants();
+                d.subscribe(e.default.EVENT.ON_DOCUMENT_READY, d._onDOMReady);
+                return d
+            }
+
+            v(a, c);
+            var b = w(a);
+            r(a, [{
+                key: "destroy", value: function () {
+                    h.default.INFO(this.constructor.name, ":: Destructor");
+                    this._detachDOMListeners();
+                    this._detachSubscribers();
+                    l(g(a.prototype), "destroy", this).call(this)
+                }
+            }, {
+                key: "_declareConstants", value: function () {
+                    this.SELECTOR_LOCATION_WRAPPER = ".wrapper";
+                    this.SELECTOR_RADIO_BUTTON_INPUT = ".a-radio-button"
+                }
+            }, {
+                key: "_onDOMReady", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _onDOMReady");
+                    this._attachSubscribers();
+                    this._attachDOMListeners()
+                }
+            }, {
+                key: "_jQueryScopeBinding", value: function () {
+                    this._onDOMReady = this._onDOMReady.bind(this);
+                    this._onMapMarkerClick = this._onMapMarkerClick.bind(this);
+                    this._onWrapperClick = this._onWrapperClick.bind(this)
+                }
+            }, {
+                key: "_attachSubscribers", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _attachSubscribers");
+                    this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
+                    this.subscribe(e.default.EVENT.ON_MAP_MARKER_CLICK, this._onMapMarkerClick)
+                }
+            }, {
+                key: "_detachSubscribers", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _detachSubscribers");
+                    this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
+                    this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady);
+                    this.unsubscribe(e.default.EVENT.ON_MAP_MARKER_CLICK, this._onMapMarkerClick)
+                }
+            }, {
+                key: "_onFrameworkReady", value: function () {
+                }
+            }, {
+                key: "_attachDOMListeners", value: function () {
+                    this.$el.on("click", this.SELECTOR_LOCATION_WRAPPER, this._onWrapperClick)
+                }
+            }, {
+                key: "_detachDOMListeners", value: function () {
+                    this.$el.off("click", this.SELECTOR_LOCATION_WRAPPER, this._onWrapperClick)
+                }
+            }, {
+                key: "_onMapMarkerClick", value: function (a) {
+                    this.$el.find(this.SELECTOR_LOCATION_WRAPPER + "[data-store-id\x3d'" + a + "']").find(this.SELECTOR_RADIO_BUTTON_INPUT).trigger("click")
+                }
+            }, {
+                key: "_onWrapperClick", value: function (a) {
+                    a = $(a.target).closest(this.SELECTOR_LOCATION_WRAPPER).data("store-id");
+                    this.publish(e.default.ACTION.CENTER_MAP_ON_MARKER, a)
+                }
+            }]);
+            return a
+        }(p.default);
+        t.exports = f
+    }, {
+        "./../../../js/base/appeaser-component-base.js": 47,
+        "./../../../js/base/logger.js": 51,
+        "./../../../themes/p11/enums.js": 65
+    }],
+    41: [function (f, t, p) {
+        function m(a) {
+            "@babel/helpers - typeof";
+            m = "function" === typeof Symbol && "symbol" === typeof Symbol.iterator ? function (a) {
+                return typeof a
+            } : function (a) {
+                return a && "function" === typeof Symbol && a.constructor === Symbol && a !== Symbol.prototype ? "symbol" : typeof a
+            };
+            return m(a)
+        }
+
+        function k(a) {
+            return a && a.__esModule ? a : {default: a}
+        }
+
+        function q(a, b) {
+            for (var d = 0; d < b.length; d++) {
+                var c = b[d];
+                c.enumerable = c.enumerable || !1;
+                c.configurable = !0;
+                "value" in c && (c.writable = !0);
+                Object.defineProperty(a, c.key, c)
+            }
+        }
+
+        function r(a, b, d) {
+            b && q(a.prototype, b);
+            d && q(a, d);
+            return a
+        }
+
+        function l(a, b, d) {
+            l = "undefined" !== typeof Reflect && Reflect.get ? Reflect.get : function (a, b, d) {
+                for (; !Object.prototype.hasOwnProperty.call(a, b) && (a = g(a), null !== a);) ;
+                if (a) return b = Object.getOwnPropertyDescriptor(a, b), b.get ? b.get.call(d) : b.value
+            };
+            return l(a, b, d || a)
+        }
+
+        function v(a, b) {
+            if ("function" !== typeof b && null !== b) throw new TypeError("Super expression must either be null or a function");
+            a.prototype = Object.create(b && b.prototype, {constructor: {value: a, writable: !0, configurable: !0}});
+            b && n(a, b)
+        }
+
+        function n(a, b) {
+            n = Object.setPrototypeOf || function (a, b) {
+                a.__proto__ = b;
+                return a
+            };
+            return n(a, b)
+        }
+
+        function w(a) {
+            var b = u();
+            return function () {
+                var d = g(a);
+                if (b) {
+                    var c = g(this).constructor;
+                    d = Reflect.construct(d, arguments, c)
+                } else d = d.apply(this, arguments);
+                if (!d || "object" !== m(d) && "function" !== typeof d) {
+                    if (void 0 === this) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+                    d = this
+                }
+                return d
+            }
+        }
+
+        function u() {
+            if ("undefined" === typeof Reflect || !Reflect.construct || Reflect.construct.sham) return !1;
+            if ("function" === typeof Proxy) return !0;
+            try {
+                return Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {
+                })), !0
+            } catch (a) {
+                return !1
+            }
+        }
+
+        function g(a) {
+            g = Object.setPrototypeOf ? Object.getPrototypeOf : function (a) {
+                return a.__proto__ || Object.getPrototypeOf(a)
+            };
+            return g(a)
+        }
+
+        p = k(f("./../../../js/base/appeaser-component-base.js"));
+        var h = k(f("./../../../js/base/logger.js")), e = k(f("./../../../themes/p11/enums.js")),
+            c = k(f("./../../../themes/p11/utils.js"));
+        f = function (a) {
+            function b() {
+                if (!(this instanceof b)) throw new TypeError("Cannot call a class as a function");
+                var a = d.apply(this, arguments);
+                h.default.INFO(a.constructor.name, ":: Constructor");
+                a._jQueryScopeBinding();
+                a._declareConstants();
+                a.subscribe(e.default.EVENT.ON_DOCUMENT_READY, a._onDOMReady);
+                return a
+            }
+
+            v(b, a);
+            var d = w(b);
+            r(b, [{
+                key: "destroy", value: function () {
+                    h.default.INFO(this.constructor.name, ":: Destructor");
+                    this._detachDOMListeners();
+                    this._detachSubscribers();
+                    l(g(b.prototype), "destroy", this).call(this)
+                }
+            }, {
+                key: "_declareConstants", value: function () {
+                    this.sendData = {};
+                    this.panelData = {};
+                    this.response = "undefined";
+                    this.panel = this.locale = ""
+                }
+            }, {
+                key: "_onDOMReady", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _onDOMReady");
+                    this._attachSubscribers();
+                    this._cacheDOMElements();
+                    this._attachDOMListeners()
+                }
+            }, {
+                key: "_cacheDOMElements", value: function () {
+                    this.$window = $(window)
+                }
+            }, {
+                key: "_jQueryScopeBinding", value: function () {
+                    this._onDOMReady = this._onDOMReady.bind(this);
+                    this._onBeforeAjaxPost = this._onBeforeAjaxPost.bind(this);
+                    this._preparePdpSendData = this._preparePdpSendData.bind(this);
+                    this._prepareSearchSendData = this._prepareSearchSendData.bind(this);
+                    this._prepareOtherSendData = this._prepareOtherSendData.bind(this);
+                    this._extractLocale = this._extractLocale.bind(this);
+                    this._ajaxPost = this._ajaxPost.bind(this);
+                    this._parseResponse = this._parseResponse.bind(this);
+                    this._onProductClick = this._onProductClick.bind(this)
+                }
+            }, {
+                key: "_onFrameworkReady", value: function () {
+                }
+            }, {
+                key: "_attachSubscribers", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _attachSubscribers");
+                    this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady)
+                }
+            }, {
+                key: "_detachSubscribers", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _detachSubscribers");
+                    this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady);
+                    this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady)
+                }
+            }, {
+                key: "_attachDOMListeners", value: function () {
+                }
+            }, {
+                key: "_detachDOMListeners", value: function () {
+                }
+            }, {
+                key: "_onBeforeAjaxPost", value: function () {
+                    "undefined" === typeof productArticleDetails && "undefined" === typeof displayedDefaultArticles ? h.default.WARN(this.constructor.name, ":: PRA data cannot be requested, neither productArticleDetails nor displayedDefaultArticles defined") : (this._extractLocale(), this.panel = this.$el.data("praPanel"), "product-detail-page" === this.panel ? "undefined" != typeof productArticleDetails && this._preparePdpSendData() : "search-page" === this.panel ? this._prepareSearchSendData() : this._prepareOtherSendData(), this._ajaxPost())
+                }
+            }, {
+                key: "_preparePdpSendData", value: function () {
+                    var a = "", b = "";
+                    "undefined" !== typeof productArticleDetails.baseProductCode && (a = productArticleDetails.baseProductCode + "_" + this.locale);
+                    "undefined" !== typeof productArticleDetails.styleWithArticles && (b = productArticleDetails.styleWithArticles.join(","));
+                    this.sendData = {product_key: a, style_with_default_articles: b}
+                }
+            }, {
+                key: "_prepareSearchSendData", value: function () {
+                    var a = "", b = "", d = "";
+                    "undefined" !== typeof searchTerm && (a = searchTerm);
+                    "undefined" !== typeof displayedDefaultArticles && (b = displayedDefaultArticles);
+                    "undefined" !== typeof searchProductAsCartParam && (d = searchProductAsCartParam);
+                    this.sendData = {search_phrase: a, displayed_default_articles: b, search_results_as_cart: d}
+                }
+            }, {
+                key: "_prepareOtherSendData", value: function () {
+                    var a = "", b = "";
+                    "undefined" !== typeof departmentCategoryPaths ? a = departmentCategoryPaths : "undefined" !== typeof utag && (a = utag.data.category_id);
+                    "undefined" !== typeof displayedDefaultArticles && (b = displayedDefaultArticles);
+                    this.sendData = {department_category_path: a, displayed_default_articles: b}
+                }
+            }, {
+                key: "_extractLocale", value: function () {
+                    var a = this.$el.data("praLocale");
+                    a ? "en" === a && (a = "en_ww") : a = window.location.pathname.match(new RegExp(/[a-z]*_[A-Z]*/i))[0];
+                    this.locale = a
+                }
+            }, {
+                key: "_ajaxPost", value: function () {
+                    var a = this;
+                    "undefined" !== typeof pra1Response ? this._parseResponse(pra1Response) : $.ajax({
+                        data: JSON.stringify(this.sendData),
+                        dataType: "json",
+                        contentType: "application/json",
+                        method: "post",
+                        timeout: 5E3,
+                        url: "/" + this.locale + "/pra/panel/" + this.panel
+                    }).done(function (b) {
+                        a.response = b;
+                        a._parseResponse()
+                    }).fail(function (b, d, c) {
+                        h.default.WARN("Ajax POST error", b, d, c);
+                        a.$el.empty()
+                    })
+                }
+            }, {
+                key: "_parseResponse", value: function (a) {
+                    a = a ? a : this.response;
+                    var b = this.$el.data("praId");
+                    try {
+                        var d = a.panels.filter(function (a) {
+                            return a.attributes.panel_id === b
+                        });
+                        if (0 < d.length) {
+                            var x = d[0].panels[0];
+                            this.panelData.id = b;
+                            this.panelData.name = x.attributes.panel_name;
+                            this.panelData.products = [];
+                            for (d = 0; d < x.panels.length; d++) if (0 < x.panels[d].products.length) for (var g = 0; g < x.panels[d].products.length; g++) this.panelData.products.push(x.panels[d].products[g]); else c.default.Accessibility.hide(this.$el);
+                            this.publish(e.default.ACTION.POPULATE_DATA_ON_SUGGESTIONS, this.panelData)
+                        } else c.default.Accessibility.hide(this.$el)
+                    } catch (A) {
+                        h.default.WARN(this.constructor.name, ":: Could not process extraction of retrieved PRA data", A, a)
+                    }
+                }
+            }, {
+                key: "_transformLinkToCurrentContextPath", value: function (a) {
+                    if ("undefined" !== typeof hm) return hm.multiCountry.transformLinkToCurrentContextPath(a)
+                }
+            }, {
+                key: "_onProductClick", value: function (a, b, d) {
+                    this.publish(e.default.EVENT.ON_PRA_PRODUCT_CLICKED, {
+                        event: a,
+                        ticket: b,
+                        productId: d,
+                        praType: this.panel
+                    })
+                }
+            }]);
+            return b
+        }(p.default);
+        t.exports = f
+    }, {
+        "./../../../js/base/appeaser-component-base.js": 47,
+        "./../../../js/base/logger.js": 51,
+        "./../../../themes/p11/enums.js": 65,
+        "./../../../themes/p11/utils.js": 112
+    }],
+    42: [function (f, t, p) {
+        function m(c) {
+            "@babel/helpers - typeof";
+            m = "function" === typeof Symbol && "symbol" === typeof Symbol.iterator ? function (a) {
+                return typeof a
+            } : function (a) {
+                return a && "function" === typeof Symbol && a.constructor === Symbol && a !== Symbol.prototype ? "symbol" : typeof a
+            };
+            return m(c)
+        }
+
+        function k(c) {
+            return c && c.__esModule ? c : {default: c}
+        }
+
+        function q(c, a) {
+            for (var b = 0; b < a.length; b++) {
+                var d = a[b];
+                d.enumerable = d.enumerable || !1;
+                d.configurable = !0;
+                "value" in d && (d.writable = !0);
+                Object.defineProperty(c, d.key, d)
+            }
+        }
+
+        function r(c, a, b) {
+            a && q(c.prototype, a);
+            b && q(c, b);
+            return c
+        }
+
+        function l(c, a, b) {
+            l = "undefined" !== typeof Reflect && Reflect.get ? Reflect.get : function (a, b, c) {
+                for (; !Object.prototype.hasOwnProperty.call(a, b) && (a = g(a), null !== a);) ;
+                if (a) return b = Object.getOwnPropertyDescriptor(a, b), b.get ? b.get.call(c) : b.value
+            };
+            return l(c, a, b || c)
+        }
+
+        function v(c, a) {
+            if ("function" !== typeof a && null !== a) throw new TypeError("Super expression must either be null or a function");
+            c.prototype = Object.create(a && a.prototype, {constructor: {value: c, writable: !0, configurable: !0}});
+            a && n(c, a)
+        }
+
+        function n(c, a) {
+            n = Object.setPrototypeOf || function (a, d) {
+                a.__proto__ = d;
+                return a
+            };
+            return n(c, a)
+        }
+
+        function w(c) {
+            var a = u();
+            return function () {
+                var b = g(c);
+                if (a) {
+                    var d = g(this).constructor;
+                    b = Reflect.construct(b, arguments, d)
+                } else b = b.apply(this, arguments);
+                if (!b || "object" !== m(b) && "function" !== typeof b) {
+                    if (void 0 === this) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+                    b = this
+                }
+                return b
+            }
+        }
+
+        function u() {
+            if ("undefined" === typeof Reflect || !Reflect.construct || Reflect.construct.sham) return !1;
+            if ("function" === typeof Proxy) return !0;
+            try {
+                return Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {
+                })), !0
+            } catch (c) {
+                return !1
+            }
+        }
+
+        function g(c) {
+            g = Object.setPrototypeOf ? Object.getPrototypeOf : function (a) {
+                return a.__proto__ || Object.getPrototypeOf(a)
+            };
+            return g(c)
+        }
+
+        p = k(f("./../../../js/base/appeaser-component-base.js"));
+        var h = k(f("./../../../js/base/logger.js")), e = k(f("./../../../themes/p11/enums.js"));
+        f = function (c) {
+            function a() {
+                if (!(this instanceof a)) throw new TypeError("Cannot call a class as a function");
+                var d = b.apply(this, arguments);
+                h.default.INFO(d.constructor.name, ":: Constructor");
+                d._jQueryScopeBinding();
+                d._declareConstants();
+                d.subscribe(e.default.EVENT.ON_DOCUMENT_READY, d._onDOMReady);
+                return d
+            }
+
+            v(a, c);
+            var b = w(a);
+            r(a, [{
+                key: "destroy", value: function () {
+                    h.default.INFO(this.constructor.name, ":: Destructor");
+                    this._detachDOMListeners();
+                    this._detachSubscribers();
+                    l(g(a.prototype), "destroy", this).call(this)
+                }
+            }, {
+                key: "_declareConstants", value: function () {
+                    this.SELECTOR_REMOVE = ".js-confirm-remove";
+                    this.SELECTOR_CANCEL = ".js-confirm-cancel"
+                }
+            }, {
+                key: "_onDOMReady", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _onDOMReady");
+                    this.$removeBtn = this.$el.find(this.SELECTOR_REMOVE);
+                    this.$cancelBtn = this.$el.find(this.SELECTOR_CANCEL);
+                    this._attachSubscribers();
+                    this._attachDOMListeners()
+                }
+            }, {
+                key: "_jQueryScopeBinding", value: function () {
+                    this._onDOMReady = this._onDOMReady.bind(this);
+                    this._onRemoveBtnClick = this._onRemoveBtnClick.bind(this);
+                    this.cancel = this.cancel.bind(this)
+                }
+            }, {
+                key: "_attachSubscribers", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _attachSubscribers");
+                    this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady)
+                }
+            }, {
+                key: "_detachSubscribers", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _detachSubscribers");
+                    this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
+                    this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady)
+                }
+            }, {
+                key: "_attachDOMListeners", value: function () {
+                    this.$removeBtn.on("click", this._onRemoveBtnClick);
+                    this.$cancelBtn.on("click", this.cancel)
+                }
+            }, {
+                key: "_detachDOMListeners", value: function () {
+                    this.$removeBtn.off("click", this._onRemoveBtnClick);
+                    this.$cancelBtn.off("click", this.cancel)
+                }
+            }, {
+                key: "_onFrameworkReady", value: function () {
+                }
+            }, {
+                key: "_onRemoveBtnClick", value: function () {
+                    this.publish(e.default.ACTION.HIDE_LIGHTBOX, {buttonClicked: "OK"})
+                }
+            }, {
+                key: "cancel", value: function () {
+                    this.publish(e.default.ACTION.HIDE_LIGHTBOX, {buttonClicked: "CANCEL"})
+                }
+            }]);
+            return a
+        }(p.default);
+        t.exports = f
+    }, {
+        "./../../../js/base/appeaser-component-base.js": 47,
+        "./../../../js/base/logger.js": 51,
+        "./../../../themes/p11/enums.js": 65
     }],
     43: [function (f, t, p) {
         function m(a) {
@@ -9009,8 +8689,7 @@
             for (var d = 0; d < b.length; d++) {
                 var c = b[d];
                 c.enumerable = c.enumerable || !1;
-                c.configurable =
-                    !0;
+                c.configurable = !0;
                 "value" in c && (c.writable = !0);
                 Object.defineProperty(a, c.key, c)
             }
@@ -9110,8 +8789,7 @@
                     this.SELECTOR_IS_REDUNDANT_WRAPPER = ".swiper-wrapper .swiper-wrapper.swiper-slide";
                     this.SELECTOR_VISIBLE_SLIDE = ".swiper-slide-visible";
                     this.SELECTOR_INVISIBLE_SLIDE = ":not(.swiper-slide-visible)";
-                    this.SELECTOR_LINK =
-                        ".a-link";
+                    this.SELECTOR_LINK = ".a-link";
                     this.DATA_DESKTOP_SLIDES = "slides-desktop";
                     this.DATA_TABLET_SLIDES = "slides-tablet";
                     this.DATA_MOBILE_SLIDES = "slides-mobile";
@@ -9158,8 +8836,7 @@
                 }
             }, {
                 key: "_detachSubscribers", value: function () {
-                    h.default.INFO(this.constructor.name,
-                        ":: _detachSubscribers");
+                    h.default.INFO(this.constructor.name, ":: _detachSubscribers");
                     this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady);
                     this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
                     this.unsubscribe(e.default.EVENT.ON_PAGE_CONTENT_SHOW, this._refresh);
@@ -9181,105 +8858,98 @@
                     enquire.register(e.default.MQ.IS_TABLET, this.MQMediumHandler);
                     enquire.register(e.default.MQ.IS_DESKTOP, this.MQDesktopHandler)
                 }
-            },
-                {
-                    key: "_detachMQHandlers", value: function () {
-                        enquire.unregister(e.default.MQ.IS_MOBILE, this.MQMobileHandler);
-                        enquire.unregister(e.default.MQ.IS_TABLET, this.MQMediumHandler);
-                        enquire.unregister(e.default.MQ.IS_DESKTOP, this.MQDesktopHandler)
-                    }
-                }, {
-                    key: "_setSliderProperties", value: function () {
-                        var a = this, b = this.$slider.css("color"),
-                            d = Math.max(this.$slider.find(e.default.SWIPER.SELECTOR_SWIPER_WRAPPER).children().length, this.$slider.children().length);
-                        this.settings = {
-                            speed: Modernizr.touchevents ? this.TOUCH_SPEED :
-                                this.SPEED,
-                            simulateTouch: !1,
-                            slidesPerView: this.$el.data(this.DATA_MOBILE_SLIDES),
-                            slidesPerGroup: this.$el.data(this.DATA_MOBILE_SLIDES),
-                            watchSlidesProgress: !0,
-                            watchSlidesVisibility: !0,
-                            navigation: {
-                                nextEl: e.default.SWIPER.SELECTOR_ARROW_NEXT,
-                                prevEl: e.default.SWIPER.SELECTOR_ARROW_PREV
+            }, {
+                key: "_detachMQHandlers", value: function () {
+                    enquire.unregister(e.default.MQ.IS_MOBILE, this.MQMobileHandler);
+                    enquire.unregister(e.default.MQ.IS_TABLET, this.MQMediumHandler);
+                    enquire.unregister(e.default.MQ.IS_DESKTOP, this.MQDesktopHandler)
+                }
+            }, {
+                key: "_setSliderProperties", value: function () {
+                    var a = this, b = this.$slider.css("color"),
+                        d = Math.max(this.$slider.find(e.default.SWIPER.SELECTOR_SWIPER_WRAPPER).children().length, this.$slider.children().length);
+                    this.settings = {
+                        speed: Modernizr.touchevents ? this.TOUCH_SPEED : this.SPEED,
+                        simulateTouch: !1,
+                        slidesPerView: this.$el.data(this.DATA_MOBILE_SLIDES),
+                        slidesPerGroup: this.$el.data(this.DATA_MOBILE_SLIDES),
+                        watchSlidesProgress: !0,
+                        watchSlidesVisibility: !0,
+                        navigation: {
+                            nextEl: e.default.SWIPER.SELECTOR_ARROW_NEXT,
+                            prevEl: e.default.SWIPER.SELECTOR_ARROW_PREV
+                        },
+                        pagination: {
+                            el: e.default.SWIPER.SELECTOR_PAGINATION, renderBullet: function (a, d) {
+                                return "\x3cbutton type\x3d'button' class\x3d'" + d + " " + e.default.CLASS.HAS_DISABLED_BUTTON_STYLE + "' style\x3d'background-color: " + b + "'\x3e\x3c/button\x3e"
+                            }, clickable: !0
+                        },
+                        loop: d > this.$el.data(this.DATA_DESKTOP_SLIDES),
+                        breakpoints: {
+                            767: {
+                                slidesPerView: this.$el.data(this.DATA_TABLET_SLIDES),
+                                slidesPerGroup: this.$el.data(this.DATA_TABLET_SLIDES)
                             },
-                            pagination: {
-                                el: e.default.SWIPER.SELECTOR_PAGINATION, renderBullet: function (a, d) {
-                                    return "\x3cbutton type\x3d'button' class\x3d'" + d + " " + e.default.CLASS.HAS_DISABLED_BUTTON_STYLE + "' style\x3d'background-color: " + b + "'\x3e\x3c/button\x3e"
-                                },
-                                clickable: !0
-                            },
-                            loop: d > this.$el.data(this.DATA_DESKTOP_SLIDES),
-                            breakpoints: {
-                                767: {
-                                    slidesPerView: this.$el.data(this.DATA_TABLET_SLIDES),
-                                    slidesPerGroup: this.$el.data(this.DATA_TABLET_SLIDES)
-                                },
-                                1024: {
-                                    slidesPerView: this.$el.data(this.DATA_DESKTOP_SLIDES),
-                                    slidesPerGroup: this.$el.data(this.DATA_DESKTOP_SLIDES)
-                                }
-                            },
-                            on: {
-                                init: function () {
-                                    a.$el.addClass(e.default.SWIPER.CLASS_INITIALIZED);
-                                    a.publish(e.default.EVENT.ON_SWIPER_INITIALIZED, a.$el)
-                                }, slideChangeTransitionEnd: this._hideInvisibleContent
+                            1024: {
+                                slidesPerView: this.$el.data(this.DATA_DESKTOP_SLIDES),
+                                slidesPerGroup: this.$el.data(this.DATA_DESKTOP_SLIDES)
                             }
-                        };
-                        this.$el.data("slick-autoplay") &&
-                        (this.settings.autoplay = {delay: this.$el.data("slick-autoplay-speed") ? this.$el.data("slick-autoplay-speed") : 4E3})
-                    }
-                }, {
-                    key: "_initSlider", value: function () {
-                        this.$el.removeClass(e.default.CLASS.IS_DISABLED_STATE);
-                        this.slider || (this.disabledListenerAttached && ($(window).off("resize", this._onDisabledResize), this.disabledListenerAttached = !1), this.slider = new Swiper(this.$slider, this.settings), this._initCloneSlides(), this.$redundantWrapper = this.$el.find(this.SELECTOR_IS_REDUNDANT_WRAPPER), this.$slides = this.$slider.find(this.SELECTOR_SLIDE),
-                            this.$slideLinks = this.$slides.find(this.SELECTOR_LINK), this.$redundantWrapper.length && this.$redundantWrapper.remove(), this._hideInvisibleContent())
-                    }
-                }, {
-                    key: "_destroySlider", value: function () {
-                        this.$el.addClass(e.default.CLASS.IS_DISABLED_STATE);
-                        this._onDisabledResize();
-                        this.disabledListenerAttached || ($(window).on("resize", this._onDisabledResize), this.disabledListenerAttached = !0);
-                        this._onDisabledResize();
-                        this.slider && (this.slider.destroy(!0, !0), this.slider = void 0)
-                    }
-                }, {
-                    key: "_sliderSetUp", value: function () {
-                        this.$slider.addClass(e.default.SWIPER.CLASS_CONTAINER);
-                        this.$slider.children().addClass(e.default.SWIPER.CLASS_SLIDE).wrapAll("\x3cdiv class\x3d'" + e.default.SWIPER.CLASS_WRAPPER + "'\x3e\x3c/div\x3e");
-                        this.$slider.append("\x3cbutton type\x3d'button' aria-label\x3d'previous' class\x3d'" + e.default.SWIPER.CLASS_ARROW_PREV + " " + e.default.CLASS.HAS_DISABLED_BUTTON_STYLE + "'\x3e\x3c/button\x3e").append("\x3cbutton type\x3d'button' aria-label\x3d'next' class\x3d'" + e.default.SWIPER.CLASS_ARROW_NEXT + " " + e.default.CLASS.HAS_DISABLED_BUTTON_STYLE + "'\x3e\x3c/button\x3e").append("\x3cdiv class\x3d'" +
-                            e.default.SWIPER.CLASS_PAGINATION + "'\x3e\x3c/div\x3e")
-                    }
-                }, {
-                    key: "_onDisabledResize", value: function () {
-                        var a = this.$el.data(this.DATA_DESKTOP_SLIDES);
-                        Modernizr.mq(e.default.MQ.IS_MOBILE) ? a = this.$el.data(this.DATA_MOBILE_SLIDES) : Modernizr.mq(e.default.MQ.IS_TABLET) && (a = this.$el.data(this.DATA_TABLET_SLIDES));
-                        this.$el.find(e.default.SWIPER.SELECTOR_SLIDE).css("width", this.$slider.outerWidth() / a)
-                    }
-                }, {
-                    key: "_refresh", value: function () {
-                        this.slider && this.slider.update()
-                    }
-                }, {
-                    key: "_reInit", value: function (a) {
-                        this.$slider.is(a) &&
-                        (this.slider && (this.slider.destroy(!0, !0), this.slider = void 0), this.$el.find(e.default.SWIPER.SELECTOR_SWIPER_WRAPPER).contents().unwrap(), this.$slider.find("\x3e *:not(" + e.default.SWIPER.SELECTOR_SWIPER_CONTROLS + ")").addClass(e.default.SWIPER.CLASS_SLIDE).wrapAll("\x3cdiv class\x3d'" + e.default.SWIPER.CLASS_WRAPPER + "'\x3e\x3c/div\x3e"), this._setSliderProperties(), this._detachMQHandlers(), this._attachMQHandlers())
-                    }
-                }, {
-                    key: "_initCloneSlides", value: function () {
-                        this.$slider.find(this.SELECTOR_CLONED_COMPONENTS).removeAttr("data-component-id");
-                        this.__mediator._scanNewBlock(this.$slider[0])
-                    }
-                }, {
-                    key: "_hideInvisibleContent", value: function () {
-                        c.default.Accessibility.clear(this.$slides.add(this.$slideLinks));
-                        var a = this.$slides.filter(this.SELECTOR_INVISIBLE_SLIDE), b = a.find(this.SELECTOR_LINK);
-                        c.default.Accessibility.hide(a);
-                        c.default.Accessibility.preventFocus(b)
-                    }
-                }]);
+                        },
+                        on: {
+                            init: function () {
+                                a.$el.addClass(e.default.SWIPER.CLASS_INITIALIZED);
+                                a.publish(e.default.EVENT.ON_SWIPER_INITIALIZED, a.$el)
+                            }, slideChangeTransitionEnd: this._hideInvisibleContent
+                        }
+                    };
+                    this.$el.data("slick-autoplay") && (this.settings.autoplay = {delay: this.$el.data("slick-autoplay-speed") ? this.$el.data("slick-autoplay-speed") : 4E3})
+                }
+            }, {
+                key: "_initSlider", value: function () {
+                    this.$el.removeClass(e.default.CLASS.IS_DISABLED_STATE);
+                    this.slider || (this.disabledListenerAttached && ($(window).off("resize", this._onDisabledResize), this.disabledListenerAttached = !1), this.slider = new Swiper(this.$slider, this.settings), this._initCloneSlides(), this.$redundantWrapper = this.$el.find(this.SELECTOR_IS_REDUNDANT_WRAPPER), this.$slides = this.$slider.find(this.SELECTOR_SLIDE), this.$slideLinks = this.$slides.find(this.SELECTOR_LINK), this.$redundantWrapper.length && this.$redundantWrapper.remove(), this._hideInvisibleContent())
+                }
+            }, {
+                key: "_destroySlider", value: function () {
+                    this.$el.addClass(e.default.CLASS.IS_DISABLED_STATE);
+                    this._onDisabledResize();
+                    this.disabledListenerAttached || ($(window).on("resize", this._onDisabledResize), this.disabledListenerAttached = !0);
+                    this._onDisabledResize();
+                    this.slider && (this.slider.destroy(!0, !0), this.slider = void 0)
+                }
+            }, {
+                key: "_sliderSetUp", value: function () {
+                    this.$slider.addClass(e.default.SWIPER.CLASS_CONTAINER);
+                    this.$slider.children().addClass(e.default.SWIPER.CLASS_SLIDE).wrapAll("\x3cdiv class\x3d'" + e.default.SWIPER.CLASS_WRAPPER + "'\x3e\x3c/div\x3e");
+                    this.$slider.append("\x3cbutton type\x3d'button' aria-label\x3d'previous' class\x3d'" + e.default.SWIPER.CLASS_ARROW_PREV + " " + e.default.CLASS.HAS_DISABLED_BUTTON_STYLE + "'\x3e\x3c/button\x3e").append("\x3cbutton type\x3d'button' aria-label\x3d'next' class\x3d'" + e.default.SWIPER.CLASS_ARROW_NEXT + " " + e.default.CLASS.HAS_DISABLED_BUTTON_STYLE + "'\x3e\x3c/button\x3e").append("\x3cdiv class\x3d'" + e.default.SWIPER.CLASS_PAGINATION + "'\x3e\x3c/div\x3e")
+                }
+            }, {
+                key: "_onDisabledResize", value: function () {
+                    var a = this.$el.data(this.DATA_DESKTOP_SLIDES);
+                    Modernizr.mq(e.default.MQ.IS_MOBILE) ? a = this.$el.data(this.DATA_MOBILE_SLIDES) : Modernizr.mq(e.default.MQ.IS_TABLET) && (a = this.$el.data(this.DATA_TABLET_SLIDES));
+                    this.$el.find(e.default.SWIPER.SELECTOR_SLIDE).css("width", this.$slider.outerWidth() / a)
+                }
+            }, {
+                key: "_refresh", value: function () {
+                    this.slider && this.slider.update()
+                }
+            }, {
+                key: "_reInit", value: function (a) {
+                    this.$slider.is(a) && (this.slider && (this.slider.destroy(!0, !0), this.slider = void 0), this.$el.find(e.default.SWIPER.SELECTOR_SWIPER_WRAPPER).contents().unwrap(), this.$slider.find("\x3e *:not(" + e.default.SWIPER.SELECTOR_SWIPER_CONTROLS + ")").addClass(e.default.SWIPER.CLASS_SLIDE).wrapAll("\x3cdiv class\x3d'" + e.default.SWIPER.CLASS_WRAPPER + "'\x3e\x3c/div\x3e"), this._setSliderProperties(), this._detachMQHandlers(), this._attachMQHandlers())
+                }
+            }, {
+                key: "_initCloneSlides", value: function () {
+                    this.$slider.find(this.SELECTOR_CLONED_COMPONENTS).removeAttr("data-component-id");
+                    this.__mediator._scanNewBlock(this.$slider[0])
+                }
+            }, {
+                key: "_hideInvisibleContent", value: function () {
+                    c.default.Accessibility.clear(this.$slides.add(this.$slideLinks));
+                    var a = this.$slides.filter(this.SELECTOR_INVISIBLE_SLIDE), b = a.find(this.SELECTOR_LINK);
+                    c.default.Accessibility.hide(a);
+                    c.default.Accessibility.preventFocus(b)
+                }
+            }]);
             return b
         }(p.default);
         t.exports = f
@@ -9314,8 +8984,7 @@
             }
         }
 
-        function r(a,
-                   b, d) {
+        function r(a, b, d) {
             b && q(a.prototype, b);
             d && q(a, d);
             return a
@@ -9331,12 +9000,7 @@
 
         function v(a, b) {
             if ("function" !== typeof b && null !== b) throw new TypeError("Super expression must either be null or a function");
-            a.prototype = Object.create(b && b.prototype, {
-                constructor: {
-                    value: a, writable: !0,
-                    configurable: !0
-                }
-            });
+            a.prototype = Object.create(b && b.prototype, {constructor: {value: a, writable: !0, configurable: !0}});
             b && n(a, b)
         }
 
@@ -9365,8 +9029,7 @@
         }
 
         function u() {
-            if ("undefined" === typeof Reflect || !Reflect.construct ||
-                Reflect.construct.sham) return !1;
+            if ("undefined" === typeof Reflect || !Reflect.construct || Reflect.construct.sham) return !1;
             if ("function" === typeof Proxy) return !0;
             try {
                 return Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {
@@ -9388,8 +9051,7 @@
             c = k(f("./../../../themes/p11/utils.js"));
         f = function (a) {
             function b() {
-                if (!(this instanceof
-                    b)) throw new TypeError("Cannot call a class as a function");
+                if (!(this instanceof b)) throw new TypeError("Cannot call a class as a function");
                 var a = d.apply(this, arguments);
                 h.default.INFO(a.constructor.name, ":: Constructor");
                 a._jQueryScopeBinding();
@@ -9409,8 +9071,7 @@
                 }
             }, {
                 key: "_declareConstants", value: function () {
-                    this.SELECTOR_CONFIRMATION_BUTTON =
-                        ".confirmation-button";
+                    this.SELECTOR_CONFIRMATION_BUTTON = ".confirmation-button";
                     this.SELECTOR_ERROR_BUTTON = ".error-button";
                     this.SELECTOR_CONSENT_CHECKBOX = "#policies \x3e .a-checkbox";
                     this.SELECTOR_NEWSLETTER_CHECKBOX = "#newsletter \x3e .a-checkbox";
@@ -9447,8 +9108,7 @@
                 }
             }, {
                 key: "_jQueryScopeBinding", value: function () {
-                    this._onDOMReady =
-                        this._onDOMReady.bind(this);
+                    this._onDOMReady = this._onDOMReady.bind(this);
                     this._onSubmit = this._onSubmit.bind(this);
                     this._removeErrorClass = this._removeErrorClass.bind(this);
                     this._onCheckBoxClick = this._onCheckBoxClick.bind(this);
@@ -9461,8 +9121,7 @@
                 key: "_attachSubscribers", value: function () {
                     h.default.INFO(this.constructor.name, ":: _attachSubscribers");
                     this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
-                    this.subscribe(e.default.EVENT.ON_LIGHTBOX_CLOSE,
-                        this._removeErrorClass);
+                    this.subscribe(e.default.EVENT.ON_LIGHTBOX_CLOSE, this._removeErrorClass);
                     this.subscribe(e.default.EVENT.ON_LIGHTBOX_OPEN, this._hideErrorMessages)
                 }
             }, {
@@ -9473,73 +9132,68 @@
                     this.unsubscribe(e.default.EVENT.ON_LIGHTBOX_CLOSE, this._removeErrorClass);
                     this.unsubscribe(e.default.EVENT.ON_LIGHTBOX_OPEN, this._hideErrorMessages)
                 }
-            },
-                {
-                    key: "_attachDOMListeners", value: function () {
-                        this.$confirmationButton.on("click", this._onSubmit);
-                        this.$errorButton.on("click", this._onErrorButtonClick);
-                        this.$consentCheckbox.on("change", this._onCheckBoxClick)
-                    }
-                }, {
-                    key: "_detachDOMListeners", value: function () {
-                        this.$confirmationButton.off("click", this._onSubmit);
-                        this.$errorButton.off("click", this._onErrorButtonClick);
-                        this.$consentCheckbox.off("change", this._onCheckBoxClick)
-                    }
-                }, {
-                    key: "_attachMQHandlers", value: function () {
-                    }
-                }, {
-                    key: "_detachMQHandlers", value: function () {
-                    }
-                },
-                {
-                    key: "_onSubmit", value: function () {
-                        var a = this.$consentCheckbox.prop("checked") ? !0 : !1, b = "", d = "", c = "";
-                        this.$lightBox.data("authcode") && (b = this.$lightBox.data("authcode"));
-                        this.$lightBox.data("social-channel") && (d = this.$lightBox.data("social-channel"));
-                        a && this.$lightBox.hasClass(this.CLASS_ASK_FOR_EMAIL) ? this.$emailInput.val() && !this.$mInput.hasClass(e.default.CLASS.HAS_ERROR) ? (c = this.$emailInput.val(), this._ajaxPost(b, d, c)) : this.$infoTextEmail.show() : a ? this._ajaxPost(b, d, c) : this.$consentCheckbox.closest(this.SELECTOR_M_CHECKBOX).addClass(e.default.CLASS.HAS_ERROR)
-                    }
-                },
-                {
-                    key: "_removeErrorClass", value: function () {
-                        this.$lightBox.hasClass(e.default.CLASS.HAS_ERROR) && this.$lightBox.removeClass(e.default.CLASS.HAS_ERROR)
-                    }
-                }, {
-                    key: "_hideErrorMessages", value: function () {
-                        this.$lightBox.hasClass(this.CLASS_ASK_FOR_EMAIL) ? this.$infoTextConsent.hide() : this.$infoTextEmail.hide()
-                    }
-                }, {
-                    key: "_onCheckBoxClick", value: function () {
-                        this.$consentCheckbox.prop("checked") && this.$consentCheckbox.closest(this.SELECTOR_M_CHECKBOX).removeClass(e.default.CLASS.HAS_ERROR)
-                    }
-                }, {
-                    key: "_onErrorButtonClick",
-                    value: function () {
-                        this.publish(e.default.ACTION.HIDE_LIGHTBOX)
-                    }
-                }, {
-                    key: "_ajaxPost", value: function (a, b, d) {
-                        var x = this, g = this.$newsletterCheckbox.prop("checked"),
-                            f = c.default.ConstructUrl.localeUrl("/socialLogin/createAccount");
-                        $.ajax({
-                            type: "POST",
-                            url: f,
-                            headers: {"X-Requested-With": "XMLHttpRequest"},
-                            dataType: "json",
-                            contentType: "application/json; charset\x3dutf-8",
-                            success: function (a) {
-                                "ok" !== a.responseStatusCode || "201" !== a.responseNumber && "205" !== a.responseNumber ? "ko" === a.responseStatusCode && (x.$lightBox.addClass(e.default.CLASS.HAS_ERROR),
-                                    x.publish(e.default.ACTION.TEALIUM_TRACK_EVENT, "login_social_fail")) : (a = $(x.SELECTOR_SOCIAL_SIGN_IN_BUTTONS).data("redirect-url")) ? (x.publish(e.default.ACTION.TEALIUM_TRACK_EVENT, "login_social_success"), window.location.href = a) : (x.publish(e.default.ACTION.HIDE_LIGHTBOX), x.publish(e.default.ACTION.TEALIUM_TRACK_EVENT, "login_social_success"), window.location.reload())
-                            },
-                            error: function (a) {
-                                x.$lightBox.addClass(e.default.CLASS.HAS_ERROR);
-                                x.publish(e.default.ACTION.TEALIUM_TRACK_EVENT, "login_social_fail")
-                            },
-                            data: '{"token":"' + a + '","socialChannel":"' + b + '","createAccount":"true","email":"' + d + '","subscribeNewsletter":"' + g + '"}'
-                        })
-                    }
-                }]);
+            }, {
+                key: "_attachDOMListeners", value: function () {
+                    this.$confirmationButton.on("click", this._onSubmit);
+                    this.$errorButton.on("click", this._onErrorButtonClick);
+                    this.$consentCheckbox.on("change", this._onCheckBoxClick)
+                }
+            }, {
+                key: "_detachDOMListeners", value: function () {
+                    this.$confirmationButton.off("click", this._onSubmit);
+                    this.$errorButton.off("click", this._onErrorButtonClick);
+                    this.$consentCheckbox.off("change", this._onCheckBoxClick)
+                }
+            }, {
+                key: "_attachMQHandlers", value: function () {
+                }
+            }, {
+                key: "_detachMQHandlers", value: function () {
+                }
+            }, {
+                key: "_onSubmit", value: function () {
+                    var a = this.$consentCheckbox.prop("checked") ? !0 : !1, b = "", d = "", c = "";
+                    this.$lightBox.data("authcode") && (b = this.$lightBox.data("authcode"));
+                    this.$lightBox.data("social-channel") && (d = this.$lightBox.data("social-channel"));
+                    a && this.$lightBox.hasClass(this.CLASS_ASK_FOR_EMAIL) ? this.$emailInput.val() && !this.$mInput.hasClass(e.default.CLASS.HAS_ERROR) ? (c = this.$emailInput.val(), this._ajaxPost(b, d, c)) : this.$infoTextEmail.show() : a ? this._ajaxPost(b, d, c) : this.$consentCheckbox.closest(this.SELECTOR_M_CHECKBOX).addClass(e.default.CLASS.HAS_ERROR)
+                }
+            }, {
+                key: "_removeErrorClass", value: function () {
+                    this.$lightBox.hasClass(e.default.CLASS.HAS_ERROR) && this.$lightBox.removeClass(e.default.CLASS.HAS_ERROR)
+                }
+            }, {
+                key: "_hideErrorMessages", value: function () {
+                    this.$lightBox.hasClass(this.CLASS_ASK_FOR_EMAIL) ? this.$infoTextConsent.hide() : this.$infoTextEmail.hide()
+                }
+            }, {
+                key: "_onCheckBoxClick", value: function () {
+                    this.$consentCheckbox.prop("checked") && this.$consentCheckbox.closest(this.SELECTOR_M_CHECKBOX).removeClass(e.default.CLASS.HAS_ERROR)
+                }
+            }, {
+                key: "_onErrorButtonClick", value: function () {
+                    this.publish(e.default.ACTION.HIDE_LIGHTBOX)
+                }
+            }, {
+                key: "_ajaxPost", value: function (a, b, d) {
+                    var x = this, g = this.$newsletterCheckbox.prop("checked"),
+                        f = c.default.ConstructUrl.localeUrl("/socialLogin/createAccount");
+                    $.ajax({
+                        type: "POST",
+                        url: f,
+                        headers: {"X-Requested-With": "XMLHttpRequest"},
+                        dataType: "json",
+                        contentType: "application/json; charset\x3dutf-8",
+                        success: function (a) {
+                            "ok" !== a.responseStatusCode || "201" !== a.responseNumber && "205" !== a.responseNumber ? "ko" === a.responseStatusCode && (x.$lightBox.addClass(e.default.CLASS.HAS_ERROR), x.publish(e.default.ACTION.TEALIUM_TRACK_EVENT, "login_social_fail")) : (a = $(x.SELECTOR_SOCIAL_SIGN_IN_BUTTONS).data("redirect-url")) ? (x.publish(e.default.ACTION.TEALIUM_TRACK_EVENT, "login_social_success"), window.location.href = a) : (x.publish(e.default.ACTION.HIDE_LIGHTBOX), x.publish(e.default.ACTION.TEALIUM_TRACK_EVENT, "login_social_success"), window.location.reload())
+                        },
+                        error: function (a) {
+                            x.$lightBox.addClass(e.default.CLASS.HAS_ERROR);
+                            x.publish(e.default.ACTION.TEALIUM_TRACK_EVENT, "login_social_fail")
+                        },
+                        data: '{"token":"' + a + '","socialChannel":"' + b + '","createAccount":"true","email":"' + d + '","subscribeNewsletter":"' + g + '"}'
+                    })
+                }
+            }]);
             return b
         }(p.default);
         t.exports = f
@@ -9555,8 +9209,7 @@
             m = "function" === typeof Symbol && "symbol" === typeof Symbol.iterator ? function (a) {
                 return typeof a
             } : function (a) {
-                return a && "function" ===
-                typeof Symbol && a.constructor === Symbol && a !== Symbol.prototype ? "symbol" : typeof a
+                return a && "function" === typeof Symbol && a.constructor === Symbol && a !== Symbol.prototype ? "symbol" : typeof a
             };
             return m(a)
         }
@@ -9583,8 +9236,7 @@
 
         function l(a, b, d) {
             l = "undefined" !== typeof Reflect && Reflect.get ? Reflect.get : function (a, b, d) {
-                for (; !Object.prototype.hasOwnProperty.call(a, b) &&
-                       (a = g(a), null !== a);) ;
+                for (; !Object.prototype.hasOwnProperty.call(a, b) && (a = g(a), null !== a);) ;
                 if (a) return b = Object.getOwnPropertyDescriptor(a, b), b.get ? b.get.call(d) : b.value
             };
             return l(a, b, d || a)
@@ -9609,8 +9261,7 @@
             return function () {
                 var d = g(a);
                 if (b) {
-                    var c =
-                        g(this).constructor;
+                    var c = g(this).constructor;
                     d = Reflect.construct(d, arguments, c)
                 } else d = d.apply(this, arguments);
                 if (!d || "object" !== m(d) && "function" !== typeof d) {
@@ -9633,10 +9284,9 @@
         }
 
         function g(a) {
-            g =
-                Object.setPrototypeOf ? Object.getPrototypeOf : function (a) {
-                    return a.__proto__ || Object.getPrototypeOf(a)
-                };
+            g = Object.setPrototypeOf ? Object.getPrototypeOf : function (a) {
+                return a.__proto__ || Object.getPrototypeOf(a)
+            };
             return g(a)
         }
 
@@ -9694,8 +9344,7 @@
                     this._showLogin = this._showLogin.bind(this);
                     this._googleSignIn = this._googleSignIn.bind(this);
                     this._googleCallback = this._googleCallback.bind(this);
-                    this._facebookSignIn =
-                        this._facebookSignIn.bind(this);
+                    this._facebookSignIn = this._facebookSignIn.bind(this);
                     this._instagramSignIn = this._instagramSignIn.bind(this);
                     this._openSocialPopup = this._openSocialPopup.bind(this)
                 }
@@ -9708,8 +9357,7 @@
                     this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
                     this.$facebookButton.on("click", this._facebookSignIn);
                     this.$googleButton.on("click", this._googleSignIn);
-                    this.$instagramButton.on("click",
-                        this._instagramSignIn);
+                    this.$instagramButton.on("click", this._instagramSignIn);
                     this.$emailButton.on("click", this._showLogin)
                 }
             }, {
@@ -9720,8 +9368,7 @@
                     this.$facebookButton.off("click", this._facebookSignIn);
                     this.$googleButton.off("click", this._googleSignIn);
                     this.$instagramButton.off("click", this._openSocialPopup);
-                    this.$emailButton.off("click",
-                        this._showLogin)
+                    this.$emailButton.off("click", this._showLogin)
                 }
             }, {
                 key: "_attachDOMListeners", value: function () {
@@ -9743,76 +9390,72 @@
                 key: "_googleSignIn", value: function () {
                     window.auth2.grantOfflineAccess().then(this._googleCallback)
                 }
-            },
-                {
-                    key: "_googleCallback", value: function (a) {
-                        a.code && (this.$googleButton.addClass(e.default.CLASS.IS_SIGNED_IN_STATE), window.auth2.isSignedIn.get() && (a = auth2.currentUser.get().getAuthResponse().id_token, this._ajaxPost(a, "GOOGLE")))
-                    }
-                }, {
-                    key: "_checkFacebookStatus", value: function () {
-                        FB.getLoginStatus(function (a) {
-                            this._facebookCallback(a)
+            }, {
+                key: "_googleCallback", value: function (a) {
+                    a.code && (this.$googleButton.addClass(e.default.CLASS.IS_SIGNED_IN_STATE), window.auth2.isSignedIn.get() && (a = auth2.currentUser.get().getAuthResponse().id_token, this._ajaxPost(a, "GOOGLE")))
+                }
+            }, {
+                key: "_checkFacebookStatus", value: function () {
+                    FB.getLoginStatus(function (a) {
+                        this._facebookCallback(a)
+                    })
+                }
+            }, {
+                key: "_facebookSignIn", value: function () {
+                    var a = this;
+                    FB.login(function (b) {
+                        "connected" === b.status && a._facebookCallback(b)
+                    }, {scope: "public_profile,email"})
+                }
+            }, {
+                key: "_facebookCallback", value: function (a) {
+                    this._ajaxPost(a.authResponse.accessToken, "FACEBOOK")
+                }
+            }, {
+                key: "_instagramSignIn", value: function () {
+                    var a = "\x26redirect_uri\x3d" + $(location).attr("href");
+                    window.location = this.INSTAGRAM_API_URL + a
+                }
+            }, {
+                key: "_instagramGetCode", value: function () {
+                    var a = function (a) {
+                        a = (new RegExp("[?\x26]" + a + "\x3d([^\x26#]*)")).exec(window.location.href);
+                        return null === a ? null : a[1] || 0
+                    };
+                    null !== a("code") && this._ajaxPost(a("code"), "INSTAGRAM")
+                }
+            }, {
+                key: "_ajaxPost", value: function (a, b) {
+                    var d = this, x = "", g = !1, f = c.default.ConstructUrl.localeUrl("/socialLogin/login");
+                    $.ajax({
+                        type: "POST",
+                        url: f,
+                        headers: {"X-Requested-With": "XMLHttpRequest"},
+                        dataType: "json",
+                        contentType: "application/json; charset\x3dutf-8",
+                        success: function (c) {
+                            "ok" === c.responseStatusCode && "101" === c.responseNumber ? (c = d.$el.data("redirect-url")) ? (d.publish(e.default.ACTION.TEALIUM_TRACK_EVENT, "login_social_success"), window.location.href = c) : (d.publish(e.default.ACTION.HIDE_LIGHTBOX), d.publish(e.default.ACTION.TEALIUM_TRACK_EVENT, "login_social_success"), window.location.reload()) : "ko" === c.responseStatusCode && ("102" === c.responseNumber ? g = c.responseData.email && "" !== c.responseData.email ? !1 : !0 : $.inArray(c.responseNumber, ["103", "104", "301"]) ? (x = c.responseDescription, d.publish(e.default.ACTION.TEALIUM_TRACK_EVENT, "login_social_fail")) : x = "Generic error", d._openSocialPopup(a, b, g, x))
+                        },
+                        error: function (c) {
+                            d._openSocialPopup(a, b, !1, "Technical issue connecting to database")
+                        },
+                        data: '{"token":"' + a + '","socialChannel":"' + b + '"}'
+                    })
+                }
+            }, {
+                key: "_openSocialPopup", value: function (a, b, d, c) {
+                    var x = this, g = d ? " ask-for-email" : "", f = "" !== c ? " has-error" : "";
+                    this.publish(e.default.ACTION.HIDE_LIGHTBOX);
+                    this.publish(e.default.ACTION.TEALIUM_TRACK_EVENT, "login_social_consent_popup");
+                    setTimeout(function () {
+                        x.publish(e.default.ACTION.SHOW_LIGHTBOX, {
+                            template: "social-sign-in-popup",
+                            classes: "is-social-sign-in-popup" + g + f,
+                            data: {authCode: a, socialChannel: b}
                         })
-                    }
-                }, {
-                    key: "_facebookSignIn", value: function () {
-                        var a = this;
-                        FB.login(function (b) {
-                            "connected" === b.status && a._facebookCallback(b)
-                        }, {scope: "public_profile,email"})
-                    }
-                }, {
-                    key: "_facebookCallback",
-                    value: function (a) {
-                        this._ajaxPost(a.authResponse.accessToken, "FACEBOOK")
-                    }
-                }, {
-                    key: "_instagramSignIn", value: function () {
-                        var a = "\x26redirect_uri\x3d" + $(location).attr("href");
-                        window.location = this.INSTAGRAM_API_URL + a
-                    }
-                }, {
-                    key: "_instagramGetCode", value: function () {
-                        var a = function (a) {
-                            a = (new RegExp("[?\x26]" + a + "\x3d([^\x26#]*)")).exec(window.location.href);
-                            return null === a ? null : a[1] || 0
-                        };
-                        null !== a("code") && this._ajaxPost(a("code"), "INSTAGRAM")
-                    }
-                }, {
-                    key: "_ajaxPost", value: function (a, b) {
-                        var d = this, x = "", g = !1, f = c.default.ConstructUrl.localeUrl("/socialLogin/login");
-                        $.ajax({
-                            type: "POST",
-                            url: f,
-                            headers: {"X-Requested-With": "XMLHttpRequest"},
-                            dataType: "json",
-                            contentType: "application/json; charset\x3dutf-8",
-                            success: function (c) {
-                                "ok" === c.responseStatusCode && "101" === c.responseNumber ? (c = d.$el.data("redirect-url")) ? (d.publish(e.default.ACTION.TEALIUM_TRACK_EVENT, "login_social_success"), window.location.href = c) : (d.publish(e.default.ACTION.HIDE_LIGHTBOX), d.publish(e.default.ACTION.TEALIUM_TRACK_EVENT, "login_social_success"), window.location.reload()) : "ko" === c.responseStatusCode &&
-                                    ("102" === c.responseNumber ? g = c.responseData.email && "" !== c.responseData.email ? !1 : !0 : $.inArray(c.responseNumber, ["103", "104", "301"]) ? (x = c.responseDescription, d.publish(e.default.ACTION.TEALIUM_TRACK_EVENT, "login_social_fail")) : x = "Generic error", d._openSocialPopup(a, b, g, x))
-                            },
-                            error: function (c) {
-                                d._openSocialPopup(a, b, !1, "Technical issue connecting to database")
-                            },
-                            data: '{"token":"' + a + '","socialChannel":"' + b + '"}'
-                        })
-                    }
-                }, {
-                    key: "_openSocialPopup", value: function (a, b, d, c) {
-                        var x = this, g = d ? " ask-for-email" : "", f = "" !==
-                        c ? " has-error" : "";
-                        this.publish(e.default.ACTION.HIDE_LIGHTBOX);
-                        this.publish(e.default.ACTION.TEALIUM_TRACK_EVENT, "login_social_consent_popup");
-                        setTimeout(function () {
-                            x.publish(e.default.ACTION.SHOW_LIGHTBOX, {
-                                template: "social-sign-in-popup",
-                                classes: "is-social-sign-in-popup" + g + f,
-                                data: {authCode: a, socialChannel: b}
-                            })
-                        }, 500)
-                    }
-                }]);
+                    }, 500)
+                }
+            }]);
             return b
         }(p.default);
         t.exports = f
@@ -9847,8 +9490,7 @@
             }
         }
 
-        function r(a,
-                   b, d) {
+        function r(a, b, d) {
             b && q(a.prototype, b);
             d && q(a, d);
             return a
@@ -9864,12 +9506,7 @@
 
         function v(a, b) {
             if ("function" !== typeof b && null !== b) throw new TypeError("Super expression must either be null or a function");
-            a.prototype = Object.create(b && b.prototype, {
-                constructor: {
-                    value: a, writable: !0,
-                    configurable: !0
-                }
-            });
+            a.prototype = Object.create(b && b.prototype, {constructor: {value: a, writable: !0, configurable: !0}});
             b && n(a, b)
         }
 
@@ -9898,8 +9535,7 @@
         }
 
         function u() {
-            if ("undefined" === typeof Reflect || !Reflect.construct ||
-                Reflect.construct.sham) return !1;
+            if ("undefined" === typeof Reflect || !Reflect.construct || Reflect.construct.sham) return !1;
             if ("function" === typeof Proxy) return !0;
             try {
                 return Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {
@@ -9955,8 +9591,7 @@
                     this._attachDOMListeners()
                 }
             }, {
-                key: "_jQueryScopeBinding",
-                value: function () {
+                key: "_jQueryScopeBinding", value: function () {
                     this._onDOMReady = this._onDOMReady.bind(this);
                     this._onClickLink = this._onClickLink.bind(this);
                     this._disableRedundantFocus = this._disableRedundantFocus.bind(this)
@@ -9969,8 +9604,7 @@
             }, {
                 key: "_detachSubscribers", value: function () {
                     h.default.INFO(this.constructor.name, ":: _detachSubscribers");
-                    this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY,
-                        this._onDOMReady);
+                    this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady);
                     this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady)
                 }
             }, {
@@ -9990,8 +9624,7 @@
             }, {
                 key: "_onClickLink", value: function (a) {
                     a.preventDefault();
-                    this.$el.hasClass(e.default.CLASS.IS_DISABLED_STATE) || (this.isExclusive && this.$exclusiveGroup.removeClass(e.default.CLASS.IS_VISIBLE_STATE), this.$el.hasClass(e.default.CLASS.IS_VISIBLE_STATE) ? (this.$el.removeClass(e.default.CLASS.IS_VISIBLE_STATE), c.default.Accessibility.hide(this.$accordionContent, this.$el), c.default.Accessibility.preventFocus(this.$focusableContent)) : (this.$el.addClass(e.default.CLASS.IS_VISIBLE_STATE), c.default.Accessibility.clear(this.$accordionContent.add(this.$focusableContent),
-                        this.$el)))
+                    this.$el.hasClass(e.default.CLASS.IS_DISABLED_STATE) || (this.isExclusive && this.$exclusiveGroup.removeClass(e.default.CLASS.IS_VISIBLE_STATE), this.$el.hasClass(e.default.CLASS.IS_VISIBLE_STATE) ? (this.$el.removeClass(e.default.CLASS.IS_VISIBLE_STATE), c.default.Accessibility.hide(this.$accordionContent, this.$el), c.default.Accessibility.preventFocus(this.$focusableContent)) : (this.$el.addClass(e.default.CLASS.IS_VISIBLE_STATE), c.default.Accessibility.clear(this.$accordionContent.add(this.$focusableContent), this.$el)))
                 }
             }, {
                 key: "_disableRedundantFocus", value: function () {
@@ -10042,8 +9675,7 @@
             return e
         }
 
-        function l(e,
-                   c, a) {
+        function l(e, c, a) {
             l = "undefined" !== typeof Reflect && Reflect.get ? Reflect.get : function (a, d, c) {
                 for (; !Object.prototype.hasOwnProperty.call(a, d) && (a = g(a), null !== a);) ;
                 if (a) return d = Object.getOwnPropertyDescriptor(a, d), d.get ? d.get.call(c) : d.value
@@ -10058,11 +9690,10 @@
         }
 
         function n(e, c) {
-            n = Object.setPrototypeOf ||
-                function (a, b) {
-                    a.__proto__ = b;
-                    return a
-                };
+            n = Object.setPrototypeOf || function (a, b) {
+                a.__proto__ = b;
+                return a
+            };
             return n(e, c)
         }
 
@@ -10111,8 +9742,7 @@
             v(c, e);
             var a = w(c);
             r(c, [{
-                key: "subscribe",
-                value: function (a, d) {
+                key: "subscribe", value: function (a, d) {
                     l(g(c.prototype), "subscribe", this).call(this, a, d, this);
                     a !== h.default.EVENT.ON_DOCUMENT_READY || "interactive" !== document.readyState && "complete" !== document.readyState || d()
                 }
@@ -10124,8 +9754,7 @@
     48: [function (f, t, p) {
         function m(e) {
             "@babel/helpers - typeof";
-            m = "function" ===
-            typeof Symbol && "symbol" === typeof Symbol.iterator ? function (c) {
+            m = "function" === typeof Symbol && "symbol" === typeof Symbol.iterator ? function (c) {
                 return typeof c
             } : function (c) {
                 return c && "function" === typeof Symbol && c.constructor === Symbol && c !== Symbol.prototype ? "symbol" : typeof c
@@ -10154,8 +9783,7 @@
         }
 
         function l(e, c) {
-            if ("function" !==
-                typeof c && null !== c) throw new TypeError("Super expression must either be null or a function");
+            if ("function" !== typeof c && null !== c) throw new TypeError("Super expression must either be null or a function");
             e.prototype = Object.create(c && c.prototype, {constructor: {value: e, writable: !0, configurable: !0}});
             c && v(e, c)
         }
@@ -10240,8 +9868,7 @@
                         e.push(b._scanBlockElement(a))
                     });
                     e.forEach(function (a) {
-                        b._publishOnInstance(g.default.EVENT.ON_DOCUMENT_READY,
-                            a)
+                        b._publishOnInstance(g.default.EVENT.ON_DOCUMENT_READY, a)
                     })
                 }
             }, {
@@ -10259,8 +9886,7 @@
                     var c = this._generateUUID();
                     a.setAttribute("data-component-id", c);
                     var e = a.getAttribute("data-component");
-                    c = "".concat(e,
-                        "-").concat(c);
+                    c = "".concat(e, "-").concat(c);
                     this.initializedComponents[c] || (b = this._initializeBlockComponent(e, c, a, d));
                     return b
                 }
@@ -10321,11 +9947,10 @@
         }
 
         function l(a, b, d) {
-            l = "undefined" !== typeof Reflect && Reflect.get ?
-                Reflect.get : function (a, b, d) {
-                    for (; !Object.prototype.hasOwnProperty.call(a, b) && (a = g(a), null !== a);) ;
-                    if (a) return b = Object.getOwnPropertyDescriptor(a, b), b.get ? b.get.call(d) : b.value
-                };
+            l = "undefined" !== typeof Reflect && Reflect.get ? Reflect.get : function (a, b, d) {
+                for (; !Object.prototype.hasOwnProperty.call(a, b) && (a = g(a), null !== a);) ;
+                if (a) return b = Object.getOwnPropertyDescriptor(a, b), b.get ? b.get.call(d) : b.value
+            };
             return l(a, b, d || a)
         }
 
@@ -10363,9 +9988,8 @@
             if ("undefined" === typeof Reflect || !Reflect.construct || Reflect.construct.sham) return !1;
             if ("function" === typeof Proxy) return !0;
             try {
-                return Boolean.prototype.valueOf.call(Reflect.construct(Boolean,
-                    [], function () {
-                    })), !0
+                return Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {
+                })), !0
             } catch (a) {
                 return !1
             }
@@ -10418,8 +10042,7 @@
                     this.SELECTOR_HIDDEN_INPUT = ".is-hidden-value";
                     this.SELECTOR_CHECKBOX = ".m-checkbox";
                     this.SELECTOR_CHECKBOX_ATOM = ".a-checkbox";
-                    this.SELECTOR_ERROR_MESSAGE =
-                        ".error-msg";
+                    this.SELECTOR_ERROR_MESSAGE = ".error-msg";
                     this.SELECTOR_CHECKBOX_LABEL = ".js-a-label";
                     this.SELECTOR_FOCUSABLE = "[tabindex\x3d0]";
                     this.SELECTOR_PLACEHOLDER = ".placeholder";
@@ -10461,8 +10084,7 @@
                     this._setInputOnLoad()
                 }
             }, {
-                key: "_cacheDOMElements",
-                value: function () {
+                key: "_cacheDOMElements", value: function () {
                     this.$iconArrow = this.$el.find(this.SELECTOR_ICON_ARROW);
                     this.$iconClose = this.$el.find(this.SELECTOR_ICON_CLOSE);
                     this.$options = this.$el.find(this.SELECTOR_OPTIONS);
@@ -10481,8 +10103,7 @@
                     this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
                     this.subscribe(e.default.EVENT.ON_BODY_CLICKED, this._onBodyClick);
                     this.subscribe(e.default.ACTION.OPEN_DROPDOWN, this._onOpeningRequest);
-                    this.subscribe(e.default.ACTION.CLOSE_DROPDOWN,
-                        this._onClosingRequest);
+                    this.subscribe(e.default.ACTION.CLOSE_DROPDOWN, this._onClosingRequest);
                     this.subscribe(e.default.ACTION.SET_DROPDOWN_SELECTED_OPTION, this._handleSelectedOptionChangeRequest);
                     this.subscribe(e.default.ACTION.SET_DROPDOWN_OPTIONS, this._onSetDropdownOptionRequest);
                     this.subscribe(e.default.EVENT.ON_DROPDOWN_CLOSED_FILTERS, this._validate)
@@ -10491,8 +10112,7 @@
                 key: "_detachSubscribers", value: function () {
                     h.default.INFO(this.constructor.name, ":: _detachSubscribers");
                     this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
-                    this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY,
-                        this._onDOMReady);
+                    this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady);
                     this.unsubscribe(e.default.EVENT.ON_BODY_CLICKED, this._onBodyClick);
                     this.unsubscribe(e.default.ACTION.OPEN_DROPDOWN, this._onOpeningRequest);
                     this.unsubscribe(e.default.ACTION.CLOSE_DROPDOWN, this._onClosingRequest);
@@ -10500,252 +10120,240 @@
                     this.unsubscribe(e.default.ACTION.SET_DROPDOWN_OPTIONS, this._onSetDropdownOptionRequest);
                     this.unsubscribe(e.default.EVENT.ON_DROPDOWN_CLOSED_FILTERS, this._validate)
                 }
-            },
-                {
-                    key: "_onFrameworkReady", value: function () {
+            }, {
+                key: "_onFrameworkReady", value: function () {
+                }
+            }, {
+                key: "_attachDOMListeners", value: function () {
+                    this.$el.on("click", this.SELECTOR_OPTIONS, this._onOptionClick);
+                    this.$el.on("mousemove", this.SELECTOR_OPTIONS, this._onOptionHover);
+                    this.$el.on("mouseout", this.SELECTOR_UL_OPTIONS, this._onMouseLeave);
+                    this.$el.on("keydown", this._onKeyDown);
+                    this.$el.on("keyup", this._onKeyUp);
+                    this.$iconArrow.on("click", this._onArrowClick);
+                    if (this.$input.attr("required")) this.$input.on("change", this._validate);
+                    this.$el.on("focusin", this, this._focusInDropDown);
+                    this.$el.on("focusout", this._focusOutDropDown);
+                    this.$el.parent().hasClass(this.CLASS_QUANTITY_SECTION) && (this.$iconArrow.on("keydown", this._onKeyDown), this.$iconClose.on("keydown", this._onKeyDown))
+                }
+            }, {
+                key: "_detachDOMListeners", value: function () {
+                    this.$el.off("click", this.SELECTOR_OPTIONS, this._onOptionClick);
+                    this.$el.off("mousemove", this.SELECTOR_OPTIONS, this._onOptionHover);
+                    this.$el.off("mouseout", this.SELECTOR_UL_OPTIONS, this._onMouseLeave);
+                    this.$iconArrow.off("click", this._onArrowClick);
+                    this.$input.attr("required") && this.$input.off("change", this._validate);
+                    this.$el.off("keydown", this._onKeyDown);
+                    this.$el.off("keyup", this._onKeyUp);
+                    this.$el.off("focusin", this._focusInDropDown);
+                    this.$el.off("focusout", this._focusOutDropDown)
+                }
+            }, {
+                key: "_focusInDropDown", value: function (a) {
+                }
+            }, {
+                key: "_focusOutDropDown", value: function () {
+                }
+            }, {
+                key: "_onOpeningRequest", value: function (a) {
+                    this.$el.is(a) && this._open()
+                }
+            }, {
+                key: "_onClosingRequest", value: function (a) {
+                    this.$el.is(a) && (this._close(), this._validate())
+                }
+            }, {
+                key: "_onOptionHover", value: function (a) {
+                    a = $(a.currentTarget);
+                    if (!this.isUserScrolling && !a.hasClass(e.default.CLASS.IS_DISABLED_STATE)) {
+                        var b = this.$el.find(this.SELECTOR_VISIBLE_OPTIONS);
+                        b.removeClass(e.default.CLASS.IS_SELECTED);
+                        c.default.Accessibility.unselect(b);
+                        a.addClass(e.default.CLASS.IS_SELECTED);
+                        c.default.Accessibility.select(a)
                     }
-                }, {
-                    key: "_attachDOMListeners", value: function () {
-                        this.$el.on("click", this.SELECTOR_OPTIONS, this._onOptionClick);
-                        this.$el.on("mousemove", this.SELECTOR_OPTIONS, this._onOptionHover);
-                        this.$el.on("mouseout", this.SELECTOR_UL_OPTIONS, this._onMouseLeave);
-                        this.$el.on("keydown", this._onKeyDown);
-                        this.$el.on("keyup", this._onKeyUp);
-                        this.$iconArrow.on("click", this._onArrowClick);
-                        if (this.$input.attr("required")) this.$input.on("change", this._validate);
-                        this.$el.on("focusin",
-                            this, this._focusInDropDown);
-                        this.$el.on("focusout", this._focusOutDropDown);
-                        this.$el.parent().hasClass(this.CLASS_QUANTITY_SECTION) && (this.$iconArrow.on("keydown", this._onKeyDown), this.$iconClose.on("keydown", this._onKeyDown))
+                    this.isUserScrolling = !1
+                }
+            }, {
+                key: "_setOptions", value: function (a) {
+                    this.$options.off("mousemove", this._onOptionHover);
+                    this.$optionsWrapper.html("").append(a);
+                    this.$options = a;
+                    this.$options.on("mousemove", this._onOptionHover)
+                }
+            }, {
+                key: "_onSetDropdownOptionRequest", value: function (a) {
+                    this.$el.is(a.dropdown) && this._setOptions(a.options)
+                }
+            }, {
+                key: "_removeFilter", value: function () {
+                    this.$options.removeClass(this.CLASS_DISPLAY_NONE)
+                }
+            }, {
+                key: "_onKeyDown", value: function (a) {
+                    if (!a.defaultPrevented) {
+                        var b = !1;
+                        this.$el.hasClass(e.default.CLASS.IS_OPEN_STATE) ? a.key.match(e.default.KEYSTROKE.ARROW_UP) ? (this._changeSelectedOption(!1), b = !0, this.publish(e.default.ACTION.ARROW_PRESSED)) : a.key.match(e.default.KEYSTROKE.ARROW_DOWN) ? (this._changeSelectedOption(!0), b = !0, this.publish(e.default.ACTION.ARROW_PRESSED)) : a.key.match(e.default.KEYSTROKE.SPACEBAR) ? b = !0 : a.key.match(e.default.KEYSTROKE.ENTER) ? (this._onKeystrokeEnter(a), b = !0) : a.key.match(e.default.KEYSTROKE.ESCAPE) ? (this._close(), this.$el.focus(), b = !0) : a.key.match(e.default.KEYSTROKE.TAB) && this._onKeystrokeTab(a) : this.$el.parent().hasClass(this.CLASS_QUANTITY_SECTION) ? a.key.match(e.default.KEYSTROKE.ENTER) && (this._open(), b = !0) : this.$el.hasClass(e.default.CLASS.IS_OPEN_STATE) || (a.key.match(e.default.KEYSTROKE.SPACEBAR) ? b = !0 : a.key.match(e.default.KEYSTROKE.ARROW_DOWN) ? (this._open(), b = !0) : a.key.match(e.default.KEYSTROKE.ENTER) && (this._open(), b = !0));
+                        b && (a.stopPropagation(), a.preventDefault())
                     }
-                }, {
-                    key: "_detachDOMListeners", value: function () {
-                        this.$el.off("click", this.SELECTOR_OPTIONS, this._onOptionClick);
-                        this.$el.off("mousemove", this.SELECTOR_OPTIONS, this._onOptionHover);
-                        this.$el.off("mouseout", this.SELECTOR_UL_OPTIONS, this._onMouseLeave);
-                        this.$iconArrow.off("click",
-                            this._onArrowClick);
-                        this.$input.attr("required") && this.$input.off("change", this._validate);
-                        this.$el.off("keydown", this._onKeyDown);
-                        this.$el.off("keyup", this._onKeyUp);
-                        this.$el.off("focusin", this._focusInDropDown);
-                        this.$el.off("focusout", this._focusOutDropDown)
+                }
+            }, {
+                key: "_onKeyUp", value: function (a) {
+                    a.defaultPrevented || (this.$el.hasClass(e.default.CLASS.IS_OPEN_STATE) ? a.key.match(e.default.KEYSTROKE.SPACEBAR) && (this._onKeystrokeSpacebar(a), a.stopPropagation(), a.preventDefault()) : !this.$el.hasClass(e.default.CLASS.IS_OPEN_STATE) && a.key.match(e.default.KEYSTROKE.SPACEBAR) && (a.stopPropagation(), a.preventDefault()))
+                }
+            }, {
+                key: "_onKeystrokeSpacebar", value: function (a) {
+                    a = this.$el.find(this.SELECTOR_IS_SELECTED);
+                    var b = a.find(this.SELECTOR_CHECKBOX_LABEL).get(0);
+                    a.hasClass("bottom-option") || b || this._setInputValue(a);
+                    b ? b.click() : a.length && (a.trigger("click"), this._close());
+                    this._validate()
+                }
+            }, {
+                key: "_onKeystrokeEnter", value: function (a) {
+                    var b = this.$el.find(this.SELECTOR_IS_SELECTED), d = a.currentTarget,
+                        c = b.find(this.SELECTOR_CHECKBOX_LABEL).get(0);
+                    b.hasClass("bottom-option") || c || this._setInputValue(b, d);
+                    c ? a.preventDefault() : b.length && (b.trigger("click"), this._close());
+                    this._validate()
+                }
+            }, {
+                key: "_onKeystrokeTab", value: function (a) {
+                    if (this.$el.hasClass(e.default.CLASS.IS_OPEN_STATE)) {
+                        this._close();
+                        var b = a.shiftKey ? this.$el.parent().prev().find(this.SELECTOR_PLACEHOLDER) : this.$el.parent().next().find(this.SELECTOR_PLACEHOLDER);
+                        b.length && (b.focus(), a.stopPropagation(), a.preventDefault())
                     }
-                }, {
-                    key: "_focusInDropDown", value: function (a) {
+                }
+            }, {
+                key: "_changeSelectedOption", value: function (a) {
+                    var b = 1 < arguments.length && void 0 !== arguments[1] ? arguments[1] : 1,
+                        d = this.$el.find(this.SELECTOR_VISIBLE_OPTIONS), c = this.$el.find(this.SELECTOR_IS_SELECTED),
+                        x = d.index(c);
+                    if (a) {
+                        if (x === d.length - 1) return;
+                        c = c.length ? x + b : b - 1
+                    } else {
+                        if (0 === x) return;
+                        c = c.length ? x - b : c.length + 1
                     }
-                }, {
-                    key: "_focusOutDropDown", value: function () {
+                    c = d.eq(c);
+                    c.hasClass(e.default.CLASS.IS_DISABLED_STATE) ? this._changeSelectedOption(a, b + 1) : this._changeSelectedState(d, c)
+                }
+            }, {
+                key: "_changeSelectedState", value: function (a, b) {
+                    a.removeClass(e.default.CLASS.IS_SELECTED);
+                    c.default.Accessibility.unselect(a);
+                    b.addClass(e.default.CLASS.IS_SELECTED);
+                    c.default.Accessibility.select(b);
+                    b.has("a").length ? b.find("a").focus() : void 0 !== b.attr("tabindex") ? b.focus() : b.find(this.SELECTOR_FOCUSABLE).focus();
+                    this.publish(e.default.EVENT.ON_SAVE_CURRENT_FOCUS, b.find(this.SELECTOR_CHECKBOX).attr("id"));
+                    this._adjustScrollTop()
+                }
+            }, {
+                key: "_adjustScrollTop", value: function () {
+                    var a = this.$el.find(this.SELECTOR_VISIBLE_OPTIONS).length,
+                        b = this.$el.find(this.SELECTOR_SELECTED_SIBLINGS).length;
+                    (a - b) * this.optionHeight > this.$optionsWrapper.height() + this.$optionsWrapper.scrollTop() ? (this.isUserScrolling = !0, this.$optionsWrapper.scrollTop((a - b + 1) * this.optionHeight - this.$optionsWrapper.height())) : (a - b - 1) * this.optionHeight < this.$optionsWrapper.scrollTop() && (this.isUserScrolling = !0, this.$optionsWrapper.scrollTop((a - b - 1) * this.optionHeight))
+                }
+            }, {
+                key: "_filterOptions", value: function () {
+                }
+            }, {
+                key: "_open", value: function () {
+                    if (!this.$el.hasClass(e.default.CLASS.IS_DISABLED_STATE)) {
+                        this._removeFilter();
+                        this.$el.addClass(e.default.CLASS.IS_OPEN_STATE);
+                        var a = this.$options.index(this.$selectedOption) * this.$selectedOption.outerHeight();
+                        this.$optionsWrapper.scrollTop(a);
+                        this.$selectedOption = this.$el.find(e.default.CLASS.IS_SELECTED);
+                        this.$selectedOption.find(this.SELECTOR_FOCUSABLE).focus()
                     }
-                }, {
-                    key: "_onOpeningRequest", value: function (a) {
-                        this.$el.is(a) && this._open()
+                }
+            }, {
+                key: "_close", value: function () {
+                    this.$el.removeClass(e.default.CLASS.IS_OPEN_STATE);
+                    this._validate()
+                }
+            }, {
+                key: "_onBodyClick", value: function (a) {
+                    a = $(a.target);
+                    !this.$el.hasClass(e.default.CLASS.IS_OPEN_STATE) || a.closest(this.SELECTOR_DROPDOWN).length && a.closest(this.SELECTOR_DROPDOWN).is(this.$el) || (this._close(), this._highlightSelectedOption())
+                }
+            }, {
+                key: "_onMouseLeave", value: function (a) {
+                    this.isUserScrolling || this._highlightSelectedOption()
+                }
+            }, {
+                key: "_highlightSelectedOption", value: function () {
+                    this.$dropdownValue = this.$optionsWrapper.find(this.SELECTOR_IS_DROPDOWN_VALUE);
+                    this.$dropdownValue.length ? (this.$el.find(this.SELECTOR_OPTIONS).removeClass(e.default.CLASS.IS_SELECTED), this.$dropdownValue.addClass(e.default.CLASS.IS_SELECTED)) : this.$selectedOption.length && (this.$el.find(this.SELECTOR_OPTIONS).removeClass(e.default.CLASS.IS_SELECTED), this.$selectedOption.addClass(e.default.CLASS.IS_SELECTED))
+                }
+            }, {
+                key: "_setInputValue", value: function (a) {
+                    if (a.length) {
+                        this.$options.removeClass(this.CLASS_IS_DROPDOWN_VALUE);
+                        a.addClass(this.CLASS_IS_DROPDOWN_VALUE);
+                        var b = a.html().trim();
+                        this.$input.val(b).attr("data-value", a.attr("data-value")).trigger("change");
+                        this.$selectedOption = a;
+                        this.$selectedOption.addClass(e.default.CLASS.IS_SELECTED)
                     }
-                }, {
-                    key: "_onClosingRequest", value: function (a) {
-                        this.$el.is(a) && (this._close(),
-                            this._validate())
+                }
+            }, {
+                key: "_setInputOnLoad", value: function () {
+                    if (this.$selectedAndIsValue.length) {
+                        var a = this.$selectedAndIsValue.html().trim();
+                        this.$input.val(a).attr("data-value", this.$selectedAndIsValue.attr("data-value")).trigger("change")
                     }
-                }, {
-                    key: "_onOptionHover", value: function (a) {
-                        a = $(a.currentTarget);
-                        if (!this.isUserScrolling && !a.hasClass(e.default.CLASS.IS_DISABLED_STATE)) {
-                            var b = this.$el.find(this.SELECTOR_VISIBLE_OPTIONS);
-                            b.removeClass(e.default.CLASS.IS_SELECTED);
-                            c.default.Accessibility.unselect(b);
-                            a.addClass(e.default.CLASS.IS_SELECTED);
-                            c.default.Accessibility.select(a)
-                        }
-                        this.isUserScrolling = !1
-                    }
-                }, {
-                    key: "_setOptions", value: function (a) {
-                        this.$options.off("mousemove", this._onOptionHover);
-                        this.$optionsWrapper.html("").append(a);
-                        this.$options = a;
-                        this.$options.on("mousemove", this._onOptionHover)
-                    }
-                }, {
-                    key: "_onSetDropdownOptionRequest", value: function (a) {
-                        this.$el.is(a.dropdown) && this._setOptions(a.options)
-                    }
-                }, {
-                    key: "_removeFilter", value: function () {
-                        this.$options.removeClass(this.CLASS_DISPLAY_NONE)
-                    }
-                }, {
-                    key: "_onKeyDown", value: function (a) {
-                        if (!a.defaultPrevented) {
-                            var b = !1;
-                            this.$el.hasClass(e.default.CLASS.IS_OPEN_STATE) ? a.key.match(e.default.KEYSTROKE.ARROW_UP) ? (this._changeSelectedOption(!1), b = !0, this.publish(e.default.ACTION.ARROW_PRESSED)) :
-                                a.key.match(e.default.KEYSTROKE.ARROW_DOWN) ? (this._changeSelectedOption(!0), b = !0, this.publish(e.default.ACTION.ARROW_PRESSED)) : a.key.match(e.default.KEYSTROKE.SPACEBAR) ? b = !0 : a.key.match(e.default.KEYSTROKE.ENTER) ? (this._onKeystrokeEnter(a), b = !0) : a.key.match(e.default.KEYSTROKE.ESCAPE) ? (this._close(), this.$el.focus(), b = !0) : a.key.match(e.default.KEYSTROKE.TAB) && this._onKeystrokeTab(a) : this.$el.parent().hasClass(this.CLASS_QUANTITY_SECTION) ? a.key.match(e.default.KEYSTROKE.ENTER) && (this._open(), b = !0) :
-                                this.$el.hasClass(e.default.CLASS.IS_OPEN_STATE) || (a.key.match(e.default.KEYSTROKE.SPACEBAR) ? b = !0 : a.key.match(e.default.KEYSTROKE.ARROW_DOWN) ? (this._open(), b = !0) : a.key.match(e.default.KEYSTROKE.ENTER) && (this._open(), b = !0));
-                            b && (a.stopPropagation(), a.preventDefault())
-                        }
-                    }
-                }, {
-                    key: "_onKeyUp", value: function (a) {
-                        a.defaultPrevented || (this.$el.hasClass(e.default.CLASS.IS_OPEN_STATE) ? a.key.match(e.default.KEYSTROKE.SPACEBAR) && (this._onKeystrokeSpacebar(a), a.stopPropagation(), a.preventDefault()) : !this.$el.hasClass(e.default.CLASS.IS_OPEN_STATE) &&
-                            a.key.match(e.default.KEYSTROKE.SPACEBAR) && (a.stopPropagation(), a.preventDefault()))
-                    }
-                }, {
-                    key: "_onKeystrokeSpacebar", value: function (a) {
-                        a = this.$el.find(this.SELECTOR_IS_SELECTED);
-                        var b = a.find(this.SELECTOR_CHECKBOX_LABEL).get(0);
-                        a.hasClass("bottom-option") || b || this._setInputValue(a);
-                        b ? b.click() : a.length && (a.trigger("click"), this._close());
-                        this._validate()
-                    }
-                }, {
-                    key: "_onKeystrokeEnter", value: function (a) {
-                        var b = this.$el.find(this.SELECTOR_IS_SELECTED), d = a.currentTarget,
-                            c = b.find(this.SELECTOR_CHECKBOX_LABEL).get(0);
-                        b.hasClass("bottom-option") || c || this._setInputValue(b, d);
-                        c ? a.preventDefault() : b.length && (b.trigger("click"), this._close());
-                        this._validate()
-                    }
-                }, {
-                    key: "_onKeystrokeTab", value: function (a) {
-                        if (this.$el.hasClass(e.default.CLASS.IS_OPEN_STATE)) {
-                            this._close();
-                            var b = a.shiftKey ? this.$el.parent().prev().find(this.SELECTOR_PLACEHOLDER) : this.$el.parent().next().find(this.SELECTOR_PLACEHOLDER);
-                            b.length && (b.focus(), a.stopPropagation(), a.preventDefault())
-                        }
-                    }
-                }, {
-                    key: "_changeSelectedOption", value: function (a) {
-                        var b = 1 < arguments.length &&
-                            void 0 !== arguments[1] ? arguments[1] : 1, d = this.$el.find(this.SELECTOR_VISIBLE_OPTIONS),
-                            c = this.$el.find(this.SELECTOR_IS_SELECTED), x = d.index(c);
-                        if (a) {
-                            if (x === d.length - 1) return;
-                            c = c.length ? x + b : b - 1
+                }
+            }, {
+                key: "_handleSelectedOptionChangeRequest", value: function (a, b) {
+                    if (b.is(this.$el)) {
+                        var d = {};
+                        "object" != k(a) ? d.index = a : d = a;
+                        var c;
+                        a = this.$filterCheckboxesAtom && 0 < this.$filterCheckboxesAtom.length ? this.$filterCheckboxesAtom : this.$options;
+                        if (Number.isInteger(d.index)) {
+                            if ((d.index = Math.abs(d.index)) >= a.length && (h.default.WARN(d.index + " is higher than options size"), d.index = Math.max(a.length - 1, 0)), a = (c = $(a.get(d.index))).prop("checked"), (d.action = void 0 == d.action ? !0 : d.action) != a || void 0 == a) b.addClass(e.default.CLASS.IS_OPEN_STATE), c.trigger("click"), b.removeClass(e.default.CLASS.IS_OPEN_STATE)
                         } else {
-                            if (0 === x) return;
-                            c = c.length ? x - b : c.length + 1
-                        }
-                        c = d.eq(c);
-                        c.hasClass(e.default.CLASS.IS_DISABLED_STATE) ? this._changeSelectedOption(a, b + 1) : this._changeSelectedState(d, c)
-                    }
-                }, {
-                    key: "_changeSelectedState", value: function (a, b) {
-                        a.removeClass(e.default.CLASS.IS_SELECTED);
-                        c.default.Accessibility.unselect(a);
-                        b.addClass(e.default.CLASS.IS_SELECTED);
-                        c.default.Accessibility.select(b);
-                        b.has("a").length ? b.find("a").focus() : void 0 !== b.attr("tabindex") ? b.focus() : b.find(this.SELECTOR_FOCUSABLE).focus();
-                        this.publish(e.default.EVENT.ON_SAVE_CURRENT_FOCUS, b.find(this.SELECTOR_CHECKBOX).attr("id"));
-                        this._adjustScrollTop()
-                    }
-                }, {
-                    key: "_adjustScrollTop", value: function () {
-                        var a = this.$el.find(this.SELECTOR_VISIBLE_OPTIONS).length,
-                            b = this.$el.find(this.SELECTOR_SELECTED_SIBLINGS).length;
-                        (a - b) * this.optionHeight > this.$optionsWrapper.height() + this.$optionsWrapper.scrollTop() ?
-                            (this.isUserScrolling = !0, this.$optionsWrapper.scrollTop((a - b + 1) * this.optionHeight - this.$optionsWrapper.height())) : (a - b - 1) * this.optionHeight < this.$optionsWrapper.scrollTop() && (this.isUserScrolling = !0, this.$optionsWrapper.scrollTop((a - b - 1) * this.optionHeight))
-                    }
-                }, {
-                    key: "_filterOptions", value: function () {
-                    }
-                }, {
-                    key: "_open", value: function () {
-                        if (!this.$el.hasClass(e.default.CLASS.IS_DISABLED_STATE)) {
-                            this._removeFilter();
-                            this.$el.addClass(e.default.CLASS.IS_OPEN_STATE);
-                            var a = this.$options.index(this.$selectedOption) *
-                                this.$selectedOption.outerHeight();
-                            this.$optionsWrapper.scrollTop(a);
-                            this.$selectedOption = this.$el.find(e.default.CLASS.IS_SELECTED);
-                            this.$selectedOption.find(this.SELECTOR_FOCUSABLE).focus()
-                        }
-                    }
-                }, {
-                    key: "_close", value: function () {
-                        this.$el.removeClass(e.default.CLASS.IS_OPEN_STATE);
-                        this._validate()
-                    }
-                }, {
-                    key: "_onBodyClick", value: function (a) {
-                        a = $(a.target);
-                        !this.$el.hasClass(e.default.CLASS.IS_OPEN_STATE) || a.closest(this.SELECTOR_DROPDOWN).length && a.closest(this.SELECTOR_DROPDOWN).is(this.$el) || (this._close(),
-                            this._highlightSelectedOption())
-                    }
-                }, {
-                    key: "_onMouseLeave", value: function (a) {
-                        this.isUserScrolling || this._highlightSelectedOption()
-                    }
-                }, {
-                    key: "_highlightSelectedOption", value: function () {
-                        this.$dropdownValue = this.$optionsWrapper.find(this.SELECTOR_IS_DROPDOWN_VALUE);
-                        this.$dropdownValue.length ? (this.$el.find(this.SELECTOR_OPTIONS).removeClass(e.default.CLASS.IS_SELECTED), this.$dropdownValue.addClass(e.default.CLASS.IS_SELECTED)) : this.$selectedOption.length && (this.$el.find(this.SELECTOR_OPTIONS).removeClass(e.default.CLASS.IS_SELECTED),
-                            this.$selectedOption.addClass(e.default.CLASS.IS_SELECTED))
-                    }
-                }, {
-                    key: "_setInputValue", value: function (a) {
-                        if (a.length) {
-                            this.$options.removeClass(this.CLASS_IS_DROPDOWN_VALUE);
-                            a.addClass(this.CLASS_IS_DROPDOWN_VALUE);
-                            var b = a.html().trim();
-                            this.$input.val(b).attr("data-value", a.attr("data-value")).trigger("change");
-                            this.$selectedOption = a;
-                            this.$selectedOption.addClass(e.default.CLASS.IS_SELECTED)
-                        }
-                    }
-                }, {
-                    key: "_setInputOnLoad", value: function () {
-                        if (this.$selectedAndIsValue.length) {
-                            var a = this.$selectedAndIsValue.html().trim();
-                            this.$input.val(a).attr("data-value", this.$selectedAndIsValue.attr("data-value")).trigger("change")
-                        }
-                    }
-                }, {
-                    key: "_handleSelectedOptionChangeRequest", value: function (a, b) {
-                        if (b.is(this.$el)) {
-                            var d = {};
-                            "object" != k(a) ? d.index = a : d = a;
-                            var c;
-                            a = this.$filterCheckboxesAtom && 0 < this.$filterCheckboxesAtom.length ? this.$filterCheckboxesAtom : this.$options;
-                            if (Number.isInteger(d.index)) {
-                                if ((d.index = Math.abs(d.index)) >= a.length && (h.default.WARN(d.index + " is higher than options size"), d.index = Math.max(a.length - 1, 0)), a = (c = $(a.get(d.index))).prop("checked"),
-                                (d.action = void 0 == d.action ? !0 : d.action) != a || void 0 == a) b.addClass(e.default.CLASS.IS_OPEN_STATE), c.trigger("click"), b.removeClass(e.default.CLASS.IS_OPEN_STATE)
-                            } else {
-                                var x = this;
-                                this.$optionsWrapper.children().each(function (a) {
-                                    $(this).data("value") == d.index && (d.index = a, x._handleSelectedOptionChangeRequest(d, b))
-                                });
-                                h.default.ERROR(d.index + " not found")
-                            }
-                        }
-                    }
-                }, {
-                    key: "_onOptionClick", value: function (a) {
-                        a.preventDefault();
-                        a = $(a.currentTarget);
-                        a.hasClass(e.default.CLASS.IS_DISABLED_STATE) || !this.$el.hasClass(e.default.CLASS.IS_OPEN_STATE) ||
-                        this.isCountryDropdown || (this.$el.find("li").removeClass(e.default.CLASS.IS_SELECTED), a.addClass(e.default.CLASS.IS_SELECTED), this.$selectedOption = a, this._setInputValue(a), this._close(), this._validate())
-                    }
-                }, {
-                    key: "_onArrowClick", value: function () {
-                        this.$el.hasClass(e.default.CLASS.IS_OPEN_STATE) ? (this._close(), this._validate()) : this.$el.hasClass(e.default.CLASS.IS_DISABLED_STATE) || this._open()
-                    }
-                }, {
-                    key: "_validate", value: function () {
-                        if (this.$input.attr("required")) {
-                            var a = [];
-                            this.$options.each(function (b,
-                                                         d) {
-                                a[b] = $(d).html().toLowerCase()
+                            var x = this;
+                            this.$optionsWrapper.children().each(function (a) {
+                                $(this).data("value") == d.index && (d.index = a, x._handleSelectedOptionChangeRequest(d, b))
                             });
-                            this.$input[0].validity.valueMissing ? (this.$el.addClass(e.default.CLASS.HAS_ERROR), this.$errorMsg.html(this.$input.data("validation-required-text"))) : -1 == a.indexOf(this.$input.val().toLowerCase()) ? (this.$el.addClass(e.default.CLASS.HAS_ERROR), this.$errorMsg.html(this.$input.data("validation-required-text"))) : this.$el.removeClass(e.default.CLASS.HAS_ERROR)
+                            h.default.ERROR(d.index + " not found")
                         }
                     }
-                }]);
+                }
+            }, {
+                key: "_onOptionClick", value: function (a) {
+                    a.preventDefault();
+                    a = $(a.currentTarget);
+                    a.hasClass(e.default.CLASS.IS_DISABLED_STATE) || !this.$el.hasClass(e.default.CLASS.IS_OPEN_STATE) || this.isCountryDropdown || (this.$el.find("li").removeClass(e.default.CLASS.IS_SELECTED), a.addClass(e.default.CLASS.IS_SELECTED), this.$selectedOption = a, this._setInputValue(a), this._close(), this._validate())
+                }
+            }, {
+                key: "_onArrowClick", value: function () {
+                    this.$el.hasClass(e.default.CLASS.IS_OPEN_STATE) ? (this._close(), this._validate()) : this.$el.hasClass(e.default.CLASS.IS_DISABLED_STATE) || this._open()
+                }
+            }, {
+                key: "_validate", value: function () {
+                    if (this.$input.attr("required")) {
+                        var a = [];
+                        this.$options.each(function (b, d) {
+                            a[b] = $(d).html().toLowerCase()
+                        });
+                        this.$input[0].validity.valueMissing ? (this.$el.addClass(e.default.CLASS.HAS_ERROR), this.$errorMsg.html(this.$input.data("validation-required-text"))) : -1 == a.indexOf(this.$input.val().toLowerCase()) ? (this.$el.addClass(e.default.CLASS.HAS_ERROR), this.$errorMsg.html(this.$input.data("validation-required-text"))) : this.$el.removeClass(e.default.CLASS.HAS_ERROR)
+                    }
+                }
+            }]);
             return b
         }(p.default);
         t.exports = f
     }, {
-        "./../../themes/p11/enums.js": 65, "./../../themes/p11/utils.js": 112,
-        "./appeaser-component-base.js": 47, "./logger.js": 51
+        "./../../themes/p11/enums.js": 65,
+        "./../../themes/p11/utils.js": 112,
+        "./appeaser-component-base.js": 47,
+        "./logger.js": 51
     }],
     50: [function (f, t, p) {
         t.exports = {
@@ -11131,8 +10739,7 @@
                     console.info(q.join(" "))
                 }
             }, ERROR: function () {
-                if (!0 ===
-                    m.active) {
+                if (!0 === m.active) {
                     for (var f = arguments.length, q = Array(f), r = 0; r < f; r++) q[r] = arguments[r];
                     console.error(q.join(" "))
                 }
@@ -11151,8 +10758,7 @@
             m = "function" === typeof Symbol && "symbol" === typeof Symbol.iterator ? function (a) {
                 return typeof a
             } : function (a) {
-                return a && "function" === typeof Symbol && a.constructor ===
-                Symbol && a !== Symbol.prototype ? "symbol" : typeof a
+                return a && "function" === typeof Symbol && a.constructor === Symbol && a !== Symbol.prototype ? "symbol" : typeof a
             };
             return m(a)
         }
@@ -11180,8 +10786,7 @@
         function l(a, b, d) {
             l = "undefined" !== typeof Reflect && Reflect.get ? Reflect.get : function (a, b, d) {
                 for (; !Object.prototype.hasOwnProperty.call(a, b) && (a = g(a), null !== a);) ;
-                if (a) return b =
-                    Object.getOwnPropertyDescriptor(a, b), b.get ? b.get.call(d) : b.value
+                if (a) return b = Object.getOwnPropertyDescriptor(a, b), b.get ? b.get.call(d) : b.value
             };
             return l(a, b, d || a)
         }
@@ -11206,8 +10811,7 @@
                 var d = g(a);
                 if (b) {
                     var c = g(this).constructor;
-                    d = Reflect.construct(d,
-                        arguments, c)
+                    d = Reflect.construct(d, arguments, c)
                 } else d = d.apply(this, arguments);
                 if (!d || "object" !== m(d) && "function" !== typeof d) {
                     if (void 0 === this) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
@@ -11229,10 +10833,9 @@
         }
 
         function g(a) {
-            g = Object.setPrototypeOf ? Object.getPrototypeOf :
-                function (a) {
-                    return a.__proto__ || Object.getPrototypeOf(a)
-                };
+            g = Object.setPrototypeOf ? Object.getPrototypeOf : function (a) {
+                return a.__proto__ || Object.getPrototypeOf(a)
+            };
             return g(a)
         }
 
@@ -11263,8 +10866,7 @@
                 }
             }, {
                 key: "_jQueryScopeBinding", value: function () {
-                    l(g(b.prototype),
-                        "_jQueryScopeBinding", this).call(this);
+                    l(g(b.prototype), "_jQueryScopeBinding", this).call(this);
                     this._onPlaceholderClick = this._onPlaceholderClick.bind(this);
                     this._validate = this._validate.bind(this)
                 }
@@ -11288,8 +10890,7 @@
                 }
             }, {
                 key: "_detachSubscribers", value: function () {
-                    l(g(b.prototype),
-                        "_attachSubscribers", this).call(this);
+                    l(g(b.prototype), "_attachSubscribers", this).call(this);
                     this.unsubscribe(e.default.EVENT.ON_LIGHTBOX_OPEN, this._toggleLightboxListener);
                     this.unsubscribe(e.default.EVENT.ON_QUICKSHOP_LOADED, this._toggleLightboxListener);
                     this.unsubscribe(e.default.EVENT.ON_LIGHTBOX_CLOSE, this._toggleLightboxListener)
@@ -11299,8 +10900,7 @@
                     l(g(b.prototype), "_attachDOMListeners", this).call(this);
                     this.$placeholder.on("click", this._onPlaceholderClick);
                     this.$btnBottom.on("mouseout", this._onMouseLeave);
-                    if (this.$input.attr("required")) this.$input.on("invalid change",
-                        this._validate)
+                    if (this.$input.attr("required")) this.$input.on("invalid change", this._validate)
                 }
             }, {
                 key: "_detachDOMListeners", value: function () {
@@ -11313,72 +10913,68 @@
                 key: "_validate", value: function () {
                     this.$input[0].validity.valueMissing ? (this.$el.addClass(e.default.CLASS.HAS_ERROR), this.$errorMsg.html(this.$input.data("validation-required-text"))) : this.$el.removeClass(e.default.CLASS.HAS_ERROR)
                 }
-            },
-                {
-                    key: "_toggleLightboxListener", value: function () {
-                        var a = this._onBodyClick;
-                        this.$lightbox.hasClass(e.default.CLASS.IS_OPEN_STATE) ? this.$lightbox[0].addEventListener("click", a) : this.$lightbox[0].removeEventListener("click", a)
-                    }
-                }, {
-                    key: "_removeSelectedOptionState", value: function () {
-                        this.$options.removeClass(e.default.CLASS.IS_SELECTED);
-                        c.default.Accessibility.unselect(this.$options)
-                    }
-                }, {
-                    key: "_open", value: function () {
-                        this.$el.addClass(e.default.CLASS.IS_OPEN_STATE);
-                        Modernizr.mq(e.default.MQ.IS_MOBILE) && this._preventMobileScroll();
-                        this.publish(e.default.EVENT.ON_DROPDOWN_OPEN)
-                    }
-                }, {
-                    key: "_close", value: function () {
-                        this.$lightbox.hasClass(e.default.CLASS.IS_OPEN_STATE) || this.publish(e.default.ACTION.HIDE_OVERLAY);
-                        this._enableMobileScroll();
-                        this.$el.removeClass(e.default.CLASS.IS_OPEN_STATE);
-                        this.publish(e.default.EVENT.ON_DROPDOWN_CLOSED, this.$el)
-                    }
-                }, {
-                    key: "_setInputValue", value: function (a) {
-                        var b = a.html();
-                        this.$input.val(b).attr("data-value", a.attr("data-value")).trigger("change");
+            }, {
+                key: "_toggleLightboxListener", value: function () {
+                    var a = this._onBodyClick;
+                    this.$lightbox.hasClass(e.default.CLASS.IS_OPEN_STATE) ? this.$lightbox[0].addEventListener("click", a) : this.$lightbox[0].removeEventListener("click", a)
+                }
+            }, {
+                key: "_removeSelectedOptionState", value: function () {
+                    this.$options.removeClass(e.default.CLASS.IS_SELECTED);
+                    c.default.Accessibility.unselect(this.$options)
+                }
+            }, {
+                key: "_open", value: function () {
+                    this.$el.addClass(e.default.CLASS.IS_OPEN_STATE);
+                    Modernizr.mq(e.default.MQ.IS_MOBILE) && this._preventMobileScroll();
+                    this.publish(e.default.EVENT.ON_DROPDOWN_OPEN)
+                }
+            }, {
+                key: "_close", value: function () {
+                    this.$lightbox.hasClass(e.default.CLASS.IS_OPEN_STATE) || this.publish(e.default.ACTION.HIDE_OVERLAY);
+                    this._enableMobileScroll();
+                    this.$el.removeClass(e.default.CLASS.IS_OPEN_STATE);
+                    this.publish(e.default.EVENT.ON_DROPDOWN_CLOSED, this.$el)
+                }
+            }, {
+                key: "_setInputValue", value: function (a) {
+                    var b = a.html();
+                    this.$input.val(b).attr("data-value", a.attr("data-value")).trigger("change");
+                    this.$selectedOption = a;
+                    this.$placeholder.text(b);
+                    this.$placeholder.hasClass(this.CLASS_TEMPORARY) && this._resetPlaceholderColor()
+                }
+            }, {
+                key: "_onOptionClick", value: function (a) {
+                    a = $(a.target);
+                    if (a.hasClass(e.default.CLASS.IS_DISABLED_STATE) || a.parent().hasClass(this.CLASS_BOTTOM_OPTION) || !this.$el.hasClass(e.default.CLASS.IS_OPEN_STATE)) a.parent().hasClass(this.CLASS_BOTTOM_OPTION) && this._close(); else {
+                        var b = this.$el.find("li");
+                        b.removeClass("is-selected");
+                        c.default.Accessibility.unselect(b);
+                        a.addClass("is-selected");
+                        c.default.Accessibility.select(a);
+                        this._setInputValue(a);
                         this.$selectedOption = a;
-                        this.$placeholder.text(b);
-                        this.$placeholder.hasClass(this.CLASS_TEMPORARY) &&
-                        this._resetPlaceholderColor()
+                        this._close()
                     }
-                }, {
-                    key: "_onOptionClick", value: function (a) {
-                        a = $(a.target);
-                        if (a.hasClass(e.default.CLASS.IS_DISABLED_STATE) || a.parent().hasClass(this.CLASS_BOTTOM_OPTION) || !this.$el.hasClass(e.default.CLASS.IS_OPEN_STATE)) a.parent().hasClass(this.CLASS_BOTTOM_OPTION) && this._close(); else {
-                            var b = this.$el.find("li");
-                            b.removeClass("is-selected");
-                            c.default.Accessibility.unselect(b);
-                            a.addClass("is-selected");
-                            c.default.Accessibility.select(a);
-                            this._setInputValue(a);
-                            this.$selectedOption = a;
-                            this._close()
-                        }
-                    }
-                },
-                {
-                    key: "_onPlaceholderClick", value: function () {
-                        this.$el.hasClass(e.default.CLASS.IS_OPEN_STATE) ? this._close() : this.$el.hasClass(e.default.CLASS.IS_DISABLED_STATE) || this.$el.hasClass(e.default.CLASS.HAS_ONE_ITEM) || this._open()
-                    }
-                }, {
-                    key: "_preventMobileScroll", value: function () {
-                        this.publish(e.default.ACTION.DISABLE_SCROLL, {
-                            $touchScrollElement: this.$el.find(this.SELECTOR_UL_OPTIONS),
-                            forceScrollPosition: !0
-                        });
-                        this.scrollDisabled = !0
-                    }
-                }, {
-                    key: "_enableMobileScroll", value: function () {
-                        this.scrollDisabled && (this.publish(e.default.ACTION.ENABLE_SCROLL),
-                            this.scrollDisabled = !1)
-                    }
-                }]);
+                }
+            }, {
+                key: "_onPlaceholderClick", value: function () {
+                    this.$el.hasClass(e.default.CLASS.IS_OPEN_STATE) ? this._close() : this.$el.hasClass(e.default.CLASS.IS_DISABLED_STATE) || this.$el.hasClass(e.default.CLASS.HAS_ONE_ITEM) || this._open()
+                }
+            }, {
+                key: "_preventMobileScroll", value: function () {
+                    this.publish(e.default.ACTION.DISABLE_SCROLL, {
+                        $touchScrollElement: this.$el.find(this.SELECTOR_UL_OPTIONS),
+                        forceScrollPosition: !0
+                    });
+                    this.scrollDisabled = !0
+                }
+            }, {
+                key: "_enableMobileScroll", value: function () {
+                    this.scrollDisabled && (this.publish(e.default.ACTION.ENABLE_SCROLL), this.scrollDisabled = !1)
+                }
+            }]);
             return b
         }(p.default);
         t.exports = f
@@ -11398,8 +10994,7 @@
             return e && e.__esModule ? e : {default: e}
         }
 
-        function q(e,
-                   c) {
+        function q(e, c) {
             for (var a = 0; a < c.length; a++) {
                 var b = c[a];
                 b.enumerable = b.enumerable || !1;
@@ -11423,8 +11018,7 @@
 
         function v(e, c) {
             v = Object.setPrototypeOf || function (a, b) {
-                a.__proto__ =
-                    b;
+                a.__proto__ = b;
                 return a
             };
             return v(e, c)
@@ -11450,9 +11044,8 @@
             if ("undefined" === typeof Reflect || !Reflect.construct || Reflect.construct.sham) return !1;
             if ("function" === typeof Proxy) return !0;
             try {
-                return Boolean.prototype.valueOf.call(Reflect.construct(Boolean,
-                    [], function () {
-                    })), !0
+                return Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {
+                })), !0
             } catch (e) {
                 return !1
             }
@@ -11486,8 +11079,7 @@
                     var b = this,
                         c = g.default.ENDPOINT.OLAPIC_BASE + "/?auth_token\x3d".concat(this.settings.apiKey, "\x26wrap_responses\x3d").concat(this.settings.wrapResponses, "\x26version\x3d").concat(this.settings.version);
                     $.ajax({url: c}).done(function (d) {
-                        c = g.default.ENDPOINT.OLAPIC_BASE + "/customers/".concat(d.data._embedded.customer.id, "/streams/bytag/").concat(b.settings.productId, "?auth_token\x3d").concat(b.settings.apiKey, "\x26wrap_responses\x3d").concat(b.settings.wrapResponses,
-                            "\x26version\x3d").concat(b.settings.version);
+                        c = g.default.ENDPOINT.OLAPIC_BASE + "/customers/".concat(d.data._embedded.customer.id, "/streams/bytag/").concat(b.settings.productId, "?auth_token\x3d").concat(b.settings.apiKey, "\x26wrap_responses\x3d").concat(b.settings.wrapResponses, "\x26version\x3d").concat(b.settings.version);
                         b.type = "product";
                         b.fetchLinks(c, b.settings.mediaType, b._onMediaFetched, b.type, a)
                     }).fail(function (a) {
@@ -11508,24 +11100,20 @@
                 }
             }, {
                 key: "separateMoveEvents", value: function (a) {
-                    return a == g.default.OLAPIC.TRACKING_EVENTS.WIDGET.MOVE_WIDGET ||
-                    a == g.default.OLAPIC.TRACKING_EVENTS.MEDIA.MOVE_MEDIA ? g.default.OLAPIC.TRACKING_EVENTS.MOVE : a
+                    return a == g.default.OLAPIC.TRACKING_EVENTS.WIDGET.MOVE_WIDGET || a == g.default.OLAPIC.TRACKING_EVENTS.MEDIA.MOVE_MEDIA ? g.default.OLAPIC.TRACKING_EVENTS.MOVE : a
                 }
             }, {
                 key: "sendTrackingDataBest", value: function (a, d) {
                     var b = null;
-                    a == g.default.OLAPIC.TRACKING_EVENTS.WIDGET.RENDER || a == g.default.OLAPIC.TRACKING_EVENTS.WIDGET.MOVE_WIDGET ? (a = this.separateMoveEvents(a), b = g.default.ENDPOINT.OLAPIC_TRACKING_BASE + "".concat(this.settings.entityId, "/best/") + a + "?auth_token\x3d".concat(this.settings.apiKey, "\x26analytics_id\x3d") + this.getOlapidTrackingCookie() + "\x26pics\x3d".concat(this.settings.count,
-                        "\x26version\x3d").concat(this.settings.version)) : null != d && (a = this.separateMoveEvents(a), b = g.default.ENDPOINT.OLAPIC_TRACKING_BASE + "".concat(this.settings.entityId, "/best/media/") + d + "/" + a + "?auth_token\x3d".concat(this.settings.apiKey, "\x26analytics_id\x3d") + this.getOlapidTrackingCookie() + "\x26pics\x3d1\x26version\x3d".concat(this.settings.version));
+                    a == g.default.OLAPIC.TRACKING_EVENTS.WIDGET.RENDER || a == g.default.OLAPIC.TRACKING_EVENTS.WIDGET.MOVE_WIDGET ? (a = this.separateMoveEvents(a), b = g.default.ENDPOINT.OLAPIC_TRACKING_BASE + "".concat(this.settings.entityId, "/best/") + a + "?auth_token\x3d".concat(this.settings.apiKey, "\x26analytics_id\x3d") + this.getOlapidTrackingCookie() + "\x26pics\x3d".concat(this.settings.count, "\x26version\x3d").concat(this.settings.version)) : null != d && (a = this.separateMoveEvents(a), b = g.default.ENDPOINT.OLAPIC_TRACKING_BASE + "".concat(this.settings.entityId, "/best/media/") + d + "/" + a + "?auth_token\x3d".concat(this.settings.apiKey, "\x26analytics_id\x3d") + this.getOlapidTrackingCookie() + "\x26pics\x3d1\x26version\x3d".concat(this.settings.version));
                     $.ajax({url: b}).fail(function (a) {
                         return h.default.LOG("sendTrackingDataBest failed", a.responseText)
                     })
                 }
             }, {
-                key: "sendTrackingDataStream", value: function (a,
-                                                                d, c) {
+                key: "sendTrackingDataStream", value: function (a, d, c) {
                     var b = null;
-                    a != g.default.OLAPIC.TRACKING_EVENTS.WIDGET.RENDER && a != g.default.OLAPIC.TRACKING_EVENTS.WIDGET.MOVE_WIDGET || null == d ? null != d && null != c && (a = this.separateMoveEvents(a), b = g.default.ENDPOINT.OLAPIC_TRACKING_BASE + "".concat(this.settings.entityId, "/stream/") + d + "/media/" + c + "/" + a + "?auth_token\x3d".concat(this.settings.apiKey, "\x26analytics_id\x3d") + this.getOlapidTrackingCookie() + "\x26pics\x3d1\x26version\x3d".concat(this.settings.version)) : (a = this.separateMoveEvents(a), b = g.default.ENDPOINT.OLAPIC_TRACKING_BASE +
-                        "".concat(this.settings.entityId, "/stream/") + d + "/" + a + "?auth_token\x3d".concat(this.settings.apiKey, "\x26analytics_id\x3d") + this.getOlapidTrackingCookie() + "\x26pics\x3d".concat(this.settings.count, "\x26version\x3d").concat(this.settings.version));
+                    a != g.default.OLAPIC.TRACKING_EVENTS.WIDGET.RENDER && a != g.default.OLAPIC.TRACKING_EVENTS.WIDGET.MOVE_WIDGET || null == d ? null != d && null != c && (a = this.separateMoveEvents(a), b = g.default.ENDPOINT.OLAPIC_TRACKING_BASE + "".concat(this.settings.entityId, "/stream/") + d + "/media/" + c + "/" + a + "?auth_token\x3d".concat(this.settings.apiKey, "\x26analytics_id\x3d") + this.getOlapidTrackingCookie() + "\x26pics\x3d1\x26version\x3d".concat(this.settings.version)) : (a = this.separateMoveEvents(a), b = g.default.ENDPOINT.OLAPIC_TRACKING_BASE + "".concat(this.settings.entityId, "/stream/") + d + "/" + a + "?auth_token\x3d".concat(this.settings.apiKey, "\x26analytics_id\x3d") + this.getOlapidTrackingCookie() + "\x26pics\x3d".concat(this.settings.count, "\x26version\x3d").concat(this.settings.version));
                     $.ajax({url: b}).fail(function (a) {
                         return h.default.LOG("sendTrackingDataStream failed", a.responseText)
                     })
@@ -11537,8 +11125,7 @@
                     this.onChangeProduct = g;
                     this.mediaType = d || "recent";
                     $.ajax({url: a}).done(function (d) {
-                        return b.parseLinks(d,
-                            e, a)
+                        return b.parseLinks(d, e, a)
                     }).fail(function (a) {
                         return h.default.LOG("fetchLinks failed", a.responseText)
                     })
@@ -11559,8 +11146,7 @@
                     this.hasNext() && $.ajax({url: this._media.links.next.href + (0 < a ? "\x26count\x3d" + a : "") + "\x26include_tagged_galleries\x3dfalse"}).done(function (a) {
                         return b.parseMedia(a)
                     }).fail(function (a) {
-                        return console.log("fetchMedia next failed",
-                            a.responseText)
+                        return console.log("fetchMedia next failed", a.responseText)
                     })
                 }
             }, {
@@ -11576,8 +11162,7 @@
                         this.callback()
                     } else {
                         a = a.data._embedded.customer._embedded;
-                        for (var e in a) this.links[e] =
-                            a[e]._links.self.href;
+                        for (var e in a) this.links[e] = a[e]._links.self.href;
                         e = this.links["media:" + this.mediaType];
                         if (0 < e.length) return this.fetchMedia(e, this.settings.count || 1);
                         h.default.ERROR("No media:[".concat(this.mediaType, "] links found from Olapic Feed"))
@@ -11589,8 +11174,7 @@
                     this._media.links = a.data._links;
                     var c = this;
                     b.forEach(function (a) {
-                        null != a._embedded["categories:all"]._embedded.category && (a.stream = a._embedded["categories:all"]._embedded.category.map(c._cleanHAL), a._embedded["streams:all"]._embedded.stream.forEach(function (b,
-                                                                                                                                                                                                                                 d) {
+                        null != a._embedded["categories:all"]._embedded.category && (a.stream = a._embedded["categories:all"]._embedded.category.map(c._cleanHAL), a._embedded["streams:all"]._embedded.stream.forEach(function (b, d) {
                             a._embedded["streams:all"]._embedded.stream[d].baseimage = b._embedded
                         }), a.stream = a._embedded["streams:all"]._embedded.stream.map(c._cleanHAL));
                         a.uploader = c._cleanHAL(a._embedded.uploader);
@@ -11607,8 +11191,7 @@
             }, {
                 key: "setOlapicTrackingCookie", value: function () {
                     if (!Cookies.get(g.default.OLAPIC.TRACKING_COOKIE)) {
-                        var a = this.createRandomString(32,
-                            "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ");
+                        var a = this.createRandomString(32, "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ");
                         Cookies.set(g.default.OLAPIC.TRACKING_COOKIE, a, {expires: 30})
                     }
                 }
@@ -11625,8 +11208,7 @@
             }]);
             return c
         }(p.default);
-        "undefined" !== typeof define && define.amd ? define([], f) : "undefined" !== typeof t && t.exports ? t.exports = f : window.OlapicBase =
-            f
+        "undefined" !== typeof define && define.amd ? define([], f) : "undefined" !== typeof t && t.exports ? t.exports = f : window.OlapicBase = f
     }, {"./../../themes/p11/enums.js": 65, "./appeaser-component-base.js": 47, "./logger.js": 51}],
     54: [function (f, t, p) {
         function m(a) {
@@ -11646,8 +11228,7 @@
         function q(a, b) {
             for (var d = 0; d < b.length; d++) {
                 var c = b[d];
-                c.enumerable = c.enumerable ||
-                    !1;
+                c.enumerable = c.enumerable || !1;
                 c.configurable = !0;
                 "value" in c && (c.writable = !0);
                 Object.defineProperty(a, c.key, c)
@@ -11737,8 +11318,7 @@
                     this._detachDOMListeners();
                     this._detachSubscribers();
                     this._detachMQHandlers();
-                    l(g(b.prototype),
-                        "destroy", this).call(this)
+                    l(g(b.prototype), "destroy", this).call(this)
                 }
             }, {
                 key: "_declareConstants", value: function () {
@@ -11780,8 +11360,7 @@
                     this.subscribe(e.default.EVENT.ON_RETURN_SITE_ENTRY_MESSAGES, this._checkCookies)
                 }
             }, {
-                key: "_detachSubscribers",
-                value: function () {
+                key: "_detachSubscribers", value: function () {
                     h.default.INFO(this.constructor.name, ":: _detachSubscribers");
                     this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
                     this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady);
@@ -11800,8 +11379,7 @@
                 key: "_attachMQHandlers", value: function () {
                 }
             }, {
-                key: "_detachMQHandlers",
-                value: function () {
+                key: "_detachMQHandlers", value: function () {
                 }
             }, {
                 key: "_appendGoogleApi", value: function () {
@@ -11819,14 +11397,13 @@
                 }
             }, {
                 key: "_checkCookies", value: function (a) {
-                    var b = null, d = void 0 !== Cookies.get(this.COOKIE_NOTIFICATION) ?
-                        Cookies.get(this.COOKIE_NOTIFICATION) : Cookies.get(this.COOKIE2_NOTIFICATION);
+                    var b = null,
+                        d = void 0 !== Cookies.get(this.COOKIE_NOTIFICATION) ? Cookies.get(this.COOKIE_NOTIFICATION) : Cookies.get(this.COOKIE2_NOTIFICATION);
                     try {
                         b = Cookies.get(this.COOKIE_LOCALE).match(/\w{2}_(\w{2})/)[1]
                     } catch (C) {
                     }
-                    "viewed" !== d && ("WW" !== b ? (d = b ? c.default.GetCountry.getCountryNameFromCode(b) : void 0, this._setSiteEntryMessage(a, b, d, !1)) : (new Date).getTime() >= sessionStorage.getItem("timeStamp") && "WW" === b ? this._getCurrentLocation(b, a) : (new Date).getTime() <= sessionStorage.getItem("timeStamp") && "WW" === b ? (d = b ? c.default.GetCountry.getCountryNameFromCode(b) : void 0, this._setSiteEntryMessage(a,
-                        b, d, !1)) : this.publish(e.default.EVENT.ON_SITE_ENTRY_MESSAGE_SET, sessionStorage.getItem("message")))
+                    "viewed" !== d && ("WW" !== b ? (d = b ? c.default.GetCountry.getCountryNameFromCode(b) : void 0, this._setSiteEntryMessage(a, b, d, !1)) : (new Date).getTime() >= sessionStorage.getItem("timeStamp") && "WW" === b ? this._getCurrentLocation(b, a) : (new Date).getTime() <= sessionStorage.getItem("timeStamp") && "WW" === b ? (d = b ? c.default.GetCountry.getCountryNameFromCode(b) : void 0, this._setSiteEntryMessage(a, b, d, !1)) : this.publish(e.default.EVENT.ON_SITE_ENTRY_MESSAGE_SET, sessionStorage.getItem("message")))
                 }
             }, {
                 key: "_getCurrentLocation", value: function (a, b) {
@@ -11835,8 +11412,7 @@
                     if (navigator.geolocation) var x = navigator.geolocation.watchPosition(function (a) {
                         a = new google.maps.LatLng(a.coords.latitude, a.coords.longitude);
                         (new google.maps.Geocoder).geocode({location: {lat: a.lat(), lng: a.lng()}}, function (a, g) {
-                            if (g === google.maps.GeocoderStatus.OK) a:for (g = 0; g < a.length; g++) for (var f =
-                                0; f < a[g].address_components.length; f++) if ("country" === a[g].address_components[f].types[0]) {
+                            if (g === google.maps.GeocoderStatus.OK) a:for (g = 0; g < a.length; g++) for (var f = 0; f < a[g].address_components.length; f++) if ("country" === a[g].address_components[f].types[0]) {
                                 c = a[g].address_components[f].short_name;
                                 e = a[g].address_components[f].long_name;
                                 break a
@@ -11860,8 +11436,7 @@
                         b = b.substring(4, 6).toLowerCase();
                         return "de" === a ? b : a
                     };
-                    0 <= x.indexOf(this.COUNTRY_NAME_PLACEHOLDER) &&
-                    d && (c = new RegExp(this.COUNTRY_NAME_PLACEHOLDER, "g"), "de" === a() ? d = "Deutschland" : "ch" === a() && (d = "Schweiz"), x = x.replace(c, d));
+                    0 <= x.indexOf(this.COUNTRY_NAME_PLACEHOLDER) && d && (c = new RegExp(this.COUNTRY_NAME_PLACEHOLDER, "g"), "de" === a() ? d = "Deutschland" : "ch" === a() && (d = "Schweiz"), x = x.replace(c, d));
                     sessionStorage.setItem("message", x);
                     Cookies.set("countryId", b ? b : "undefined", {expires: 7});
                     this.publish(e.default.EVENT.ON_SITE_ENTRY_MESSAGE_SET, x, h)
@@ -11879,8 +11454,7 @@
     55: [function (f, t, p) {
         function m(c) {
             "@babel/helpers - typeof";
-            m = "function" ===
-            typeof Symbol && "symbol" === typeof Symbol.iterator ? function (a) {
+            m = "function" === typeof Symbol && "symbol" === typeof Symbol.iterator ? function (a) {
                 return typeof a
             } : function (a) {
                 return a && "function" === typeof Symbol && a.constructor === Symbol && a !== Symbol.prototype ? "symbol" : typeof a
@@ -11909,8 +11483,7 @@
         }
 
         function l(c, a, b) {
-            l = "undefined" !==
-            typeof Reflect && Reflect.get ? Reflect.get : function (a, b, c) {
+            l = "undefined" !== typeof Reflect && Reflect.get ? Reflect.get : function (a, b, c) {
                 for (; !Object.prototype.hasOwnProperty.call(a, b) && (a = g(a), null !== a);) ;
                 if (a) return b = Object.getOwnPropertyDescriptor(a, b), b.get ? b.get.call(c) : b.value
             };
@@ -11924,8 +11497,7 @@
         }
 
         function n(c, a) {
-            n = Object.setPrototypeOf || function (a,
-                                                   d) {
+            n = Object.setPrototypeOf || function (a, d) {
                 a.__proto__ = d;
                 return a
             };
@@ -11952,9 +11524,8 @@
             if ("undefined" === typeof Reflect || !Reflect.construct || Reflect.construct.sham) return !1;
             if ("function" === typeof Proxy) return !0;
             try {
-                return Boolean.prototype.valueOf.call(Reflect.construct(Boolean,
-                    [], function () {
-                    })), !0
+                return Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {
+                })), !0
             } catch (c) {
                 return !1
             }
@@ -12005,8 +11576,7 @@
                     this.animation_duration_padding = 400;
                     this.oberver_delay = this.animation_duration_opacity = 1E3;
                     this.dom_ready_counter = 0;
-                    this.resolve =
-                        void 0;
+                    this.resolve = void 0;
                     this.lpData = {
                         qualityMob: this.$el.data("lpQualityMobile") ? this.$el.data("lpQualityMobile") : 60,
                         qualityTab: this.$el.data("lpQualityTablet") ? this.$el.data("lpQualityTablet") : 70,
@@ -12014,8 +11584,7 @@
                         densityMob: this.$el.data("lpDensityMobile") ? this.$el.data("lpDensityMobile") : 1,
                         densityTab: this.$el.data("lpDensityTablet") ? this.$el.data("lpDensityTablet") : 1,
                         densityDesk: this.$el.data("lpDensityDesk") ? this.$el.data("lpDensityDesk") : 1,
-                        format: this.$el.data("lpFormat") ?
-                            this.$el.data("lpFormat").split(",") : "",
+                        format: this.$el.data("lpFormat") ? this.$el.data("lpFormat").split(",") : "",
                         cacheThreshold: this.$el.data("lpCacheThreshold") ? this.$el.data("lpCacheThreshold") : 50,
                         maxRatio: this.$el.data("lpMaxDensity") ? this.$el.data("lpMaxDensity") : 1,
                         imageFit: this.$el.data("lpImageFit") ? this.$el.data("lpImageFit") : "containerWidth",
@@ -12024,8 +11593,7 @@
                     };
                     this.resolvePlaceholderUrl = "blank\x3dwidth[2],height[3],color[none]\x26sink\x3dformat[gif]";
                     this.resolvePlaceholderUrlLen = this.resolvePlaceholderUrl.length;
-                    this.resolveScriptUrl =
-                        "//app001prod.liquifire.com/zap/dhtml/com.liquidpixels.Resolve.jsr";
+                    this.resolveScriptUrl = "//app001prod.liquifire.com/zap/dhtml/com.liquidpixels.Resolve.jsr";
                     this.resolveScriptTag = void 0;
                     this.$content = $(".content")
                 }
@@ -12055,8 +11623,7 @@
                 key: "_attachSubscribers", value: function () {
                     h.default.INFO(this.constructor.name, ":: _attachSubscribers");
                     this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
-                    this.subscribe(e.default.EVENT.ON_NAVIGATION_MENU_OPEN,
-                        this._onNavigationOpen);
+                    this.subscribe(e.default.EVENT.ON_NAVIGATION_MENU_OPEN, this._onNavigationOpen);
                     this.subscribe(e.default.ACTION.TRIGGER_SKELETON_LOAD, this._trigger)
                 }
             }, {
@@ -12068,8 +11635,7 @@
                     this.unsubscribe(e.default.ACTION.TRIGGER_SKELETON_LOAD, this._trigger)
                 }
             }, {
-                key: "_onFrameworkReady",
-                value: function () {
+                key: "_onFrameworkReady", value: function () {
                     this._startObserver()
                 }
             }, {
@@ -12083,8 +11649,7 @@
                     this.$window.off("scroll resize", this._onWindowScrollResize);
                     this.$content.off("scroll", this._onWindowScrollResize);
                     this.$allSkeletonItems && this.$allSkeletonItems.off("load", this._onImgLoaded);
-                    this.$navSkeletonItems &&
-                    this.$navSkeletonItems.off("load", this._onImgLoaded);
+                    this.$navSkeletonItems && this.$navSkeletonItems.off("load", this._onImgLoaded);
                     this.observer && this.observer.disconnect()
                 }
             }, {
@@ -12096,8 +11661,7 @@
                     this._startObserver = this._startObserver.bind(this);
                     this._resolveLiquidPixels = this._resolveLiquidPixels.bind(this);
                     this._switchSrc = this._switchSrc.bind(this);
-                    this._onWindowScrollResize =
-                        this._onWindowScrollResize.bind(this);
+                    this._onWindowScrollResize = this._onWindowScrollResize.bind(this);
                     this._loadResolveScript = this._loadResolveScript.bind(this);
                     this._setLpQuality = this._setLpQuality.bind(this)
                 }
@@ -12113,101 +11677,93 @@
                     this.lpData.url && this.lpData.uri && (this._loadResolveScript(), this._resolveLiquidPixels());
                     this.$nativeSkeletonItems.length && this._switchSrc(this.$nativeSkeletonItems)
                 }
-            },
-                {
-                    key: "_switchSrc", value: function (a) {
-                        var b = this;
-                        a.closest(this.SELECTOR_PLACEHOLDER).filter(this._isInViewport).find(this.SELECTOR_IMG_DATA_SRC).each(function (a, d) {
-                            d.src = $(d).attr(b.ATTRIBUTE_DATA_SRC);
-                            $(d).removeAttr(b.ATTRIBUTE_DATA_SRC)
-                        })
-                    }
-                }, {
-                    key: "_onImgLoaded", value: function (a) {
-                        var b = this, d = a.target ? a.target : a,
-                            c = (d.currentSrc || d.src).replace(/(^\w+:|^)\/\//, "");
-                        a = $(d).parent().data("skeleton-background");
-                        var g = $(d).closest(this.SELECTOR_PLACEHOLDER), f = $(d).hasClass(this.CLASS_HOVER_IMAGE),
-                            h = c.length;
-                        c.substring(h - this.resolvePlaceholderUrlLen, h) !== this.resolvePlaceholderUrl && (a ? (c = $(d).attr("src"), $(d).closest("." + a).css("opacity", 0).css("background-image", "url(" + c + ")").animate({opacity: 1}, this.animation_duration_opacity, function () {
-                            $(d).css("opacity", "")
-                        }), g.removeClass(this.CLASS_PLACEHOLDER)) : f || g.animate({"padding-bottom": $(d).height() + "px"}, this.animation_duration_padding, function () {
-                            g.removeClass(b.CLASS_PLACEHOLDER);
-                            g.css("padding-bottom", "")
-                        }), $(d).hasClass(e.default.CLASS.IS_HIDDEN_STATE) &&
-                        $(d).removeClass(e.default.CLASS.IS_HIDDEN_STATE), $(d).off("load", this._onImgLoaded))
-                    }
-                }, {
-                    key: "_isInViewport", value: function (a, b) {
-                        a = b.getBoundingClientRect();
-                        return 0 <= a.bottom && 0 <= a.right && a.top <= (window.innerHeight || document.documentElement.clientHeight) && a.left <= (window.innerWidth || document.documentElement.clientWidth)
-                    }
-                }, {
-                    key: "_onNavigationOpen", value: function () {
-                        Modernizr.mq(e.default.MQ.IS_DESKTOP) && (this.$navContent = $(this.SELECTOR_NAVIGATION), this.$navSkeletonItems = this.$navContent.find(this.SELECTOR_IMG_DATA_SRC)) &&
-                        (this._switchSrc(this.$navSkeletonItems), this.$navSkeletonItems.on("load", this._onImgLoaded))
-                    }
-                }, {
-                    key: "_startObserver", value: function () {
-                        MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
-                        var a = this;
-                        this.observer = new MutationObserver(function (b, d) {
-                            a._trigger()
-                        });
-                        var b = document.querySelectorAll(this.SELECTOR_SKELETON_AREA), c;
-                        for (c = 0; c < b.length; ++c) this.observer.observe(b[c], {subtree: !0, childList: !0})
-                    }
-                }, {
-                    key: "_resolveLiquidPixels", value: function () {
-                        var a = this.lpData, b = this._setLpQuality;
-                        "undefined" !== typeof com && (this.resolve = new com.liquidpixels.Resolve({
-                            server: a.url,
-                            uri: a.uri,
-                            imageFit: a.imageFit,
-                            base: "",
-                            lazyLoad: !0,
-                            output: function (d, c) {
-                                if (Modernizr.mq(e.default.MQ.IS_MOBILE)) {
-                                    c = b("Mobile", a.qualityMob);
-                                    var x = a.densityMob
-                                } else Modernizr.mq(e.default.MQ.IS_TABLET) ? (c = b("Tablet", a.qualityTab), x = a.densityTab) : (c = b("Desktop", a.qualityDesk), x = a.densityDesk);
-                                d.window.devicePixelRatio < x && (x = d.window.devicePixelRatio);
-                                return {format: a.format, quality: c, pixelRatio: x}
-                            },
-                            advancedOptions: {
-                                maxPixelRatio: a.maxRatio,
-                                cacheThreshold: a.cacheThreshold
-                            },
-                            handleEvent: function (a, b) {
-                                h.default.INFO("LiquidFire Resolve", a, b ? "\n\tElement: " + b.element.outerHTML + "\n\tMessage: " + b.message : "")
-                            }
-                        }))
-                    }
-                }, {
-                    key: "_setLpQuality", value: function (a, b) {
-                        var d = this.$el.data(), c = {"default": b};
-                        this.lpData.format.forEach(function (b) {
-                            var e = d["lp" + b.charAt(0).toUpperCase() + b.slice(1) + "Quality" + a];
-                            e && (c[b] = e)
-                        });
-                        return c
-                    }
-                }, {
-                    key: "_loadResolveScript", value: function () {
-                        var a = this._resolveLiquidPixels;
-                        if (1 > $("body").find(this.SELECTOR_RESOLVE_SCRIPT).length) {
-                            var b =
-                                document.createElement("script");
-                            b.src = this.resolveScriptUrl;
-                            b.id = this.ID_RESOLVE_SCRIPT;
-                            b.onload = function () {
-                                a();
-                                b.onload = null
-                            };
-                            document.body.appendChild(b)
+            }, {
+                key: "_switchSrc", value: function (a) {
+                    var b = this;
+                    a.closest(this.SELECTOR_PLACEHOLDER).filter(this._isInViewport).find(this.SELECTOR_IMG_DATA_SRC).each(function (a, d) {
+                        d.src = $(d).attr(b.ATTRIBUTE_DATA_SRC);
+                        $(d).removeAttr(b.ATTRIBUTE_DATA_SRC)
+                    })
+                }
+            }, {
+                key: "_onImgLoaded", value: function (a) {
+                    var b = this, d = a.target ? a.target : a, c = (d.currentSrc || d.src).replace(/(^\w+:|^)\/\//, "");
+                    a = $(d).parent().data("skeleton-background");
+                    var g = $(d).closest(this.SELECTOR_PLACEHOLDER), f = $(d).hasClass(this.CLASS_HOVER_IMAGE),
+                        h = c.length;
+                    c.substring(h - this.resolvePlaceholderUrlLen, h) !== this.resolvePlaceholderUrl && (a ? (c = $(d).attr("src"), $(d).closest("." + a).css("opacity", 0).css("background-image", "url(" + c + ")").animate({opacity: 1}, this.animation_duration_opacity, function () {
+                        $(d).css("opacity", "")
+                    }), g.removeClass(this.CLASS_PLACEHOLDER)) : f || g.animate({"padding-bottom": $(d).height() + "px"}, this.animation_duration_padding, function () {
+                        g.removeClass(b.CLASS_PLACEHOLDER);
+                        g.css("padding-bottom", "")
+                    }), $(d).hasClass(e.default.CLASS.IS_HIDDEN_STATE) && $(d).removeClass(e.default.CLASS.IS_HIDDEN_STATE), $(d).off("load", this._onImgLoaded))
+                }
+            }, {
+                key: "_isInViewport", value: function (a, b) {
+                    a = b.getBoundingClientRect();
+                    return 0 <= a.bottom && 0 <= a.right && a.top <= (window.innerHeight || document.documentElement.clientHeight) && a.left <= (window.innerWidth || document.documentElement.clientWidth)
+                }
+            }, {
+                key: "_onNavigationOpen", value: function () {
+                    Modernizr.mq(e.default.MQ.IS_DESKTOP) && (this.$navContent = $(this.SELECTOR_NAVIGATION), this.$navSkeletonItems = this.$navContent.find(this.SELECTOR_IMG_DATA_SRC)) && (this._switchSrc(this.$navSkeletonItems), this.$navSkeletonItems.on("load", this._onImgLoaded))
+                }
+            }, {
+                key: "_startObserver", value: function () {
+                    MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
+                    var a = this;
+                    this.observer = new MutationObserver(function (b, d) {
+                        a._trigger()
+                    });
+                    var b = document.querySelectorAll(this.SELECTOR_SKELETON_AREA), c;
+                    for (c = 0; c < b.length; ++c) this.observer.observe(b[c], {subtree: !0, childList: !0})
+                }
+            }, {
+                key: "_resolveLiquidPixels", value: function () {
+                    var a = this.lpData, b = this._setLpQuality;
+                    "undefined" !== typeof com && (this.resolve = new com.liquidpixels.Resolve({
+                        server: a.url,
+                        uri: a.uri,
+                        imageFit: a.imageFit,
+                        base: "",
+                        lazyLoad: !0,
+                        output: function (d, c) {
+                            if (Modernizr.mq(e.default.MQ.IS_MOBILE)) {
+                                c = b("Mobile", a.qualityMob);
+                                var x = a.densityMob
+                            } else Modernizr.mq(e.default.MQ.IS_TABLET) ? (c = b("Tablet", a.qualityTab), x = a.densityTab) : (c = b("Desktop", a.qualityDesk), x = a.densityDesk);
+                            d.window.devicePixelRatio < x && (x = d.window.devicePixelRatio);
+                            return {format: a.format, quality: c, pixelRatio: x}
+                        },
+                        advancedOptions: {maxPixelRatio: a.maxRatio, cacheThreshold: a.cacheThreshold},
+                        handleEvent: function (a, b) {
+                            h.default.INFO("LiquidFire Resolve", a, b ? "\n\tElement: " + b.element.outerHTML + "\n\tMessage: " + b.message : "")
                         }
+                    }))
+                }
+            }, {
+                key: "_setLpQuality", value: function (a, b) {
+                    var d = this.$el.data(), c = {"default": b};
+                    this.lpData.format.forEach(function (b) {
+                        var e = d["lp" + b.charAt(0).toUpperCase() + b.slice(1) + "Quality" + a];
+                        e && (c[b] = e)
+                    });
+                    return c
+                }
+            }, {
+                key: "_loadResolveScript", value: function () {
+                    var a = this._resolveLiquidPixels;
+                    if (1 > $("body").find(this.SELECTOR_RESOLVE_SCRIPT).length) {
+                        var b = document.createElement("script");
+                        b.src = this.resolveScriptUrl;
+                        b.id = this.ID_RESOLVE_SCRIPT;
+                        b.onload = function () {
+                            a();
+                            b.onload = null
+                        };
+                        document.body.appendChild(b)
                     }
-                }]);
+                }
+            }]);
             return a
         }(p.default);
         t.exports = f
@@ -12218,8 +11774,7 @@
             m = "function" === typeof Symbol && "symbol" === typeof Symbol.iterator ? function (a) {
                 return typeof a
             } : function (a) {
-                return a && "function" === typeof Symbol && a.constructor ===
-                Symbol && a !== Symbol.prototype ? "symbol" : typeof a
+                return a && "function" === typeof Symbol && a.constructor === Symbol && a !== Symbol.prototype ? "symbol" : typeof a
             };
             return m(c)
         }
@@ -12247,8 +11802,7 @@
         function l(c, a, b) {
             l = "undefined" !== typeof Reflect && Reflect.get ? Reflect.get : function (a, b, c) {
                 for (; !Object.prototype.hasOwnProperty.call(a, b) && (a = g(a), null !== a);) ;
-                if (a) return b =
-                    Object.getOwnPropertyDescriptor(a, b), b.get ? b.get.call(c) : b.value
+                if (a) return b = Object.getOwnPropertyDescriptor(a, b), b.get ? b.get.call(c) : b.value
             };
             return l(c, a, b || c)
         }
@@ -12273,8 +11827,7 @@
                 var b = g(c);
                 if (a) {
                     var d = g(this).constructor;
-                    b = Reflect.construct(b,
-                        arguments, d)
+                    b = Reflect.construct(b, arguments, d)
                 } else b = b.apply(this, arguments);
                 if (!b || "object" !== m(b) && "function" !== typeof b) {
                     if (void 0 === this) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
@@ -12296,10 +11849,9 @@
         }
 
         function g(c) {
-            g = Object.setPrototypeOf ? Object.getPrototypeOf :
-                function (a) {
-                    return a.__proto__ || Object.getPrototypeOf(a)
-                };
+            g = Object.setPrototypeOf ? Object.getPrototypeOf : function (a) {
+                return a.__proto__ || Object.getPrototypeOf(a)
+            };
             return g(c)
         }
 
@@ -12364,8 +11916,7 @@
                 key: "_attachSubscribers", value: function () {
                     h.default.INFO(this.constructor.name, ":: _attachSubscribers");
                     this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
-                    this.subscribe(e.default.EVENT.ON_PAGE_CONTENT_MARGIN_CHANGE,
-                        this._onPageContentMarginChange);
+                    this.subscribe(e.default.EVENT.ON_PAGE_CONTENT_MARGIN_CHANGE, this._onPageContentMarginChange);
                     this.subscribe(e.default.ACTION.ENABLE_STICKY_SCROLL, this._enableStickyScroll);
                     this.subscribe(e.default.ACTION.DISABLE_STICKY_SCROLL, this._disableStickyScroll)
                 }
@@ -12374,8 +11925,7 @@
                     h.default.INFO(this.constructor.name, ":: _detachSubscribers");
                     this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady);
                     this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
-                    this.unsubscribe(e.default.EVENT.ON_PAGE_CONTENT_MARGIN_CHANGE,
-                        this._onPageContentMarginChange);
+                    this.unsubscribe(e.default.EVENT.ON_PAGE_CONTENT_MARGIN_CHANGE, this._onPageContentMarginChange);
                     this.unsubscribe(e.default.ACTION.ENABLE_STICKY_SCROLL, this._enableStickyScroll);
                     this.unsubscribe(e.default.ACTION.DISABLE_STICKY_SCROLL, this._disableStickyScroll)
                 }
@@ -12392,51 +11942,47 @@
                     this.$window.off("scroll", this._onScroll);
                     this.$window.off("resize", this._onResize)
                 }
-            },
-                {
-                    key: "_detachMQHandlers", value: function () {
-                    }
-                }, {
-                    key: "_enableStickyScroll", value: function () {
-                        this._attachDOMListeners()
-                    }
-                }, {
-                    key: "_disableStickyScroll", value: function () {
-                        this._detachDOMListeners()
-                    }
-                }, {
-                    key: "_onResize", value: function () {
-                        this.$el.hasClass(e.default.CLASS.IS_STICKY) && !this.ignorePageMargin && this.publish(e.default.ACTION.UPDATE_PAGE_CONTENT_MARGIN_CONTRIBUTION, {
-                            margin: this.$el.outerHeight(),
-                            element: this.$el
-                        })
-                    }
-                }, {
-                    key: "_onPageContentMarginChange", value: function (a) {
-                        a.is(this.$el) || this._updateThreshold()
-                    }
-                },
-                {
-                    key: "_updateThreshold", value: function () {
-                        this.$pageContent && (this.stickyThreshold = this.originPosition - this.$stickyTo.outerHeight())
-                    }
-                }, {
-                    key: "_onScroll", value: function () {
-                        !this.$el.hasClass(e.default.CLASS.IS_STICKY) && this.$stickyTo.hasClass(e.default.CLASS.IS_STICKY) && this.$stickyTo.offset().top + this.$stickyTo.outerHeight() > this.$stickyElement.offset().top ? (this.publish(e.default.EVENT.ON_BEFORE_STICKY_COMPONENT_STICKY), this.ignorePageMargin || this.publish(e.default.ACTION.UPDATE_PAGE_CONTENT_MARGIN_CONTRIBUTION,
-                            {
-                                margin: this.$el.outerHeight(!0),
-                                element: this.$el
-                            }), this.$el.css("margin-top", this.bannerHeight), this.$el.addClass(e.default.CLASS.IS_STICKY), this._updateThreshold()) : this.$el.hasClass(e.default.CLASS.IS_STICKY) && this.$window.scrollTop() < this.stickyThreshold && (this.$el.removeClass(e.default.CLASS.IS_STICKY), this.publish(e.default.ACTION.UPDATE_PAGE_CONTENT_MARGIN_CONTRIBUTION, {
-                            margin: 0,
-                            element: this.$el
-                        }), this.$el.css("margin-top", ""), this._updateThreshold())
-                    }
-                }]);
+            }, {
+                key: "_detachMQHandlers", value: function () {
+                }
+            }, {
+                key: "_enableStickyScroll", value: function () {
+                    this._attachDOMListeners()
+                }
+            }, {
+                key: "_disableStickyScroll", value: function () {
+                    this._detachDOMListeners()
+                }
+            }, {
+                key: "_onResize", value: function () {
+                    this.$el.hasClass(e.default.CLASS.IS_STICKY) && !this.ignorePageMargin && this.publish(e.default.ACTION.UPDATE_PAGE_CONTENT_MARGIN_CONTRIBUTION, {
+                        margin: this.$el.outerHeight(),
+                        element: this.$el
+                    })
+                }
+            }, {
+                key: "_onPageContentMarginChange", value: function (a) {
+                    a.is(this.$el) || this._updateThreshold()
+                }
+            }, {
+                key: "_updateThreshold", value: function () {
+                    this.$pageContent && (this.stickyThreshold = this.originPosition - this.$stickyTo.outerHeight())
+                }
+            }, {
+                key: "_onScroll", value: function () {
+                    !this.$el.hasClass(e.default.CLASS.IS_STICKY) && this.$stickyTo.hasClass(e.default.CLASS.IS_STICKY) && this.$stickyTo.offset().top + this.$stickyTo.outerHeight() > this.$stickyElement.offset().top ? (this.publish(e.default.EVENT.ON_BEFORE_STICKY_COMPONENT_STICKY), this.ignorePageMargin || this.publish(e.default.ACTION.UPDATE_PAGE_CONTENT_MARGIN_CONTRIBUTION, {
+                        margin: this.$el.outerHeight(!0),
+                        element: this.$el
+                    }), this.$el.css("margin-top", this.bannerHeight), this.$el.addClass(e.default.CLASS.IS_STICKY), this._updateThreshold()) : this.$el.hasClass(e.default.CLASS.IS_STICKY) && this.$window.scrollTop() < this.stickyThreshold && (this.$el.removeClass(e.default.CLASS.IS_STICKY), this.publish(e.default.ACTION.UPDATE_PAGE_CONTENT_MARGIN_CONTRIBUTION, {
+                        margin: 0,
+                        element: this.$el
+                    }), this.$el.css("margin-top", ""), this._updateThreshold())
+                }
+            }]);
             return a
         }(p.default);
         t.exports = f
-    },
-        {"./../../themes/p11/enums.js": 65, "./appeaser-component-base.js": 47, "./logger.js": 51}],
+    }, {"./../../themes/p11/enums.js": 65, "./appeaser-component-base.js": 47, "./logger.js": 51}],
     57: [function (f, t, p) {
         function m(f) {
             "@babel/helpers - typeof";
@@ -12462,18 +12008,15 @@
                         var p = [];
                         f.find("input").each(function (g, f) {
                             $(f).is(":checkbox, :radio", ":checked") && $(f).parent().removeClass(k.default.CLASS.HAS_ERROR);
-                            f.checkValidity() || (g = $(f), g.is(":checkbox, :radio") && g.parent().addClass(k.default.CLASS.HAS_ERROR), f.validity.valueMissing && 0 != g.data("validation-required-text").length ?
-                                p.push(g.data("validation-required-text")) : g.parent().data("validation-match-field") && g.val() != $("#" + g.parent().data("validation-match-field") + " input").val() ? p.push(g.data("validation-match-field-text")) : f.validity.patternMismatch || f.validity.typeMismatch ? p.push(g.data("validation-pattern-text")) : f.validity.tooLong && p.push(g.data("validation-maxlen-text")))
+                            f.checkValidity() || (g = $(f), g.is(":checkbox, :radio") && g.parent().addClass(k.default.CLASS.HAS_ERROR), f.validity.valueMissing && 0 != g.data("validation-required-text").length ? p.push(g.data("validation-required-text")) : g.parent().data("validation-match-field") && g.val() != $("#" + g.parent().data("validation-match-field") + " input").val() ? p.push(g.data("validation-match-field-text")) : f.validity.patternMismatch || f.validity.typeMismatch ? p.push(g.data("validation-pattern-text")) : f.validity.tooLong && p.push(g.data("validation-maxlen-text")))
                         });
                         n.addClass(k.default.CLASS.IS_HIDDEN_STATE);
                         r.html("");
-                        0 < p.length && (r.html(p.join("\x3cbr\x3e")), q.Form.displayGlobalmessages && n.removeClass(k.default.CLASS.IS_HIDDEN_STATE),
-                        f.closest(".o-lightbox").length || appeaser.publish(k.default.ACTION.SCROLL_TO_FORM_ERROR_MSG, f));
+                        0 < p.length && (r.html(p.join("\x3cbr\x3e")), q.Form.displayGlobalmessages && n.removeClass(k.default.CLASS.IS_HIDDEN_STATE), f.closest(".o-lightbox").length || appeaser.publish(k.default.ACTION.SCROLL_TO_FORM_ERROR_MSG, f));
                         m = !1
                     }
                     $(f[0]).find(".m-dropdown-filter").length && (n = $(f[0]).find(".m-dropdown-filter"), n.find(".a-input.filter").val() != n.find(".a-option.is-selected").html() ? (n.addClass(k.default.CLASS.HAS_ERROR), m = !1) : n.removeClass(k.default.CLASS.HAS_ERROR), n.hasClass("has-error") && (m = !1));
-                    $(f[0]).find(".help-text").length && (f = $(f[0]).find(".help-text"), f.siblings(".a-input").data("password-error-text"), 4 != f.find(".passed").length &&
-                    "" != f.siblings(".a-input").val() && (f.find(":not(.passed)").addClass("has-error"), f.parents(".m-input").addClass("has-error"), m = !1));
+                    $(f[0]).find(".help-text").length && (f = $(f[0]).find(".help-text"), f.siblings(".a-input").data("password-error-text"), 4 != f.find(".passed").length && "" != f.siblings(".a-input").val() && (f.find(":not(.passed)").addClass("has-error"), f.parents(".m-input").addClass("has-error"), m = !1));
                     l(m)
                 }, validateInputs: function (f, l) {
                     var m = !0, n = $(f[0]).closest(".main-area").find(".m-error"), q = n.find(".js-a-label"), r = [];
@@ -12481,13 +12024,11 @@
                         g = $(f);
                         if (!g.length) return !0;
                         g.is(":checkbox, :radio", ":checked") && g.parent().removeClass(k.default.CLASS.HAS_ERROR);
-                        g[0].checkValidity() || (m = !1, g.is(":checkbox, :radio") && g.parent().addClass(k.default.CLASS.HAS_ERROR), g[0].validity.valueMissing &&
-                        0 !== g.data("validation-required-text").length ? r.push(g.data("validation-required-text")) : g.parent().data("validation-match-field") && g.val() !== $("#" + g.parent().data("validation-match-field") + " input").val() ? r.push(g.data("validation-match-field-text")) : g[0].validity.patternMismatch || g[0].validity.typeMismatch ? r.push(g.data("validation-pattern-text")) : g[0].validity.tooLong && r.push(g.data("validation-maxlen-text")))
+                        g[0].checkValidity() || (m = !1, g.is(":checkbox, :radio") && g.parent().addClass(k.default.CLASS.HAS_ERROR), g[0].validity.valueMissing && 0 !== g.data("validation-required-text").length ? r.push(g.data("validation-required-text")) : g.parent().data("validation-match-field") && g.val() !== $("#" + g.parent().data("validation-match-field") + " input").val() ? r.push(g.data("validation-match-field-text")) : g[0].validity.patternMismatch || g[0].validity.typeMismatch ? r.push(g.data("validation-pattern-text")) : g[0].validity.tooLong && r.push(g.data("validation-maxlen-text")))
                     });
                     n.addClass(k.default.CLASS.IS_HIDDEN_STATE);
                     q.html("");
-                    0 < r.length && (n.removeClass(k.default.CLASS.IS_HIDDEN_STATE),
-                        q.html(r.join("\x3cbr\x3e")));
+                    0 < r.length && (n.removeClass(k.default.CLASS.IS_HIDDEN_STATE), q.html(r.join("\x3cbr\x3e")));
                     l(m)
                 }
             }, Slider: {
@@ -12508,15 +12049,14 @@
                 }, popupsDisabled: function () {
                     return -1 < location.hash.indexOf("#disablepopups")
                 }, createStoreInformationDataObject: function (f) {
-                    var l =
-                        {
-                            title: f.name,
-                            phone: f.phone,
-                            city: f.city,
-                            displayOpeningDate: f.openingDate,
-                            latitude: parseFloat(f.latitude),
-                            longitude: parseFloat(f.longitude)
-                        };
+                    var l = {
+                        title: f.name,
+                        phone: f.phone,
+                        city: f.city,
+                        displayOpeningDate: f.openingDate,
+                        latitude: parseFloat(f.latitude),
+                        longitude: parseFloat(f.longitude)
+                    };
                     if (f.openingHours) {
                         var k, m = 0, r = [];
                         $.each(f.openingHours, function (f, e) {
@@ -12524,8 +12064,7 @@
                         });
                         $.extend(l, {openingHours: r})
                     }
-                    f.address && (f.address.streetName1 && $.extend(l, {streetName1: f.address.streetName1}),
-                    f.address.streetName2 && $.extend(l, {streetName2: f.address.streetName2}), f.address.postCode && $.extend(l, {postCode: f.address.postCode}), f.address.postalAddress && $.extend(l, {postalAddress: f.address.postalAddress}), f.address.state && $.extend(l, {state: f.address.state}));
+                    f.address && (f.address.streetName1 && $.extend(l, {streetName1: f.address.streetName1}), f.address.streetName2 && $.extend(l, {streetName2: f.address.streetName2}), f.address.postCode && $.extend(l, {postCode: f.address.postCode}), f.address.postalAddress && $.extend(l, {postalAddress: f.address.postalAddress}), f.address.state && $.extend(l, {state: f.address.state}));
                     if (f.openingHourExceptions) {
                         var p = [], g = !1;
                         $.each(f.openingHourExceptions, function (f, e) {
@@ -12537,8 +12076,7 @@
                         });
                         $.extend(l, {openingHourExceptions: p})
                     }
-                    f.campaignConcepts &&
-                    $.extend(l, {campaignConcepts: q.Stores.stringToArrayHandler(f.campaignConcepts)});
+                    f.campaignConcepts && $.extend(l, {campaignConcepts: q.Stores.stringToArrayHandler(f.campaignConcepts)});
                     f.departmentsWithConcepts && $.extend(l, {departmentsWithConcepts: q.Stores.stringToArrayHandler(f.departmentsWithConcepts)});
                     return l
                 }
@@ -12553,8 +12091,7 @@
                     l && l.removeAttr("aria-expanded");
                     f.removeAttr("aria-hidden aria-expanded tabindex")
                 }, select: function (f) {
-                    f.attr("aria-selected",
-                        "true")
+                    f.attr("aria-selected", "true")
                 }, unselect: function (f) {
                     f.removeAttr("aria-selected")
                 }, preventFocus: function (f) {
@@ -12615,8 +12152,7 @@
             }, ConstructUrl: {
                 localeUrl: function (f) {
                     var l = new RegExp(/[a-z]*_[A-Z]*/i), k = "";
-                    window.location.pathname.match(l) ? k = "/" + window.location.pathname.match(l) : window.location.pathname.includes("/en/") ? k = "/en" : window.location.pathname.includes("/de/") &&
-                        (k = "/de");
+                    window.location.pathname.match(l) ? k = "/" + window.location.pathname.match(l) : window.location.pathname.includes("/en/") ? k = "/en" : window.location.pathname.includes("/de/") && (k = "/de");
                     return window.location.origin + k + f
                 }
             }
@@ -12666,8 +12202,7 @@
                     m.enumerable = m.enumerable || !1;
                     m.configurable = !0;
                     "value" in m && (m.writable = !0);
-                    Object.defineProperty(f,
-                        m.key, m)
+                    Object.defineProperty(f, m.key, m)
                 }
             }
 
@@ -12692,8 +12227,7 @@
 
             m(f, [{
                 key: "register", value: function () {
-                    var f = this, k =
-                        0 >= arguments.length || void 0 === arguments[0] ? {} : arguments[0];
+                    var f = this, k = 0 >= arguments.length || void 0 === arguments[0] ? {} : arguments[0];
                     Object.keys(k).forEach(function (l) {
                         f.components[l] = k[l]
                     })
@@ -12710,8 +12244,7 @@
             }, {
                 key: "unsubscribe", value: function (f, k, l) {
                     if (!this.topics.hasOwnProperty(f)) return !1;
-                    for (var m = 0, n = this.topics[f].length; m < n; m++) if (this.topics[f][m].callback === k && (!l || this.topics[f][m].context ===
-                        l)) return this.topics[f].splice(m, 1), !0;
+                    for (var m = 0, n = this.topics[f].length; m < n; m++) if (this.topics[f][m].callback === k && (!l || this.topics[f][m].context === l)) return this.topics[f].splice(m, 1), !0;
                     return !1
                 }
             }, {
@@ -12729,10 +12262,9 @@
                 key: "scan", value: function () {
                     var f = this, k = 0 >= arguments.length || void 0 === arguments[0] ? {} : arguments[0], l = {},
                         m = this.contextEl.querySelectorAll("[data-component]");
-                    [].forEach.call(m,
-                        function (m) {
-                            f._scanElement(m, l, k)
-                        });
+                    [].forEach.call(m, function (m) {
+                        f._scanElement(m, l, k)
+                    });
                     0 < this.numberOfInitializedComponents && this.cleanUp_(l)
                 }
             }, {
@@ -12748,8 +12280,7 @@
             }, {
                 key: "_initializeComponent", value: function (f, k, l, m) {
                     var n = this.components[f];
-                    if ("function" !== typeof n) throw"ComponentLoader: unknown component '" +
-                    f + "'";
+                    if ("function" !== typeof n) throw"ComponentLoader: unknown component '" + f + "'";
                     f = new n(l, m, this);
                     this.initializedComponents[k] = f;
                     this.numberOfInitializedComponents++
@@ -12769,8 +12300,7 @@
                     })
                 }
             }, {
-                key: "_generateUUID",
-                value: function () {
+                key: "_generateUUID", value: function () {
                     return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function (f) {
                         var k = 16 * Math.random() | 0;
                         return ("x" == f ? k : k & 3 | 8).toString(16)
@@ -12796,8 +12326,7 @@
             }
 
             return function (k, m, l) {
-                m && f(k.prototype,
-                    m);
+                m && f(k.prototype, m);
                 l && f(k, l);
                 return k
             }
@@ -12828,15 +12357,14 @@
                 key: "scan", value: function (f) {
                     this.__mediator.scan(f)
                 }
-            },
-                {
-                    key: "defer", value: function (f) {
-                        setTimeout(f, 1 >= arguments.length || void 0 === arguments[1] ? 17 : arguments[1])
-                    }
-                }, {
-                    key: "destroy", value: function () {
-                    }
-                }]);
+            }, {
+                key: "defer", value: function (f) {
+                    setTimeout(f, 1 >= arguments.length || void 0 === arguments[1] ? 17 : arguments[1])
+                }
+            }, {
+                key: "destroy", value: function () {
+                }
+            }]);
             return f
         }();
         p["default"] = f;
@@ -12854,8 +12382,7 @@
         }
 
         function k(a) {
-            return a &&
-            a.__esModule ? a : {default: a}
+            return a && a.__esModule ? a : {default: a}
         }
 
         function q(a, b) {
@@ -12879,8 +12406,7 @@
                 for (; !Object.prototype.hasOwnProperty.call(a, b) && (a = g(a), null !== a);) ;
                 if (a) return b = Object.getOwnPropertyDescriptor(a, b), b.get ? b.get.call(d) : b.value
             };
-            return l(a, b,
-                d || a)
+            return l(a, b, d || a)
         }
 
         function v(a, b) {
@@ -12905,8 +12431,7 @@
                     var c = g(this).constructor;
                     d = Reflect.construct(d, arguments, c)
                 } else d = d.apply(this, arguments);
-                if (!d || "object" !== m(d) &&
-                    "function" !== typeof d) {
+                if (!d || "object" !== m(d) && "function" !== typeof d) {
                     if (void 0 === this) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
                     d = this
                 }
@@ -12948,8 +12473,7 @@
             v(b, a);
             var d = w(b);
             r(b, [{
-                key: "destroy",
-                value: function () {
+                key: "destroy", value: function () {
                     h.default.INFO(this.constructor.name, ":: Destructor");
                     this._detachDOMListeners();
                     this._detachSubscribers();
@@ -12998,8 +12522,7 @@
                     this.$el.find(this.SELECTOR_SIZE_OPTIONS).on("click", this._onSwatchClick)
                 }
             }, {
-                key: "_detachDOMListeners",
-                value: function () {
+                key: "_detachDOMListeners", value: function () {
                     this.$el.find(this.SELECTOR_SIZE_OPTIONS).off("click", this._onSwatchClick)
                 }
             }, {
@@ -13018,19 +12541,17 @@
                         a.$el.find(a.SELECTOR_SIZE_OPTIONS).first().addClass(a.CLASS_FIRST_SWATCH)
                     }, this.DELAY_TIME)
                 }
-            },
-                {
-                    key: "_onSwatchClick", value: function (a) {
-                        var b = $(a.target);
-                        b.parent().data("value");
-                        var d = !1;
-                        this.$el.find(this.SELECTOR_SIZE_OPTIONS).removeClass(e.default.CLASS.IS_SELECTED);
-                        this.$el.find(this.SELECTOR_LOW_STOCK).removeClass(this.CLASS_SHOW_LOW_STOCK);
-                        $(a.target).is("span") ? (b.parent().addClass(e.default.CLASS.IS_SELECTED), b.parent().hasClass(this.CLASS_IN_STOCK) && (d = !0), b.parent().hasClass(this.CLASS_LOW_IN_STOCK) && b.parent().find(this.SELECTOR_LOW_STOCK).addClass(this.CLASS_SHOW_LOW_STOCK)) : (b.addClass(e.default.CLASS.IS_SELECTED),
-                        b.hasClass(this.CLASS_IN_STOCK) && (d = !0), b.hasClass(this.CLASS_LOW_IN_STOCK) && b.find(this.SELECTOR_LOW_STOCK).addClass(this.CLASS_SHOW_LOW_STOCK));
-                        this.publish(e.default.EVENT.ON_SIZE_SWATCH_SELECTED, d)
-                    }
-                }]);
+            }, {
+                key: "_onSwatchClick", value: function (a) {
+                    var b = $(a.target);
+                    b.parent().data("value");
+                    var d = !1;
+                    this.$el.find(this.SELECTOR_SIZE_OPTIONS).removeClass(e.default.CLASS.IS_SELECTED);
+                    this.$el.find(this.SELECTOR_LOW_STOCK).removeClass(this.CLASS_SHOW_LOW_STOCK);
+                    $(a.target).is("span") ? (b.parent().addClass(e.default.CLASS.IS_SELECTED), b.parent().hasClass(this.CLASS_IN_STOCK) && (d = !0), b.parent().hasClass(this.CLASS_LOW_IN_STOCK) && b.parent().find(this.SELECTOR_LOW_STOCK).addClass(this.CLASS_SHOW_LOW_STOCK)) : (b.addClass(e.default.CLASS.IS_SELECTED), b.hasClass(this.CLASS_IN_STOCK) && (d = !0), b.hasClass(this.CLASS_LOW_IN_STOCK) && b.find(this.SELECTOR_LOW_STOCK).addClass(this.CLASS_SHOW_LOW_STOCK));
+                    this.publish(e.default.EVENT.ON_SIZE_SWATCH_SELECTED, d)
+                }
+            }]);
             return b
         }(p.default);
         t.exports = f
@@ -13043,12 +12564,11 @@
     63: [function (f, t, p) {
         function m(c) {
             "@babel/helpers - typeof";
-            m = "function" === typeof Symbol && "symbol" === typeof Symbol.iterator ?
-                function (a) {
-                    return typeof a
-                } : function (a) {
-                    return a && "function" === typeof Symbol && a.constructor === Symbol && a !== Symbol.prototype ? "symbol" : typeof a
-                };
+            m = "function" === typeof Symbol && "symbol" === typeof Symbol.iterator ? function (a) {
+                return typeof a
+            } : function (a) {
+                return a && "function" === typeof Symbol && a.constructor === Symbol && a !== Symbol.prototype ? "symbol" : typeof a
+            };
             return m(c)
         }
 
@@ -13073,11 +12593,10 @@
         }
 
         function l(c, a, b) {
-            l = "undefined" !== typeof Reflect && Reflect.get ? Reflect.get :
-                function (a, b, c) {
-                    for (; !Object.prototype.hasOwnProperty.call(a, b) && (a = g(a), null !== a);) ;
-                    if (a) return b = Object.getOwnPropertyDescriptor(a, b), b.get ? b.get.call(c) : b.value
-                };
+            l = "undefined" !== typeof Reflect && Reflect.get ? Reflect.get : function (a, b, c) {
+                for (; !Object.prototype.hasOwnProperty.call(a, b) && (a = g(a), null !== a);) ;
+                if (a) return b = Object.getOwnPropertyDescriptor(a, b), b.get ? b.get.call(c) : b.value
+            };
             return l(c, a, b || c)
         }
 
@@ -13092,8 +12611,7 @@
                 a.__proto__ = d;
                 return a
             };
-            return n(c,
-                a)
+            return n(c, a)
         }
 
         function w(c) {
@@ -13116,9 +12634,8 @@
             if ("undefined" === typeof Reflect || !Reflect.construct || Reflect.construct.sham) return !1;
             if ("function" === typeof Proxy) return !0;
             try {
-                return Boolean.prototype.valueOf.call(Reflect.construct(Boolean,
-                    [], function () {
-                    })), !0
+                return Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {
+                })), !0
             } catch (c) {
                 return !1
             }
@@ -13164,8 +12681,7 @@
                     this._onDOMReady = this._onDOMReady.bind(this)
                 }
             }, {
-                key: "_attachSubscribers",
-                value: function () {
+                key: "_attachSubscribers", value: function () {
                     h.default.INFO(this.constructor.name, ":: _attachSubscribers");
                     this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady)
                 }
@@ -13182,8 +12698,7 @@
                 key: "_attachDOMListeners", value: function () {
                 }
             }, {
-                key: "_detachDOMListeners",
-                value: function () {
+                key: "_detachDOMListeners", value: function () {
                 }
             }, {
                 key: "_onDOMReady", value: function () {
@@ -13207,8 +12722,7 @@
         "./../../../../js/base/logger.js": 51,
         "./../../enums.js": 65
     }],
-    64: [function (f,
-                   t, p) {
+    64: [function (f, t, p) {
         function m(c) {
             "@babel/helpers - typeof";
             m = "function" === typeof Symbol && "symbol" === typeof Symbol.iterator ? function (a) {
@@ -13234,8 +12748,7 @@
         }
 
         function r(c, a, b) {
-            a &&
-            q(c.prototype, a);
+            a && q(c.prototype, a);
             b && q(c, b);
             return c
         }
@@ -13321,8 +12834,7 @@
             }, {
                 key: "_declareConstants", value: function () {
                     this.ID_YOUTUBE_API = "youtube-api";
-                    this.SELECTOR_BODY =
-                        "body"
+                    this.SELECTOR_BODY = "body"
                 }
             }, {
                 key: "_cacheDOMElements", value: function () {
@@ -13338,8 +12850,7 @@
                 key: "_attachSubscribers", value: function () {
                     h.default.INFO(this.constructor.name, ":: _attachSubscribers");
                     this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
-                    this.subscribe(e.default.EVENT.ON_YOUTUBE_API_INIT,
-                        this._onInit)
+                    this.subscribe(e.default.EVENT.ON_YOUTUBE_API_INIT, this._onInit)
                 }
             }, {
                 key: "_detachSubscribers", value: function () {
@@ -13359,8 +12870,7 @@
                 }
             }, {
                 key: "_onDOMReady", value: function () {
-                    var a =
-                        this;
+                    var a = this;
                     h.default.INFO(this.constructor.name, ":: _onDOMReady");
                     this._cacheDOMElements();
                     this._attachSubscribers();
@@ -13372,8 +12882,7 @@
                 }
             }, {
                 key: "_onInit", value: function () {
-                    this.player = new YT.Player(this.playerID,
-                        {events: {onReady: this._onPlayerReady}})
+                    this.player = new YT.Player(this.playerID, {events: {onReady: this._onPlayerReady}})
                 }
             }, {
                 key: "_onPlayerReady", value: function (a) {
@@ -13411,11 +12920,13 @@
                 SELECTOR_NOTIFICATION_TEMPLATE_NO_RESULT: "#notification-no-result",
                 SELECTOR_NOTIFICATION_TEMPLATE_UNDO: "#notification-undo",
                 SELECTOR_NOTIFICATION_TEMPLATE_NO_PAGE: "#page-not-found"
-            }, ENDPOINT: {
+            },
+            ENDPOINT: {
                 COUNTRY_PATH: (location.pathname.match(/^\/\w+_\w+\//g) || ["/en_eur/"]).join(""),
                 GOOGLE_API: "//maps.google.com/maps/api/js?client\x3dgme-hmhennesmauritzab\x26callback\x3dinitMap\x26v\x3d3\x26channel\x3dstorelocator_arket",
                 YOUTUBE_API: "https://www.youtube.com/iframe_api"
-            }, REGEXFORSEARCH: {XSS: /^.*?(?=[\^#%$\*:;<>\?/\{\|\}\(\)]).*$/}
+            },
+            REGEXFORSEARCH: {XSS: /^.*?(?=[\^#%$\*:;<>\?/\{\|\}\(\)]).*$/}
         });
         p.EVENT = $.extend({}, f.default.EVENT, {
             ON_BEFORE_CONTENT_LOAD: "ON_NEW_CONTENT_LOAD",
@@ -13461,11 +12972,10 @@
             R = m(f("./organisms/o-hero/index")), S = m(f("./organisms/o-width/index")),
             T = m(f("./molecules/m-site-splash/index")), U = m(f("./molecules/m-country-selection/index")),
             V = m(f("./molecules/m-splash/index")), W = m(f("./molecules/m-notification/index")),
-            X = m(f("./organisms/o-slider-cofs/index")),
-            Y = m(f("./organisms/o-order/index")), Z = m(f("./organisms/o-newsletter-popup/index")),
-            aa = m(f("./organisms/o-header/index")), ba = m(f("./organisms/o-product-filters/index")),
-            ca = m(f("./organisms/o-navigation/index")), da = m(f("./organisms/o-local-navigation/index")),
-            ea = m(f("./organisms/o-pra-component/index"));
+            X = m(f("./organisms/o-slider-cofs/index")), Y = m(f("./organisms/o-order/index")),
+            Z = m(f("./organisms/o-newsletter-popup/index")), aa = m(f("./organisms/o-header/index")),
+            ba = m(f("./organisms/o-product-filters/index")), ca = m(f("./organisms/o-navigation/index")),
+            da = m(f("./organisms/o-local-navigation/index")), ea = m(f("./organisms/o-pra-component/index"));
         f = m(f("./atoms/a-size-swatch/index"));
         f = $.extend({}, commonImports, {
             OPage: x.default,
@@ -13531,15 +13041,21 @@
             return $.extend({}, utils, {
                 publish: function (a, b, d) {
                     z.publish(a, b, d)
-                }, subscribe: function (a, b) {
+                },
+                subscribe: function (a, b) {
                     z.subscribe(a, b, z)
-                }, unsubscribe: function (a, b) {
+                },
+                unsubscribe: function (a, b) {
                     z.unsubscribe(a, b)
-                }, destroy: function (a) {
+                },
+                destroy: function (a) {
                     z.destroy(a)
-                }, scan: function () {
+                },
+                scan: function () {
                     z.scan({pjax: !0})
-                }, sitemap: q.default.Sitemap, Enums: {
+                },
+                sitemap: q.default.Sitemap,
+                Enums: {
                     trigger: k.default.ACTION,
                     listen: k.default.EVENT,
                     MQ: k.default.MQ,
@@ -13604,8 +13120,7 @@
     67: [function (f, t, p) {
         function m(c) {
             "@babel/helpers - typeof";
-            m = "function" ===
-            typeof Symbol && "symbol" === typeof Symbol.iterator ? function (a) {
+            m = "function" === typeof Symbol && "symbol" === typeof Symbol.iterator ? function (a) {
                 return typeof a
             } : function (a) {
                 return a && "function" === typeof Symbol && a.constructor === Symbol && a !== Symbol.prototype ? "symbol" : typeof a
@@ -13634,8 +13149,7 @@
         }
 
         function l(c, a, b) {
-            l = "undefined" !==
-            typeof Reflect && Reflect.get ? Reflect.get : function (a, b, c) {
+            l = "undefined" !== typeof Reflect && Reflect.get ? Reflect.get : function (a, b, c) {
                 for (; !Object.prototype.hasOwnProperty.call(a, b) && (a = g(a), null !== a);) ;
                 if (a) return b = Object.getOwnPropertyDescriptor(a, b), b.get ? b.get.call(c) : b.value
             };
@@ -13649,8 +13163,7 @@
         }
 
         function n(c, a) {
-            n = Object.setPrototypeOf || function (a,
-                                                   d) {
+            n = Object.setPrototypeOf || function (a, d) {
                 a.__proto__ = d;
                 return a
             };
@@ -13677,9 +13190,8 @@
             if ("undefined" === typeof Reflect || !Reflect.construct || Reflect.construct.sham) return !1;
             if ("function" === typeof Proxy) return !0;
             try {
-                return Boolean.prototype.valueOf.call(Reflect.construct(Boolean,
-                    [], function () {
-                    })), !0
+                return Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {
+                })), !0
             } catch (c) {
                 return !1
             }
@@ -13722,73 +13234,68 @@
                     this.LOCALSTORAGE_ITEM = "favoriteStore";
                     this.SELECTOR_STATUS = ".status"
                 }
-            },
-                {
-                    key: "_cacheDOMElements", value: function () {
-                        this.$city = this.$el.find(this.SELECTOR_CITY);
-                        this.$spanFavorite = this.$city.find(this.SELECTOR_FAVORITE);
-                        this.$status = this.$el.find(this.SELECTOR_STATUS)
-                    }
-                }, {
-                    key: "_jQueryScopeBinding", value: function () {
-                        this._onDOMReady = this._onDOMReady.bind(this);
-                        this._saveFavorite = this._saveFavorite.bind(this);
-                        this._checkFavoriteStore = this._checkFavoriteStore.bind(this);
-                        this._removeSpan = this._removeSpan.bind(this)
-                    }
-                }, {
-                    key: "_attachSubscribers", value: function () {
-                        h.default.INFO(this.constructor.name,
-                            ":: _attachSubscribers");
-                        this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
-                        this.subscribe(e.default.EVENT.ON_SAVE_FAVORITE, this._removeSpan)
-                    }
-                }, {
-                    key: "_detachSubscribers", value: function () {
-                        h.default.INFO(this.constructor.name, ":: _detachSubscribers");
-                        this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady);
-                        this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
-                        this.unsubscribe(e.default.EVENT.ON_SAVE_FAVORITE, this._removeSpan)
-                    }
-                }, {
-                    key: "_onFrameworkReady",
-                    value: function () {
-                    }
-                }, {
-                    key: "_attachDOMListeners", value: function () {
-                        this.$el.on("click", this._saveFavorite)
-                    }
-                }, {
-                    key: "_detachDOMListeners", value: function () {
-                        this.$el.off("click", this._saveFavorite)
-                    }
-                }, {
-                    key: "_onDOMReady", value: function () {
-                        h.default.INFO(this.constructor.name, ":: _onDOMReady");
-                        this._cacheDOMElements();
-                        this._attachSubscribers();
-                        this._attachDOMListeners();
-                        this._checkFavoriteStore()
-                    }
-                }, {
-                    key: "_saveFavorite", value: function () {
-                        localStorage.setItem(this.LOCALSTORAGE_ITEM, this.storeId);
-                        this.$spanFavorite.hasClass(this.CLASS_IS_VISIBLE) ||
-                        (this.$spanFavorite.addClass(this.CLASS_IS_VISIBLE), this.$status.addClass(this.CLASS_IS_VISIBLE));
-                        this.publish(e.default.EVENT.ON_SAVE_FAVORITE, this.storeId)
-                    }
-                }, {
-                    key: "_checkFavoriteStore", value: function () {
-                        var a = localStorage.getItem(this.LOCALSTORAGE_ITEM);
-                        this.storeId = this.$el.attr("data-store-id");
-                        a && a === this.storeId && (this.$spanFavorite.addClass(this.CLASS_IS_VISIBLE), this.$status.addClass(this.CLASS_IS_VISIBLE))
-                    }
-                }, {
-                    key: "_removeSpan", value: function (a) {
-                        this.storeId != a && this.$spanFavorite.hasClass(this.CLASS_IS_VISIBLE) &&
-                        (this.$spanFavorite.removeClass(this.CLASS_IS_VISIBLE), this.$status.removeClass(this.CLASS_IS_VISIBLE))
-                    }
-                }]);
+            }, {
+                key: "_cacheDOMElements", value: function () {
+                    this.$city = this.$el.find(this.SELECTOR_CITY);
+                    this.$spanFavorite = this.$city.find(this.SELECTOR_FAVORITE);
+                    this.$status = this.$el.find(this.SELECTOR_STATUS)
+                }
+            }, {
+                key: "_jQueryScopeBinding", value: function () {
+                    this._onDOMReady = this._onDOMReady.bind(this);
+                    this._saveFavorite = this._saveFavorite.bind(this);
+                    this._checkFavoriteStore = this._checkFavoriteStore.bind(this);
+                    this._removeSpan = this._removeSpan.bind(this)
+                }
+            }, {
+                key: "_attachSubscribers", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _attachSubscribers");
+                    this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
+                    this.subscribe(e.default.EVENT.ON_SAVE_FAVORITE, this._removeSpan)
+                }
+            }, {
+                key: "_detachSubscribers", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _detachSubscribers");
+                    this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady);
+                    this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
+                    this.unsubscribe(e.default.EVENT.ON_SAVE_FAVORITE, this._removeSpan)
+                }
+            }, {
+                key: "_onFrameworkReady", value: function () {
+                }
+            }, {
+                key: "_attachDOMListeners", value: function () {
+                    this.$el.on("click", this._saveFavorite)
+                }
+            }, {
+                key: "_detachDOMListeners", value: function () {
+                    this.$el.off("click", this._saveFavorite)
+                }
+            }, {
+                key: "_onDOMReady", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _onDOMReady");
+                    this._cacheDOMElements();
+                    this._attachSubscribers();
+                    this._attachDOMListeners();
+                    this._checkFavoriteStore()
+                }
+            }, {
+                key: "_saveFavorite", value: function () {
+                    localStorage.setItem(this.LOCALSTORAGE_ITEM, this.storeId);
+                    this.$spanFavorite.hasClass(this.CLASS_IS_VISIBLE) || (this.$spanFavorite.addClass(this.CLASS_IS_VISIBLE), this.$status.addClass(this.CLASS_IS_VISIBLE));
+                    this.publish(e.default.EVENT.ON_SAVE_FAVORITE, this.storeId)
+                }
+            }, {
+                key: "_checkFavoriteStore", value: function () {
+                    var a = localStorage.getItem(this.LOCALSTORAGE_ITEM);
+                    this.storeId = this.$el.attr("data-store-id");
+                    a && a === this.storeId && (this.$spanFavorite.addClass(this.CLASS_IS_VISIBLE), this.$status.addClass(this.CLASS_IS_VISIBLE))
+                }
+            }, {
+                key: "_removeSpan", value: function (a) {
+                    this.storeId != a && this.$spanFavorite.hasClass(this.CLASS_IS_VISIBLE) && (this.$spanFavorite.removeClass(this.CLASS_IS_VISIBLE), this.$status.removeClass(this.CLASS_IS_VISIBLE))
+                }
+            }]);
             return a
         }(p.default);
         t.exports = f
@@ -13803,8 +13310,7 @@
             m = "function" === typeof Symbol && "symbol" === typeof Symbol.iterator ? function (a) {
                 return typeof a
             } : function (a) {
-                return a && "function" === typeof Symbol && a.constructor === Symbol && a !== Symbol.prototype ?
-                    "symbol" : typeof a
+                return a && "function" === typeof Symbol && a.constructor === Symbol && a !== Symbol.prototype ? "symbol" : typeof a
             };
             return m(c)
         }
@@ -13832,8 +13338,7 @@
         function l(c, a, b) {
             l = "undefined" !== typeof Reflect && Reflect.get ? Reflect.get : function (a, b, c) {
                 for (; !Object.prototype.hasOwnProperty.call(a, b) && (a = g(a), null !== a);) ;
-                if (a) return b = Object.getOwnPropertyDescriptor(a,
-                    b), b.get ? b.get.call(c) : b.value
+                if (a) return b = Object.getOwnPropertyDescriptor(a, b), b.get ? b.get.call(c) : b.value
             };
             return l(c, a, b || c)
         }
@@ -13859,8 +13364,7 @@
                 if (a) {
                     var d = g(this).constructor;
                     b = Reflect.construct(b, arguments, d)
-                } else b = b.apply(this,
-                    arguments);
+                } else b = b.apply(this, arguments);
                 if (!b || "object" !== m(b) && "function" !== typeof b) {
                     if (void 0 === this) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
                     b = this
@@ -13882,8 +13386,7 @@
 
         function g(c) {
             g = Object.setPrototypeOf ? Object.getPrototypeOf : function (a) {
-                return a.__proto__ ||
-                    Object.getPrototypeOf(a)
+                return a.__proto__ || Object.getPrototypeOf(a)
             };
             return g(c)
         }
@@ -13904,8 +13407,7 @@
             v(a, c);
             var b = w(a);
             r(a, [{
-                key: "destroy",
-                value: function () {
+                key: "destroy", value: function () {
                     h.default.INFO(this.constructor.name, ":: Destructor");
                     this._detachDOMListeners();
                     this._detachSubscribers();
@@ -13949,8 +13451,7 @@
                     this.subscribe(e.default.EVENT.ON_ITEM_ADDED_TO_CART, this._onItemAddedToCart)
                 }
             }, {
-                key: "_detachSubscribers",
-                value: function () {
+                key: "_detachSubscribers", value: function () {
                     h.default.INFO(this.constructor.name, ":: _detachSubscribers");
                     this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady);
                     this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
@@ -13979,8 +13480,7 @@
                 key: "_onItemAddedToCart", value: function (a) {
                     var b = this;
                     this.displayNewItemTimeout && clearTimeout(this.displayNewItemTimeout);
-                    a.resolveChain ? (this.$itemAddedImg.parent().addClass(this.CLASS_PLACEHOLDER_WRAPPER), this.$itemAddedImg.attr("data-resolvechain",
-                        a.resolveChain), this.$itemAddedImg.attr("src", this.lp_resolve_placeholder_url), this.$itemAddedImg.addClass(this.CLASS_RESOLVE)) : this.$itemAddedImg.attr("src", a.imgSrc);
+                    a.resolveChain ? (this.$itemAddedImg.parent().addClass(this.CLASS_PLACEHOLDER_WRAPPER), this.$itemAddedImg.attr("data-resolvechain", a.resolveChain), this.$itemAddedImg.attr("src", this.lp_resolve_placeholder_url), this.$itemAddedImg.addClass(this.CLASS_RESOLVE)) : this.$itemAddedImg.attr("src", a.imgSrc);
                     this.$itemAddedTitle.text(a.title);
                     this.$itemAddedPrice.text(a.price);
                     this.$el.addClass(this.CLASS_HAS_NEW_CART_ITEM);
@@ -13993,7 +13493,8 @@
         }(p.default);
         t.exports = f
     }, {
-        "./../../../../js/base/appeaser-component-base.js": 47, "./../../../../js/base/logger.js": 51,
+        "./../../../../js/base/appeaser-component-base.js": 47,
+        "./../../../../js/base/logger.js": 51,
         "./../../enums.js": 65
     }],
     69: [function (f, t, p) {
@@ -14017,8 +13518,7 @@
                 c.enumerable = c.enumerable || !1;
                 c.configurable = !0;
                 "value" in c && (c.writable = !0);
-                Object.defineProperty(a,
-                    c.key, c)
+                Object.defineProperty(a, c.key, c)
             }
         }
 
@@ -14038,12 +13538,7 @@
 
         function v(a, b) {
             if ("function" !== typeof b && null !== b) throw new TypeError("Super expression must either be null or a function");
-            a.prototype = Object.create(b && b.prototype, {
-                constructor: {
-                    value: a,
-                    writable: !0, configurable: !0
-                }
-            });
+            a.prototype = Object.create(b && b.prototype, {constructor: {value: a, writable: !0, configurable: !0}});
             b && n(a, b)
         }
 
@@ -14072,8 +13567,7 @@
         }
 
         function u() {
-            if ("undefined" === typeof Reflect || !Reflect.construct ||
-                Reflect.construct.sham) return !1;
+            if ("undefined" === typeof Reflect || !Reflect.construct || Reflect.construct.sham) return !1;
             if ("function" === typeof Proxy) return !0;
             try {
                 return Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {
@@ -14094,8 +13588,7 @@
         var h = k(f("./../../../../js/base/logger.js")), e = k(f("./../../enums.js")), c = f("./../../utils.js");
         f = function (a) {
             function b() {
-                if (!(this instanceof
-                    b)) throw new TypeError("Cannot call a class as a function");
+                if (!(this instanceof b)) throw new TypeError("Cannot call a class as a function");
                 var a = d.apply(this, arguments);
                 h.default.INFO(a.constructor.name, ":: Constructor");
                 a._jQueryScopeBinding();
@@ -14115,8 +13608,7 @@
                 }
             }, {
                 key: "_declareConstants", value: function () {
-                    this.CLASS_IS_DISASTER =
-                        "is-disaster";
+                    this.CLASS_IS_DISASTER = "is-disaster";
                     this.CLASS_IS_VISIBLE = "is-visible";
                     this.SELECTOR_CLOSE = ".close-click-area, .a-button";
                     this.COOKIE_HISTORY = "cookie-notification";
@@ -14131,8 +13623,7 @@
                     this.CLASS_FADE_OUT = "fade-out"
                 }
             }, {
-                key: "_cacheDOMElements",
-                value: function () {
+                key: "_cacheDOMElements", value: function () {
                     this.$window = $(window);
                     this.$body = $("html, body");
                     this.$pageContent = this.$body.find(this.SELECTOR_PAGE_CONTENT);
@@ -14155,8 +13646,7 @@
                     h.default.INFO(this.constructor.name, ":: _attachSubscribers");
                     this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
                     this.subscribe(e.default.ACTION.ON_NOTIFICATION_MSG_CLOSED, this._setMobileVisibilityState);
-                    this.subscribe(e.default.EVENT.ON_SITE_ENTRY_MESSAGE_SET,
-                        this._updateCookieMessage)
+                    this.subscribe(e.default.EVENT.ON_SITE_ENTRY_MESSAGE_SET, this._updateCookieMessage)
                 }
             }, {
                 key: "_detachSubscribers", value: function () {
@@ -14169,93 +13659,85 @@
             }, {
                 key: "_onFrameworkReady", value: function () {
                 }
-            },
-                {
-                    key: "_attachDOMListeners", value: function () {
-                        this.$window.on("scroll", this._onScroll);
-                        this.$closeElements.on("click", this._close)
-                    }
-                }, {
-                    key: "_detachDOMListeners", value: function () {
-                        this.$window.off("scroll", this._onScroll);
-                        this.$closeElements.off("click", this._close)
-                    }
-                }, {
-                    key: "_onDOMReady", value: function () {
-                        h.default.INFO(this.constructor.name, ":: _onDOMReady");
-                        this._cacheDOMElements();
-                        this._ifCheckoutPage();
-                        this._attachSubscribers();
-                        this._attachDOMListeners();
-                        this._attachMQHandlers();
-                        this.isMessageVisible =
-                            !0
-                    }
-                }, {
-                    key: "_attachMQHandlers", value: function () {
-                        this.MQMobileHandler = {match: this._onMQMobileMatch.bind(this)};
-                        this.MQTabletAndDesktopHandler = {match: this._setAboveMobileVisibilityState.bind(this)};
-                        enquire.register(e.default.MQ.IS_MOBILE_SMALL, this.MQMobileHandler);
-                        enquire.register(e.default.MQ.LARGE_MOBILE_AND_DESKTOP_RANGE, this.MQTabletAndDesktopHandler)
-                    }
-                }, {
-                    key: "_detachMQHandlers", value: function () {
-                        enquire.unregister(e.default.MQ.IS_MOBILE_SMALL, this.MQMobileHandler);
-                        enquire.unregister(e.default.MQ.LARGE_MOBILE_AND_DESKTOP_RANGE,
-                            this.MQTabletAndDesktopHandler)
-                    }
-                }, {
-                    key: "_ifCheckoutPage", value: function () {
-                        this.$pageContent.hasClass(this.CLASS_IS_CHECKOUT) && Cookies.remove(this.DISASTER_MESSAGE)
-                    }
-                }, {
-                    key: "_setMobileVisibilityState", value: function () {
-                        if (c.Stores.popupsDisabled()) this.isMessageVisible = !1; else if (this.$pageContent.find(this.SELECTOR_PAGE_404).length && this.$el.hasClass(this.CLASS_IS_DISASTER)) this.$el.removeClass(e.default.CLASS.IS_VISIBLE_STATE), this.isMessageVisible = !1; else if ("viewed" !== Cookies.get(this.COOKIE_HISTORY) &&
-                            !this.$el.hasClass(this.CLASS_IS_DISASTER) || "viewed" !== Cookies.get(this.DISASTER_MESSAGE) && this.$el.hasClass(this.CLASS_IS_DISASTER)) this.$el.addClass(e.default.CLASS.IS_VISIBLE_STATE), this._fadeIn(), this.isMessageVisible = !0
-                    }
-                }, {
-                    key: "_setAboveMobileVisibilityState", value: function () {
-                        this.$pageContent.find(this.SELECTOR_PAGE_404).length && this.$el.hasClass(this.CLASS_IS_DISASTER) ? (this.$el.removeClass(e.default.CLASS.IS_VISIBLE_STATE), this.isMessageVisible = !1) : "viewed" === Cookies.get(this.COOKIE_HISTORY) &&
-                        !this.$el.hasClass(this.CLASS_IS_DISASTER) || "viewed" === Cookies.get(this.DISASTER_MESSAGE) && this.$el.hasClass(this.CLASS_IS_DISASTER) ? (this.$el.removeClass(e.default.CLASS.IS_VISIBLE_STATE), this.isMessageVisible = !1) : c.Stores.popupsDisabled() ? this.isMessageVisible = !1 : (this.$el.addClass(e.default.CLASS.IS_VISIBLE_STATE), this.isMessageVisible = !0)
-                    }
-                }, {
-                    key: "_close", value: function (a) {
-                        this.$el.remove();
-                        this.$el.hasClass(this.CLASS_IS_DISASTER) ? Cookies.set(this.DISASTER_MESSAGE, "viewed") : (Cookies.set(this.COOKIE_HISTORY,
-                            "viewed", {expires: 7}), Modernizr.mq(e.default.MQ.IS_MOBILE_SMALL) && this.publish(e.default.ACTION.ON_NOTIFICATION_MSG_CLOSED, this))
-                    }
-                }, {
-                    key: "_onScroll", value: function (a) {
-                        var b = this;
-                        this.$el.hasClass(this.CLASS_IS_VISIBLE) && !Modernizr.mq(e.default.MQ.IS_MOBILE) && (0 < this.$window.scrollTop() ? this.isMessageVisible && (this.$el.addClass(this.CLASS_FADE_OUT), setTimeout(function () {
-                            b.$el.css("display", "none").removeClass(b.CLASS_FADE_OUT)
-                        }, this.FADE_ANIMATION_DELAY), this.isMessageVisible = !1) : this._fadeIn())
-                    }
-                },
-                {
-                    key: "_fadeIn", value: function () {
-                        var a = this;
-                        this.$el.addClass(this.CLASS_FADE_IN).css("display", "block");
-                        setTimeout(function () {
-                            a.$el.removeClass(a.CLASS_FADE_IN)
-                        }, this.FADE_ANIMATION_DELAY);
-                        this.isMessageVisible = !0
-                    }
-                }, {
-                    key: "_onMQMobileMatch", value: function () {
-                        "viewed" !== Cookies.get(this.COOKIE_HISTORY) && this.$el.hasClass(this.CLASS_IS_DISASTER) && (this.$el.removeClass(e.default.CLASS.IS_VISIBLE_STATE), this.isMessageVisible = !1);
-                        this._setMobileVisibilityState()
-                    }
-                }, {
-                    key: "_updateCookieMessage", value: function (a,
-                                                                  b) {
-                        this.$siteEntryMessageContainer.html(a);
-                        b && "viewed" !== Cookies.get(this.UG_COUNTRY_SELECTOR) && (this.publish(e.default.ACTION.SHOW_LIGHTBOX, {
-                            template: "country-selector",
-                            classes: "is-country-selector is-multi-language"
-                        }), Cookies.set(this.UG_COUNTRY_SELECTOR, "viewed", {expires: e.default.TIME.COUNTRY_SELECT_TIMEOUT}))
-                    }
-                }]);
+            }, {
+                key: "_attachDOMListeners", value: function () {
+                    this.$window.on("scroll", this._onScroll);
+                    this.$closeElements.on("click", this._close)
+                }
+            }, {
+                key: "_detachDOMListeners", value: function () {
+                    this.$window.off("scroll", this._onScroll);
+                    this.$closeElements.off("click", this._close)
+                }
+            }, {
+                key: "_onDOMReady", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _onDOMReady");
+                    this._cacheDOMElements();
+                    this._ifCheckoutPage();
+                    this._attachSubscribers();
+                    this._attachDOMListeners();
+                    this._attachMQHandlers();
+                    this.isMessageVisible = !0
+                }
+            }, {
+                key: "_attachMQHandlers", value: function () {
+                    this.MQMobileHandler = {match: this._onMQMobileMatch.bind(this)};
+                    this.MQTabletAndDesktopHandler = {match: this._setAboveMobileVisibilityState.bind(this)};
+                    enquire.register(e.default.MQ.IS_MOBILE_SMALL, this.MQMobileHandler);
+                    enquire.register(e.default.MQ.LARGE_MOBILE_AND_DESKTOP_RANGE, this.MQTabletAndDesktopHandler)
+                }
+            }, {
+                key: "_detachMQHandlers", value: function () {
+                    enquire.unregister(e.default.MQ.IS_MOBILE_SMALL, this.MQMobileHandler);
+                    enquire.unregister(e.default.MQ.LARGE_MOBILE_AND_DESKTOP_RANGE, this.MQTabletAndDesktopHandler)
+                }
+            }, {
+                key: "_ifCheckoutPage", value: function () {
+                    this.$pageContent.hasClass(this.CLASS_IS_CHECKOUT) && Cookies.remove(this.DISASTER_MESSAGE)
+                }
+            }, {
+                key: "_setMobileVisibilityState", value: function () {
+                    if (c.Stores.popupsDisabled()) this.isMessageVisible = !1; else if (this.$pageContent.find(this.SELECTOR_PAGE_404).length && this.$el.hasClass(this.CLASS_IS_DISASTER)) this.$el.removeClass(e.default.CLASS.IS_VISIBLE_STATE), this.isMessageVisible = !1; else if ("viewed" !== Cookies.get(this.COOKIE_HISTORY) && !this.$el.hasClass(this.CLASS_IS_DISASTER) || "viewed" !== Cookies.get(this.DISASTER_MESSAGE) && this.$el.hasClass(this.CLASS_IS_DISASTER)) this.$el.addClass(e.default.CLASS.IS_VISIBLE_STATE), this._fadeIn(), this.isMessageVisible = !0
+                }
+            }, {
+                key: "_setAboveMobileVisibilityState", value: function () {
+                    this.$pageContent.find(this.SELECTOR_PAGE_404).length && this.$el.hasClass(this.CLASS_IS_DISASTER) ? (this.$el.removeClass(e.default.CLASS.IS_VISIBLE_STATE), this.isMessageVisible = !1) : "viewed" === Cookies.get(this.COOKIE_HISTORY) && !this.$el.hasClass(this.CLASS_IS_DISASTER) || "viewed" === Cookies.get(this.DISASTER_MESSAGE) && this.$el.hasClass(this.CLASS_IS_DISASTER) ? (this.$el.removeClass(e.default.CLASS.IS_VISIBLE_STATE), this.isMessageVisible = !1) : c.Stores.popupsDisabled() ? this.isMessageVisible = !1 : (this.$el.addClass(e.default.CLASS.IS_VISIBLE_STATE), this.isMessageVisible = !0)
+                }
+            }, {
+                key: "_close", value: function (a) {
+                    this.$el.remove();
+                    this.$el.hasClass(this.CLASS_IS_DISASTER) ? Cookies.set(this.DISASTER_MESSAGE, "viewed") : (Cookies.set(this.COOKIE_HISTORY, "viewed", {expires: 7}), Modernizr.mq(e.default.MQ.IS_MOBILE_SMALL) && this.publish(e.default.ACTION.ON_NOTIFICATION_MSG_CLOSED, this))
+                }
+            }, {
+                key: "_onScroll", value: function (a) {
+                    var b = this;
+                    this.$el.hasClass(this.CLASS_IS_VISIBLE) && !Modernizr.mq(e.default.MQ.IS_MOBILE) && (0 < this.$window.scrollTop() ? this.isMessageVisible && (this.$el.addClass(this.CLASS_FADE_OUT), setTimeout(function () {
+                        b.$el.css("display", "none").removeClass(b.CLASS_FADE_OUT)
+                    }, this.FADE_ANIMATION_DELAY), this.isMessageVisible = !1) : this._fadeIn())
+                }
+            }, {
+                key: "_fadeIn", value: function () {
+                    var a = this;
+                    this.$el.addClass(this.CLASS_FADE_IN).css("display", "block");
+                    setTimeout(function () {
+                        a.$el.removeClass(a.CLASS_FADE_IN)
+                    }, this.FADE_ANIMATION_DELAY);
+                    this.isMessageVisible = !0
+                }
+            }, {
+                key: "_onMQMobileMatch", value: function () {
+                    "viewed" !== Cookies.get(this.COOKIE_HISTORY) && this.$el.hasClass(this.CLASS_IS_DISASTER) && (this.$el.removeClass(e.default.CLASS.IS_VISIBLE_STATE), this.isMessageVisible = !1);
+                    this._setMobileVisibilityState()
+                }
+            }, {
+                key: "_updateCookieMessage", value: function (a, b) {
+                    this.$siteEntryMessageContainer.html(a);
+                    b && "viewed" !== Cookies.get(this.UG_COUNTRY_SELECTOR) && (this.publish(e.default.ACTION.SHOW_LIGHTBOX, {
+                        template: "country-selector",
+                        classes: "is-country-selector is-multi-language"
+                    }), Cookies.set(this.UG_COUNTRY_SELECTOR, "viewed", {expires: e.default.TIME.COUNTRY_SELECT_TIMEOUT}))
+                }
+            }]);
             return b
         }(p.default);
         t.exports = f
@@ -14265,8 +13747,7 @@
         "./../../enums.js": 65,
         "./../../utils.js": 112
     }],
-    70: [function (f,
-                   t, p) {
+    70: [function (f, t, p) {
         function m(c) {
             "@babel/helpers - typeof";
             m = "function" === typeof Symbol && "symbol" === typeof Symbol.iterator ? function (a) {
@@ -14292,8 +13773,7 @@
         }
 
         function r(c, a, b) {
-            a &&
-            q(c.prototype, a);
+            a && q(c.prototype, a);
             b && q(c, b);
             return c
         }
@@ -14379,8 +13859,7 @@
             }, {
                 key: "_declareConstants", value: function () {
                     this.SELECTOR_MATRIX_ELEMENTS = ".matrix-row-el";
-                    this.SELECTOR_MATRIX_ROW =
-                        ".matrix-row"
+                    this.SELECTOR_MATRIX_ROW = ".matrix-row"
                 }
             }, {
                 key: "_cacheDOMElements", value: function () {
@@ -14396,8 +13875,7 @@
             }, {
                 key: "_attachSubscribers", value: function () {
                     h.default.INFO(this.constructor.name, ":: _attachSubscribers");
-                    this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY,
-                        this._onFrameworkReady)
+                    this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady)
                 }
             }, {
                 key: "_detachSubscribers", value: function () {
@@ -14414,8 +13892,7 @@
                     this.$matrixBlocks.off("click", this._onMatrixBlockClick)
                 }
             }, {
-                key: "_onDOMReady",
-                value: function () {
+                key: "_onDOMReady", value: function () {
                     h.default.INFO(this.constructor.name, ":: _onDOMReady");
                     this._cacheDOMElements();
                     this._attachSubscribers();
@@ -14428,8 +13905,7 @@
                 key: "_breakSomeCountries", value: function () {
                     for (var a = {NL: "Nether- lands"}, b = 0, c = Object.keys(a); b < c.length; b++) {
                         var e = c[b];
-                        this.$el.find(this.SELECTOR_MATRIX_ELEMENTS +
-                            '[data-country\x3d"' + e + '"] span').html(a[e])
+                        this.$el.find(this.SELECTOR_MATRIX_ELEMENTS + '[data-country\x3d"' + e + '"] span').html(a[e])
                     }
                 }
             }, {
@@ -14444,8 +13920,7 @@
                                 })
                             }).address_components.map(function (a) {
                                 return a.short_name
-                            }), b.$matrixRow.find('[data-country\x3d"'.concat(a,
-                                '"]')).addClass(e.default.CLASS.IS_ACTIVE_STATE))
+                            }), b.$matrixRow.find('[data-country\x3d"'.concat(a, '"]')).addClass(e.default.CLASS.IS_ACTIVE_STATE))
                         })
                     })
                 }
@@ -14488,8 +13963,7 @@
             }
         }
 
-        function r(a,
-                   b, d) {
+        function r(a, b, d) {
             b && q(a.prototype, b);
             d && q(a, d);
             return a
@@ -14505,12 +13979,7 @@
 
         function v(a, b) {
             if ("function" !== typeof b && null !== b) throw new TypeError("Super expression must either be null or a function");
-            a.prototype = Object.create(b && b.prototype, {
-                constructor: {
-                    value: a, writable: !0,
-                    configurable: !0
-                }
-            });
+            a.prototype = Object.create(b && b.prototype, {constructor: {value: a, writable: !0, configurable: !0}});
             b && n(a, b)
         }
 
@@ -14539,8 +14008,7 @@
         }
 
         function u() {
-            if ("undefined" === typeof Reflect || !Reflect.construct ||
-                Reflect.construct.sham) return !1;
+            if ("undefined" === typeof Reflect || !Reflect.construct || Reflect.construct.sham) return !1;
             if ("function" === typeof Proxy) return !0;
             try {
                 return Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {
@@ -14592,8 +14060,7 @@
                 }
             }, {
                 key: "_onDOMReady", value: function () {
-                    h.default.INFO(this.constructor.name,
-                        ":: _onDOMReady");
+                    h.default.INFO(this.constructor.name, ":: _onDOMReady");
                     this.$input = this.$el.find(this.SELECTOR_INPUT);
                     this.$countryBtn = $(this.SELECTOR_M_COUNTRY_SELECT);
                     this._checkInputValue();
@@ -14606,108 +14073,102 @@
                     this.subscribe(e.default.EVENT.ON_HEADER_NOT_STICKY, this._onHeaderNotSticky);
                     this.subscribe(e.default.ACTION.SET_DROPDOWN_SELECTED_OPTION, this._checkInputValue)
                 }
-            },
-                {
-                    key: "_detachSubscribers", value: function () {
-                        l(g(b.prototype), "_attachSubscribers", this).call(this);
-                        this.unsubscribe(e.default.EVENT.ON_HEADER_STICY, this._onHeaderSticky);
-                        this.unsubscribe(e.default.EVENT.ON_HEADER_NOT_STICKY, this._onHeaderNotSticky);
-                        this.unsubscribe(e.default.ACTION.SET_DROPDOWN_SELECTED_OPTION, this._checkInputValue)
-                    }
-                }, {
-                    key: "_attachDOMListeners", value: function () {
-                        l(g(b.prototype), "_attachDOMListeners", this).call(this);
-                        this.$countryBtn.on("click", this._openDropdown);
-                        this.$input.on("click",
-                            this._open);
-                        this.$input.on("input", this._filterOptions)
-                    }
-                }, {
-                    key: "_detachDOMListeners", value: function () {
-                        l(g(b.prototype), "_detachDOMListeners", this).call(this);
-                        this.$countryBtn.off("click", this._openDropdown);
-                        this.$input.off("focus", this._open);
-                        this.$input.off("input", this._filterOptions)
-                    }
-                }, {
-                    key: "_onHeaderSticky", value: function () {
-                        this.$el.addClass(this.CLASS_ALIGN_STICKY_HEADER)
-                    }
-                }, {
-                    key: "_onHeaderNotSticky", value: function () {
-                        this.$el.removeClass(this.CLASS_ALIGN_STICKY_HEADER)
-                    }
-                }, {
-                    key: "_removeFilter",
-                    value: function () {
-                        this.$options.removeClass(this.CLASS_DISPLAY_NONE)
-                    }
-                }, {
-                    key: "_openDropdown", value: function (a) {
-                        var b = (a ? a.target : window.event.srcElement).querySelector(".country-dropdown");
-                        this._open(a, $(b));
-                        if (c.default.Helpers.isIE11()) this.$countryBtn.one("click", function (a) {
-                            document.elementFromPoint(a.clientX, a.clientY).click()
-                        })
-                    }
-                }, {
-                    key: "_open", value: function (a, b) {
-                        void 0 !== a && a.stopPropagation();
-                        a = "undefined" !== typeof b ? b : this.$el;
-                        a.hasClass(e.default.CLASS.IS_DISABLED_STATE) || (a.hasClass(e.default.CLASS.IS_OPEN_STATE) ?
-                            this._close() : ($(this.SELECTOR_DROPDOWN_FILTER).removeClass(e.default.CLASS.IS_OPEN_STATE), this._removeFilter(), a.addClass(e.default.CLASS.IS_OPEN_STATE), a = this.$options.index(this.$selectedOption) * this.$selectedOption.outerHeight(), this.$optionsWrapper.scrollTop(a)))
-                    }
-                }, {
-                    key: "_close", value: function () {
-                        this.$el.removeClass(e.default.CLASS.IS_OPEN_STATE);
-                        this._checkInputValue();
-                        this.publish(e.default.EVENT.ON_DROPDOWN_CLOSED_FILTERS)
-                    }
-                }, {
-                    key: "_filterOptions", value: function () {
-                        var a = this.$input.val().toLowerCase();
-                        this._open();
-                        this.$options.each(function (b, d) {
-                            b = $(d);
-                            b.html().toLowerCase().substring(0, a.length) == a ? b.removeClass(e.default.CLASS.DISPLAY_NONE) : (b.addClass(e.default.CLASS.DISPLAY_NONE), b.removeClass(e.default.CLASS.IS_SELECTED))
-                        })
-                    }
-                }, {
-                    key: "_preventMobileScroll", value: function () {
-                        this.publish(e.default.ACTION.DISABLE_SCROLL, {
-                            $touchScrollElement: this.$optionsWrapper,
-                            forceScrollPosition: !0
-                        });
-                        this.scrollDisabled = !0
-                    }
-                }, {
-                    key: "_enableMobileScroll", value: function () {
-                        this.scrollDisabled && (this.publish(e.default.ACTION.ENABLE_SCROLL),
-                            this.scrollDisabled = !1)
-                    }
-                }, {
-                    key: "_checkInputValue", value: function () {
-                        this.$input.parents(this.SELECTOR_NEWSLETTER).length || (this.$input.val() ? this.$input.css("border-color", "black") : this.$input.css("border-color", ""))
-                    }
-                }, {
-                    key: "_setHiddenInput", value: function (a) {
-                        this.$hiddenInput.length && (a = a && a.length ? a.data("value") : this.$selectedAndIsValue.length ? this.$selectedAndIsValue.data("value") : "", this.$hiddenInput.val(a))
-                    }
-                }, {
-                    key: "_onOptionClick", value: function (a) {
-                        this.isCountryDropdown || (this._setInputValue($(a.target)),
-                            this._close())
-                    }
-                }, {
-                    key: "_setInputValue", value: function (a) {
-                        this.isCountryDropdown || (l(g(b.prototype), "_setInputValue", this).call(this, a), this._setHiddenInput(a))
-                    }
-                }, {
-                    key: "_setInputOnLoad", value: function () {
-                        l(g(b.prototype), "_setInputOnLoad", this).call(this);
-                        this._setHiddenInput()
-                    }
-                }]);
+            }, {
+                key: "_detachSubscribers", value: function () {
+                    l(g(b.prototype), "_attachSubscribers", this).call(this);
+                    this.unsubscribe(e.default.EVENT.ON_HEADER_STICY, this._onHeaderSticky);
+                    this.unsubscribe(e.default.EVENT.ON_HEADER_NOT_STICKY, this._onHeaderNotSticky);
+                    this.unsubscribe(e.default.ACTION.SET_DROPDOWN_SELECTED_OPTION, this._checkInputValue)
+                }
+            }, {
+                key: "_attachDOMListeners", value: function () {
+                    l(g(b.prototype), "_attachDOMListeners", this).call(this);
+                    this.$countryBtn.on("click", this._openDropdown);
+                    this.$input.on("click", this._open);
+                    this.$input.on("input", this._filterOptions)
+                }
+            }, {
+                key: "_detachDOMListeners", value: function () {
+                    l(g(b.prototype), "_detachDOMListeners", this).call(this);
+                    this.$countryBtn.off("click", this._openDropdown);
+                    this.$input.off("focus", this._open);
+                    this.$input.off("input", this._filterOptions)
+                }
+            }, {
+                key: "_onHeaderSticky", value: function () {
+                    this.$el.addClass(this.CLASS_ALIGN_STICKY_HEADER)
+                }
+            }, {
+                key: "_onHeaderNotSticky", value: function () {
+                    this.$el.removeClass(this.CLASS_ALIGN_STICKY_HEADER)
+                }
+            }, {
+                key: "_removeFilter", value: function () {
+                    this.$options.removeClass(this.CLASS_DISPLAY_NONE)
+                }
+            }, {
+                key: "_openDropdown", value: function (a) {
+                    var b = (a ? a.target : window.event.srcElement).querySelector(".country-dropdown");
+                    this._open(a, $(b));
+                    if (c.default.Helpers.isIE11()) this.$countryBtn.one("click", function (a) {
+                        document.elementFromPoint(a.clientX, a.clientY).click()
+                    })
+                }
+            }, {
+                key: "_open", value: function (a, b) {
+                    void 0 !== a && a.stopPropagation();
+                    a = "undefined" !== typeof b ? b : this.$el;
+                    a.hasClass(e.default.CLASS.IS_DISABLED_STATE) || (a.hasClass(e.default.CLASS.IS_OPEN_STATE) ? this._close() : ($(this.SELECTOR_DROPDOWN_FILTER).removeClass(e.default.CLASS.IS_OPEN_STATE), this._removeFilter(), a.addClass(e.default.CLASS.IS_OPEN_STATE), a = this.$options.index(this.$selectedOption) * this.$selectedOption.outerHeight(), this.$optionsWrapper.scrollTop(a)))
+                }
+            }, {
+                key: "_close", value: function () {
+                    this.$el.removeClass(e.default.CLASS.IS_OPEN_STATE);
+                    this._checkInputValue();
+                    this.publish(e.default.EVENT.ON_DROPDOWN_CLOSED_FILTERS)
+                }
+            }, {
+                key: "_filterOptions", value: function () {
+                    var a = this.$input.val().toLowerCase();
+                    this._open();
+                    this.$options.each(function (b, d) {
+                        b = $(d);
+                        b.html().toLowerCase().substring(0, a.length) == a ? b.removeClass(e.default.CLASS.DISPLAY_NONE) : (b.addClass(e.default.CLASS.DISPLAY_NONE), b.removeClass(e.default.CLASS.IS_SELECTED))
+                    })
+                }
+            }, {
+                key: "_preventMobileScroll", value: function () {
+                    this.publish(e.default.ACTION.DISABLE_SCROLL, {
+                        $touchScrollElement: this.$optionsWrapper,
+                        forceScrollPosition: !0
+                    });
+                    this.scrollDisabled = !0
+                }
+            }, {
+                key: "_enableMobileScroll", value: function () {
+                    this.scrollDisabled && (this.publish(e.default.ACTION.ENABLE_SCROLL), this.scrollDisabled = !1)
+                }
+            }, {
+                key: "_checkInputValue", value: function () {
+                    this.$input.parents(this.SELECTOR_NEWSLETTER).length || (this.$input.val() ? this.$input.css("border-color", "black") : this.$input.css("border-color", ""))
+                }
+            }, {
+                key: "_setHiddenInput", value: function (a) {
+                    this.$hiddenInput.length && (a = a && a.length ? a.data("value") : this.$selectedAndIsValue.length ? this.$selectedAndIsValue.data("value") : "", this.$hiddenInput.val(a))
+                }
+            }, {
+                key: "_onOptionClick", value: function (a) {
+                    this.isCountryDropdown || (this._setInputValue($(a.target)), this._close())
+                }
+            }, {
+                key: "_setInputValue", value: function (a) {
+                    this.isCountryDropdown || (l(g(b.prototype), "_setInputValue", this).call(this, a), this._setHiddenInput(a))
+                }
+            }, {
+                key: "_setInputOnLoad", value: function () {
+                    l(g(b.prototype), "_setInputOnLoad", this).call(this);
+                    this._setHiddenInput()
+                }
+            }]);
             return b
         }(p.default);
         t.exports = f
@@ -14720,12 +14181,11 @@
     72: [function (f, t, p) {
         function m(c) {
             "@babel/helpers - typeof";
-            m =
-                "function" === typeof Symbol && "symbol" === typeof Symbol.iterator ? function (a) {
-                    return typeof a
-                } : function (a) {
-                    return a && "function" === typeof Symbol && a.constructor === Symbol && a !== Symbol.prototype ? "symbol" : typeof a
-                };
+            m = "function" === typeof Symbol && "symbol" === typeof Symbol.iterator ? function (a) {
+                return typeof a
+            } : function (a) {
+                return a && "function" === typeof Symbol && a.constructor === Symbol && a !== Symbol.prototype ? "symbol" : typeof a
+            };
             return m(c)
         }
 
@@ -14749,8 +14209,7 @@
             return c
         }
 
-        function l(c,
-                   a, b) {
+        function l(c, a, b) {
             l = "undefined" !== typeof Reflect && Reflect.get ? Reflect.get : function (a, b, c) {
                 for (; !Object.prototype.hasOwnProperty.call(a, b) && (a = g(a), null !== a);) ;
                 if (a) return b = Object.getOwnPropertyDescriptor(a, b), b.get ? b.get.call(c) : b.value
@@ -14765,11 +14224,10 @@
         }
 
         function n(c, a) {
-            n = Object.setPrototypeOf ||
-                function (a, d) {
-                    a.__proto__ = d;
-                    return a
-                };
+            n = Object.setPrototypeOf || function (a, d) {
+                a.__proto__ = d;
+                return a
+            };
             return n(c, a)
         }
 
@@ -14813,8 +14271,7 @@
             function a() {
                 if (!(this instanceof a)) throw new TypeError("Cannot call a class as a function");
                 var d = b.apply(this, arguments);
-                h.default.INFO(d.constructor.name,
-                    ":: Constructor");
+                h.default.INFO(d.constructor.name, ":: Constructor");
                 return d
             }
 
@@ -14860,8 +14317,7 @@
             }
         }
 
-        function r(e,
-                   c, a) {
+        function r(e, c, a) {
             c && q(e.prototype, c);
             a && q(e, a);
             return e
@@ -14877,12 +14333,7 @@
 
         function v(e, c) {
             if ("function" !== typeof c && null !== c) throw new TypeError("Super expression must either be null or a function");
-            e.prototype = Object.create(c && c.prototype, {
-                constructor: {
-                    value: e, writable: !0,
-                    configurable: !0
-                }
-            });
+            e.prototype = Object.create(c && c.prototype, {constructor: {value: e, writable: !0, configurable: !0}});
             c && n(e, c)
         }
 
@@ -14911,8 +14362,7 @@
         }
 
         function u() {
-            if ("undefined" === typeof Reflect || !Reflect.construct ||
-                Reflect.construct.sham) return !1;
+            if ("undefined" === typeof Reflect || !Reflect.construct || Reflect.construct.sham) return !1;
             if ("function" === typeof Proxy) return !0;
             try {
                 return Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {
@@ -14934,8 +14384,7 @@
         f = function (e) {
             function c() {
                 if (!(this instanceof c)) throw new TypeError("Cannot call a class as a function");
-                return a.apply(this,
-                    arguments)
+                return a.apply(this, arguments)
             }
 
             v(c, e);
@@ -14960,8 +14409,7 @@
                 }
             }, {
                 key: "_attachDOMListeners", value: function () {
-                    l(g(c.prototype),
-                        "_attachDOMListeners", this).call(this);
+                    l(g(c.prototype), "_attachDOMListeners", this).call(this);
                     if (!Modernizr.touchevents) this.$input.on("keyup", this._onKeyUp)
                 }
             }, {
@@ -14978,10 +14426,7 @@
             return c
         }(p.default);
         t.exports = f
-    }, {
-        "./../../enums.js": 65,
-        "common/molecules/m-input/index": 7
-    }],
+    }, {"./../../enums.js": 65, "common/molecules/m-input/index": 7}],
     74: [function (f, t, p) {
         function m(c) {
             "@babel/helpers - typeof";
@@ -15003,8 +14448,7 @@
                 d.enumerable = d.enumerable || !1;
                 d.configurable = !0;
                 "value" in d && (d.writable = !0);
-                Object.defineProperty(c,
-                    d.key, d)
+                Object.defineProperty(c, d.key, d)
             }
         }
 
@@ -15024,12 +14468,7 @@
 
         function v(c, a) {
             if ("function" !== typeof a && null !== a) throw new TypeError("Super expression must either be null or a function");
-            c.prototype = Object.create(a && a.prototype, {
-                constructor: {
-                    value: c,
-                    writable: !0, configurable: !0
-                }
-            });
+            c.prototype = Object.create(a && a.prototype, {constructor: {value: c, writable: !0, configurable: !0}});
             a && n(c, a)
         }
 
@@ -15058,8 +14497,7 @@
         }
 
         function u() {
-            if ("undefined" === typeof Reflect || !Reflect.construct ||
-                Reflect.construct.sham) return !1;
+            if ("undefined" === typeof Reflect || !Reflect.construct || Reflect.construct.sham) return !1;
             if ("function" === typeof Proxy) return !0;
             try {
                 return Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {
@@ -15103,8 +14541,7 @@
                 }
             }, {
                 key: "_cacheDOMElements", value: function () {
-                    this.$window =
-                        $(window);
+                    this.$window = $(window);
                     this.$body = $("html, body")
                 }
             }, {
@@ -15120,8 +14557,7 @@
                 key: "_detachSubscribers", value: function () {
                     h.default.INFO(this.constructor.name, ":: _detachSubscribers");
                     this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady);
-                    this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY,
-                        this._onFrameworkReady)
+                    this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady)
                 }
             }, {
                 key: "_onFrameworkReady", value: function () {
@@ -15149,8 +14585,7 @@
                 }
             }, {
                 key: "_activateTicker", value: function () {
-                    var a =
-                        this;
+                    var a = this;
                     this.$el.addClass("is-active");
                     var b = 0, c = this.$el.find("li").length;
                     this.$el.find("li:eq(" + b + ")").addClass("is-visible");
@@ -15203,8 +14638,7 @@
             return c
         }
 
-        function l(c,
-                   a, b) {
+        function l(c, a, b) {
             l = "undefined" !== typeof Reflect && Reflect.get ? Reflect.get : function (a, b, c) {
                 for (; !Object.prototype.hasOwnProperty.call(a, b) && (a = g(a), null !== a);) ;
                 if (a) return b = Object.getOwnPropertyDescriptor(a, b), b.get ? b.get.call(c) : b.value
@@ -15219,11 +14653,10 @@
         }
 
         function n(c, a) {
-            n = Object.setPrototypeOf ||
-                function (a, d) {
-                    a.__proto__ = d;
-                    return a
-                };
+            n = Object.setPrototypeOf || function (a, d) {
+                a.__proto__ = d;
+                return a
+            };
             return n(c, a)
         }
 
@@ -15319,8 +14752,7 @@
             }, {
                 key: "_detachSubscribers", value: function () {
                     h.default.INFO(this.constructor.name, ":: _detachSubscribers");
-                    this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY,
-                        this._onDOMReady);
+                    this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady);
                     this.unsubscribe(e.default.ACTION.SHOW_NOTIFICATION_AREA, this._show);
                     this.unsubscribe(e.default.ACTION.HIDE_NOTIFICATION_AREA, this._hide);
                     this.unsubscribe(e.default.EVENT.ON_BEFORE_CONTENT_LOAD, this._onBeforeContentLoad)
@@ -15340,8 +14772,7 @@
                 }
             }, {
                 key: "_compileHandlebars", value: function (a, b) {
-                    return 0 < $(a).length ?
-                        Handlebars.compile($(a).html())(b || {}) : ""
+                    return 0 < $(a).length ? Handlebars.compile($(a).html())(b || {}) : ""
                 }
             }, {
                 key: "_show", value: function (a, b) {
@@ -15355,8 +14786,7 @@
                     var a = this;
                     this.isVisible && (this.$el.removeClass(e.default.CLASS.IS_VISIBLE_STATE), setTimeout(function () {
                         a.$el.html("");
-                        a.isVisible =
-                            !1;
+                        a.isVisible = !1;
                         a.$curtainWrapper.removeClass(e.default.CLASS.HAS_NOTIFICATION)
                     }, this.ANIMATION_DURATION))
                 }
@@ -15375,8 +14805,7 @@
             m = "function" === typeof Symbol && "symbol" === typeof Symbol.iterator ? function (a) {
                 return typeof a
             } : function (a) {
-                return a && "function" === typeof Symbol && a.constructor === Symbol && a !== Symbol.prototype ? "symbol" :
-                    typeof a
+                return a && "function" === typeof Symbol && a.constructor === Symbol && a !== Symbol.prototype ? "symbol" : typeof a
             };
             return m(c)
         }
@@ -15404,8 +14833,7 @@
         function l(c, a, b) {
             l = "undefined" !== typeof Reflect && Reflect.get ? Reflect.get : function (a, b, c) {
                 for (; !Object.prototype.hasOwnProperty.call(a, b) && (a = g(a), null !== a);) ;
-                if (a) return b = Object.getOwnPropertyDescriptor(a,
-                    b), b.get ? b.get.call(c) : b.value
+                if (a) return b = Object.getOwnPropertyDescriptor(a, b), b.get ? b.get.call(c) : b.value
             };
             return l(c, a, b || c)
         }
@@ -15431,8 +14859,7 @@
                 if (a) {
                     var d = g(this).constructor;
                     b = Reflect.construct(b, arguments, d)
-                } else b = b.apply(this,
-                    arguments);
+                } else b = b.apply(this, arguments);
                 if (!b || "object" !== m(b) && "function" !== typeof b) {
                     if (void 0 === this) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
                     b = this
@@ -15454,8 +14881,7 @@
 
         function g(c) {
             g = Object.setPrototypeOf ? Object.getPrototypeOf : function (a) {
-                return a.__proto__ ||
-                    Object.getPrototypeOf(a)
+                return a.__proto__ || Object.getPrototypeOf(a)
             };
             return g(c)
         }
@@ -15476,8 +14902,7 @@
             v(a, c);
             var b = w(a);
             r(a, [{
-                key: "destroy",
-                value: function () {
+                key: "destroy", value: function () {
                     h.default.INFO(this.constructor.name, ":: Destructor");
                     this._detachDOMListeners();
                     this._detachSubscribers();
@@ -15494,8 +14919,7 @@
                 key: "_jQueryScopeBinding", value: function () {
                     this._onDOMReady = this._onDOMReady.bind(this);
                     this._onClick = this._onClick.bind(this);
-                    this._onBodyClick =
-                        this._onBodyClick.bind(this)
+                    this._onBodyClick = this._onBodyClick.bind(this)
                 }
             }, {
                 key: "_onDOMReady", value: function () {
@@ -15515,8 +14939,7 @@
                 }
             }, {
                 key: "_detachSubscribers", value: function () {
-                    h.default.INFO(this.constructor.name,
-                        ":: _detachSubscribers");
+                    h.default.INFO(this.constructor.name, ":: _detachSubscribers");
                     this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
                     this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady)
                 }
@@ -15583,8 +15006,7 @@
             return c
         }
 
-        function l(c,
-                   a, b) {
+        function l(c, a, b) {
             l = "undefined" !== typeof Reflect && Reflect.get ? Reflect.get : function (a, b, c) {
                 for (; !Object.prototype.hasOwnProperty.call(a, b) && (a = g(a), null !== a);) ;
                 if (a) return b = Object.getOwnPropertyDescriptor(a, b), b.get ? b.get.call(c) : b.value
@@ -15599,11 +15021,10 @@
         }
 
         function n(c, a) {
-            n = Object.setPrototypeOf ||
-                function (a, d) {
-                    a.__proto__ = d;
-                    return a
-                };
+            n = Object.setPrototypeOf || function (a, d) {
+                a.__proto__ = d;
+                return a
+            };
             return n(c, a)
         }
 
@@ -15667,8 +15088,7 @@
             }, {
                 key: "_declareConstants", value: function () {
                     this.SELECTOR_CLOSE = ".a-icon-close-circle";
-                    this.SELECTOR_IMAGE_WRAPPER =
-                        ".img-wrapper";
+                    this.SELECTOR_IMAGE_WRAPPER = ".img-wrapper";
                     this.SELECTOR_PDP_GALLERY_IMAGE = ".pdp-image";
                     this.SELECTOR_PDP_ZOOMED_IMAGE = ".zoomed-image";
                     this.SELECTOR_IMAGE = ".a-image";
@@ -15705,8 +15125,7 @@
                 key: "_attachSubscribers", value: function () {
                     h.default.INFO(this.constructor.name, ":: _attachSubscribers");
                     this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
-                    this.subscribe(e.default.ACTION.SHOW_ZOOMED_IMAGE,
-                        this._show)
+                    this.subscribe(e.default.ACTION.SHOW_ZOOMED_IMAGE, this._show)
                 }
             }, {
                 key: "_detachSubscribers", value: function () {
@@ -15724,8 +15143,7 @@
                 }
             }, {
                 key: "_detachDOMListeners", value: function () {
-                    this.$closeIcon.off("click",
-                        this._hide)
+                    this.$closeIcon.off("click", this._hide)
                 }
             }, {
                 key: "_attachMQHandlers", value: function () {
@@ -15742,9 +15160,8 @@
                     this.currentScrollTop = $("body").scrollTop() || $("html").scrollTop();
                     this.$el.addClass(e.default.CLASS.IS_VISIBLE_STATE);
                     setTimeout(function () {
-                            b.$el.addClass(b.CLASS_FULL_OPACITY)
-                        },
-                        25);
+                        b.$el.addClass(b.CLASS_FULL_OPACITY)
+                    }, 25);
                     this.$imgWrapper.find(this.SELECTOR_PDP_ZOOMED_IMAGE).length && (this.$imgWrapper.children(this.SELECTOR_PDP_GALLERY_IMAGE).removeClass(e.default.CLASS.DISPLAY_NONE), this.$imgWrapper.children(this.SELECTOR_PDP_ZOOMED_IMAGE).addClass(e.default.CLASS.DISPLAY_NONE));
                     this.publish(e.default.ACTION.DISABLE_SCROLL);
                     this._showTouchZoom(a.zoomImgSrc, a.pdpGallerySrc, a.resolveChain)
@@ -15763,14 +15180,12 @@
                 }
             }, {
                 key: "_showTouchZoom", value: function (a, b, c) {
-                    this.$imgWrapper.find(this.SELECTOR_PDP_ZOOMED_IMAGE).length || (this.$imgWrapper.find(this.SELECTOR_IMAGE).length && !this.$imgWrapper.find(this.SELECTOR_IMAGE).attr("src").length && this.$imgWrapper.empty(), this.$img = c ? $("\x3cimg alt\x3d'pdp gallery image' class\x3d'a-image pdp-image is-hidden Resolve'/\x3e\x3cimg alt\x3d'zoomed image' class\x3d'a-image u-display-none zoomed-image is-hidden Resolve'/\x3e") :
-                        $("\x3cimg alt\x3d'pdp gallery image' class\x3d'a-image pdp-image' /\x3e\x3cimg alt\x3d'zoomed image' class\x3d'a-image u-display-none zoomed-image' /\x3e"), this.$imgWrapper.append(this.$img));
+                    this.$imgWrapper.find(this.SELECTOR_PDP_ZOOMED_IMAGE).length || (this.$imgWrapper.find(this.SELECTOR_IMAGE).length && !this.$imgWrapper.find(this.SELECTOR_IMAGE).attr("src").length && this.$imgWrapper.empty(), this.$img = c ? $("\x3cimg alt\x3d'pdp gallery image' class\x3d'a-image pdp-image is-hidden Resolve'/\x3e\x3cimg alt\x3d'zoomed image' class\x3d'a-image u-display-none zoomed-image is-hidden Resolve'/\x3e") : $("\x3cimg alt\x3d'pdp gallery image' class\x3d'a-image pdp-image' /\x3e\x3cimg alt\x3d'zoomed image' class\x3d'a-image u-display-none zoomed-image' /\x3e"), this.$imgWrapper.append(this.$img));
                     var d = this.$imgWrapper.children(this.SELECTOR_PDP_GALLERY_IMAGE),
                         x = this.$imgWrapper.children(this.SELECTOR_PDP_ZOOMED_IMAGE);
                     c ? (this._switchLpChain(x, c), this._switchLpChain(d, c), this.publish(e.default.ACTION.TRIGGER_SKELETON_LOAD)) : (x.attr("src", a), d.attr("src", b.replace(/&amp;/g, "\x26")));
                     x.on("load", function () {
-                        c ?
-                            x.parent().removeClass(this.CLASS_PLACEHOLDER_WRAPPER) : (d.addClass(e.default.CLASS.DISPLAY_NONE), x.removeClass(e.default.CLASS.DISPLAY_NONE))
+                        c ? x.parent().removeClass(this.CLASS_PLACEHOLDER_WRAPPER) : (d.addClass(e.default.CLASS.DISPLAY_NONE), x.removeClass(e.default.CLASS.DISPLAY_NONE))
                     });
                     Modernizr.touchevents && this.$imgWrapper.panzoom({
                         minScale: 2,
@@ -15785,30 +15200,28 @@
                 key: "_onDesktopMatch", value: function () {
                     this.$imgWrapper.on("click", this._hide)
                 }
-            },
-                {
-                    key: "_onDesktopUnMatch", value: function () {
-                        this.$imgWrapper.off("click", this._hide)
-                    }
-                }, {
-                    key: "_onPanzoomStart", value: function (a, b, c, e) {
-                        1 === e.length && (this.isSingleTapInProgress = !0)
-                    }
-                }, {
-                    key: "_onPanzoomChange", value: function () {
-                        this.isSingleTapInProgress = !1
-                    }
-                }, {
-                    key: "_onPanzoomEnd", value: function (a) {
-                        this.isSingleTapInProgress && 1 === a.changedTouches.length && this._hide(a)
-                    }
-                }, {
-                    key: "_switchLpChain", value: function (a, b) {
-                        a.parent().addClass(this.CLASS_PLACEHOLDER_WRAPPER);
-                        a.removeClass(this.CLASS_RESOLVE_COMPLETE).removeAttr("id").attr("src",
-                            this.lp_placeholder_url).attr("data-resolvechain", b).addClass(this.CLASS_RESOLVE)
-                    }
-                }]);
+            }, {
+                key: "_onDesktopUnMatch", value: function () {
+                    this.$imgWrapper.off("click", this._hide)
+                }
+            }, {
+                key: "_onPanzoomStart", value: function (a, b, c, e) {
+                    1 === e.length && (this.isSingleTapInProgress = !0)
+                }
+            }, {
+                key: "_onPanzoomChange", value: function () {
+                    this.isSingleTapInProgress = !1
+                }
+            }, {
+                key: "_onPanzoomEnd", value: function (a) {
+                    this.isSingleTapInProgress && 1 === a.changedTouches.length && this._hide(a)
+                }
+            }, {
+                key: "_switchLpChain", value: function (a, b) {
+                    a.parent().addClass(this.CLASS_PLACEHOLDER_WRAPPER);
+                    a.removeClass(this.CLASS_RESOLVE_COMPLETE).removeAttr("id").attr("src", this.lp_placeholder_url).attr("data-resolvechain", b).addClass(this.CLASS_RESOLVE)
+                }
+            }]);
             return a
         }(p.default);
         t.exports = f
@@ -15851,8 +15264,7 @@
         function l(a, b, d) {
             l = "undefined" !== typeof Reflect && Reflect.get ? Reflect.get : function (a, b, d) {
                 for (; !Object.prototype.hasOwnProperty.call(a, b) && (a = g(a), null !== a);) ;
-                if (a) return b = Object.getOwnPropertyDescriptor(a, b), b.get ?
-                    b.get.call(d) : b.value
+                if (a) return b = Object.getOwnPropertyDescriptor(a, b), b.get ? b.get.call(d) : b.value
             };
             return l(a, b, d || a)
         }
@@ -15878,8 +15290,7 @@
                 if (b) {
                     var c = g(this).constructor;
                     d = Reflect.construct(d, arguments, c)
-                } else d = d.apply(this,
-                    arguments);
+                } else d = d.apply(this, arguments);
                 if (!d || "object" !== m(d) && "function" !== typeof d) {
                     if (void 0 === this) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
                     d = this
@@ -15901,8 +15312,7 @@
 
         function g(a) {
             g = Object.setPrototypeOf ? Object.getPrototypeOf : function (a) {
-                return a.__proto__ ||
-                    Object.getPrototypeOf(a)
+                return a.__proto__ || Object.getPrototypeOf(a)
             };
             return g(a)
         }
@@ -15917,8 +15327,7 @@
                 a._jQueryScopeBinding();
                 a._declareConstants();
                 a.subscribe(e.default.EVENT.ON_WINDOW_LOAD, a._onWindowLoad);
-                a.subscribe(e.default.EVENT.ON_DOCUMENT_READY,
-                    a._onDOMReady);
+                a.subscribe(e.default.EVENT.ON_DOCUMENT_READY, a._onDOMReady);
                 return a
             }
 
@@ -15980,8 +15389,7 @@
                     h.default.INFO(this.constructor.name, ":: _detachSubscribers");
                     this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady);
                     this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
-                    this.unsubscribe(e.default.EVENT.ON_WINDOW_LOAD,
-                        this._onWindowLoad);
+                    this.unsubscribe(e.default.EVENT.ON_WINDOW_LOAD, this._onWindowLoad);
                     this.unsubscribe(e.default.ACTION.ADJUST_SITE_BANNER_POSITION, this._adjustBannerPosition);
                     this.unsubscribe(e.default.EVENT.ON_NAVIGATION_MENU_OPEN, this._hide);
                     this.unsubscribe(e.default.EVENT.ON_NAVIGATION_MENU_CLOSE, this._onNavigationMenuClose);
@@ -15994,78 +15402,74 @@
             }, {
                 key: "_attachDOMListeners", value: function () {
                 }
-            },
-                {
-                    key: "_detachDOMListeners", value: function () {
-                    }
-                }, {
-                    key: "_onWindowLoad", value: function () {
-                        var a = this;
-                        this.isDomReadyInitiated ? this._initSiteBanner() : (this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady), this.subscribe(e.default.EVENT.ON_DOCUMENT_READY, function () {
-                            a._onDOMReady();
-                            a._onWindowLoad()
-                        }))
-                    }
-                }, {
-                    key: "_initSiteBanner", value: function () {
-                        var a = this, b = !0;
-                        c.Stores.popupsDisabled() && (b = !1);
-                        b ? (this.$siteBanner.addClass(e.default.CLASS.IS_ENABLED_STATE), setTimeout(function () {
-                            a.$navigationMenu.hasClass(e.default.CLASS.IS_OPEN_STATE) ||
-                            a._show(a.ANIMATION_TIME)
-                        }, this.INIT_BANNER_TIMEOUT), this.subscribe(e.default.EVENT.ON_BEFORE_SEARCH_SHOW, this._hide), this.subscribe(e.default.EVENT.ON_SEARCH_HIDDEN, this._onSearchFullHidden)) : (this.destroy(), this.$el.remove())
-                    }
-                }, {
-                    key: "_onResize", value: function (a) {
-                        a = "number" == typeof a ? a : !1;
-                        this.$errorBanner = $(this.SELECTOR_ERROR_BANNER);
-                        1 > this.$errorBanner.length && (this.publish(e.default.EVENT.ON_ERROR_BANNER_RESIZE, {
-                            newHeight: this.$el.outerHeight(),
-                            animationDuration: a
-                        }), this.unsubscribe(e.default.ACTION.ADJUST_SITE_BANNER_POSITION,
-                            this._adjustBannerPosition))
-                    }
-                }, {
-                    key: "_onSearchFullHidden", value: function () {
-                        var a = this;
-                        this.$navigationMenu.hasClass(e.default.CLASS.IS_OPEN_STATE) || setTimeout(function () {
-                            a._show(a.ANIMATION_TIME)
-                        }, this.INIT_BANNER_TIMEOUT)
-                    }
-                }, {
-                    key: "_onNavigationMenuClose", value: function () {
-                        var a = this;
-                        this.$searchFull.hasClass(e.default.CLASS.IS_ENABLED_STATE) || setTimeout(function () {
-                            a._show(a.ANIMATION_TIME)
-                        }, this.INIT_BANNER_TIMEOUT)
-                    }
-                }, {
-                    key: "_show", value: function (a) {
-                        a = "number" == typeof a ? a : e.default.TIME.ERROR_BANNER_ANIMATION;
-                        this._onResize(a);
-                        this.$el.show();
-                        0 != a && this.$el.addClass(this.CLASS_SLIDE_DOWN);
-                        this.$window.on("resize", this._onResize)
-                    }
-                }, {
-                    key: "_hide", value: function (a) {
-                        this.$el.hide();
-                        a && this.publish(e.default.ACTION.UPDATE_PAGE_CONTENT_MARGIN_CONTRIBUTION, {
-                            margin: 0,
-                            element: this.$el
-                        });
-                        this.publish(e.default.EVENT.ON_ERROR_BANNER_RESIZE, {newHeight: 0});
-                        this.$window.off("resize", this._onResize)
-                    }
-                }, {
-                    key: "_adjustBannerPosition", value: function (a) {
-                        a = this.$errorBanner.height() + "px";
-                        this.$el.css("top", a);
-                        this.BOOL_FLAG ?
-                            this._onResize() : this._initSiteBanner();
-                        this.BOOL_FLAG = !0
-                    }
-                }]);
+            }, {
+                key: "_detachDOMListeners", value: function () {
+                }
+            }, {
+                key: "_onWindowLoad", value: function () {
+                    var a = this;
+                    this.isDomReadyInitiated ? this._initSiteBanner() : (this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady), this.subscribe(e.default.EVENT.ON_DOCUMENT_READY, function () {
+                        a._onDOMReady();
+                        a._onWindowLoad()
+                    }))
+                }
+            }, {
+                key: "_initSiteBanner", value: function () {
+                    var a = this, b = !0;
+                    c.Stores.popupsDisabled() && (b = !1);
+                    b ? (this.$siteBanner.addClass(e.default.CLASS.IS_ENABLED_STATE), setTimeout(function () {
+                        a.$navigationMenu.hasClass(e.default.CLASS.IS_OPEN_STATE) || a._show(a.ANIMATION_TIME)
+                    }, this.INIT_BANNER_TIMEOUT), this.subscribe(e.default.EVENT.ON_BEFORE_SEARCH_SHOW, this._hide), this.subscribe(e.default.EVENT.ON_SEARCH_HIDDEN, this._onSearchFullHidden)) : (this.destroy(), this.$el.remove())
+                }
+            }, {
+                key: "_onResize", value: function (a) {
+                    a = "number" == typeof a ? a : !1;
+                    this.$errorBanner = $(this.SELECTOR_ERROR_BANNER);
+                    1 > this.$errorBanner.length && (this.publish(e.default.EVENT.ON_ERROR_BANNER_RESIZE, {
+                        newHeight: this.$el.outerHeight(),
+                        animationDuration: a
+                    }), this.unsubscribe(e.default.ACTION.ADJUST_SITE_BANNER_POSITION, this._adjustBannerPosition))
+                }
+            }, {
+                key: "_onSearchFullHidden", value: function () {
+                    var a = this;
+                    this.$navigationMenu.hasClass(e.default.CLASS.IS_OPEN_STATE) || setTimeout(function () {
+                        a._show(a.ANIMATION_TIME)
+                    }, this.INIT_BANNER_TIMEOUT)
+                }
+            }, {
+                key: "_onNavigationMenuClose", value: function () {
+                    var a = this;
+                    this.$searchFull.hasClass(e.default.CLASS.IS_ENABLED_STATE) || setTimeout(function () {
+                        a._show(a.ANIMATION_TIME)
+                    }, this.INIT_BANNER_TIMEOUT)
+                }
+            }, {
+                key: "_show", value: function (a) {
+                    a = "number" == typeof a ? a : e.default.TIME.ERROR_BANNER_ANIMATION;
+                    this._onResize(a);
+                    this.$el.show();
+                    0 != a && this.$el.addClass(this.CLASS_SLIDE_DOWN);
+                    this.$window.on("resize", this._onResize)
+                }
+            }, {
+                key: "_hide", value: function (a) {
+                    this.$el.hide();
+                    a && this.publish(e.default.ACTION.UPDATE_PAGE_CONTENT_MARGIN_CONTRIBUTION, {
+                        margin: 0,
+                        element: this.$el
+                    });
+                    this.publish(e.default.EVENT.ON_ERROR_BANNER_RESIZE, {newHeight: 0});
+                    this.$window.off("resize", this._onResize)
+                }
+            }, {
+                key: "_adjustBannerPosition", value: function (a) {
+                    a = this.$errorBanner.height() + "px";
+                    this.$el.css("top", a);
+                    this.BOOL_FLAG ? this._onResize() : this._initSiteBanner();
+                    this.BOOL_FLAG = !0
+                }
+            }]);
             return b
         }(p.default);
         t.exports = f
@@ -16109,8 +15513,7 @@
         function l(c, a, b) {
             l = "undefined" !== typeof Reflect && Reflect.get ? Reflect.get : function (a, b, c) {
                 for (; !Object.prototype.hasOwnProperty.call(a, b) && (a = g(a), null !== a);) ;
-                if (a) return b = Object.getOwnPropertyDescriptor(a, b), b.get ?
-                    b.get.call(c) : b.value
+                if (a) return b = Object.getOwnPropertyDescriptor(a, b), b.get ? b.get.call(c) : b.value
             };
             return l(c, a, b || c)
         }
@@ -16136,8 +15539,7 @@
                 if (a) {
                     var d = g(this).constructor;
                     b = Reflect.construct(b, arguments, d)
-                } else b = b.apply(this,
-                    arguments);
+                } else b = b.apply(this, arguments);
                 if (!b || "object" !== m(b) && "function" !== typeof b) {
                     if (void 0 === this) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
                     b = this
@@ -16159,8 +15561,7 @@
 
         function g(c) {
             g = Object.setPrototypeOf ? Object.getPrototypeOf : function (a) {
-                return a.__proto__ ||
-                    Object.getPrototypeOf(a)
+                return a.__proto__ || Object.getPrototypeOf(a)
             };
             return g(c)
         }
@@ -16176,8 +15577,7 @@
                 d._declareConstants();
                 d._cacheDOMElements();
                 d.timestamp = +new Date;
-                d.storageData = JSON.parse(localStorage.getItem(d.KEY_STORAGE)) ||
-                    {lastView: d.timestamp};
+                d.storageData = JSON.parse(localStorage.getItem(d.KEY_STORAGE)) || {lastView: d.timestamp};
                 d.timestamp != d.storageData.lastView && d.timestamp < d.storageData.lastView + 1E3 * d.INTERVAL_SHOW_SITE_SPLASH ? d.$el.remove() : (d._attachDOMListeners(), d.publish(e.default.ACTION.HALT_DOMREADY_EVENTS, {}));
                 return d
             }
@@ -16212,8 +15612,7 @@
                 }
             }, {
                 key: "_attachSubscribers", value: function () {
-                    h.default.INFO(this.constructor.name,
-                        ":: _attachSubscribers");
+                    h.default.INFO(this.constructor.name, ":: _attachSubscribers");
                     this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady)
                 }
             }, {
@@ -16233,8 +15632,7 @@
                     })
                 }
             }, {
-                key: "_detachDOMListeners",
-                value: function () {
+                key: "_detachDOMListeners", value: function () {
                 }
             }, {
                 key: "_onDOMReady", value: function () {
@@ -16248,13 +15646,12 @@
                     $(this.SELECTOR_PAGE_CONTENT).hide();
                     this.$mainLogo.delay(this.TIMER_FADE).fadeIn(this.TIMER_FADE);
                     setTimeout(function () {
-                            $(a.SELECTOR_PAGE_CONTENT).show();
-                            var b = window.innerWidth - $(document).width();
-                            a.$el.css("left", b / 2);
-                            a.$el.fadeOut(a.TIMER_FADE);
-                            a.publish(e.default.ACTION.RESUME_DOMREADY_EVENTS)
-                        },
-                        this.DELAY_SHOW_PAGE_CONTENT);
+                        $(a.SELECTOR_PAGE_CONTENT).show();
+                        var b = window.innerWidth - $(document).width();
+                        a.$el.css("left", b / 2);
+                        a.$el.fadeOut(a.TIMER_FADE);
+                        a.publish(e.default.ACTION.RESUME_DOMREADY_EVENTS)
+                    }, this.DELAY_SHOW_PAGE_CONTENT);
                     this.storageData.lastView = this.timestamp;
                     localStorage.setItem(this.KEY_STORAGE, JSON.stringify(this.storageData))
                 }
@@ -16273,8 +15670,7 @@
             m = "function" === typeof Symbol && "symbol" === typeof Symbol.iterator ? function (a) {
                 return typeof a
             } : function (a) {
-                return a && "function" === typeof Symbol && a.constructor ===
-                Symbol && a !== Symbol.prototype ? "symbol" : typeof a
+                return a && "function" === typeof Symbol && a.constructor === Symbol && a !== Symbol.prototype ? "symbol" : typeof a
             };
             return m(a)
         }
@@ -16302,8 +15698,7 @@
         function l(a, b, d) {
             l = "undefined" !== typeof Reflect && Reflect.get ? Reflect.get : function (a, b, d) {
                 for (; !Object.prototype.hasOwnProperty.call(a, b) && (a = g(a), null !== a);) ;
-                if (a) return b =
-                    Object.getOwnPropertyDescriptor(a, b), b.get ? b.get.call(d) : b.value
+                if (a) return b = Object.getOwnPropertyDescriptor(a, b), b.get ? b.get.call(d) : b.value
             };
             return l(a, b, d || a)
         }
@@ -16328,8 +15723,7 @@
                 var d = g(a);
                 if (b) {
                     var c = g(this).constructor;
-                    d = Reflect.construct(d,
-                        arguments, c)
+                    d = Reflect.construct(d, arguments, c)
                 } else d = d.apply(this, arguments);
                 if (!d || "object" !== m(d) && "function" !== typeof d) {
                     if (void 0 === this) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
@@ -16351,10 +15745,9 @@
         }
 
         function g(a) {
-            g = Object.setPrototypeOf ? Object.getPrototypeOf :
-                function (a) {
-                    return a.__proto__ || Object.getPrototypeOf(a)
-                };
+            g = Object.setPrototypeOf ? Object.getPrototypeOf : function (a) {
+                return a.__proto__ || Object.getPrototypeOf(a)
+            };
             return g(a)
         }
 
@@ -16367,8 +15760,7 @@
                 h.default.INFO(a.constructor.name, ":: Constructor");
                 a._jQueryScopeBinding();
                 a._declareConstants();
-                a.subscribe(e.default.EVENT.ON_DOCUMENT_READY,
-                    a._onDOMReady);
+                a.subscribe(e.default.EVENT.ON_DOCUMENT_READY, a._onDOMReady);
                 return a
             }
 
@@ -16390,8 +15782,7 @@
                     this.FADE_ANIMATION_DELAY = 1E3
                 }
             }, {
-                key: "_cacheDOMElements",
-                value: function () {
+                key: "_cacheDOMElements", value: function () {
                     this.$window = $(window);
                     this.$closeElement = this.$el.find(this.SELECTOR_CLOSE)
                 }
@@ -16406,8 +15797,7 @@
             }, {
                 key: "_attachSubscribers", value: function () {
                     h.default.INFO(this.constructor.name, ":: _attachSubscribers");
-                    this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY,
-                        this._onFrameworkReady);
+                    this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
                     this.subscribe(e.default.EVENT.ON_PAGE_CONTENT_REPLACED, this._setVisibilityState)
                 }
             }, {
@@ -16421,8 +15811,7 @@
                 key: "_onFrameworkReady", value: function () {
                 }
             }, {
-                key: "_attachDOMListeners",
-                value: function () {
+                key: "_attachDOMListeners", value: function () {
                     this.$closeElement.on("click", this._close)
                 }
             }, {
@@ -16454,8 +15843,7 @@
                 }
             }, {
                 key: "_setVisibilityState", value: function () {
-                    var a = $(this.SELECTOR_PAGE_TO_HIDE).length ||
-                        c.Stores.popupsDisabled();
+                    var a = $(this.SELECTOR_PAGE_TO_HIDE).length || c.Stores.popupsDisabled();
                     "viewed" === Cookies.get(this.CLASS_SPLASH_HISTORY) || a ? (this.$el.removeClass(e.default.CLASS.IS_VISIBLE_STATE), this.visiblity = !0) : a || (this.$el.addClass(e.default.CLASS.IS_VISIBLE_STATE), this.visiblity = !1)
                 }
             }, {
@@ -16466,8 +15854,7 @@
                 }
             }, {
                 key: "_onDesktopMatch", value: function () {
-                    this.$window.on("scroll",
-                        this._onScroll);
+                    this.$window.on("scroll", this._onScroll);
                     this._setVisibilityState()
                 }
             }, {
@@ -16484,8 +15871,7 @@
                 }
             }, {
                 key: "_onScroll", value: function () {
-                    this.$el.hasClass(e.default.CLASS.IS_VISIBLE_STATE) &&
-                    (0 < this.$window.scrollTop() ? this.visiblity || (this.$el.css("opacity", "1"), this.visiblity = !0) : this.visiblity && (this.$el.css("opacity", "0"), this.visiblity = !1))
+                    this.$el.hasClass(e.default.CLASS.IS_VISIBLE_STATE) && (0 < this.$window.scrollTop() ? this.visiblity || (this.$el.css("opacity", "1"), this.visiblity = !0) : this.visiblity && (this.$el.css("opacity", "0"), this.visiblity = !1))
                 }
             }]);
             return b
@@ -16503,8 +15889,7 @@
             m = "function" === typeof Symbol && "symbol" === typeof Symbol.iterator ? function (c) {
                 return typeof c
             } : function (c) {
-                return c &&
-                "function" === typeof Symbol && c.constructor === Symbol && c !== Symbol.prototype ? "symbol" : typeof c
+                return c && "function" === typeof Symbol && c.constructor === Symbol && c !== Symbol.prototype ? "symbol" : typeof c
             };
             return m(e)
         }
@@ -16531,8 +15916,7 @@
 
         function l(e, c, a) {
             l = "undefined" !== typeof Reflect && Reflect.get ? Reflect.get : function (a, d, c) {
-                for (; !Object.prototype.hasOwnProperty.call(a,
-                    d) && (a = g(a), null !== a);) ;
+                for (; !Object.prototype.hasOwnProperty.call(a, d) && (a = g(a), null !== a);) ;
                 if (a) return d = Object.getOwnPropertyDescriptor(a, d), d.get ? d.get.call(c) : d.value
             };
             return l(e, c, a || e)
@@ -16557,8 +15941,7 @@
             return function () {
                 var a = g(e);
                 if (c) {
-                    var b =
-                        g(this).constructor;
+                    var b = g(this).constructor;
                     a = Reflect.construct(a, arguments, b)
                 } else a = a.apply(this, arguments);
                 if (!a || "object" !== m(a) && "function" !== typeof a) {
@@ -16581,10 +15964,9 @@
         }
 
         function g(e) {
-            g =
-                Object.setPrototypeOf ? Object.getPrototypeOf : function (c) {
-                    return c.__proto__ || Object.getPrototypeOf(c)
-                };
+            g = Object.setPrototypeOf ? Object.getPrototypeOf : function (c) {
+                return c.__proto__ || Object.getPrototypeOf(c)
+            };
             return g(e)
         }
 
@@ -16604,8 +15986,7 @@
                 }
             }, {
                 key: "_declareConstants", value: function () {
-                    l(g(c.prototype), "_declareConstants",
-                        this).call(this);
+                    l(g(c.prototype), "_declareConstants", this).call(this);
                     this.SELECTOR_ACCORDION_CONTENT = ".accordion-content";
                     this.SELECTOR_ACCORDION = ".o-accordion";
                     this.SELECTOR_ACCORDION_HEADER = ".accordion-header";
@@ -16638,18 +16019,16 @@
                 key: "_onClickLink", value: function (a) {
                     var b = this;
                     a.preventDefault();
-                    if ($(a.currentTarget).hasClass("read-more-header")) $(this.SELECTOR_READ_MORE_CONTENT).is(":hidden") ?
-                        ($(this.SELECTOR_READ_MORE_CONTENT).stop().slideDown(this.SLIDE_DELAY_TIME_DYNAMIC_CONTENT), this.$readMoreHeader.addClass(this.SELECTOR_IS_OPEN)) : ($(this.SELECTOR_READ_MORE_CONTENT).stop().slideUp(this.SLIDE_DELAY_TIME), this.$readMoreHeader.removeClass(this.SELECTOR_IS_OPEN)); else if (!this.$el.hasClass(h.default.CLASS.IS_DISABLED_STATE)) {
+                    if ($(a.currentTarget).hasClass("read-more-header")) $(this.SELECTOR_READ_MORE_CONTENT).is(":hidden") ? ($(this.SELECTOR_READ_MORE_CONTENT).stop().slideDown(this.SLIDE_DELAY_TIME_DYNAMIC_CONTENT), this.$readMoreHeader.addClass(this.SELECTOR_IS_OPEN)) : ($(this.SELECTOR_READ_MORE_CONTENT).stop().slideUp(this.SLIDE_DELAY_TIME), this.$readMoreHeader.removeClass(this.SELECTOR_IS_OPEN)); else if (!this.$el.hasClass(h.default.CLASS.IS_DISABLED_STATE)) {
                         if (this.isExclusive) {
                             var c = this.$exclusiveGroup.not(this.$el);
                             c.find(this.SELECTOR_ACCORDION_CONTENT + ":visible").slideUp(this.SLIDE_DELAY_TIME, function () {
                                 c.removeClass(h.default.CLASS.IS_VISIBLE_STATE)
                             })
                         }
-                        this.$accordionContent.is(":hidden") ?
-                            (this.$el.addClass(h.default.CLASS.IS_VISIBLE_STATE), this.$accordionContent.stop().slideDown(this.SLIDE_DELAY_TIME)) : this.$accordionContent.stop().slideUp(this.SLIDE_DELAY_TIME, function () {
-                                b.$el.removeClass(h.default.CLASS.IS_VISIBLE_STATE)
-                            })
+                        this.$accordionContent.is(":hidden") ? (this.$el.addClass(h.default.CLASS.IS_VISIBLE_STATE), this.$accordionContent.stop().slideDown(this.SLIDE_DELAY_TIME)) : this.$accordionContent.stop().slideUp(this.SLIDE_DELAY_TIME, function () {
+                            b.$el.removeClass(h.default.CLASS.IS_VISIBLE_STATE)
+                        })
                     }
                 }
             }]);
@@ -16663,8 +16042,7 @@
             m = "function" === typeof Symbol && "symbol" === typeof Symbol.iterator ? function (a) {
                 return typeof a
             } : function (a) {
-                return a &&
-                "function" === typeof Symbol && a.constructor === Symbol && a !== Symbol.prototype ? "symbol" : typeof a
+                return a && "function" === typeof Symbol && a.constructor === Symbol && a !== Symbol.prototype ? "symbol" : typeof a
             };
             return m(c)
         }
@@ -16691,8 +16069,7 @@
 
         function l(c, a, b) {
             l = "undefined" !== typeof Reflect && Reflect.get ? Reflect.get : function (a, b, c) {
-                for (; !Object.prototype.hasOwnProperty.call(a,
-                    b) && (a = g(a), null !== a);) ;
+                for (; !Object.prototype.hasOwnProperty.call(a, b) && (a = g(a), null !== a);) ;
                 if (a) return b = Object.getOwnPropertyDescriptor(a, b), b.get ? b.get.call(c) : b.value
             };
             return l(c, a, b || c)
@@ -16717,8 +16094,7 @@
             return function () {
                 var b = g(c);
                 if (a) {
-                    var d =
-                        g(this).constructor;
+                    var d = g(this).constructor;
                     b = Reflect.construct(b, arguments, d)
                 } else b = b.apply(this, arguments);
                 if (!b || "object" !== m(b) && "function" !== typeof b) {
@@ -16741,10 +16117,9 @@
         }
 
         function g(c) {
-            g =
-                Object.setPrototypeOf ? Object.getPrototypeOf : function (a) {
-                    return a.__proto__ || Object.getPrototypeOf(a)
-                };
+            g = Object.setPrototypeOf ? Object.getPrototypeOf : function (a) {
+                return a.__proto__ || Object.getPrototypeOf(a)
+            };
             return g(c)
         }
 
@@ -16757,8 +16132,7 @@
                 h.default.INFO(d.constructor.name, ":: Constructor");
                 d._jQueryScopeBinding();
                 d._declareConstants();
-                d.subscribe(e.default.EVENT.ON_DOCUMENT_READY,
-                    d._onDOMReady);
+                d.subscribe(e.default.EVENT.ON_DOCUMENT_READY, d._onDOMReady);
                 return d
             }
 
@@ -16780,8 +16154,7 @@
                     this.SELECTER_AVAILABILITY_LABEL = ".availability-label"
                 }
             }, {
-                key: "_cacheDOMElements",
-                value: function () {
+                key: "_cacheDOMElements", value: function () {
                     this.$body = $("html, body");
                     this.$instoreLabel = this.$el.find(this.SELECTOR_INSTORE_LABEL);
                     this.$stores = this.$instoreLabel.siblings(this.SELECTOR_TOOLTIP).find(this.SELECTOR_STORES_ITEM);
@@ -16804,8 +16177,7 @@
                     this.subscribe(e.default.EVENT.ON_PRODUCT_AVAILABILITY_UPDATED, this._onProductAvailabilityUpdated)
                 }
             }, {
-                key: "_detachSubscribers",
-                value: function () {
+                key: "_detachSubscribers", value: function () {
                     h.default.INFO(this.constructor.name, ":: _detachSubscribers");
                     this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady);
                     this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
@@ -16817,8 +16189,7 @@
                 }
             }, {
                 key: "_attachDOMListeners", value: function () {
-                    this.$availabilityLabel.on("click",
-                        this._showTooltip)
+                    this.$availabilityLabel.on("click", this._showTooltip)
                 }
             }, {
                 key: "_detachDOMListeners", value: function () {
@@ -16838,8 +16209,7 @@
                     this.$stores = this.$instoreLabel.siblings(this.SELECTOR_TOOLTIP).find(this.SELECTOR_STORES_ITEM)
                 }
             }, {
-                key: "_setFavoriteStore",
-                value: function () {
+                key: "_setFavoriteStore", value: function () {
                     var a = localStorage.getItem(this.LOCALSTORAGE_ITEM), b = this.$instoreLabel;
                     this.$stores.length ? a && $.each(this.$stores, function () {
                         if ($(this).attr("data-store-id") == a) {
@@ -16853,8 +16223,7 @@
                 key: "_showTooltip", value: function (a) {
                     a.stopPropagation();
                     a = $(a.currentTarget).siblings(this.SELECTOR_TOOLTIP);
-                    a.hasClass(e.default.CLASS.IS_VISIBLE_STATE) ? a.removeClass(e.default.CLASS.IS_VISIBLE_STATE) :
-                        (this.$toolTips.removeClass(e.default.CLASS.IS_VISIBLE_STATE), a.addClass(e.default.CLASS.IS_VISIBLE_STATE));
+                    a.hasClass(e.default.CLASS.IS_VISIBLE_STATE) ? a.removeClass(e.default.CLASS.IS_VISIBLE_STATE) : (this.$toolTips.removeClass(e.default.CLASS.IS_VISIBLE_STATE), a.addClass(e.default.CLASS.IS_VISIBLE_STATE));
                     this.$body.on("click", this._closeTooltip)
                 }
             }, {
@@ -16902,8 +16271,7 @@
             return a
         }
 
-        function l(a,
-                   b, d) {
+        function l(a, b, d) {
             l = "undefined" !== typeof Reflect && Reflect.get ? Reflect.get : function (a, b, d) {
                 for (; !Object.prototype.hasOwnProperty.call(a, b) && (a = g(a), null !== a);) ;
                 if (a) return b = Object.getOwnPropertyDescriptor(a, b), b.get ? b.get.call(d) : b.value
@@ -16918,11 +16286,10 @@
         }
 
         function n(a, b) {
-            n = Object.setPrototypeOf ||
-                function (a, b) {
-                    a.__proto__ = b;
-                    return a
-                };
+            n = Object.setPrototypeOf || function (a, b) {
+                a.__proto__ = b;
+                return a
+            };
             return n(a, b)
         }
 
@@ -16985,8 +16352,7 @@
             }, {
                 key: "_declareConstants", value: function () {
                     this.SELECTOR_SUBTRACT = ".quantity-label";
-                    this.SELECTOR_ADD =
-                        ".a-icon-arrow-down-small";
+                    this.SELECTOR_ADD = ".a-icon-arrow-down-small";
                     this.SELECTOR_PLACEHOLDER = ".m-dropdown .placeholder span";
                     this.SELECTOR_INPUT = ".m-dropdown .js-input";
                     this.SELECTOR_REMOVE = ".remove";
@@ -17000,8 +16366,7 @@
             }, {
                 key: "_cacheDOMElements", value: function () {
                     this.$subtract = this.$el.find(this.SELECTOR_SUBTRACT);
-                    this.$add =
-                        this.$el.find(this.SELECTOR_ADD);
+                    this.$add = this.$el.find(this.SELECTOR_ADD);
                     this.$qtyLabel = this.$el.find(this.SELECTOR_PLACEHOLDER);
                     this.$input = this.$el.find(this.SELECTOR_INPUT);
                     this.$lastItem = this.$el.find(this.CLASS_LAST_ITEM);
@@ -17027,8 +16392,7 @@
                 key: "_detachSubscribers", value: function () {
                     h.default.INFO(this.constructor.name, ":: _detachSubscribers");
                     this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady);
-                    this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY,
-                        this._onFrameworkReady);
+                    this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
                     this.$el.off("keydown", this._onKeyDown);
                     this.$el.off("keyup", this._onKeyUp)
                 }
@@ -17060,8 +16424,7 @@
             }, {
                 key: "_onAddClick", value: function () {
                     this.itemCount++;
-                    1 < this.itemCount && (this.itemCount === this.MAX_ITEM_IN_BAG && this.$add.addClass(this.CLASS_MAX_QUANTITY), this.$subtract.removeClass(this.CLASS_LAST_ITEM),
-                        this.$el.addClass(this.CLASS_HAS_MULTIPLE_QUANTITY), this.$input.val(this.itemCount.toString()).trigger("change"))
+                    1 < this.itemCount && (this.itemCount === this.MAX_ITEM_IN_BAG && this.$add.addClass(this.CLASS_MAX_QUANTITY), this.$subtract.removeClass(this.CLASS_LAST_ITEM), this.$el.addClass(this.CLASS_HAS_MULTIPLE_QUANTITY), this.$input.val(this.itemCount.toString()).trigger("change"))
                 }
             }, {
                 key: "_onSubtractClick", value: function () {
@@ -17072,24 +16435,23 @@
                     this.$input.val(this.itemCount.toString()).trigger("change");
                     this.$subtract.hasClass(this.CLASS_LAST_ITEM) && this._onRemoveItem()
                 }
-            },
-                {
-                    key: "_lastItemCheck", value: function () {
-                        1 == this.itemCount && (this.$subtract.addClass(this.CLASS_LAST_ITEM), this.$el.removeClass(this.CLASS_HAS_MULTIPLE_QUANTITY))
-                    }
-                }, {
-                    key: "_onRemoveItem", value: function () {
-                        this.$removeItem.trigger("click")
-                    }
-                }, {
-                    key: "_onKeyDown", value: function (a) {
-                        a.key.match(e.default.KEYSTROKE.ENTER) && $(a.target).hasClass(this.CLASS_SUBTRACT) && this.$subtract.click()
-                    }
-                }, {
-                    key: "_onKeyUp", value: function (a) {
-                        a.key.match(e.default.KEYSTROKE.ENTER) && $(a.target).hasClass(this.CLASS_ADD) && this.$add.click()
-                    }
-                }]);
+            }, {
+                key: "_lastItemCheck", value: function () {
+                    1 == this.itemCount && (this.$subtract.addClass(this.CLASS_LAST_ITEM), this.$el.removeClass(this.CLASS_HAS_MULTIPLE_QUANTITY))
+                }
+            }, {
+                key: "_onRemoveItem", value: function () {
+                    this.$removeItem.trigger("click")
+                }
+            }, {
+                key: "_onKeyDown", value: function (a) {
+                    a.key.match(e.default.KEYSTROKE.ENTER) && $(a.target).hasClass(this.CLASS_SUBTRACT) && this.$subtract.click()
+                }
+            }, {
+                key: "_onKeyUp", value: function (a) {
+                    a.key.match(e.default.KEYSTROKE.ENTER) && $(a.target).hasClass(this.CLASS_ADD) && this.$add.click()
+                }
+            }]);
             return b
         }(p.default);
         t.exports = f
@@ -17139,8 +16501,7 @@
         }
 
         function v(e, c) {
-            if ("function" !==
-                typeof c && null !== c) throw new TypeError("Super expression must either be null or a function");
+            if ("function" !== typeof c && null !== c) throw new TypeError("Super expression must either be null or a function");
             e.prototype = Object.create(c && c.prototype, {constructor: {value: e, writable: !0, configurable: !0}});
             c && n(e, c)
         }
@@ -17191,8 +16552,7 @@
         var h = k(f("./../../enums.js"));
         f = function (e) {
             function c() {
-                if (!(this instanceof
-                    c)) throw new TypeError("Cannot call a class as a function");
+                if (!(this instanceof c)) throw new TypeError("Cannot call a class as a function");
                 return a.apply(this, arguments)
             }
 
@@ -17210,8 +16570,7 @@
                     this.SELECTOR_LOGIN_OPTION = ".m-tablist li";
                     this.SELECTOR_LOGIN_CONTAINER = ".tablist-content";
                     this.SELECTOR_HOME_DELIVERY = ".o-home-delivery";
-                    this.SELECTOR_ADD_ADDRESS_BUTTON =
-                        ".o-address-box-add .o-add-element-button";
+                    this.SELECTOR_ADD_ADDRESS_BUTTON = ".o-address-box-add .o-add-element-button";
                     this.SELECTOR_ADD_ADDRESS = ".o-address-box-add";
                     this.SELECTOR_CLOSE_ADDRESS_FORM = ".o-home-delivery .delivery-change-address-section .a-button.is-secondary";
                     this.SELECTOR_CHECKOUT_DELIVERY = ".o-delivery";
@@ -17219,8 +16578,7 @@
                     this.SELECTOR_DELIVERY_CONTAINER = ".selector-content";
                     this.SELECTOR_CHECKOUT_PAYMENT = ".o-payment-checkout .o-form";
                     this.SELECTOR_CARD_PAYMENTS = ".card-selection-section";
-                    this.SELECTOR_PAYMENT_OPTION =
-                        ".card-option";
+                    this.SELECTOR_PAYMENT_OPTION = ".card-option";
                     this.SELECTOR_ADD_CARD = ".add-card-option";
                     this.SELECTOR_NEW_CARD = ".new-card-section";
                     this.SELECTOR_NUMBER_INPUT = ".m-input.cvv .a-input, .m-input.expire-date-month .a-input, .m-input.expire-date-year .a-input, .m-input.new-card-number .a-input";
@@ -17231,8 +16589,7 @@
                 }
             }, {
                 key: "_onDOMReady", value: function () {
-                    l(g(c.prototype),
-                        "_onDOMReady", this).call(this);
+                    l(g(c.prototype), "_onDOMReady", this).call(this);
                     this.$numberInput.prop("type", "tel");
                     this.$telephoneInput.prop("type", "tel");
                     this._setPositionlowinstock()
@@ -17244,8 +16601,7 @@
                     this.$checkoutLogin = this.$el.find(this.SELECTOR_CHECKOUT_LOGIN);
                     this.$checkoutLoginOptions = this.$checkoutLogin.find(this.SELECTOR_LOGIN_OPTIONS);
                     this.$checkoutLoginOption = this.$checkoutLogin.find(this.SELECTOR_LOGIN_OPTION);
-                    this.$checkoutLoginContainer =
-                        this.$checkoutLogin.find(this.SELECTOR_LOGIN_CONTAINER);
+                    this.$checkoutLoginContainer = this.$checkoutLogin.find(this.SELECTOR_LOGIN_CONTAINER);
                     this.$ODelivery = this.$el.find(this.SELECTOR_CHECKOUT_DELIVERY);
                     this.$deliveryOption = this.$ODelivery.find(this.SELECTOR_DELIVERY_OPTIONS);
                     this.$deliveryContainer = this.$ODelivery.find(this.SELECTOR_DELIVERY_CONTAINER);
@@ -17260,8 +16616,7 @@
                     this.$telephoneInput = this.$el.find(this.SELECTOR_TELEPHONE_INPUT);
                     this.$cartitem = this.$el.find(this.SELECTOR_CART_ITEM);
                     this.$lowstock = this.$el.find(this.SELECTOR_LOW_STOCK);
-                    l(g(c.prototype),
-                        "_cacheDOMElements", this).call(this)
+                    l(g(c.prototype), "_cacheDOMElements", this).call(this)
                 }
             }, {
                 key: "_jQueryScopeBinding", value: function () {
@@ -17272,8 +16627,7 @@
                     this._getScrollToPosition = this._getScrollToPosition.bind(this);
                     this._onCardOptionClick = this._onCardOptionClick.bind(this);
                     this._onAddCardClick = this._onAddCardClick.bind(this);
-                    this._onNewAddressClick =
-                        this._onNewAddressClick.bind(this);
+                    this._onNewAddressClick = this._onNewAddressClick.bind(this);
                     this._onDeliveryAddressEditClose = this._onDeliveryAddressEditClose.bind(this);
                     this._setPositionlowinstock = this._setPositionlowinstock.bind(this);
                     l(g(c.prototype), "_jQueryScopeBinding", this).call(this)
@@ -17285,8 +16639,7 @@
                 }
             }, {
                 key: "_detachSubscribers", value: function () {
-                    l(g(c.prototype), "_detachSubscribers",
-                        this).call(this);
+                    l(g(c.prototype), "_detachSubscribers", this).call(this);
                     this.unsubscribe(h.default.EVENT.ON_NEW_DELIVERY_ADDRESS_SAVED, this._onDeliveryAddressEditClose)
                 }
             }, {
@@ -17296,8 +16649,7 @@
                     this.$paymentOptions.on("click", this._onPaymentOptionClick);
                     this.$cardPaymentOption.on("click", this._onCardOptionClick);
                     this.$addCardOption.on("click", this._onAddCardClick);
-                    this.$oHomeDelivery.on("change", this.SELECTOR_ADD_ADDRESS_BUTTON,
-                        this._onNewAddressClick);
+                    this.$oHomeDelivery.on("change", this.SELECTOR_ADD_ADDRESS_BUTTON, this._onNewAddressClick);
                     this.$closeAddressFormBtn.on("click", this._onDeliveryAddressEditClose);
                     l(g(c.prototype), "_attachDOMListeners", this).call(this)
                 }
@@ -17319,8 +16671,7 @@
                 }
             }, {
                 key: "_onSectionCompleted", value: function () {
-                    var a = this.$el.find(this.SELECTOR_ACTIVE_SECTION),
-                        d = a.next();
+                    var a = this.$el.find(this.SELECTOR_ACTIVE_SECTION), d = a.next();
                     a.addClass(h.default.CLASS.IS_CLOSED_STATE);
                     d.removeClass(h.default.CLASS.IS_DISABLED_STATE);
                     Modernizr.mq(h.default.MQ.IS_MOBILE) ? (this.$body.scrollTop(0), this._scroll(a.offset().top)) : this.$body.scrollTop(0)
@@ -17334,42 +16685,40 @@
                     a = $(a.currentTarget);
                     this._scroll(this._getScrollToPosition(a.closest(this.SELECTOR_ADD_ADDRESS), !0, !0), !1)
                 }
-            },
-                {
-                    key: "_onDeliveryOptionClick", value: function () {
-                        0 < this.$deliveryContainer.length && this._scroll(this._getScrollToPosition(this.$deliveryContainer, !1), !1)
+            }, {
+                key: "_onDeliveryOptionClick", value: function () {
+                    0 < this.$deliveryContainer.length && this._scroll(this._getScrollToPosition(this.$deliveryContainer, !1), !1)
+                }
+            }, {
+                key: "_onLoginOptionClick", value: function () {
+                    if (0 < this.$checkoutLoginContainer.length) {
+                        var a = parseInt(this.$checkoutLoginOptions.css("marginBottom")),
+                            d = this.$checkoutLoginOption.outerHeight();
+                        a += d / 3;
+                        this._scroll(this._getScrollToPosition(this.$checkoutLoginContainer, !1) - a, !0)
                     }
-                }, {
-                    key: "_onLoginOptionClick", value: function () {
-                        if (0 < this.$checkoutLoginContainer.length) {
-                            var a = parseInt(this.$checkoutLoginOptions.css("marginBottom")),
-                                d = this.$checkoutLoginOption.outerHeight();
-                            a += d / 3;
-                            this._scroll(this._getScrollToPosition(this.$checkoutLoginContainer, !1) - a, !0)
-                        }
-                    }
-                }, {
-                    key: "_onPaymentOptionClick", value: function () {
-                        this._scroll(this._getScrollToPosition(this.$paymentOptions,
-                            !0, !1), !1)
-                    }
-                }, {
-                    key: "_onCardOptionClick", value: function () {
-                        this._scroll(this._getScrollToPosition(this.$addCardOption, !0, !1), !0)
-                    }
-                }, {
-                    key: "_onAddCardClick", value: function () {
-                        this._scroll(this._getScrollToPosition(this.$addCardOption, !0, !0), !0)
-                    }
-                }, {
-                    key: "_getScrollToPosition", value: function (a, d, c) {
-                        return a.offset().top + (d ? a.outerHeight(c) : 0)
-                    }
-                }, {
-                    key: "_setPositionlowinstock", value: function () {
-                        this.$cartitem.find(this.$lowstock) && this.$lowstock.closest(this.SELECTOR_CART_ITEM).css("padding-bottom", "20px")
-                    }
-                }]);
+                }
+            }, {
+                key: "_onPaymentOptionClick", value: function () {
+                    this._scroll(this._getScrollToPosition(this.$paymentOptions, !0, !1), !1)
+                }
+            }, {
+                key: "_onCardOptionClick", value: function () {
+                    this._scroll(this._getScrollToPosition(this.$addCardOption, !0, !1), !0)
+                }
+            }, {
+                key: "_onAddCardClick", value: function () {
+                    this._scroll(this._getScrollToPosition(this.$addCardOption, !0, !0), !0)
+                }
+            }, {
+                key: "_getScrollToPosition", value: function (a, d, c) {
+                    return a.offset().top + (d ? a.outerHeight(c) : 0)
+                }
+            }, {
+                key: "_setPositionlowinstock", value: function () {
+                    this.$cartitem.find(this.$lowstock) && this.$lowstock.closest(this.SELECTOR_CART_ITEM).css("padding-bottom", "20px")
+                }
+            }]);
             return c
         }(p.default);
         t.exports = f
@@ -17392,8 +16741,7 @@
         function q(c, a) {
             for (var b = 0; b < a.length; b++) {
                 var d = a[b];
-                d.enumerable = d.enumerable ||
-                    !1;
+                d.enumerable = d.enumerable || !1;
                 d.configurable = !0;
                 "value" in d && (d.writable = !0);
                 Object.defineProperty(c, d.key, d)
@@ -17483,8 +16831,7 @@
                     this._detachDOMListeners();
                     this._detachSubscribers();
                     this._detachMQHandlers();
-                    l(g(a.prototype),
-                        "destroy", this).call(this)
+                    l(g(a.prototype), "destroy", this).call(this)
                 }
             }, {
                 key: "_declareConstants", value: function () {
@@ -17523,104 +16870,96 @@
                     this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
                     this.subscribe(e.default.EVENT.ON_FILTER_VISIBILITY_CHANGED, this._adjustingItemsWidth)
                 }
-            },
-                {
-                    key: "_detachSubscribers", value: function () {
-                        h.default.INFO(this.constructor.name, ":: _detachSubscribers");
-                        this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady);
-                        this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
-                        this.unsubscribe(e.default.EVENT.ON_FILTER_VISIBILITY_CHANGED, this._adjustingItemsWidth)
-                    }
-                }, {
-                    key: "_onFrameworkReady", value: function () {
-                    }
-                }, {
-                    key: "_attachDOMListeners", value: function () {
-                        this.$itemLink.on("click", this._animateScroll);
-                        this.$window.on("hashchange",
-                            this._checkIncomingHash)
-                    }
-                }, {
-                    key: "_detachDOMListeners", value: function () {
-                        this.$itemLink.off("click", this._animateScroll)
-                    }
-                }, {
-                    key: "_attachMQHandlers", value: function () {
-                        this.MQMobileHandler = {
-                            deferSetup: !0,
-                            match: this._setItemContainerWidth,
-                            unmatch: this._unmatchContainerWidth
-                        };
-                        enquire.register(e.default.MQ.IS_MOBILE, this.MQMobileHandler)
-                    }
-                }, {
-                    key: "_detachMQHandlers", value: function () {
-                        enquire.unregister(e.default.MQ.IS_MOBILE, this.MQMobileHandler)
-                    }
-                }, {
-                    key: "_onDOMReady", value: function () {
-                        h.default.INFO(this.constructor.name,
-                            ":: _onDOMReady");
-                        this._cacheDOMElements();
-                        this._findChooserLabels();
-                        this._attachSubscribers();
-                        this._attachMQHandlers();
-                        this._attachDOMListeners();
-                        this._checkIncomingHash()
-                    }
-                }, {
-                    key: "_checkIncomingHash", value: function () {
-                        var a = this;
-                        "" !== location.hash && $(location.hash).length && setTimeout(function () {
-                            a.$body.scrollTop($(location.hash).offset().top - 100)
-                        }, 1)
-                    }
-                }, {
-                    key: "_setItemContainerWidth", value: function () {
-                        this.$el.hasClass(this.CLASS_WITH_IMAGE) && (this.chooserElementWidth = this.$item.outerWidth(), this.chooserContainerWidth =
-                            this.chooserElementWidth * this.$item.length, this._adjustingItemsWidth(), $(window).on("resize", this._adjustingItemsWidth));
-                        3 < this.$item.length && this.$el.addClass(this.CLASS_FULL_WIDTH)
-                    }
-                }, {
-                    key: "_unmatchContainerWidth", value: function () {
-                        this.$el.hasClass(this.CLASS_WITH_IMAGE) && (this.$itemContainer.removeClass(this.CLASS_MOBILE_OVERFLOW), $(window).off("resize", this._adjustingItemsWidth))
-                    }
-                }, {
-                    key: "_animateScroll", value: function (a) {
-                        a = $(a.currentTarget).attr("href");
-                        if ($(a).offset()) return this.$body.animate({
-                            scrollTop: $(a).offset().top -
-                                100
-                        }, 500), !1
-                    }
-                }, {
-                    key: "_findChooserLabels", value: function () {
-                        var a = this.$el.attr("data-type"), b = [], c = Handlebars.compile(this.$handlebarTemplate);
-                        $.each(this.$chooserItems, function (d, c) {
-                            $(c).attr("data-chooser") && b.push({
-                                type: a,
-                                id: "#" + $(c).attr("id"),
-                                anchorTitle: $(c).attr("data-chooser-title"),
-                                imageLink: $(c).attr("data-chooser-image"),
-                                imageAlt: $(c).attr("data-chooser-image-alt")
-                            })
-                        });
-                        c = c({content: b});
-                        this.$itemContainer.html(c);
-                        this._cacheDOMElements()
-                    }
-                }, {
-                    key: "_adjustingItemsWidth", value: function () {
-                        var a =
-                            this.$el.outerWidth(!0);
-                        if (a < this.chooserContainerWidth) {
-                            var b = parseInt(a / this.chooserElementWidth) + .5;
-                            a = Math.floor(a / b);
-                            this.$itemContainer.addClass(this.CLASS_MOBILE_OVERFLOW);
-                            this.$item.css("width", a + "px")
-                        } else this.$itemContainer.removeClass(this.CLASS_MOBILE_OVERFLOW), this.$item.css("width", "")
-                    }
-                }]);
+            }, {
+                key: "_detachSubscribers", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _detachSubscribers");
+                    this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady);
+                    this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
+                    this.unsubscribe(e.default.EVENT.ON_FILTER_VISIBILITY_CHANGED, this._adjustingItemsWidth)
+                }
+            }, {
+                key: "_onFrameworkReady", value: function () {
+                }
+            }, {
+                key: "_attachDOMListeners", value: function () {
+                    this.$itemLink.on("click", this._animateScroll);
+                    this.$window.on("hashchange", this._checkIncomingHash)
+                }
+            }, {
+                key: "_detachDOMListeners", value: function () {
+                    this.$itemLink.off("click", this._animateScroll)
+                }
+            }, {
+                key: "_attachMQHandlers", value: function () {
+                    this.MQMobileHandler = {
+                        deferSetup: !0,
+                        match: this._setItemContainerWidth,
+                        unmatch: this._unmatchContainerWidth
+                    };
+                    enquire.register(e.default.MQ.IS_MOBILE, this.MQMobileHandler)
+                }
+            }, {
+                key: "_detachMQHandlers", value: function () {
+                    enquire.unregister(e.default.MQ.IS_MOBILE, this.MQMobileHandler)
+                }
+            }, {
+                key: "_onDOMReady", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _onDOMReady");
+                    this._cacheDOMElements();
+                    this._findChooserLabels();
+                    this._attachSubscribers();
+                    this._attachMQHandlers();
+                    this._attachDOMListeners();
+                    this._checkIncomingHash()
+                }
+            }, {
+                key: "_checkIncomingHash", value: function () {
+                    var a = this;
+                    "" !== location.hash && $(location.hash).length && setTimeout(function () {
+                        a.$body.scrollTop($(location.hash).offset().top - 100)
+                    }, 1)
+                }
+            }, {
+                key: "_setItemContainerWidth", value: function () {
+                    this.$el.hasClass(this.CLASS_WITH_IMAGE) && (this.chooserElementWidth = this.$item.outerWidth(), this.chooserContainerWidth = this.chooserElementWidth * this.$item.length, this._adjustingItemsWidth(), $(window).on("resize", this._adjustingItemsWidth));
+                    3 < this.$item.length && this.$el.addClass(this.CLASS_FULL_WIDTH)
+                }
+            }, {
+                key: "_unmatchContainerWidth", value: function () {
+                    this.$el.hasClass(this.CLASS_WITH_IMAGE) && (this.$itemContainer.removeClass(this.CLASS_MOBILE_OVERFLOW), $(window).off("resize", this._adjustingItemsWidth))
+                }
+            }, {
+                key: "_animateScroll", value: function (a) {
+                    a = $(a.currentTarget).attr("href");
+                    if ($(a).offset()) return this.$body.animate({scrollTop: $(a).offset().top - 100}, 500), !1
+                }
+            }, {
+                key: "_findChooserLabels", value: function () {
+                    var a = this.$el.attr("data-type"), b = [], c = Handlebars.compile(this.$handlebarTemplate);
+                    $.each(this.$chooserItems, function (d, c) {
+                        $(c).attr("data-chooser") && b.push({
+                            type: a,
+                            id: "#" + $(c).attr("id"),
+                            anchorTitle: $(c).attr("data-chooser-title"),
+                            imageLink: $(c).attr("data-chooser-image"),
+                            imageAlt: $(c).attr("data-chooser-image-alt")
+                        })
+                    });
+                    c = c({content: b});
+                    this.$itemContainer.html(c);
+                    this._cacheDOMElements()
+                }
+            }, {
+                key: "_adjustingItemsWidth", value: function () {
+                    var a = this.$el.outerWidth(!0);
+                    if (a < this.chooserContainerWidth) {
+                        var b = parseInt(a / this.chooserElementWidth) + .5;
+                        a = Math.floor(a / b);
+                        this.$itemContainer.addClass(this.CLASS_MOBILE_OVERFLOW);
+                        this.$item.css("width", a + "px")
+                    } else this.$itemContainer.removeClass(this.CLASS_MOBILE_OVERFLOW), this.$item.css("width", "")
+                }
+            }]);
             return a
         }(p.default);
         t.exports = f
@@ -17660,8 +16999,7 @@
             return c
         }
 
-        function l(c,
-                   a, b) {
+        function l(c, a, b) {
             l = "undefined" !== typeof Reflect && Reflect.get ? Reflect.get : function (a, b, c) {
                 for (; !Object.prototype.hasOwnProperty.call(a, b) && (a = g(a), null !== a);) ;
                 if (a) return b = Object.getOwnPropertyDescriptor(a, b), b.get ? b.get.call(c) : b.value
@@ -17676,11 +17014,10 @@
         }
 
         function n(c, a) {
-            n = Object.setPrototypeOf ||
-                function (a, d) {
-                    a.__proto__ = d;
-                    return a
-                };
+            n = Object.setPrototypeOf || function (a, d) {
+                a.__proto__ = d;
+                return a
+            };
             return n(c, a)
         }
 
@@ -17744,8 +17081,7 @@
                 }
             }, {
                 key: "_declareConstants", value: function () {
-                    this.SELECTOR_FILTER_COLOR_HBS =
-                        "#o-filter-color-hbs";
+                    this.SELECTOR_FILTER_COLOR_HBS = "#o-filter-color-hbs";
                     this.SELECTOR_COLOR_LIST_TEMPLATE = "#color-list";
                     this.SELECTOR_FILTER_OPTION = ".filter-option";
                     this.SELECTOR_ROOT = ".o-filter-color";
@@ -17758,8 +17094,7 @@
                     this.END_ANGLE = this.START_ANGLE = 0;
                     this.STROKE_COLOR = "#000";
                     this.HOVER_FILL_COLOR = "#fff";
-                    this.STROKE_WIDTH =
-                        2;
+                    this.STROKE_WIDTH = 2;
                     this.PIE_SLICE_SIZE = 1;
                     this.CANVAS_HEIGHT = this.CANVAS_WIDTH = 230;
                     this.CANVAS_RETINA_WIDTH = 2 * this.CANVAS_WIDTH;
@@ -17778,268 +17113,251 @@
                     this._attachDOMListeners();
                     this._checkDevicePixelRatio()
                 }
-            },
-                {
-                    key: "_cacheDOMElements", value: function () {
-                        this.$tablistContent = this.$el.closest(this.SELECTOR_TABLIST_CONTENT);
-                        this.$filterColorTemplate = $(this.SELECTOR_FILTER_COLOR_HBS);
-                        this.$colorListTemplate = $(this.SELECTOR_COLOR_LIST_TEMPLATE);
-                        this.$colorPalette = $(this.SELECTOR_COLOR_PALETTE);
-                        this.isProductionCheckbox = this.$colorPalette.find(this.SELECTOR_A_CHECKBOX).data("filter");
-                        this.$canvas = this.$el;
-                        this.$canvasHint = this.$el.next();
-                        this.canvas = this.$canvas[0];
-                        this.canvas.width = this.CANVAS_WIDTH;
-                        this.canvas.height =
-                            this.CANVAS_HEIGHT;
-                        this.canvas.style.width = this.CANVAS_WIDTH + "px";
-                        this.canvas.style.height = this.CANVAS_HEIGHT + "px";
-                        this.canvasHint = this.$canvasHint[0];
-                        this.canvasHint.width = this.CANVAS_WIDTH;
-                        this.canvasHint.height = this.CANVAS_HEIGHT;
-                        this.canvasHint.style.width = this.CANVAS_WIDTH + "px";
-                        this.canvasHint.style.height = this.CANVAS_HEIGHT + "px";
-                        this.cWidth = this.CANVAS_WIDTH;
-                        this.cHeight = this.CANVAS_HEIGHT;
-                        this.radius = this.cHeight / 2;
-                        this.hoverMarkerRadius = .75 * this.radius;
-                        this.ctx = this.canvas.getContext("2d");
-                        this.ctxHint = this.canvasHint.getContext("2d");
-                        this.$parentBlock = this.$el.closest(this.SELECTOR_BLOCK);
-                        this.$colorName = this.$el.closest(this.SELECTOR_ROOT).find(this.SELECTOR_COLOR_NAME);
-                        this.PREVIOUS_COLOR_SLICES = this.$el.data("facets");
-                        this.COLOR_SLICES = this.$el.data("facets");
-                        this.FILTER_TYPE = this.$el.data("type");
-                        this.TOTAL_COLORS = this.COLOR_SLICES.length;
-                        this.SELECTED_SLICE = {}
+            }, {
+                key: "_cacheDOMElements", value: function () {
+                    this.$tablistContent = this.$el.closest(this.SELECTOR_TABLIST_CONTENT);
+                    this.$filterColorTemplate = $(this.SELECTOR_FILTER_COLOR_HBS);
+                    this.$colorListTemplate = $(this.SELECTOR_COLOR_LIST_TEMPLATE);
+                    this.$colorPalette = $(this.SELECTOR_COLOR_PALETTE);
+                    this.isProductionCheckbox = this.$colorPalette.find(this.SELECTOR_A_CHECKBOX).data("filter");
+                    this.$canvas = this.$el;
+                    this.$canvasHint = this.$el.next();
+                    this.canvas = this.$canvas[0];
+                    this.canvas.width = this.CANVAS_WIDTH;
+                    this.canvas.height = this.CANVAS_HEIGHT;
+                    this.canvas.style.width = this.CANVAS_WIDTH + "px";
+                    this.canvas.style.height = this.CANVAS_HEIGHT + "px";
+                    this.canvasHint = this.$canvasHint[0];
+                    this.canvasHint.width = this.CANVAS_WIDTH;
+                    this.canvasHint.height = this.CANVAS_HEIGHT;
+                    this.canvasHint.style.width = this.CANVAS_WIDTH + "px";
+                    this.canvasHint.style.height = this.CANVAS_HEIGHT + "px";
+                    this.cWidth = this.CANVAS_WIDTH;
+                    this.cHeight = this.CANVAS_HEIGHT;
+                    this.radius = this.cHeight / 2;
+                    this.hoverMarkerRadius = .75 * this.radius;
+                    this.ctx = this.canvas.getContext("2d");
+                    this.ctxHint = this.canvasHint.getContext("2d");
+                    this.$parentBlock = this.$el.closest(this.SELECTOR_BLOCK);
+                    this.$colorName = this.$el.closest(this.SELECTOR_ROOT).find(this.SELECTOR_COLOR_NAME);
+                    this.PREVIOUS_COLOR_SLICES = this.$el.data("facets");
+                    this.COLOR_SLICES = this.$el.data("facets");
+                    this.FILTER_TYPE = this.$el.data("type");
+                    this.TOTAL_COLORS = this.COLOR_SLICES.length;
+                    this.SELECTED_SLICE = {}
+                }
+            }, {
+                key: "_jQueryScopeBinding", value: function () {
+                    this._onClick = this._onClick.bind(this);
+                    this._onMouseMove = this._onMouseMove.bind(this);
+                    this._onMouseLeave = this._onMouseLeave.bind(this);
+                    this._onDOMReady = this._onDOMReady.bind(this);
+                    this._drawColorDots = this._drawColorDots.bind(this)
+                }
+            }, {
+                key: "_attachSubscribers", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _attachSubscribers");
+                    this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
+                    this.subscribe(e.default.EVENT.ON_SHOW_FILTER_COLORS, this._refreshFilter);
+                    this.subscribe(e.default.EVENT.ON_COLOR_SELECT, this._onSelectColorAdded);
+                    this.subscribe(e.default.EVENT.ON_COLOR_DESELECT, this._onSelectColorRemoved)
+                }
+            }, {
+                key: "_detachSubscribers", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _detachSubscribers");
+                    this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady);
+                    this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
+                    this.unsubscribe(e.default.EVENT.ON_SHOW_FILTER_COLORS, this._refreshFilter);
+                    this.unsubscribe(e.default.EVENT.ON_COLOR_SELECT, this._onSelectColorAdded);
+                    this.unsubscribe(e.default.EVENT.ON_COLOR_DESELECT, this._onSelectColorRemoved)
+                }
+            }, {
+                key: "_onFrameworkReady", value: function () {
+                    this._attachMQHandlers()
+                }
+            }, {
+                key: "_attachDOMListeners", value: function () {
+                    this.canvas.addEventListener("mousemove", this._onMouseMove);
+                    this.canvas.addEventListener("mouseleave", this._onMouseLeave);
+                    this.canvas.addEventListener("click", this._onClick)
+                }
+            }, {
+                key: "_detachDOMListeners", value: function () {
+                }
+            }, {
+                key: "_attachMQHandlers", value: function () {
+                }
+            }, {
+                key: "_detachMQHandlers", value: function () {
+                }
+            }, {
+                key: "_checkDevicePixelRatio", value: function () {
+                    var a = 1 < window.devicePixelRatio;
+                    this.canvas.width = a ? this.CANVAS_RETINA_WIDTH : this.CANVAS_WIDTH;
+                    this.canvas.height = a ? this.CANVAS_RETINA_HEIGHT : this.CANVAS_HEIGHT;
+                    this.canvas.style.width = a ? this.CANVAS_WIDTH + "px" : "";
+                    this.canvas.style.height = a ? this.CANVAS_HEIGHT + "px" : "";
+                    this.canvasHint.width = a ? this.CANVAS_RETINA_WIDTH : this.CANVAS_WIDTH;
+                    this.canvasHint.height = a ? this.CANVAS_RETINA_HEIGHT : this.CANVAS_HEIGHT;
+                    this.canvasHint.style.width = a ? this.CANVAS_WIDTH + "px" : "";
+                    this.canvasHint.style.height = a ? this.CANVAS_HEIGHT + "px" : "";
+                    a ? this.ctx.scale(2, 2) : this.ctx.scale(1, 1);
+                    a ? this.ctxHint.scale(2, 2) : this.ctxHint.scale(1, 1)
+                }
+            }, {
+                key: "_compileHandlebars", value: function (a, b) {
+                    return 0 < a.length ? Handlebars.compile(a.html())(b || {}) : ""
+                }
+            }, {
+                key: "_drawColors", value: function (a) {
+                    a ? this._transitionColorSlices() : this._drawColorSlices()
+                }
+            }, {
+                key: "_drawColorDots", value: function () {
+                    var a = this;
+                    this.isProductionCheckbox || (this.$colorPalette.html(""), $.each(this.COLOR_SLICES, function (b, d) {
+                        d.selected && (d["class"] = "is-selected");
+                        b = a._compileHandlebars(a.$colorListTemplate, d);
+                        a.$colorPalette.append($(b))
+                    }))
+                }
+            }, {
+                key: "_transitionColorSlices", value: function () {
+                    for (var a = this, b = 2 * Math.PI / this.PREVIOUS_COLOR_SLICES.length, c = 2 * Math.PI / this.TOTAL_COLORS, e = !0, f = 0, g = !1, h = 15, k = [], l = 0; l < this.TOTAL_COLORS; l++) if (this.PREVIOUS_COLOR_SLICES.length !== this.COLOR_SLICES.length || 0 === this.PREVIOUS_COLOR_SLICES.length || void 0 === this.PREVIOUS_COLOR_SLICES[l] || this.PREVIOUS_COLOR_SLICES[l].code !== this.COLOR_SLICES[l].code) {
+                        g = !0;
+                        break
                     }
-                }, {
-                    key: "_jQueryScopeBinding", value: function () {
-                        this._onClick = this._onClick.bind(this);
-                        this._onMouseMove = this._onMouseMove.bind(this);
-                        this._onMouseLeave = this._onMouseLeave.bind(this);
-                        this._onDOMReady = this._onDOMReady.bind(this);
-                        this._drawColorDots = this._drawColorDots.bind(this)
-                    }
-                }, {
-                    key: "_attachSubscribers", value: function () {
-                        h.default.INFO(this.constructor.name, ":: _attachSubscribers");
-                        this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
-                        this.subscribe(e.default.EVENT.ON_SHOW_FILTER_COLORS, this._refreshFilter);
-                        this.subscribe(e.default.EVENT.ON_COLOR_SELECT, this._onSelectColorAdded);
-                        this.subscribe(e.default.EVENT.ON_COLOR_DESELECT,
-                            this._onSelectColorRemoved)
-                    }
-                }, {
-                    key: "_detachSubscribers", value: function () {
-                        h.default.INFO(this.constructor.name, ":: _detachSubscribers");
-                        this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady);
-                        this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
-                        this.unsubscribe(e.default.EVENT.ON_SHOW_FILTER_COLORS, this._refreshFilter);
-                        this.unsubscribe(e.default.EVENT.ON_COLOR_SELECT, this._onSelectColorAdded);
-                        this.unsubscribe(e.default.EVENT.ON_COLOR_DESELECT, this._onSelectColorRemoved)
-                    }
-                },
-                {
-                    key: "_onFrameworkReady", value: function () {
-                        this._attachMQHandlers()
-                    }
-                }, {
-                    key: "_attachDOMListeners", value: function () {
-                        this.canvas.addEventListener("mousemove", this._onMouseMove);
-                        this.canvas.addEventListener("mouseleave", this._onMouseLeave);
-                        this.canvas.addEventListener("click", this._onClick)
-                    }
-                }, {
-                    key: "_detachDOMListeners", value: function () {
-                    }
-                }, {
-                    key: "_attachMQHandlers", value: function () {
-                    }
-                }, {
-                    key: "_detachMQHandlers", value: function () {
-                    }
-                }, {
-                    key: "_checkDevicePixelRatio", value: function () {
-                        var a = 1 < window.devicePixelRatio;
-                        this.canvas.width = a ? this.CANVAS_RETINA_WIDTH : this.CANVAS_WIDTH;
-                        this.canvas.height = a ? this.CANVAS_RETINA_HEIGHT : this.CANVAS_HEIGHT;
-                        this.canvas.style.width = a ? this.CANVAS_WIDTH + "px" : "";
-                        this.canvas.style.height = a ? this.CANVAS_HEIGHT + "px" : "";
-                        this.canvasHint.width = a ? this.CANVAS_RETINA_WIDTH : this.CANVAS_WIDTH;
-                        this.canvasHint.height = a ? this.CANVAS_RETINA_HEIGHT : this.CANVAS_HEIGHT;
-                        this.canvasHint.style.width = a ? this.CANVAS_WIDTH + "px" : "";
-                        this.canvasHint.style.height = a ? this.CANVAS_HEIGHT + "px" : "";
-                        a ? this.ctx.scale(2,
-                            2) : this.ctx.scale(1, 1);
-                        a ? this.ctxHint.scale(2, 2) : this.ctxHint.scale(1, 1)
-                    }
-                }, {
-                    key: "_compileHandlebars", value: function (a, b) {
-                        return 0 < a.length ? Handlebars.compile(a.html())(b || {}) : ""
-                    }
-                }, {
-                    key: "_drawColors", value: function (a) {
-                        a ? this._transitionColorSlices() : this._drawColorSlices()
-                    }
-                }, {
-                    key: "_drawColorDots", value: function () {
-                        var a = this;
-                        this.isProductionCheckbox || (this.$colorPalette.html(""), $.each(this.COLOR_SLICES, function (b, d) {
-                            d.selected && (d["class"] = "is-selected");
-                            b = a._compileHandlebars(a.$colorListTemplate,
-                                d);
-                            a.$colorPalette.append($(b))
-                        }))
-                    }
-                }, {
-                    key: "_transitionColorSlices", value: function () {
-                        for (var a = this, b = 2 * Math.PI / this.PREVIOUS_COLOR_SLICES.length, c = 2 * Math.PI / this.TOTAL_COLORS, e = !0, f = 0, g = !1, h = 15, k = [], l = 0; l < this.TOTAL_COLORS; l++) if (this.PREVIOUS_COLOR_SLICES.length !== this.COLOR_SLICES.length || 0 === this.PREVIOUS_COLOR_SLICES.length || void 0 === this.PREVIOUS_COLOR_SLICES[l] || this.PREVIOUS_COLOR_SLICES[l].code !== this.COLOR_SLICES[l].code) {
-                            g = !0;
-                            break
-                        }
-                        g ? (this.IS_TRANSITIONING = !0, k = $.extend(!0, [], this.COLOR_SLICES),
-                            e = !0, function B() {
-                            var d = !0, g = !1;
-                            if (e) {
-                                for (var x = 0; x < k.length; x++) {
-                                    for (var l = k[x], m = 0; m < a.COLOR_SLICES.length; m++) l.code === a.COLOR_SLICES[m].code && (l.isInNext = !0);
-                                    for (m = 0; m < a.PREVIOUS_COLOR_SLICES.length; m++) l.code === a.PREVIOUS_COLOR_SLICES[m].code && (l.isInPrevious = !0)
-                                }
-                                for (x = 0; x < a.PREVIOUS_COLOR_SLICES.length; x++) {
-                                    l = a.PREVIOUS_COLOR_SLICES[x];
-                                    for (m = 0; m < a.COLOR_SLICES.length; m++) l.code === a.COLOR_SLICES[m].code && (l.isInNext = !0);
-                                    void 0 === l.isInNext && (l.isInPrevious = !0, k.splice(x, 0, l))
-                                }
+                    g ? (this.IS_TRANSITIONING = !0, k = $.extend(!0, [], this.COLOR_SLICES), e = !0, function B() {
+                        var d = !0, g = !1;
+                        if (e) {
+                            for (var x = 0; x < k.length; x++) {
+                                for (var l = k[x], m = 0; m < a.COLOR_SLICES.length; m++) l.code === a.COLOR_SLICES[m].code && (l.isInNext = !0);
+                                for (m = 0; m < a.PREVIOUS_COLOR_SLICES.length; m++) l.code === a.PREVIOUS_COLOR_SLICES[m].code && (l.isInPrevious = !0)
                             }
-                            for (x = 0; x < k.length; x++) l =
-                                k[x], void 0 !== l.isInNext && !0 === d && (0 === x && (g = !0), f += c / 2 / 15, d = !1), void 0 !== l.isInNext && void 0 !== l.isInPrevious ? l.radians = e ? b : l.radians + (c - b) / 15 : void 0 !== l.isInNext && void 0 === l.isInPrevious ? l.radians = e ? 0 : l.radians + c / 15 : void 0 === l.isInNext && void 0 !== l.isInPrevious && (l.radians = e ? b : l.radians - b / 15), 1 < h && (l.radians = Math.abs(Math.round(1E4 * l.radians) / 1E4));
-                            e ? e = !1 : g ? a._drawColorSlices(k) : a._drawColorSlices(k, f);
-                            h--;
-                            h + 1 ? window.requestAnimationFrame(function () {
-                                B()
-                            }) : (a._drawColorSlices(), a.IS_TRANSITIONING =
-                                !1)
-                        }()) : this._drawColorSlices()
-                    }
-                }, {
-                    key: "_drawColorSlices", value: function () {
-                        var a = 0 < arguments.length && void 0 !== arguments[0] ? arguments[0] : this.COLOR_SLICES,
-                            b = 1 < arguments.length ? arguments[1] : void 0, c = a.length, e = this.ctx;
-                        e.clearRect(0, 0, this.cWidth, this.cHeight);
-                        this.ctxHint.clearRect(0, 0, this.cWidth, this.cHeight);
-                        e.strokeStyle = this.STROKE_COLOR;
-                        e.lineWidth = this.STROKE_WIDTH;
-                        e.beginPath();
-                        e.arc(this.cWidth / 2, this.cHeight / 2, this.radius - this.STROKE_WIDTH, 0, 2 * Math.PI, !1);
-                        e.closePath();
-                        e.stroke();
-                        if (c) {
-                            var f =
-                                this.PIE_SLICE_SIZE / c * Math.PI * 2;
-                            b = 1.5 * Math.PI - (b ? b : a[0].radians ? a[0].radians / 2 : f / 2);
-                            for (var g = 0; g < c; g++) f = a[g].radians ? a[g].radians : f, a[g].hinted && (e = this.ctxHint), e.globalCompositeOperation = "source-over", e.beginPath(), e.arc(this.cWidth / 2, this.cHeight / 2, this.radius - 3 * this.STROKE_WIDTH, b, b + f, !1), e.lineTo(this.cWidth / 2, this.cHeight / 2), e.closePath(), e.fillStyle = a[g].value, e.fill(), a[g].sAngle = b, a[g].eAngle = b + f, (this.SELECTED_SLICE[a[g].code] || a[g].hovered || a[g].selected) && this._drawSelectedMarker(a[g]),
-                            a[g].hinted && (this._drawSelectedMarker(a[g]), e.shadowColor = "rgba(0, 0, 0, 0.2)", e.shadowOffsetY = 5, e.shadowBlur = 5, e = this.ctx), b += f;
-                            this.END_ANGLE = this.START_ANGLE = 0
+                            for (x = 0; x < a.PREVIOUS_COLOR_SLICES.length; x++) {
+                                l = a.PREVIOUS_COLOR_SLICES[x];
+                                for (m = 0; m < a.COLOR_SLICES.length; m++) l.code === a.COLOR_SLICES[m].code && (l.isInNext = !0);
+                                void 0 === l.isInNext && (l.isInPrevious = !0, k.splice(x, 0, l))
+                            }
                         }
+                        for (x = 0; x < k.length; x++) l = k[x], void 0 !== l.isInNext && !0 === d && (0 === x && (g = !0), f += c / 2 / 15, d = !1), void 0 !== l.isInNext && void 0 !== l.isInPrevious ? l.radians = e ? b : l.radians + (c - b) / 15 : void 0 !== l.isInNext && void 0 === l.isInPrevious ? l.radians = e ? 0 : l.radians + c / 15 : void 0 === l.isInNext && void 0 !== l.isInPrevious && (l.radians = e ? b : l.radians - b / 15), 1 < h && (l.radians = Math.abs(Math.round(1E4 * l.radians) / 1E4));
+                        e ? e = !1 : g ? a._drawColorSlices(k) : a._drawColorSlices(k, f);
+                        h--;
+                        h + 1 ? window.requestAnimationFrame(function () {
+                            B()
+                        }) : (a._drawColorSlices(), a.IS_TRANSITIONING = !1)
+                    }()) : this._drawColorSlices()
+                }
+            }, {
+                key: "_drawColorSlices", value: function () {
+                    var a = 0 < arguments.length && void 0 !== arguments[0] ? arguments[0] : this.COLOR_SLICES,
+                        b = 1 < arguments.length ? arguments[1] : void 0, c = a.length, e = this.ctx;
+                    e.clearRect(0, 0, this.cWidth, this.cHeight);
+                    this.ctxHint.clearRect(0, 0, this.cWidth, this.cHeight);
+                    e.strokeStyle = this.STROKE_COLOR;
+                    e.lineWidth = this.STROKE_WIDTH;
+                    e.beginPath();
+                    e.arc(this.cWidth / 2, this.cHeight / 2, this.radius - this.STROKE_WIDTH, 0, 2 * Math.PI, !1);
+                    e.closePath();
+                    e.stroke();
+                    if (c) {
+                        var f = this.PIE_SLICE_SIZE / c * Math.PI * 2;
+                        b = 1.5 * Math.PI - (b ? b : a[0].radians ? a[0].radians / 2 : f / 2);
+                        for (var g = 0; g < c; g++) f = a[g].radians ? a[g].radians : f, a[g].hinted && (e = this.ctxHint), e.globalCompositeOperation = "source-over", e.beginPath(), e.arc(this.cWidth / 2, this.cHeight / 2, this.radius - 3 * this.STROKE_WIDTH, b, b + f, !1), e.lineTo(this.cWidth / 2, this.cHeight / 2), e.closePath(), e.fillStyle = a[g].value, e.fill(), a[g].sAngle = b, a[g].eAngle = b + f, (this.SELECTED_SLICE[a[g].code] || a[g].hovered || a[g].selected) && this._drawSelectedMarker(a[g]), a[g].hinted && (this._drawSelectedMarker(a[g]), e.shadowColor = "rgba(0, 0, 0, 0.2)", e.shadowOffsetY = 5, e.shadowBlur = 5, e = this.ctx), b += f;
+                        this.END_ANGLE = this.START_ANGLE = 0
                     }
-                }, {
-                    key: "_setCurrentSlice", value: function (a) {
-                        this.CURRENT_SLICE = a
+                }
+            }, {
+                key: "_setCurrentSlice", value: function (a) {
+                    this.CURRENT_SLICE = a
+                }
+            }, {
+                key: "_delCurrentSlice", value: function (a) {
+                    delete this.SELECTED_SLICES[a.code]
+                }
+            }, {
+                key: "_getSlice", value: function (a, b) {
+                    if (a = this._getAngelForCoordinates(a, b)) {
+                        for (b = 0; b < this.COLOR_SLICES.length; b++) if (a >= this.COLOR_SLICES[b].sAngle && a < this.COLOR_SLICES[b].eAngle) return this.COLOR_SLICES[b];
+                        return this.COLOR_SLICES[0]
                     }
-                }, {
-                    key: "_delCurrentSlice", value: function (a) {
-                        delete this.SELECTED_SLICES[a.code]
-                    }
-                }, {
-                    key: "_getSlice", value: function (a, b) {
-                        if (a = this._getAngelForCoordinates(a, b)) {
-                            for (b = 0; b < this.COLOR_SLICES.length; b++) if (a >= this.COLOR_SLICES[b].sAngle && a < this.COLOR_SLICES[b].eAngle) return this.COLOR_SLICES[b];
-                            return this.COLOR_SLICES[0]
-                        }
-                        return !1
-                    }
-                }, {
-                    key: "_onHoverSlice", value: function (a) {
-                        for (var b = 0; b < this.COLOR_SLICES.length; b++) this.COLOR_SLICES[b].hovered = a.code === this.COLOR_SLICES[b].code;
-                        this._drawColors()
-                    }
-                }, {
-                    key: "_drawSelectedMarker", value: function (a) {
-                        var b = (a.eAngle - a.sAngle) / 2 + a.sAngle;
-                        a = a.hinted ? this.ctxHint : this.ctx;
-                        a.globalCompositeOperation = "destination-out";
-                        a.beginPath();
-                        a.arc(this.radius + Math.cos(b) * this.hoverMarkerRadius, this.radius + Math.sin(b) * this.hoverMarkerRadius, parseInt(.08 * this.radius),
-                            0, 2 * Math.PI, !1);
-                        a.closePath();
-                        a.fillStyle = this.HOVER_FILL_COLOR;
-                        a.fill();
-                        a.globalCompositeOperation = "source-over"
-                    }
-                }, {
-                    key: "_getAngelForCoordinates", value: function (a, b) {
-                        var d = Math.sqrt(Math.pow(Math.abs(a - this.cWidth / 2), 2) + Math.pow(Math.abs(b - this.cHeight / 2), 2)),
-                            c = Math.abs(Math.asin((b - this.cHeight / 2) / d));
-                        return d <= this.radius - 3 * this.STROKE_WIDTH ? (c = a > this.cWidth / 2 ? b < this.cHeight / 2 ? Math.PI / 2 - c : Math.PI / 2 + c : b > this.cHeight / 2 ? 1.5 * Math.PI - c : 1.5 * Math.PI + c, c + 1.5 * Math.PI) : !1
-                    }
-                }, {
-                    key: "_isSameSlice", value: function (a) {
-                        return this.CURRENT_SLICE.code ===
-                            a.code
-                    }
-                }, {
-                    key: "_onMouseMove", value: function (a) {
-                        if (a = this._getSlice(a.pageX - this.$el.offset().left, a.pageY - this.$el.offset().top)) this._isSameSlice(a) || (this._setCurrentSlice(a), this._onHoverSlice(a), a.selected ? this.publish(e.default.EVENT.ON_FILTER_MOUSELEAVE) : this.publish(e.default.EVENT.ON_FILTER_MOUSEOVER, a)), this.$colorName.text(a.title), this.publish(e.default.ACTION.SET_SEARCH_HINT, a.title, !0); else {
-                            this._setCurrentSlice({});
-                            for (a = 0; a < this.COLOR_SLICES.length; a++) this.COLOR_SLICES[a].hovered =
-                                !1;
-                            this._drawColors();
-                            this.publish(e.default.ACTION.SET_SEARCH_HINT, "", !1);
-                            this.$colorName.text("")
-                        }
-                    }
-                }, {
-                    key: "_onMouseLeave", value: function (a) {
+                    return !1
+                }
+            }, {
+                key: "_onHoverSlice", value: function (a) {
+                    for (var b = 0; b < this.COLOR_SLICES.length; b++) this.COLOR_SLICES[b].hovered = a.code === this.COLOR_SLICES[b].code;
+                    this._drawColors()
+                }
+            }, {
+                key: "_drawSelectedMarker", value: function (a) {
+                    var b = (a.eAngle - a.sAngle) / 2 + a.sAngle;
+                    a = a.hinted ? this.ctxHint : this.ctx;
+                    a.globalCompositeOperation = "destination-out";
+                    a.beginPath();
+                    a.arc(this.radius + Math.cos(b) * this.hoverMarkerRadius, this.radius + Math.sin(b) * this.hoverMarkerRadius, parseInt(.08 * this.radius), 0, 2 * Math.PI, !1);
+                    a.closePath();
+                    a.fillStyle = this.HOVER_FILL_COLOR;
+                    a.fill();
+                    a.globalCompositeOperation = "source-over"
+                }
+            }, {
+                key: "_getAngelForCoordinates", value: function (a, b) {
+                    var d = Math.sqrt(Math.pow(Math.abs(a - this.cWidth / 2), 2) + Math.pow(Math.abs(b - this.cHeight / 2), 2)),
+                        c = Math.abs(Math.asin((b - this.cHeight / 2) / d));
+                    return d <= this.radius - 3 * this.STROKE_WIDTH ? (c = a > this.cWidth / 2 ? b < this.cHeight / 2 ? Math.PI / 2 - c : Math.PI / 2 + c : b > this.cHeight / 2 ? 1.5 * Math.PI - c : 1.5 * Math.PI + c, c + 1.5 * Math.PI) : !1
+                }
+            }, {
+                key: "_isSameSlice", value: function (a) {
+                    return this.CURRENT_SLICE.code === a.code
+                }
+            }, {
+                key: "_onMouseMove", value: function (a) {
+                    if (a = this._getSlice(a.pageX - this.$el.offset().left, a.pageY - this.$el.offset().top)) this._isSameSlice(a) || (this._setCurrentSlice(a), this._onHoverSlice(a), a.selected ? this.publish(e.default.EVENT.ON_FILTER_MOUSELEAVE) : this.publish(e.default.EVENT.ON_FILTER_MOUSEOVER, a)), this.$colorName.text(a.title), this.publish(e.default.ACTION.SET_SEARCH_HINT, a.title, !0); else {
                         this._setCurrentSlice({});
+                        for (a = 0; a < this.COLOR_SLICES.length; a++) this.COLOR_SLICES[a].hovered = !1;
                         this._drawColors();
-                        this.$colorName.text("");
                         this.publish(e.default.ACTION.SET_SEARCH_HINT, "", !1);
-                        this.publish(e.default.EVENT.ON_FILTER_MOUSELEAVE)
+                        this.$colorName.text("")
                     }
-                }, {
-                    key: "_onClick", value: function (a) {
-                        a = this._getSlice(a.pageX - this.$el.offset().left, a.pageY - this.$el.offset().top);
-                        a.code in this.SELECTED_SLICES ? (this.publish(e.default.EVENT.ON_COLOR_DESELECT,
-                            a), this._delCurrentSlice(a)) : (this.SELECTED_SLICES[a.code] = a, this.publish(e.default.EVENT.ON_COLOR_SELECT, a), this._setCurrentSlice(a))
-                    }
-                }, {
-                    key: "_refreshFilter", value: function (a, b) {
-                        this.PREVIOUS_COLOR_SLICES = $.extend(!0, [], {});
-                        b = b ? b : !1;
-                        a = 0 < a.length ? a : this.COLOR_SLICES;
-                        this.TOTAL_COLORS = this.COLOR_SLICES.length;
-                        this.COLOR_SLICES = $.extend(!0, [], a);
-                        this._drawColorDots();
-                        Modernizr.mq(e.default.MQ.IS_MOBILE) || this._drawColors(b);
-                        this.publish(e.default.EVENT.ON_CHECK_FILTERS)
-                    }
-                }, {
-                    key: "_onSelectColorRemoved",
-                    value: function (a) {
-                        a.type == this.FILTER_TYPE && this.SELECTED_SLICE[a.code] && (this.SELECTED_SLICE[a.code] = !1, this.SELECTED_SLICE[a.selected] = !1, this.IS_TRANSITIONING || this._drawColors());
-                        document.getElementById("checkbox_" + a.code).click()
-                    }
-                }, {
-                    key: "_onSelectColorAdded", value: function (a) {
-                        a.type == this.FILTER_TYPE && (this.SELECTED_SLICE[a.code] = !0, this.SELECTED_SLICE[a.selected] = !0, this.IS_TRANSITIONING || this._drawColors());
-                        document.getElementById("checkbox_" + a.code).click()
-                    }
-                }]);
+                }
+            }, {
+                key: "_onMouseLeave", value: function (a) {
+                    this._setCurrentSlice({});
+                    this._drawColors();
+                    this.$colorName.text("");
+                    this.publish(e.default.ACTION.SET_SEARCH_HINT, "", !1);
+                    this.publish(e.default.EVENT.ON_FILTER_MOUSELEAVE)
+                }
+            }, {
+                key: "_onClick", value: function (a) {
+                    a = this._getSlice(a.pageX - this.$el.offset().left, a.pageY - this.$el.offset().top);
+                    a.code in this.SELECTED_SLICES ? (this.publish(e.default.EVENT.ON_COLOR_DESELECT, a), this._delCurrentSlice(a)) : (this.SELECTED_SLICES[a.code] = a, this.publish(e.default.EVENT.ON_COLOR_SELECT, a), this._setCurrentSlice(a))
+                }
+            }, {
+                key: "_refreshFilter", value: function (a, b) {
+                    this.PREVIOUS_COLOR_SLICES = $.extend(!0, [], {});
+                    b = b ? b : !1;
+                    a = 0 < a.length ? a : this.COLOR_SLICES;
+                    this.TOTAL_COLORS = this.COLOR_SLICES.length;
+                    this.COLOR_SLICES = $.extend(!0, [], a);
+                    this._drawColorDots();
+                    Modernizr.mq(e.default.MQ.IS_MOBILE) || this._drawColors(b);
+                    this.publish(e.default.EVENT.ON_CHECK_FILTERS)
+                }
+            }, {
+                key: "_onSelectColorRemoved", value: function (a) {
+                    a.type == this.FILTER_TYPE && this.SELECTED_SLICE[a.code] && (this.SELECTED_SLICE[a.code] = !1, this.SELECTED_SLICE[a.selected] = !1, this.IS_TRANSITIONING || this._drawColors());
+                    document.getElementById("checkbox_" + a.code).click()
+                }
+            }, {
+                key: "_onSelectColorAdded", value: function (a) {
+                    a.type == this.FILTER_TYPE && (this.SELECTED_SLICE[a.code] = !0, this.SELECTED_SLICE[a.selected] = !0, this.IS_TRANSITIONING || this._drawColors());
+                    document.getElementById("checkbox_" + a.code).click()
+                }
+            }]);
             return a
         }(p.default);
-        t.exports =
-            f
+        t.exports = f
     }, {
         "./../../../../js/base/appeaser-component-base.js": 47,
         "./../../../../js/base/logger.js": 51,
@@ -18062,8 +17380,7 @@
         }
 
         function q(a, b) {
-            for (var d = 0; d <
-            b.length; d++) {
+            for (var d = 0; d < b.length; d++) {
                 var c = b[d];
                 c.enumerable = c.enumerable || !1;
                 c.configurable = !0;
@@ -18135,8 +17452,7 @@
         }
 
         p = k(f("./../../../../js/base/appeaser-component-base.js"));
-        var h = k(f("./../../../../js/base/logger.js")), e = k(f("./../../enums.js")),
-            c = k(f("./../../utils.js"));
+        var h = k(f("./../../../../js/base/logger.js")), e = k(f("./../../enums.js")), c = k(f("./../../utils.js"));
         f = function (a) {
             function b() {
                 if (!(this instanceof b)) throw new TypeError("Cannot call a class as a function");
@@ -18177,11 +17493,9 @@
                     this.SELECTOR_ANIMATION_WRAPPER = ".animation-wrapper";
                     this.SELECTOR_INFORMATION_SECTION = ".information-section";
                     this.SELECTOR_VISIBLE_STATE = ".is-visible";
-                    this.SELECTOR_DEFAULT_DEPARTMENT = this.SELECTOR_CATEGORY_WRAPPER + "[data-title\x3d'Women'], " + this.SELECTOR_CATEGORY_WRAPPER + "[data-title\x3d'WOMEN'], " +
-                        this.SELECTOR_CATEGORY_WRAPPER + "[data-title\x3d'women'], " + this.SELECTOR_CATEGORY_WRAPPER + "[data-title\x3d'Frauen'], " + this.SELECTOR_CATEGORY_WRAPPER + "[data-title\x3d'FRAUEN'], " + this.SELECTOR_CATEGORY_WRAPPER + "[data-title\x3d'frauen'] ," + this.SELECTOR_CATEGORY_WRAPPER + "[data-title\x3d'Damen'] ," + this.SELECTOR_CATEGORY_WRAPPER + "[data-title\x3d'DAMEN'] ," + this.SELECTOR_CATEGORY_WRAPPER + "[data-title\x3d'damen']  ";
+                    this.SELECTOR_DEFAULT_DEPARTMENT = this.SELECTOR_CATEGORY_WRAPPER + "[data-title\x3d'Women'], " + this.SELECTOR_CATEGORY_WRAPPER + "[data-title\x3d'WOMEN'], " + this.SELECTOR_CATEGORY_WRAPPER + "[data-title\x3d'women'], " + this.SELECTOR_CATEGORY_WRAPPER + "[data-title\x3d'Frauen'], " + this.SELECTOR_CATEGORY_WRAPPER + "[data-title\x3d'FRAUEN'], " + this.SELECTOR_CATEGORY_WRAPPER + "[data-title\x3d'frauen'] ," + this.SELECTOR_CATEGORY_WRAPPER + "[data-title\x3d'Damen'] ," + this.SELECTOR_CATEGORY_WRAPPER + "[data-title\x3d'DAMEN'] ," + this.SELECTOR_CATEGORY_WRAPPER + "[data-title\x3d'damen']  ";
                     this.SELECTOR_NOTIFICATION_TICKER = ".m-notification-ticker";
-                    this.SELECTOR_STATIC_NOTIFICATION_TICKER =
-                        ".m-static-notification-ticker";
+                    this.SELECTOR_STATIC_NOTIFICATION_TICKER = ".m-static-notification-ticker";
                     this.SELECTOR_STATIC_TEXT_FIELD = "p.mobile-notification";
                     this.SELECTOR_SITE_BANNER = ".m-site-banner";
                     this.SELECTOR_ERROR_BANNER = ".m-error-banner";
@@ -18191,8 +17505,7 @@
                     this.SELECTOR_CURATED_CONTENT = ".category-wrapper.is-visible .curated-content";
                     this.CLASS_PAGE_IS_LOADED = "fetch-complete";
                     this.CLASS_SEARCH_ICON = "a-icon-lg-search";
-                    this.CLASS_CLOSE_ICON =
-                        "a-icon-close";
+                    this.CLASS_CLOSE_ICON = "a-icon-close";
                     this.CLASS_HAS_SELECTED_DEPARTMENT = "has-selected-department";
                     this.CLASS_HAS_BORDER = "has-border";
                     this.CLASS_HAS_OPEN_SEARCH = "has-open-search";
@@ -18216,8 +17529,7 @@
                     this.CLASS_ACTIVE_MENU = "is-active-menu";
                     this.CLASS_ANIMATE_HIDE = "animate-hide";
                     this.CLASS_HIDE_SEARCH = "hide-search";
-                    this.CLASS_HAS_NEW_ITEM =
-                        "has-new-item";
+                    this.CLASS_HAS_NEW_ITEM = "has-new-item";
                     this.CLASS_IS_HIDDEN = "is-hidden";
                     this.OPAGE_CONTENT = ".o-page-content";
                     this.CLASS_IS_OPEN = "is-open";
@@ -18230,8 +17542,7 @@
                     this.ADD_TO_CART_NOTIFICATION_TIMER = 1500;
                     this.HIDE_CART_NOTIFICATION_TIMER = 2E3;
                     this.DELAY_TIME = 1E3;
-                    this.HEIGHT_DESKTOP =
-                        125;
+                    this.HEIGHT_DESKTOP = 125;
                     this.HEIGHT_MOBILE = 80;
                     this.THRESHOLD_DESKTOP = 36;
                     this.THRESHOLD_MOBILE = 13;
@@ -18249,8 +17560,7 @@
                     this._onScroll();
                     this.headerIsTransparent = this.$el.hasClass(e.default.CLASS.IS_TRANSPARENT);
                     this.isInverted = this.$el.hasClass(e.default.CLASS.IS_INVERTED);
-                    this.isOpenOrCloseAnimationInProgress =
-                        !1
+                    this.isOpenOrCloseAnimationInProgress = !1
                 }
             }, {
                 key: "_cacheDOMElements", value: function () {
@@ -18279,8 +17589,7 @@
                     this.$errorBanner = $(this.SELECTOR_ERROR_BANNER);
                     this.$myPage = this.$pageContent.find(this.SELECTOR_MY_PAGE);
                     this.$oMenuList = this.$myPage.find(this.SELECTOR_O_MENU_LIST);
-                    this.$categoryMenu =
-                        $(this.SELECTOR_CATEGORY_MENU);
+                    this.$categoryMenu = $(this.SELECTOR_CATEGORY_MENU);
                     this.$curatedContent = $(this.SELECTOR_CURATED_CONTENT)
                 }
             }, {
@@ -18319,16 +17628,14 @@
                     h.default.INFO(this.constructor.name, ":: _detachSubscribers");
                     this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady);
                     this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
-                    -this.unsubscribe(e.default.ACTION.SHOW_HEADER,
-                        this._showHeader);
+                    -this.unsubscribe(e.default.ACTION.SHOW_HEADER, this._showHeader);
                     this.unsubscribe(e.default.ACTION.HIDE_HEADER, this._hideHeader);
                     this.unsubscribe(e.default.EVENT.ON_PAGE_CONTENT_REPLACED, this._onPageContentReplaced);
                     this.unsubscribe(e.default.ACTION.SEARCH_INITIALISE, this._onInit);
                     this.unsubscribe(e.default.EVENT.ON_ERROR_BANNER_RESIZE, this._onErrorBannerResize);
                     this.unsubscribe(e.default.ACTION.ENABLE_HEADER_STICKY, this._enableSticky);
                     this.unsubscribe(e.default.ACTION.DISABLE_HEADER_STICKY, this._disableSticky);
-                    this.unsubscribe(e.default.ACTION.HIDE_HEADER,
-                        this._onHideHeader);
+                    this.unsubscribe(e.default.ACTION.HIDE_HEADER, this._onHideHeader);
                     this.unsubscribe(e.default.ACTION.SHOW_HEADER, this._onShowHeader)
                 }
             }, {
@@ -18344,8 +17651,7 @@
                     this.$el.on("click", this._onHeaderClick);
                     this.$departmentItem.on("mouseover", this._onDepartmentHover);
                     this.$departmentItem.on("click", this._onDepartmentClick);
-                    this.$folderLink.on("click",
-                        this._onFolderClick);
+                    this.$folderLink.on("click", this._onFolderClick);
                     this.$tooltipTrigger.on("click", this._onTooltipTriggerClick);
                     this.$searchIcon.on("click", this._onSearchIconClick)
                 }
@@ -18357,8 +17663,7 @@
                     this.$departmentItem.off("click", this._onDepartmentClick);
                     this.$folderLink.off("click", this._onFolderClick);
                     this.$tooltipTrigger.off("click", this._onTooltipTriggerClick);
-                    this.$searchIcon.off("click",
-                        this._onSearchIconClick);
+                    this.$searchIcon.off("click", this._onSearchIconClick);
                     this.$burgerIcon.off("click", this._onBurgerIconClick)
                 }
             }, {
@@ -18370,17 +17675,14 @@
                 }
             }, {
                 key: "_detachMQHandlers", value: function () {
-                    enquire.unregister(e.default.MQ.IS_MOBILE_HEADER,
-                        this.MQMobileHandler);
+                    enquire.unregister(e.default.MQ.IS_MOBILE_HEADER, this.MQMobileHandler);
                     enquire.unregister(e.default.MQ.TABLET_AND_DESKTOP_RANGE_HEADER, this.MQTabletAndDesktopHandler)
                 }
             }, {
                 key: "_onInit", value: function () {
                     var a = this;
                     this.onLoaded = !0;
-                    !Modernizr.mq(e.default.MQ.MOBILE_AND_TABLET_RANGE) || this.$el.hasClass(this.CLASS_MOBILE_EXTENDED) || this.$el.hasClass(this.CLASS_MOBILE_STICKY) ? !Modernizr.mq(e.default.MQ.IS_DESKTOP) || this.$el.hasClass(this.CLASS_DESKTOP_STICKY) || this.$el.hasClass(this.CLASS_DESKTOP_EXTENDED) ? (Modernizr.mq(e.default.MQ.IS_DESKTOP) && this.$el.hasClass(this.CLASS_DESKTOP_STICKY) ?
-                        this.$el.addClass(e.default.CLASS.IS_STICKY) : Modernizr.mq(e.default.MQ.IS_DESKTOP) && this.$el.hasClass(this.CLASS_DESKTOP_EXTENDED) ? this.$el.addClass(this.CLASS_IS_EXTENDED) : Modernizr.mq(e.default.MQ.MOBILE_AND_TABLET_RANGE) && this.$el.hasClass(this.CLASS_MOBILE_STICKY) ? this.$el.addClass(e.default.CLASS.IS_STICKY) : Modernizr.mq(e.default.MQ.MOBILE_AND_TABLET_RANGE) && this.$el.hasClass(this.CLASS_MOBILE_EXTENDED) && this.$el.addClass(this.CLASS_IS_EXTENDED), this.$el.hasClass(e.default.CLASS.IS_HIDDEN_STATE) &&
-                    (this.$el.removeClass(e.default.CLASS.IS_HIDDEN_STATE), this.$el.hasClass(this.CLASS_IS_EXTENDED) ? (this.onLoaded && ($(this.OPAGE_CONTENT).css({
+                    !Modernizr.mq(e.default.MQ.MOBILE_AND_TABLET_RANGE) || this.$el.hasClass(this.CLASS_MOBILE_EXTENDED) || this.$el.hasClass(this.CLASS_MOBILE_STICKY) ? !Modernizr.mq(e.default.MQ.IS_DESKTOP) || this.$el.hasClass(this.CLASS_DESKTOP_STICKY) || this.$el.hasClass(this.CLASS_DESKTOP_EXTENDED) ? (Modernizr.mq(e.default.MQ.IS_DESKTOP) && this.$el.hasClass(this.CLASS_DESKTOP_STICKY) ? this.$el.addClass(e.default.CLASS.IS_STICKY) : Modernizr.mq(e.default.MQ.IS_DESKTOP) && this.$el.hasClass(this.CLASS_DESKTOP_EXTENDED) ? this.$el.addClass(this.CLASS_IS_EXTENDED) : Modernizr.mq(e.default.MQ.MOBILE_AND_TABLET_RANGE) && this.$el.hasClass(this.CLASS_MOBILE_STICKY) ? this.$el.addClass(e.default.CLASS.IS_STICKY) : Modernizr.mq(e.default.MQ.MOBILE_AND_TABLET_RANGE) && this.$el.hasClass(this.CLASS_MOBILE_EXTENDED) && this.$el.addClass(this.CLASS_IS_EXTENDED), this.$el.hasClass(e.default.CLASS.IS_HIDDEN_STATE) && (this.$el.removeClass(e.default.CLASS.IS_HIDDEN_STATE), this.$el.hasClass(this.CLASS_IS_EXTENDED) ? (this.onLoaded && ($(this.OPAGE_CONTENT).css({
                         marginTop: 112,
                         transition: "unset"
                     }), this.onLoaded = !1), this.publish(e.default.ACTION.SHOW_SEARCH, this.CLASS_IS_EXTENDED), this.$el.addClass(this.CLASS_HAS_OPEN_SEARCH), this.$body.addClass(this.CLASS_IS_SEARCH_VISIBLE)) : this.$el.hasClass(e.default.CLASS.IS_STICKY) && setTimeout(function () {
@@ -18413,292 +17715,271 @@
                 }
             }, {
                 key: "_onResize", value: function () {
-                    this.$el.outerHeight != this.height &&
-                    (this.height = this.$el.outerHeight(), this._prepareStickyElement())
+                    this.$el.outerHeight != this.height && (this.height = this.$el.outerHeight(), this._prepareStickyElement())
                 }
             }, {
                 key: "_makeSticky", value: function () {
                     this.$el.hasClass(e.default.CLASS.IS_STICKY) || (this.$el.removeClass(this.CLASS_HAS_BACKGROUND), this.$el.removeClass(this.CLASS_FROM_STICKY), this.$el.addClass(e.default.CLASS.IS_STICKY), this.$myPage.css("margin-top", 0), this.$oMenuList.css("margin-top", 0), void 0 != this.$siteBanner.height() ? this.$el.css("margin-top", 0) : void 0 == this.$siteBanner.height() && this.$el.css("margin-top", 0), this.publish(e.default.EVENT.ON_HEADER_STICY))
                 }
-            },
-                {
-                    key: "_makeNormal", value: function () {
-                        this.hasBackground && !this.isMenuButtonActive && this.$el.addClass(this.CLASS_HAS_BACKGROUND);
-                        this.$el.hasClass(e.default.CLASS.IS_STICKY) && (this.$el.addClass(this.CLASS_FROM_STICKY), this.$el.css("padding-top", ""), this.$el.removeClass(e.default.CLASS.IS_STICKY), void 0 != this.$errorBanner.height() && void 0 != this.$siteBanner.height() ? (this.$el.css("margin-top", this.$errorBanner.height() + this.$siteBanner.height()), this.$myPage.css("margin-top", this.$errorBanner.height() +
-                            this.$siteBanner.height()), this.$oMenuList.css("margin-top", this.$errorBanner.height() + this.$siteBanner.height())) : void 0 == this.$errorBanner.height() && void 0 != this.$siteBanner.height() ? (this.$el.css("margin-top", this.$siteBanner.height()), this.$myPage.css("margin-top", this.$siteBanner.height()), this.$oMenuList.css("margin-top", this.$siteBanner.height())) : void 0 == this.$errorBanner.height() && void 0 == this.$siteBanner.height() && (this.$el.css("margin-top", 0), this.$myPage.css("margin-top", 0), this.$oMenuList.css("margin-top",
-                            0)), this.publish(e.default.EVENT.ON_HEADER_NOT_STICKY))
-                    }
-                }, {
-                    key: "_onHideHeader", value: function (a) {
-                        a ? this.$el.addClass(a.class) : this.$el.addClass(this.CLASS_ANIMATE_HIDE)
-                    }
-                }, {
-                    key: "_onShowHeader", value: function () {
-                        this.$searchInput.val(0 < arguments.length && void 0 !== arguments[0] ? arguments[0] : "");
-                        this.$el.removeClass(this.CLASS_HIDE_SEARCH).removeClass(e.default.CLASS.DISPLAY_NONE).removeClass(this.CLASS_ANIMATE_HIDE).removeClass(this.CLASS_IS_HIDDEN)
-                    }
-                }, {
-                    key: "_onDepartmentHover", value: function (a) {
-                        a.preventDefault();
-                        var b = $(a.currentTarget);
-                        this.$el.hasClass(e.default.CLASS.IS_OPEN_STATE) || !b.hasClass(e.default.CLASS.IS_ACTIVE_STATE) || Modernizr.mq(e.default.MQ.IS_MOBILE_HEADER) || (this._closeTooltips(), this._showHeader(a))
-                    }
-                }, {
-                    key: "_onDepartmentClick", value: function (a) {
-                        a.preventDefault();
-                        var b = $(a.currentTarget),
-                            d = this.$el.find(this.SELECTOR_CATEGORY_WRAPPER + "." + e.default.CLASS.IS_VISIBLE_STATE),
-                            f = this.$el.find(this.SELECTOR_CATEGORY_WRAPPER + '[data-title\x3d"' + $(a.target).attr("data-title") + '"]'),
-                            g = this.$el.hasClass(e.default.CLASS.IS_OPEN_STATE),
-                            x = this.$el.hasClass(this.CLASS_HAS_OPEN_SEARCH),
-                            h = b.hasClass(e.default.CLASS.IS_ACTIVE_STATE),
-                            l = Modernizr.mq(e.default.MQ.IS_MOBILE_HEADER) && g || !Modernizr.mq(e.default.MQ.IS_MOBILE_HEADER),
-                            k = !l && !h;
-                        g || (this._closeTooltips(), this._showHeader(a, k));
-                        l && c.default.Http.load(b.attr("href"), this.SELECTOR_PAGE_CONTENT);
-                        g && h ? (this._deselectAllFolders(), Modernizr.mq(e.default.MQ.IS_MOBILE_HEADER) && this._hideHeader()) : (x && this.publish(e.default.ACTION.HIDE_SEARCH), this.$departmentItem.removeClass(e.default.CLASS.IS_ACTIVE_STATE),
-                            b.addClass(e.default.CLASS.IS_ACTIVE_STATE), d.removeClass(e.default.CLASS.IS_VISIBLE_STATE), c.default.Accessibility.hide(d), f.addClass(e.default.CLASS.IS_VISIBLE_STATE), c.default.Accessibility.show(f), Modernizr.mq(e.default.MQ.IS_MOBILE_HEADER) && this.$navigationCurtain.scrollTop(0), this.$navigation.addClass(this.CLASS_HAS_SELECTED_DEPARTMENT), this.headerContentVisible = !0, this.visibleScrollOffset = this.$window.scrollTop())
-                    }
-                }, {
-                    key: "_onFolderClick", value: function (a) {
-                        a.preventDefault();
-                        a = $(a.currentTarget);
-                        var b = a.closest(this.SELECTOR_CATEGORY_WRAPPER), d = a.closest(this.CLASS_MAIN_CATEGORY),
-                            f = a.closest(this.CLASS_CURATED_CATEGORY);
-                        Modernizr.mq(e.default.MQ.IS_DESKTOP) && 0 < d.length || (a.hasClass(e.default.CLASS.IS_OPEN_STATE) ? (a.removeClass(e.default.CLASS.IS_OPEN_STATE), a.siblings(this.SELECTOR_CATEGORY_GROUP).removeClass(e.default.CLASS.IS_VISIBLE_STATE).addClass(this.CLASS_IS_UNDERNEATH), this._scrollToElementinNavigationCurtain(this.$el.find(".department-link").first())) : (b.find(this.SELECTOR_FOLDER).removeClass(e.default.CLASS.IS_OPEN_STATE),
-                            a.addClass(e.default.CLASS.IS_OPEN_STATE), Modernizr.mq(e.default.MQ.IS_DESKTOP) && 0 === d.length || Modernizr.mq(e.default.MQ.IS_LANDSCAPE_TABLET) ? (b = f.find(this.SELECTOR_CATEGORY_GROUP + "." + e.default.CLASS.IS_VISIBLE_STATE), b.removeClass(e.default.CLASS.IS_VISIBLE_STATE).addClass(this.CLASS_IS_UNDERNEATH), c.default.Accessibility.hide(b), b = a.siblings(this.SELECTOR_CATEGORY_GROUP), b.removeClass(this.CLASS_IS_UNDERNEATH).addClass(e.default.CLASS.IS_VISIBLE_STATE), c.default.Accessibility.show(b)) : (b = b.find(this.SELECTOR_CATEGORY_GROUP +
-                            "." + e.default.CLASS.IS_VISIBLE_STATE), b.removeClass(e.default.CLASS.IS_VISIBLE_STATE).addClass(this.CLASS_IS_UNDERNEATH), c.default.Accessibility.hide(b), b = a.siblings(this.SELECTOR_CATEGORY_GROUP), b.removeClass(this.CLASS_IS_UNDERNEATH).addClass(e.default.CLASS.IS_VISIBLE_STATE), c.default.Accessibility.show(b)), this._scrollToElementinNavigationCurtain(a, null, -24)))
-                    }
-                }, {
-                    key: "_deselectAllFolders", value: function (a) {
-                        a = $(this.SELECTOR_CATEGORY_GROUP + "." + e.default.CLASS.IS_VISIBLE_STATE);
-                        a.find("." + e.default.CLASS.IS_SELECTED).removeClass(e.default.CLASS.IS_SELECTED);
-                        c.default.Accessibility.hide(a)
-                    }
-                }, {
-                    key: "_setStaticMobileNotificationTicker", value: function () {
-                        var a = this.$notificationTicker.find("." + e.default.CLASS.IS_VISIBLE_STATE).text();
-                        0 < a.length ? (this.$staticTextField.text(a), this.$staticNotificationTicker.show()) : this.$staticNotificationTicker.hide()
-                    }
-                }, {
-                    key: "_showHeader", value: function (a, b) {
-                        var d = this;
+            }, {
+                key: "_makeNormal", value: function () {
+                    this.hasBackground && !this.isMenuButtonActive && this.$el.addClass(this.CLASS_HAS_BACKGROUND);
+                    this.$el.hasClass(e.default.CLASS.IS_STICKY) && (this.$el.addClass(this.CLASS_FROM_STICKY), this.$el.css("padding-top", ""), this.$el.removeClass(e.default.CLASS.IS_STICKY), void 0 != this.$errorBanner.height() && void 0 != this.$siteBanner.height() ? (this.$el.css("margin-top", this.$errorBanner.height() + this.$siteBanner.height()), this.$myPage.css("margin-top", this.$errorBanner.height() + this.$siteBanner.height()), this.$oMenuList.css("margin-top", this.$errorBanner.height() + this.$siteBanner.height())) : void 0 == this.$errorBanner.height() && void 0 != this.$siteBanner.height() ? (this.$el.css("margin-top", this.$siteBanner.height()), this.$myPage.css("margin-top", this.$siteBanner.height()), this.$oMenuList.css("margin-top", this.$siteBanner.height())) : void 0 == this.$errorBanner.height() && void 0 == this.$siteBanner.height() && (this.$el.css("margin-top", 0), this.$myPage.css("margin-top", 0), this.$oMenuList.css("margin-top", 0)), this.publish(e.default.EVENT.ON_HEADER_NOT_STICKY))
+                }
+            }, {
+                key: "_onHideHeader", value: function (a) {
+                    a ? this.$el.addClass(a.class) : this.$el.addClass(this.CLASS_ANIMATE_HIDE)
+                }
+            }, {
+                key: "_onShowHeader", value: function () {
+                    this.$searchInput.val(0 < arguments.length && void 0 !== arguments[0] ? arguments[0] : "");
+                    this.$el.removeClass(this.CLASS_HIDE_SEARCH).removeClass(e.default.CLASS.DISPLAY_NONE).removeClass(this.CLASS_ANIMATE_HIDE).removeClass(this.CLASS_IS_HIDDEN)
+                }
+            }, {
+                key: "_onDepartmentHover", value: function (a) {
+                    a.preventDefault();
+                    var b = $(a.currentTarget);
+                    this.$el.hasClass(e.default.CLASS.IS_OPEN_STATE) || !b.hasClass(e.default.CLASS.IS_ACTIVE_STATE) || Modernizr.mq(e.default.MQ.IS_MOBILE_HEADER) || (this._closeTooltips(), this._showHeader(a))
+                }
+            }, {
+                key: "_onDepartmentClick", value: function (a) {
+                    a.preventDefault();
+                    var b = $(a.currentTarget),
+                        d = this.$el.find(this.SELECTOR_CATEGORY_WRAPPER + "." + e.default.CLASS.IS_VISIBLE_STATE),
+                        f = this.$el.find(this.SELECTOR_CATEGORY_WRAPPER + '[data-title\x3d"' + $(a.target).attr("data-title") + '"]'),
+                        g = this.$el.hasClass(e.default.CLASS.IS_OPEN_STATE),
+                        x = this.$el.hasClass(this.CLASS_HAS_OPEN_SEARCH),
+                        h = b.hasClass(e.default.CLASS.IS_ACTIVE_STATE),
+                        l = Modernizr.mq(e.default.MQ.IS_MOBILE_HEADER) && g || !Modernizr.mq(e.default.MQ.IS_MOBILE_HEADER),
+                        k = !l && !h;
+                    g || (this._closeTooltips(), this._showHeader(a, k));
+                    l && c.default.Http.load(b.attr("href"), this.SELECTOR_PAGE_CONTENT);
+                    g && h ? (this._deselectAllFolders(), Modernizr.mq(e.default.MQ.IS_MOBILE_HEADER) && this._hideHeader()) : (x && this.publish(e.default.ACTION.HIDE_SEARCH), this.$departmentItem.removeClass(e.default.CLASS.IS_ACTIVE_STATE), b.addClass(e.default.CLASS.IS_ACTIVE_STATE), d.removeClass(e.default.CLASS.IS_VISIBLE_STATE), c.default.Accessibility.hide(d), f.addClass(e.default.CLASS.IS_VISIBLE_STATE), c.default.Accessibility.show(f), Modernizr.mq(e.default.MQ.IS_MOBILE_HEADER) && this.$navigationCurtain.scrollTop(0), this.$navigation.addClass(this.CLASS_HAS_SELECTED_DEPARTMENT), this.headerContentVisible = !0, this.visibleScrollOffset = this.$window.scrollTop())
+                }
+            }, {
+                key: "_onFolderClick", value: function (a) {
+                    a.preventDefault();
+                    a = $(a.currentTarget);
+                    var b = a.closest(this.SELECTOR_CATEGORY_WRAPPER), d = a.closest(this.CLASS_MAIN_CATEGORY),
+                        f = a.closest(this.CLASS_CURATED_CATEGORY);
+                    Modernizr.mq(e.default.MQ.IS_DESKTOP) && 0 < d.length || (a.hasClass(e.default.CLASS.IS_OPEN_STATE) ? (a.removeClass(e.default.CLASS.IS_OPEN_STATE), a.siblings(this.SELECTOR_CATEGORY_GROUP).removeClass(e.default.CLASS.IS_VISIBLE_STATE).addClass(this.CLASS_IS_UNDERNEATH), this._scrollToElementinNavigationCurtain(this.$el.find(".department-link").first())) : (b.find(this.SELECTOR_FOLDER).removeClass(e.default.CLASS.IS_OPEN_STATE), a.addClass(e.default.CLASS.IS_OPEN_STATE), Modernizr.mq(e.default.MQ.IS_DESKTOP) && 0 === d.length || Modernizr.mq(e.default.MQ.IS_LANDSCAPE_TABLET) ? (b = f.find(this.SELECTOR_CATEGORY_GROUP + "." + e.default.CLASS.IS_VISIBLE_STATE), b.removeClass(e.default.CLASS.IS_VISIBLE_STATE).addClass(this.CLASS_IS_UNDERNEATH), c.default.Accessibility.hide(b), b = a.siblings(this.SELECTOR_CATEGORY_GROUP), b.removeClass(this.CLASS_IS_UNDERNEATH).addClass(e.default.CLASS.IS_VISIBLE_STATE), c.default.Accessibility.show(b)) : (b = b.find(this.SELECTOR_CATEGORY_GROUP + "." + e.default.CLASS.IS_VISIBLE_STATE), b.removeClass(e.default.CLASS.IS_VISIBLE_STATE).addClass(this.CLASS_IS_UNDERNEATH), c.default.Accessibility.hide(b), b = a.siblings(this.SELECTOR_CATEGORY_GROUP), b.removeClass(this.CLASS_IS_UNDERNEATH).addClass(e.default.CLASS.IS_VISIBLE_STATE), c.default.Accessibility.show(b)), this._scrollToElementinNavigationCurtain(a, null, -24)))
+                }
+            }, {
+                key: "_deselectAllFolders", value: function (a) {
+                    a = $(this.SELECTOR_CATEGORY_GROUP + "." + e.default.CLASS.IS_VISIBLE_STATE);
+                    a.find("." + e.default.CLASS.IS_SELECTED).removeClass(e.default.CLASS.IS_SELECTED);
+                    c.default.Accessibility.hide(a)
+                }
+            }, {
+                key: "_setStaticMobileNotificationTicker", value: function () {
+                    var a = this.$notificationTicker.find("." + e.default.CLASS.IS_VISIBLE_STATE).text();
+                    0 < a.length ? (this.$staticTextField.text(a), this.$staticNotificationTicker.show()) : this.$staticNotificationTicker.hide()
+                }
+            }, {
+                key: "_showHeader", value: function (a, b) {
+                    var d = this;
+                    this.isOpenOrCloseAnimationInProgress = !0;
+                    Modernizr.mq(e.default.MQ.IS_MOBILE_HEADER) && (this.publish(e.default.ACTION.DISABLE_SCROLL, {$touchScrollElement: this.$el}), this.$burgerIcon.addClass(e.default.CLASS.IS_OPEN_STATE), this._setStaticMobileNotificationTicker());
+                    if (void 0 !== a) {
+                        var f = $(a.currentTarget);
+                        a = this.$el.find(this.SELECTOR_CATEGORY_WRAPPER + '[data-title\x3d"' + f.attr("data-title") + '"]')
+                    } else this.$navigation.hasClass(this.CLASS_HAS_SELECTED_DEPARTMENT) ? (f = this.$el.find(this.SELECTOR_DEPARTMENT + "." + e.default.CLASS.IS_ACTIVE_STATE), a = this.$el.find(this.SELECTOR_CATEGORY_WRAPPER + '[data-title\x3d"' + f.attr("data-title") + '"]')) : a = this.$el.find(this.SELECTOR_DEFAULT_DEPARTMENT);
+                    this.$el.addClass(this.CLASS_IS_OPENING_NAVIGATION);
+                    this.$navigation.addClass(e.default.CLASS.IS_OPENING_STATE);
+                    this.$el.hasClass(this.CLASS_HAS_OPEN_SEARCH) && Modernizr.mq(e.default.MQ.IS_MOBILE_HEADER) && (this.$navigation.removeClass(e.default.CLASS.IS_OPENING_STATE).addClass(e.default.CLASS.IS_OPEN_STATE), this.$el.removeClass(this.CLASS_IS_OPENING_NAVIGATION));
+                    c.default.Accessibility.show(this.$navigationCurtain);
+                    c.default.Accessibility.clear(this.$categoryGroup.filter(this.SELECTOR_VISIBLE_STATE).add(a));
+                    this.$animationWrapper.on("animationend", function (a) {
+                        d.isOpenOrCloseAnimationInProgress = !1;
+                        $(a.target).is($(a.currentTarget)) && (d.$animationWrapper.off("animationend"), d.$navigation.removeClass(e.default.CLASS.IS_OPENING_STATE).addClass(e.default.CLASS.IS_OPEN_STATE), d.$el.removeClass(d.CLASS_IS_OPENING_NAVIGATION), b && c.default.Http.load(f.attr("href"), d.SELECTOR_PAGE_CONTENT), d.subscribe(e.default.EVENT.ON_BODY_CLICKED, d._onBodyClick))
+                    });
+                    this.$el.addClass(e.default.CLASS.IS_OPEN_STATE);
+                    this.publish(e.default.EVENT.ON_NAVIGATION_MENU_OPEN);
+                    a.addClass(e.default.CLASS.IS_VISIBLE_STATE);
+                    this.$categoryMenu = $(this.SELECTOR_CATEGORY_MENU);
+                    this.$categoryMenu.removeClass(e.default.CLASS.IS_HIDDEN_STATE);
+                    this.$curatedContent = $(this.SELECTOR_CURATED_CONTENT);
+                    this.$curatedContent.removeClass(e.default.CLASS.IS_HIDDEN_STATE);
+                    Modernizr.mq(e.default.MQ.IS_MOBILE_HEADER) && $(this.SELECTOR_SEARCH).hasClass(this.CLASS_IS_OPEN) && (this.$categoryMenu = $(this.SELECTOR_CATEGORY_MENU), this.$categoryMenu.addClass(e.default.CLASS.IS_HIDDEN_STATE), this.$curatedContent = $(this.SELECTOR_CURATED_CONTENT), this.$curatedContent.addClass(e.default.CLASS.IS_HIDDEN_STATE));
+                    this.headerContentVisible = !0;
+                    this.visibleScrollOffset = this.$window.scrollTop()
+                }
+            }, {
+                key: "_onBodyClick", value: function (a) {
+                    a.preventDefault();
+                    $(a.currentTarget).is(this.$el) || this._hideHeader()
+                }
+            }, {
+                key: "_onHeaderClick", value: function (a) {
+                    $(a.target).hasClass(e.default.CLASS.OPEN_LIGHTBOX) || a.stopPropagation()
+                }
+            }, {
+                key: "_hideHeader", value: function (a, b) {
+                    var d = this;
+                    if (this.$el.hasClass(e.default.CLASS.IS_OPEN_STATE)) {
+                        var f = this.$el.find(this.SELECTOR_CATEGORY_WRAPPER + "." + e.default.CLASS.IS_VISIBLE_STATE);
                         this.isOpenOrCloseAnimationInProgress = !0;
-                        Modernizr.mq(e.default.MQ.IS_MOBILE_HEADER) && (this.publish(e.default.ACTION.DISABLE_SCROLL, {$touchScrollElement: this.$el}),
-                            this.$burgerIcon.addClass(e.default.CLASS.IS_OPEN_STATE), this._setStaticMobileNotificationTicker());
-                        if (void 0 !== a) {
-                            var f = $(a.currentTarget);
-                            a = this.$el.find(this.SELECTOR_CATEGORY_WRAPPER + '[data-title\x3d"' + f.attr("data-title") + '"]')
-                        } else this.$navigation.hasClass(this.CLASS_HAS_SELECTED_DEPARTMENT) ? (f = this.$el.find(this.SELECTOR_DEPARTMENT + "." + e.default.CLASS.IS_ACTIVE_STATE), a = this.$el.find(this.SELECTOR_CATEGORY_WRAPPER + '[data-title\x3d"' + f.attr("data-title") + '"]')) : a = this.$el.find(this.SELECTOR_DEFAULT_DEPARTMENT);
-                        this.$el.addClass(this.CLASS_IS_OPENING_NAVIGATION);
-                        this.$navigation.addClass(e.default.CLASS.IS_OPENING_STATE);
-                        this.$el.hasClass(this.CLASS_HAS_OPEN_SEARCH) && Modernizr.mq(e.default.MQ.IS_MOBILE_HEADER) && (this.$navigation.removeClass(e.default.CLASS.IS_OPENING_STATE).addClass(e.default.CLASS.IS_OPEN_STATE), this.$el.removeClass(this.CLASS_IS_OPENING_NAVIGATION));
-                        c.default.Accessibility.show(this.$navigationCurtain);
-                        c.default.Accessibility.clear(this.$categoryGroup.filter(this.SELECTOR_VISIBLE_STATE).add(a));
+                        this.$el.add(this.$navigation).removeClass(e.default.CLASS.IS_OPEN_STATE);
+                        this.headerContentVisible = !1;
+                        this.$navigation.addClass(e.default.CLASS.IS_CLOSING_STATE);
+                        this.$el.addClass(this.CLASS_IS_CLOSING_NAVIGATION);
+                        this.$burgerIcon.removeClass(e.default.CLASS.IS_OPEN_STATE);
+                        c.default.Accessibility.hide(this.$navigationCurtain.add(this.$categoryGroup).add(f));
                         this.$animationWrapper.on("animationend", function (a) {
                             d.isOpenOrCloseAnimationInProgress = !1;
-                            $(a.target).is($(a.currentTarget)) && (d.$animationWrapper.off("animationend"), d.$navigation.removeClass(e.default.CLASS.IS_OPENING_STATE).addClass(e.default.CLASS.IS_OPEN_STATE), d.$el.removeClass(d.CLASS_IS_OPENING_NAVIGATION), b && c.default.Http.load(f.attr("href"), d.SELECTOR_PAGE_CONTENT), d.subscribe(e.default.EVENT.ON_BODY_CLICKED, d._onBodyClick))
+                            $(a.target).is($(a.currentTarget)) && (d.$animationWrapper.off("animationend"), d.$navigationCurtain.css({transform: ""}), f.removeClass(e.default.CLASS.IS_VISIBLE_STATE), d.$categoryWrapper.add(d.$navigation).removeClass(e.default.CLASS.IS_CLOSING_STATE), d.$el.removeClass(d.CLASS_IS_CLOSING_NAVIGATION))
                         });
-                        this.$el.addClass(e.default.CLASS.IS_OPEN_STATE);
-                        this.publish(e.default.EVENT.ON_NAVIGATION_MENU_OPEN);
-                        a.addClass(e.default.CLASS.IS_VISIBLE_STATE);
-                        this.$categoryMenu = $(this.SELECTOR_CATEGORY_MENU);
-                        this.$categoryMenu.removeClass(e.default.CLASS.IS_HIDDEN_STATE);
-                        this.$curatedContent = $(this.SELECTOR_CURATED_CONTENT);
-                        this.$curatedContent.removeClass(e.default.CLASS.IS_HIDDEN_STATE);
-                        Modernizr.mq(e.default.MQ.IS_MOBILE_HEADER) && $(this.SELECTOR_SEARCH).hasClass(this.CLASS_IS_OPEN) && (this.$categoryMenu = $(this.SELECTOR_CATEGORY_MENU), this.$categoryMenu.addClass(e.default.CLASS.IS_HIDDEN_STATE), this.$curatedContent =
-                            $(this.SELECTOR_CURATED_CONTENT), this.$curatedContent.addClass(e.default.CLASS.IS_HIDDEN_STATE));
-                        this.headerContentVisible = !0;
-                        this.visibleScrollOffset = this.$window.scrollTop()
+                        this.$el.hasClass(this.CLASS_HAS_OPEN_SEARCH) && Modernizr.mq(e.default.MQ.IS_MOBILE_HEADER) && (this.$categoryWrapper.removeClass(e.default.CLASS.IS_CLOSING_STATE), this.$el.removeClass(this.CLASS_HAS_OPEN_SEARCH), this.$body.removeClass(this.CLASS_IS_SEARCH_VISIBLE));
+                        this.publish(e.default.EVENT.ON_NAVIGATION_MENU_CLOSE);
+                        Modernizr.mq(e.default.MQ.IS_MOBILE_HEADER) && this.publish(e.default.ACTION.ENABLE_SCROLL);
+                        this.publish(e.default.ACTION.HIDE_SEARCH);
+                        this.unsubscribe(e.default.EVENT.ON_BODY_CLICKED, this._onBodyClick);
+                        this._animatePageContent(a, b)
                     }
-                }, {
-                    key: "_onBodyClick", value: function (a) {
-                        a.preventDefault();
-                        $(a.currentTarget).is(this.$el) || this._hideHeader()
+                }
+            }, {
+                key: "_animatePageContent", value: function (a, b) {
+                    var c = this, d = 0;
+                    a && (this.$pageContent.css("transition", "none"), setTimeout(function () {
+                        c.$pageContent.css("transition", "")
+                    }, 500));
+                    this.$pageContent.hasClass(this.CLASS_PAGE_IS_LOADED) && (this.publish(e.default.ACTION.UPDATE_PAGE_CONTENT_MARGIN_CONTRIBUTION, {
+                        element: this.$navigationCurtain,
+                        margin: 0
+                    }), b && (d = parseInt(this.$navigationCurtain.css("padding-bottom"))), this.$pageContent.removeClass(this.CLASS_PAGE_IS_LOADED), this.$window.scrollTop(d))
+                }
+            }, {
+                key: "_onScroll", value: function (a) {
+                    this.currentScrollTop = document.body.scrollTop ? document.body.scrollTop : document.documentElement.scrollTop;
+                    void 0 != this.$siteBanner.height() ? this.BANNER_HEIGHT = this.$siteBanner.height() : this.BANNER_HEIGHT = 0;
+                    void 0 == this.$errorBanner.height() && void 0 == this.$siteBanner.height() && (this.stickyTrigger = 11);
+                    a && "resize" == a.type && this.$el.outerHeight != this.height && this.$window.outerWidth() != this.WINDOW_WIDTH && (this.WINDOW_WIDTH = this.$window.outerWidth(), this._prepareStickyElement());
+                    0 < this.$window.scrollTop() ? this._makeSticky() : this.$window.scrollTop() < this.BANNER_HEIGHT && this._makeNormal();
+                    this.$el.hasClass(e.default.CLASS.IS_STICKY) || Modernizr.mq(e.default.MQ.IS_MOBILE) ? parseInt(this.$el.css("padding-top")) != this.stickyTrigger && this.$window.scrollTop() > this.stickyThreshold && !Modernizr.mq(e.default.MQ.IS_MOBILE) && this.$el.css("padding-top", this.stickyTrigger) : 0 == this.BANNER_HEIGHT && this.$el.css("padding-top", "");
+                    this.headerIsTransparent && this._updateHeaderStates();
+                    this.currentScrollTop > this.BORDER_SCROLL_START && !this.$el.hasClass(this.CLASS_IS_CHECKOUT) ? this.$el.addClass(this.CLASS_HAS_BORDER) : this.$el.removeClass(this.CLASS_HAS_BORDER);
+                    if (!Modernizr.mq(e.default.MQ.IS_MOBILE_HEADER) && this.headerContentVisible && 0 <= this.currentScrollTop) {
+                        a = this.visibleScrollOffset - this.currentScrollTop;
+                        var b = this.$navigationCurtain.outerHeight(!0);
+                        this.$el.outerHeight();
+                        0 <= a ? (this.visibleScrollOffset = this.currentScrollTop, this.$navigationCurtain.css({transform: ""})) : -a < b ? (a < this.CLOSE_SEARCH_MARGIN && this.$el.hasClass(this.CLASS_HAS_OPEN_SEARCH) && this._hideHeader(!0, !0), this.$navigationCurtain.css({transform: "translate3d(0, " + a + "px, 0)"})) : this._hideHeader(!0, !0)
                     }
-                }, {
-                    key: "_onHeaderClick", value: function (a) {
-                        $(a.target).hasClass(e.default.CLASS.OPEN_LIGHTBOX) || a.stopPropagation()
+                }
+            }, {
+                key: "_updateHeaderStates", value: function () {
+                    0 < this.currentScrollTop && !this.headerContentVisible ? (this.$el.removeClass(e.default.CLASS.IS_TRANSPARENT), this.isInverted && this.$el.removeClass(e.default.CLASS.IS_INVERTED)) : 0 != this.currentScrollTop || this.headerContentVisible || (this.$el.addClass(e.default.CLASS.IS_TRANSPARENT), this.isInverted && this.$el.addClass(e.default.CLASS.IS_INVERTED))
+                }
+            }, {
+                key: "_onSearchIconClick", value: function (a) {
+                    a.preventDefault();
+                    a.stopPropagation();
+                    this.isOpenOrCloseAnimationInProgress && Modernizr.mq(e.default.MQ.IS_MOBILE_HEADER) || (this.$el.hasClass(this.CLASS_HAS_OPEN_SEARCH) ? (this.publish(e.default.ACTION.HIDE_SEARCH), this._hideHeader()) : (this.publish(e.default.ACTION.SHOW_SEARCH), this._closeTooltips(), Modernizr.mq(e.default.MQ.IS_MOBILE_HEADER) && this._showHeader()))
+                }
+            }, {
+                key: "_onMobileMatch", value: function () {
+                    this.BORDER_SCROLL_START = 10;
+                    this.$burgerIcon.off("click", this._onBurgerIconClick);
+                    this.$burgerIcon.on("click", this._onBurgerIconClick);
+                    var a = this.$el.find(this.SELECTOR_OPEN_FOLDER);
+                    if (!(1 > a.length)) {
+                        var b = a.siblings(this.SELECTOR_CATEGORY_GROUP);
+                        a.removeClass(e.default.CLASS.IS_OPEN_STATE);
+                        b.removeClass(e.default.CLASS.IS_VISIBLE_STATE).addClass(this.CLASS_IS_UNDERNEATH)
                     }
-                }, {
-                    key: "_hideHeader", value: function (a, b) {
-                        var d = this;
-                        if (this.$el.hasClass(e.default.CLASS.IS_OPEN_STATE)) {
-                            var f =
-                                this.$el.find(this.SELECTOR_CATEGORY_WRAPPER + "." + e.default.CLASS.IS_VISIBLE_STATE);
-                            this.isOpenOrCloseAnimationInProgress = !0;
-                            this.$el.add(this.$navigation).removeClass(e.default.CLASS.IS_OPEN_STATE);
-                            this.headerContentVisible = !1;
-                            this.$navigation.addClass(e.default.CLASS.IS_CLOSING_STATE);
-                            this.$el.addClass(this.CLASS_IS_CLOSING_NAVIGATION);
-                            this.$burgerIcon.removeClass(e.default.CLASS.IS_OPEN_STATE);
-                            c.default.Accessibility.hide(this.$navigationCurtain.add(this.$categoryGroup).add(f));
-                            this.$animationWrapper.on("animationend",
-                                function (a) {
-                                    d.isOpenOrCloseAnimationInProgress = !1;
-                                    $(a.target).is($(a.currentTarget)) && (d.$animationWrapper.off("animationend"), d.$navigationCurtain.css({transform: ""}), f.removeClass(e.default.CLASS.IS_VISIBLE_STATE), d.$categoryWrapper.add(d.$navigation).removeClass(e.default.CLASS.IS_CLOSING_STATE), d.$el.removeClass(d.CLASS_IS_CLOSING_NAVIGATION))
-                                });
-                            this.$el.hasClass(this.CLASS_HAS_OPEN_SEARCH) && Modernizr.mq(e.default.MQ.IS_MOBILE_HEADER) && (this.$categoryWrapper.removeClass(e.default.CLASS.IS_CLOSING_STATE),
-                                this.$el.removeClass(this.CLASS_HAS_OPEN_SEARCH), this.$body.removeClass(this.CLASS_IS_SEARCH_VISIBLE));
-                            this.publish(e.default.EVENT.ON_NAVIGATION_MENU_CLOSE);
-                            Modernizr.mq(e.default.MQ.IS_MOBILE_HEADER) && this.publish(e.default.ACTION.ENABLE_SCROLL);
-                            this.publish(e.default.ACTION.HIDE_SEARCH);
-                            this.unsubscribe(e.default.EVENT.ON_BODY_CLICKED, this._onBodyClick);
-                            this._animatePageContent(a, b)
-                        }
-                    }
-                }, {
-                    key: "_animatePageContent", value: function (a, b) {
-                        var c = this, d = 0;
-                        a && (this.$pageContent.css("transition", "none"),
-                            setTimeout(function () {
-                                c.$pageContent.css("transition", "")
-                            }, 500));
-                        this.$pageContent.hasClass(this.CLASS_PAGE_IS_LOADED) && (this.publish(e.default.ACTION.UPDATE_PAGE_CONTENT_MARGIN_CONTRIBUTION, {
-                            element: this.$navigationCurtain,
-                            margin: 0
-                        }), b && (d = parseInt(this.$navigationCurtain.css("padding-bottom"))), this.$pageContent.removeClass(this.CLASS_PAGE_IS_LOADED), this.$window.scrollTop(d))
-                    }
-                }, {
-                    key: "_onScroll", value: function (a) {
-                        this.currentScrollTop = document.body.scrollTop ? document.body.scrollTop : document.documentElement.scrollTop;
-                        void 0 != this.$siteBanner.height() ? this.BANNER_HEIGHT = this.$siteBanner.height() : this.BANNER_HEIGHT = 0;
-                        void 0 == this.$errorBanner.height() && void 0 == this.$siteBanner.height() && (this.stickyTrigger = 11);
-                        a && "resize" == a.type && this.$el.outerHeight != this.height && this.$window.outerWidth() != this.WINDOW_WIDTH && (this.WINDOW_WIDTH = this.$window.outerWidth(), this._prepareStickyElement());
-                        0 < this.$window.scrollTop() ? this._makeSticky() : this.$window.scrollTop() < this.BANNER_HEIGHT && this._makeNormal();
-                        this.$el.hasClass(e.default.CLASS.IS_STICKY) ||
-                        Modernizr.mq(e.default.MQ.IS_MOBILE) ? parseInt(this.$el.css("padding-top")) != this.stickyTrigger && this.$window.scrollTop() > this.stickyThreshold && !Modernizr.mq(e.default.MQ.IS_MOBILE) && this.$el.css("padding-top", this.stickyTrigger) : 0 == this.BANNER_HEIGHT && this.$el.css("padding-top", "");
-                        this.headerIsTransparent && this._updateHeaderStates();
-                        this.currentScrollTop > this.BORDER_SCROLL_START && !this.$el.hasClass(this.CLASS_IS_CHECKOUT) ? this.$el.addClass(this.CLASS_HAS_BORDER) : this.$el.removeClass(this.CLASS_HAS_BORDER);
-                        if (!Modernizr.mq(e.default.MQ.IS_MOBILE_HEADER) && this.headerContentVisible && 0 <= this.currentScrollTop) {
-                            a = this.visibleScrollOffset - this.currentScrollTop;
-                            var b = this.$navigationCurtain.outerHeight(!0);
-                            this.$el.outerHeight();
-                            0 <= a ? (this.visibleScrollOffset = this.currentScrollTop, this.$navigationCurtain.css({transform: ""})) : -a < b ? (a < this.CLOSE_SEARCH_MARGIN && this.$el.hasClass(this.CLASS_HAS_OPEN_SEARCH) && this._hideHeader(!0, !0), this.$navigationCurtain.css({transform: "translate3d(0, " + a + "px, 0)"})) : this._hideHeader(!0,
-                                !0)
-                        }
-                    }
-                }, {
-                    key: "_updateHeaderStates", value: function () {
-                        0 < this.currentScrollTop && !this.headerContentVisible ? (this.$el.removeClass(e.default.CLASS.IS_TRANSPARENT), this.isInverted && this.$el.removeClass(e.default.CLASS.IS_INVERTED)) : 0 != this.currentScrollTop || this.headerContentVisible || (this.$el.addClass(e.default.CLASS.IS_TRANSPARENT), this.isInverted && this.$el.addClass(e.default.CLASS.IS_INVERTED))
-                    }
-                }, {
-                    key: "_onSearchIconClick", value: function (a) {
-                        a.preventDefault();
-                        a.stopPropagation();
-                        this.isOpenOrCloseAnimationInProgress &&
-                        Modernizr.mq(e.default.MQ.IS_MOBILE_HEADER) || (this.$el.hasClass(this.CLASS_HAS_OPEN_SEARCH) ? (this.publish(e.default.ACTION.HIDE_SEARCH), this._hideHeader()) : (this.publish(e.default.ACTION.SHOW_SEARCH), this._closeTooltips(), Modernizr.mq(e.default.MQ.IS_MOBILE_HEADER) && this._showHeader()))
-                    }
-                }, {
-                    key: "_onMobileMatch", value: function () {
-                        this.BORDER_SCROLL_START = 10;
-                        this.$burgerIcon.off("click", this._onBurgerIconClick);
-                        this.$burgerIcon.on("click", this._onBurgerIconClick);
-                        var a = this.$el.find(this.SELECTOR_OPEN_FOLDER);
-                        if (!(1 > a.length)) {
-                            var b = a.siblings(this.SELECTOR_CATEGORY_GROUP);
-                            a.removeClass(e.default.CLASS.IS_OPEN_STATE);
-                            b.removeClass(e.default.CLASS.IS_VISIBLE_STATE).addClass(this.CLASS_IS_UNDERNEATH)
-                        }
-                        this.$animationWrapper.scrollTop(0)
-                    }
-                }, {
-                    key: "_onTabletAndDesktopMatch", value: function () {
-                        var a = this.$el.find(this.SELECTOR_MAIN_CAT_OPEN_FOLDER),
-                            b = a.siblings(this.SELECTOR_CATEGORY_GROUP);
-                        a.addClass(e.default.CLASS.IS_OPEN_STATE);
-                        b.removeClass(this.CLASS_IS_UNDERNEATH).addClass(e.default.CLASS.IS_VISIBLE_STATE);
-                        this.BORDER_SCROLL_START = 0;
-                        this.$burgerIcon.off("click", this._onBurgerIconClick);
-                        if (Modernizr.mq(e.default.MQ.IS_TABLET)) this.$burgerIcon.on("click", this._onBurgerIconClick);
-                        this.$staticNotificationTicker.hide()
-                    }
-                }, {
-                    key: "_onBurgerIconClick", value: function (a) {
-                        if (!this.isOpenOrCloseAnimationInProgress) if (this.$burgerIcon.hasClass(e.default.CLASS.IS_OPEN_STATE) && !this.$el.hasClass(this.CLASS_HAS_OPEN_SEARCH)) this._hideHeader(); else {
-                            if (this.$el.hasClass(this.CLASS_HAS_OPEN_SEARCH) && (this.publish(e.default.ACTION.HIDE_SEARCH),
-                                this.$el.hasClass(this.CLASS_MOBILE_EXTENDED))) {
-                                this._showHeader();
-                                this.$navigationCurtain.scrollTop(0);
-                                return
-                            }
+                    this.$animationWrapper.scrollTop(0)
+                }
+            }, {
+                key: "_onTabletAndDesktopMatch", value: function () {
+                    var a = this.$el.find(this.SELECTOR_MAIN_CAT_OPEN_FOLDER),
+                        b = a.siblings(this.SELECTOR_CATEGORY_GROUP);
+                    a.addClass(e.default.CLASS.IS_OPEN_STATE);
+                    b.removeClass(this.CLASS_IS_UNDERNEATH).addClass(e.default.CLASS.IS_VISIBLE_STATE);
+                    this.BORDER_SCROLL_START = 0;
+                    this.$burgerIcon.off("click", this._onBurgerIconClick);
+                    if (Modernizr.mq(e.default.MQ.IS_TABLET)) this.$burgerIcon.on("click", this._onBurgerIconClick);
+                    this.$staticNotificationTicker.hide()
+                }
+            }, {
+                key: "_onBurgerIconClick", value: function (a) {
+                    if (!this.isOpenOrCloseAnimationInProgress) if (this.$burgerIcon.hasClass(e.default.CLASS.IS_OPEN_STATE) && !this.$el.hasClass(this.CLASS_HAS_OPEN_SEARCH)) this._hideHeader(); else {
+                        if (this.$el.hasClass(this.CLASS_HAS_OPEN_SEARCH) && (this.publish(e.default.ACTION.HIDE_SEARCH), this.$el.hasClass(this.CLASS_MOBILE_EXTENDED))) {
                             this._showHeader();
-                            this.$navigationCurtain.scrollTop(0)
+                            this.$navigationCurtain.scrollTop(0);
+                            return
                         }
+                        this._showHeader();
+                        this.$navigationCurtain.scrollTop(0)
                     }
-                }, {
-                    key: "_scrollToElementinNavigationCurtain", value: function (a, b) {
-                        var c = 2 < arguments.length && void 0 !== arguments[2] ? arguments[2] : 0, d = 0;
-                        0 != c && (d = (0 === this.$window.scrollTop() ? a.offset().top - this.$el.outerHeight() + c : a.position().top - 8) + this.$navigationCurtain.scrollTop());
-                        this.$navigationCurtain.animate({scrollTop: d}, this.ANIMATION_DURATION,
-                            b && "function" == typeof b ? b : "")
-                    }
-                }, {
-                    key: "_onTooltipTriggerClick", value: function (a) {
-                        a.preventDefault();
-                        var b = $(a.currentTarget).parent();
-                        this.$tooltipContent.removeClass(e.default.CLASS.IS_OPEN_STATE);
-                        c.default.Accessibility.hide(this.$tooltipContent);
-                        b.hasClass(e.default.CLASS.IS_OPEN_STATE) ? b.removeClass(e.default.CLASS.IS_OPEN_STATE) : (this.$tooltipTrigger.parent().removeClass(e.default.CLASS.IS_OPEN_STATE), b.addClass(e.default.CLASS.IS_OPEN_STATE), $(a.currentTarget).hasClass(this.CLASS_INFO_ICON) ?
-                            (this.$navigationCurtain.attr("aria-hidden", "false"), this.$informationSection.addClass(e.default.CLASS.IS_OPEN_STATE), a = this.$informationSection) : (this.$navigationCurtain.attr("aria-hidden", "true"), a = b.find(this.SELECTOR_TOOLTIP_CONTENT)), c.default.Accessibility.show(a), this._hideHeader(), this.subscribe(e.default.EVENT.ON_BODY_CLICKED, this._closeTooltips))
-                    }
-                }, {
-                    key: "_closeTooltips", value: function () {
-                        this.$tooltipTrigger.parent().removeClass(e.default.CLASS.IS_OPEN_STATE);
-                        this.$tooltipContent.removeClass(e.default.CLASS.IS_OPEN_STATE);
-                        c.default.Accessibility.hide(this.$tooltipContent);
-                        this.unsubscribe(e.default.EVENT.ON_BODY_CLICKED, this._closeTooltips)
-                    }
-                }, {
-                    key: "_onPageContentReplaced", value: function () {
-                        this.headerIsTransparent = this.$el.hasClass(e.default.CLASS.IS_TRANSPARENT)
-                    }
-                }, {
-                    key: "_blockInversion", value: function () {
-                        var a = this.$body.css("backgroundColor"), b = $(this.SELECTOR_HERO).css("backgroundColor");
-                        b && (b = this._getContrast(b), 128 < b ? this.$el.addClass(this.CLASS_BLOCK_INVERSION) : -1 === b && a && (b = this._getContrast(a), (128 < b || -1 ===
-                            b) && this.$el.addClass(this.CLASS_BLOCK_INVERSION)))
-                    }
-                }, {
-                    key: "_getContrast", value: function (a) {
-                        return a.match(/\d+(!,)|(\d+\.\d+|\d+)/g).reduce(this._getAverageContrast)
-                    }
-                }, {
-                    key: "_getAverageContrast", value: function (a, b, c, d) {
-                        return 4 === d.length && c === d.length - 1 ? 0 === parseFloat(b) ? -1 : parseFloat(a) * parseFloat(b) / (d.length - 1) : 3 === d.length && c === d.length - 1 ? (parseFloat(a) + parseFloat(b)) / d.length : parseFloat(a) + parseFloat(b)
-                    }
-                }, {
-                    key: "_hideLoadIndicator", value: function () {
-                        clearTimeout(this.loadIndicatorTimer);
-                        this.$iconNavigation.removeClass(e.default.CLASS.IS_LOADING)
-                    }
-                },
-                {
-                    key: "_showLoadIndicator", value: function () {
-                        var a = this;
-                        clearTimeout(this.loadIndicatorTimer);
-                        this.loadIndicatorTimer = setTimeout(function () {
-                            a.$iconNavigation.addClass(e.default.CLASS.IS_LOADING)
-                        }, 250)
-                    }
-                }, {
-                    key: "_onErrorBannerResize", value: function (a) {
-                        var b = this;
-                        a.animationDuration ? (this.$el.animate({"margin-top": a.newHeight}, a.animationDuration), this.$myPage.animate({"margin-top": a.newHeight}, a.animationDuration), this.$oMenuList.animate({"margin-top": a.newHeight}, a.animationDuration)) : (this.$el.css("margin-top",
-                            a.newHeight), this.$myPage.css("margin-top", a.newHeight), this.$oMenuList.css("margin-top", a.newHeight), this.$el.hasClass(e.default.CLASS.IS_STICKY) && !this.$el.hasClass(this.CLASS_ANIMATE_HIDE) && (void 0 != this.$errorBanner.height() && void 0 != this.$siteBanner.height() ? (this.$el.css("margin-top", this.$errorBanner.height()), this.$myPage.css("margin-top", this.$errorBanner.height()), this.$oMenuList.css("margin-top", this.$errorBanner.height())) : void 0 != this.$errorBanner.height() && void 0 == this.$siteBanner.height() ?
-                            (this.$el.css("margin-top", a.newHeight), this.$myPage.css("margin-top", a.newHeight), this.$oMenuList.css("margin-top", a.newHeight)) : (this.$el.css("margin-top", 0), this.$myPage.css("margin-top", 0), this.$oMenuList.css("margin-top", 0))));
-                        setTimeout(function () {
-                            b.$el.hasClass(e.default.CLASS.IS_STICKY) && b.$el.removeClass(e.default.CLASS.IS_STICKY);
-                            b._onScroll()
-                        }, this.DELAY_TIME)
-                    }
-                }]);
+                }
+            }, {
+                key: "_scrollToElementinNavigationCurtain", value: function (a, b) {
+                    var c = 2 < arguments.length && void 0 !== arguments[2] ? arguments[2] : 0, d = 0;
+                    0 != c && (d = (0 === this.$window.scrollTop() ? a.offset().top - this.$el.outerHeight() + c : a.position().top - 8) + this.$navigationCurtain.scrollTop());
+                    this.$navigationCurtain.animate({scrollTop: d}, this.ANIMATION_DURATION, b && "function" == typeof b ? b : "")
+                }
+            }, {
+                key: "_onTooltipTriggerClick", value: function (a) {
+                    a.preventDefault();
+                    var b = $(a.currentTarget).parent();
+                    this.$tooltipContent.removeClass(e.default.CLASS.IS_OPEN_STATE);
+                    c.default.Accessibility.hide(this.$tooltipContent);
+                    b.hasClass(e.default.CLASS.IS_OPEN_STATE) ? b.removeClass(e.default.CLASS.IS_OPEN_STATE) : (this.$tooltipTrigger.parent().removeClass(e.default.CLASS.IS_OPEN_STATE), b.addClass(e.default.CLASS.IS_OPEN_STATE), $(a.currentTarget).hasClass(this.CLASS_INFO_ICON) ? (this.$navigationCurtain.attr("aria-hidden", "false"), this.$informationSection.addClass(e.default.CLASS.IS_OPEN_STATE), a = this.$informationSection) : (this.$navigationCurtain.attr("aria-hidden", "true"), a = b.find(this.SELECTOR_TOOLTIP_CONTENT)), c.default.Accessibility.show(a), this._hideHeader(), this.subscribe(e.default.EVENT.ON_BODY_CLICKED, this._closeTooltips))
+                }
+            }, {
+                key: "_closeTooltips", value: function () {
+                    this.$tooltipTrigger.parent().removeClass(e.default.CLASS.IS_OPEN_STATE);
+                    this.$tooltipContent.removeClass(e.default.CLASS.IS_OPEN_STATE);
+                    c.default.Accessibility.hide(this.$tooltipContent);
+                    this.unsubscribe(e.default.EVENT.ON_BODY_CLICKED, this._closeTooltips)
+                }
+            }, {
+                key: "_onPageContentReplaced", value: function () {
+                    this.headerIsTransparent = this.$el.hasClass(e.default.CLASS.IS_TRANSPARENT)
+                }
+            }, {
+                key: "_blockInversion", value: function () {
+                    var a = this.$body.css("backgroundColor"), b = $(this.SELECTOR_HERO).css("backgroundColor");
+                    b && (b = this._getContrast(b), 128 < b ? this.$el.addClass(this.CLASS_BLOCK_INVERSION) : -1 === b && a && (b = this._getContrast(a), (128 < b || -1 === b) && this.$el.addClass(this.CLASS_BLOCK_INVERSION)))
+                }
+            }, {
+                key: "_getContrast", value: function (a) {
+                    return a.match(/\d+(!,)|(\d+\.\d+|\d+)/g).reduce(this._getAverageContrast)
+                }
+            }, {
+                key: "_getAverageContrast", value: function (a, b, c, d) {
+                    return 4 === d.length && c === d.length - 1 ? 0 === parseFloat(b) ? -1 : parseFloat(a) * parseFloat(b) / (d.length - 1) : 3 === d.length && c === d.length - 1 ? (parseFloat(a) + parseFloat(b)) / d.length : parseFloat(a) + parseFloat(b)
+                }
+            }, {
+                key: "_hideLoadIndicator", value: function () {
+                    clearTimeout(this.loadIndicatorTimer);
+                    this.$iconNavigation.removeClass(e.default.CLASS.IS_LOADING)
+                }
+            }, {
+                key: "_showLoadIndicator", value: function () {
+                    var a = this;
+                    clearTimeout(this.loadIndicatorTimer);
+                    this.loadIndicatorTimer = setTimeout(function () {
+                        a.$iconNavigation.addClass(e.default.CLASS.IS_LOADING)
+                    }, 250)
+                }
+            }, {
+                key: "_onErrorBannerResize", value: function (a) {
+                    var b = this;
+                    a.animationDuration ? (this.$el.animate({"margin-top": a.newHeight}, a.animationDuration), this.$myPage.animate({"margin-top": a.newHeight}, a.animationDuration), this.$oMenuList.animate({"margin-top": a.newHeight}, a.animationDuration)) : (this.$el.css("margin-top", a.newHeight), this.$myPage.css("margin-top", a.newHeight), this.$oMenuList.css("margin-top", a.newHeight), this.$el.hasClass(e.default.CLASS.IS_STICKY) && !this.$el.hasClass(this.CLASS_ANIMATE_HIDE) && (void 0 != this.$errorBanner.height() && void 0 != this.$siteBanner.height() ? (this.$el.css("margin-top", this.$errorBanner.height()), this.$myPage.css("margin-top", this.$errorBanner.height()), this.$oMenuList.css("margin-top", this.$errorBanner.height())) : void 0 != this.$errorBanner.height() && void 0 == this.$siteBanner.height() ? (this.$el.css("margin-top", a.newHeight), this.$myPage.css("margin-top", a.newHeight), this.$oMenuList.css("margin-top", a.newHeight)) : (this.$el.css("margin-top", 0), this.$myPage.css("margin-top", 0), this.$oMenuList.css("margin-top", 0))));
+                    setTimeout(function () {
+                        b.$el.hasClass(e.default.CLASS.IS_STICKY) && b.$el.removeClass(e.default.CLASS.IS_STICKY);
+                        b._onScroll()
+                    }, this.DELAY_TIME)
+                }
+            }]);
             return b
         }(p.default);
         t.exports = f
     }, {
-        "./../../../../js/base/appeaser-component-base.js": 47, "./../../../../js/base/logger.js": 51,
-        "./../../enums.js": 65, "./../../utils.js": 112
+        "./../../../../js/base/appeaser-component-base.js": 47,
+        "./../../../../js/base/logger.js": 51,
+        "./../../enums.js": 65,
+        "./../../utils.js": 112
     }],
     88: [function (f, t, p) {
         function m(c) {
@@ -18720,8 +18001,7 @@
                 var d = a[b];
                 d.enumerable = d.enumerable || !1;
                 d.configurable = !0;
-                "value" in d && (d.writable =
-                    !0);
+                "value" in d && (d.writable = !0);
                 Object.defineProperty(c, d.key, d)
             }
         }
@@ -18742,8 +18022,7 @@
 
         function v(c, a) {
             if ("function" !== typeof a && null !== a) throw new TypeError("Super expression must either be null or a function");
-            c.prototype = Object.create(a &&
-                a.prototype, {constructor: {value: c, writable: !0, configurable: !0}});
+            c.prototype = Object.create(a && a.prototype, {constructor: {value: c, writable: !0, configurable: !0}});
             a && n(c, a)
         }
 
@@ -18772,8 +18051,7 @@
         }
 
         function u() {
-            if ("undefined" ===
-                typeof Reflect || !Reflect.construct || Reflect.construct.sham) return !1;
+            if ("undefined" === typeof Reflect || !Reflect.construct || Reflect.construct.sham) return !1;
             if ("function" === typeof Proxy) return !0;
             try {
                 return Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {
@@ -18794,8 +18072,7 @@
         var h = k(f("./../../../../js/base/logger.js")), e = k(f("./../../enums.js"));
         f = function (c) {
             function a() {
-                if (!(this instanceof
-                    a)) throw new TypeError("Cannot call a class as a function");
+                if (!(this instanceof a)) throw new TypeError("Cannot call a class as a function");
                 var c = b.apply(this, arguments);
                 h.default.INFO(c.constructor.name, ":: Constructor");
                 c._jQueryScopeBinding();
@@ -18815,8 +18092,7 @@
                 }
             }, {
                 key: "_declareConstants", value: function () {
-                    this.SELECTOR_PLAY_BUTTON =
-                        ".video-play-button";
+                    this.SELECTOR_PLAY_BUTTON = ".video-play-button";
                     this.CLASS_HIDDEN_VIDEO = "has-hidden-video";
                     this.SELECTOR_TAKEOVER_WRAPPER = ".takeover-wrapper";
                     this.ANIMATION_DURATION = 300;
@@ -18834,8 +18110,7 @@
                     this._stopChange = this._stopChange.bind(this)
                 }
             }, {
-                key: "_attachSubscribers",
-                value: function () {
+                key: "_attachSubscribers", value: function () {
                     h.default.INFO(this.constructor.name, ":: _attachSubscribers");
                     this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady)
                 }
@@ -18850,8 +18125,7 @@
                 }
             }, {
                 key: "_attachDOMListeners", value: function () {
-                    this.$playButton.on("click",
-                        this._showVideo)
+                    this.$playButton.on("click", this._showVideo)
                 }
             }, {
                 key: "_detachDOMListeners", value: function () {
@@ -18866,8 +18140,7 @@
                 }
             }, {
                 key: "_onDOMReady", value: function () {
-                    h.default.INFO(this.constructor.name,
-                        ":: _onDOMReady");
+                    h.default.INFO(this.constructor.name, ":: _onDOMReady");
                     this._cacheDOMElements();
                     this._attachSubscribers();
                     this._attachDOMListeners();
@@ -18882,8 +18155,7 @@
                 key: "_startChange", value: function () {
                     var a = 0;
                     this.SET_INTERVAL = setInterval(function () {
-                        0 == a ? (a += 1, $(".hero-takeover.double-image .image-wrapper \x3e :nth-child(odd)").show(), $(".hero-takeover.double-image .image-wrapper \x3e :nth-child(even)").hide()) :
-                            (a = 0, $(".hero-takeover.double-image .image-wrapper \x3e :nth-child(odd)").hide(), $(".hero-takeover.double-image .image-wrapper \x3e :nth-child(even)").show())
+                        0 == a ? (a += 1, $(".hero-takeover.double-image .image-wrapper \x3e :nth-child(odd)").show(), $(".hero-takeover.double-image .image-wrapper \x3e :nth-child(even)").hide()) : (a = 0, $(".hero-takeover.double-image .image-wrapper \x3e :nth-child(odd)").hide(), $(".hero-takeover.double-image .image-wrapper \x3e :nth-child(even)").show())
                     }, 5E3)
                 }
             }, {
@@ -18899,7 +18171,8 @@
         t.exports = f
     }, {
         "./../../../../js/base/appeaser-component-base.js": 47,
-        "./../../../../js/base/logger.js": 51, "./../../enums.js": 65
+        "./../../../../js/base/logger.js": 51,
+        "./../../enums.js": 65
     }],
     89: [function (f, t, p) {
         function m(e) {
@@ -18921,8 +18194,7 @@
                 var b = c[a];
                 b.enumerable = b.enumerable || !1;
                 b.configurable = !0;
-                "value" in
-                b && (b.writable = !0);
+                "value" in b && (b.writable = !0);
                 Object.defineProperty(e, b.key, b)
             }
         }
@@ -18943,8 +18215,7 @@
 
         function v(e, c) {
             if ("function" !== typeof c && null !== c) throw new TypeError("Super expression must either be null or a function");
-            e.prototype =
-                Object.create(c && c.prototype, {constructor: {value: e, writable: !0, configurable: !0}});
+            e.prototype = Object.create(c && c.prototype, {constructor: {value: e, writable: !0, configurable: !0}});
             c && n(e, c)
         }
 
@@ -19012,8 +18283,7 @@
                     this.OVERLAY_CLASSES = "q-opacity-90 q-bg-lightbox-overlay-grey";
                     this.SELECTOR_DROPDOWN = '[class^\x3d"m-dropdown"]';
                     this.CLASS_OPEN_NTN_LIGHTBOX = "open-newsletter-ntn-lightbox";
-                    this.CLASS_COUNTRY_DROPDOWN =
-                        "country-dropdown";
+                    this.CLASS_COUNTRY_DROPDOWN = "country-dropdown";
                     this.CLASS_IS_VISIBLE = "is-visible";
                     this.CLASS_NEWSLETTER_POPUP = ".o-newsletter-popup";
                     this.CLASS_LANGUAGE_SELECT = ".language-select";
@@ -19028,8 +18298,7 @@
             }, {
                 key: "_attachSubscribers", value: function () {
                     l(g(c.prototype), "_attachSubscribers", this).call(this);
-                    this.subscribe(h.default.EVENT.ON_KEY_DOWN,
-                        this._onKeyDown)
+                    this.subscribe(h.default.EVENT.ON_KEY_DOWN, this._onKeyDown)
                 }
             }, {
                 key: "_detachSubscribers", value: function () {
@@ -19051,8 +18320,7 @@
                     $(a.target).hasClass(h.default.CLASS.OPEN_LIGHTBOX) || $(a.target).hasClass(this.CLASS_OPEN_NTN_LIGHTBOX) || a.stopPropagation();
                     $(a.target).is(this.$el) && (this.publish(h.default.EVENT.ON_OUTSIDE_LIGHTBOX_CLICKED), this._hide());
                     if (this.$el.find(this.SELECTOR_FILTER_DROPDOWN).length) {
-                        a =
-                            $(a.target);
+                        a = $(a.target);
                         var b = this.$el.find(this.SELECTOR_FILTER_DROPDOWN);
                         !b.hasClass(h.default.CLASS.IS_OPEN_STATE) || b.hasClass(this.CLASS_COUNTRY_DROPDOWN) || a.closest(this.SELECTOR_DROPDOWN).length && a.closest(this.SELECTOR_DROPDOWN).is(b) || (b.removeClass(h.default.CLASS.IS_OPEN_STATE), this.publish(h.default.EVENT.ON_DROPDOWN_CLOSED_FILTERS))
                     }
@@ -19060,8 +18328,7 @@
             }, {
                 key: "_show", value: function (a) {
                     this.contentHistory.push(a);
-                    1 < this.contentHistory.length ? this._performContentSwitch(a) : (this.subscribe(h.default.EVENT.ON_OVERLAY_CLICKED,
-                        this._hide), this._openLightbox(a), this.publish(h.default.EVENT.ON_LIGHTBOX_OPEN, a), this.publish(h.default.EVENT.ON_LIGHTBOX_LEVEL_CHANGED, this.contentHistory.length), Modernizr.mq(h.default.MQ.IS_MOBILE) && (a = this.$body.scrollTop(), this.$body.animate({scrollTop: a - 1}, 10).animate({scrollTop: a}, 10)));
+                    1 < this.contentHistory.length ? this._performContentSwitch(a) : (this.subscribe(h.default.EVENT.ON_OVERLAY_CLICKED, this._hide), this._openLightbox(a), this.publish(h.default.EVENT.ON_LIGHTBOX_OPEN, a), this.publish(h.default.EVENT.ON_LIGHTBOX_LEVEL_CHANGED, this.contentHistory.length), Modernizr.mq(h.default.MQ.IS_MOBILE) && (a = this.$body.scrollTop(), this.$body.animate({scrollTop: a - 1}, 10).animate({scrollTop: a}, 10)));
                     Cookies.get(this.TEMPLATE_LANGUAGE_SELECT) && this.$newsletterPopup.removeClass(h.default.CLASS.IS_VISIBLE_STATE)
                 }
             }]);
@@ -19094,8 +18361,7 @@
             }
         }
 
-        function r(a,
-                   b, c) {
+        function r(a, b, c) {
             b && q(a.prototype, b);
             c && q(a, c);
             return a
@@ -19111,12 +18377,7 @@
 
         function v(a, b) {
             if ("function" !== typeof b && null !== b) throw new TypeError("Super expression must either be null or a function");
-            a.prototype = Object.create(b && b.prototype, {
-                constructor: {
-                    value: a, writable: !0,
-                    configurable: !0
-                }
-            });
+            a.prototype = Object.create(b && b.prototype, {constructor: {value: a, writable: !0, configurable: !0}});
             b && n(a, b)
         }
 
@@ -19145,8 +18406,7 @@
         }
 
         function u() {
-            if ("undefined" === typeof Reflect || !Reflect.construct ||
-                Reflect.construct.sham) return !1;
+            if ("undefined" === typeof Reflect || !Reflect.construct || Reflect.construct.sham) return !1;
             if ("function" === typeof Proxy) return !0;
             try {
                 return Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {
@@ -19167,8 +18427,7 @@
         var h = k(f("./../../../../js/base/logger.js")), e = k(f("./../../enums.js")), c = k(f("./../../utils.js"));
         f = function (a) {
             function b() {
-                if (!(this instanceof
-                    b)) throw new TypeError("Cannot call a class as a function");
+                if (!(this instanceof b)) throw new TypeError("Cannot call a class as a function");
                 var a = d.apply(this, arguments);
                 h.default.INFO(a.constructor.name, ":: Constructor");
                 a._declareConstants();
@@ -19188,8 +18447,7 @@
                     l(g(b.prototype), "destroy", this).call(this)
                 }
             }, {
-                key: "_declareConstants",
-                value: function () {
+                key: "_declareConstants", value: function () {
                     this.SELECTOR_RIGHT_SHOW_MORE_BUTTON = ".show-more-right-btn";
                     this.SELECTOR_LEFT_SHOW_MORE_BUTTON = ".show-more-left-btn";
                     this.SELECTOR_A_LINK = ".a-link";
@@ -19209,8 +18467,7 @@
                     this._checkOpacity()
                 }
             }, {
-                key: "_cacheDOMElements",
-                value: function () {
+                key: "_cacheDOMElements", value: function () {
                     this.$window = $(window);
                     this.$showMoreRightBtn = this.$el.find(this.SELECTOR_RIGHT_SHOW_MORE_BUTTON);
                     this.$showMoreLeftBtn = this.$el.find(this.SELECTOR_LEFT_SHOW_MORE_BUTTON);
@@ -19223,8 +18480,7 @@
                 }
             }, {
                 key: "_attachSubscribers", value: function () {
-                    h.default.INFO(this.constructor.name,
-                        ":: _attachSubscribers");
+                    h.default.INFO(this.constructor.name, ":: _attachSubscribers");
                     this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
                     this.subscribe(e.default.EVENT.ON_OVERLAY_CLICKED, this._closeMobileFilter)
                 }
@@ -19235,78 +18491,73 @@
                     this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
                     this.unsubscribe(e.default.EVENT.ON_OVERLAY_CLICKED, this._closeMobileFilter)
                 }
-            },
-                {
-                    key: "_onFrameworkReady", value: function () {
-                        this._adjustNavWidth()
-                    }
-                }, {
-                    key: "_attachDOMListeners", value: function () {
-                        this.$showMoreRightBtn.on("click", this._showMoreRight);
-                        this.$showMoreLeftBtn.on("click", this._showMoreLeft);
-                        this.$scrollElement.on("scroll", this._showOrHideBtn);
-                        this.$window.on("resize", this._adjustNavWidth)
-                    }
-                }, {
-                    key: "_detachDOMListeners", value: function () {
-                        this.$showMoreRightBtn.off("click", this._showMoreRight);
-                        this.$showMoreLeftBtn.off("click", this._showMoreLeft);
-                        this.$scrollElement.off("scroll",
-                            this._showOrHideBtn);
-                        this.$window.off("resize", this._adjustNavWidth)
-                    }
-                }, {
-                    key: "_attachMQHandlers", value: function () {
-                    }
-                }, {
-                    key: "_detachMQHandlers", value: function () {
-                    }
-                }, {
-                    key: "_jQueryScopeBinding", value: function () {
-                        this._onDOMReady = this._onDOMReady.bind(this);
-                        this._showMoreRight = this._showMoreRight.bind(this);
-                        this._showMoreLeft = this._showMoreLeft.bind(this);
-                        this._animateScroll = this._animateScroll.bind(this);
-                        this._showOrHideBtn = this._showOrHideBtn.bind(this);
-                        this._adjustNavWidth = this._adjustNavWidth.bind(this);
-                        this._checkOpacity = this._checkOpacity.bind(this)
-                    }
-                }, {
-                    key: "_adjustNavWidth", value: function () {
-                        var a = this.$window.width() / 2;
-                        this.$scrollElementWidth > a ? this.$el.addClass(this.CLASS_IS_LONG) : this.$el.removeClass(this.CLASS_IS_LONG)
-                    }
-                }, {
-                    key: "_showMoreRight", value: function () {
-                        var a = this.$scrollElement.scrollLeft() + 200;
-                        this.$scrollElement.animate({scrollLeft: a}, 50)
-                    }
-                }, {
-                    key: "_showMoreLeft", value: function () {
-                        this.$scrollElement.animate({scrollLeft: 0}, 50)
-                    }
-                }, {
-                    key: "_animateScroll", value: function (a) {
-                        var b = this, c = 0,
-                            d = setInterval(function () {
-                                b.$scrollElement[0].scrollLeft = a ? b.$scrollElement[0].scrollLeft + 20 : b.$scrollElement[0].scrollLeft - 20;
-                                c += 5;
-                                c >= b.scrollLength && (window.clearInterval(d), b.currentXScroll = b.$scrollElement.scrollLeft(), b._showOrHideBtn())
-                            }, this.INTERVAL_TIMER)
-                    }
-                }, {
-                    key: "_showOrHideBtn", value: function () {
-                        var a = this.$scrollElement.scrollLeft();
-                        1 > a ? (this.$showMoreLeftBtn.addClass(this.CLASS_IS_TRANSPARENT), this.$showMoreLeftBtn.removeClass(e.default.CLASS.IS_VISIBLE_STATE)) : (this.$showMoreLeftBtn.addClass(e.default.CLASS.IS_VISIBLE_STATE),
-                            this.$showMoreLeftBtn.removeClass(this.CLASS_IS_TRANSPARENT));
-                        a + this.$scrollElement.outerWidth(!0) > this.$scrollElement[0].scrollWidth - this.SCROLL_MARGIN ? (this.$showMoreRightBtn.addClass(this.CLASS_IS_TRANSPARENT), this.$showMoreRightBtn.removeClass(e.default.CLASS.IS_VISIBLE_STATE)) : (this.$showMoreRightBtn.addClass(e.default.CLASS.IS_VISIBLE_STATE), this.$showMoreRightBtn.removeClass(this.CLASS_IS_TRANSPARENT))
-                    }
-                }, {
-                    key: "_checkOpacity", value: function () {
-                        0 == this.$el.css("opacity") ? c.default.Accessibility.preventFocus(this.$links) :
-                            c.default.Accessibility.allowFocus(this.$links)
-                    }
-                }]);
+            }, {
+                key: "_onFrameworkReady", value: function () {
+                    this._adjustNavWidth()
+                }
+            }, {
+                key: "_attachDOMListeners", value: function () {
+                    this.$showMoreRightBtn.on("click", this._showMoreRight);
+                    this.$showMoreLeftBtn.on("click", this._showMoreLeft);
+                    this.$scrollElement.on("scroll", this._showOrHideBtn);
+                    this.$window.on("resize", this._adjustNavWidth)
+                }
+            }, {
+                key: "_detachDOMListeners", value: function () {
+                    this.$showMoreRightBtn.off("click", this._showMoreRight);
+                    this.$showMoreLeftBtn.off("click", this._showMoreLeft);
+                    this.$scrollElement.off("scroll", this._showOrHideBtn);
+                    this.$window.off("resize", this._adjustNavWidth)
+                }
+            }, {
+                key: "_attachMQHandlers", value: function () {
+                }
+            }, {
+                key: "_detachMQHandlers", value: function () {
+                }
+            }, {
+                key: "_jQueryScopeBinding", value: function () {
+                    this._onDOMReady = this._onDOMReady.bind(this);
+                    this._showMoreRight = this._showMoreRight.bind(this);
+                    this._showMoreLeft = this._showMoreLeft.bind(this);
+                    this._animateScroll = this._animateScroll.bind(this);
+                    this._showOrHideBtn = this._showOrHideBtn.bind(this);
+                    this._adjustNavWidth = this._adjustNavWidth.bind(this);
+                    this._checkOpacity = this._checkOpacity.bind(this)
+                }
+            }, {
+                key: "_adjustNavWidth", value: function () {
+                    var a = this.$window.width() / 2;
+                    this.$scrollElementWidth > a ? this.$el.addClass(this.CLASS_IS_LONG) : this.$el.removeClass(this.CLASS_IS_LONG)
+                }
+            }, {
+                key: "_showMoreRight", value: function () {
+                    var a = this.$scrollElement.scrollLeft() + 200;
+                    this.$scrollElement.animate({scrollLeft: a}, 50)
+                }
+            }, {
+                key: "_showMoreLeft", value: function () {
+                    this.$scrollElement.animate({scrollLeft: 0}, 50)
+                }
+            }, {
+                key: "_animateScroll", value: function (a) {
+                    var b = this, c = 0, d = setInterval(function () {
+                        b.$scrollElement[0].scrollLeft = a ? b.$scrollElement[0].scrollLeft + 20 : b.$scrollElement[0].scrollLeft - 20;
+                        c += 5;
+                        c >= b.scrollLength && (window.clearInterval(d), b.currentXScroll = b.$scrollElement.scrollLeft(), b._showOrHideBtn())
+                    }, this.INTERVAL_TIMER)
+                }
+            }, {
+                key: "_showOrHideBtn", value: function () {
+                    var a = this.$scrollElement.scrollLeft();
+                    1 > a ? (this.$showMoreLeftBtn.addClass(this.CLASS_IS_TRANSPARENT), this.$showMoreLeftBtn.removeClass(e.default.CLASS.IS_VISIBLE_STATE)) : (this.$showMoreLeftBtn.addClass(e.default.CLASS.IS_VISIBLE_STATE), this.$showMoreLeftBtn.removeClass(this.CLASS_IS_TRANSPARENT));
+                    a + this.$scrollElement.outerWidth(!0) > this.$scrollElement[0].scrollWidth - this.SCROLL_MARGIN ? (this.$showMoreRightBtn.addClass(this.CLASS_IS_TRANSPARENT), this.$showMoreRightBtn.removeClass(e.default.CLASS.IS_VISIBLE_STATE)) : (this.$showMoreRightBtn.addClass(e.default.CLASS.IS_VISIBLE_STATE), this.$showMoreRightBtn.removeClass(this.CLASS_IS_TRANSPARENT))
+                }
+            }, {
+                key: "_checkOpacity", value: function () {
+                    0 == this.$el.css("opacity") ? c.default.Accessibility.preventFocus(this.$links) : c.default.Accessibility.allowFocus(this.$links)
+                }
+            }]);
             return b
         }(p.default);
         t.exports = f
@@ -19350,8 +18601,7 @@
         function l(c, a, b) {
             l = "undefined" !== typeof Reflect && Reflect.get ? Reflect.get : function (a, b, c) {
                 for (; !Object.prototype.hasOwnProperty.call(a, b) && (a = g(a), null !== a);) ;
-                if (a) return b = Object.getOwnPropertyDescriptor(a, b), b.get ? b.get.call(c) :
-                    b.value
+                if (a) return b = Object.getOwnPropertyDescriptor(a, b), b.get ? b.get.call(c) : b.value
             };
             return l(c, a, b || c)
         }
@@ -19399,8 +18649,7 @@
 
         function g(c) {
             g = Object.setPrototypeOf ? Object.getPrototypeOf : function (a) {
-                return a.__proto__ ||
-                    Object.getPrototypeOf(a)
+                return a.__proto__ || Object.getPrototypeOf(a)
             };
             return g(c)
         }
@@ -19442,8 +18691,7 @@
                     this.infowindow.open(this.$map, a)
                 }
             }, {
-                key: "_onMarkerClick",
-                value: function (b) {
+                key: "_onMarkerClick", value: function (b) {
                     l(g(a.prototype), "_onMarkerClick", this).call(this, b);
                     this._closeInfoBox();
                     this._openInfoBox(b)
@@ -19488,11 +18736,10 @@
         }
 
         function r(f, h, e) {
-            r = "undefined" !== typeof Reflect && Reflect.get ?
-                Reflect.get : function (c, a, b) {
-                    for (; !Object.prototype.hasOwnProperty.call(c, a) && (c = u(c), null !== c);) ;
-                    if (c) return a = Object.getOwnPropertyDescriptor(c, a), a.get ? a.get.call(b) : a.value
-                };
+            r = "undefined" !== typeof Reflect && Reflect.get ? Reflect.get : function (c, a, b) {
+                for (; !Object.prototype.hasOwnProperty.call(c, a) && (c = u(c), null !== c);) ;
+                if (c) return a = Object.getOwnPropertyDescriptor(c, a), a.get ? a.get.call(b) : a.value
+            };
             return r(f, h, e || f)
         }
 
@@ -19530,9 +18777,8 @@
             if ("undefined" === typeof Reflect || !Reflect.construct || Reflect.construct.sham) return !1;
             if ("function" === typeof Proxy) return !0;
             try {
-                return Boolean.prototype.valueOf.call(Reflect.construct(Boolean,
-                    [], function () {
-                    })), !0
+                return Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {
+                })), !0
             } catch (g) {
                 return !1
             }
@@ -19575,8 +18821,7 @@
                 }
             }, {
                 key: "_jQueryScopeBinding", value: function () {
-                    r(u(g.prototype), "_jQueryScopeBinding",
-                        this).call(this);
+                    r(u(g.prototype), "_jQueryScopeBinding", this).call(this);
                     this._validateStaffCard = this._validateStaffCard.bind(this)
                 }
             }, {
@@ -19594,8 +18839,7 @@
                 }
             }, {
                 key: "_detachDOMListeners", value: function () {
-                    r(u(g.prototype), "_detachDOMListeners",
-                        this).call(this);
+                    r(u(g.prototype), "_detachDOMListeners", this).call(this);
                     this.$numberInput.off("keydown", this._validateStaffCard)
                 }
             }, {
@@ -19635,8 +18879,7 @@
             }
         }
 
-        function r(c,
-                   a, b) {
+        function r(c, a, b) {
             a && q(c.prototype, a);
             b && q(c, b);
             return c
@@ -19652,12 +18895,7 @@
 
         function v(c, a) {
             if ("function" !== typeof a && null !== a) throw new TypeError("Super expression must either be null or a function");
-            c.prototype = Object.create(a && a.prototype, {
-                constructor: {
-                    value: c, writable: !0,
-                    configurable: !0
-                }
-            });
+            c.prototype = Object.create(a && a.prototype, {constructor: {value: c, writable: !0, configurable: !0}});
             a && n(c, a)
         }
 
@@ -19686,8 +18924,7 @@
         }
 
         function u() {
-            if ("undefined" === typeof Reflect || !Reflect.construct ||
-                Reflect.construct.sham) return !1;
+            if ("undefined" === typeof Reflect || !Reflect.construct || Reflect.construct.sham) return !1;
             if ("function" === typeof Proxy) return !0;
             try {
                 return Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {
@@ -19729,8 +18966,7 @@
             }, {
                 key: "_declareConstants", value: function () {
                     this.SELECTOR_ACTIVE_MENU_ITEM = "li.is-active";
-                    this.SELECTOR_SCROLLABLE_WRAPPER =
-                        ".o-list";
+                    this.SELECTOR_SCROLLABLE_WRAPPER = ".o-list";
                     this.SELECTOR_SCROLLABLE_LIST = this.SELECTOR_SCROLLABLE_WRAPPER + " ul";
                     this.NAVIGATION_ITEM_WIDTH = 0;
                     this.ANIMATION_DURATION = 350
@@ -19745,8 +18981,7 @@
                 }
             }, {
                 key: "_jQueryScopeBinding", value: function () {
-                    this._onDOMReady =
-                        this._onDOMReady.bind(this);
+                    this._onDOMReady = this._onDOMReady.bind(this);
                     this._centerCurrentNavigationIcon = this._centerCurrentNavigationIcon.bind(this);
                     this._adjustingItemsWidth = this._adjustingItemsWidth.bind(this)
                 }
@@ -19758,8 +18993,7 @@
             }, {
                 key: "_detachSubscribers", value: function () {
                     h.default.INFO(this.constructor.name, ":: _detachSubscribers");
-                    this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY,
-                        this._onDOMReady);
+                    this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady);
                     this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady)
                 }
             }, {
@@ -19789,8 +19023,7 @@
             }, {
                 key: "_adjustingItemsWidth", value: function () {
                     var a = this.$scrollableWrapper.outerWidth(), b = this.$scrollableList.outerWidth();
-                    a < b ? (this.NAVIGATION_ITEM_WIDTH || (this.NAVIGATION_ITEM_WIDTH = this.$scrollableListItem.outerWidth()), b = parseInt(a / this.NAVIGATION_ITEM_WIDTH) +
-                        .5, this.$scrollableListItem.css("min-width", Math.floor(a / b) + "px")) : this.$scrollableListItem.css("min-width", "")
+                    a < b ? (this.NAVIGATION_ITEM_WIDTH || (this.NAVIGATION_ITEM_WIDTH = this.$scrollableListItem.outerWidth()), b = parseInt(a / this.NAVIGATION_ITEM_WIDTH) + .5, this.$scrollableListItem.css("min-width", Math.floor(a / b) + "px")) : this.$scrollableListItem.css("min-width", "")
                 }
             }]);
             return a
@@ -19807,8 +19040,7 @@
             m = "function" === typeof Symbol && "symbol" === typeof Symbol.iterator ? function (a) {
                 return typeof a
             } : function (a) {
-                return a && "function" === typeof Symbol && a.constructor === Symbol && a !== Symbol.prototype ?
-                    "symbol" : typeof a
+                return a && "function" === typeof Symbol && a.constructor === Symbol && a !== Symbol.prototype ? "symbol" : typeof a
             };
             return m(c)
         }
@@ -19836,8 +19068,7 @@
         function l(c, a, b) {
             l = "undefined" !== typeof Reflect && Reflect.get ? Reflect.get : function (a, b, c) {
                 for (; !Object.prototype.hasOwnProperty.call(a, b) && (a = g(a), null !== a);) ;
-                if (a) return b = Object.getOwnPropertyDescriptor(a,
-                    b), b.get ? b.get.call(c) : b.value
+                if (a) return b = Object.getOwnPropertyDescriptor(a, b), b.get ? b.get.call(c) : b.value
             };
             return l(c, a, b || c)
         }
@@ -19863,8 +19094,7 @@
                 if (a) {
                     var d = g(this).constructor;
                     b = Reflect.construct(b, arguments, d)
-                } else b = b.apply(this,
-                    arguments);
+                } else b = b.apply(this, arguments);
                 if (!b || "object" !== m(b) && "function" !== typeof b) {
                     if (void 0 === this) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
                     b = this
@@ -19886,8 +19116,7 @@
 
         function g(c) {
             g = Object.setPrototypeOf ? Object.getPrototypeOf : function (a) {
-                return a.__proto__ ||
-                    Object.getPrototypeOf(a)
+                return a.__proto__ || Object.getPrototypeOf(a)
             };
             return g(c)
         }
@@ -19908,8 +19137,7 @@
             v(a, c);
             var b = w(a);
             r(a, [{
-                key: "destroy",
-                value: function () {
+                key: "destroy", value: function () {
                     h.default.INFO(this.constructor.name, ":: Destructor");
                     this._detachDOMListeners();
                     this._detachSubscribers();
@@ -19928,8 +19156,7 @@
                     this._onDOMReady = this._onDOMReady.bind(this)
                 }
             }, {
-                key: "_attachSubscribers",
-                value: function () {
+                key: "_attachSubscribers", value: function () {
                     h.default.INFO(this.constructor.name, ":: _attachSubscribers");
                     this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
                     this.subscribe(e.default.EVENT.ON_NAVIGATION_MENU_OPEN, this._onNavigationOpen);
@@ -19939,8 +19166,7 @@
                 key: "_detachSubscribers", value: function () {
                     h.default.INFO(this.constructor.name, ":: _detachSubscribers");
                     this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady);
-                    this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY,
-                        this._onFrameworkReady);
+                    this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
                     this.unsubscribe(e.default.EVENT.ON_NAVIGATION_MENU_OPEN, this._onNavigationOpen);
                     this.unsubscribe(e.default.EVENT.ON_NAVIGATION_MENU_CLOSE, this._onNavigationClose)
                 }
@@ -19957,8 +19183,7 @@
                 }
             }, {
                 key: "_onDOMReady", value: function () {
-                    h.default.INFO(this.constructor.name,
-                        ":: _onDOMReady");
+                    h.default.INFO(this.constructor.name, ":: _onDOMReady");
                     this._cacheDOMElements();
                     this._attachSubscribers();
                     this._attachDOMListeners()
@@ -19975,8 +19200,7 @@
                 }
             }, {
                 key: "_onNavigationClose", value: function () {
-                    this.$navigationCurtain.off("touchstart",
-                        this._onNavigationTouchStart);
+                    this.$navigationCurtain.off("touchstart", this._onNavigationTouchStart);
                     this.$navigationCurtain.off("touchmove", this._onNavigationTouchMove)
                 }
             }, {
@@ -20035,8 +19259,7 @@
         function l(a, b, c) {
             l = "undefined" !== typeof Reflect && Reflect.get ? Reflect.get : function (a, b, c) {
                 for (; !Object.prototype.hasOwnProperty.call(a, b) && (a = g(a), null !== a);) ;
-                if (a) return b = Object.getOwnPropertyDescriptor(a, b), b.get ? b.get.call(c) :
-                    b.value
+                if (a) return b = Object.getOwnPropertyDescriptor(a, b), b.get ? b.get.call(c) : b.value
             };
             return l(a, b, c || a)
         }
@@ -20084,8 +19307,7 @@
 
         function g(a) {
             g = Object.setPrototypeOf ? Object.getPrototypeOf : function (a) {
-                return a.__proto__ ||
-                    Object.getPrototypeOf(a)
+                return a.__proto__ || Object.getPrototypeOf(a)
             };
             return g(a)
         }
@@ -20103,8 +19325,7 @@
                 return a
             }
 
-            v(b,
-                a);
+            v(b, a);
             var d = w(b);
             r(b, [{
                 key: "destroy", value: function () {
@@ -20146,8 +19367,7 @@
                     this._setVisibilityState = this._setVisibilityState.bind(this);
                     this._onSubmitClick = this._onSubmitClick.bind(this);
                     this._showNewsletterLighbox = this._showNewsletterLighbox.bind(this);
-                    this._hideNewsletterLighbox =
-                        this._hideNewsletterLighbox.bind(this)
+                    this._hideNewsletterLighbox = this._hideNewsletterLighbox.bind(this)
                 }
             }, {
                 key: "_attachSubscribers", value: function () {
@@ -20156,8 +19376,7 @@
                     this.subscribe(e.default.EVENT.ON_PAGE_CONTENT_REPLACED, this._setVisibilityState);
                     this.subscribe(e.default.ACTION.OPEN_NEWSLETTER_LIGHTBOX, this._showNewsletterLighbox);
                     this.subscribe(e.default.ACTION.OPEN_NEWSLETTER_NTN_LIGHTBOX, this._showNewsletterNtnLighbox);
-                    this.subscribe(e.default.EVENT.ON_DROPDOWN_CLOSED_FILTERS,
-                        this._closedDropdownFilter)
+                    this.subscribe(e.default.EVENT.ON_DROPDOWN_CLOSED_FILTERS, this._closedDropdownFilter)
                 }
             }, {
                 key: "_detachSubscribers", value: function () {
@@ -20166,8 +19385,7 @@
                     this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
                     this.unsubscribe(e.default.EVENT.ON_PAGE_CONTENT_REPLACED, this._setVisibilityState);
                     this.unsubscribe(e.default.ACTION.OPEN_NEWSLETTER_LIGHTBOX, this._showNewsletterLighbox);
-                    this.unsubscribe(e.default.ACTION.OPEN_NEWSLETTER_NTN_LIGHTBOX,
-                        this._showNewsletterNtnLighbox);
+                    this.unsubscribe(e.default.ACTION.OPEN_NEWSLETTER_NTN_LIGHTBOX, this._showNewsletterNtnLighbox);
                     this.unsubscribe(e.default.EVENT.ON_DROPDOWN_CLOSED_FILTERS, this._closedDropdownFilter)
                 }
             }, {
@@ -20185,8 +19403,7 @@
                 }
             }, {
                 key: "_onDOMReady", value: function () {
-                    h.default.INFO(this.constructor.name,
-                        ":: _onDOMReady");
+                    h.default.INFO(this.constructor.name, ":: _onDOMReady");
                     this._cacheDOMElements();
                     this._attachSubscribers();
                     this._attachDOMListeners();
@@ -20201,8 +19418,7 @@
                     }, this.POPUP_DELAY_TIME))
                 }
             }, {
-                key: "_showNewsletterLighbox",
-                value: function () {
+                key: "_showNewsletterLighbox", value: function () {
                     this.$el.hasClass(this.CLASS_IS_NEWSLETTER_NTN) || Cookies.get(this.CLASS_LANGUAGE_SELECT) || (this.$el.addClass(e.default.CLASS.IS_VISIBLE_STATE), this.publish(e.default.EVENT.ON_NEWSLETTER_SIGNUP_OPENED))
                 }
             }, {
@@ -20210,8 +19426,7 @@
                     this.$el.hasClass(this.CLASS_IS_NEWSLETTER_NTN) && !Cookies.get(this.CLASS_LANGUAGE_SELECT) && (this.$el.addClass(e.default.CLASS.IS_VISIBLE_STATE), this.publish(e.default.EVENT.ON_NEWSLETTER_SIGNUP_OPENED))
                 }
             }, {
-                key: "_hideNewsletterLighbox",
-                value: function () {
+                key: "_hideNewsletterLighbox", value: function () {
                     this.$el.removeClass(e.default.CLASS.IS_VISIBLE_STATE)
                 }
             }, {
@@ -20226,8 +19441,7 @@
                 }
             }, {
                 key: "_dropdownFilterValidation", value: function () {
-                    this.$dropDownFilter.length && (this.$el.find(this.SELECTOR_INPUT).val() !== this.$el.find(this.SELECTOR_OPTION_SELECTED).html() ? this.$dropDownFilter.addClass(e.default.CLASS.HAS_ERROR) :
-                        this.$dropDownFilter.removeClass(e.default.CLASS.HAS_ERROR))
+                    this.$dropDownFilter.length && (this.$el.find(this.SELECTOR_INPUT).val() !== this.$el.find(this.SELECTOR_OPTION_SELECTED).html() ? this.$dropDownFilter.addClass(e.default.CLASS.HAS_ERROR) : this.$dropDownFilter.removeClass(e.default.CLASS.HAS_ERROR))
                 }
             }, {
                 key: "_onSubmitClick", value: function () {
@@ -20247,7 +19461,9 @@
         t.exports = f
     }, {
         "./../../../../js/base/appeaser-component-base.js": 47,
-        "./../../../../js/base/logger.js": 51, "./../../enums.js": 65, "./../../utils.js": 112
+        "./../../../../js/base/logger.js": 51,
+        "./../../enums.js": 65,
+        "./../../utils.js": 112
     }],
     96: [function (f, t, p) {
         function m(c) {
@@ -20268,8 +19484,7 @@
             for (var b = 0; b < a.length; b++) {
                 var d = a[b];
                 d.enumerable = d.enumerable || !1;
-                d.configurable =
-                    !0;
+                d.configurable = !0;
                 "value" in d && (d.writable = !0);
                 Object.defineProperty(c, d.key, d)
             }
@@ -20373,41 +19588,39 @@
                 key: "_jQueryScopeBinding", value: function () {
                     this._onDOMReady = this._onDOMReady.bind(this)
                 }
-            },
-                {
-                    key: "_onDOMReady", value: function () {
-                        h.default.INFO(this.constructor.name, ":: _onDOMReady");
-                        this._cacheDOMElements();
-                        this._attachSubscribers();
-                        this._attachDOMListeners();
-                        this._fixPaddingsOnQuantities()
-                    }
-                }, {
-                    key: "_cacheDOMElements", value: function () {
-                        this.$orderRows = this.$el.find(this.SELECTOR_ORDER_ROW)
-                    }
-                }, {
-                    key: "_attachSubscribers", value: function () {
-                    }
-                }, {
-                    key: "_detachSubscribers", value: function () {
-                    }
-                }, {
-                    key: "_attachDOMListeners", value: function () {
-                    }
-                }, {
-                    key: "_detachDOMListeners", value: function () {
-                    }
-                }, {
-                    key: "_fixPaddingsOnQuantities",
-                    value: function () {
-                        var a = this;
-                        this.$orderRows.each(function (b, c) {
-                            b = $(c).find(a.SELECTOR_QUANTITY).outerWidth();
-                            $(c).find(a.SELECTOR_PRODUCT_NAME).css("padding-left", b + a.X_RIGHT_MARGIN + "px")
-                        })
-                    }
-                }]);
+            }, {
+                key: "_onDOMReady", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _onDOMReady");
+                    this._cacheDOMElements();
+                    this._attachSubscribers();
+                    this._attachDOMListeners();
+                    this._fixPaddingsOnQuantities()
+                }
+            }, {
+                key: "_cacheDOMElements", value: function () {
+                    this.$orderRows = this.$el.find(this.SELECTOR_ORDER_ROW)
+                }
+            }, {
+                key: "_attachSubscribers", value: function () {
+                }
+            }, {
+                key: "_detachSubscribers", value: function () {
+                }
+            }, {
+                key: "_attachDOMListeners", value: function () {
+                }
+            }, {
+                key: "_detachDOMListeners", value: function () {
+                }
+            }, {
+                key: "_fixPaddingsOnQuantities", value: function () {
+                    var a = this;
+                    this.$orderRows.each(function (b, c) {
+                        b = $(c).find(a.SELECTOR_QUANTITY).outerWidth();
+                        $(c).find(a.SELECTOR_PRODUCT_NAME).css("padding-left", b + a.X_RIGHT_MARGIN + "px")
+                    })
+                }
+            }]);
             return a
         }(p.default);
         t.exports = f
@@ -20422,8 +19635,7 @@
             m = "function" === typeof Symbol && "symbol" === typeof Symbol.iterator ? function (a) {
                 return typeof a
             } : function (a) {
-                return a &&
-                "function" === typeof Symbol && a.constructor === Symbol && a !== Symbol.prototype ? "symbol" : typeof a
+                return a && "function" === typeof Symbol && a.constructor === Symbol && a !== Symbol.prototype ? "symbol" : typeof a
             };
             return m(a)
         }
@@ -20450,8 +19662,7 @@
 
         function l(a, b, c) {
             l = "undefined" !== typeof Reflect && Reflect.get ? Reflect.get : function (a, b, c) {
-                for (; !Object.prototype.hasOwnProperty.call(a,
-                    b) && (a = g(a), null !== a);) ;
+                for (; !Object.prototype.hasOwnProperty.call(a, b) && (a = g(a), null !== a);) ;
                 if (a) return b = Object.getOwnPropertyDescriptor(a, b), b.get ? b.get.call(c) : b.value
             };
             return l(a, b, c || a)
@@ -20476,8 +19687,7 @@
             return function () {
                 var c = g(a);
                 if (b) {
-                    var e =
-                        g(this).constructor;
+                    var e = g(this).constructor;
                     c = Reflect.construct(c, arguments, e)
                 } else c = c.apply(this, arguments);
                 if (!c || "object" !== m(c) && "function" !== typeof c) {
@@ -20500,10 +19710,9 @@
         }
 
         function g(a) {
-            g =
-                Object.setPrototypeOf ? Object.getPrototypeOf : function (a) {
-                    return a.__proto__ || Object.getPrototypeOf(a)
-                };
+            g = Object.setPrototypeOf ? Object.getPrototypeOf : function (a) {
+                return a.__proto__ || Object.getPrototypeOf(a)
+            };
             return g(a)
         }
 
@@ -20545,135 +19754,129 @@
                     this.CLASS_OBJECTFIT_FALLBACK = "compat-object-fit";
                     this.CLASS_HAS_FILTER_OPEN = "has-filter-open"
                 }
-            },
-                {
-                    key: "_onDOMReady", value: function () {
-                        h.default.INFO(this.constructor.name, ":: _onDOMReady");
-                        this._cacheDOMElements();
-                        this._attachSubscribers();
-                        this._attachDOMListeners();
-                        this._setInitialVisibilityState();
-                        this._addSupportForObjectFit();
-                        this._removeMultipleForms();
-                        $(window).off("popstate");
-                        $(window).on("popstate", this._onHistoryNavigation)
-                    }
-                }, {
-                    key: "_cacheDOMElements", value: function () {
-                        this.$window = $(window);
-                        this.$mobileFilter = $(this.SELECTOR_MOBILE_FILTER);
-                        this.$lpConfig = $(this.SELECTOR_LP_CONFIG_DIV);
-                        this.$searchPage = $(this.SELECTOR_PAGE_SEARCH);
-                        this.$signInAccordion = this.$el.find(this.SELECTOR_SIGN_IN_WRAPPER).find(this.SELECTOR_IS_SIGN_IN_ACCORDION)
-                    }
-                }, {
-                    key: "_jQueryScopeBinding", value: function () {
-                        this._onDOMReady = this._onDOMReady.bind(this);
-                        this._showPageContent = this._showPageContent.bind(this);
-                        this._hidePageContent = this._hidePageContent.bind(this);
-                        this._updateMarginMap = this._updateMarginMap.bind(this);
-                        this._updateMarginForExtended = this._updateMarginForExtended.bind(this);
-                        this._onHistoryNavigation =
-                            this._onHistoryNavigation.bind(this);
-                        this._removeMultipleForms = this._removeMultipleForms.bind(this)
-                    }
-                }, {
-                    key: "_attachSubscribers", value: function () {
-                        h.default.INFO(this.constructor.name, ":: _attachSubscribers");
-                        this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
-                        this.subscribe(e.default.EVENT.ON_PAGE_CONTENT_REPLACED, this._onPageContentReplaced);
-                        this.subscribe(e.default.ACTION.SHOW_PAGE_CONTENT, this._showPageContent);
-                        this.subscribe(e.default.ACTION.HIDE_PAGE_CONTENT, this._hidePageContent);
-                        this.subscribe(e.default.ACTION.UPDATE_PAGE_CONTENT_MARGIN_CONTRIBUTION, this._updateMarginMap);
-                        this.subscribe(e.default.ACTION.UPDATE_PAGE_CONTENT_MARGIN, this._updateMarginForExtended)
-                    }
-                }, {
-                    key: "_detachSubscribers", value: function () {
-                        h.default.INFO(this.constructor.name, ":: _detachSubscribers");
-                        this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
-                        this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady);
-                        this.unsubscribe(e.default.EVENT.ON_PAGE_CONTENT_REPLACED, this._onPageContentReplaced);
-                        this.unsubscribe(e.default.ACTION.SHOW_PAGE_CONTENT, this._showPageContent);
-                        this.unsubscribe(e.default.ACTION.HIDE_PAGE_CONTENT, this._hidePageContent);
-                        this.unsubscribe(e.default.ACTION.UPDATE_PAGE_CONTENT_MARGIN_CONTRIBUTION, this._updateMarginMap);
-                        this.unsubscribe(e.default.ACTION.UPDATE_PAGE_CONTENT_MARGIN, this._updateMarginForExtended)
-                    }
-                }, {
-                    key: "_onFrameworkReady", value: function () {
-                    }
-                }, {
-                    key: "_attachDOMListeners", value: function () {
-                    }
-                }, {
-                    key: "_detachDOMListeners", value: function () {
-                    }
-                }, {
-                    key: "_updateMarginForExtended",
-                    value: function () {
-                        this.marginContributors.push({
-                            element: this.$searchPage,
-                            margin: this.$searchPage.outerHeight(),
-                            selector: null
-                        })
-                    }
-                }, {
-                    key: "_updateMarginMap", value: function (a) {
-                        if (this.marginContributors) {
-                            for (var b = void 0, c = 0; c < this.marginContributors.length; c++) if (a.element.is(this.marginContributors[c].element) || a.element.is(this.marginContributors[c].selector)) b = this.marginContributors[c];
-                            b || (b = {
-                                element: a.element,
-                                margin: 0,
-                                selector: a.selector
-                            }, this.marginContributors.push(b));
-                            this.totalMargin += a.margin -
-                                b.margin;
-                            a.duration ? this.$el.animate({"margin-top": this.totalMargin}, a.duration) : this.$el.css("margin-top", this.totalMargin);
-                            this.publish(e.default.EVENT.ON_PAGE_CONTENT_MARGIN_CHANGE, b.element);
-                            b.margin = a.margin
-                        } else a.duration ? this.$el.animate({"margin-top": a.margin}, a.duration) : this.$el.css("margin-top", a.margin), this.marginContributors = [{
+            }, {
+                key: "_onDOMReady", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _onDOMReady");
+                    this._cacheDOMElements();
+                    this._attachSubscribers();
+                    this._attachDOMListeners();
+                    this._setInitialVisibilityState();
+                    this._addSupportForObjectFit();
+                    this._removeMultipleForms();
+                    $(window).off("popstate");
+                    $(window).on("popstate", this._onHistoryNavigation)
+                }
+            }, {
+                key: "_cacheDOMElements", value: function () {
+                    this.$window = $(window);
+                    this.$mobileFilter = $(this.SELECTOR_MOBILE_FILTER);
+                    this.$lpConfig = $(this.SELECTOR_LP_CONFIG_DIV);
+                    this.$searchPage = $(this.SELECTOR_PAGE_SEARCH);
+                    this.$signInAccordion = this.$el.find(this.SELECTOR_SIGN_IN_WRAPPER).find(this.SELECTOR_IS_SIGN_IN_ACCORDION)
+                }
+            }, {
+                key: "_jQueryScopeBinding", value: function () {
+                    this._onDOMReady = this._onDOMReady.bind(this);
+                    this._showPageContent = this._showPageContent.bind(this);
+                    this._hidePageContent = this._hidePageContent.bind(this);
+                    this._updateMarginMap = this._updateMarginMap.bind(this);
+                    this._updateMarginForExtended = this._updateMarginForExtended.bind(this);
+                    this._onHistoryNavigation = this._onHistoryNavigation.bind(this);
+                    this._removeMultipleForms = this._removeMultipleForms.bind(this)
+                }
+            }, {
+                key: "_attachSubscribers", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _attachSubscribers");
+                    this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
+                    this.subscribe(e.default.EVENT.ON_PAGE_CONTENT_REPLACED, this._onPageContentReplaced);
+                    this.subscribe(e.default.ACTION.SHOW_PAGE_CONTENT, this._showPageContent);
+                    this.subscribe(e.default.ACTION.HIDE_PAGE_CONTENT, this._hidePageContent);
+                    this.subscribe(e.default.ACTION.UPDATE_PAGE_CONTENT_MARGIN_CONTRIBUTION, this._updateMarginMap);
+                    this.subscribe(e.default.ACTION.UPDATE_PAGE_CONTENT_MARGIN, this._updateMarginForExtended)
+                }
+            }, {
+                key: "_detachSubscribers", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _detachSubscribers");
+                    this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
+                    this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady);
+                    this.unsubscribe(e.default.EVENT.ON_PAGE_CONTENT_REPLACED, this._onPageContentReplaced);
+                    this.unsubscribe(e.default.ACTION.SHOW_PAGE_CONTENT, this._showPageContent);
+                    this.unsubscribe(e.default.ACTION.HIDE_PAGE_CONTENT, this._hidePageContent);
+                    this.unsubscribe(e.default.ACTION.UPDATE_PAGE_CONTENT_MARGIN_CONTRIBUTION, this._updateMarginMap);
+                    this.unsubscribe(e.default.ACTION.UPDATE_PAGE_CONTENT_MARGIN, this._updateMarginForExtended)
+                }
+            }, {
+                key: "_onFrameworkReady", value: function () {
+                }
+            }, {
+                key: "_attachDOMListeners", value: function () {
+                }
+            }, {
+                key: "_detachDOMListeners", value: function () {
+                }
+            }, {
+                key: "_updateMarginForExtended", value: function () {
+                    this.marginContributors.push({
+                        element: this.$searchPage,
+                        margin: this.$searchPage.outerHeight(),
+                        selector: null
+                    })
+                }
+            }, {
+                key: "_updateMarginMap", value: function (a) {
+                    if (this.marginContributors) {
+                        for (var b = void 0, c = 0; c < this.marginContributors.length; c++) if (a.element.is(this.marginContributors[c].element) || a.element.is(this.marginContributors[c].selector)) b = this.marginContributors[c];
+                        b || (b = {
                             element: a.element,
-                            margin: a.margin,
+                            margin: 0,
                             selector: a.selector
-                        }], this.totalMargin = a.margin
-                    }
-                }, {
-                    key: "_setInitialVisibilityState", value: function () {
-                        Modernizr.mq(e.default.MQ.IS_MOBILE) &&
-                        this.$mobileFilter.hasClass(e.default.CLASS.IS_EXPANDED) && this._hidePageContent()
-                    }
-                }, {
-                    key: "_showPageContent", value: function () {
-                        var a = 0 < arguments.length && void 0 !== arguments[0] ? arguments[0] : {};
-                        this.$el.show().removeClass(this.CLASS_HAS_FILTER_OPEN);
-                        this.publish(e.default.EVENT.ON_PAGE_CONTENT_SHOW);
-                        a.hasOwnProperty("restoreScrollPosition") && this.$window.scrollTop(a.restoreScrollPosition)
-                    }
-                }, {
-                    key: "_hidePageContent", value: function (a) {
-                        a.nohide ? this.$el.addClass(this.CLASS_HAS_FILTER_OPEN) : this.$el.hide();
-                        this.publish(e.default.EVENT.ON_PAGE_CONTENT_HIDE)
-                    }
-                }, {
-                    key: "_onHistoryNavigation", value: function () {
-                        location.hash || (c.default.Http.load(document.location, this.SELECTOR_PAGE_CONTENT, {}, {}, !0), this.publish(e.default.ACTION.UPDATE_SEARCH_TAGS))
-                    }
-                }, {
-                    key: "_onPageContentReplaced", value: function () {
-                        this._addSupportForObjectFit()
-                    }
-                }, {
-                    key: "_addSupportForObjectFit", value: function () {
-                        var a = this, b = this.$lpConfig ? this.$lpConfig.data("lp-is-enabled") : !1;
-                        Modernizr.objectfit || b || $(this.SELECTOR_MODEL_IMAGES + "," + this.SELECTOR_UPBODY_IMAGES +
-                            "," + this.SELECTOR_LWBODY_IMAGES).each(function (b, c) {
-                            (b = $(c).find(a.SELECTOR_IMAGE).prop("src")) && $(c).css("backgroundImage", "url(" + b + ")").addClass(a.CLASS_OBJECTFIT_FALLBACK)
-                        })
-                    }
-                }, {
-                    key: "_removeMultipleForms", value: function () {
-                        this.$signInAccordion.hasClass(this.CLASS_IS_HIDDEN) && this.$signInAccordion.remove()
-                    }
-                }]);
+                        }, this.marginContributors.push(b));
+                        this.totalMargin += a.margin - b.margin;
+                        a.duration ? this.$el.animate({"margin-top": this.totalMargin}, a.duration) : this.$el.css("margin-top", this.totalMargin);
+                        this.publish(e.default.EVENT.ON_PAGE_CONTENT_MARGIN_CHANGE, b.element);
+                        b.margin = a.margin
+                    } else a.duration ? this.$el.animate({"margin-top": a.margin}, a.duration) : this.$el.css("margin-top", a.margin), this.marginContributors = [{
+                        element: a.element,
+                        margin: a.margin,
+                        selector: a.selector
+                    }], this.totalMargin = a.margin
+                }
+            }, {
+                key: "_setInitialVisibilityState", value: function () {
+                    Modernizr.mq(e.default.MQ.IS_MOBILE) && this.$mobileFilter.hasClass(e.default.CLASS.IS_EXPANDED) && this._hidePageContent()
+                }
+            }, {
+                key: "_showPageContent", value: function () {
+                    var a = 0 < arguments.length && void 0 !== arguments[0] ? arguments[0] : {};
+                    this.$el.show().removeClass(this.CLASS_HAS_FILTER_OPEN);
+                    this.publish(e.default.EVENT.ON_PAGE_CONTENT_SHOW);
+                    a.hasOwnProperty("restoreScrollPosition") && this.$window.scrollTop(a.restoreScrollPosition)
+                }
+            }, {
+                key: "_hidePageContent", value: function (a) {
+                    a.nohide ? this.$el.addClass(this.CLASS_HAS_FILTER_OPEN) : this.$el.hide();
+                    this.publish(e.default.EVENT.ON_PAGE_CONTENT_HIDE)
+                }
+            }, {
+                key: "_onHistoryNavigation", value: function () {
+                    location.hash || (c.default.Http.load(document.location, this.SELECTOR_PAGE_CONTENT, {}, {}, !0), this.publish(e.default.ACTION.UPDATE_SEARCH_TAGS))
+                }
+            }, {
+                key: "_onPageContentReplaced", value: function () {
+                    this._addSupportForObjectFit()
+                }
+            }, {
+                key: "_addSupportForObjectFit", value: function () {
+                    var a = this, b = this.$lpConfig ? this.$lpConfig.data("lp-is-enabled") : !1;
+                    Modernizr.objectfit || b || $(this.SELECTOR_MODEL_IMAGES + "," + this.SELECTOR_UPBODY_IMAGES + "," + this.SELECTOR_LWBODY_IMAGES).each(function (b, c) {
+                        (b = $(c).find(a.SELECTOR_IMAGE).prop("src")) && $(c).css("backgroundImage", "url(" + b + ")").addClass(a.CLASS_OBJECTFIT_FALLBACK)
+                    })
+                }
+            }, {
+                key: "_removeMultipleForms", value: function () {
+                    this.$signInAccordion.hasClass(this.CLASS_IS_HIDDEN) && this.$signInAccordion.remove()
+                }
+            }]);
             return b
         }(p.default);
         t.exports = f
@@ -20683,8 +19886,7 @@
         "./../../enums.js": 65,
         "./../../utils.js": 112
     }],
-    98: [function (f,
-                   t, p) {
+    98: [function (f, t, p) {
         function m(e) {
             "@babel/helpers - typeof";
             m = "function" === typeof Symbol && "symbol" === typeof Symbol.iterator ? function (c) {
@@ -20710,8 +19912,7 @@
         }
 
         function r(e, c, a) {
-            c &&
-            q(e.prototype, c);
+            c && q(e.prototype, c);
             a && q(e, a);
             return e
         }
@@ -20796,8 +19997,7 @@
                 }
             }, {
                 key: "_jQueryScopeBinding", value: function () {
-                    l(g(c.prototype),
-                        "_jQueryScopeBinding", this).call(this);
+                    l(g(c.prototype), "_jQueryScopeBinding", this).call(this);
                     this._onPopState = this._onPopState.bind(this);
                     this._newsletterLightboxTriggerClick = this._newsletterLightboxTriggerClick.bind(this)
                 }
@@ -20809,8 +20009,7 @@
                 }
             }, {
                 key: "_declareConstants", value: function () {
-                    l(g(c.prototype), "_declareConstants",
-                        this).call(this);
+                    l(g(c.prototype), "_declareConstants", this).call(this);
                     this.CLASS_CLOSE = "a-icon-lg-close-circle";
                     this.CLASS_OPEN_NEWSLETTER_LIGHTBOX = "open-newsletter-lightbox";
                     this.SELECTOR_OPEN_NTN_LIGHTBOX = ".open-newsletter-ntn-lightbox"
@@ -20826,8 +20025,7 @@
             }, {
                 key: "_attachDOMListeners", value: function () {
                     l(g(c.prototype), "_attachDOMListeners", this).call(this);
-                    window.onpopstate =
-                        this._onPopState;
+                    window.onpopstate = this._onPopState;
                     this.$newsletterLightboxTrigger.on("click", this._newsletterLightboxTriggerClick);
                     this.$el.on("click", this.SELECTOR_OPEN_NTN_LIGHTBOX, this._newsletterLightboxTriggerClick)
                 }
@@ -20839,8 +20037,7 @@
                 }
             }, {
                 key: "_onDOMReady", value: function () {
-                    l(g(c.prototype),
-                        "_onDOMReady", this).call(this, this.waitToPublishDomReady)
+                    l(g(c.prototype), "_onDOMReady", this).call(this, this.waitToPublishDomReady)
                 }
             }, {
                 key: "_onHaltEvents", value: function () {
@@ -20856,12 +20053,11 @@
                     a.preventDefault();
                     $(a.target).hasClass(this.CLASS_CLOSE) || ($(a.target).hasClass(this.CLASS_OPEN_NEWSLETTER_LIGHTBOX) ? this.publish(h.default.ACTION.OPEN_NEWSLETTER_LIGHTBOX) : this.publish(h.default.ACTION.OPEN_NEWSLETTER_NTN_LIGHTBOX))
                 }
-            },
-                {
-                    key: "_onPopState", value: function (a) {
-                        null != JSON.stringify(a.state) && JSON.parse(JSON.stringify(a.state))
-                    }
-                }]);
+            }, {
+                key: "_onPopState", value: function (a) {
+                    null != JSON.stringify(a.state) && JSON.parse(JSON.stringify(a.state))
+                }
+            }]);
             return c
         }(p.default);
         t.exports = f
@@ -20877,8 +20073,7 @@
             m = "function" === typeof Symbol && "symbol" === typeof Symbol.iterator ? function (a) {
                 return typeof a
             } : function (a) {
-                return a && "function" === typeof Symbol && a.constructor === Symbol && a !== Symbol.prototype ?
-                    "symbol" : typeof a
+                return a && "function" === typeof Symbol && a.constructor === Symbol && a !== Symbol.prototype ? "symbol" : typeof a
             };
             return m(c)
         }
@@ -20906,8 +20101,7 @@
         function l(c, a, b) {
             l = "undefined" !== typeof Reflect && Reflect.get ? Reflect.get : function (a, b, c) {
                 for (; !Object.prototype.hasOwnProperty.call(a, b) && (a = g(a), null !== a);) ;
-                if (a) return b = Object.getOwnPropertyDescriptor(a,
-                    b), b.get ? b.get.call(c) : b.value
+                if (a) return b = Object.getOwnPropertyDescriptor(a, b), b.get ? b.get.call(c) : b.value
             };
             return l(c, a, b || c)
         }
@@ -20933,8 +20127,7 @@
                 if (a) {
                     var d = g(this).constructor;
                     b = Reflect.construct(b, arguments, d)
-                } else b = b.apply(this,
-                    arguments);
+                } else b = b.apply(this, arguments);
                 if (!b || "object" !== m(b) && "function" !== typeof b) {
                     if (void 0 === this) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
                     b = this
@@ -20956,8 +20149,7 @@
 
         function g(c) {
             g = Object.setPrototypeOf ? Object.getPrototypeOf : function (a) {
-                return a.__proto__ ||
-                    Object.getPrototypeOf(a)
+                return a.__proto__ || Object.getPrototypeOf(a)
             };
             return g(c)
         }
@@ -21003,8 +20195,7 @@
                     this.SELECTOR_PROP_TITLE = ".propTitle";
                     this.SELECTOR_PRODUCT_TITLE_DETAILS = ".producttile-details";
                     this.SELECTOR_PRODUCT_NAME = ".productName";
-                    this.SELECTOR_ARTICLE_CODE =
-                        ".articleCode";
+                    this.SELECTOR_ARTICLE_CODE = ".articleCode";
                     this.SELECTOR_ATELIERNAME = ".atelierName";
                     this.SELECTOR_BRANDNAME = ".brandName";
                     this.SELECTOR_COLORLOC = ".colorLoc";
@@ -21020,8 +20211,7 @@
                     this._cacheDOMElements();
                     this._attachSubscribers();
                     this._attachDOMListeners();
-                    l(g(a.prototype), "_onBeforeAjaxPost",
-                        this).call(this)
+                    l(g(a.prototype), "_onBeforeAjaxPost", this).call(this)
                 }
             }, {
                 key: "_cacheDOMElements", value: function () {
@@ -21048,8 +20238,7 @@
                 }
             }, {
                 key: "_detachSubscribers", value: function () {
-                    h.default.INFO(this.constructor.name,
-                        ":: _detachSubscribers");
+                    h.default.INFO(this.constructor.name, ":: _detachSubscribers");
                     this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
                     this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady);
                     this.unsubscribe(e.default.ACTION.POPULATE_DATA_ON_SUGGESTIONS, this._populatePra);
@@ -21065,8 +20254,7 @@
                 key: "_detachDOMListeners", value: function () {
                 }
             }, {
-                key: "_populatePra",
-                value: function (a) {
+                key: "_populatePra", value: function (a) {
                     var b = this;
                     if (!this.$el.hasClass(this.SELECTOR_SWIPER_INITIALIZED)) {
                         this._cacheDOMElements();
@@ -21082,8 +20270,7 @@
                             a = $(a);
                             var d = b._extractElements(a, c);
                             a.attr(b._getMetadataAttr(d.responseProduct, d.responseArticle));
-                            var f = a.find(b.SELECTOR_PRODUCT_TITLE_DETAILS),
-                                g = f.find(b.SELECTOR_PRODUCT_NAME);
+                            var f = a.find(b.SELECTOR_PRODUCT_TITLE_DETAILS), g = f.find(b.SELECTOR_PRODUCT_NAME);
                             null !== g && g.length && g.text(d.responseProduct.variantData[0].varticleName);
                             g = f.find(b.SELECTOR_ARTICLE_CODE);
                             null !== g && g.length && g.text(d.responseProduct.variantData[0].varticleCode);
@@ -21128,8 +20315,7 @@
                 key: "_getDynamicChain", value: function (a) {
                     var b = decodeURIComponent(a.vstillLifeImage).match(/(set=source|type|ImageVersion|origin).*?(\])/g);
                     if (b) return b.toString() + "\x26call\x3durl[file:/product/dynamic.chain]";
-                    h.default.INFO(this.constructor.name, ":: PRA img url not received in expected LiquidPixel chain format",
-                        a.vstillLifeImage);
+                    h.default.INFO(this.constructor.name, ":: PRA img url not received in expected LiquidPixel chain format", a.vstillLifeImage);
                     return ""
                 }
             }, {
@@ -21151,8 +20337,7 @@
                 }
             }, {
                 key: "_getPriceHtml", value: function (a) {
-                    if (a.vformattedOldPrice) return '\x3cspan class\x3d"is-deprecated"\x3e' + a.vformattedOldPrice + '\x3c/span\x3e\x3cspan class\x3d"is-reduced"\x3e' +
-                        a.vformattedPrice + "\x3c/span\x3e";
+                    if (a.vformattedOldPrice) return '\x3cspan class\x3d"is-deprecated"\x3e' + a.vformattedOldPrice + '\x3c/span\x3e\x3cspan class\x3d"is-reduced"\x3e' + a.vformattedPrice + "\x3c/span\x3e";
                     if (a.vformattedPrice) return '\x3cspan class\x3d"is-regular"\x3e' + a.vformattedPrice + "\x3c/span\x3e"
                 }
             }, {
@@ -21170,8 +20355,7 @@
                     return a
                 }
             }, {
-                key: "_getMarkers", value: function (a,
-                                                     b, c, e, f) {
+                key: "_getMarkers", value: function (a, b, c, e, f) {
                     var d = this;
                     if (b) {
                         var g = "undefined" !== typeof c ? c.split(",") : ["", ""];
@@ -21183,8 +20367,7 @@
                     if (e.length) {
                         var h = "undefined" !== typeof f ? f.split(",") : ["", ""];
                         e.split(",").slice(0, 2).forEach(function (b, c) {
-                            a.children().is(":empty") || (a =
-                                a.after(a.clone()));
+                            a.children().is(":empty") || (a = a.after(a.clone()));
                             a.find(d.SELECTOR_M_PRODUCT_MARKER).html('\x3cdiv class\x3d"marker-text" style\x3d"' + h[c] + '"\x3e\x3cspan\x3e' + b + "\x3c/span\x3e\x3c/div\x3e")
                         })
                     }
@@ -21200,8 +20383,7 @@
                     this.$slides = this.$el.find(this.SELECTOR_SLIDES);
                     this.$slides.on("click", function (c) {
                         var d = $(c.currentTarget);
-                        l(g(a.prototype),
-                            "_onProductClick", b).call(b, c, d.data("ticket"), d.data("varticlecode"))
+                        l(g(a.prototype), "_onProductClick", b).call(b, c, d.data("ticket"), d.data("varticlecode"))
                     })
                 }
             }, {
@@ -21218,10 +20400,7 @@
             return a
         }(p.default);
         t.exports = f
-    }, {
-        "../../../../common/organisms/o-pra/index": 41, "./../../../../js/base/logger.js": 51,
-        "./../../enums.js": 65
-    }],
+    }, {"../../../../common/organisms/o-pra/index": 41, "./../../../../js/base/logger.js": 51, "./../../enums.js": 65}],
     100: [function (f, t, p) {
         function m(c) {
             "@babel/helpers - typeof";
@@ -21243,8 +20422,7 @@
                 d.enumerable = d.enumerable || !1;
                 d.configurable = !0;
                 "value" in d && (d.writable = !0);
-                Object.defineProperty(c,
-                    d.key, d)
+                Object.defineProperty(c, d.key, d)
             }
         }
 
@@ -21264,12 +20442,7 @@
 
         function v(c, a) {
             if ("function" !== typeof a && null !== a) throw new TypeError("Super expression must either be null or a function");
-            c.prototype = Object.create(a && a.prototype, {
-                constructor: {
-                    value: c,
-                    writable: !0, configurable: !0
-                }
-            });
+            c.prototype = Object.create(a && a.prototype, {constructor: {value: c, writable: !0, configurable: !0}});
             a && n(c, a)
         }
 
@@ -21298,8 +20471,7 @@
         }
 
         function u() {
-            if ("undefined" === typeof Reflect || !Reflect.construct ||
-                Reflect.construct.sham) return !1;
+            if ("undefined" === typeof Reflect || !Reflect.construct || Reflect.construct.sham) return !1;
             if ("function" === typeof Proxy) return !0;
             try {
                 return Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {
@@ -21341,8 +20513,7 @@
             }, {
                 key: "_declareConstants", value: function () {
                     this.SELECTOR_SHARE_ELEMENT = ".share-container";
-                    this.SELECTOR_SHARE_LINKS =
-                        ".o-share-custom .a-link";
+                    this.SELECTOR_SHARE_LINKS = ".o-share-custom .a-link";
                     this.SELECTOR_ATTR_ELEMENT = ".attributes-top .hover-attr";
                     this.SELECTOR_ID_ELEMENT = ".attributes-top .for-highlight";
                     this.SELECTOR_BODY = "body, .m-product-shipping-info"
@@ -21355,79 +20526,75 @@
                     this.$body = $(this.SELECTOR_BODY);
                     this.$highlightedElements = this.$idElementContainer.find("span")
                 }
-            },
-                {
-                    key: "_jQueryScopeBinding", value: function () {
-                        this._onDOMReady = this._onDOMReady.bind(this);
-                        this._onShareElementClick = this._onShareElementClick.bind(this);
-                        this._removeHighlightClass = this._removeHighlightClass.bind(this);
-                        this._highlightElements = this._highlightElements.bind(this);
-                        this._onBodyClick = this._onBodyClick.bind(this)
+            }, {
+                key: "_jQueryScopeBinding", value: function () {
+                    this._onDOMReady = this._onDOMReady.bind(this);
+                    this._onShareElementClick = this._onShareElementClick.bind(this);
+                    this._removeHighlightClass = this._removeHighlightClass.bind(this);
+                    this._highlightElements = this._highlightElements.bind(this);
+                    this._onBodyClick = this._onBodyClick.bind(this)
+                }
+            }, {
+                key: "_attachSubscribers", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _attachSubscribers");
+                    this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady)
+                }
+            }, {
+                key: "_detachSubscribers", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _detachSubscribers");
+                    this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady);
+                    this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady)
+                }
+            }, {
+                key: "_onFrameworkReady", value: function () {
+                }
+            }, {
+                key: "_attachDOMListeners", value: function () {
+                    this.$shareElement.on("click", this._onShareElementClick);
+                    this.$hoverAttribute.on("mouseover", this._highlightElements);
+                    this.$hoverAttribute.on("mouseout", this._removeHighlightClass);
+                    this.$body.on("click", this._onBodyClick)
+                }
+            }, {
+                key: "_detachDOMListeners", value: function () {
+                    this.$shareElement.off("click", this._onShareElementClick);
+                    this.$hoverAttribute.off("mouseover", this._highlightElements);
+                    this.$hoverAttribute.off("mouseout", this._removeHighlightClass);
+                    this.$body.off("click", this._onBodyClick)
+                }
+            }, {
+                key: "_onDOMReady", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _onDOMReady");
+                    this._cacheDOMElements();
+                    this._attachSubscribers();
+                    this._attachDOMListeners()
+                }
+            }, {
+                key: "_onShareElementClick", value: function (a) {
+                    $(a.target).is(this.SELECTOR_SHARE_LINKS) || a.stopPropagation();
+                    this.$shareElement.hasClass(e.default.CLASS.IS_OPEN_STATE) ? this.$shareElement.removeClass(e.default.CLASS.IS_OPEN_STATE) : this.$shareElement.addClass(e.default.CLASS.IS_OPEN_STATE)
+                }
+            }, {
+                key: "_onBodyClick", value: function () {
+                    this.$shareElement.removeClass(e.default.CLASS.IS_OPEN_STATE)
+                }
+            }, {
+                key: "_removeHighlightClass", value: function () {
+                    this.$idElementContainer.removeClass(e.default.CLASS.IS_ACTIVE_STATE);
+                    this.$highlightedElements.removeClass(e.default.CLASS.IS_HIGHLIGHTED)
+                }
+            }, {
+                key: "_highlightElements", value: function (a) {
+                    this.$idElementContainer.addClass(e.default.CLASS.IS_ACTIVE_STATE);
+                    if ($(a.currentTarget).data("highlight")) {
+                        a = $(a.currentTarget).data("highlight").split(" ");
+                        var b = this.$idElementContainer;
+                        $.each(a, function () {
+                            b.find("span." + this).addClass(e.default.CLASS.IS_HIGHLIGHTED)
+                        })
                     }
-                }, {
-                    key: "_attachSubscribers", value: function () {
-                        h.default.INFO(this.constructor.name, ":: _attachSubscribers");
-                        this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady)
-                    }
-                },
-                {
-                    key: "_detachSubscribers", value: function () {
-                        h.default.INFO(this.constructor.name, ":: _detachSubscribers");
-                        this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady);
-                        this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady)
-                    }
-                }, {
-                    key: "_onFrameworkReady", value: function () {
-                    }
-                }, {
-                    key: "_attachDOMListeners", value: function () {
-                        this.$shareElement.on("click", this._onShareElementClick);
-                        this.$hoverAttribute.on("mouseover", this._highlightElements);
-                        this.$hoverAttribute.on("mouseout", this._removeHighlightClass);
-                        this.$body.on("click", this._onBodyClick)
-                    }
-                }, {
-                    key: "_detachDOMListeners", value: function () {
-                        this.$shareElement.off("click", this._onShareElementClick);
-                        this.$hoverAttribute.off("mouseover", this._highlightElements);
-                        this.$hoverAttribute.off("mouseout", this._removeHighlightClass);
-                        this.$body.off("click", this._onBodyClick)
-                    }
-                }, {
-                    key: "_onDOMReady", value: function () {
-                        h.default.INFO(this.constructor.name, ":: _onDOMReady");
-                        this._cacheDOMElements();
-                        this._attachSubscribers();
-                        this._attachDOMListeners()
-                    }
-                }, {
-                    key: "_onShareElementClick",
-                    value: function (a) {
-                        $(a.target).is(this.SELECTOR_SHARE_LINKS) || a.stopPropagation();
-                        this.$shareElement.hasClass(e.default.CLASS.IS_OPEN_STATE) ? this.$shareElement.removeClass(e.default.CLASS.IS_OPEN_STATE) : this.$shareElement.addClass(e.default.CLASS.IS_OPEN_STATE)
-                    }
-                }, {
-                    key: "_onBodyClick", value: function () {
-                        this.$shareElement.removeClass(e.default.CLASS.IS_OPEN_STATE)
-                    }
-                }, {
-                    key: "_removeHighlightClass", value: function () {
-                        this.$idElementContainer.removeClass(e.default.CLASS.IS_ACTIVE_STATE);
-                        this.$highlightedElements.removeClass(e.default.CLASS.IS_HIGHLIGHTED)
-                    }
-                },
-                {
-                    key: "_highlightElements", value: function (a) {
-                        this.$idElementContainer.addClass(e.default.CLASS.IS_ACTIVE_STATE);
-                        if ($(a.currentTarget).data("highlight")) {
-                            a = $(a.currentTarget).data("highlight").split(" ");
-                            var b = this.$idElementContainer;
-                            $.each(a, function () {
-                                b.find("span." + this).addClass(e.default.CLASS.IS_HIGHLIGHTED)
-                            })
-                        }
-                    }
-                }]);
+                }
+            }]);
             return a
         }(p.default);
         t.exports = f
@@ -21467,8 +20634,7 @@
             return a
         }
 
-        function l(a,
-                   b, c) {
+        function l(a, b, c) {
             l = "undefined" !== typeof Reflect && Reflect.get ? Reflect.get : function (a, b, c) {
                 for (; !Object.prototype.hasOwnProperty.call(a, b) && (a = g(a), null !== a);) ;
                 if (a) return b = Object.getOwnPropertyDescriptor(a, b), b.get ? b.get.call(c) : b.value
@@ -21483,11 +20649,10 @@
         }
 
         function n(a, b) {
-            n = Object.setPrototypeOf ||
-                function (a, b) {
-                    a.__proto__ = b;
-                    return a
-                };
+            n = Object.setPrototypeOf || function (a, b) {
+                a.__proto__ = b;
+                return a
+            };
             return n(a, b)
         }
 
@@ -21561,8 +20726,7 @@
                     this.SELECTOR_RIGHT_PANEL = ".right-panel";
                     this.SELECTOR_SHIPPING_INFO = ".m-product-shipping-info";
                     this.SELECTOR_MATERIAL_SWATCH = ".material-swatch-container";
-                    this.SELECTOR_COLOR_SWATCH =
-                        ".color-swatch-container";
+                    this.SELECTOR_COLOR_SWATCH = ".color-swatch-container";
                     this.SELECTOR_PDP_FORM = ".o-form.add-to-cart";
                     this.SELECTOR_STYLE_WITH = ".is-combine-with";
                     this.SELECTOR_DYNAMIC_CONTENT = ".o-dynamic-content-area";
@@ -21573,8 +20737,7 @@
                     this.SELECTOR_SPAN = "span";
                     this.SELECTOR_SIZE_SWATCH = ".a-size-swatch";
                     this.SELECTOR_SIZE_OPTIONS = ".size-options";
-                    this.SELECTOR_PRODUCT_DETAILS =
-                        ".o-product-details";
+                    this.SELECTOR_PRODUCT_DETAILS = ".o-product-details";
                     this.SELECTOR_PRODUCT_SIZE_SWATCH = ".product-size-wrapper .a-size-swatch";
                     this.CLASS_SELECT_LABEL = "select-label";
                     this.CLASS_ABSOLUTE_SHIPPING_INFO = "absolute-position";
@@ -21587,8 +20750,7 @@
                     this.SCROLL_DURATION = 1E3;
                     this.HEADER_HEIGHT = 70;
                     this.RIGHT_PANEL_PADDING = 40;
-                    this.IS_CUSTOM_MOBILE =
-                        "screen and (max-width: 550px)";
+                    this.IS_CUSTOM_MOBILE = "screen and (max-width: 550px)";
                     this.TIMER = 0;
                     this.TIMEOUT = 2E3
                 }
@@ -21631,145 +20793,137 @@
                     h.default.INFO(this.constructor.name, ":: _attachSubscribers");
                     this.subscribe(c.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady)
                 }
-            },
-                {
-                    key: "_detachSubscribers", value: function () {
-                        h.default.INFO(this.constructor.name, ":: _detachSubscribers");
-                        this.unsubscribe(c.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady);
-                        this.unsubscribe(c.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady)
+            }, {
+                key: "_detachSubscribers", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _detachSubscribers");
+                    this.unsubscribe(c.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady);
+                    this.unsubscribe(c.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady)
+                }
+            }, {
+                key: "_onFrameworkReady", value: function () {
+                    this._attachMQHandlers()
+                }
+            }, {
+                key: "_attachDOMListeners", value: function () {
+                    this.$addToCartForm.on("submit", this._onAddToCartSubmit);
+                    this.$sizeSwatch.find(this.SELECTOR_SIZE_OPTIONS).on("click", this._onSizeChanged);
+                    this.$mainImage.on("click", this._onMainImageClick);
+                    $(window).on("resize", this._adjustShippingInfoPosition);
+                    this.$rightPanelImages.on("load", this._adjustShippingInfoPosition)
+                }
+            }, {
+                key: "_detachDOMListeners", value: function () {
+                    this.$addToCartForm.off("submit", this._onAddToCartSubmit);
+                    this.$sizeSwatch.find(this.SELECTOR_SIZE_OPTIONS).off("click", this._onSizeChanged);
+                    this.$mainImage.off("click", this._onMainImageClick);
+                    $(window).off("resize", this._adjustShippingInfoPosition);
+                    this.$rightPanelImages.off("load", this._adjustShippingInfoPosition)
+                }
+            }, {
+                key: "_onDOMReady", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _onDOMReady");
+                    this._cacheDOMElements();
+                    this._attachSubscribers();
+                    this._attachDOMListeners();
+                    this._adjustShippingInfoPosition()
+                }
+            }, {
+                key: "_attachMQHandlers", value: function () {
+                    this.MQSmallHandler = {deferSetup: !0, match: this._onMobileMatch.bind(this)};
+                    this.MQTabletHandler = {deferSetup: !0, match: this._onTabletMatch.bind(this)};
+                    this.MQDesktopHandler = {deferSetup: !0, match: this._onDesktopMatch.bind(this)};
+                    enquire.register(c.default.MQ.IS_MOBILE, this.MQSmallHandler);
+                    enquire.register(c.default.MQ.IS_TABLET, this.MQTabletHandler);
+                    enquire.register(c.default.MQ.IS_DESKTOP, this.MQDesktopHandler)
+                }
+            }, {
+                key: "_detachMQHandlers", value: function () {
+                    enquire.unregister(c.default.MQ.IS_MOBILE, this.MQSmallHandler);
+                    enquire.unregister(c.default.MQ.MOBILE_AND_TABLET_RANGE, this.MQTabletHandler);
+                    enquire.unregister(c.default.MQ.IS_DESKTOP, this.MQDesktopHandler)
+                }
+            }, {
+                key: "_onAddToCartSubmit", value: function (a) {
+                    a.preventDefault();
+                    a.stopPropagation();
+                    this.$sizeSwatch.find(this.SELECTOR_SIZE_OPTIONS).hasClass(this.CLASS_IS_SELECTED) || !this.$sizeSwatch.length || this.oneSizeQuickBuy ? (a = $(a.currentTarget), a = e.default.Form.getData(a), this.publish(c.default.ACTION.ADD_ITEM_TO_CART, a)) : this.$btnAddToCart.hasClass(this.CLASS_IS_DISABLED) || (this.$btnAddToCart.addClass(c.default.CLASS.HAS_ERROR), this.$btnAddToCart.find(this.SELECTOR_SPAN).html(this.btnData.textDisabled), this.$btnAddToCart.on("mouseout", this._onAddToCartButtonMouseOut))
+                }
+            }, {
+                key: "_onAddToCartButtonMouseOut", value: function () {
+                    var a = this;
+                    this.$btnAddToCart.off("mouseout", this._onAddToCartButtonMouseOut);
+                    clearTimeout(this.TIMER);
+                    this.TIMER = setTimeout(function () {
+                        a.$btnAddToCart.find(a.SELECTOR_SPAN).html(a.btnData.textDefault);
+                        a.$btnAddToCart.removeClass(c.default.CLASS.HAS_ERROR)
+                    }, this.TIMEOUT)
+                }
+            }, {
+                key: "_adjustShippingInfoPosition", value: function () {
+                    if (Modernizr.mq(c.default.MQ.IS_DESKTOP)) {
+                        var a = this.$window.height() - this.HEADER_HEIGHT - this.RIGHT_PANEL_PADDING, b = 0;
+                        this.$rightPanelElement.children().each(function () {
+                            $(this).is(":visible") && (b += $(this).outerHeight(!0))
+                        });
+                        a > b ? (this.$shippingInfoElement.addClass(this.CLASS_ABSOLUTE_SHIPPING_INFO), this.$rightPanelElement.removeClass(this.CLASS_HEIGHT_100)) : (this.$shippingInfoElement.removeClass(this.CLASS_ABSOLUTE_SHIPPING_INFO), this.$rightPanelElement.addClass(this.CLASS_HEIGHT_100))
                     }
-                }, {
-                    key: "_onFrameworkReady", value: function () {
-                        this._attachMQHandlers()
+                }
+            }, {
+                key: "_onMainImageClick", value: function (a) {
+                    if (!Modernizr.mq(this.IS_CUSTOM_MOBILE)) {
+                        var b = $(a.currentTarget).attr("data-zoom-src"),
+                            d = a.currentTarget.getAttribute("data-resolvechain");
+                        this.publish(c.default.ACTION.SHOW_ZOOMED_IMAGE, {
+                            zoomImgSrc: b,
+                            allSources: this.allZoomSources,
+                            pdpGallerySrc: a.currentTarget.src,
+                            resolveChain: d
+                        })
                     }
-                }, {
-                    key: "_attachDOMListeners", value: function () {
-                        this.$addToCartForm.on("submit", this._onAddToCartSubmit);
-                        this.$sizeSwatch.find(this.SELECTOR_SIZE_OPTIONS).on("click", this._onSizeChanged);
-                        this.$mainImage.on("click", this._onMainImageClick);
-                        $(window).on("resize", this._adjustShippingInfoPosition);
-                        this.$rightPanelImages.on("load", this._adjustShippingInfoPosition)
-                    }
-                }, {
-                    key: "_detachDOMListeners", value: function () {
-                        this.$addToCartForm.off("submit", this._onAddToCartSubmit);
-                        this.$sizeSwatch.find(this.SELECTOR_SIZE_OPTIONS).off("click", this._onSizeChanged);
-                        this.$mainImage.off("click", this._onMainImageClick);
-                        $(window).off("resize", this._adjustShippingInfoPosition);
-                        this.$rightPanelImages.off("load",
-                            this._adjustShippingInfoPosition)
-                    }
-                }, {
-                    key: "_onDOMReady", value: function () {
-                        h.default.INFO(this.constructor.name, ":: _onDOMReady");
-                        this._cacheDOMElements();
-                        this._attachSubscribers();
-                        this._attachDOMListeners();
-                        this._adjustShippingInfoPosition()
-                    }
-                }, {
-                    key: "_attachMQHandlers", value: function () {
-                        this.MQSmallHandler = {deferSetup: !0, match: this._onMobileMatch.bind(this)};
-                        this.MQTabletHandler = {deferSetup: !0, match: this._onTabletMatch.bind(this)};
-                        this.MQDesktopHandler = {deferSetup: !0, match: this._onDesktopMatch.bind(this)};
-                        enquire.register(c.default.MQ.IS_MOBILE, this.MQSmallHandler);
-                        enquire.register(c.default.MQ.IS_TABLET, this.MQTabletHandler);
-                        enquire.register(c.default.MQ.IS_DESKTOP, this.MQDesktopHandler)
-                    }
-                }, {
-                    key: "_detachMQHandlers", value: function () {
-                        enquire.unregister(c.default.MQ.IS_MOBILE, this.MQSmallHandler);
-                        enquire.unregister(c.default.MQ.MOBILE_AND_TABLET_RANGE, this.MQTabletHandler);
-                        enquire.unregister(c.default.MQ.IS_DESKTOP, this.MQDesktopHandler)
-                    }
-                }, {
-                    key: "_onAddToCartSubmit", value: function (a) {
-                        a.preventDefault();
-                        a.stopPropagation();
-                        this.$sizeSwatch.find(this.SELECTOR_SIZE_OPTIONS).hasClass(this.CLASS_IS_SELECTED) || !this.$sizeSwatch.length || this.oneSizeQuickBuy ? (a = $(a.currentTarget), a = e.default.Form.getData(a), this.publish(c.default.ACTION.ADD_ITEM_TO_CART, a)) : this.$btnAddToCart.hasClass(this.CLASS_IS_DISABLED) || (this.$btnAddToCart.addClass(c.default.CLASS.HAS_ERROR), this.$btnAddToCart.find(this.SELECTOR_SPAN).html(this.btnData.textDisabled), this.$btnAddToCart.on("mouseout", this._onAddToCartButtonMouseOut))
-                    }
-                },
-                {
-                    key: "_onAddToCartButtonMouseOut", value: function () {
-                        var a = this;
-                        this.$btnAddToCart.off("mouseout", this._onAddToCartButtonMouseOut);
-                        clearTimeout(this.TIMER);
-                        this.TIMER = setTimeout(function () {
-                            a.$btnAddToCart.find(a.SELECTOR_SPAN).html(a.btnData.textDefault);
-                            a.$btnAddToCart.removeClass(c.default.CLASS.HAS_ERROR)
-                        }, this.TIMEOUT)
-                    }
-                }, {
-                    key: "_adjustShippingInfoPosition", value: function () {
-                        if (Modernizr.mq(c.default.MQ.IS_DESKTOP)) {
-                            var a = this.$window.height() - this.HEADER_HEIGHT - this.RIGHT_PANEL_PADDING, b = 0;
-                            this.$rightPanelElement.children().each(function () {
-                                $(this).is(":visible") &&
-                                (b += $(this).outerHeight(!0))
-                            });
-                            a > b ? (this.$shippingInfoElement.addClass(this.CLASS_ABSOLUTE_SHIPPING_INFO), this.$rightPanelElement.removeClass(this.CLASS_HEIGHT_100)) : (this.$shippingInfoElement.removeClass(this.CLASS_ABSOLUTE_SHIPPING_INFO), this.$rightPanelElement.addClass(this.CLASS_HEIGHT_100))
-                        }
-                    }
-                }, {
-                    key: "_onMainImageClick", value: function (a) {
-                        if (!Modernizr.mq(this.IS_CUSTOM_MOBILE)) {
-                            var b = $(a.currentTarget).attr("data-zoom-src"),
-                                d = a.currentTarget.getAttribute("data-resolvechain");
-                            this.publish(c.default.ACTION.SHOW_ZOOMED_IMAGE,
-                                {
-                                    zoomImgSrc: b,
-                                    allSources: this.allZoomSources,
-                                    pdpGallerySrc: a.currentTarget.src,
-                                    resolveChain: d
-                                })
-                        }
-                    }
-                }, {
-                    key: "_onSizeChanged", value: function () {
-                        this.$sizeSwatch.find("input").data("value") ? this.$availability.addClass(c.default.CLASS.IS_VISIBLE_STATE) : this.$availability.removeClass(c.default.CLASS.IS_VISIBLE_STATE)
-                    }
-                }, {
-                    key: "_onMobileMatch", value: function () {
-                        this._changeOrderOfElements(this.$combineWith, this.$dynamicContent);
-                        this._movePanel(this.SELECTOR_SHIPPING_INFO, this.$rightPanelElement, this.$leftPanelElement);
-                        this.$leftPanelElement.find(this.SELECTOR_PRODUCT_SIZE_WRAPPER).length ? this.$colorSwatchPanel.insertBefore(this.$productSizeWrapper) : this.$colorSwatchPanel.insertBefore(this.$btnAddToCart);
-                        var a = $(this.SELECTOR_PRODUCT_SIZE_SWATCH).find(this.SELECTOR_SIZE_OPTIONS);
-                        a.removeClass(this.CLASS_FIRST_SWATCH);
-                        a.removeClass(this.CLASS_LAST_SWATCH);
-                        a.eq(0).addClass(this.CLASS_FIRST_SWATCH);
-                        4 < $(this.SELECTOR_PRODUCT_DETAILS).find(this.SELECTOR_PRODUCT_SIZE_SWATCH).find(this.SELECTOR_SIZE_OPTIONS).length && (300 >
-                        $(this.SELECTOR_PRODUCT_SIZE_SWATCH).width() ? (a.eq(4).addClass(this.CLASS_FIRST_SWATCH), a.eq(3).addClass(this.CLASS_LAST_SWATCH)) : (a.eq(5).addClass(this.CLASS_FIRST_SWATCH), a.eq(4).addClass(this.CLASS_LAST_SWATCH)));
-                        this.$comparativePanel.insertAfter(this.$productNamePanel)
-                    }
-                }, {
-                    key: "_onTabletMatch", value: function () {
-                        this._changeOrderOfElements(this.$dynamicContent, this.$combineWith);
-                        this._movePanel(this.SELECTOR_COLOR_SWATCH, this.$leftPanelElement, this.$rightPanelElement);
-                        this._movePanel(this.SELECTOR_LEFT_PANEL,
-                            this.$addToCartForm, this.$rightPanelElement);
-                        this.$shippingInfoElement.insertBefore(this.$availability);
-                        this.$productNamePanel.insertBefore(this.$colorSwatchPanel);
-                        this.$comparativePanel.insertAfter(this.$productNamePanel)
-                    }
-                }, {
-                    key: "_onDesktopMatch", value: function () {
-                        this._changeOrderOfElements(this.$dynamicContent, this.$combineWith);
-                        this._movePanel(this.SELECTOR_SHIPPING_INFO, this.$leftPanelElement, this.$rightPanelElement);
-                        this.$el.find(this.SELECTOR_MATERIAL_SWATCH).length ? this.$colorSwatchPanel.insertBefore(this.$el.find(this.SELECTOR_MATERIAL_SWATCH)) :
-                            this._movePanel(this.SELECTOR_COLOR_SWATCH, this.$leftPanelElement, this.$rightPanelElement);
-                        this.$rightPanelElement.find(this.SELECTOR_LEFT_PANEL).length && (this._movePanel(this.SELECTOR_LEFT_PANEL, this.$rightPanelElement, this.$addToCartForm), this.$leftPanelElement.find(this.SELECTOR_PRODUCT_SIZE_WRAPPER).length ? this.$productNamePanel.insertBefore(this.$productSizeWrapper) : this.$productNamePanel.insertBefore(this.$btnAddToCart));
-                        $(this.SELECTOR_PRODUCT_DETAILS).find(this.SELECTOR_SHIPPING_INFO).insertBefore($(this.SELECTOR_LEFT_PANEL).find(this.SELECTOR_AVAILABILITY));
-                        this.$comparativePanel.insertAfter(this.$productNamePanel)
-                    }
-                }, {
-                    key: "_movePanel", value: function (a, b, c) {
-                        b.find($(a)).appendTo(c)
-                    }
-                }, {
-                    key: "_changeOrderOfElements", value: function (a, b) {
-                        a.before(b)
-                    }
-                }]);
+                }
+            }, {
+                key: "_onSizeChanged", value: function () {
+                    this.$sizeSwatch.find("input").data("value") ? this.$availability.addClass(c.default.CLASS.IS_VISIBLE_STATE) : this.$availability.removeClass(c.default.CLASS.IS_VISIBLE_STATE)
+                }
+            }, {
+                key: "_onMobileMatch", value: function () {
+                    this._changeOrderOfElements(this.$combineWith, this.$dynamicContent);
+                    this._movePanel(this.SELECTOR_SHIPPING_INFO, this.$rightPanelElement, this.$leftPanelElement);
+                    this.$leftPanelElement.find(this.SELECTOR_PRODUCT_SIZE_WRAPPER).length ? this.$colorSwatchPanel.insertBefore(this.$productSizeWrapper) : this.$colorSwatchPanel.insertBefore(this.$btnAddToCart);
+                    var a = $(this.SELECTOR_PRODUCT_SIZE_SWATCH).find(this.SELECTOR_SIZE_OPTIONS);
+                    a.removeClass(this.CLASS_FIRST_SWATCH);
+                    a.removeClass(this.CLASS_LAST_SWATCH);
+                    a.eq(0).addClass(this.CLASS_FIRST_SWATCH);
+                    4 < $(this.SELECTOR_PRODUCT_DETAILS).find(this.SELECTOR_PRODUCT_SIZE_SWATCH).find(this.SELECTOR_SIZE_OPTIONS).length && (300 > $(this.SELECTOR_PRODUCT_SIZE_SWATCH).width() ? (a.eq(4).addClass(this.CLASS_FIRST_SWATCH), a.eq(3).addClass(this.CLASS_LAST_SWATCH)) : (a.eq(5).addClass(this.CLASS_FIRST_SWATCH), a.eq(4).addClass(this.CLASS_LAST_SWATCH)));
+                    this.$comparativePanel.insertAfter(this.$productNamePanel)
+                }
+            }, {
+                key: "_onTabletMatch", value: function () {
+                    this._changeOrderOfElements(this.$dynamicContent, this.$combineWith);
+                    this._movePanel(this.SELECTOR_COLOR_SWATCH, this.$leftPanelElement, this.$rightPanelElement);
+                    this._movePanel(this.SELECTOR_LEFT_PANEL, this.$addToCartForm, this.$rightPanelElement);
+                    this.$shippingInfoElement.insertBefore(this.$availability);
+                    this.$productNamePanel.insertBefore(this.$colorSwatchPanel);
+                    this.$comparativePanel.insertAfter(this.$productNamePanel)
+                }
+            }, {
+                key: "_onDesktopMatch", value: function () {
+                    this._changeOrderOfElements(this.$dynamicContent, this.$combineWith);
+                    this._movePanel(this.SELECTOR_SHIPPING_INFO, this.$leftPanelElement, this.$rightPanelElement);
+                    this.$el.find(this.SELECTOR_MATERIAL_SWATCH).length ? this.$colorSwatchPanel.insertBefore(this.$el.find(this.SELECTOR_MATERIAL_SWATCH)) : this._movePanel(this.SELECTOR_COLOR_SWATCH, this.$leftPanelElement, this.$rightPanelElement);
+                    this.$rightPanelElement.find(this.SELECTOR_LEFT_PANEL).length && (this._movePanel(this.SELECTOR_LEFT_PANEL, this.$rightPanelElement, this.$addToCartForm), this.$leftPanelElement.find(this.SELECTOR_PRODUCT_SIZE_WRAPPER).length ? this.$productNamePanel.insertBefore(this.$productSizeWrapper) : this.$productNamePanel.insertBefore(this.$btnAddToCart));
+                    $(this.SELECTOR_PRODUCT_DETAILS).find(this.SELECTOR_SHIPPING_INFO).insertBefore($(this.SELECTOR_LEFT_PANEL).find(this.SELECTOR_AVAILABILITY));
+                    this.$comparativePanel.insertAfter(this.$productNamePanel)
+                }
+            }, {
+                key: "_movePanel", value: function (a, b, c) {
+                    b.find($(a)).appendTo(c)
+                }
+            }, {
+                key: "_changeOrderOfElements", value: function (a, b) {
+                    a.before(b)
+                }
+            }]);
             return b
         }(p.default);
         t.exports = f
@@ -21783,11 +20937,10 @@
         function m(c) {
             "@babel/helpers - typeof";
             m = "function" === typeof Symbol && "symbol" === typeof Symbol.iterator ? function (a) {
-                    return typeof a
-                } :
-                function (a) {
-                    return a && "function" === typeof Symbol && a.constructor === Symbol && a !== Symbol.prototype ? "symbol" : typeof a
-                };
+                return typeof a
+            } : function (a) {
+                return a && "function" === typeof Symbol && a.constructor === Symbol && a !== Symbol.prototype ? "symbol" : typeof a
+            };
             return m(c)
         }
 
@@ -21813,8 +20966,7 @@
 
         function l(c, a, b) {
             l = "undefined" !== typeof Reflect && Reflect.get ? Reflect.get : function (a, b, c) {
-                for (; !Object.prototype.hasOwnProperty.call(a,
-                    b) && (a = g(a), null !== a);) ;
+                for (; !Object.prototype.hasOwnProperty.call(a, b) && (a = g(a), null !== a);) ;
                 if (a) return b = Object.getOwnPropertyDescriptor(a, b), b.get ? b.get.call(c) : b.value
             };
             return l(c, a, b || c)
@@ -21839,8 +20991,7 @@
             return function () {
                 var b = g(c);
                 if (a) {
-                    var d =
-                        g(this).constructor;
+                    var d = g(this).constructor;
                     b = Reflect.construct(b, arguments, d)
                 } else b = b.apply(this, arguments);
                 if (!b || "object" !== m(b) && "function" !== typeof b) {
@@ -21863,10 +21014,9 @@
         }
 
         function g(c) {
-            g =
-                Object.setPrototypeOf ? Object.getPrototypeOf : function (a) {
-                    return a.__proto__ || Object.getPrototypeOf(a)
-                };
+            g = Object.setPrototypeOf ? Object.getPrototypeOf : function (a) {
+                return a.__proto__ || Object.getPrototypeOf(a)
+            };
             return g(c)
         }
 
@@ -21879,8 +21029,7 @@
                 h.default.INFO(c.constructor.name, ":: Constructor");
                 c._declareConstants();
                 c._jQueryScopeBinding();
-                c.subscribe(e.default.EVENT.ON_DOCUMENT_READY,
-                    c._onDOMReady);
+                c.subscribe(e.default.EVENT.ON_DOCUMENT_READY, c._onDOMReady);
                 return c
             }
 
@@ -21911,8 +21060,7 @@
                     this.SELECTOR_COLOR_FILTER = ".color-filter";
                     this.SELECTOR_PRODUCT_LISTING = ".product-listing";
                     this.SELECTOR_LEFT_COMPONENT = ".left-component";
-                    this.SELECTOR_SELECTED_FILTER_VALUES =
-                        ".selected-value";
+                    this.SELECTOR_SELECTED_FILTER_VALUES = ".selected-value";
                     this.SELECTOR_LAST_LABEL = ".a-label:last-child";
                     this.SELECTOR_COLOR_LABEL = "span:last-child";
                     this.SELECTOR_BUTTON_WRAPPER = ".button-wrapper";
@@ -21962,8 +21110,7 @@
                     this.$clearBtn = this.$el.find(this.SELECTOR_CLEAR_BTN);
                     this.$applyBtn = this.$el.find(this.SELECTOR_APPLY_BTN);
                     this.$closeBtn = this.$el.find(this.SELECTOR_CLOSE_BTN);
-                    this.$preventScrollElements =
-                        $(this.SELECTOR_PREVENT_SCROLL);
+                    this.$preventScrollElements = $(this.SELECTOR_PREVENT_SCROLL);
                     this.$filterbuttonWrapper = this.$el.find(this.SELECTOR_BUTTON_WRAPPER);
                     this.$depCatButton = this.$filterbuttonWrapper.find(this.SELECTOR_A_BUTTON);
                     this.$filterBtn = this.$el.find(this.SELECTOR_FILTER_BUTTON);
@@ -21971,8 +21118,7 @@
                     this.$linkOpen = this.$el.find(this.SELECTOR_LINK_OPEN).not(this.SELECTOR_MOBILE_FILTER_BTN);
                     this.$exclusiveGroup = this.$el.find(this.SELECTOR_FILTER);
                     this.$oFilter = this.$el.find(this.SELECTOR_FILTER);
-                    this.isMobileFilter =
-                        this.$el.hasClass(this.CLASS_SHOW_ALL_FILTERS);
+                    this.isMobileFilter = this.$el.hasClass(this.CLASS_SHOW_ALL_FILTERS);
                     this.$filterCheckboxes = this.$el.find(this.SELECTOR_CHECKBOX);
                     this.$filterColor = this.$el.find(this.SELECTOR_COLOR_FILTER);
                     this.simulatedScroll = !1;
@@ -21983,8 +21129,7 @@
                     h.default.INFO(this.constructor.name, ":: _attachSubscribers");
                     this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
                     this.subscribe(e.default.EVENT.ON_OVERLAY_CLICKED, this._closeMobileFilter);
-                    this.subscribe(e.default.EVENT.ON_CHECK_FILTERS,
-                        this._checkCheckedFilters);
+                    this.subscribe(e.default.EVENT.ON_CHECK_FILTERS, this._checkCheckedFilters);
                     this.subscribe(e.default.EVENT.ON_FILTER_SELECTED, this._setFiltersAppliedState);
                     this.subscribe(e.default.EVENT.ON_FILTER_DESELECTED, this._setFiltersNotAppliedState)
                 }
@@ -22006,8 +21151,7 @@
                     this.$iconClose.on("click", this._closeFilter);
                     this.$linkOpen.on("click", this._openFilter);
                     this.$mobileFilterBtn.on("click", this._openMobileFilter);
-                    this.$filterCheckboxes.on("change",
-                        this._onFilterChange);
+                    this.$filterCheckboxes.on("change", this._onFilterChange);
                     this.$filterColor.on("change", this.SELECTOR_COLOR_CHECKBOX, this._onFilterChange);
                     this.$depCatButton.on("click", this._onFilterButtonChange);
                     this.$clearBtn.on("click", this._onClearFilter);
@@ -22019,8 +21163,7 @@
                     this.$window.off("scroll", this._onScroll);
                     this.$iconClose.off("click", this._closeFilter);
                     this.$linkOpen.off("click", this._openFilter);
-                    this.$mobileFilterBtn.off("click",
-                        this._openMobileFilter);
+                    this.$mobileFilterBtn.off("click", this._openMobileFilter);
                     this.$filterCheckboxes.off("change", this._onFilterChange);
                     this.$filterColor.off("change", this.SELECTOR_COLOR_CHECKBOX, this._onFilterChange);
                     this.$depCatButton.off("click", this._onFilterButtonChange);
@@ -22036,8 +21179,7 @@
                 }
             }, {
                 key: "_jQueryScopeBinding", value: function () {
-                    this._onDOMReady =
-                        this._onDOMReady.bind(this);
+                    this._onDOMReady = this._onDOMReady.bind(this);
                     this._openFilter = this._openFilter.bind(this);
                     this._closeFilter = this._closeFilter.bind(this);
                     this._openMobileFilter = this._openMobileFilter.bind(this);
@@ -22055,8 +21197,7 @@
                 }
             }, {
                 key: "_onScroll", value: function () {
-                    200 < this.$bodyHtml.scrollTop() && Modernizr.mq(e.default.MQ.TABLET_AND_DESKTOP_RANGE) && this.$el.hasClass(this.CLASS_SHOW_ALL_FILTERS) && !this.$el.hasClass(e.default.CLASS.IS_CLOSING_STATE) &&
-                    !this.simulatedScroll && this._closeMobileFilter()
+                    200 < this.$bodyHtml.scrollTop() && Modernizr.mq(e.default.MQ.TABLET_AND_DESKTOP_RANGE) && this.$el.hasClass(this.CLASS_SHOW_ALL_FILTERS) && !this.$el.hasClass(e.default.CLASS.IS_CLOSING_STATE) && !this.simulatedScroll && this._closeMobileFilter()
                 }
             }, {
                 key: "_checkCheckedFilters", value: function () {
@@ -22069,8 +21210,7 @@
                 key: "_onFilterButtonChange", value: function (a) {
                     a = $(a.currentTarget);
                     var b = a.closest(this.SELECTOR_FILTER);
-                    a.hasClass(e.default.CLASS.IS_SELECTED) ? (a.removeClass(e.default.CLASS.IS_SELECTED), this.publish(e.default.EVENT.ON_FILTER_DESELECTED)) : (b.find("." + e.default.CLASS.IS_SELECTED).removeClass(e.default.CLASS.IS_SELECTED), a.addClass(e.default.CLASS.IS_SELECTED),
-                        this.publish(e.default.EVENT.ON_FILTER_SELECTED));
+                    a.hasClass(e.default.CLASS.IS_SELECTED) ? (a.removeClass(e.default.CLASS.IS_SELECTED), this.publish(e.default.EVENT.ON_FILTER_DESELECTED)) : (b.find("." + e.default.CLASS.IS_SELECTED).removeClass(e.default.CLASS.IS_SELECTED), a.addClass(e.default.CLASS.IS_SELECTED), this.publish(e.default.EVENT.ON_FILTER_SELECTED));
                     this._onFilterChange(b)
                 }
             }, {
@@ -22084,8 +21224,7 @@
                     this.text = void 0;
                     d && (g = a.find(this.SELECTOR_COLOR_CHECKBOX));
                     f ? a.find(this.SELECTOR_A_BUTTON).each(function (a, c) {
-                        $(c).hasClass(e.default.CLASS.IS_SELECTED) &&
-                        (b.nrFilterSelected++, a = b._fixLabel($(c).text()), b.selectedVal.push(a))
+                        $(c).hasClass(e.default.CLASS.IS_SELECTED) && (b.nrFilterSelected++, a = b._fixLabel($(c).text()), b.selectedVal.push(a))
                     }) : g.each(function (a, f) {
                         a = $(f).find(b.SELECTOR_CHECKBOX_ATOM);
                         var g = $(f).find(b.SELECTOR_COLOR_BOX);
@@ -22104,8 +21243,7 @@
                 }
             }, {
                 key: "_fixLabel", value: function (a) {
-                    a = 0 < a.indexOf("|") ? a.split("|")[1] : 0 < a.indexOf("-") ?
-                        a.split("-")[1] : a;
+                    a = 0 < a.indexOf("|") ? a.split("|")[1] : 0 < a.indexOf("-") ? a.split("-")[1] : a;
                     if (1 < a.length) return $.trim(a.substring(0, 1).toUpperCase() + a.substring(1).toLowerCase())
                 }
             }, {
@@ -22123,8 +21261,7 @@
                 }
             }, {
                 key: "_addSelectedTextToFilterTitle", value: function (a, b) {
-                    var c =
-                        a.find(this.SELECTOR_SELECTED_FILTER_VALUES);
+                    var c = a.find(this.SELECTOR_SELECTED_FILTER_VALUES);
                     c.empty();
                     b && $.each(b, function (a, d) {
                         a = d + (a == b.length - 1 ? "" : ", ");
@@ -22139,8 +21276,7 @@
             }, {
                 key: "_setFiltersNotAppliedState", value: function () {
                     this.$el.removeClass(this.CLASS_HAS_APPLIED_FILTERS);
-                    this.$clearBtn.addClass(e.default.CLASS.IS_DISABLED_STATE).attr("disabled",
-                        !0)
+                    this.$clearBtn.addClass(e.default.CLASS.IS_DISABLED_STATE).attr("disabled", !0)
                 }
             }, {
                 key: "_showOverlay", value: function () {
@@ -22153,85 +21289,77 @@
                     a = $(a.currentTarget).closest(this.SELECTOR_FILTER);
                     var b = a.find(this.SELECTOR_FILTER_SECTION);
                     this.isMobileFilter = this.$el.hasClass(this.CLASS_SHOW_ALL_FILTERS);
-                    if (!a.hasClass(e.default.CLASS.IS_DISABLED_STATE)) if (a.hasClass(e.default.CLASS.IS_OPEN_STATE)) this._closeFilter(a);
-                    else {
+                    if (!a.hasClass(e.default.CLASS.IS_DISABLED_STATE)) if (a.hasClass(e.default.CLASS.IS_OPEN_STATE)) this._closeFilter(a); else {
                         var c = this.$exclusiveGroup.filter("." + e.default.CLASS.IS_OPEN_STATE), d = 0;
                         0 < c.length && (this._closeFilter(c), d = 0);
                         b.is(":hidden") ? this.isMobileFilter ? (a.addClass(e.default.CLASS.IS_OPEN_STATE), a.hasClass(this.CLASS_COLOR_FILTER) && this.publish(e.default.ACTION.REQUEST_FILTER_COLORS), b.stop().delay(d).slideDown(this.SLIDE_DELAY_TIME)) : (a.addClass(e.default.CLASS.IS_OPEN_STATE), 10 < a.find(this.SELECTOR_CHECKBOX).length && a.find(this.SELECTOR_FILTER_SECTION).addClass(this.CLASS_IS_LARGE)) : this._closeFilter(c)
                     }
                 }
-            },
-                {
-                    key: "_closeFilter", value: function (a) {
-                        a || (a = this.$exclusiveGroup.filter("." + e.default.CLASS.IS_OPEN_STATE));
-                        if (this.isMobileFilter) {
-                            var b = a.find(this.SELECTOR_FILTER_SECTION);
-                            a.addClass(e.default.CLASS.IS_CLOSING_STATE);
-                            b.stop().slideUp(this.SLIDE_DELAY_TIME, function () {
-                                a.removeClass(e.default.CLASS.IS_CLOSING_STATE);
-                                a.removeClass(e.default.CLASS.IS_OPEN_STATE)
-                            })
-                        } else a.removeClass(e.default.CLASS.IS_OPEN_STATE)
-                    }
-                }, {
-                    key: "_openMobileFilter", value: function (a) {
-                        var b = this;
-                        a.preventDefault();
-                        if (this.$el.hasClass(this.CLASS_SHOW_ALL_FILTERS)) this._closeMobileFilter();
-                        else {
-                            a = 0;
-                            if (Modernizr.mq(e.default.MQ.IS_MOBILE)) {
-                                this.$window.on("scroll", this._onScroll);
-                                this.scrollTopHeight = this.$el.find(this.SELECTOR_MOBILE_FILTER_BTN).outerHeight(!0) + this.$oHeader.outerHeight(!0);
-                                var c = this.$bodyHtml.scrollTop() + this.$oHeader.outerHeight(!0);
-                                this.$el.offset().top != c && 0 < c && (this.simulatedScroll = !0, a = this.SCROLL_TIME, c = this.$el.closest(this.SELECTOR_PRODUCT_LISTING).hasClass(this.CLASS_IN_CONTENT) && !Modernizr.mq(e.default.MQ.IS_MOBILE) ? this.SMALL_DIFF : 0, this.$bodyHtml.animate({
-                                    scrollTop: this.$el.find(this.SELECTOR_MOBILE_FILTER_BTN).offset().top +
-                                        this.$localNavigation.outerHeight - this.$oHeader.outerHeight(!0) - c
-                                }, this.SCROLL_TIME))
-                            }
-                            this.$ctaBlock.show();
-                            setTimeout(function () {
-                                b._showOverlay();
-                                b.$el.addClass(b.CLASS_SHOW_ALL_FILTERS);
-                                b.$filterColor.hasClass(e.default.CLASS.IS_OPEN_STATE) && b.publish(e.default.ACTION.REQUEST_FILTER_COLORS);
-                                Modernizr.mq(e.default.MQ.IS_MOBILE) && (b.heightOfSorroundings = 0 === b.heightOfSorroundings ? function () {
-                                    var a = b.$ctaBlock.outerHeight(!0), c = b.$oHeader.outerHeight(!0),
-                                        d = b.$leftComponent.outerHeight(!0), e = b.$localNavigation.outerHeight(!0),
-                                        f = b.$filterBtn.outerHeight(!0);
-                                    return 0 < a && 0 < c && 0 < d ? a + c + d + e + f : b.ESTIMATED_HEIGHT
-                                }() : b.heightOfSorroundings, b.$el.find(b.SELECTOR_SCROLL_CONTENT).height(b.$window.height() - b.heightOfSorroundings), b.publish(e.default.ACTION.DISABLE_SCROLL, {$touchScrollElement: b.$scrollContent}), b.$preventScrollElements.on("touchmove", function (a) {
-                                    a.preventDefault()
-                                }), b.$scrollContent.on("touchstart", b._onFilterTouchStart), b.$scrollContent.on("touchmove", b._onFilterTouchMove))
-                            }, a)
+            }, {
+                key: "_closeFilter", value: function (a) {
+                    a || (a = this.$exclusiveGroup.filter("." + e.default.CLASS.IS_OPEN_STATE));
+                    if (this.isMobileFilter) {
+                        var b = a.find(this.SELECTOR_FILTER_SECTION);
+                        a.addClass(e.default.CLASS.IS_CLOSING_STATE);
+                        b.stop().slideUp(this.SLIDE_DELAY_TIME, function () {
+                            a.removeClass(e.default.CLASS.IS_CLOSING_STATE);
+                            a.removeClass(e.default.CLASS.IS_OPEN_STATE)
+                        })
+                    } else a.removeClass(e.default.CLASS.IS_OPEN_STATE)
+                }
+            }, {
+                key: "_openMobileFilter", value: function (a) {
+                    var b = this;
+                    a.preventDefault();
+                    if (this.$el.hasClass(this.CLASS_SHOW_ALL_FILTERS)) this._closeMobileFilter(); else {
+                        a = 0;
+                        if (Modernizr.mq(e.default.MQ.IS_MOBILE)) {
+                            this.$window.on("scroll", this._onScroll);
+                            this.scrollTopHeight = this.$el.find(this.SELECTOR_MOBILE_FILTER_BTN).outerHeight(!0) + this.$oHeader.outerHeight(!0);
+                            var c = this.$bodyHtml.scrollTop() + this.$oHeader.outerHeight(!0);
+                            this.$el.offset().top != c && 0 < c && (this.simulatedScroll = !0, a = this.SCROLL_TIME, c = this.$el.closest(this.SELECTOR_PRODUCT_LISTING).hasClass(this.CLASS_IN_CONTENT) && !Modernizr.mq(e.default.MQ.IS_MOBILE) ? this.SMALL_DIFF : 0, this.$bodyHtml.animate({scrollTop: this.$el.find(this.SELECTOR_MOBILE_FILTER_BTN).offset().top + this.$localNavigation.outerHeight - this.$oHeader.outerHeight(!0) - c}, this.SCROLL_TIME))
                         }
+                        this.$ctaBlock.show();
+                        setTimeout(function () {
+                            b._showOverlay();
+                            b.$el.addClass(b.CLASS_SHOW_ALL_FILTERS);
+                            b.$filterColor.hasClass(e.default.CLASS.IS_OPEN_STATE) && b.publish(e.default.ACTION.REQUEST_FILTER_COLORS);
+                            Modernizr.mq(e.default.MQ.IS_MOBILE) && (b.heightOfSorroundings = 0 === b.heightOfSorroundings ? function () {
+                                var a = b.$ctaBlock.outerHeight(!0), c = b.$oHeader.outerHeight(!0),
+                                    d = b.$leftComponent.outerHeight(!0), e = b.$localNavigation.outerHeight(!0),
+                                    f = b.$filterBtn.outerHeight(!0);
+                                return 0 < a && 0 < c && 0 < d ? a + c + d + e + f : b.ESTIMATED_HEIGHT
+                            }() : b.heightOfSorroundings, b.$el.find(b.SELECTOR_SCROLL_CONTENT).height(b.$window.height() - b.heightOfSorroundings), b.publish(e.default.ACTION.DISABLE_SCROLL, {$touchScrollElement: b.$scrollContent}), b.$preventScrollElements.on("touchmove", function (a) {
+                                a.preventDefault()
+                            }), b.$scrollContent.on("touchstart", b._onFilterTouchStart), b.$scrollContent.on("touchmove", b._onFilterTouchMove))
+                        }, a)
                     }
-                }, {
-                    key: "_closeMobileFilter", value: function () {
-                        var a =
-                            this;
-                        this.$el.hasClass(this.CLASS_SHOW_ALL_FILTERS) && (this.publish(e.default.ACTION.ENABLE_SCROLL), this.publish(e.default.ACTION.HIDE_OVERLAY), this.publish(e.default.ACTION.SHOW_PAGE_CONTENT), this.$window.off("scroll", this._onScroll), this.$ctaBlock.fadeOut(), this.$el.addClass(e.default.CLASS.IS_CLOSING_STATE), setTimeout(function () {
-                            a.$el.removeClass(a.CLASS_SHOW_ALL_FILTERS);
-                            a.$el.removeClass(e.default.CLASS.IS_CLOSING_STATE)
-                        }, this.SLIDE_DELAY_TIME));
-                        this.$preventScrollElements.off("touchmove");
-                        this.$scrollContent.off("touchstart",
-                            this._onFilterTouchStart);
-                        this.$scrollContent.off("touchmove", this._onFilterTouchMove)
-                    }
-                }, {
-                    key: "_onFilterTouchStart", value: function (a) {
-                        this.allowUp = 0 < this.scrollTop;
-                        this.allowDown = this.scrollTop < this.scrollHeight - this.clientHeight;
-                        this.lastY = a.originalEvent.targetTouches[0].pageY
-                    }
-                }, {
-                    key: "_onFilterTouchMove", value: function (a) {
-                        var b = a.originalEvent.targetTouches[0].pageY > this.lastY, c = !b;
-                        void 0 !== a.originalEvent.scale && 1 !== a.originalEvent.scale && a.preventDefault();
-                        this.lastY = a.originalEvent.targetTouches[0].pageY;
-                        b && this.allowUp || c && this.allowDown ? a.stopPropagation() : a.preventDefault()
-                    }
-                }]);
+                }
+            }, {
+                key: "_closeMobileFilter", value: function () {
+                    var a = this;
+                    this.$el.hasClass(this.CLASS_SHOW_ALL_FILTERS) && (this.publish(e.default.ACTION.ENABLE_SCROLL), this.publish(e.default.ACTION.HIDE_OVERLAY), this.publish(e.default.ACTION.SHOW_PAGE_CONTENT), this.$window.off("scroll", this._onScroll), this.$ctaBlock.fadeOut(), this.$el.addClass(e.default.CLASS.IS_CLOSING_STATE), setTimeout(function () {
+                        a.$el.removeClass(a.CLASS_SHOW_ALL_FILTERS);
+                        a.$el.removeClass(e.default.CLASS.IS_CLOSING_STATE)
+                    }, this.SLIDE_DELAY_TIME));
+                    this.$preventScrollElements.off("touchmove");
+                    this.$scrollContent.off("touchstart", this._onFilterTouchStart);
+                    this.$scrollContent.off("touchmove", this._onFilterTouchMove)
+                }
+            }, {
+                key: "_onFilterTouchStart", value: function (a) {
+                    this.allowUp = 0 < this.scrollTop;
+                    this.allowDown = this.scrollTop < this.scrollHeight - this.clientHeight;
+                    this.lastY = a.originalEvent.targetTouches[0].pageY
+                }
+            }, {
+                key: "_onFilterTouchMove", value: function (a) {
+                    var b = a.originalEvent.targetTouches[0].pageY > this.lastY, c = !b;
+                    void 0 !== a.originalEvent.scale && 1 !== a.originalEvent.scale && a.preventDefault();
+                    this.lastY = a.originalEvent.targetTouches[0].pageY;
+                    b && this.allowUp || c && this.allowDown ? a.stopPropagation() : a.preventDefault()
+                }
+            }]);
             return a
         }(p.default);
         t.exports = f
@@ -22274,8 +21402,7 @@
         function l(c, a, b) {
             l = "undefined" !== typeof Reflect && Reflect.get ? Reflect.get : function (a, b, c) {
                 for (; !Object.prototype.hasOwnProperty.call(a, b) && (a = g(a), null !== a);) ;
-                if (a) return b = Object.getOwnPropertyDescriptor(a, b), b.get ? b.get.call(c) :
-                    b.value
+                if (a) return b = Object.getOwnPropertyDescriptor(a, b), b.get ? b.get.call(c) : b.value
             };
             return l(c, a, b || c)
         }
@@ -22323,8 +21450,7 @@
 
         function g(c) {
             g = Object.setPrototypeOf ? Object.getPrototypeOf : function (a) {
-                return a.__proto__ ||
-                    Object.getPrototypeOf(a)
+                return a.__proto__ || Object.getPrototypeOf(a)
             };
             return g(c)
         }
@@ -22345,8 +21471,7 @@
             v(a, c);
             var b = w(a);
             r(a, [{
-                key: "destroy",
-                value: function () {
+                key: "destroy", value: function () {
                     h.default.INFO(this.constructor.name, ":: Destructor");
                     this._detachDOMListeners();
                     this._detachSubscribers();
@@ -22365,66 +21490,63 @@
                     this._cacheDOMElements();
                     this._attachDOMListeners()
                 }
-            },
-                {
-                    key: "_cacheDOMElements", value: function () {
-                        var a = this;
-                        this.$galleryImage = this.$el.find(this.SELECTOR_GALLERY_IMAGE);
-                        this.$selectedZoomSlider = $(this.SELECTOR_ZOOM_SLIDER);
-                        this.allZoomSources = [];
-                        this.$galleryImage.each(function (b, c) {
-                            a.allZoomSources.push($(c).data("zoom-src"))
-                        })
-                    }
-                }, {
-                    key: "_jQueryScopeBinding", value: function () {
-                        this._onDOMReady = this._onDOMReady.bind(this);
-                        this._triggerZoom = this._triggerZoom.bind(this)
-                    }
-                }, {
-                    key: "_onFrameworkReady", value: function () {
-                    }
-                }, {
-                    key: "_attachSubscribers", value: function () {
-                        h.default.INFO(this.constructor.name,
-                            ":: _attachSubscribers")
-                    }
-                }, {
-                    key: "_detachSubscribers", value: function () {
-                        h.default.INFO(this.constructor.name, ":: _detachSubscribers");
-                        this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady)
-                    }
-                }, {
-                    key: "_attachDOMListeners", value: function () {
-                        this.$selectedZoomSlider.on("click", this.SELECTOR_GALLERY_IMAGE, this._triggerZoom)
-                    }
-                }, {
-                    key: "_detachDOMListeners", value: function () {
-                        this.$selectedZoomSlider.off("click", this.SELECTOR_GALLERY_IMAGE, this._triggerZoom)
-                    }
-                }, {
-                    key: "_triggerZoom", value: function (a) {
-                        var b =
-                                a.currentTarget.getAttribute("data-zoom-src"),
-                            c = a.currentTarget.getAttribute("data-resolvechain"),
-                            d = a.currentTarget.getAttribute("src");
-                        a = $(a.currentTarget).find(this.SELECTOR_A_IMAGE);
-                        b = b ? b : a.attr("data-zoom-src");
-                        c = c ? c : a.attr("data-resolvechain");
-                        d = d ? d : a.attr("src");
-                        this.publish(e.default.ACTION.SHOW_ZOOMED_IMAGE, {
-                            zoomImgSrc: b,
-                            allSources: this.allZoomSources,
-                            pdpGallerySrc: d,
-                            resolveChain: c
-                        })
-                    }
-                }]);
+            }, {
+                key: "_cacheDOMElements", value: function () {
+                    var a = this;
+                    this.$galleryImage = this.$el.find(this.SELECTOR_GALLERY_IMAGE);
+                    this.$selectedZoomSlider = $(this.SELECTOR_ZOOM_SLIDER);
+                    this.allZoomSources = [];
+                    this.$galleryImage.each(function (b, c) {
+                        a.allZoomSources.push($(c).data("zoom-src"))
+                    })
+                }
+            }, {
+                key: "_jQueryScopeBinding", value: function () {
+                    this._onDOMReady = this._onDOMReady.bind(this);
+                    this._triggerZoom = this._triggerZoom.bind(this)
+                }
+            }, {
+                key: "_onFrameworkReady", value: function () {
+                }
+            }, {
+                key: "_attachSubscribers", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _attachSubscribers")
+                }
+            }, {
+                key: "_detachSubscribers", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _detachSubscribers");
+                    this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady)
+                }
+            }, {
+                key: "_attachDOMListeners", value: function () {
+                    this.$selectedZoomSlider.on("click", this.SELECTOR_GALLERY_IMAGE, this._triggerZoom)
+                }
+            }, {
+                key: "_detachDOMListeners", value: function () {
+                    this.$selectedZoomSlider.off("click", this.SELECTOR_GALLERY_IMAGE, this._triggerZoom)
+                }
+            }, {
+                key: "_triggerZoom", value: function (a) {
+                    var b = a.currentTarget.getAttribute("data-zoom-src"),
+                        c = a.currentTarget.getAttribute("data-resolvechain"), d = a.currentTarget.getAttribute("src");
+                    a = $(a.currentTarget).find(this.SELECTOR_A_IMAGE);
+                    b = b ? b : a.attr("data-zoom-src");
+                    c = c ? c : a.attr("data-resolvechain");
+                    d = d ? d : a.attr("src");
+                    this.publish(e.default.ACTION.SHOW_ZOOMED_IMAGE, {
+                        zoomImgSrc: b,
+                        allSources: this.allZoomSources,
+                        pdpGallerySrc: d,
+                        resolveChain: c
+                    })
+                }
+            }]);
             return a
         }(p.default);
         t.exports = f
     }, {
-        "./../../../../js/base/appeaser-component-base.js": 47, "./../../../../js/base/logger.js": 51,
+        "./../../../../js/base/appeaser-component-base.js": 47,
+        "./../../../../js/base/logger.js": 51,
         "./../../enums.js": 65
     }],
     104: [function (f, t, p) {
@@ -22448,8 +21570,7 @@
                 e.enumerable = e.enumerable || !1;
                 e.configurable = !0;
                 "value" in e && (e.writable = !0);
-                Object.defineProperty(a,
-                    e.key, e)
+                Object.defineProperty(a, e.key, e)
             }
         }
 
@@ -22469,12 +21590,7 @@
 
         function v(a, b) {
             if ("function" !== typeof b && null !== b) throw new TypeError("Super expression must either be null or a function");
-            a.prototype = Object.create(b && b.prototype, {
-                constructor: {
-                    value: a,
-                    writable: !0, configurable: !0
-                }
-            });
+            a.prototype = Object.create(b && b.prototype, {constructor: {value: a, writable: !0, configurable: !0}});
             b && n(a, b)
         }
 
@@ -22503,8 +21619,7 @@
         }
 
         function u() {
-            if ("undefined" === typeof Reflect || !Reflect.construct ||
-                Reflect.construct.sham) return !1;
+            if ("undefined" === typeof Reflect || !Reflect.construct || Reflect.construct.sham) return !1;
             if ("function" === typeof Proxy) return !0;
             try {
                 return Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {
@@ -22525,8 +21640,7 @@
         var h = k(f("./../../../../js/base/logger.js")), e = k(f("./../../utils.js")), c = k(f("./../../enums.js"));
         f = function (a) {
             function b() {
-                if (!(this instanceof
-                    b)) throw new TypeError("Cannot call a class as a function");
+                if (!(this instanceof b)) throw new TypeError("Cannot call a class as a function");
                 var a = d.apply(this, arguments);
                 h.default.INFO(a.constructor.name, ":: Constructor");
                 a._jQueryScopeBinding();
@@ -22546,8 +21660,7 @@
                     l(g(b.prototype), "destroy", this).call(this)
                 }
             }, {
-                key: "_attachMQHandlers",
-                value: function () {
+                key: "_attachMQHandlers", value: function () {
                     this.MQMediumHandler = {deferSetups: !1, unmatch: this._close.bind(this)};
                     enquire.register(c.default.MQ.IS_DESKTOP, this.MQMediumHandler)
                 }
@@ -22579,8 +21692,7 @@
                     this._attachMQHandlers()
                 }
             }, {
-                key: "_cacheDOMElements",
-                value: function () {
+                key: "_cacheDOMElements", value: function () {
                     this.$addToCartForm = this.$el.find(this.SELECTOR_PDP_FORM);
                     this.$sizeDropdown = this.$el.find(this.SELECTOR_SIZE_DROPDOWN);
                     this.$btnAddToCart = this.$el.find(this.SELECTOR_BTN_ADD_TO_CART);
@@ -22589,8 +21701,7 @@
                     this.$body = this.$el.parents(this.SELECTOR_BODY);
                     this.$lightBoxWrapper = this.$body.find(this.SELECTOR_LIGHTBOX_WRAPPER);
                     this.$sizeSwatch = this.$el.find(this.SELECTOR_SIZE_SWATCH);
-                    this.oneSizeQuickBuy =
-                        this.$el.hasClass(this.CLASS_IS_ONE_SIZE)
+                    this.oneSizeQuickBuy = this.$el.hasClass(this.CLASS_IS_ONE_SIZE)
                 }
             }, {
                 key: "_jQueryScopeBinding", value: function () {
@@ -22603,8 +21714,7 @@
             }, {
                 key: "_attachSubscribers", value: function () {
                     h.default.INFO(this.constructor.name, ":: _attachSubscribers");
-                    this.subscribe(c.default.EVENT.ON_FRAMEWORK_READY,
-                        this._onFrameworkReady);
+                    this.subscribe(c.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
                     this.subscribe(c.default.EVENT.ON_ITEM_ADDED_TO_CART, this._close)
                 }
             }, {
@@ -22619,8 +21729,7 @@
                 }
             }, {
                 key: "_attachDOMListeners", value: function () {
-                    this.$addToCartForm.on("submit",
-                        this._onAddToCartSubmit);
+                    this.$addToCartForm.on("submit", this._onAddToCartSubmit);
                     this.$sizeDropdown.on("change", this._onSizeChanged);
                     this.$sizeDropdown.on("click", this._onSizeDropdownClick)
                 }
@@ -22634,8 +21743,7 @@
                 key: "_onAddToCartSubmit", value: function (a) {
                     a.preventDefault();
                     a.stopPropagation();
-                    this.$sizeSwatch.find(this.SELECTOR_SIZE_OPTIONS).hasClass(this.CLASS_IS_SELECTED) ||
-                    !this.$sizeSwatch.length || this.oneSizeQuickBuy ? (a = e.default.Form.getData(this.$addToCartForm), this.publish(c.default.ACTION.ADD_ITEM_TO_CART, a)) : this._setButtonMessage(this.btnData.textDisabled)
+                    this.$sizeSwatch.find(this.SELECTOR_SIZE_OPTIONS).hasClass(this.CLASS_IS_SELECTED) || !this.$sizeSwatch.length || this.oneSizeQuickBuy ? (a = e.default.Form.getData(this.$addToCartForm), this.publish(c.default.ACTION.ADD_ITEM_TO_CART, a)) : this._setButtonMessage(this.btnData.textDisabled)
                 }
             }, {
                 key: "_setButtonMessage", value: function (a) {
@@ -22644,10 +21752,9 @@
                     this.$btnAddToCartSpan.html(a);
                     clearTimeout(this.buttonMsgTimer);
                     this.buttonMsgTimer = setTimeout(function () {
-                            b.$btnAddToCartSpan.html(b.btnData.textDefault);
-                            b.$btnAddToCart.removeClass(c.default.CLASS.HAS_ERROR)
-                        },
-                        this.BUTTON_MSG_TIMEOUT)
+                        b.$btnAddToCartSpan.html(b.btnData.textDefault);
+                        b.$btnAddToCart.removeClass(c.default.CLASS.HAS_ERROR)
+                    }, this.BUTTON_MSG_TIMEOUT)
                 }
             }, {
                 key: "_onSizeChanged", value: function () {
@@ -22687,8 +21794,7 @@
         }
 
         function q(c, a) {
-            for (var b =
-                0; b < a.length; b++) {
+            for (var b = 0; b < a.length; b++) {
                 var d = a[b];
                 d.enumerable = d.enumerable || !1;
                 d.configurable = !0;
@@ -22712,8 +21818,7 @@
         }
 
         function v(c, a) {
-            if ("function" !== typeof a && null !==
-                a) throw new TypeError("Super expression must either be null or a function");
+            if ("function" !== typeof a && null !== a) throw new TypeError("Super expression must either be null or a function");
             c.prototype = Object.create(a && a.prototype, {constructor: {value: c, writable: !0, configurable: !0}});
             a && n(c, a)
         }
@@ -22781,8 +21886,7 @@
                     this._detachMQHandlers();
                     this._detachDOMListeners();
                     this._detachSubscribers();
-                    l(g(a.prototype),
-                        "destroy", this).call(this)
+                    l(g(a.prototype), "destroy", this).call(this)
                 }
             }, {
                 key: "_declareConstants", value: function () {
@@ -22794,8 +21898,7 @@
                     this.SELECTOR_O_NAVIGATION = ".o-navigation";
                     this.SELECTOR_CATEGORY_MENU = ".category-wrapper.is-visible .category-menu";
                     this.SELECTOR_CURATED_CONTENT = ".category-wrapper.is-visible .curated-content";
-                    this.MAX_NO_OF_SUGGESTIONS =
-                        5;
+                    this.MAX_NO_OF_SUGGESTIONS = 5;
                     this.LOCAL_HOST = "localhost";
                     this.SELECTOR_SEARCH = ".o-search";
                     this.SELECTOR_SITE_TEMPLATE = "#search-suggestions-site";
@@ -22821,8 +21924,7 @@
                 }
             }, {
                 key: "_attachSubscribers", value: function () {
-                    h.default.INFO(this.constructor.name,
-                        ":: _attachSubscribers");
+                    h.default.INFO(this.constructor.name, ":: _attachSubscribers");
                     this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
                     this.subscribe(e.default.EVENT.ON_SHOW_SEARCH_SUGGESTIONS, this._onSuggestionsRecieved);
                     this.subscribe(e.default.ACTION.HIDE_SEARCH, this._clearSuggestions)
@@ -22848,8 +21950,7 @@
                 }
             }, {
                 key: "_attachDOMListeners", value: function () {
-                    this.$searchInput.on("keyup",
-                        this._onSearchValueKeyUp)
+                    this.$searchInput.on("keyup", this._onSearchValueKeyUp)
                 }
             }, {
                 key: "_detachMQHandlers", value: function () {
@@ -22863,8 +21964,7 @@
                     var a = this, b = this.$searchInput.val().trim();
                     b ? b.length >= this.MIN_SUGGESTION_CHARACTERS ? (clearTimeout(this.TRIGGER_SEARCH_TIMEOUT), this.TRIGGER_SEARCH_TIMEOUT = setTimeout(function () {
                         a.publish(e.default.ACTION.GET_SEARCH_SUGGESTIONS, b.toLowerCase())
-                    }, this.SEARCH_TIMER), this.SEARCH_TIMER =
-                        150) : (this.SEARCH_TIMER = 0, this._clearSuggestions(0)) : this._clearSuggestions(0)
+                    }, this.SEARCH_TIMER), this.SEARCH_TIMER = 150) : (this.SEARCH_TIMER = 0, this._clearSuggestions(0)) : this._clearSuggestions(0)
                 }
             }, {
                 key: "_onSuggestionsRecieved", value: function (a) {
@@ -22874,8 +21974,7 @@
                         g = a.siteSuggestions.concat(a.productSuggestions);
                     a.productSuggestions.splice(c);
                     a.siteSuggestions.splice(d);
-                    for (c = 0; c < a.siteSuggestions.length; c++) d = a.siteSuggestions[c],
-                        d.searchString = d.suggestion.slice(0, b), d.completeText = d.suggestion.slice(b);
+                    for (c = 0; c < a.siteSuggestions.length; c++) d = a.siteSuggestions[c], d.searchString = d.suggestion.slice(0, b), d.completeText = d.suggestion.slice(b);
                     if (window.location.hostname !== this.LOCAL_HOST) for (b = 0; b < g.length; b++) g[b].url.match(e) || (f = !1);
                     f && this._setSuggestions(a)
                 }
@@ -22883,14 +21982,12 @@
                 key: "_setSuggestions", value: function (a) {
                     var b = "", c = "";
                     a.siteSuggestions.length && (b = Handlebars.compile(this.$suggestionSiteTemplate.html())({suggestions: a.siteSuggestions}));
-                    a.productSuggestions.length ? (c = Handlebars.compile(this.$suggestionProductTemplate.html())({suggestions: a.productSuggestions}), this.$productHeading.removeClass(e.default.CLASS.DISPLAY_NONE)) :
-                        this.$productHeading.addClass(e.default.CLASS.DISPLAY_NONE);
+                    a.productSuggestions.length ? (c = Handlebars.compile(this.$suggestionProductTemplate.html())({suggestions: a.productSuggestions}), this.$productHeading.removeClass(e.default.CLASS.DISPLAY_NONE)) : this.$productHeading.addClass(e.default.CLASS.DISPLAY_NONE);
                     this.$categoryMenu = this.$el.parents(this.SELECTOR_O_NAVIGATION).find(this.SELECTOR_CATEGORY_MENU);
                     this.$categoryMenu.addClass(e.default.CLASS.IS_HIDDEN_STATE);
                     Modernizr.mq(e.default.MQ.IS_MOBILE_HEADER) && $(this.SELECTOR_SEARCH).hasClass(this.CLASS_IS_OPEN) && (this.$curatedContent = $(this.SELECTOR_CURATED_CONTENT), this.$curatedContent.removeClass(e.default.CLASS.IS_HIDDEN_STATE));
                     a = /<script|&lt;script/;
-                    null === b.match(a) && null === c.match(a) &&
-                    (this.$pagesUL.html(b), this.$productsUL.html(c))
+                    null === b.match(a) && null === c.match(a) && (this.$pagesUL.html(b), this.$productsUL.html(c))
                 }
             }, {
                 key: "_clearSuggestions", value: function () {
@@ -22903,8 +22000,7 @@
                     }, 0 < arguments.length && void 0 !== arguments[0] ? arguments[0] : this.ANIMATION_DELAY)
                 }
             }, {
-                key: "_calcMaxNoOfProductSuggestions", value: function (a,
-                                                                        b) {
+                key: "_calcMaxNoOfProductSuggestions", value: function (a, b) {
                     return a < this.MAX_NO_OF_SUGGESTIONS / 2 ? b > this.MAX_NO_OF_SUGGESTIONS / 2 ? this.MAX_NO_OF_SUGGESTIONS - a : b : b > this.MAX_NO_OF_SUGGESTIONS / 2 ? this.MAX_NO_OF_SUGGESTIONS / 2 : b
                 }
             }, {
@@ -22924,8 +22020,7 @@
     106: [function (f, t, p) {
         function m(a) {
             "@babel/helpers - typeof";
-            m = "function" === typeof Symbol &&
-            "symbol" === typeof Symbol.iterator ? function (a) {
+            m = "function" === typeof Symbol && "symbol" === typeof Symbol.iterator ? function (a) {
                 return typeof a
             } : function (a) {
                 return a && "function" === typeof Symbol && a.constructor === Symbol && a !== Symbol.prototype ? "symbol" : typeof a
@@ -22954,8 +22049,7 @@
         }
 
         function l(a, b, c) {
-            l = "undefined" !== typeof Reflect &&
-            Reflect.get ? Reflect.get : function (a, b, c) {
+            l = "undefined" !== typeof Reflect && Reflect.get ? Reflect.get : function (a, b, c) {
                 for (; !Object.prototype.hasOwnProperty.call(a, b) && (a = g(a), null !== a);) ;
                 if (a) return b = Object.getOwnPropertyDescriptor(a, b), b.get ? b.get.call(c) : b.value
             };
@@ -22970,8 +22064,7 @@
 
         function n(a, b) {
             n = Object.setPrototypeOf || function (a, b) {
-                a.__proto__ =
-                    b;
+                a.__proto__ = b;
                 return a
             };
             return n(a, b)
@@ -22997,9 +22090,8 @@
             if ("undefined" === typeof Reflect || !Reflect.construct || Reflect.construct.sham) return !1;
             if ("function" === typeof Proxy) return !0;
             try {
-                return Boolean.prototype.valueOf.call(Reflect.construct(Boolean,
-                    [], function () {
-                    })), !0
+                return Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {
+                })), !0
             } catch (a) {
                 return !1
             }
@@ -23018,8 +22110,7 @@
             function b() {
                 if (!(this instanceof b)) throw new TypeError("Cannot call a class as a function");
                 var a = d.apply(this, arguments);
-                h.default.INFO(a.constructor.name,
-                    ":: Constructor");
+                h.default.INFO(a.constructor.name, ":: Constructor");
                 a._declareConstants();
                 a._jQueryScopeBinding();
                 a.subscribe(e.default.EVENT.ON_DOCUMENT_READY, a._onDOMReady);
@@ -23050,8 +22141,7 @@
                     this.SELECTOR_CURATED_CONTENT = ".category-wrapper.is-visible .curated-content";
                     this.REGEX_ALLOWED_TRIGGER_KEYS = /^[a-z|A-Z|0-9]$/;
                     this.CLASS_FLY_OUT = "fly-out";
-                    this.INPUT_PLACEHOLDER_SHORT =
-                        "\u00a7 Search";
+                    this.INPUT_PLACEHOLDER_SHORT = "\u00a7 Search";
                     this.INPUT_VALUE = "";
                     this.ANIMATION_DURATION = 400;
                     this.FLY_OUT_DURATOIN = 350;
@@ -23067,248 +22157,232 @@
                     this.CURRENT_STATE_HEADER = "";
                     this.CLASS_IS_OPEN = "is-open"
                 }
-            },
-                {
-                    key: "_onDOMReady", value: function () {
-                        h.default.INFO(this.constructor.name, ":: _onDOMReady");
-                        this._attachSubscribers();
-                        this._cacheDOMElements();
-                        this._attachMQHandlers();
-                        this._attachDOMListeners();
-                        this._activateCuratedSuggestions();
-                        this._onInit()
+            }, {
+                key: "_onDOMReady", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _onDOMReady");
+                    this._attachSubscribers();
+                    this._cacheDOMElements();
+                    this._attachMQHandlers();
+                    this._attachDOMListeners();
+                    this._activateCuratedSuggestions();
+                    this._onInit()
+                }
+            }, {
+                key: "_cacheDOMElements", value: function () {
+                    this.$body = $("body");
+                    this.$window = $(window);
+                    this.$oHeader = $(this.SELECTOR_HEADER);
+                    this.$searchInput = this.$el.find(this.SELECTOR_SEARCH_INPUT);
+                    this.$searchHint = this.$el.find(this.SELECTOR_SEARCH_HINT);
+                    this.$curatedSuggestionsWrapper = $(this.SELECTOR_CURATED_SUGGESTIONS);
+                    this.$curatedSuggestions = this.$curatedSuggestionsWrapper.find("li");
+                    this.$input = $(this.SELECTOR_INPUT);
+                    this.$pageContent = $(this.SELECTOR_PAGE_CONTENT);
+                    this.$inputFieldWrapper = this.$el.find(this.SELECTOR_INPUT_WRAPPER);
+                    this.$searchIcon = this.$oHeader.find(this.SELECTOR_SEARCH_ICON);
+                    this.$searchForm = this.$el.find(this.SELECTOR_SEARCH_FORM);
+                    this.isTransitioning = !1;
+                    this.animationPauseTiming = 0;
+                    this.pageContentMarginTop = parseInt(this.$pageContent.css("margin-top"));
+                    this.$curatedContent = $(this.SELECTOR_CURATED_CONTENT)
+                }
+            }, {
+                key: "_onFrameworkReady", value: function () {
+                }
+            }, {
+                key: "_jQueryScopeBinding", value: function () {
+                    this._onScroll = this._onScroll.bind(this);
+                    this._onInputChange = this._onInputChange.bind(this);
+                    this._onSearchInputFocus = this._onSearchInputFocus.bind(this);
+                    this._onSearchInputBlur = this._onSearchInputBlur.bind(this);
+                    this._setSearchHint = this._setSearchHint.bind(this);
+                    this._resumeCuratedSuggestionAnimation = this._resumeCuratedSuggestionAnimation.bind(this);
+                    this._pauseCuratedSuggestionAnimation = this._pauseCuratedSuggestionAnimation.bind(this);
+                    this._onSearchSubmit = this._onSearchSubmit.bind(this)
+                }
+            }, {
+                key: "_attachSubscribers", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _attachSubscribers");
+                    this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
+                    this.subscribe(e.default.EVENT.ON_PAGE_CONTENT_REPLACED, this._onPageContentReplaced);
+                    this.subscribe(e.default.EVENT.ON_KEY_DOWN, this._onKeyDown);
+                    this.subscribe(e.default.ACTION.SET_SEARCH_HINT, this._setSearchHint);
+                    this.subscribe(e.default.ACTION.SHOW_SEARCH, this._showSearch);
+                    this.subscribe(e.default.ACTION.HIDE_SEARCH, this._hideSearch)
+                }
+            }, {
+                key: "_detachSubscribers", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _detachSubscribers");
+                    this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady);
+                    this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
+                    this.unsubscribe(e.default.EVENT.ON_PAGE_CONTENT_REPLACED, this._onPageContentReplaced);
+                    this.unsubscribe(e.default.EVENT.ON_KEY_DOWN, this._onKeyDown);
+                    this.unsubscribe(e.default.ACTION.SET_SEARCH_HINT, this._setSearchHint);
+                    this.unsubscribe(e.default.ACTION.SHOW_SEARCH, this._showSearch);
+                    this.unsubscribe(e.default.ACTION.HIDE_SEARCH, this._hideSearch)
+                }
+            }, {
+                key: "_attachDOMListeners", value: function () {
+                    this.$searchInput.on("focus", this._onSearchInputFocus);
+                    this.$searchInput.on("blur", this._onSearchInputBlur);
+                    this.$searchInput.on("input", this._onInputChange);
+                    this.$searchInput.on("keyup", this._onSearchSubmit);
+                    this.$curatedSuggestionsWrapper.on("mouseover", this.SELECTOR_ACTIVE_CURATED_SUGGESTION, this._pauseCuratedSuggestionAnimation);
+                    this.$curatedSuggestionsWrapper.on("mouseleave", this.SELECTOR_ACTIVE_CURATED_SUGGESTION, this._resumeCuratedSuggestionAnimation)
+                }
+            }, {
+                key: "_detachDOMListeners", value: function () {
+                    this.$searchInput.off("focus", this._onSearchInputFocus);
+                    this.$searchInput.off("blur", this._onSearchInputBlur);
+                    this.$searchInput.off("input", this._onInputChange);
+                    this.$searchInput.off("keyup", this._onSearchSubmit);
+                    this.$window.off("scroll", this._onScroll);
+                    this.$curatedSuggestionsWrapper.off("mouseover", this.SELECTOR_ACTIVE_CURATED_SUGGESTION, this._pauseCuratedSuggestionAnimation);
+                    this.$curatedSuggestionsWrapper.off("mouseleave", this.SELECTOR_ACTIVE_CURATED_SUGGESTION, this._resumeCuratedSuggestionAnimation)
+                }
+            }, {
+                key: "_attachMQHandlers", value: function () {
+                    this.MQMobileHandler = {deferSetup: !0};
+                    enquire.register(e.default.MQ.IS_MOBILE_HEADER, this.MQMobileHandler)
+                }
+            }, {
+                key: "_detachMQHandlers", value: function () {
+                    enquire.unregister(e.default.MQ.IS_MOBILE_HEADER, this.MQMobileHandler)
+                }
+            }, {
+                key: "_onInit", value: function () {
+                    this.publish(e.default.ACTION.SEARCH_INITIALISE)
+                }
+            }, {
+                key: "_onKeyDown", value: function (a) {
+                    a = a.originalEvent;
+                    a.metaKey || a.ctrlKey || $("input:focus").length || (a.key.match(this.REGEX_ALLOWED_TRIGGER_KEYS) && !this.$el.hasClass(e.default.CLASS.IS_OPEN_STATE) ? this._showSearch() : a.key.match(e.default.KEYSTROKE.ESCAPE) && this.$el.hasClass(e.default.CLASS.IS_OPEN_STATE) && this.publish(e.default.ACTION.HIDE_HEADER))
+                }
+            }, {
+                key: "_onScroll", value: function () {
+                    this.CURRENT_STATE_HEADER != e.default.CLASS.IS_STICKY && (this.$el.hasClass(e.default.CLASS.IS_OPEN_STATE) && this.$window.scrollTop() > this.$el.outerHeight(!0) ? this._hideSearch() : !this.$el.hasClass(e.default.CLASS.IS_OPEN_STATE) && this.$window.scrollTop() < this.$el.outerHeight(!0) && this._showSearch())
+                }
+            }, {
+                key: "_pauseCuratedSuggestionAnimation", value: function () {
+                    this.$curatedSuggestions.removeClass(e.default.CLASS.IS_FLYING_IN_AND_OUT);
+                    clearInterval(this.curatedSuggestionsInterval);
+                    clearInterval(this.resumeCuratedSuggestionAnimationTimer);
+                    clearInterval(this.tagFlyOutTimer);
+                    this.animationPauseTiming = this.animationPauseTiming ? this.animationPauseTiming - (Date.now() - this.curatedSuggestionAnimationStartingTime) : this.FLYING_IN_OUT_DURATION - (Date.now() - this.curatedSuggestionAnimationStartingTime)
+                }
+            }, {
+                key: "_resumeCuratedSuggestionAnimation", value: function (a) {
+                    var b = this, c = $(a.currentTarget);
+                    this.curatedSuggestionAnimationStartingTime = Date.now();
+                    this.tagFlyOutTimer = setTimeout(function () {
+                        c.addClass(b.CLASS_FLY_OUT)
+                    }, this.animationPauseTiming);
+                    this.resumeCuratedSuggestionAnimationTimer = setTimeout(function () {
+                        b._animateCuratedSuggestion();
+                        c.removeClass(b.CLASS_FLY_OUT);
+                        b.curatedSuggestionsInterval = setInterval(function () {
+                            b._animateCuratedSuggestion()
+                        }, b.FLYING_IN_OUT_DURATION)
+                    }, this.animationPauseTiming + this.FLY_OUT_DURATOIN)
+                }
+            }, {
+                key: "_isLetter", value: function (a) {
+                    return "string" === typeof a && a.match(/^[a-zA-Z]$/)
+                }
+            }, {
+                key: "_onInputChange", value: function (a) {
+                    this.INPUT_VALUE !== $(a.currentTarget).val() && (this.publish(e.default.EVENT.ON_SEARCH_INPUT, $(a.currentTarget).val()), this.INPUT_VALUE = $(a.currentTarget).val());
+                    0 === $(a.currentTarget).val().length ? this.$curatedSuggestionsWrapper.removeClass(e.default.CLASS.IS_INVISIBLE) : (this.$oHeader.hasClass(e.default.CLASS.IS_OPEN_STATE) || this.publish(e.default.ACTION.SHOW_HEADER), this.$curatedSuggestionsWrapper.addClass(e.default.CLASS.IS_INVISIBLE));
+                    Modernizr.mq(e.default.MQ.IS_MOBILE_HEADER) && $(this.SELECTOR_SEARCH).hasClass(this.CLASS_IS_OPEN) && (this.$curatedContent = $(this.SELECTOR_CURATED_CONTENT), this.$curatedContent.addClass(e.default.CLASS.IS_HIDDEN_STATE))
+                }
+            }, {
+                key: "_onSearchInputFocus", value: function () {
+                    c.default.Helpers.isIE11() && this._deactivateCuratedSuggestions()
+                }
+            }, {
+                key: "_onSearchInputBlur", value: function () {
+                    c.default.Helpers.isIE11() && this._activateCuratedSuggestions()
+                }
+            }, {
+                key: "_setSearchHint", value: function (a, b, c) {
+                    if (!Modernizr.mq(e.default.MQ.IS_MOBILE_HEADER)) {
+                        var d = a, f = c ? c.length : this.$searchInput.val().length;
+                        b ? this.$searchInput.css("opacity", 0) : (d = a.indexOf("\x26"), this.$searchInput.css("opacity", 1), 0 < d && 0 === a.toLowerCase().substr(d + 2, a.length).lastIndexOf(c.toLowerCase(), 0) && (f = f + d + 2), d = this.$searchInput.val() + a.substring(f));
+                        "" === d ? this.$curatedSuggestionsWrapper.removeClass(e.default.CLASS.IS_INVISIBLE) : this.$curatedSuggestionsWrapper.addClass(e.default.CLASS.IS_INVISIBLE);
+                        a && 0 === !a.toLowerCase().lastIndexOf(this.$searchInput.val().toLowerCase(), 0) && !b && (d = "");
+                        this.$searchHint.attr("placeholder", d)
                     }
-                }, {
-                    key: "_cacheDOMElements", value: function () {
-                        this.$body = $("body");
-                        this.$window = $(window);
-                        this.$oHeader = $(this.SELECTOR_HEADER);
-                        this.$searchInput = this.$el.find(this.SELECTOR_SEARCH_INPUT);
-                        this.$searchHint = this.$el.find(this.SELECTOR_SEARCH_HINT);
-                        this.$curatedSuggestionsWrapper =
-                            $(this.SELECTOR_CURATED_SUGGESTIONS);
-                        this.$curatedSuggestions = this.$curatedSuggestionsWrapper.find("li");
-                        this.$input = $(this.SELECTOR_INPUT);
-                        this.$pageContent = $(this.SELECTOR_PAGE_CONTENT);
-                        this.$inputFieldWrapper = this.$el.find(this.SELECTOR_INPUT_WRAPPER);
-                        this.$searchIcon = this.$oHeader.find(this.SELECTOR_SEARCH_ICON);
-                        this.$searchForm = this.$el.find(this.SELECTOR_SEARCH_FORM);
-                        this.isTransitioning = !1;
-                        this.animationPauseTiming = 0;
-                        this.pageContentMarginTop = parseInt(this.$pageContent.css("margin-top"));
-                        this.$curatedContent =
-                            $(this.SELECTOR_CURATED_CONTENT)
-                    }
-                }, {
-                    key: "_onFrameworkReady", value: function () {
-                    }
-                }, {
-                    key: "_jQueryScopeBinding", value: function () {
-                        this._onScroll = this._onScroll.bind(this);
-                        this._onInputChange = this._onInputChange.bind(this);
-                        this._onSearchInputFocus = this._onSearchInputFocus.bind(this);
-                        this._onSearchInputBlur = this._onSearchInputBlur.bind(this);
-                        this._setSearchHint = this._setSearchHint.bind(this);
-                        this._resumeCuratedSuggestionAnimation = this._resumeCuratedSuggestionAnimation.bind(this);
-                        this._pauseCuratedSuggestionAnimation =
-                            this._pauseCuratedSuggestionAnimation.bind(this);
-                        this._onSearchSubmit = this._onSearchSubmit.bind(this)
-                    }
-                }, {
-                    key: "_attachSubscribers", value: function () {
-                        h.default.INFO(this.constructor.name, ":: _attachSubscribers");
-                        this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
-                        this.subscribe(e.default.EVENT.ON_PAGE_CONTENT_REPLACED, this._onPageContentReplaced);
-                        this.subscribe(e.default.EVENT.ON_KEY_DOWN, this._onKeyDown);
-                        this.subscribe(e.default.ACTION.SET_SEARCH_HINT, this._setSearchHint);
-                        this.subscribe(e.default.ACTION.SHOW_SEARCH,
-                            this._showSearch);
-                        this.subscribe(e.default.ACTION.HIDE_SEARCH, this._hideSearch)
-                    }
-                }, {
-                    key: "_detachSubscribers", value: function () {
-                        h.default.INFO(this.constructor.name, ":: _detachSubscribers");
-                        this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady);
-                        this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
-                        this.unsubscribe(e.default.EVENT.ON_PAGE_CONTENT_REPLACED, this._onPageContentReplaced);
-                        this.unsubscribe(e.default.EVENT.ON_KEY_DOWN, this._onKeyDown);
-                        this.unsubscribe(e.default.ACTION.SET_SEARCH_HINT,
-                            this._setSearchHint);
-                        this.unsubscribe(e.default.ACTION.SHOW_SEARCH, this._showSearch);
-                        this.unsubscribe(e.default.ACTION.HIDE_SEARCH, this._hideSearch)
-                    }
-                }, {
-                    key: "_attachDOMListeners", value: function () {
-                        this.$searchInput.on("focus", this._onSearchInputFocus);
-                        this.$searchInput.on("blur", this._onSearchInputBlur);
-                        this.$searchInput.on("input", this._onInputChange);
-                        this.$searchInput.on("keyup", this._onSearchSubmit);
-                        this.$curatedSuggestionsWrapper.on("mouseover", this.SELECTOR_ACTIVE_CURATED_SUGGESTION, this._pauseCuratedSuggestionAnimation);
-                        this.$curatedSuggestionsWrapper.on("mouseleave", this.SELECTOR_ACTIVE_CURATED_SUGGESTION, this._resumeCuratedSuggestionAnimation)
-                    }
-                }, {
-                    key: "_detachDOMListeners", value: function () {
-                        this.$searchInput.off("focus", this._onSearchInputFocus);
-                        this.$searchInput.off("blur", this._onSearchInputBlur);
-                        this.$searchInput.off("input", this._onInputChange);
-                        this.$searchInput.off("keyup", this._onSearchSubmit);
-                        this.$window.off("scroll", this._onScroll);
-                        this.$curatedSuggestionsWrapper.off("mouseover", this.SELECTOR_ACTIVE_CURATED_SUGGESTION,
-                            this._pauseCuratedSuggestionAnimation);
-                        this.$curatedSuggestionsWrapper.off("mouseleave", this.SELECTOR_ACTIVE_CURATED_SUGGESTION, this._resumeCuratedSuggestionAnimation)
-                    }
-                }, {
-                    key: "_attachMQHandlers", value: function () {
-                        this.MQMobileHandler = {deferSetup: !0};
-                        enquire.register(e.default.MQ.IS_MOBILE_HEADER, this.MQMobileHandler)
-                    }
-                }, {
-                    key: "_detachMQHandlers", value: function () {
-                        enquire.unregister(e.default.MQ.IS_MOBILE_HEADER, this.MQMobileHandler)
-                    }
-                }, {
-                    key: "_onInit", value: function () {
-                        this.publish(e.default.ACTION.SEARCH_INITIALISE)
-                    }
-                },
-                {
-                    key: "_onKeyDown", value: function (a) {
-                        a = a.originalEvent;
-                        a.metaKey || a.ctrlKey || $("input:focus").length || (a.key.match(this.REGEX_ALLOWED_TRIGGER_KEYS) && !this.$el.hasClass(e.default.CLASS.IS_OPEN_STATE) ? this._showSearch() : a.key.match(e.default.KEYSTROKE.ESCAPE) && this.$el.hasClass(e.default.CLASS.IS_OPEN_STATE) && this.publish(e.default.ACTION.HIDE_HEADER))
-                    }
-                }, {
-                    key: "_onScroll", value: function () {
-                        this.CURRENT_STATE_HEADER != e.default.CLASS.IS_STICKY && (this.$el.hasClass(e.default.CLASS.IS_OPEN_STATE) && this.$window.scrollTop() >
-                        this.$el.outerHeight(!0) ? this._hideSearch() : !this.$el.hasClass(e.default.CLASS.IS_OPEN_STATE) && this.$window.scrollTop() < this.$el.outerHeight(!0) && this._showSearch())
-                    }
-                }, {
-                    key: "_pauseCuratedSuggestionAnimation", value: function () {
-                        this.$curatedSuggestions.removeClass(e.default.CLASS.IS_FLYING_IN_AND_OUT);
-                        clearInterval(this.curatedSuggestionsInterval);
-                        clearInterval(this.resumeCuratedSuggestionAnimationTimer);
-                        clearInterval(this.tagFlyOutTimer);
-                        this.animationPauseTiming = this.animationPauseTiming ? this.animationPauseTiming -
-                            (Date.now() - this.curatedSuggestionAnimationStartingTime) : this.FLYING_IN_OUT_DURATION - (Date.now() - this.curatedSuggestionAnimationStartingTime)
-                    }
-                }, {
-                    key: "_resumeCuratedSuggestionAnimation", value: function (a) {
-                        var b = this, c = $(a.currentTarget);
-                        this.curatedSuggestionAnimationStartingTime = Date.now();
-                        this.tagFlyOutTimer = setTimeout(function () {
-                            c.addClass(b.CLASS_FLY_OUT)
-                        }, this.animationPauseTiming);
-                        this.resumeCuratedSuggestionAnimationTimer = setTimeout(function () {
-                            b._animateCuratedSuggestion();
-                            c.removeClass(b.CLASS_FLY_OUT);
-                            b.curatedSuggestionsInterval = setInterval(function () {
-                                b._animateCuratedSuggestion()
-                            }, b.FLYING_IN_OUT_DURATION)
-                        }, this.animationPauseTiming + this.FLY_OUT_DURATOIN)
-                    }
-                }, {
-                    key: "_isLetter", value: function (a) {
-                        return "string" === typeof a && a.match(/^[a-zA-Z]$/)
-                    }
-                }, {
-                    key: "_onInputChange", value: function (a) {
-                        this.INPUT_VALUE !== $(a.currentTarget).val() && (this.publish(e.default.EVENT.ON_SEARCH_INPUT, $(a.currentTarget).val()), this.INPUT_VALUE = $(a.currentTarget).val());
-                        0 === $(a.currentTarget).val().length ? this.$curatedSuggestionsWrapper.removeClass(e.default.CLASS.IS_INVISIBLE) :
-                            (this.$oHeader.hasClass(e.default.CLASS.IS_OPEN_STATE) || this.publish(e.default.ACTION.SHOW_HEADER), this.$curatedSuggestionsWrapper.addClass(e.default.CLASS.IS_INVISIBLE));
-                        Modernizr.mq(e.default.MQ.IS_MOBILE_HEADER) && $(this.SELECTOR_SEARCH).hasClass(this.CLASS_IS_OPEN) && (this.$curatedContent = $(this.SELECTOR_CURATED_CONTENT), this.$curatedContent.addClass(e.default.CLASS.IS_HIDDEN_STATE))
-                    }
-                }, {
-                    key: "_onSearchInputFocus", value: function () {
-                        c.default.Helpers.isIE11() && this._deactivateCuratedSuggestions()
-                    }
-                },
-                {
-                    key: "_onSearchInputBlur", value: function () {
-                        c.default.Helpers.isIE11() && this._activateCuratedSuggestions()
-                    }
-                }, {
-                    key: "_setSearchHint", value: function (a, b, c) {
-                        if (!Modernizr.mq(e.default.MQ.IS_MOBILE_HEADER)) {
-                            var d = a, f = c ? c.length : this.$searchInput.val().length;
-                            b ? this.$searchInput.css("opacity", 0) : (d = a.indexOf("\x26"), this.$searchInput.css("opacity", 1), 0 < d && 0 === a.toLowerCase().substr(d + 2, a.length).lastIndexOf(c.toLowerCase(), 0) && (f = f + d + 2), d = this.$searchInput.val() + a.substring(f));
-                            "" === d ? this.$curatedSuggestionsWrapper.removeClass(e.default.CLASS.IS_INVISIBLE) :
-                                this.$curatedSuggestionsWrapper.addClass(e.default.CLASS.IS_INVISIBLE);
-                            a && 0 === !a.toLowerCase().lastIndexOf(this.$searchInput.val().toLowerCase(), 0) && !b && (d = "");
-                            this.$searchHint.attr("placeholder", d)
-                        }
-                    }
-                }, {
-                    key: "_activateCuratedSuggestions", value: function () {
-                        var a = this;
-                        this.currentIndex = 0;
-                        this.$curatedSuggestionsWrapper.removeClass(e.default.CLASS.IS_INVISIBLE + " " + e.default.CLASS.IS_HIDDEN_STATE);
-                        "" !== this.$searchInput.val() && this.$curatedSuggestionsWrapper.addClass(e.default.CLASS.IS_INVISIBLE);
-                        this.$curatedSuggestions.addClass(e.default.CLASS.IS_HIDDEN_STATE);
-                        this._animateCuratedSuggestion();
-                        clearInterval(this.curatedSuggestionsInterval);
-                        this.curatedSuggestionsInterval = setInterval(function () {
-                            a._animateCuratedSuggestion()
-                        }, this.FLYING_IN_OUT_DURATION)
-                    }
-                }, {
-                    key: "_animateCuratedSuggestion", value: function () {
-                        this.animationPauseTiming = 0;
-                        this.curatedSuggestionAnimationStartingTime = Date.now();
-                        this.currentIndex === this.$curatedSuggestions.length && (this.currentIndex = 0);
-                        this.$curatedSuggestions.removeClass(e.default.CLASS.IS_FLYING_IN_AND_OUT);
-                        this.$curatedSuggestions.addClass(e.default.CLASS.IS_HIDDEN_STATE);
-                        this.$curatedSuggestions.eq(this.currentIndex).addClass(e.default.CLASS.IS_FLYING_IN_AND_OUT).removeClass(e.default.CLASS.IS_HIDDEN_STATE);
-                        this.currentIndex++
-                    }
-                }, {
-                    key: "_deactivateCuratedSuggestions", value: function () {
-                        this.$curatedSuggestionsWrapper.addClass(e.default.CLASS.IS_HIDDEN_STATE);
-                        clearInterval(this.curatedSuggestionsInterval);
-                        clearInterval(this.resumeCuratedSuggestionAnimationTimer);
-                        clearInterval(this.tagFlyOutTimer)
-                    }
-                }, {
-                    key: "_onPageContentReplaced", value: function () {
-                        this.$pageContent = $(this.SELECTOR_PAGE_CONTENT)
-                    }
-                },
-                {
-                    key: "_showSearch", value: function (a) {
-                        var b = this;
-                        a && (this.CURRENT_STATE_HEADER = a);
-                        this.$oHeader.addClass(this.CLASS_HAS_OPEN_SEARCH);
-                        this.$body.addClass(this.CLASS_IS_SEARCH_VISIBLE);
-                        this.$el.addClass(e.default.CLASS.IS_OPEN_STATE);
-                        this.$searchIcon.addClass(e.default.CLASS.IS_OPEN_STATE).attr("aria-label", "close search");
-                        this.$oHeader.hasClass(e.default.CLASS.IS_OPEN_STATE) || this.publish(e.default.ACTION.UPDATE_PAGE_CONTENT_MARGIN_CONTRIBUTION, {
-                            element: this.$el,
-                            margin: this.$el.outerHeight()
-                        });
-                        c.default.Accessibility.show(this.$el);
-                        this.$searchInput.focus();
-                        Modernizr.mq(e.default.MQ.IS_MOBILE) ? Modernizr.mq(e.default.MQ.IS_MOBILE) && this.CURRENT_STATE_HEADER == this.CLASS_IS_EXTENDED && (this.$window.off("scroll", this._onScroll), this.$window.on("scroll", this._onScroll)) : setTimeout(function () {
-                            b.$window.off("scroll", b._onScroll);
-                            b.$window.on("scroll", b._onScroll)
-                        }, this.SCROLLING_DURATION)
-                    }
-                }, {
-                    key: "_hideSearch", value: function () {
-                        var a = this;
-                        this.$el.hasClass(e.default.CLASS.IS_OPEN_STATE) && (this.$oHeader.removeClass(this.CLASS_HAS_OPEN_SEARCH).addClass("is-closing-search"),
-                            this.$body.removeClass(this.CLASS_IS_SEARCH_VISIBLE), this.$el.removeClass(e.default.CLASS.IS_OPEN_STATE).addClass(e.default.CLASS.IS_CLOSING_STATE).on("transitionend", function (b) {
-                            a.$el.removeClass(e.default.CLASS.IS_CLOSING_STATE);
-                            a.$oHeader.removeClass("is-closing-search");
-                            a.$el.off("transitionend")
-                        }), this.publish(e.default.ACTION.UPDATE_PAGE_CONTENT_MARGIN_CONTRIBUTION, {
-                            element: this.$el,
-                            margin: 0
-                        }), this.$searchInput.val(""), this._setSearchHint("", !1), c.default.Accessibility.hide(this.$el), this.$searchInput.blur(),
-                            this.$searchIcon.removeClass(e.default.CLASS.IS_OPEN_STATE).attr("aria-label", "search"), this.CURRENT_STATE_HEADER != e.default.CLASS.IS_STICKY && this.CURRENT_STATE_HEADER != this.CLASS_IS_EXTENDED && this.$window.off("scroll", this._onScroll))
-                    }
-                }, {
-                    key: "_onSearchSubmit", value: function (a) {
-                        a.key.match(e.default.KEYSTROKE.ENTER) && this.$searchForm.submit()
-                    }
-                }]);
+                }
+            }, {
+                key: "_activateCuratedSuggestions", value: function () {
+                    var a = this;
+                    this.currentIndex = 0;
+                    this.$curatedSuggestionsWrapper.removeClass(e.default.CLASS.IS_INVISIBLE + " " + e.default.CLASS.IS_HIDDEN_STATE);
+                    "" !== this.$searchInput.val() && this.$curatedSuggestionsWrapper.addClass(e.default.CLASS.IS_INVISIBLE);
+                    this.$curatedSuggestions.addClass(e.default.CLASS.IS_HIDDEN_STATE);
+                    this._animateCuratedSuggestion();
+                    clearInterval(this.curatedSuggestionsInterval);
+                    this.curatedSuggestionsInterval = setInterval(function () {
+                        a._animateCuratedSuggestion()
+                    }, this.FLYING_IN_OUT_DURATION)
+                }
+            }, {
+                key: "_animateCuratedSuggestion", value: function () {
+                    this.animationPauseTiming = 0;
+                    this.curatedSuggestionAnimationStartingTime = Date.now();
+                    this.currentIndex === this.$curatedSuggestions.length && (this.currentIndex = 0);
+                    this.$curatedSuggestions.removeClass(e.default.CLASS.IS_FLYING_IN_AND_OUT);
+                    this.$curatedSuggestions.addClass(e.default.CLASS.IS_HIDDEN_STATE);
+                    this.$curatedSuggestions.eq(this.currentIndex).addClass(e.default.CLASS.IS_FLYING_IN_AND_OUT).removeClass(e.default.CLASS.IS_HIDDEN_STATE);
+                    this.currentIndex++
+                }
+            }, {
+                key: "_deactivateCuratedSuggestions", value: function () {
+                    this.$curatedSuggestionsWrapper.addClass(e.default.CLASS.IS_HIDDEN_STATE);
+                    clearInterval(this.curatedSuggestionsInterval);
+                    clearInterval(this.resumeCuratedSuggestionAnimationTimer);
+                    clearInterval(this.tagFlyOutTimer)
+                }
+            }, {
+                key: "_onPageContentReplaced", value: function () {
+                    this.$pageContent = $(this.SELECTOR_PAGE_CONTENT)
+                }
+            }, {
+                key: "_showSearch", value: function (a) {
+                    var b = this;
+                    a && (this.CURRENT_STATE_HEADER = a);
+                    this.$oHeader.addClass(this.CLASS_HAS_OPEN_SEARCH);
+                    this.$body.addClass(this.CLASS_IS_SEARCH_VISIBLE);
+                    this.$el.addClass(e.default.CLASS.IS_OPEN_STATE);
+                    this.$searchIcon.addClass(e.default.CLASS.IS_OPEN_STATE).attr("aria-label", "close search");
+                    this.$oHeader.hasClass(e.default.CLASS.IS_OPEN_STATE) || this.publish(e.default.ACTION.UPDATE_PAGE_CONTENT_MARGIN_CONTRIBUTION, {
+                        element: this.$el,
+                        margin: this.$el.outerHeight()
+                    });
+                    c.default.Accessibility.show(this.$el);
+                    this.$searchInput.focus();
+                    Modernizr.mq(e.default.MQ.IS_MOBILE) ? Modernizr.mq(e.default.MQ.IS_MOBILE) && this.CURRENT_STATE_HEADER == this.CLASS_IS_EXTENDED && (this.$window.off("scroll", this._onScroll), this.$window.on("scroll", this._onScroll)) : setTimeout(function () {
+                        b.$window.off("scroll", b._onScroll);
+                        b.$window.on("scroll", b._onScroll)
+                    }, this.SCROLLING_DURATION)
+                }
+            }, {
+                key: "_hideSearch", value: function () {
+                    var a = this;
+                    this.$el.hasClass(e.default.CLASS.IS_OPEN_STATE) && (this.$oHeader.removeClass(this.CLASS_HAS_OPEN_SEARCH).addClass("is-closing-search"), this.$body.removeClass(this.CLASS_IS_SEARCH_VISIBLE), this.$el.removeClass(e.default.CLASS.IS_OPEN_STATE).addClass(e.default.CLASS.IS_CLOSING_STATE).on("transitionend", function (b) {
+                        a.$el.removeClass(e.default.CLASS.IS_CLOSING_STATE);
+                        a.$oHeader.removeClass("is-closing-search");
+                        a.$el.off("transitionend")
+                    }), this.publish(e.default.ACTION.UPDATE_PAGE_CONTENT_MARGIN_CONTRIBUTION, {
+                        element: this.$el,
+                        margin: 0
+                    }), this.$searchInput.val(""), this._setSearchHint("", !1), c.default.Accessibility.hide(this.$el), this.$searchInput.blur(), this.$searchIcon.removeClass(e.default.CLASS.IS_OPEN_STATE).attr("aria-label", "search"), this.CURRENT_STATE_HEADER != e.default.CLASS.IS_STICKY && this.CURRENT_STATE_HEADER != this.CLASS_IS_EXTENDED && this.$window.off("scroll", this._onScroll))
+                }
+            }, {
+                key: "_onSearchSubmit", value: function (a) {
+                    a.key.match(e.default.KEYSTROKE.ENTER) && this.$searchForm.submit()
+                }
+            }]);
             return b
         }(p.default);
         t.exports = f
@@ -23343,8 +22417,7 @@
             }
         }
 
-        function r(c,
-                   a, b) {
+        function r(c, a, b) {
             a && q(c.prototype, a);
             b && q(c, b);
             return c
@@ -23360,12 +22433,7 @@
 
         function v(c, a) {
             if ("function" !== typeof a && null !== a) throw new TypeError("Super expression must either be null or a function");
-            c.prototype = Object.create(a && a.prototype, {
-                constructor: {
-                    value: c, writable: !0,
-                    configurable: !0
-                }
-            });
+            c.prototype = Object.create(a && a.prototype, {constructor: {value: c, writable: !0, configurable: !0}});
             a && n(c, a)
         }
 
@@ -23394,8 +22462,7 @@
         }
 
         function u() {
-            if ("undefined" === typeof Reflect || !Reflect.construct ||
-                Reflect.construct.sham) return !1;
+            if ("undefined" === typeof Reflect || !Reflect.construct || Reflect.construct.sham) return !1;
             if ("function" === typeof Proxy) return !0;
             try {
                 return Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {
@@ -23437,8 +22504,7 @@
             }, {
                 key: "_declareConstants", value: function () {
                     this.SELECTOR_DESCRIPTION = ".shown-with-description";
-                    this.SELECTOR_TOOLTIP =
-                        ".a-tooltip";
+                    this.SELECTOR_TOOLTIP = ".a-tooltip";
                     this.SELECTOR_WRAPPER = ".o-shown-with-wrapper"
                 }
             }, {
@@ -23454,8 +22520,7 @@
                 }
             }, {
                 key: "_attachSubscribers", value: function () {
-                    h.default.INFO(this.constructor.name,
-                        ":: _attachSubscribers");
+                    h.default.INFO(this.constructor.name, ":: _attachSubscribers");
                     this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
                     this.subscribe(e.default.EVENT.ON_BODY_CLICKED, this._onBodyClicked)
                 }
@@ -23467,8 +22532,7 @@
                     this.unsubscribe(e.default.EVENT.ON_BODY_CLICKED, this._onBodyClicked)
                 }
             }, {
-                key: "_onFrameworkReady",
-                value: function () {
+                key: "_onFrameworkReady", value: function () {
                 }
             }, {
                 key: "_attachDOMListeners", value: function () {
@@ -23512,8 +22576,7 @@
         }
 
         function q(c, a) {
-            for (var b =
-                0; b < a.length; b++) {
+            for (var b = 0; b < a.length; b++) {
                 var d = a[b];
                 d.enumerable = d.enumerable || !1;
                 d.configurable = !0;
@@ -23537,8 +22600,7 @@
         }
 
         function v(c, a) {
-            if ("function" !== typeof a && null !==
-                a) throw new TypeError("Super expression must either be null or a function");
+            if ("function" !== typeof a && null !== a) throw new TypeError("Super expression must either be null or a function");
             c.prototype = Object.create(a && a.prototype, {constructor: {value: c, writable: !0, configurable: !0}});
             a && n(c, a)
         }
@@ -23610,64 +22672,60 @@
                     this._attachMQHandlers(a);
                     this._attachDOMListeners()
                 }
-            },
-                {
-                    key: "_jQueryScopeBinding", value: function () {
-                        l(g(a.prototype), "_jQueryScopeBinding", this).call(this);
-                        this._slideNext = this._slideNext.bind(this);
-                        this._slidePrev = this._slidePrev.bind(this)
-                    }
-                }, {
-                    key: "_attachDOMListeners", value: function () {
-                        this.$el.on("click", e.default.SWIPER.SELECTOR_ARROW_NEXT, this._slideNext);
-                        this.$el.on("click", e.default.SWIPER.SELECTOR_ARROW_PREV, this._slidePrev)
-                    }
-                }, {
-                    key: "_detachDOMListeners", value: function () {
-                        this.$el.off("click", e.default.SWIPER.SELECTOR_ARROW_NEXT, this._slideNext);
-                        this.$el.off("click", e.default.SWIPER.SELECTOR_ARROW_PREV, this._slidePrev)
-                    }
-                }, {
-                    key: "_sliderSetUp", value: function () {
-                        this.$slider.addClass(e.default.SWIPER.CLASS_CONTAINER);
-                        this.$slider.children().addClass(e.default.SWIPER.CLASS_SLIDE).wrapAll("\x3cdiv class\x3d'" + e.default.SWIPER.CLASS_WRAPPER + "'\x3e\x3c/div\x3e");
-                        this.$el.append("\x3cbutton type\x3d'button' aria-label\x3d'next' class\x3d'" + e.default.SWIPER.CLASS_ARROW_NEXT + " " + e.default.CLASS.HAS_DISABLED_BUTTON_STYLE + "'\x3e\x3c/button\x3e").append("\x3cbutton type\x3d'button' aria-label\x3d'previous' class\x3d'" +
-                            e.default.SWIPER.CLASS_ARROW_PREV + " " + e.default.CLASS.HAS_DISABLED_BUTTON_STYLE + "'\x3e\x3c/button\x3e")
-                    }
-                }, {
-                    key: "_setSliderProperties", value: function () {
-                        var a = this;
-                        this.$slider.css("color");
-                        var b = Math.max(this.$slider.find(e.default.SWIPER.SELECTOR_SWIPER_WRAPPER).children().length, this.$slider.children().length);
-                        if (Modernizr.mq(e.default.MQ.IS_DESKTOP)) {
-                            var c = this.$el.data(this.DATA_DESKTOP_SLIDES);
-                            var f = this.$el.data(this.DATA_DESKTOP_SLIDES)
-                        } else Modernizr.mq(e.default.MQ.IS_TABLET) ? (c = this.$el.data(this.DATA_TABLET_SLIDES),
-                            f = this.$el.data(this.DATA_TABLET_SLIDES)) : (c = this.$el.data(this.DATA_MOBILE_SLIDES), f = this.$el.data(this.DATA_MOBILE_SLIDES));
-                        this.settings = {
-                            speed: 200,
-                            calculateHeight: !0,
-                            slidesPerView: c,
-                            slidesPerGroup: f,
-                            loop: b > this.$el.data(this.DATA_DESKTOP_SLIDES),
-                            on: {
-                                init: function () {
-                                    a.$el.addClass(e.default.SWIPER.CLASS_INITIALIZED)
-                                }
+            }, {
+                key: "_jQueryScopeBinding", value: function () {
+                    l(g(a.prototype), "_jQueryScopeBinding", this).call(this);
+                    this._slideNext = this._slideNext.bind(this);
+                    this._slidePrev = this._slidePrev.bind(this)
+                }
+            }, {
+                key: "_attachDOMListeners", value: function () {
+                    this.$el.on("click", e.default.SWIPER.SELECTOR_ARROW_NEXT, this._slideNext);
+                    this.$el.on("click", e.default.SWIPER.SELECTOR_ARROW_PREV, this._slidePrev)
+                }
+            }, {
+                key: "_detachDOMListeners", value: function () {
+                    this.$el.off("click", e.default.SWIPER.SELECTOR_ARROW_NEXT, this._slideNext);
+                    this.$el.off("click", e.default.SWIPER.SELECTOR_ARROW_PREV, this._slidePrev)
+                }
+            }, {
+                key: "_sliderSetUp", value: function () {
+                    this.$slider.addClass(e.default.SWIPER.CLASS_CONTAINER);
+                    this.$slider.children().addClass(e.default.SWIPER.CLASS_SLIDE).wrapAll("\x3cdiv class\x3d'" + e.default.SWIPER.CLASS_WRAPPER + "'\x3e\x3c/div\x3e");
+                    this.$el.append("\x3cbutton type\x3d'button' aria-label\x3d'next' class\x3d'" + e.default.SWIPER.CLASS_ARROW_NEXT + " " + e.default.CLASS.HAS_DISABLED_BUTTON_STYLE + "'\x3e\x3c/button\x3e").append("\x3cbutton type\x3d'button' aria-label\x3d'previous' class\x3d'" + e.default.SWIPER.CLASS_ARROW_PREV + " " + e.default.CLASS.HAS_DISABLED_BUTTON_STYLE + "'\x3e\x3c/button\x3e")
+                }
+            }, {
+                key: "_setSliderProperties", value: function () {
+                    var a = this;
+                    this.$slider.css("color");
+                    var b = Math.max(this.$slider.find(e.default.SWIPER.SELECTOR_SWIPER_WRAPPER).children().length, this.$slider.children().length);
+                    if (Modernizr.mq(e.default.MQ.IS_DESKTOP)) {
+                        var c = this.$el.data(this.DATA_DESKTOP_SLIDES);
+                        var f = this.$el.data(this.DATA_DESKTOP_SLIDES)
+                    } else Modernizr.mq(e.default.MQ.IS_TABLET) ? (c = this.$el.data(this.DATA_TABLET_SLIDES), f = this.$el.data(this.DATA_TABLET_SLIDES)) : (c = this.$el.data(this.DATA_MOBILE_SLIDES), f = this.$el.data(this.DATA_MOBILE_SLIDES));
+                    this.settings = {
+                        speed: 200,
+                        calculateHeight: !0,
+                        slidesPerView: c,
+                        slidesPerGroup: f,
+                        loop: b > this.$el.data(this.DATA_DESKTOP_SLIDES),
+                        on: {
+                            init: function () {
+                                a.$el.addClass(e.default.SWIPER.CLASS_INITIALIZED)
                             }
-                        };
-                        this.$el.data("slick-autoplay") && (this.settings.autoplay = {delay: this.$el.data("slick-autoplay-speed") ? this.$el.data("slick-autoplay-speed") : 4E3})
-                    }
-                }, {
-                    key: "_slideNext", value: function () {
-                        this.slider &&
-                        this.slider.slideNext()
-                    }
-                }, {
-                    key: "_slidePrev", value: function () {
-                        this.slider && this.slider.slidePrev()
-                    }
-                }]);
+                        }
+                    };
+                    this.$el.data("slick-autoplay") && (this.settings.autoplay = {delay: this.$el.data("slick-autoplay-speed") ? this.$el.data("slick-autoplay-speed") : 4E3})
+                }
+            }, {
+                key: "_slideNext", value: function () {
+                    this.slider && this.slider.slideNext()
+                }
+            }, {
+                key: "_slidePrev", value: function () {
+                    this.slider && this.slider.slidePrev()
+                }
+            }]);
             return a
         }(p.default);
         t.exports = f
@@ -23706,8 +22764,7 @@
         function l(c, a, b) {
             l = "undefined" !== typeof Reflect && Reflect.get ? Reflect.get : function (a, b, c) {
                 for (; !Object.prototype.hasOwnProperty.call(a, b) && (a = g(a), null !== a);) ;
-                if (a) return b = Object.getOwnPropertyDescriptor(a, b), b.get ?
-                    b.get.call(c) : b.value
+                if (a) return b = Object.getOwnPropertyDescriptor(a, b), b.get ? b.get.call(c) : b.value
             };
             return l(c, a, b || c)
         }
@@ -23733,8 +22790,7 @@
                 if (a) {
                     var d = g(this).constructor;
                     b = Reflect.construct(b, arguments, d)
-                } else b = b.apply(this,
-                    arguments);
+                } else b = b.apply(this, arguments);
                 if (!b || "object" !== m(b) && "function" !== typeof b) {
                     if (void 0 === this) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
                     b = this
@@ -23756,8 +22812,7 @@
 
         function g(c) {
             g = Object.setPrototypeOf ? Object.getPrototypeOf : function (a) {
-                return a.__proto__ ||
-                    Object.getPrototypeOf(a)
+                return a.__proto__ || Object.getPrototypeOf(a)
             };
             return g(c)
         }
@@ -23778,8 +22833,7 @@
             v(a, c);
             var b = w(a);
             r(a, [{
-                key: "destroy",
-                value: function () {
+                key: "destroy", value: function () {
                     h.default.INFO(this.constructor.name, ":: Destructor");
                     this.$slider.redils("destroy");
                     this._detachDOMListeners();
@@ -23804,8 +22858,7 @@
                     this.SELECTOR_SUPER_SLIDE = ".super-slide";
                     this.SELECTOR_REDILS_CONTROL = ".redils-controls";
                     this.SELECTOR_STYLE_WITH = "#osliderStyleWith";
-                    this.SELECTOR_NON_DUPLICATE =
-                        this.SELECTOR_SUPER_SLIDE + this.SELECTOR_REDILS_NOT_DUPLICATED;
+                    this.SELECTOR_NON_DUPLICATE = this.SELECTOR_SUPER_SLIDE + this.SELECTOR_REDILS_NOT_DUPLICATED;
                     this.SELECTOR_STYLE_WITH_CONTROLS = this.SELECTOR_STYLE_WITH + " " + this.SELECTOR_REDILS_CONTROL
                 }
             }, {
@@ -23845,120 +22898,111 @@
                     this.subscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
                     this.subscribe(e.default.ACTION.RE_INITIALIZE_SLIDER, this._reInit)
                 }
-            },
-                {
-                    key: "_detachSubscribers", value: function () {
-                        h.default.INFO(this.constructor.name, ":: _detachSubscribers");
-                        this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady);
-                        this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
-                        this.unsubscribe(e.default.ACTION.RE_INITIALIZE_SLIDER, this._reInit)
-                    }
-                }, {
-                    key: "_attachDOMListeners", value: function () {
-                        $(window).on("resize", this._adjustPositions);
-                        this.$el.on("redils.imagesReady", this._onImagesReady);
-                        this.$el.on("redils.initiated", this._onInit)
-                    }
-                },
-                {
-                    key: "_detachDOMListeners", value: function () {
-                        $(window).off("resize", this._adjustPositions);
-                        this.$el.off("redils.imagesReady", this._onImagesReady);
-                        this.$el.off("redils.initiated", this._onInit);
-                        this.$slider.off("mousemove", function (a) {
+            }, {
+                key: "_detachSubscribers", value: function () {
+                    h.default.INFO(this.constructor.name, ":: _detachSubscribers");
+                    this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady);
+                    this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
+                    this.unsubscribe(e.default.ACTION.RE_INITIALIZE_SLIDER, this._reInit)
+                }
+            }, {
+                key: "_attachDOMListeners", value: function () {
+                    $(window).on("resize", this._adjustPositions);
+                    this.$el.on("redils.imagesReady", this._onImagesReady);
+                    this.$el.on("redils.initiated", this._onInit)
+                }
+            }, {
+                key: "_detachDOMListeners", value: function () {
+                    $(window).off("resize", this._adjustPositions);
+                    this.$el.off("redils.imagesReady", this._onImagesReady);
+                    this.$el.off("redils.initiated", this._onInit);
+                    this.$slider.off("mousemove", function (a) {
+                        return a.stopPropagation()
+                    })
+                }
+            }, {
+                key: "_setListenerImagesReady", value: function () {
+                    if (this.$pendingImages && 0 < this.$pendingImages.length) {
+                        for (var a = 0; a < this.$pendingImages.length; a++) !0 === this.$pendingImages[a].complete && this.$imagesReady.push(this.$pendingImages.splice(a, 1)[0]);
+                        0 < this.$pendingImages.length ? window.requestAnimationFrame(this._setListenerImagesReady) : this.$el.trigger("redils.imagesReady")
+                    } else this._onImagesReady()
+                }
+            }, {
+                key: "_onImagesReady", value: function () {
+                    this._adjustPositions();
+                    this._initSlider()
+                }
+            }, {
+                key: "_setParentToBlock", value: function () {
+                    this.$el.parent().css("display", "block")
+                }
+            }, {
+                key: "_onInit", value: function () {
+                    this.$el.find(this.SELECTOR_VIDEO_DUPLICATE).removeAttr("data-component-id");
+                    this.__mediator._scanNewBlock(this.$el[0])
+                }
+            }, {
+                key: "_initSlider", value: function () {
+                    if (this.$el.data("multislide")) if ("adaptive" === this.$el.data("num-slides")) {
+                        var a = this.$sliderContainer.children().length, b = this.$el.data("slide-width"), c = 2 * b;
+                        var f = [{breakAfter: 0, numSlides: 1}];
+                        for (var g = 2; g <= a; g++) f.push({breakAfter: c, numSlides: g}), c += b
+                    } else "customized-pra" === this.$el.data("num-slides") ? Modernizr.mq(e.default.MQ.IS_DESKTOP) || Modernizr.mq(e.default.MQ.IS_TABLET) ? f = [{
+                        breakAfter: 0,
+                        numSlides: 4
+                    }] : (f = [{breakAfter: 0, numSlides: 2}], this.$slide.removeAttr("style")) : f = [{
+                        breakAfter: 0,
+                        numSlides: this.$el.data("num-slides")
+                    }];
+                    this._setParentToBlock();
+                    this.$slider.redils({
+                        auto: !1,
+                        attach: "pre",
+                        autoResize: !0,
+                        setHeight: !1,
+                        overflow: 1,
+                        pagination: this.$el.data("pagination"),
+                        multiSlide: this.$el.data("multislide"),
+                        breakPoints: f,
+                        easing: "easeInOutSine",
+                        speed: "500"
+                    });
+                    $(this.SELECTOR_SUPER_SLIDE) && 1 === $(this.SELECTOR_NON_DUPLICATE).length && $(this.SELECTOR_STYLE_WITH_CONTROLS).css({display: "none"});
+                    this.$el.is($(this.SELECTOR_PRA_SLIDER)) && this.publish(e.default.ACTION.RESET_IMAGE_CLICK_HANDLER);
+                    this.$slider.on("mousemove", function (a) {
+                        return a.stopPropagation()
+                    })
+                }
+            }, {
+                key: "_adjustPositions", value: function () {
+                    var a = this.$el.find(this.SELECTOR_ARROW).outerHeight(),
+                        b = this.$el.find(this.SELECTOR_SLIDER_CONTENT).outerHeight() - a;
+                    0 > b && (b = this.$el.find(this.SELECTOR_SLIDER_CONTENT).children().outerHeight() - a);
+                    this.hasFloatingPagination && this.$pagination.css("top", b);
+                    this.$arrow.css("top", b / 2)
+                }
+            }, {
+                key: "_reInit", value: function (a) {
+                    var b = this;
+                    if (this.$slider.is(a)) {
+                        var c = a.find(this.SELECTOR_SLIDE_CONTAINER);
+                        var d = c.find(this.SELECTOR_REDILS_NOT_DUPLICATED);
+                        d = a.find(this.SELECTOR_REDILS_DUPLICATED).length ? d.find(this.SELECTOR_SLIDE) : d.filter(this.SELECTOR_SLIDE);
+                        d = d.map(function (a, b) {
+                            return b.outerHTML
+                        }).get().join();
+                        a.redils("destroy");
+                        a.off("mousemove", function (a) {
                             return a.stopPropagation()
-                        })
-                    }
-                }, {
-                    key: "_setListenerImagesReady", value: function () {
-                        if (this.$pendingImages && 0 < this.$pendingImages.length) {
-                            for (var a = 0; a < this.$pendingImages.length; a++) !0 === this.$pendingImages[a].complete && this.$imagesReady.push(this.$pendingImages.splice(a, 1)[0]);
-                            0 < this.$pendingImages.length ? window.requestAnimationFrame(this._setListenerImagesReady) : this.$el.trigger("redils.imagesReady")
-                        } else this._onImagesReady()
-                    }
-                }, {
-                    key: "_onImagesReady", value: function () {
-                        this._adjustPositions();
-                        this._initSlider()
-                    }
-                }, {
-                    key: "_setParentToBlock", value: function () {
-                        this.$el.parent().css("display", "block")
-                    }
-                }, {
-                    key: "_onInit", value: function () {
-                        this.$el.find(this.SELECTOR_VIDEO_DUPLICATE).removeAttr("data-component-id");
-                        this.__mediator._scanNewBlock(this.$el[0])
-                    }
-                }, {
-                    key: "_initSlider", value: function () {
-                        if (this.$el.data("multislide")) if ("adaptive" ===
-                            this.$el.data("num-slides")) {
-                            var a = this.$sliderContainer.children().length, b = this.$el.data("slide-width"),
-                                c = 2 * b;
-                            var f = [{breakAfter: 0, numSlides: 1}];
-                            for (var g = 2; g <= a; g++) f.push({breakAfter: c, numSlides: g}), c += b
-                        } else "customized-pra" === this.$el.data("num-slides") ? Modernizr.mq(e.default.MQ.IS_DESKTOP) || Modernizr.mq(e.default.MQ.IS_TABLET) ? f = [{
-                            breakAfter: 0,
-                            numSlides: 4
-                        }] : (f = [{
-                            breakAfter: 0,
-                            numSlides: 2
-                        }], this.$slide.removeAttr("style")) : f = [{
-                            breakAfter: 0,
-                            numSlides: this.$el.data("num-slides")
-                        }];
-                        this._setParentToBlock();
-                        this.$slider.redils({
-                            auto: !1,
-                            attach: "pre",
-                            autoResize: !0,
-                            setHeight: !1,
-                            overflow: 1,
-                            pagination: this.$el.data("pagination"),
-                            multiSlide: this.$el.data("multislide"),
-                            breakPoints: f,
-                            easing: "easeInOutSine",
-                            speed: "500"
                         });
-                        $(this.SELECTOR_SUPER_SLIDE) && 1 === $(this.SELECTOR_NON_DUPLICATE).length && $(this.SELECTOR_STYLE_WITH_CONTROLS).css({display: "none"});
-                        this.$el.is($(this.SELECTOR_PRA_SLIDER)) && this.publish(e.default.ACTION.RESET_IMAGE_CLICK_HANDLER);
-                        this.$slider.on("mousemove", function (a) {
-                            return a.stopPropagation()
+                        c.html(d).promise().then(function () {
+                            b._cacheDOMElements();
+                            b._initSlider();
+                            b._adjustPositions()
                         })
                     }
-                },
-                {
-                    key: "_adjustPositions", value: function () {
-                        var a = this.$el.find(this.SELECTOR_ARROW).outerHeight(),
-                            b = this.$el.find(this.SELECTOR_SLIDER_CONTENT).outerHeight() - a;
-                        0 > b && (b = this.$el.find(this.SELECTOR_SLIDER_CONTENT).children().outerHeight() - a);
-                        this.hasFloatingPagination && this.$pagination.css("top", b);
-                        this.$arrow.css("top", b / 2)
-                    }
-                }, {
-                    key: "_reInit", value: function (a) {
-                        var b = this;
-                        if (this.$slider.is(a)) {
-                            var c = a.find(this.SELECTOR_SLIDE_CONTAINER);
-                            var d = c.find(this.SELECTOR_REDILS_NOT_DUPLICATED);
-                            d = a.find(this.SELECTOR_REDILS_DUPLICATED).length ?
-                                d.find(this.SELECTOR_SLIDE) : d.filter(this.SELECTOR_SLIDE);
-                            d = d.map(function (a, b) {
-                                return b.outerHTML
-                            }).get().join();
-                            a.redils("destroy");
-                            a.off("mousemove", function (a) {
-                                return a.stopPropagation()
-                            });
-                            c.html(d).promise().then(function () {
-                                b._cacheDOMElements();
-                                b._initSlider();
-                                b._adjustPositions()
-                            })
-                        }
-                    }
-                }]);
+                }
+            }]);
             return a
         }(p.default);
         t.exports = f
@@ -23998,8 +23042,7 @@
             return c
         }
 
-        function l(c,
-                   a, b) {
+        function l(c, a, b) {
             l = "undefined" !== typeof Reflect && Reflect.get ? Reflect.get : function (a, b, c) {
                 for (; !Object.prototype.hasOwnProperty.call(a, b) && (a = g(a), null !== a);) ;
                 if (a) return b = Object.getOwnPropertyDescriptor(a, b), b.get ? b.get.call(c) : b.value
@@ -24014,11 +23057,10 @@
         }
 
         function n(c, a) {
-            n = Object.setPrototypeOf ||
-                function (a, c) {
-                    a.__proto__ = c;
-                    return a
-                };
+            n = Object.setPrototypeOf || function (a, c) {
+                a.__proto__ = c;
+                return a
+            };
             return n(c, a)
         }
 
@@ -24101,8 +23143,7 @@
                 }
             }, {
                 key: "_detachSubscribers", value: function () {
-                    h.default.INFO(this.constructor.name,
-                        ":: _detachSubscribers");
+                    h.default.INFO(this.constructor.name, ":: _detachSubscribers");
                     this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady);
                     this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady)
                 }
@@ -24123,20 +23164,19 @@
                     this._attachDOMListeners();
                     this._attachContinueButton()
                 }
-            },
-                {
-                    key: "_attachContinueButton", value: function () {
-                        if (this.$paragraph.length && this.$el.data("url") && this.$el.data("continue")) {
-                            var a = $(this.$paragraph[this.$paragraph.length - 1]);
-                            a.html(a.html() + " ").append($("\x3ca\x3e", {
-                                href: this.$el.data("url"),
-                                alt: this.$el.data("continue"),
-                                html: this.$el.data("continue"),
-                                class: this.CLASS_LINK + " " + this.CLASS_CONTINUE
-                            }))
-                        }
+            }, {
+                key: "_attachContinueButton", value: function () {
+                    if (this.$paragraph.length && this.$el.data("url") && this.$el.data("continue")) {
+                        var a = $(this.$paragraph[this.$paragraph.length - 1]);
+                        a.html(a.html() + " ").append($("\x3ca\x3e", {
+                            href: this.$el.data("url"),
+                            alt: this.$el.data("continue"),
+                            html: this.$el.data("continue"),
+                            class: this.CLASS_LINK + " " + this.CLASS_CONTINUE
+                        }))
                     }
-                }]);
+                }
+            }]);
             return a
         }(p.default);
         t.exports = f
@@ -24170,8 +23210,7 @@
             }
         }
 
-        function r(c,
-                   a, b) {
+        function r(c, a, b) {
             a && q(c.prototype, a);
             b && q(c, b);
             return c
@@ -24187,12 +23226,7 @@
 
         function v(c, a) {
             if ("function" !== typeof a && null !== a) throw new TypeError("Super expression must either be null or a function");
-            c.prototype = Object.create(a && a.prototype, {
-                constructor: {
-                    value: c, writable: !0,
-                    configurable: !0
-                }
-            });
+            c.prototype = Object.create(a && a.prototype, {constructor: {value: c, writable: !0, configurable: !0}});
             a && n(c, a)
         }
 
@@ -24221,8 +23255,7 @@
         }
 
         function u() {
-            if ("undefined" === typeof Reflect || !Reflect.construct ||
-                Reflect.construct.sham) return !1;
+            if ("undefined" === typeof Reflect || !Reflect.construct || Reflect.construct.sham) return !1;
             if ("function" === typeof Proxy) return !0;
             try {
                 return Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {
@@ -24265,8 +23298,7 @@
                 }
             }, {
                 key: "_declareConstants", value: function () {
-                    this.SELECTOR_SLIDER =
-                        ".slider";
+                    this.SELECTOR_SLIDER = ".slider";
                     this.SELECTOR_CLONED_COMPONENTS = ".slick-cloned, .slick-cloned *[data-component-id]";
                     this.CLASS_SLICK_ARROW_PREV = "slick-arrow slick-prev a-icon-lg-accordion";
                     this.CLASS_SLICK_ARROW_NEXT = "slick-arrow slick-next a-icon-lg-accordion";
@@ -24307,8 +23339,7 @@
                     this._showLoadingWheel = this._showLoadingWheel.bind(this)
                 }
             }, {
-                key: "_onFrameworkReady",
-                value: function () {
+                key: "_onFrameworkReady", value: function () {
                     this._initCloneSlides()
                 }
             }, {
@@ -24321,8 +23352,7 @@
             }, {
                 key: "_detachSubscribers", value: function () {
                     h.default.INFO(this.constructor.name, ":: _detachSubscribers");
-                    this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY,
-                        this._onDOMReady);
+                    this.unsubscribe(e.default.EVENT.ON_DOCUMENT_READY, this._onDOMReady);
                     this.unsubscribe(e.default.EVENT.ON_FRAMEWORK_READY, this._onFrameworkReady);
                     this.unsubscribe(e.default.EVENT.ON_PAGE_CONTENT_SHOW, this._refresh);
                     this.unsubscribe(e.default.EVENT.ON_PRODUCT_GALLERY_UPDATED, this._reInitSlider)
@@ -24337,8 +23367,7 @@
                 }
             }, {
                 key: "_onImageLoad", value: function (a) {
-                    a.currentTarget.currentSrc &&
-                    a.currentTarget.currentSrc.replace(/(^\w+:|^)\/\//, "").startsWith("lp2.hm.com/hmgoepprod?blank\x3d") || this.publish(e.default.ACTION.HIDE_SPINNER)
+                    a.currentTarget.currentSrc && a.currentTarget.currentSrc.replace(/(^\w+:|^)\/\//, "").startsWith("lp2.hm.com/hmgoepprod?blank\x3d") || this.publish(e.default.ACTION.HIDE_SPINNER)
                 }
             }, {
                 key: "_detachDOMListeners", value: function () {
@@ -24349,8 +23378,7 @@
                     this.MQDesktopHandler = {match: this._onMQDesktopMatch};
                     this.MQMobileAndTablet = {match: this._onMQTabletAndMobileMatch};
                     enquire.register(e.default.MQ.MOBILE_AND_TABLET_RANGE, this.MQMobileAndTablet);
-                    enquire.register(e.default.MQ.IS_DESKTOP,
-                        this.MQDesktopHandler)
+                    enquire.register(e.default.MQ.IS_DESKTOP, this.MQDesktopHandler)
                 }
             }, {
                 key: "_detachMQHandlers", value: function () {
@@ -24362,8 +23390,7 @@
                     this.$slider.css("color");
                     this.$slider.slick({
                         nextArrow: "\x3cbutton type\x3d'button' class\x3d'" + this.CLASS_SLICK_ARROW_NEXT + " " + e.default.CLASS.HAS_DISABLED_BUTTON_STYLE + "'\x3e\x3c/button\x3e",
-                        prevArrow: "\x3cbutton type\x3d'button' class\x3d'" + this.CLASS_SLICK_ARROW_PREV +
-                            " " + e.default.CLASS.HAS_DISABLED_BUTTON_STYLE + "'\x3e\x3c/button\x3e",
+                        prevArrow: "\x3cbutton type\x3d'button' class\x3d'" + this.CLASS_SLICK_ARROW_PREV + " " + e.default.CLASS.HAS_DISABLED_BUTTON_STYLE + "'\x3e\x3c/button\x3e",
                         cssEase: "cubic-bezier(0.27,0.18,0.32,1.01)",
                         useTransform: !0,
                         dots: "undefined" != typeof this.$el.data("slick-dots") ? this.$el.data("slick-dots") : !1,
@@ -24387,8 +23414,7 @@
                     var a = this;
                     setTimeout(function () {
                         var b = a.$slider.find(".slick-active \x3e .a-image");
-                        if (!b.hasClass(a.CLASS_IMAGE_RESOLVED) || b[0].currentSrc && b[0].currentSrc.replace(/(^\w+:|^)\/\//,
-                            "").startsWith("lp2.hm.com/hmgoepprod?blank\x3d")) b.hasClass(a.DEFAULT_IMAGE) ? a.publish(e.default.ACTION.HIDE_SPINNER) : a.publish(e.default.ACTION.SHOW_SPINNER)
+                        if (!b.hasClass(a.CLASS_IMAGE_RESOLVED) || b[0].currentSrc && b[0].currentSrc.replace(/(^\w+:|^)\/\//, "").startsWith("lp2.hm.com/hmgoepprod?blank\x3d")) b.hasClass(a.DEFAULT_IMAGE) ? a.publish(e.default.ACTION.HIDE_SPINNER) : a.publish(e.default.ACTION.SHOW_SPINNER)
                     }, 500)
                 }
             }, {
@@ -24403,8 +23429,7 @@
                     this._initSlider()
                 }
             }, {
-                key: "_onMQTabletAndMobileMatch",
-                value: function () {
+                key: "_onMQTabletAndMobileMatch", value: function () {
                     this.slick && this.$slider.slick("slickSetOption", "slidesToShow", this.tabletSlides, !0)
                 }
             }, {
@@ -24447,8 +23472,7 @@
                     return {
                         url: "/etc/designs/appeaser/p11/clientlibs/pattern-lib/images/indepth_icon_pointer.png",
                         fill: "#3f5f3f",
-                        size: new google.maps.Size(25,
-                            25),
+                        size: new google.maps.Size(25, 25),
                         origin: new google.maps.Point(0, 0),
                         anchor: new google.maps.Point(0, 25),
                         scaledSize: new google.maps.Size(25, 25)
@@ -24471,8 +23495,7 @@
                         type: "POST",
                         headers: {"Cache-Control": "no-cache, no-store, must-revalidate"}
                     })
-                },
-                get: function (f, k) {
+                }, get: function (f, k) {
                     return $.ajax({
                         url: f,
                         data: k,
@@ -24491,8 +23514,10 @@
                         q.addClass(k.default.CLASS.IS_LOADING);
                         q.html(d.html());
                         q.attr("class", d.attr("class"));
-                        $(".o-search").hasClass("is-open") && window.appeaser.publish(window.appeaser.Enums.trigger.UPDATE_PAGE_CONTENT_MARGIN_CONTRIBUTION,
-                            {element: g, margin: g.height()});
+                        $(".o-search").hasClass("is-open") && window.appeaser.publish(window.appeaser.Enums.trigger.UPDATE_PAGE_CONTENT_MARGIN_CONTRIBUTION, {
+                            element: g,
+                            margin: g.height()
+                        });
                         Modernizr.mq(k.default.MQ.IS_MOBILE) || window.appeaser.publish(window.appeaser.Enums.trigger.UPDATE_PAGE_CONTENT_MARGIN_CONTRIBUTION, {
                             element: g,
                             margin: g.height()
@@ -24505,17 +23530,15 @@
                         q.addClass("fetch-complete is-fading-in");
                         q.removeClass(k.default.CLASS.IS_LOADING);
                         setTimeout(function () {
-                                q.removeClass("is-fading-in")
-                            },
-                            1E3);
+                            q.removeClass("is-fading-in")
+                        }, 1E3);
                         document.title = b.filter("title").text();
                         b.find(".o-header").hasClass(k.default.CLASS.IS_INVERTED) ? $.merge(e, h).addClass(k.default.CLASS.IS_INVERTED) : $.merge(e, h).removeClass(k.default.CLASS.IS_INVERTED);
                         b.find(".o-header").hasClass(k.default.CLASS.IS_TRANSPARENT) ? $.merge(e, h).addClass(k.default.CLASS.IS_TRANSPARENT) : $.merge(e, h).removeClass(k.default.CLASS.IS_TRANSPARENT);
                         a = $(a.match(/<body.*class=(.*?)>/ig).join("").replace("body", "div"));
                         e.attr("style", "");
                         e.attr("style", a.attr("style"));
-                        n ?
-                            history.replaceState(null, document.title, f) : history.pushState(null, document.title, f);
+                        n ? history.replaceState(null, document.title, f) : history.pushState(null, document.title, f);
                         appeaser.publish(k.default.EVENT.ON_PAGE_CONTENT_REPLACED);
                         "function" === typeof l && l()
                     }).fail(function () {
@@ -24531,8 +23554,7 @@
                 isIE11: function () {
                     return 0 < window.navigator.userAgent.indexOf("Trident/7.0")
                 }, removeSpecialCharacters: function (f) {
-                    return f.replace(/[`~!@#$%^*()_|+=?;:'",.<>\{\}\[\]\\\/]/gi,
-                        "")
+                    return f.replace(/[`~!@#$%^*()_|+=?;:'",.<>\{\}\[\]\\\/]/gi, "")
                 }
             }
         });

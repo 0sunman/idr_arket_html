@@ -744,7 +744,7 @@ html.no-touchevents .m-input, html.no-touchevents .m-dropdown, .alternative-styl
   .chooser--fixed .m-chooser-item.with-image { width: 90px; }
   .chooser--fixed .m-chooser-item.with-image .a-link { padding: 2px 8px; }
   .chooser--fixed .m-chooser-item.with-image .anchor-title { margin: 2px auto 1px; } }
-.o-navigation .category-group .subcategories .subcategory { max-width: 180px; text-overflow: unset; }
+.o-navigation .category-group .subcategories .subcategory { text-overflow: unset; }
 
 @media (min-width: 1281px) { .o-navigation .category-group .subcategories { -moz-column-gap: 20px; column-gap: 20px; } }
 @media (min-width: 401px) { .o-width:not(.wc-25) .o-image-listing.cols-3 .image-container:nth-child(2n+1) { padding-left: 3px; padding-right: 0; } }
@@ -1174,6 +1174,8 @@ html .list-option .m-dropdown-label-ex + .m-dropdown { margin-left: 0; }
 
 .edit-cancle-btn { display: none; }
 
+.v-top-0 { margin-top: 0; margin-bottom: auto; }
+
 .v-top { margin-top: 12px; margin-bottom: auto; }
 @media (min-width: 401px) { .v-top { margin-top: 8px; } }
 
@@ -1249,9 +1251,10 @@ html .list-option .m-dropdown-label-ex + .m-dropdown { margin-left: 0; }
 .address-item p { margin-top: 0; margin-bottom: 0; }
 .address-item > div { display: flex; align-items: center; padding: 8px 10px; width: 100%; }
 .address-item .gubun { flex-basis: 20%; }
-.address-item .address-text { flex-basis: 60%; border-color: #ccc; border-right-width: 1px; border-right-style: solid; border-color: #ccc; border-left-width: 1px; border-left-style: solid; }
+.address-item .address-text { flex-basis: 60%; flex-wrap: wrap; border-color: #ccc; border-right-width: 1px; border-right-style: solid; border-color: #ccc; border-left-width: 1px; border-left-style: solid; }
 .address-item .address-text .zip { display: block; }
-.address-item .zip-code { flex-basis: 20%; text-align: center; }
+.address-item .address-text p { display: inline-block; width: 100%; }
+.address-item .zip-code { flex-basis: 20%; justify-content: center; text-align: center; }
 .address-item.mode-select .m-radio-button { flex-basis: 40px; justify-content: center; }
 .address-item.mode-select .gubun { border-color: #ccc; border-left-width: 1px; border-left-style: solid; }
 .address-item.mode-select .address-text { flex-basis: calc(80% - 40px); border-right: 0; }
@@ -1332,6 +1335,9 @@ html .list-option .m-dropdown-label-ex + .m-dropdown { margin-left: 0; }
 
 .err-email-unsubscribe .content .button-container { margin-top: 0; }
 
+.landing-page-wrap { display: flex; justify-content: center; height: calc(100vh - 56px); }
+.landing-page-wrap p { margin-top: 0; margin-bottom: 0; }
+
 /* common e ================================================= */
 /* ---------------------------------------------------------- */
 /* ========================================================== */
@@ -1361,6 +1367,12 @@ html .list-option .m-dropdown-label-ex + .m-dropdown { margin-left: 0; }
 .o-slider-cofs.in-search { width: auto; }
 .o-slider-cofs.in-search .slider-title { text-align: center; }
 @media (min-width: 401px) { .o-slider-cofs.in-search { margin-right: auto; margin-left: auto; } }
+
+.header-bar-for-landing { position: relative; text-align: center; }
+.header-bar-for-landing .a-heading-1 { font-size: 18px; }
+.header-bar-for-landing .a-back-move { position: absolute; top: -4px; left: 0; }
+
+.a-back-move { display: inline-block; width: 32px; height: 32px; background: url("../images/icon/icon-back-move.png") no-repeat 50%; background-size: 13px; }
 
 /* header e ================================================= */
 /* ---------------------------------------------------------- */
@@ -1433,8 +1445,45 @@ html .list-option .m-dropdown-label-ex + .m-dropdown { margin-left: 0; }
 /*                                                            */
 /* ========================================================== */
 /* ---------------------------------------------------------- */
+/* dialog s ================================================= */
+.ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button { font-family: "Arket Sans", "Noto Sans KR", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", "Sans-Serif"; }
+
+.ui-widget-overlay { background: #efefef; opacity: .9; }
+
+.ui-dialog { font-family: "Arket Sans", "Noto Sans KR", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", "Sans-Serif"; }
+.ui-dialog.ui-widget.ui-widget-content { border: 0; }
+.ui-dialog .ui-widget-header { background: none; border: 0; }
+.ui-dialog .ui-dialog-titlebar, .ui-dialog .ui-dialog-content { padding: 0; }
+.ui-dialog .ui-dialog-titlebar { width: 100%; padding-right: 30px; padding-left: 30px; text-align: center; }
+.ui-dialog .ui-dialog-titlebar-close { width: 24px; height: 24px; background: none; border: 0; }
+.ui-dialog .ui-dialog-titlebar-close .ui-icon { position: absolute; top: 50%; left: 50%; margin-left: -12px; margin-top: -12px; width: 100%; height: 100%; background-image: none; text-indent: initial; }
+.ui-dialog .ui-dialog-titlebar-close .ui-icon::after { font-family: 'Arket Sans Ding'; font-weight: 400; content: "M"; }
+
+.dialog-bx { display: none; }
+
+.dialog-alert, .dialog-confirm { padding: 20px 20px 20px; max-width: 440px; width: 90%; border-radius: 0; word-break: keep-all; }
+.dialog-alert .m-headline.is-main-headline, .dialog-confirm .m-headline.is-main-headline { margin-top: 0; }
+.dialog-alert .m-headline.is-main-headline [class^=a-heading-], .dialog-confirm .m-headline.is-main-headline [class^=a-heading-] { border-bottom-width: 1px; }
+.dialog-alert p, .dialog-confirm p { margin-top: 0; margin-bottom: 0; }
+.dialog-alert .a-heading-2, .dialog-confirm .a-heading-2 { text-align: center; }
+.dialog-alert .a-heading-2 + .content, .dialog-confirm .a-heading-2 + .content { padding-top: 20px; }
+.dialog-alert .content, .dialog-confirm .content { min-height: 60px; }
+.dialog-alert .tit-text, .dialog-confirm .tit-text { margin-top: 0; margin-bottom: 10px; font-size: 13px; }
+.dialog-alert .tit-text.lg, .dialog-confirm .tit-text.lg { font-size: 20px; }
+.dialog-alert .text-box, .dialog-confirm .text-box { font-size: 14px; }
+.dialog-alert .guide-text, .dialog-confirm .guide-text { margin-top: 0; margin-bottom: 0; font-weight: 300; font-size: 14px; line-height: 20px; }
+.dialog-alert .guide-text.sm, .dialog-confirm .guide-text.sm { font-size: 12px; }
+.dialog-alert .desc-text, .dialog-confirm .desc-text { font-weight: 300; font-size: 12px; }
+
+.dialog-alert .content + .a-button { margin-top: 40px; }
+
+.dialog-confirm .content + .button-container { margin-top: 40px; }
+
+/* dialog e ================================================= */
+/* ---------------------------------------------------------- */
+/* ---------------------------------------------------------- */
 /* layer-popup s ============================================ */
-.o-lightbox.alert .lightbox-wrapper { padding: 45px 20px 30px; max-width: 440px; width: 90%; height: auto; }
+.o-lightbox.alert .lightbox-wrapper { padding: 45px 20px 20px; max-width: 440px; width: 90%; height: auto; }
 .o-lightbox.alert .text-box { font-size: 14px; }
 .o-lightbox.is-main-popup .lightbox-wrapper { padding: 0; max-width: 380px; }
 .o-lightbox.is-main-popup .lightbox-wrapper .content { padding-top: 0; padding-bottom: 0; }
@@ -1497,8 +1546,9 @@ html .lp-find-address .m-input { margin-top: 35px; margin-bottom: 35px; }
 .lp-orderer-info .content { padding-bottom: 0; text-align: left; }
 .lp-orderer-info .content .guide-text { display: block; clear: both; content: ''; padding-top: 20px; }
 
+.loading-img { width: 90px; }
+
 .lp-pay-processing .content { padding-top: 0; padding-bottom: 0; }
-.lp-pay-processing .loading-img { width: 90px; }
 
 .lp-hide-order-history .content { padding-top: 0; }
 
@@ -1728,6 +1778,74 @@ margin: 0mm; }
   .is-open .print-area-wrap * { visibility: visible; }
   .is-open .print-area-wrap .not-print { visibility: hidden !important; } }
 /* print e ================================================== */
+/* ---------------------------------------------------------- */
+/* ========================================================== */
+/*                                                            */
+/* file		: shop in shop                             	      */
+/*                                                            */
+/* ========================================================== */
+/* ---------------------------------------------------------- */
+/* sis s ==================================================== */
+.blind { position: absolute !important; left: -10000px !important; top: -10000px !important; width: 0; height: 0; font-size: 0; display: block; visibility: hidden; }
+
+#footer_warp { clear: both; }
+#footer_warp * { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; -o-box-sizing: border-box; box-sizing: border-box; }
+#footer_warp h1, #footer_warp h2, #footer_warp h3, #footer_warp h4, #footer_warp h5, #footer_warp h6 { margin: 0; }
+#footer_warp ul, #footer_warp li, #footer_warp p { margin: 0; padding: 0; }
+#footer_warp a { color: #666; }
+
+.ie7 #sis_footer { z-index: 501 !important; }
+
+#sis_footer { position: relative; margin-top: 100px; padding-bottom: 55px; width: 100%; letter-spacing: normal; background-color: #ffffff; border-top: 3px solid #36544a; }
+#sis_footer .row { width: 1200px; max-width: 1580px; padding-left: 20px; /* @샵인샵하단 너비 조정 / 20180131 / mglee */ margin: 0 auto; position: relative; }
+#sis_footer .row:after { content: ""; display: block; clear: both; }
+#sis_footer .top { background: #fff; line-height: 40px; height: 40px; }
+#sis_footer .top .row { padding-right: 140px; }
+#sis_footer .hyundai-menu { position: relative; padding-left: 100px; }
+#sis_footer .hyundai-menu span.tit { position: absolute; top: 0; left: 0; width: 100px; font-size: 13px; color: #333; }
+#sis_footer .hyundai-menu ul li { float: left; font-size: 13px; color: #666; }
+#sis_footer .hyundai-menu ul li + li { margin-left: 20px; }
+#sis_footer .family { position: absolute; top: 0; right: 0; width: 140px; height: 40px; }
+#sis_footer .family > a { display: block; width: 140px; height: 40px; width: 140px; line-height: 42px; font-size: 13px; color: #666; padding: 0 10px; text-decoration: none; }
+#sis_footer .family > a i { position: absolute; top: 50%; margin-top: -2px; right: 10px; background: url(https://image.thehyundai.com/hdmall/images/co/ic_footer.png) no-repeat 0 0; width: 9px; height: 5px; }
+#sis_footer .family .family-site { display: none; position: absolute; bottom: 40px; width: 140px; padding: 5px 0 5px 10px; line-height: 16px; border: 1px solid #ccc; border-bottom: 1px solid #666; z-index: 100; }
+#sis_footer .family .family-site::after { content: ""; position: absolute; bottom: -5px; width: 9px; height: 5px; left: 50%; margin-left: -4px; background: url(https://image.thehyundai.com/hdmall/images/co/ic_footer.png) no-repeat 0 -10px; }
+#sis_footer .family .family-site .mCSB_inside > .mCSB_container { margin-right: 15px; }
+#sis_footer .family .family-site h4 { font-size: 11px; color: #666; line-height: 20px; height: 20px; font-weight: 700; }
+#sis_footer .family .family-site .scrollable { padding: 5px 0; }
+#sis_footer .family .family-site .scrollable ul { font-size: 11px; color: #666; /*font-family:'Dotum','돋움'*/ /* @샵인샵 서체 재정의 / 2018.03.02 / mglee */ font-family: 'Gill Sans MT Pro Medium', 'Nanum Barun Gothic', 'Gill Sans MT Pro Book', 'Gill Sans', '돋움', dotum, sans-serif; /* @샵인샵 서체 재정의 / 2018.03.02 / mglee */ }
+#sis_footer .family .family-site .scrollable li { line-height: 16px; }
+#sis_footer .family.current a i { background-position: 0 -5px; }
+#sis_footer .family.current .family-site { display: block; background-color: #fff; }
+#sis_footer .bottom { position: relative; font-family: 'Gill Sans MT Pro Medium', 'Nanum Barun Gothic', 'Gill Sans MT Pro Book', 'Gill Sans', '돋움', dotum, sans-serif; /* @샵인샵 서체 재정의 / 2018.03.02 / mglee */ border-top: 1px solid #bbc4c1; background: #fff; }
+#sis_footer .bottom .row { padding: 27px 160px 0 175px; position: relative; overflow: hidden; }
+#sis_footer .bottom .logo { position: absolute; margin-top: 0px !important; top: 28px; /*left:0;*/ left: 20px; /* @샵인샵하단 너비 조정 / 2018.01.31 / mglee */ /*z-index: 24;*/ /* @ 샵인샵에서만 상품Zoom 시 더현대푸터 theHYUNDAI 이미지가 보입니다. / 2018.04.04 / mglee */ /* @ GNB 마우스 오버시 더현대푸터 theHYUNDAI 이미지가 보입니다. / 2018.04.19 / mglee */ z-index: 19; /* @ GNB 마우스 오버시 더현대푸터 theHYUNDAI 이미지가 보입니다. / 2018.04.17 / mglee */ }
+#sis_footer .bottom .logo a { display: block; background: url(https://image.thehyundai.com/hdmall/images/co/img_bottom_logo.png) no-repeat 0 0; width: 113px; height: 54px; }
+#sis_footer .bottom .logo a img { display: none; }
+#sis_footer .bottom .info { color: #72656c; font-size: 11px; line-height: 18px; margin-left: 20px; /* @샵인샵하단 너비 조정 / 2018.01.31 / mglee */ }
+#sis_footer .bottom .info .copy { margin-top: 6px; }
+#sis_footer .bottom .info strong { text-decoration: underline; }
+#sis_footer .bottom .certi-wrap { overflow: hidden; *zoom: 1; padding: 0 0 30px 175px; }
+#sis_footer .bottom .certi-wrap::after { content: ""; display: table; clear: both; }
+#sis_footer .bottom .certi { margin-top: 34px; float: left; padding-left: 20px; /* @샵인샵하단 너비 조정 / 20180131 / mglee */ }
+#sis_footer .bottom .certi a { display: inline-block; *display: inline; *zoom: 1; line-height: 0; vertical-align: middle; }
+#sis_footer .bottom .certi .scol { display: inline-block; *display: inline; *zoom: 1; line-height: 0; vertical-align: middle; width: 1px; height: 20px; background: #d6ced3; font-size: 0; margin: 0 10px; }
+#sis_footer .bottom .checkguarantee { position: relative; margin-top: 34px; background: url(https://image.thehyundai.com/hdmall/images/co/txt_bottom_checkguarantee.png) no-repeat 0 0; font-size: 0; line-height: 0; float: right; width: 272px; height: 26px; }
+#sis_footer .bottom .checkguarantee span { display: block; width: 0; height: 0; font-size: 0; line-height: 0; }
+#sis_footer .bottom .checkguarantee a { position: absolute; bottom: -3px; right: 0; color: #46675c; text-decoration: underline; width: 86px; height: 20px; background: url(https://image.thehyundai.com/hdmall/images/co/bg_blank.png); font-size: 0; line-height: 0; }
+#sis_footer .bottom .sns-quickgo { position: absolute; top: 28px; right: 4px; width: 150px; }
+#sis_footer .bottom .sns-quickgo::after { content: ""; display: table; clear: both; }
+#sis_footer .bottom .sns-quickgo ul { margin: 0 -7px; overflow: hidden; }
+#sis_footer .bottom .sns-quickgo li { float: left; padding: 0 7px; }
+#sis_footer .bottom .sns-quickgo a { display: block; width: 27px; height: 27px; }
+#sis_footer .bottom .sns-quickgo i { display: block; width: 27px; height: 27px; background: url(https://image.thehyundai.com/hdmall/images/co/ic_footer_v2_sns.png) no-repeat 0 0; font-size: 0; line-height: 0; font-size: 0; }
+#sis_footer .bottom .sns-quickgo i.twitter { background-position: -41px 0; }
+#sis_footer .bottom .sns-quickgo i.pinterest { background-position: -82px 0; }
+#sis_footer .bottom .sns-quickgo i.tistory { background-position: -123px 0; }
+#sis_footer .bottom .sns-quickgo i.instagram { background-position: -164px 0; }
+
+/*푸터-Mobile*/
+/* sis e ==================================================== */
 /* ---------------------------------------------------------- */
 /* ========================================================== */
 /*                                                            */
@@ -2041,12 +2159,15 @@ html.no-touchevents .n-find-idpw .n-wrap.resting-guide .info { padding-bottom: 1
 /* ========================================================== */
 /* ---------------------------------------------------------- */
 /* product s ================================================ */
-.o-product-listing .o-product .description .m-product-price .is-deprecated { padding-right: 12px; }
+.o-product-listing .o-product .description .m-product-price .is-deprecated { padding-right: 10px; }
 .o-product-listing .o-product .description .m-product-price .is-deprecated::before { position: absolute; top: 0; right: 0; content: '원'; display: inline-block; font-family: "Noto Sans KR"; font-size: inherit; }
+
+.o-product-cofs .description .m-product-price .is-deprecated { padding-right: 10px; }
+.o-product-cofs .description .m-product-price .is-deprecated::before { position: absolute; top: 0; right: 0; content: '원'; display: inline-block; font-family: "Noto Sans KR"; font-size: inherit; }
 
 .a-link-pdp-essential { font-size: 13px; color: #000; font-weight: 400; }
 
-.a-link.plp-link-track .price .m-product-price span.is-deprecated { padding-right: 12px; }
+.a-link.plp-link-track .price .m-product-price span.is-deprecated { padding-right: 10px; }
 .a-link.plp-link-track .price .m-product-price span.is-deprecated::before { position: absolute; top: 0; right: 0; content: '원'; display: inline-block; font-family: "Noto Sans KR"; font-size: inherit; }
 .a-link.plp-link-track .price .m-product-price span:not(.is-deprecated)::after { content: '원'; font-family: "Noto Sans KR"; font-size: inherit; }
 
@@ -2082,6 +2203,8 @@ html.no-touchevents .n-find-idpw .n-wrap.resting-guide .info { padding-bottom: 1
 .o-product-attributes .attributes-top .care-el .accordion-content .wash-wrap li:last-child { padding-right: 0; }
 .o-product-attributes .description-container ul { margin-top: 10px; }
 
+.o-pra-component .o-slider .pagination { min-height: 47px; }
+
 /* product e ================================================ */
 /* ---------------------------------------------------------- */
 /* ========================================================== */
@@ -2114,16 +2237,20 @@ html.no-touchevents .n-find-idpw .n-wrap.resting-guide .info { padding-bottom: 1
 .o-cart .order-summary-section .o-order-summary .total-label { display: block; }
 .o-cart .order-summary-section .o-order-summary .total::after { font-size: 28px; }
 .o-cart .o-product-cofs .m-product-markers .marker-text { font-family: "Arket Sans SC", "Noto Sans KR", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", "Sans-Serif"; }
+.o-cart .o-cart-item .cart-wrapper .cart-item-info .markers { order: 3; display: block; }
+.o-cart .o-cart-item .cart-wrapper .cart-item-info .markers .m-product-marker .product-marker { display: inline-block; }
 .o-cart .o-cart-item .cart-wrapper .cart-item-info .size-section .low-stock { font-family: "Arket Sans SC", "Noto Sans KR", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", "Sans-Serif"; /* 210713 기획 > 퍼블수정 : 장바구니 > 품절 말풍선 */ left: calc(50% - 46px); }
 .o-cart .o-cart-item .cart-wrapper .cart-item-info .price-section span::before, .o-cart .o-cart-item .cart-wrapper .cart-item-info .price-section span:after { font-size: 10px; }
-.o-cart .o-cart-item .cart-wrapper .cart-item-info .price-section .is-deprecated { font-size: 11px; padding-right: 12px; }
+.o-cart .o-cart-item .cart-wrapper .cart-item-info .price-section .is-deprecated { padding-right: 10px; }
 .o-cart .o-cart-item .cart-wrapper .cart-item-info .price-section .is-deprecated::before { position: absolute; top: 0; right: 0; content: '원'; display: inline-block; font-family: "Noto Sans KR"; font-size: inherit; }
+.o-cart .o-cart-item .cart-wrapper .cart-item-info .price-section .is-deprecated::before { font-size: 10px; }
 .o-cart .o-cart-item.is-soldout .content-wrapper .cart-image-wrapper { opacity: 0.3; }
 .o-cart .o-cart-item.is-soldout .content-wrapper .total-label, .o-cart .o-cart-item.is-soldout .content-wrapper .total { display: none; }
-.o-cart .o-cart-item.is-soldout .quantity-section .quantity-label, .o-cart .o-cart-item.is-soldout .m-dropdown .a-icon-arrow-down-small, .o-cart .o-cart-item.is-soldout:hover .quantity-section .quantity-label, .o-cart .o-cart-item.is-soldout:hover .m-dropdown .a-icon-arrow-down-small { border: 2px solid #cdd1d7; color: #cdd1d7; }
-.o-cart .o-cart-item.is-soldout .quantity-section .quantity-label::before, .o-cart .o-cart-item.is-soldout .quantity-section .quantity-label::after, .o-cart .o-cart-item.is-soldout .m-dropdown .a-icon-arrow-down-small::before, .o-cart .o-cart-item.is-soldout .m-dropdown .a-icon-arrow-down-small::after, .o-cart .o-cart-item.is-soldout:hover .quantity-section .quantity-label::before, .o-cart .o-cart-item.is-soldout:hover .quantity-section .quantity-label::after, .o-cart .o-cart-item.is-soldout:hover .m-dropdown .a-icon-arrow-down-small::before, .o-cart .o-cart-item.is-soldout:hover .m-dropdown .a-icon-arrow-down-small::after { background-color: #cdd1d7; }
+.o-cart .o-cart-item.is-soldout .content-wrapper .sold-out-label { color: #babbbc; }
+.o-cart .o-cart-item.is-soldout .quantity-section .quantity-label, .o-cart .o-cart-item.is-soldout .m-dropdown .a-icon-arrow-down-small, .o-cart .o-cart-item.is-soldout:hover .quantity-section .quantity-label, .o-cart .o-cart-item.is-soldout:hover .m-dropdown .a-icon-arrow-down-small { border: 2px solid #f0f1f3; color: #f0f1f3; }
+.o-cart .o-cart-item.is-soldout .quantity-section .quantity-label::before, .o-cart .o-cart-item.is-soldout .quantity-section .quantity-label::after, .o-cart .o-cart-item.is-soldout .m-dropdown .a-icon-arrow-down-small::before, .o-cart .o-cart-item.is-soldout .m-dropdown .a-icon-arrow-down-small::after, .o-cart .o-cart-item.is-soldout:hover .quantity-section .quantity-label::before, .o-cart .o-cart-item.is-soldout:hover .quantity-section .quantity-label::after, .o-cart .o-cart-item.is-soldout:hover .m-dropdown .a-icon-arrow-down-small::before, .o-cart .o-cart-item.is-soldout:hover .m-dropdown .a-icon-arrow-down-small::after { background-color: #f0f1f3; }
 .o-cart .o-cart-item.is-soldout .quantity-section .quantity-label:not(.last-item):hover, .o-cart .o-cart-item.is-soldout .m-dropdown .a-icon-arrow-down-small:not(.last-item):hover, .o-cart .o-cart-item.is-soldout:hover .quantity-section .quantity-label:not(.last-item):hover, .o-cart .o-cart-item.is-soldout:hover .m-dropdown .a-icon-arrow-down-small:not(.last-item):hover { background-color: #fff; }
-.o-cart .o-cart-item.is-soldout .quantity-section .quantity-label:not(.last-item):hover::before, .o-cart .o-cart-item.is-soldout .quantity-section .quantity-label:not(.last-item):hover::after, .o-cart .o-cart-item.is-soldout .m-dropdown .a-icon-arrow-down-small:not(.last-item):hover::before, .o-cart .o-cart-item.is-soldout .m-dropdown .a-icon-arrow-down-small:not(.last-item):hover::after, .o-cart .o-cart-item.is-soldout:hover .quantity-section .quantity-label:not(.last-item):hover::before, .o-cart .o-cart-item.is-soldout:hover .quantity-section .quantity-label:not(.last-item):hover::after, .o-cart .o-cart-item.is-soldout:hover .m-dropdown .a-icon-arrow-down-small:not(.last-item):hover::before, .o-cart .o-cart-item.is-soldout:hover .m-dropdown .a-icon-arrow-down-small:not(.last-item):hover::after { background-color: #cdd1d7; }
+.o-cart .o-cart-item.is-soldout .quantity-section .quantity-label:not(.last-item):hover::before, .o-cart .o-cart-item.is-soldout .quantity-section .quantity-label:not(.last-item):hover::after, .o-cart .o-cart-item.is-soldout .m-dropdown .a-icon-arrow-down-small:not(.last-item):hover::before, .o-cart .o-cart-item.is-soldout .m-dropdown .a-icon-arrow-down-small:not(.last-item):hover::after, .o-cart .o-cart-item.is-soldout:hover .quantity-section .quantity-label:not(.last-item):hover::before, .o-cart .o-cart-item.is-soldout:hover .quantity-section .quantity-label:not(.last-item):hover::after, .o-cart .o-cart-item.is-soldout:hover .m-dropdown .a-icon-arrow-down-small:not(.last-item):hover::before, .o-cart .o-cart-item.is-soldout:hover .m-dropdown .a-icon-arrow-down-small:not(.last-item):hover::after { background-color: #f0f1f3; }
 .o-cart.is-empty .cart-items span.cart-is-empty-label { padding-top: 55px; padding-bottom: 24px; font-size: 15px; color: #000; }
 .o-cart.is-empty .cart-items .btn-keep-shopping { margin-bottom: 55px; }
 @media (min-width: 401px) { .o-cart.is-empty .cart-items span.cart-is-empty-label { padding-top: 90px; }
@@ -2312,6 +2439,17 @@ span.m-hazmat-v2.warning::before { background-image: url("../images/icon/icon-wa
 .summary-item p { margin-top: 0; margin-bottom: 0; }
 .summary-item .justify-bx .t1 { flex-basis: 100px; }
 .summary-item .justify-bx .t2 { flex-basis: calc(100% - 100px); }
+
+.order-during .content-bx { margin-top: 120px; width: 100%; max-width: 500px; text-align: center; }
+.order-during .content-bx .tit-text { font-size: 14px; }
+.order-during .content-bx .tit-text.lg { font-size: 20px; }
+
+.pay-processing .content-bx { margin-top: 80px; width: 100%; max-width: 360px; text-align: center; }
+.pay-processing .content-bx .a-heading-2 { font-size: 20px; margin-bottom: 40px; }
+.pay-processing .content-bx p { font-weight: 400; }
+.pay-processing .content-bx p + .a-button { margin-top: 14px; }
+.pay-processing .content-bx .isp-download-btn { margin-bottom: 75px; }
+.pay-processing .content-bx .long-text { margin-top: 18px; text-align: left; font-weight: 300; font-size: 12px; }
 
 /* order e ================================================== */
 /* ---------------------------------------------------------- */
@@ -2697,6 +2835,8 @@ span.m-hazmat-v2.warning::before { background-image: url("../images/icon/icon-wa
 .o-image-listing.img-wrap-list { margin-top: 0px; margin-bottom: 0px; }
 
 .cafe-wrap .a-heading-2 .heading-cap, .cafe-wrap .a-heading-2 .heading-value { font-size: 20px; }
+
+.suppliers-econyl .o-product-listing .o-product .description .swatches { display: none; }
 
 /* about ARKET e ============================================ */
 /* ========================================================== */

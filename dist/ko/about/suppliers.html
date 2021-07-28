@@ -30,12 +30,14 @@
     <link rel="stylesheet" href="../../../static/org/etc/designs/appeaser/p11/pattern-lib/frontend.min.1987a0f885a03ad325376517da7bed68.css" type="text/css">
 
     <!-- frontend.renew.css -->
+    <link rel="stylesheet" href="../../../static/css/jquery-ui.css" type="text/css">
     <link rel="stylesheet" href="../../../static/css/frontend.renew.css" type="text/css">
     <!-- //frontend.renew.css -->
 
     <script src="../../../static/org/etc/designs/hm/clientlibs/shared/jquery.min.98d49f2a9477a5d4f9edef7b7e9698b1.js"></script>
     <script src="../../../static/org/etc/designs/appeaser/p11/pattern-lib/frontend/js/modernizr-custom.min.js"></script>
     <script src="../../../static/org/metrics/default/touchpoint.js"></script>
+
 </head>
 
 <body data-component="OPage" class="layout-inside" id="oPage" data-locale-page-node-name="en" data-component-id="66152dea-5e9c-4757-9208-19efae8e2313">
@@ -52,8 +54,7 @@
     <div data-component="SkeletonLoading" id="lpResolveConfigs" data-lp-aspect-ratio-width="2" data-lp-aspect-ratio-height="3" data-lp-density-mobile="2" data-lp-density-tablet="2" data-lp-density-desk="2" data-lp-max-density="3" data-lp-format="webp,jpeg" data-lp-cache-threshold="50" data-lp-url="lp.arket.com" data-lp-uri="app006prod" data-lp-image-fit="containerWidth" data-lp-jpeg-quality-desktop="70" data-lp-webp-quality-mobile="70" data-lp-webp-quality-tablet="70" data-lp-jpeg-quality-tablet="70" data-lp-webp-quality-desktop="70" data-lp-jpeg-quality-mobile="70" data-component-id="6dbb0cd9-2cf4-4569-a46d-c4294b9c76a2"></div>
 
     <div class="firsttimelanguageselector first-time-language-selector">
-        <script type="text/x-handlebars-template" id="language-select">
-        </script>
+        <script type="text/x-handlebars-template" id="language-select"></script>
     </div>
 
     <span id="arketeotflag" data-arketeot-flag="true"></span>
@@ -1403,6 +1404,15 @@
                 <div class="basket-added-info">
                     <p class="a-paragraph">
                         <span class="item-title">루즈핏 리넨 쇼츠</span>
+                        <!--
+                        <div class="markers">
+                            <div class="m-product-marker" data-component="MProductMarkers">
+                                <div class="marker-text product-marker">
+                                    <span>online exclusive</span>
+                                </div>
+                            </div>
+                        </div>
+                        -->
                         <div class="product-param-info second">
                             <div class="product-params data">
                                 <div class="product-size">44</div>
@@ -1997,7 +2007,7 @@
     <!-- //handlebars-template -->
 
     <!-- o-page-content -->
-    <div data-component="OPageContent" class="o-page-content">
+    <div data-component="OPageContent" class="o-page-content footer-about-wrap">
 
     <div class="o-width title--medium about-icon wc-50">
         <div class="m-headline with-icon u-align-center is-main-headline full-width">
@@ -2010,12 +2020,12 @@
         <div class="o-text-field is-wide ">
             <div class="headings" style="text-align:center;">
                 <div class="m-headline">
-                    <h2 class="a-heading-2  has-margin">CO-CREATING THE COLLECTION WITH OUR FRIENDS</h2>
+                    <h2 class="a-heading-2  has-margin">우리의 친구들과<br> 함께 만들어 나가는 <br>컬렉션 에 대한 대화</h2>
                 </div>
             </div>
             <div class="text-container">
                 <p class="a-paragraph is-richtext"></p>
-                <div style="text-align: center;">Susanna Cognigni<b><br>Senior Designer, SHOES AND LEATHER GOODS<br></b></div>
+                <div style="text-align: center;">수잔나 코그니그니<br>슈즈와 레더 제품 시니어 디자이너</div>
                 <p class="a-paragraph"></p>
             </div>
         </div>
@@ -2024,17 +2034,17 @@
         <div class="o-text-field two-columns ">
             <div class="headings" style="text-align:left;">
                 <div class="m-headline">
-                    <h2 class="a-heading-2 has-margin"><span class="heading-cap">Suppliers</span>Each
-                        of our products is created in dialogue between our teams in Stockholm and skilled partners
-                        around the world – a network of farmers, weaving mills, yarn specialists, knitting factories and
-                        garment makers who we grow closer to with each new collaboration.</h2>
+                    <h2 class="a-heading-2 has-margin"><span class="heading-cap">Suppliers</span>
+                        우리의 각 제품은 스톡홀름에 있는 우리 팀과 전세계의 숙련된 파트너들 간의 대화에서 만들어집니다. 농부, 직조 공장, 실 전문가, 뜨개 공장 및 의류 제조업체들은 새로운 협업을 통해 더욱 가까워지고 있습니다.
+                    </h2>
                 </div>
             </div>
             <div class="text-container">
-                <p class="a-paragraph is-richtext">‘I grew up around shoemakers. Both of my
-                    parents worked in the shoemaking business, as did my grandmother and most of my relatives. In the
-                    summers I would help my father in his workshop, cutting leather and chalk lines where the stitches
-                    would go. Now I have been working in this business for 20 years myself.</p></div>
+                <p class="a-paragraph is-richtext">
+                    '저는 신발을 만드는 사람들에 둘러싸인 환경에서 자랐어요. 저희 부모님 두 분 다 구두를 만드는 일을 하셨고, 저희 할머니와 많은 친척들도 이쪽에 종사하였습니다.<br class="br-only-m"> 
+                    여름이면 저는 아버지의 작업장에서 가죽을 자르거나 스티치가 들어가야 하는 곳에 초크로 선을  긋는 일을 돕고는 했지요. 이제 저는 이 분야에서 20년이나 일을 해오고 있네요.
+                </p>
+            </div>
         </div>
     </div>
     <div class="o-width spacer-desktop fullWidth--mobile wc-75">
@@ -2054,7 +2064,7 @@
     <div class="o-width title--medium wc-75">
         <div class="headings" style="text-align:center;">
             <div class="m-headline">
-                <h2 class="a-heading-2  has-margin">‘We have a really tight relationship. I talk to them every day. It is a very collaborative process.’</h2>
+                <h2 class="a-heading-2  has-margin">'우리는 정말 긴밀한 관계를 <br class="br-only-m">맺고 있습니다. <br class="br-only-m">저는 그들과 매일 이야기를 나누어요.<br class="br-only-m"> 매우 협력적인 과정이지요.’</h2>
             </div>
         </div>
         <div class="o-width about-quote wc-100">
@@ -2062,7 +2072,7 @@
                 <img class="a-image" src="../../../static/images/about/ARKET_9_GRID_Suppliers.png">
                 <h2 class="a-heading-2">
                     <span class="heading-cap">suppliers</span>
-                    <span class="heading-value">Susanna Cognigni</span>
+                    <span class="heading-value">수잔나 코그니그니</span>
                 </h2>
             </div>
         </div>
@@ -2080,18 +2090,9 @@
     <div class="o-width about wc-50">
         <div class="o-text-field two-columns ">
             <div class="text-container">
-                <p class="a-paragraph is-richtext">Since ARKET’s first collection, we have been
-                    developing our shoes together with suppliers in Italy, Portugal and Spain. The majority of our
-                    production is done by a company called Effemme in the Italian region of Le Marche. It is an area
-                    known for manufacturing high-quality women’s shoes, and also where I grew up. We have a really tight
-                    relationship – I talk to them every day – and we have been growing and developing together over the
-                    years. It is a very collaborative process; they really understand our needs and the vision we have
-                    for the products.&nbsp;We usually go to visit them a few times each year to develop our new designs
-                    on site. It’s so much easier to try out ideas and modify all the small technical details when we’re
-                    there, in their environment, as all suppliers of the shoe components are gathered in the same area.
-                    Last makers, leather tanneries, heel makers, sole makers, trim suppliers and so on. It also helps to
-                    reduce the number of samples we need to produce and send back and forth between Italy and our design
-                    studio in Stockholm, which limits unnecessary waste.&nbsp;<span>The input and help we get from our supplier is invaluable. But we have also been able to influence how they are working, by requiring that all of the leathers we buy need to be chrome-free tanned. ARKET is still quite a small brand, with products in limited quantities. But we are growing, and we’re focusing on timeless designs with a consistent palette of materials and colours year after year. This means that our supplier can trust that their investments in more sustainable practices will pay off. We’re not suddenly moving away from them to make something completely different with someone else.</span>
+                <p class="a-paragraph is-richtext">
+                    ARKET의 첫 컬렉션 이래로, 우리는 이탈리아, 포르투갈, 스페인의 공급 업체들과 함께 신발을 만들고 있습니다. 우리 제품의 대부분은 이탈리아 르마르슈 지역에 있는 Effemme라는 회사에서 생산하고 있습니다. 그곳은 고급 여성 구두를 만드는 것으로 유명한 지역이고, 제가 자란 지역이기도 합니다. 우리는 정말 긴밀한 관계를 맺고 있습니다. 저는 그들과 매일 이야기를 나누며, 지난 몇 년 동안 함께 성장하고 발전해 왔습니다. 이것은 매우 협력적인 과정입니다; 그들은 우리의 요구와 제품에 대한 우리의 비전을 진정으로 이해하고 있습니다. 우리는 새로운 디자인을 개발하기 위해 매년 수차례 그들을 방문합니다. 그곳의 환경에서는 아이디어들을 시험해 보고 작은 기술적 세부 사항들을 수정하는 것이 훨씬 더 쉽습니다. 
+                    신발과 관련한 모든 서플라이어들이들이 같은 지역에 모여 있기 때문입니다. <br class="br-only-m">라스트 메이커, 가죽 무두장이, 굽 제조자, 솔 제조자, 트림 서플라이어 등이 있습니다. 또한 샘플의 제작 수나 이탈리아와 스톡홀름의 디자인 스튜디오를 오가며 과정등을 줄임으로써, 불필요한 낭비를 제한합니다. 서플라이어로부터 받는 정보와 도움은 매우 유용합니다. 하지만 우리 역시 모든 가죽을 크롬프리태닝으로 바잉할 것을 요청하면서, 그들이 일해오는 방식에 영향을 주어왔습니다. ARKET는  한정 수량으로 제품을 생산하는 여전히 작은 브랜드입니다. 하지만 우리는 성장하고 있으며, 해마다 변함없는 소재와 색상의 팔레트로 타임리스한 디자인에 포커스하고 있습니다. 이는 곧 더욱 지속가능한 작업에 대한 우리 서플라이어들의 투자가 성공할 것이라는 뜻이기도 합니다. 우리는 갑자기 그들과의 작업을 떠나, 다른 누군가와 전혀 다른 무언가를 만들어 내지는 않을 것입니다.
                 </p>
             </div>
         </div>
@@ -2109,11 +2110,11 @@
         <div class="o-text-field two-columns ">
             <div class="text-container">
                 <p class="a-paragraph is-richtext"></p>
-                <p class="a-paragraph">When we are challenging the supplier to deliver more sustainable products, it
-                    also has effects on a wider scale. The materials they’re sourcing for us can be used by other
-                    clients as well, and together we are creating a growing interest in chrome-free tanned leather
-                    throughout the industry.</p>
-                <p class="a-paragraph"><span style="">I feel we are very much on one and the same team – us, our supplier and their sub-suppliers. Everyone is working together to make an even better and more sustainable product, which is possible only if there’s trust and loyalty in the relationships.’</span><br>
+                <p class="a-paragraph">
+                    더 지속 가능한 제품을 위해 우리가 서플라이어에게 챌린지를 줄 때, 이는 더 넓은 범위로 영향을 줍니다. 그들이 우리에게 공급하고 있는 소재는 다른 클라이언트도 사용할 수 있으며, 우리는 크롬프리태닝 가죽에 대한 업계의 관심을 더 높이고 있습니다. 
+                </p>
+                <p class="a-paragraph"><span style="">저는 우리와, 우리의 서플라이어, 그리고 그들의 서브 서플라이어 모두가 한 팀이라고 생각합니다. 모두가 더 지속 가능하며 나은 제품을 만들기 위해 협력하고 있으며, 이는 관계에서 신뢰와 로열티가 있기 때문에 가능한 일입니다.
+                </span><br>
                 </p>
                 <p class="a-paragraph"></p>
             </div>
@@ -2169,75 +2170,75 @@
     <!-- o-iamge-list-explore-arket -->
 <div class="o-image-listing cols-3">
     <div class="image-container">
-        <a href="/en/about.html" target="_self" class="trackImage a-link">
+        <a href="../../../static/ko/about/materials.html" target="_self" class="trackImage a-link">
             <img class="a-image" src="../../../static/images/about/ARKET_9_GRID_Materials.png">
         </a>
         <div class="slider-text-block">
-            <div class="is-richtext o-text-field ">Materials&nbsp;</div>
+            <div class="is-richtext o-text-field">Materials&nbsp;</div>
         </div>
     </div>
     <div class="image-container">
-        <a href="/en/about/suppliers.html" target="_self" class="trackImage a-link">
+        <a href="../../../static/ko/about/suppliers.html" target="_self" class="trackImage a-link">
             <img class="a-image" src="../../../static/images/about/ARKET_9_GRID_Suppliers.png">
         </a>
         <div class="slider-text-block">
-            <div class="is-richtext o-text-field ">Suppliers&nbsp;</div>
+            <div class="is-richtext o-text-field">Suppliers&nbsp;</div>
         </div>
     </div>
     <div class="image-container">
-        <a href="/en/about/design.html" target="_self" class="trackImage a-link">
+        <a href="../../../static/ko/about/design.html" target="_self" class="trackImage a-link">
             <img class="a-image" src="../../../static/images/about/ARKET_9_GRID_Design.png">
         </a>
         <div class="slider-text-block">
-            <div class="is-richtext o-text-field ">Design</div>
+            <div class="is-richtext o-text-field">Design</div>
         </div>
     </div>
     <div class="image-container">
-        <a href="/en/about/food.html" target="_self" class="trackImage a-link">
+        <a href="../../../static/ko/about/food.html" target="_self" class="trackImage a-link">
             <img class="a-image" src="../../../static/images/about/ARKET_9_GRID_Food.png">
         </a>
         <div class="slider-text-block">
-            <div class="is-richtext o-text-field ">Food&nbsp;</div>
+            <div class="is-richtext o-text-field">Food&nbsp;</div>
         </div>
     </div>
     <div class="image-container">
-        <a href="/en/about/people.html" target="_self" class="trackImage a-link">
+        <a href="../../../static/ko/about/people.html" target="_self" class="trackImage a-link">
             <img class="a-image" src="../../../static/images/about/ARKET_9_GRID_People.png">
         </a>
         <div class="slider-text-block">
-            <div class="is-richtext o-text-field ">People&nbsp;</div>
+            <div class="is-richtext o-text-field">People&nbsp;</div>
         </div>
     </div>
     <div class="image-container">
-        <a href="/en/about/balance.html" target="_self" class="trackImage a-link">
+        <a href="../../../static/ko/about/balance.html" target="_self" class="trackImage a-link">
             <img class="a-image" src="../../../static/images/about/ARKET_9_GRID_Balance.png">
         </a>
         <div class="slider-text-block">
-            <div class="is-richtext o-text-field ">Balance&nbsp;</div>
+            <div class="is-richtext o-text-field">Balance&nbsp;</div>
         </div>
     </div>
     <div class="image-container">
-        <a href="/en/about/knowledge.html" target="_self" class="trackImage a-link">
+        <a href="../../../static/ko/about/knowledge.html" target="_self" class="trackImage a-link">
             <img class="a-image" src="../../../static/images/about/ARKET_9_GRID_Knowledge.png">
         </a>
         <div class="slider-text-block">
-            <div class="is-richtext o-text-field ">Knowledge&nbsp;</div>
+            <div class="is-richtext o-text-field">Knowledge&nbsp;</div>
         </div>
     </div>
     <div class="image-container">
-        <a href="/en/about/community.html" target="_self" class="trackImage a-link">
+        <a href="../../../static/ko/about/community.html" target="_self" class="trackImage a-link">
             <img class="a-image" src="../../../static/images/about/ARKET_9_GRID_Community.png">
         </a>
         <div class="slider-text-block">
-            <div class="is-richtext o-text-field ">Community&nbsp;</div>
+            <div class="is-richtext o-text-field">Community&nbsp;</div>
         </div>
     </div>
     <div class="image-container">
-        <a href="/en/about/environment.html" target="_self" class="trackImage a-link">
+        <a href="../../../static/ko/about/environment.html" target="_self" class="trackImage a-link">
             <img class="a-image" src="../../../static/images/about/ARKET_9_GRID_Environment.png">
         </a>
         <div class="slider-text-block">
-            <div class="is-richtext o-text-field ">Environment&nbsp;</div>
+            <div class="is-richtext o-text-field">Environment&nbsp;</div>
         </div>
     </div>
 </div>
@@ -2248,11 +2249,10 @@
     <div class="o-text-field is-wide ">
         <div class="text-container">
             <p class="a-paragraph is-richtext"></p>
-            <div style="text-align: left;font-size: 14.0px;">The grid is an essential element of our visual
-                identity. It represents the notion of the archive and is used to organise and display information
-                ranging from the names of plants to fabric weights and different types of materials used in our
-                collections. These nine squares symbolise the separate parts that together form our world, and they
-                are also the areas where we strive to make a difference.
+            <div style="text-align: left;font-size: 14.0px;">
+                그리드는 우리의 시각적 아이덴티티에 있어 필수적인 요소입니다. 그것은 아카이브의 개념을 나타내며,
+                식물 이름부터 직물의 무게 및 우리의 컬렉션에 사용되는 다양한 소재에 이르는 정보를 정리하고 표시하는 데 사용됩니다.
+                이 9개의 사각형은 우리의 세상을 구성하는 각 부분을 상징하며, 우리가 변화를 만들기 위해 노력하는 영역을 나타냅니다.
             </div>
             <p class="a-paragraph"></p>
         </div>
@@ -2342,7 +2342,8 @@
     <!-- //o-page-content -->
 
     <!-- footer -->
-    <footer class="o-footer o-footer-top u-clearfix">
+    
+<footer class="o-footer o-footer-top u-clearfix">
     <ul>
         <li>
             <a class="a-link" href="#" target="_self">About ARKET</a>
@@ -2406,7 +2407,7 @@
             <p>ARKET 온라인 스토어는<br><a href="http://thehyundai.com" class="a-link a-link-udln" target="_blank">더현대닷컴</a>을 이용하고 있습니다.</p>
             <ul class="link-lst">
                 <li><a href="#none" class="a-link" target="_self">이용약관</a></li>
-                <li><a href="#none" class="a-link" target="_self">개인정보처리방침</a></li>
+                <li><a href="#none" class="a-link" target="_self"><strong>개인정보처리방침</strong></a></li>
                 <li><a href="http://www.ehyundai.com/newPortal/ir/main.do" class="a-link" target="_blank">현대백화점 그룹</a></li>
             </ul>
         </div>
@@ -2488,6 +2489,7 @@
 <!--    <script src="../../../static/org/etc/designs/appeaser/p11/clientlibs/aem-clientlibs/genericpage_Clientlib.min.44bc583ac294a90847353b251f2c46c0.js"></script>-->
 
     <!-- frontend.renew.js -->
+    <script src="../../../static/js/jquery-ui.js"></script>
     <script src="../../../static/js/frontend.renew.js"></script>
     <!-- //frontend.renew.js -->
 

@@ -242,6 +242,7 @@ renewCommon = (function(doc, win){
         renewCommon.infoLineToggle.init();
         renewCommon.aTooltip.init();
         renewCommon.toggleBx.init();
+        renewCommon.dialogBtn.init();
     }
 
     //accordion
@@ -533,6 +534,77 @@ renewCommon = (function(doc, win){
                     });
                 });
             }
+        }
+    }
+
+    //dialogBtn
+    obj.dialogBtn = {
+        bodyHold: function(flag){
+            let body = doc.querySelector('body');
+            if(flag){
+                body.classList.add('u-overflow-hidden');
+            }else{
+                body.classList.remove('u-overflow-hidden');
+            }
+        },
+        init: function(){
+            let dialogBxs = doc.querySelectorAll('.dialog-bx');
+            if(dialogBxs){
+                Array.prototype.slice.call(dialogBxs).forEach( function (_obj) {
+                    let _tempId = _obj.getAttribute('id');
+                    if(_obj.classList.contains('alert')){
+                        $('#'+_tempId).dialog({
+                            dialogClass: "dialog-alert",
+                            title: "",
+                            autoOpen: false,
+                            width: '90%',
+                            height: 'auto',
+                            modal: true,
+                            resizable: false,
+                        });
+                    }
+                    if(_obj.classList.contains('confirm')){
+                        $('#'+_tempId).dialog({
+                            dialogClass: "dialog-confirm",
+                            title: "",
+                            autoOpen: false,
+                            width: '90%',
+                            height: 'auto',
+                            modal: true,
+                            resizable: false,
+                        });
+                    }
+                });
+            }
+            let dialogBtns = doc.querySelectorAll('.open-dialog-btn');
+            if(dialogBtns) {
+                Array.prototype.slice.call(dialogBtns).forEach( function (_obj) {
+                    _obj.addEventListener('click', function (_evt) {
+                        let _targetDialogId = this.getAttribute('data-target');
+                        $('#'+_targetDialogId).dialog('open');
+                        renewCommon.dialogBtn.bodyHold(true);
+                    });
+                });
+            }
+            let dialogCloseBtns = doc.querySelectorAll('.dialog-close-btn');
+            if(dialogCloseBtns) {
+                Array.prototype.slice.call(dialogCloseBtns).forEach( function (_obj) {
+                    _obj.addEventListener('click', function (_evt) {
+                        let _targetDialogId = this.closest('.dialog-bx').getAttribute('id');
+                        $('#'+_targetDialogId).dialog('close');
+                        renewCommon.dialogBtn.bodyHold(false);
+                    });
+                });
+            }
+            let uiDialogCloseBtns = doc.querySelectorAll('.ui-dialog-titlebar-close');
+            if(uiDialogCloseBtns) {
+                Array.prototype.slice.call(uiDialogCloseBtns).forEach( function (_obj) {
+                    _obj.addEventListener('click', function (_evt) {
+                        renewCommon.dialogBtn.bodyHold(false);
+                    });
+                });
+            }
+
         }
     }
 

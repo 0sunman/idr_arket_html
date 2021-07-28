@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* ========================================================== */
 /*                                                            */
 /* file		: kim                                   	      */
@@ -6,5 +7,22 @@
 /* ---------------------------------------------------------- */
 /* kim s ==================================================== */
 /* kim e ==================================================== */
+/* 푸터 > About ARKET > index 공통 */
+.footer-about-wrap .is-wide .m-headline h2 { font-size: 11vw; line-height: 1.2em; }
 
+@media (min-width: 769px) { .footer-about-wrap .is-wide .m-headline h2 { font-size: calc(51px + 1vw); } }
+
+.footer-about-wrap .text-container > div { font-size: 13px; line-height: 1.6em; }
+
+.footer-about-wrap .about .has-margin .heading-cap { font-size: 18px; }
+
+.footer-about-wrap .title--medium .has-margin { font-size: 11vw; line-height: 1.2em; }
+
+@media (min-width: 769px) { .footer-about-wrap .title--medium .has-margin { font-size: calc(51px + 1vw); } }
+
+.footer-about-wrap .br-only-m { display: none; }
+
+@media (min-width: 769px) { .footer-about-wrap .br-only-m { display: block; } }
+
+/* 푸터 > About ARKET > materials */
 /*# sourceMappingURL=renew.v3.css.map */

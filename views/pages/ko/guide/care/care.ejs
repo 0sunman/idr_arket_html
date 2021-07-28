@@ -1,9 +1,6 @@
-<div data-component="OPageContent" class="o-page-content care-guide-content" data-component-id="">
-    <div class="coremetricsPageId" hidden="">care_guide 3</div>
-    <div class="coremetricsPageType" hidden="">care_guide 4</div>
-    <div class="coremetricsCategoryId" hidden="">care_guide 2</div>
-    <div class="coremetricsCategoryPath" hidden="">care_guide 1</div>
+<div data-component="OPageContent" class="o-page-content care-guide-content">
 
+    <!-- info-section -->
     <div class="o-hero is-takeover  full-width hero-takeover double-image" data-component="OHero">
 
         <div class="takeover-wrapper">
@@ -25,11 +22,13 @@
         </div>
 
         <div class="image-wrapper">
-            <div style="background-image:url(<%= pageInfo.root %>/images/care/ARKET_19S9B2_care_1_f.jpg)" class="takeover-background"></div>
+            <div style="background-image: url(<%= pageInfo.root %>/images/care/ARKET_19S9B2_care_1_f.jpg)" class="takeover-background"></div>
             <div style="background-image: url(<%= pageInfo.root %>/images/care/ARKET_19S9B2_care_3_f.jpg); float:right" class="takeover-background"></div>
         </div>
     </div>
+    <!-- //info-section -->
 
+    <!-- m-headline -->
     <div class="o-width wc-75">
         <div class="m-headline u-align-center is-main-headline full-width">
             <h2 class="a-heading-2 ">
@@ -38,178 +37,141 @@
             </h2>
         </div>
     </div>
+    <!-- // m-headline -->
 
+    <!-- 카테고리별-image-listing-1 -->
     <div class="o-width VNAV wc-100">
         <div class="o-image-listing cols-3">
             <!-- Cashmere-->
             <div class="image-container">
-                <a href="#none" target="_self" class="trackImage a-link">
+                <a href="<%= pageInfo.root %>/<%= pageInfo.lang %>/guide/care/cashmere.html" target="_self" class="trackImage a-link">
                     <img class="a-image" src="<%= pageInfo.root %>/images/care/ARKET_19S9B2_care_6_vn.jpg" alt="Cashmere">
-                    <span class="promoIndex" hidden="">0</span>
                 </a>
+
                 <div class="slider-text-block">
                     <div class="is-richtext o-text-field">Cashmere</div>
-                </div>
-                <div class="promotion-data p11-imagegrid" hidden="" data-slides-index="0">
-                    <span class="promo_id">image component grid</span>
-                    <span class="promo_name">startpage</span>
-                    <span class="promo_creative"></span>
                 </div>
             </div>
             <!-- // Cashmere-->
 
             <!-- silk -->
             <div class="image-container">
-                <a href="#none" target="_self" class="trackImage a-link">
+                <a href="<%= pageInfo.root %>/<%= pageInfo.lang %>/guide/care/silk.html" target="_self" class="trackImage a-link">
                     <img class="a-image" src="<%= pageInfo.root %>/images/care/ARKET_19S9B2_care_1_vn.jpg" alt="Silk">
-                    <span class="promoIndex" hidden="">1</span>
                 </a>
+
                 <div class="slider-text-block">
                     <div class="is-richtext o-text-field">Silk</div>
-                </div>
-                <div class="promotion-data p11-imagegrid" hidden="" data-slides-index="1">
-                    <span class="promo_id">image component grid</span>
-                    <span class="promo_name">startpage</span>
-                    <span class="promo_creative"></span>
                 </div>
             </div>
             <!-- // silk -->
 
             <!-- wood -->
             <div class="image-container">
-                <a href="#none" target="_self" class="trackImage a-link">
-                    <img class="a-image" src="<%= pageInfo.root %>/images/care/CARE_wood_chopping_boards_02_f_VN.jpg">
-                    <span class="promoIndex" hidden="">2</span>
+                <a href="<%= pageInfo.root %>/<%= pageInfo.lang %>/guide/care/wood.html" target="_self" class="trackImage a-link">
+                    <img class="a-image" src="<%= pageInfo.root %>/images/care/CARE_wood_chopping_boards_02_f_VN.jpg" alt="wood">
                 </a>
+
                 <div class="slider-text-block">
-                    <div class="is-richtext o-text-field ">Wood</div>
-                </div>
-                <div class="promotion-data p11-imagegrid" hidden="" data-slides-index="2">
-                    <span class="promo_id">image component grid</span>
-                    <span class="promo_name">startpage</span>
-                    <span class="promo_creative"></span>
+                    <div class="is-richtext o-text-field">Wood</div>
                 </div>
             </div>
             <!-- // wood -->
 
             <!-- linen -->
             <div class="image-container">
-                <a href="#none" target="_self" class="trackImage a-link">
+                <a href="<%= pageInfo.root %>/<%= pageInfo.lang %>/guide/care/linen.html" target="_self" class="trackImage a-link">
                     <img class="a-image" src="<%= pageInfo.root %>/images/care/VNAV_Care_Linen-5.jpg">
-                    <span class="promoIndex" hidden="">3</span>
                 </a>
+
                 <div class="slider-text-block">
                     <div class="is-richtext o-text-field">Linen</div>
-                </div>
-                <div class="promotion-data p11-imagegrid" hidden="" data-slides-index="3">
-                    <span class="promo_id">image component grid</span>
-                    <span class="promo_name">startpage</span>
-                    <span class="promo_creative">care / linen</span>
                 </div>
             </div>
             <!-- // linen -->
         </div>
     </div>
+    <!-- // 카테고리별-image-listing-1 -->
 
+    <!-- 카테고리별-image-listing-2 -->
     <div class="o-width VNAV wc-100">
-        <div class="o-image-listing cols-3" style="margin-top:0px; margin-bottom:0px;">
+        <div class="o-image-listing cols-3">
 
             <!-- canvas -->
             <div class="image-container">
-                <a href="#none" target="_self" class="trackImage a-link">
+                <a href="<%= pageInfo.root %>/<%= pageInfo.lang %>/guide/care/canvas.html" target="_self" class="trackImage a-link">
                     <img class="a-image" src="<%= pageInfo.root %>/images/care/CARE_canvas_trainers_02_f_VN.jpg" alt="Canvas">
-                    <span class="promoIndex" hidden="">4</span>
                 </a>
+
                 <div class="slider-text-block">
-                    <div class="is-richtext o-text-field ">Canvas</div>
-                </div>
-                <div class="promotion-data p11-imagegrid" hidden="" data-slides-index="4">
-                    <span class="promo_id">image component grid</span>
-                    <span class="promo_name">startpage</span>
-                    <span class="promo_creative"></span>
+                    <div class="is-richtext o-text-field">Canvas</div>
                 </div>
             </div>
             <!-- // canvas -->
 
             <!-- denim -->
             <div class="image-container">
-                <a href="#none" target="_self" class="trackImage a-link">
+                <a href="<%= pageInfo.root %>/<%= pageInfo.lang %>/guide/care/denim.html" target="_self" class="trackImage a-link">
                     <img class="a-image" src="<%= pageInfo.root %>/images/care/ARKET_19S9B2_care_3_vn.jpg" alt="Denim">
-                    <span class="promoIndex" hidden="">5</span>
                 </a>
+
                 <div class="slider-text-block">
-                    <div class="is-richtext o-text-field ">Denim</div>
-                </div>
-                <div class="promotion-data p11-imagegrid" hidden="" data-slides-index="5">
-                    <span class="promo_id">image component grid</span>
-                    <span class="promo_name">startpage</span>
-                    <span class="promo_creative"></span>
+                    <div class="is-richtext o-text-field">Denim</div>
                 </div>
             </div>
             <!-- // denim -->
 
             <!-- leather -->
             <div class="image-container">
+                <a href="<%= pageInfo.root %>/<%= pageInfo.lang %>/guide/care/leather.html" target="_self" class="trackImage a-link">
+                    <img class="a-image" src="<%= pageInfo.root %>/images/care/CARE_leather_footwear_08_f_VN.jpg" alt="Leather">
+                </a>
 
-                <a href="/en_gbp/guide/care/leather.html" target="_self" class="trackImage a-link">
-
-                    <img class="a-image" src="<%= pageInfo.root %>/images/care/CARE_leather_footwear_08_f_VN.jpg">
-
-                    <span class="promoIndex" hidden="">6</span></a>
                 <div class="slider-text-block">
-                    <div class="is-richtext o-text-field ">Leather</div>
+                    <div class="is-richtext o-text-field">Leather</div>
                 </div>
-                <div class="promotion-data p11-imagegrid" hidden="" data-slides-index="6"><span class="promo_id">image component grid</span><span class="promo_name">startpage</span><span class="promo_creative"></span></div>
             </div>
             <!-- // leather -->
 
             <!-- wool -->
             <div class="image-container">
-                <a href="#none" target="_self" class="trackImage a-link">
-                    <img class="a-image" src="<%= pageInfo.root %>/images/care/VNAV_Care_Wool_12.jpg">
-                    <span class="promoIndex" hidden="">7</span>
+                <a href="<%= pageInfo.root %>/<%= pageInfo.lang %>/guide/care/wool.html" target="_self" class="trackImage a-link">
+                    <img class="a-image" src="<%= pageInfo.root %>/images/care/VNAV_Care_Wool_12.jpg" alte="Wool">
                 </a>
+
                 <div class="slider-text-block">
-                    <div class="is-richtext o-text-field ">Wool</div>
-                </div>
-                <div class="promotion-data p11-imagegrid" hidden="" data-slides-index="7">
-                    <span class="promo_id">image component grid</span>
-                    <span class="promo_name">startpage</span>
-                    <span class="promo_creative">startpage / homeware</span>
+                    <div class="is-richtext o-text-field">Wool</div>
                 </div>
             </div>
             <!-- // wool -->
         </div>
     </div>
+    <!-- // 카테고리별-image-listing-2 -->
 
+    <!-- 카테고리별-image-listing-3 -->
     <div class="o-width VNAV wc-100">
-        <div class="o-image-listing cols-3" style="margin-top:0px; margin-bottom:0px;">
+        <div class="o-image-listing cols-3">
 
             <!-- Jewellery -->
             <div class="image-container">
-                <a href="#none" target="_self" class="trackImage a-link">
+                <a href="<%= pageInfo.root %>/<%= pageInfo.lang %>/guide/care/Jewellery.html" target="_self" class="trackImage a-link">
                     <img class="a-image" src="<%= pageInfo.root %>/images/care/WEB_20Q3_JEWELRY_3.jpg" alt="Jewellery">
-                    <span class="promoIndex" hidden="">8</span>
                 </a>
+
                 <div class="slider-text-block">
-                    <div class="is-richtext o-text-field ">Jewellery</div>
-                </div>
-                <div class="promotion-data p11-imagegrid" hidden="" data-slides-index="8">
-                    <span class="promo_id">image component grid</span>
-                    <span class="promo_name">startpage</span>
-                    <span class="promo_creative"></span>
+                    <div class="is-richtext o-text-field">Jewellery</div>
                 </div>
             </div>
             <!-- // Jewellery -->
 
         </div>
     </div>
+    <!-- // 카테고리별-image-listing-3 -->
 
-
-    <!--  women > all 상품 리스트2 -->
+    <!-- product-listing-section -->
     <div class="o-width wc-75">
         <div class="m-headline u-align-center is-main-headline full-width">
-            <h2 class="a-heading-2  has-hover">
+            <h2 class="a-heading-2 has-hover">
                 <span class="heading-cap">homeware</span>
                 <a href="#none" target="_self" class="a-link heading-tag">Care &amp; cleaning</a>
             </h2>
@@ -223,13 +185,17 @@
 
         <div class="parbase sdp-component product-listing align-below">
 
+            <%# md-o-product-filters %>
+            <%#- include ("../../../../common/md-o-product-filters.ejs") %>
+
             <!-- o-product-listing -->
             <div id="lazyLoadSpan">
                 <div id="reloadProducts" class="o-product-listing has-upper-body-images fixed-columns-4 u-align-center">
                     <span id="product-listing-data-storage" data-entries="7" hidden=""></span>
+
                     <%# md-o-product-listing-product-list %>
-                    <%#- include ("../../../../common/md-o-product-listing-product-list-7ea-central-care.ejs") %>
                     <%- include ("../../../../common/md-o-product-listing-search-list.ejs") %>
+
                 </div>
             </div>
 
@@ -245,7 +211,7 @@
         <div id="productCount" class="102"></div>
         <div id="productPerPage" class="36"></div>
     </div>
-
+    <!-- //product-listing-section -->
 
     <%# md-o-teaser %>
     <%- include ("../../../../common/md-o-teaser.ejs") %>
