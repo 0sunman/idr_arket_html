@@ -136,7 +136,7 @@
         <div class="o-tag-cloud">
             <h6 class="a-heading-6 cloud-title">Read more about our work on sustainable materials</h6>
             <ul class="tags-container"><!-- -->
-                <li class="tag "><!-- --><a href="/en/about/sustainability-fact-sheet.html" target="_self" class="a-link">Sustainability Fact Sheet</a><!-- --></li><!-- --></ul>
+                <li class="tag "><!-- --><a href="<%= pageInfo.root %>/<%= pageInfo.lang %>/about/sustainability-fact-sheet.html" target="_self" class="a-link">Sustainability Fact Sheet</a><!-- --></li><!-- --></ul>
         </div>
     </div>
 
@@ -172,7 +172,7 @@
     (function() {
         'use strict';
         //explore Arket 활성화
-        let tempImageContainer = document.querySelectorAll('.o-image-listing.cols-3 .image-container');
+        let tempImageContainer = document.querySelectorAll('.about-grid .o-image-listing.cols-3 .image-container');
         let tempExploreArket = tempImageContainer[0].querySelector('a')
         tempExploreArket.setAttribute('href','#Current'); //활성화
     })();

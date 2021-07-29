@@ -608,6 +608,19 @@ renewCommon = (function(doc, win){
         }
     }
 
+    //loading
+    obj.loadingDisplay = {
+        page: function (flag) {
+            console.log("call Loading")
+            let body = doc.querySelector('body');
+            if(flag){
+                body.classList.add('is-page-loading');
+            }else{
+                body.classList.remove('is-page-loading');
+            }
+        }
+    }
+
     return obj;
 })(document, window);
 

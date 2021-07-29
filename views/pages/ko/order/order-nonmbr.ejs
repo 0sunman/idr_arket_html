@@ -91,14 +91,13 @@
                         <input class="a-checkbox" type="checkbox" id="chck-private-agree">
                         <label class="a-label js-a-label custom-box" for="chck-private-agree" tabindex="0"></label>
                         <label class="a-label js-a-label" for="chck-private-agree">
-                            비회원 개인정보 수집 이용에 대한 내용을 확인하였으며, 이에 동의합니다. <br>
-                            <a href="#none" class="a-link">[내용보기]</a>
+                            비회원 개인정보 수집 이용에 대한 내용을 확인하였으며, 이에 동의합니다. <a href="#none" class="a-link open-lightbox" data-template="lp-nonmbr-order-info-agree">[내용보기]</a>
                         </label>
                     </span>
                 </div>
                 <div class="pay-private-desc">
                     <div class="m-input v3" data-component="MInput">
-                        <label class="a-label js-a-label" for="nonmbr-order-pw">비회원용 주문 비밀번호</label>
+                        <label class="a-label js-a-label fixed" for="nonmbr-order-pw">비회원용 주문 비밀번호</label>
                         <input class="a-input js-a-input"
                                placeholder="비밀번호"
                                type="password"
@@ -147,6 +146,9 @@
 <!-- handlebars-template -->
 <%# 배송지목록 > 삭제 %>
 <%- include ("../../../handlebars/hndl-lp-dlvr-list-del.ejs") %>
+
+<%# 비회원 주문 정보수집 동의 %>
+<%- include ("../../../handlebars/hndl-lp-nonmbr-order-info-agree.ejs") %>
 <!-- //handlebars-template -->
 
 <!-- tip : when develop this script must be delete -->

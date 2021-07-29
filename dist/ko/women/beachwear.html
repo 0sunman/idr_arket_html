@@ -34,6 +34,10 @@
     <link rel="stylesheet" href="../../../static/css/frontend.renew.css" type="text/css">
     <!-- //frontend.renew.css -->
 
+    <!-- for IE -->
+    <script src="../../../static/js/polyfill.min.js"></script>
+    <!-- //for IE -->
+    
     <script src="../../../static/org/etc/designs/hm/clientlibs/shared/jquery.min.98d49f2a9477a5d4f9edef7b7e9698b1.js"></script>
     <script src="../../../static/org/etc/designs/appeaser/p11/pattern-lib/frontend/js/modernizr-custom.min.js"></script>
     <script src="../../../static/org/metrics/default/touchpoint.js"></script>
@@ -3007,7 +3011,9 @@
                             <input type="radio" name="colors" value="Black">
                             <button type="button" class="a-button-nostyle">
                                 <span class="a-swatch-foreground"></span>
-                                <img class="a-image" src="../../../static/images/temp/color-04.jpg">
+                                <!--<img class="a-image" src="../../../static/images/temp/color-04.jpg">-->
+                                <!-- color chip 이미지가 없을 경우 -->
+                                <div class="a-image" style="background-color:#ff3c00; "></div>
                                 <span class="sold-out i18n">Sold out</span>
                             </button>
                         </div>
@@ -3021,7 +3027,9 @@
                             <input type="radio" name="colors" value="Light Beige">
                             <button type="button" class="a-button-nostyle">
                                 <span class="a-swatch-foreground"></span>
-                                <img class="a-image" src="../../../static/images/temp/color-03.jpg">
+                                <!--<img class="a-image" src="../../../static/images/temp/color-03.jpg">-->
+                                <!-- color chip 이미지가 없을 경우 -->
+                                <div class="a-image" style="background-color:#07ff00; "></div>
                                 <span class="sold-out i18n">Sold out</span>
                             </button>
                         </div>
@@ -3035,7 +3043,9 @@
                             <input type="radio" name="colors" value="Off White/Blue">
                             <button type="button" class="a-button-nostyle">
                                 <span class="a-swatch-foreground"></span>
-                                <img class="a-image" src="../../../static/images/temp/color-02.jpg">
+                                <!--<img class="a-image" src="../../../static/images/temp/color-02.jpg">-->
+                                <!-- color chip 이미지가 없을 경우 -->
+                                <div class="a-image" style="background-color:#0048ff; "></div>
                                 <span class="sold-out i18n">Sold out</span>
                             </button>
                         </div>
@@ -9567,8 +9577,10 @@
     <!-- //o-page-content -->
 
     <!-- footer -->
+    <div class="u-no-select" id="footer_warp">
+
     
-<footer class="o-footer o-footer-top u-clearfix">
+    <footer class="o-footer o-footer-top u-clearfix">
     <ul>
         <li>
             <a class="a-link" href="#" target="_self">About ARKET</a>
@@ -9620,7 +9632,7 @@
     </ul>
 </footer>
 
-<footer class="o-footer v2 u-clearfix">
+    <footer class="o-footer v2 u-clearfix">
     <div class="footer-cont">
         <div class="section-01">
             <p class="footer-hyundai">
@@ -9661,8 +9673,15 @@
     </div>
     
 </footer>
+    
+</div>
     <!-- //footer -->
 
+    
+    <!-- page-loading-bx -->
+<div class="page-loading-bx"></div>
+<!-- //page-loading-bx -->
+    
     <div id="selectCountryLightboxType" data-lightbox-type="is-multi-language" hidden=""></div>
     
     <!-- o-cookie-message -->

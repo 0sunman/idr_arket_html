@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /* ========================================================== */
 /*                                                            */
 /* file		: lim                                   	      */
@@ -14,13 +13,19 @@
 /* ---------------------------------------------------------- */
 /* ---------------------------------------------------------- */
 /* frontend.min overwrite s ================================= */
-/* 210713 기획 > 퍼블수정 : 검색 > 상품추천 영역 이미지 */
-/* login */
 /* frontend.min overwrite e ================================= */
 /* ---------------------------------------------------------- */
 /* ---------------------------------------------------------- */
-/* login s ================================================== */
-/* login e ================================================== */
-/* ---------------------------------------------------------- */
+/* footer > stores s ======================================== */
+.stores-content .seo-heading .text-address { display: block; margin-top: 35px; }
+@media (min-width: 769px) { .stores-content .seo-heading .text-address { margin-top: 50px; } }
+.stores-content .o-hero .takeover-wrapper { width: 100%; height: 100%; }
+.stores-content .text-container.align-center { text-align: center; }
+.stores-content .text-container .open-day b { padding-right: 10px; }
+@media (min-width: 769px) { .stores-content .text-container .open-day b:last-child { padding-left: 15px; } }
+.stores-content .text-container .cafe-info b { display: block; padding-top: 50px; padding-bottom: 30px; }
+
+/* footer > stores e ========================================= */
+/* ----------------------------------------------------------- */
 
 /*# sourceMappingURL=renew.v2.css.map */

@@ -34,6 +34,10 @@
     <link rel="stylesheet" href="../../../static/css/frontend.renew.css" type="text/css">
     <!-- //frontend.renew.css -->
 
+    <!-- for IE -->
+    <script src="../../../static/js/polyfill.min.js"></script>
+    <!-- //for IE -->
+    
     <script src="../../../static/org/etc/designs/hm/clientlibs/shared/jquery.min.98d49f2a9477a5d4f9edef7b7e9698b1.js"></script>
     <script src="../../../static/org/etc/designs/appeaser/p11/pattern-lib/frontend/js/modernizr-custom.min.js"></script>
     <script src="../../../static/org/metrics/default/touchpoint.js"></script>
@@ -2021,16 +2025,22 @@
             <p>font-family:'arket sans SC', font-size:14px</p>
 
             <h3>.title--large > a-heading-2</h3>
-            <p>font-size:calc(60px + 2vw)</p>
+            <p>font-size:calc(56px + 2vw)</p>
 
             <h3>.title--medium > a-heading-2</h3>
-            <p>font-size:calc(60px + 1vw)</p>
+            <p>font-size:calc(56px + 1vw)</p>
 
             <h3>.title--small > a-heading-2</h3>
             <p>font-size:56px</p>
 
+            <h3>.title--m-small > a-heading-2</h3>
+            <p>font-size:46px</p>
+
             <h3>.title--x-samll > a-heading-2</h3>
             <p>font-size:38px</p>
+
+            <h3>.title--xx-samll > a-heading-2</h3>
+            <p>font-size:29px</p>
 
             <h3>.a-paragraph</h3>
             <p>font-size:14px</p>
@@ -2104,31 +2114,47 @@
     </div>
     <!-- //title-- -->
     <!-- title-- -->
-    <!-- to Dev [toggle Class] : title--large, title--medium, title--small, title--x-small  -->
     <div class="title--medium wc-100">
         <div class="headings">
             <div class="m-headline">
-                <h2 class="a-heading-2  has-margin">MEDIUM TITLE / 아르켓</h2>
+                <h2 class="a-heading-2 has-margin">MEDIUM TITLE / 아르켓</h2>
             </div>
         </div>
     </div>
     <!-- //title-- -->
     <!-- title-- -->
-    <!-- to Dev [toggle Class] : title--large, title--medium, title--small, title--x-small  -->
     <div class="title--small wc-100">
         <div class="headings">
             <div class="m-headline">
-                <h2 class="a-heading-2  has-margin">SMALL TITLE / 아르켓</h2>
+                <h2 class="a-heading-2 has-margin">SMALL TITLE / 아르켓</h2>
             </div>
         </div>
     </div>
     <!-- //title-- -->
     <!-- title-- -->
-    <!-- to Dev [toggle Class] : title--large, title--medium, title--small, title--x-small  -->
+    <div class="title--m-small wc-100">
+        <div class="headings">
+            <div class="m-headline">
+                <h2 class="a-heading-2 has-margin">M-SMALL TITLE / 아르켓</h2>
+            </div>
+        </div>
+    </div>
+    <!-- //title-- -->
+    <!-- title-- -->
     <div class="title--x-small wc-100">
         <div class="headings">
             <div class="m-headline">
-                <h2 class="a-heading-2  has-margin">X-SMALL TITLE / 아르켓</h2>
+                <h2 class="a-heading-2 has-margin">X-SMALL TITLE / 아르켓</h2>
+            </div>
+        </div>
+    </div>
+    <!-- //title-- -->
+
+    <!-- title-- -->
+    <div class="title--xx-small wc-100">
+        <div class="headings">
+            <div class="m-headline">
+                <h2 class="a-heading-2 has-margin">XX-SMALL TITLE / 아르켓</h2>
             </div>
         </div>
     </div>
@@ -2196,8 +2222,10 @@
     <!-- //o-page-content -->
 
     <!-- footer -->
+    <div class="u-no-select" id="footer_warp">
+
     
-<footer class="o-footer o-footer-top u-clearfix">
+    <footer class="o-footer o-footer-top u-clearfix">
     <ul>
         <li>
             <a class="a-link" href="#" target="_self">About ARKET</a>
@@ -2249,7 +2277,7 @@
     </ul>
 </footer>
 
-<footer class="o-footer v2 u-clearfix">
+    <footer class="o-footer v2 u-clearfix">
     <div class="footer-cont">
         <div class="section-01">
             <p class="footer-hyundai">
@@ -2290,8 +2318,15 @@
     </div>
     
 </footer>
+    
+</div>
     <!-- //footer -->
 
+    
+    <!-- page-loading-bx -->
+<div class="page-loading-bx"></div>
+<!-- //page-loading-bx -->
+    
     <div id="selectCountryLightboxType" data-lightbox-type="is-multi-language" hidden=""></div>
     
     <!-- o-cookie-message -->

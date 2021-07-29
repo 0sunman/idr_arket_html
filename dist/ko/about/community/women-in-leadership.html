@@ -34,6 +34,10 @@
     <link rel="stylesheet" href="../../../../static/css/frontend.renew.css" type="text/css">
     <!-- //frontend.renew.css -->
 
+    <!-- for IE -->
+    <script src="../../../../static/js/polyfill.min.js"></script>
+    <!-- //for IE -->
+    
     <script src="../../../../static/org/etc/designs/hm/clientlibs/shared/jquery.min.98d49f2a9477a5d4f9edef7b7e9698b1.js"></script>
     <script src="../../../../static/org/etc/designs/appeaser/p11/pattern-lib/frontend/js/modernizr-custom.min.js"></script>
     <script src="../../../../static/org/metrics/default/touchpoint.js"></script>
@@ -2062,7 +2066,7 @@
         <div class="o-focus-panel">
             <div class="focus-panel-container three-tiles">
                 <div class="free-tile focus-panel"> <!--added style-->
-                    <a href="/en/about/community/women-in-leadership/lina-hallgren.html" target="_self" class="a-link">
+                    <a href="#none" target="_self" class="a-link">
                         <div class="m-free-tile q-color-black-100 ">
                             <picture data-component="APicture" class="a-picture" data-background="m-free-tile">
                                 <img class="a-image" src="../../../../static/images/about/ARKET_21123_IWD_3_WEB.jpg" alt="Lina Hällgren, Creative Content &amp; Studio Manager, Stockholm">
@@ -2075,7 +2079,7 @@
                     </a>
                 </div>
                 <div class="free-tile focus-panel"> <!--added style-->
-                    <a href="/en/about/community/women-in-leadership/leona-whitfield.html" target="_self" class="a-link">
+                    <a href="#none" target="_self" class="a-link">
                         <div class="m-free-tile q-color-black-100">
                             <picture data-component="APicture" class="a-picture" data-background="m-free-tile">
                                 <img class="a-image" src="../../../../static/images/about/ARKET_21123_IWD_7_WEB.jpg" alt="Leona Whitfield, Area Manager for UK, Benelux &amp; South Korea, London ">
@@ -2088,7 +2092,7 @@
                     </a>
                 </div>
                 <div class="free-tile focus-panel"> <!--added style-->
-                    <a href="/en/about/community/women-in-leadership/vera-huang.html" target="_self" class="a-link">
+                    <a href="#none" target="_self" class="a-link">
                         <div class="m-free-tile q-color-black-100 ">
                             <picture data-component="APicture" class="a-picture" data-background="m-free-tile">
                                 <img class="a-image" src="../../../../static/images/about/ARKET_21123_IWD_9_WEB.jpg" alt="Vera Huang, Global Merchandising Senior Manager,  Shanghai">
@@ -2325,7 +2329,7 @@
                     
                     <!-- md-about-o-focus-tiles -->
 <div class="free-tile focus-panel">
-    <a href="../../../../static/ko/stores.html" target="_self" class="a-link">
+    <a href="#none" target="_self" class="a-link">
         <div class="m-free-tile q-color-black-100 is-promo">
             <picture data-component="APicture" class="a-picture" data-background="m-free-tile">
                 <img class="a-image" src="../../../../static/images/about/vnav_stores-new.jpg" alt="ARKET Stores & cafés">
@@ -2352,7 +2356,7 @@
     (function() {
         'use strict';
         //explore Arket 활성화
-        let tempImageContainer = document.querySelectorAll('.o-image-listing.cols-3 .image-container');
+        let tempImageContainer = document.querySelectorAll('.about-grid .o-image-listing.cols-3 .image-container');
         let tempExploreArket = tempImageContainer[7].querySelector('a')
         tempExploreArket.setAttribute('href','#Current'); //활성화
     })();
@@ -2361,8 +2365,10 @@
     <!-- //o-page-content -->
 
     <!-- footer -->
+    <div class="u-no-select" id="footer_warp">
+
     
-<footer class="o-footer o-footer-top u-clearfix">
+    <footer class="o-footer o-footer-top u-clearfix">
     <ul>
         <li>
             <a class="a-link" href="#" target="_self">About ARKET</a>
@@ -2414,7 +2420,7 @@
     </ul>
 </footer>
 
-<footer class="o-footer v2 u-clearfix">
+    <footer class="o-footer v2 u-clearfix">
     <div class="footer-cont">
         <div class="section-01">
             <p class="footer-hyundai">
@@ -2455,8 +2461,15 @@
     </div>
     
 </footer>
+    
+</div>
     <!-- //footer -->
 
+    
+    <!-- page-loading-bx -->
+<div class="page-loading-bx"></div>
+<!-- //page-loading-bx -->
+    
     <div id="selectCountryLightboxType" data-lightbox-type="is-multi-language" hidden=""></div>
     
     <!-- o-cookie-message -->

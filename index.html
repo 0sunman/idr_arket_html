@@ -10,7 +10,13 @@
 <body>
 <!-- markupList -->
 <style>
-p.gnbcheck{margin-top: 30px;padding-right:50px;padding-left:50px;font-weight:700;font-size:32px;}
+* {box-sizing:border-box;}
+p.gnbcheck{padding-right:50px;padding-left:50px;font-weight:700;font-size:32px;}
+.markup-list-menu-wrap {position:fixed;top:0;left:0;margin:0;padding:20px;list-style:none;background:#fff;}
+.markup-list-menu-wrap::after {content:'';display:inline-block;width:100%;height:1px;background:#000;}
+.markup-list-menu-wrap > li {display:inline-block;margin-right:10px;margin-bottom:10px;}
+.markup-list-menu-wrap > li > a {display:inline-block;padding:2px 5px;width:100%;color:#000;border:1px solid #000;text-decoration:none;}
+.markup-list-menu-wrap > li > a:hover {color:#fff;background:#000;}
 .markup-list-wrap {display:flex;}
 .markup-list-wrap ul {margin-top:0;list-style-type:square;}
 .markup-list-wrap ul li {margin-bottom:5px;}
@@ -23,12 +29,63 @@ p.gnbcheck{margin-top: 30px;padding-right:50px;padding-left:50px;font-weight:700
 .s-en {color:#000;}
 </style>
 <p class='gnbcheck'>Markup List</p>
+<ul class="markup-list-menu-wrap">
+    
+    <li><a href="#idx-1">main</a>
+    
+    <li><a href="#idx-3">navi</a>
+    
+    <li><a href="#idx-4">product</a>
+    
+    <li><a href="#idx-15">search</a>
+    
+    <li><a href="#idx-17">Registration</a>
+    
+    <li><a href="#idx-24">login</a>
+    
+    <li><a href="#idx-39">mypage &gt; Member Info</a>
+    
+    <li><a href="#idx-43">mypage &gt; Delivery Address Mng</a>
+    
+    <li><a href="#idx-46">mypage &gt; balance</a>
+    
+    <li><a href="#idx-48">mypage &gt; Order/Delivery</a>
+    
+    <li><a href="#idx-55">cart</a>
+    
+    <li><a href="#idx-58">order</a>
+    
+    <li><a href="#idx-64">Footer &gt; Aoubut ARKET</a>
+    
+    <li><a href="#idx-92">Footer &gt; Custom Service</a>
+    
+    <li><a href="#idx-99">Footer &gt; Care</a>
+    
+    <li><a href="#idx-109">Footer &gt; Find Store</a>
+    
+    <li><a href="#idx-111">Footer &gt; Newsletter</a>
+    
+    <li><a href="#idx-114">Footer &gt; Recycling</a>
+    
+    <li><a href="#idx-115">mailing</a>
+    
+    <li><a href="#idx-131">etc</a>
+    
+    <li><a href="#idx-140">popup</a>
+    
+    <li><a href="#idx-141">shop in shop</a>
+    
+    <li><a href="#idx-142">component</a>
+    
+    </li>
+    
+</ul>
 <div class="markup-list-wrap">
     
     <div class='markup-list-r'>
         <h2>Local</h2>
         
-        <h4>main</h4>
+        <h4 id='idx-1'>main</h4>
         <ul id='main'>
         
             <li>
@@ -41,7 +98,7 @@ p.gnbcheck{margin-top: 30px;padding-right:50px;padding-left:50px;font-weight:700
         
         </ul>
         
-        <h4>navi</h4>
+        <h4 id='idx-3'>navi</h4>
         <ul id='navi'>
         
             <li>
@@ -50,7 +107,7 @@ p.gnbcheck{margin-top: 30px;padding-right:50px;padding-left:50px;font-weight:700
         
         </ul>
         
-        <h4>product</h4>
+        <h4 id='idx-4'>product</h4>
         <ul id='product'>
         
             <li>
@@ -99,7 +156,7 @@ p.gnbcheck{margin-top: 30px;padding-right:50px;padding-left:50px;font-weight:700
         
         </ul>
         
-        <h4>search</h4>
+        <h4 id='idx-15'>search</h4>
         <ul id='search'>
         
             <li>
@@ -112,7 +169,7 @@ p.gnbcheck{margin-top: 30px;padding-right:50px;padding-left:50px;font-weight:700
         
         </ul>
         
-        <h4>Registration</h4>
+        <h4 id='idx-17'>Registration</h4>
         <ul id='Registration'>
         
             <li>
@@ -145,7 +202,7 @@ p.gnbcheck{margin-top: 30px;padding-right:50px;padding-left:50px;font-weight:700
         
         </ul>
         
-        <h4>login</h4>
+        <h4 id='idx-24'>login</h4>
         <ul id='login'>
         
             <li>
@@ -210,7 +267,7 @@ p.gnbcheck{margin-top: 30px;padding-right:50px;padding-left:50px;font-weight:700
         
         </ul>
         
-        <h4>mypage &gt; Member Info</h4>
+        <h4 id='idx-39'>mypage &gt; Member Info</h4>
         <ul id='mypage &gt; Member Info'>
         
             <li>
@@ -231,7 +288,7 @@ p.gnbcheck{margin-top: 30px;padding-right:50px;padding-left:50px;font-weight:700
         
         </ul>
         
-        <h4>mypage &gt; Delivery Address Mng</h4>
+        <h4 id='idx-43'>mypage &gt; Delivery Address Mng</h4>
         <ul id='mypage &gt; Delivery Address Mng'>
         
             <li>
@@ -248,7 +305,7 @@ p.gnbcheck{margin-top: 30px;padding-right:50px;padding-left:50px;font-weight:700
         
         </ul>
         
-        <h4>mypage &gt; balance</h4>
+        <h4 id='idx-46'>mypage &gt; balance</h4>
         <ul id='mypage &gt; balance'>
         
             <li>
@@ -261,7 +318,7 @@ p.gnbcheck{margin-top: 30px;padding-right:50px;padding-left:50px;font-weight:700
         
         </ul>
         
-        <h4>mypage &gt; Order/Delivery</h4>
+        <h4 id='idx-48'>mypage &gt; Order/Delivery</h4>
         <ul id='mypage &gt; Order/Delivery'>
         
             <li>
@@ -294,7 +351,7 @@ p.gnbcheck{margin-top: 30px;padding-right:50px;padding-left:50px;font-weight:700
         
         </ul>
         
-        <h4>cart</h4>
+        <h4 id='idx-55'>cart</h4>
         <ul id='cart'>
         
             <li>
@@ -311,7 +368,7 @@ p.gnbcheck{margin-top: 30px;padding-right:50px;padding-left:50px;font-weight:700
         
         </ul>
         
-        <h4>order</h4>
+        <h4 id='idx-58'>order</h4>
         <ul id='order'>
         
             <li>
@@ -340,7 +397,7 @@ p.gnbcheck{margin-top: 30px;padding-right:50px;padding-left:50px;font-weight:700
         
         </ul>
         
-        <h4>Footer &gt; Aoubut ARKET</h4>
+        <h4 id='idx-64'>Footer &gt; Aoubut ARKET</h4>
         <ul id='Footer &gt; Aoubut ARKET'>
         
             <li>
@@ -457,7 +514,7 @@ p.gnbcheck{margin-top: 30px;padding-right:50px;padding-left:50px;font-weight:700
         
         </ul>
         
-        <h4>Footer &gt; Custom Service</h4>
+        <h4 id='idx-92'>Footer &gt; Custom Service</h4>
         <ul id='Footer &gt; Custom Service'>
         
             <li>
@@ -490,7 +547,7 @@ p.gnbcheck{margin-top: 30px;padding-right:50px;padding-left:50px;font-weight:700
         
         </ul>
         
-        <h4>Footer &gt; Care</h4>
+        <h4 id='idx-99'>Footer &gt; Care</h4>
         <ul id='Footer &gt; Care'>
         
             <li>
@@ -535,7 +592,20 @@ p.gnbcheck{margin-top: 30px;padding-right:50px;padding-left:50px;font-weight:700
         
         </ul>
         
-        <h4>Footer &gt; Newsletter</h4>
+        <h4 id='idx-109'>Footer &gt; Find Store</h4>
+        <ul id='Footer &gt; Find Store'>
+        
+            <li>
+                <a href='dist/ko/stores.html' target="_blank"><span class="s-ko">매장찾기</span><span class="s-en">Find Store &gt; Store List</span></a>
+            </li>
+        
+            <li>
+                <a href='dist/ko/stores-detail.html' target="_blank"><span class="s-ko">매장상세보기</span><span class="s-en">Find Store &gt; Stroe Detail</span></a>
+            </li>
+        
+        </ul>
+        
+        <h4 id='idx-111'>Footer &gt; Newsletter</h4>
         <ul id='Footer &gt; Newsletter'>
         
             <li>
@@ -552,7 +622,7 @@ p.gnbcheck{margin-top: 30px;padding-right:50px;padding-left:50px;font-weight:700
         
         </ul>
         
-        <h4>Footer &gt; Recycling</h4>
+        <h4 id='idx-114'>Footer &gt; Recycling</h4>
         <ul id='Footer &gt; Recycling'>
         
             <li>
@@ -561,7 +631,7 @@ p.gnbcheck{margin-top: 30px;padding-right:50px;padding-left:50px;font-weight:700
         
         </ul>
         
-        <h4>mailing</h4>
+        <h4 id='idx-115'>mailing</h4>
         <ul id='mailing'>
         
             <li>
@@ -630,7 +700,7 @@ p.gnbcheck{margin-top: 30px;padding-right:50px;padding-left:50px;font-weight:700
         
         </ul>
         
-        <h4>etc</h4>
+        <h4 id='idx-131'>etc</h4>
         <ul id='etc'>
         
             <li>
@@ -661,9 +731,17 @@ p.gnbcheck{margin-top: 30px;padding-right:50px;padding-left:50px;font-weight:700
                 <a href='dist/ko/index.html' target="_blank"><span class="s-ko">브라우저체크 알림</span><span class="s-en">Error Browser Check</span></a>
             </li>
         
+            <li>
+                <a href='dist/ko/page-loading.html' target="_blank"><span class="s-ko">페이지 로딩</span><span class="s-en">page loading </span></a>
+            </li>
+        
+            <li>
+                <a href='dist/ko/list-loading.html' target="_blank"><span class="s-ko">리스트 로딩</span><span class="s-en">list loading </span></a>
+            </li>
+        
         </ul>
         
-        <h4>popup</h4>
+        <h4 id='idx-140'>popup</h4>
         <ul id='popup'>
         
             <li>
@@ -672,7 +750,16 @@ p.gnbcheck{margin-top: 30px;padding-right:50px;padding-left:50px;font-weight:700
         
         </ul>
         
-        <h4>component</h4>
+        <h4 id='idx-141'>shop in shop</h4>
+        <ul id='shop in shop'>
+        
+            <li>
+                <a href='dist/ko/sis-main.html' target="_blank"><span class="s-ko">샵인샵</span><span class="s-en">메인</span></a>
+            </li>
+        
+        </ul>
+        
+        <h4 id='idx-142'>component</h4>
         <ul id='component'>
         
             <li>
@@ -720,6 +807,27 @@ p.gnbcheck{margin-top: 30px;padding-right:50px;padding-left:50px;font-weight:700
     </div>
     
 </div>
+<script type="text/javascript">
+    (function() {
+        'use strict';
+        setTimeout(function(){
+            let menuH= document.querySelector('.markup-list-menu-wrap').offsetHeight;
+            let gnbcheckObj= document.querySelector('.gnbcheck');
+            gnbcheckObj.style.marginTop=menuH + 40 + "px";
+            let menuA = document.querySelectorAll('.markup-list-menu-wrap a');
+            if(menuA){
+                Array.prototype.slice.call(menuA).forEach( function (_obj) {
+                    _obj.addEventListener('click', function (_evt) {
+                        _evt.preventDefault();
+                        _evt.stopPropagation();
+                        let tempTargetST = document.querySelector(this.getAttribute('href')).offsetTop - menuH;
+                        document.documentElement.scrollTop = tempTargetST;
+                    });
+                });
+            }
+        },1000);
+    })();
+</script>
 <!-- //markupList -->
 </body>
 </html>

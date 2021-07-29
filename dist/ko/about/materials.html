@@ -34,6 +34,10 @@
     <link rel="stylesheet" href="../../../static/css/frontend.renew.css" type="text/css">
     <!-- //frontend.renew.css -->
 
+    <!-- for IE -->
+    <script src="../../../static/js/polyfill.min.js"></script>
+    <!-- //for IE -->
+    
     <script src="../../../static/org/etc/designs/hm/clientlibs/shared/jquery.min.98d49f2a9477a5d4f9edef7b7e9698b1.js"></script>
     <script src="../../../static/org/etc/designs/appeaser/p11/pattern-lib/frontend/js/modernizr-custom.min.js"></script>
     <script src="../../../static/org/metrics/default/touchpoint.js"></script>
@@ -2145,7 +2149,7 @@
         <div class="o-tag-cloud">
             <h6 class="a-heading-6 cloud-title">Read more about our work on sustainable materials</h6>
             <ul class="tags-container"><!-- -->
-                <li class="tag "><!-- --><a href="/en/about/sustainability-fact-sheet.html" target="_self" class="a-link">Sustainability Fact Sheet</a><!-- --></li><!-- --></ul>
+                <li class="tag "><!-- --><a href="../../../static/ko/about/sustainability-fact-sheet.html" target="_self" class="a-link">Sustainability Fact Sheet</a><!-- --></li><!-- --></ul>
         </div>
     </div>
 
@@ -2326,7 +2330,7 @@
     (function() {
         'use strict';
         //explore Arket 활성화
-        let tempImageContainer = document.querySelectorAll('.o-image-listing.cols-3 .image-container');
+        let tempImageContainer = document.querySelectorAll('.about-grid .o-image-listing.cols-3 .image-container');
         let tempExploreArket = tempImageContainer[0].querySelector('a')
         tempExploreArket.setAttribute('href','#Current'); //활성화
     })();
@@ -2335,8 +2339,10 @@
     <!-- //o-page-content -->
 
     <!-- footer -->
+    <div class="u-no-select" id="footer_warp">
+
     
-<footer class="o-footer o-footer-top u-clearfix">
+    <footer class="o-footer o-footer-top u-clearfix">
     <ul>
         <li>
             <a class="a-link" href="#" target="_self">About ARKET</a>
@@ -2388,7 +2394,7 @@
     </ul>
 </footer>
 
-<footer class="o-footer v2 u-clearfix">
+    <footer class="o-footer v2 u-clearfix">
     <div class="footer-cont">
         <div class="section-01">
             <p class="footer-hyundai">
@@ -2429,8 +2435,15 @@
     </div>
     
 </footer>
+    
+</div>
     <!-- //footer -->
 
+    
+    <!-- page-loading-bx -->
+<div class="page-loading-bx"></div>
+<!-- //page-loading-bx -->
+    
     <div id="selectCountryLightboxType" data-lightbox-type="is-multi-language" hidden=""></div>
     
     <!-- o-cookie-message -->

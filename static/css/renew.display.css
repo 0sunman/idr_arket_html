@@ -61,6 +61,7 @@ html.no-touchevents .m-input, html.no-touchevents .m-dropdown, .alternative-styl
 .m-radio-button.valign-top.v3 .a-radio-button + .custom-radio { margin-top: 3px; }
 
 .m-input .a-input { font-size: 18px; background-color: transparent; }
+.m-input .a-link { color: #000; }
 .m-input.v2 { min-height: auto; }
 .m-input.v2 .a-input { padding-right: 22px; padding-left: 22px; font-weight: 300; font-size: 13px; color: #000; background: transparent; border: 1px solid #ddd; }
 .m-input.v3 { min-height: auto; }
@@ -185,6 +186,8 @@ html.no-touchevents .m-input, html.no-touchevents .m-dropdown, .alternative-styl
 .o-hero:not(.has-hidden-video) .takeover-background.with-video-visible-btn .a-vimeo-video + .video-play-button { display: none; }
 
 .navigation-curtain .o-search-suggestion ul li .icon:before { display: initial; }
+
+.o-lazy-load .spinner { position: relative; margin: 0 auto; top: 130px; width: 90px; height: 90px; background: url("../images/common/loading.svg") no-repeat 50%; animation: spin 2s linear infinite; -webkit-animation: spin 2s linear infinite; }
 
 @media (min-width: 769px) { .o-header.has-open-search .category-group { padding-top: 0; } }
 @media (max-width: 768px) { .o-page-content .o-width .product-listing.align-below .o-product-listing { padding-top: 0; } }
@@ -901,13 +904,13 @@ display: inline-block;
 /* ---------------------------------------------------------- */
 /* org page inside overwrite s =============================== */
 /* Changes size of text in text-componenet. Use with New Arrivals cloud and SALE cloud */
-.title--large, .title--medium, .title--small, .title--x-small { padding: 0 0 20px; }
+.title--large, .title--medium, .title--small, .title--m-small, .title--x-small, .title--xx-small { padding: 0 0 20px; }
 
-.title--large:not(.wc-75):not(.wc-50):not(.wc-25) .o-text-field .text-container, .title--medium:not(.wc-75):not(.wc-50):not(.wc-25) .o-text-field .text-container, .title--small:not(.wc-75):not(.wc-50):not(.wc-25) .o-text-field .text-container, .title--x-small:not(.wc-75):not(.wc-50):not(.wc-25) .o-text-field .text-container { margin: 0; }
+.title--large:not(.wc-75):not(.wc-50):not(.wc-25) .o-text-field .text-container, .title--medium:not(.wc-75):not(.wc-50):not(.wc-25) .o-text-field .text-container, .title--small:not(.wc-75):not(.wc-50):not(.wc-25) .o-text-field .text-container, .title--m-small:not(.wc-75):not(.wc-50):not(.wc-25) .o-text-field .text-container, .title--x-small:not(.wc-75):not(.wc-50):not(.wc-25) .o-text-field .text-container, .title--xx-small:not(.wc-75):not(.wc-50):not(.wc-25) .o-text-field .text-container { margin: 0; }
 
-.title--large .a-heading-2.has-margin, .title--medium .a-heading-2.has-margin, .title--small .a-heading-2.has-margin, .title--x-small .a-heading-2.has-margin { padding: 0 15px; margin: 35px 5px 15px; }
+.title--large .a-heading-2.has-margin, .title--medium .a-heading-2.has-margin, .title--small .a-heading-2.has-margin, .title--m-small .a-heading-2.has-margin, .title--x-small .a-heading-2.has-margin, .title--xx-small .a-heading-2.has-margin { padding: 0 15px; margin: 35px 5px 15px; }
 
-.title--large .seo-heading, .title--medium .seo-heading, .title--small .seo-heading, .title--x-small .seo-heading { padding-bottom: 0; }
+.title--large .seo-heading, .title--medium .seo-heading, .title--small .seo-heading, .title--m-small .seo-heading, .title--x-small .seo-heading, .title--xx-small .seo-heading { padding-bottom: 0; }
 
 .title--x-small .m-headline.is-main-headline [class^="a-heading-"] { border-bottom: 0; }
 
@@ -917,19 +920,25 @@ display: inline-block;
 
 .title--small .a-heading-2.has-margin, .title--small .seo-heading, .title--small .a-heading-2 { font-size: 56px; line-height: calc(0.95em + 0.5vw); }
 
+.title--m-small .a-heading-2.has-margin, .title--m-small .seo-heading, .title--m-small .a-heading-2 { font-size: 46px; line-height: calc(0.95em + 0.5vw); }
+
 .title--x-small .a-heading-2.has-margin, .title--x-small .seo-heading, .title--x-small .a-heading-2 { font-size: 38px; line-height: 35px; }
+
+.title--xx-small .a-heading-2.has-margin, .title--xx-small .seo-heading, .title--xx-small .a-heading-2 { font-size: 29px; line-height: 35px; }
 
 @media (max-width: 768px) { .title--large .a-heading-2.has-margin, .title--large .seo-heading { font-size: 13vw; line-height: 1em; }
   .title--medium .a-heading-2.has-margin, .title--medium .seo-heading, .title--medium h1, .title--medium .a-heading-2 { font-size: 11vw; line-height: 1em; }
   .title--small .a-heading-2.has-margin, .title--small .seo-heading, .title--small .a-heading-2 { font-size: 9vw; line-height: 1em; }
+  .title--m-small .a-heading-2.has-margin, .title--m-small .seo-heading, .title--m-small .a-heading-2 { font-size: 8vw; line-height: 1em; }
   .title--x-small .a-heading-2.has-margin, .title--x-small .seo-heading, .title--x-small .a-heading-2 { font-size: 7vw; line-height: 1em; }
-  .title--large .a-heading-2.has-margin, .title--medium .a-heading-2.has-margin, .title--small .a-heading-2.has-margin, .title--x-small .a-heading-2.has-margin { padding: 0; }
-  .title--large .o-tag-cloud .cloud-title, .title--medium .o-tag-cloud .cloud-title, .title--small .o-tag-cloud .cloud-title, .title--x-small .o-tag-cloud .cloud-title { display: none; } }
-.title--large a:hover, .title--medium a:hover, .title--small a:hover, .title--x-small a:hover, .title--large .m-headline [class^="a-heading-"].has-hover:hover .heading-tag, .title--medium .m-headline [class^="a-heading-"].has-hover:hover .heading-tag, .title--small .m-headline [class^="a-heading-"].has-hover:hover .heading-tag, .title--x-small .m-headline [class^="a-heading-"].has-hover:hover .heading-tag, .title--large .a-heading-2.has-hover:hover .heading-tag, .title--medium .a-heading-2.has-hover:hover .heading-tag, .title--small .a-heading-2.has-hover:hover .heading-tag, .title--x-small .a-heading-2.has-hover:hover .heading-tag { color: #000; background: transparent !important; }
+  .title--xx-small .a-heading-2.has-margin, .title--xx-small .seo-heading, .title--xx-small .a-heading-2 { font-size: 6vw; line-height: 1em; }
+  .title--large .a-heading-2.has-margin, .title--medium .a-heading-2.has-margin, .title--small .a-heading-2.has-margin, .title--m-small .a-heading-2.has-margin, .title--x-small .a-heading-2.has-margin, .title--xx-small .a-heading-2.has-margin { padding: 0; }
+  .title--large .o-tag-cloud .cloud-title, .title--medium .o-tag-cloud .cloud-title, .title--small .o-tag-cloud .cloud-title, .title--m-small .o-tag-cloud .cloud-title, .title--x-small .o-tag-cloud .cloud-title, .title--xx-small .o-tag-cloud .cloud-title { display: none; } }
+.title--large a:hover, .title--medium a:hover, .title--small a:hover, .title--m-small a:hover, .title--x-small a:hover, .title--xx-small a:hover, .title--large .m-headline [class^="a-heading-"].has-hover:hover .heading-tag, .title--medium .m-headline [class^="a-heading-"].has-hover:hover .heading-tag, .title--small .m-headline [class^="a-heading-"].has-hover:hover .heading-tag, .title--m-small .m-headline [class^="a-heading-"].has-hover:hover .heading-tag, .title--x-small .m-headline [class^="a-heading-"].has-hover:hover .heading-tag, .title--xx-small .m-headline [class^="a-heading-"].has-hover:hover .heading-tag, .title--large .a-heading-2.has-hover:hover .heading-tag, .title--medium .a-heading-2.has-hover:hover .heading-tag, .title--small .a-heading-2.has-hover:hover .heading-tag, .title--m-small .a-heading-2.has-hover:hover .heading-tag, .title--x-small .a-heading-2.has-hover:hover .heading-tag, .title--xx-small .a-heading-2.has-hover:hover .heading-tag { color: #000; background: transparent !important; }
 
-.title--small .o-text-field p, .title--medium .o-text-field p, .title--large .o-text-field p, .title--x-small .o-text-field p { display: none; }
+.title--large .o-text-field p, .title--medium .o-text-field p, .title--small .o-text-field p, .title--m-small .o-text-field p, .title--x-small .o-text-field p, .title--xx-small .o-text-field p { display: none; }
 
-.title--x-small .o-tag-cloud, .title--small .o-tag-cloud, .title--medium .o-tag-cloud, .title--large .o-tag-cloud { padding: 0px 20px 20px; }
+.title--large .o-tag-cloud, .title--medium .o-tag-cloud, .title--small .o-tag-cloud, .title--m-small .o-tag-cloud, .title--x-small .o-tag-cloud, .title--xx-small .o-tag-cloud { padding: 0px 20px 20px; }
 
 /* END TITLE SIZES */
 /* main_inside about */
@@ -1338,6 +1347,12 @@ html .list-option .m-dropdown-label-ex + .m-dropdown { margin-left: 0; }
 .landing-page-wrap { display: flex; justify-content: center; height: calc(100vh - 56px); }
 .landing-page-wrap p { margin-top: 0; margin-bottom: 0; }
 
+.page-loading-bx { display: none; justify-content: center; align-items: center; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: #fff; z-index: 999; }
+.page-loading-bx::before { content: ''; display: inline-block; width: 90px; height: 90px; background: url("../images/common/loading.svg") no-repeat; }
+
+body.is-page-loading { overflow: hidden; }
+body.is-page-loading .page-loading-bx { display: flex; }
+
 /* common e ================================================= */
 /* ---------------------------------------------------------- */
 /* ========================================================== */
@@ -1450,13 +1465,13 @@ html .list-option .m-dropdown-label-ex + .m-dropdown { margin-left: 0; }
 
 .ui-widget-overlay { background: #efefef; opacity: .9; }
 
-.ui-dialog { font-family: "Arket Sans", "Noto Sans KR", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", "Sans-Serif"; }
+.ui-dialog { position: fixed !important; top: 50% !important; left: 50% !important; transform: translateX(-50%) translateY(-50%); font-family: "Arket Sans", "Noto Sans KR", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", "Sans-Serif"; }
 .ui-dialog.ui-widget.ui-widget-content { border: 0; }
 .ui-dialog .ui-widget-header { background: none; border: 0; }
 .ui-dialog .ui-dialog-titlebar, .ui-dialog .ui-dialog-content { padding: 0; }
 .ui-dialog .ui-dialog-titlebar { width: 100%; padding-right: 30px; padding-left: 30px; text-align: center; }
 .ui-dialog .ui-dialog-titlebar-close { width: 24px; height: 24px; background: none; border: 0; }
-.ui-dialog .ui-dialog-titlebar-close .ui-icon { position: absolute; top: 50%; left: 50%; margin-left: -12px; margin-top: -12px; width: 100%; height: 100%; background-image: none; text-indent: initial; }
+.ui-dialog .ui-dialog-titlebar-close .ui-icon { position: absolute; top: 50%; left: 50%; margin-left: -12px; margin-top: -12px; width: 100%; height: 100%; background-image: none; text-indent: 0; }
 .ui-dialog .ui-dialog-titlebar-close .ui-icon::after { font-family: 'Arket Sans Ding'; font-weight: 400; content: "M"; }
 
 .dialog-bx { display: none; }
@@ -1788,11 +1803,11 @@ margin: 0mm; }
 /* sis s ==================================================== */
 .blind { position: absolute !important; left: -10000px !important; top: -10000px !important; width: 0; height: 0; font-size: 0; display: block; visibility: hidden; }
 
-#footer_warp { clear: both; }
-#footer_warp * { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; -o-box-sizing: border-box; box-sizing: border-box; }
-#footer_warp h1, #footer_warp h2, #footer_warp h3, #footer_warp h4, #footer_warp h5, #footer_warp h6 { margin: 0; }
-#footer_warp ul, #footer_warp li, #footer_warp p { margin: 0; padding: 0; }
-#footer_warp a { color: #666; }
+#footer_warp .sis-footer { clear: both; }
+#footer_warp .sis-footer * { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; -o-box-sizing: border-box; box-sizing: border-box; }
+#footer_warp .sis-footer h1, #footer_warp .sis-footer h2, #footer_warp .sis-footer h3, #footer_warp .sis-footer h4, #footer_warp .sis-footer h5, #footer_warp .sis-footer h6 { margin: 0; }
+#footer_warp .sis-footer ul, #footer_warp .sis-footer li, #footer_warp .sis-footer p { margin: 0; padding: 0; }
+#footer_warp .sis-footer a { color: #666; }
 
 .ie7 #sis_footer { z-index: 501 !important; }
 
@@ -2161,6 +2176,8 @@ html.no-touchevents .n-find-idpw .n-wrap.resting-guide .info { padding-bottom: 1
 /* product s ================================================ */
 .o-product-listing .o-product .description .m-product-price .is-deprecated { padding-right: 10px; }
 .o-product-listing .o-product .description .m-product-price .is-deprecated::before { position: absolute; top: 0; right: 0; content: '원'; display: inline-block; font-family: "Noto Sans KR"; font-size: inherit; }
+.o-product-listing .o-product .description .swatches .m-swatches .a-swatch div.a-image { position: relative; display: inline-block; }
+.o-product-listing .o-product .description .swatches .m-swatches .a-swatch.current div.a-image::before { position: absolute; top: 0; left: 0; content: ''; width: 7px; height: 7px; display: inline-block; border: 1px solid #fff; border-radius: 50%; }
 
 .o-product-cofs .description .m-product-price .is-deprecated { padding-right: 10px; }
 .o-product-cofs .description .m-product-price .is-deprecated::before { position: absolute; top: 0; right: 0; content: '원'; display: inline-block; font-family: "Noto Sans KR"; font-size: inherit; }
@@ -2419,7 +2436,9 @@ span.m-hazmat-v2.warning::before { background-image: url("../images/icon/icon-wa
 .pay-private-bx .pay-private-desc { padding-top: 50px; padding-left: 28px; }
 .pay-private-bx .pay-private-desc .m-input { margin-bottom: 35px; }
 .pay-private-bx .pay-private-desc .m-input .a-label:first-child { font-weight: 400; color: #000; }
-@media (min-width: 401px) { .pay-private-bx .pay-private-agree .m-checkbox .a-link { position: absolute; top: 10px; right: 0; } }
+@media (min-width: 401px) { .pay-private-bx .pay-private-agree .m-checkbox .a-label:last-child { padding-right: 60px; }
+  .pay-private-bx .pay-private-agree .m-checkbox .a-link { position: absolute; top: 10px; right: 0; }
+  .pay-private-bx .pay-private-desc { padding-top: 30px; } }
 
 .order-complete-wrap .o-order-summary .total-section { margin-bottom: 0; padding-bottom: 0; border-color: #000; border-top-width: 1px; border-top-style: solid; border-bottom: 0; }
 .order-complete-wrap .o-order-summary .total-section .total { font-weight: 400; }

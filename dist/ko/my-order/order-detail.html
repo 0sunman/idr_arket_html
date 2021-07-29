@@ -34,6 +34,10 @@
     <link rel="stylesheet" href="../../../static/css/frontend.renew.css" type="text/css">
     <!-- //frontend.renew.css -->
 
+    <!-- for IE -->
+    <script src="../../../static/js/polyfill.min.js"></script>
+    <!-- //for IE -->
+    
     <script src="../../../static/org/etc/designs/hm/clientlibs/shared/jquery.min.98d49f2a9477a5d4f9edef7b7e9698b1.js"></script>
     <script src="../../../static/org/etc/designs/appeaser/p11/pattern-lib/frontend/js/modernizr-custom.min.js"></script>
     <script src="../../../static/org/metrics/default/touchpoint.js"></script>
@@ -3274,7 +3278,7 @@
     <p class="dft-bx-tit">채무지급 보증안내</p>
     <p class="desc-text">
         고객님의 안전거래를 위해 현금결제 시 우리은행과 <a href="#" class="a-link open-lightbox" data-template="" data-classes="is-large">채무지급보증 계약을 체결하여</a> 안전거래를 보장하고 있습니다.
-        <a href="#" class="a-link a-link-udln open-lightbox" data-template="service-join-fact-confirm" data-classes="is-large">[서비스 가입사실 확인]</a>
+        <a href="#" class="a-link a-link-udln open-lightbox" data-template="lp-service-join-confirm" data-classes="is-large" data-template="service-join-fact-confirm" data-classes="is-large">[서비스 가입사실 확인]</a>
     </p>
     <div class="pay-policy-agree">
         <span class="m-checkbox v2 u-clearfix" id="checkbox1">
@@ -3322,8 +3326,10 @@
     <!-- //o-page-content -->
 
     <!-- footer -->
+    <div class="u-no-select" id="footer_warp">
+
     
-<footer class="o-footer o-footer-top u-clearfix">
+    <footer class="o-footer o-footer-top u-clearfix">
     <ul>
         <li>
             <a class="a-link" href="#" target="_self">About ARKET</a>
@@ -3375,7 +3381,7 @@
     </ul>
 </footer>
 
-<footer class="o-footer v2 u-clearfix">
+    <footer class="o-footer v2 u-clearfix">
     <div class="footer-cont">
         <div class="section-01">
             <p class="footer-hyundai">
@@ -3416,8 +3422,15 @@
     </div>
     
 </footer>
+    
+</div>
     <!-- //footer -->
 
+    
+    <!-- page-loading-bx -->
+<div class="page-loading-bx"></div>
+<!-- //page-loading-bx -->
+    
     <div id="selectCountryLightboxType" data-lightbox-type="is-multi-language" hidden=""></div>
     
     <!-- o-cookie-message -->

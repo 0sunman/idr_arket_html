@@ -34,6 +34,10 @@
     <link rel="stylesheet" href="../../../static/css/frontend.renew.css" type="text/css">
     <!-- //frontend.renew.css -->
 
+    <!-- for IE -->
+    <script src="../../../static/js/polyfill.min.js"></script>
+    <!-- //for IE -->
+    
     <script src="../../../static/org/etc/designs/hm/clientlibs/shared/jquery.min.98d49f2a9477a5d4f9edef7b7e9698b1.js"></script>
     <script src="../../../static/org/etc/designs/appeaser/p11/pattern-lib/frontend/js/modernizr-custom.min.js"></script>
     <script src="../../../static/org/metrics/default/touchpoint.js"></script>
@@ -2013,7 +2017,7 @@
         <!-- order-sheet-info -->
         <div class="order-sheet-info">
 
-            <!-- orderer-info-bx -->
+            <!-- orderer-info-bx : 이메일정보가 있는 경우 -->
             <h2 class="a-heading-2">주문고객정보</h2>
             <ul class="dft-bx line-bx orderer-info-bx">
                 <li>
@@ -2025,7 +2029,50 @@
                     <span class="orderer-email">arket@gmail.com</span>
                 </li>
             </ul>
-            <!-- //orderer-info-bx -->
+            <!-- //orderer-info-bx : 이메일정보가 있는 경우 -->
+
+            <!-- orderer-info-bx : 이메일정보가 없는 경우 -->
+            <h2 class="a-heading-2">주문고객정보</h2>
+            <ul class="dft-bx line-bx orderer-info-bx">
+                <li>
+                    <span class="orderer">홍길동</span>
+                    <a class="a-link a-link-udln orderer" href="#" target="_self">수정</a>
+                </li>
+                <li><span class="orderer-phone">010-1234-5678</span></li>
+                <li>
+                    <div class="email-input-bx">
+                        <div class="m-input v3" data-component="MInput">
+                            <label class="a-label js-a-label" for="orderer-email">이메일</label>
+                            <input class="a-input js-a-input"
+                                   placeholder="이메일(필수)"
+                                   type="email"
+                                   value=""
+                                   pattern=""
+                                   name="orderer-email"
+                                   id="orderer-email"
+                                   required=""
+                                   data-validation-required-text="연락 가능한 이메일을 입력해 주세요."
+                                   data-validation-pattern-text="">
+                            <label class="a-label js-a-label" for="orderer-email" data-placeholder=""></label>
+                        </div>
+                        <div class="m-dropdown v3">
+                            <label class="a-label js-a-label" for="emailDomain">&nbsp;</label>
+                            <select class="option-wrap"name="selectMailDomain" id="emailDomain">
+                                <option class="a-option">직접입력</option>
+                                <option class="a-option">@naver.com</option>
+                                <option class="a-option">@daum.net</option>
+                                <option class="a-option">@nate.com</option>
+                                <option class="a-option">@gmail.com</option>
+                                <option class="a-option">@hanmail.net</option>
+                                <option class="a-option">@hotmail.com</option>
+                            </select>
+                            <span class="a-icon-accordion a-icon-arrow-down-small"></span>
+                        </div>
+                        <p class="guide-text">회원정보를 수정 하실 경우는 “마이페이지> <a href="#none" class="a-link a-link-udln">회원정보변경</a>” 에서 변경해주세요.</p>
+                    </div>
+                </li>
+            </ul>
+            <!-- //orderer-info-bx : 이메일정보가 없는 경우 -->
 
             <!-- delivery-info-bx -->
             <h2 class="a-heading-2">배송지정보</h2>
@@ -2457,15 +2504,17 @@
                 <p class="dft-bx-tit">예치금</p>
                 <div class="m-input v3" data-component="MInput">
                     <input class="a-input js-a-input v3"
-                           type="numpber"
+                           type="number"
                            name="delivery-requset-msg"
                            id="delivery-requset-msg"
-                           placeholder="0">
-                    <label class="a-label js-a-label" for="delivery-requset-msg" data-placeholder=""></label>
+                           pattern="[0-9]+"
+                           placeholder="0"
+                           data-validation-pattern-text="숫자만 입력하세요">
                     <a class="a-link a-link-udln" href="#" target="_self">모두 사용</a>
                     <p class="deposit-price">52,090</p>
+                    <label class="a-label js-a-label" for="delivery-requset-msg" data-placeholder=""></label>
+                    <p class="guide-text">예치금 사용 기본 단위는 10원이며, 1회 사용 금액 은 제한이 없습니다.</p>
                 </div>
-                <p class="guide-text">예치금 사용 기본 단위는 10원이며, 1회 사용 금액 은 제한이 없습니다.</p>
                 <p class="dft-bx-tit promotion-info-tit"><b>프로모션 코드</b></p>
                 <ul class="promotion-info-bx first">
                     <li>
@@ -2904,7 +2953,7 @@
                     <p class="desc-text">주문 변경 시 카드사 혜택 및 할부 적용 여부는 해당 카드사 정책에 따라 변경될 수 있습니다.</p>
                     <p class="desc-text">네이버페이는 네이버ID로 별도 앱 설치 없이 신용카드 또는 은행계좌정보를 등록 하여 네이버페이 비밀번호로 결제할 수 있는 간편결제 서비스입니다.</p>
                     <p class="desc-text">결제 가능한 신용카드: 신한, 삼성, 현대, BC, 국민, 하나, 롯데, NH농협, 씨티, 카카오뱅크</p>
-                    <p class="desc-text">결제 가능한 은행: NH농협, 국민, 신한, 우리, 기업, SC제일, 부산, 경남, 수협, 우체국, 미래에셋대우, 광주, 대구, 전북, 새마을금고, 제주은행, 신협, 하나은행, 케이뱅크, 카카오뱅크, 삼성증권, KDB 산업은행, 씨티은행, SBI은행, 유안타증권,  유진투자증권</p>
+                    <p class="desc-text">결제 가능한 은행: NH농협, 국민, 신한, 우리, 기업, SC제일, 부산, 경남, 수협, 우체국, 미래에셋대우, 광주, 대구, 전북, 새마을금고, 제주은행, 신협, 하나은행, 케이뱅크, 카카오뱅크, 삼성증권, KDB 산업은행, 씨티은행, SBI은행, 유안타증권, 유진투자증권</p>
                     <p class="desc-text">네이버페이 카드 간편결제는 네이버페이에서 제공하는 카드사 별 무이자, 청구할인 혜택을 받을 수 있습니다.</p>
                 </div>
             </div>
@@ -3174,7 +3223,7 @@
     <p class="dft-bx-tit">채무지급 보증안내</p>
     <p class="desc-text">
         고객님의 안전거래를 위해 현금결제 시 우리은행과 <a href="#" class="a-link open-lightbox" data-template="" data-classes="is-large">채무지급보증 계약을 체결하여</a> 안전거래를 보장하고 있습니다.
-        <a href="#" class="a-link a-link-udln open-lightbox" data-template="service-join-fact-confirm" data-classes="is-large">[서비스 가입사실 확인]</a>
+        <a href="#" class="a-link a-link-udln open-lightbox" data-template="lp-service-join-confirm" data-classes="is-large" data-template="service-join-fact-confirm" data-classes="is-large">[서비스 가입사실 확인]</a>
     </p>
     <div class="pay-policy-agree">
         <span class="m-checkbox v2 u-clearfix" id="checkbox1">
@@ -3308,9 +3357,22 @@
 </script>
 <!-- //반품 및 환불 -->
 
-<script type="text/x-handlebars-template" id="service-join-fact-confirm">
-	<p>서비스 가입사실 확인</p>
+
+<!-- 서비스가입사실확인 -->
+<script type="text/x-handlebars-template" id="lp-service-join-confirm">
+    <div class="lightbox-content-dft lp-service-join-confirm">
+        <div class="m-headline is-main-headline">
+            <h2 class="a-heading-2"><span>지급보증서</span></h2>
+        </div>
+        <div class="content">
+            <a href="../../../static/images/common/img-guarantee.png" target="_blank">
+                <img src="../../../static/images/common/img-guarantee-pc.png" class="only-pc" style="width:100%" alt="지급보증서">
+                <img src="../../../static/images/common/img-guarantee-m.png" class="only-m" style="width:100%" alt="지급보증서">
+            </a>
+        </div>
+    </div>
 </script>
+<!-- //서비스가입사실확인 -->
 <!-- //handlebars-template -->
 
         </div>
@@ -3651,8 +3713,10 @@
     <!-- //o-page-content -->
 
     <!-- footer -->
+    <div class="u-no-select" id="footer_warp">
+
     
-<footer class="o-footer o-footer-top u-clearfix">
+    <footer class="o-footer o-footer-top u-clearfix">
     <ul>
         <li>
             <a class="a-link" href="#" target="_self">About ARKET</a>
@@ -3704,7 +3768,7 @@
     </ul>
 </footer>
 
-<footer class="o-footer v2 u-clearfix">
+    <footer class="o-footer v2 u-clearfix">
     <div class="footer-cont">
         <div class="section-01">
             <p class="footer-hyundai">
@@ -3745,8 +3809,15 @@
     </div>
     
 </footer>
+    
+</div>
     <!-- //footer -->
 
+    
+    <!-- page-loading-bx -->
+<div class="page-loading-bx"></div>
+<!-- //page-loading-bx -->
+    
     <div id="selectCountryLightboxType" data-lightbox-type="is-multi-language" hidden=""></div>
     
     <!-- o-cookie-message -->
