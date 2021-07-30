@@ -1485,7 +1485,7 @@ body.is-page-loading .page-loading-bx { display: flex; }
 .dialog-alert .content, .dialog-confirm .content { min-height: 60px; }
 .dialog-alert .tit-text, .dialog-confirm .tit-text { margin-top: 0; margin-bottom: 10px; font-size: 13px; }
 .dialog-alert .tit-text.lg, .dialog-confirm .tit-text.lg { font-size: 20px; }
-.dialog-alert .text-box, .dialog-confirm .text-box { font-size: 14px; }
+.dialog-alert .con-text, .dialog-alert .text-box, .dialog-confirm .con-text, .dialog-confirm .text-box { font-size: 14px; }
 .dialog-alert .guide-text, .dialog-confirm .guide-text { margin-top: 0; margin-bottom: 0; font-weight: 300; font-size: 14px; line-height: 20px; }
 .dialog-alert .guide-text.sm, .dialog-confirm .guide-text.sm { font-size: 12px; }
 .dialog-alert .desc-text, .dialog-confirm .desc-text { font-weight: 300; font-size: 12px; }

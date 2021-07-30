@@ -23,4 +23,19 @@
 .footer-about-wrap .br-only-m { display: none; }
 
 @media (min-width: 769px) { .footer-about-wrap .br-only-m { display: block; } }
+
+/* 풋터	> 이용약관 */
+.policy .freeHTML-accordian-content h3 { font-size: 14px; margin-top: 34px; }
+
+.policy .o-text-field .text-container .a-paragraph { font-size: 12px; line-height: 1.4em; }
+
+.policy table { width: 100%; text-align: center; border: 1px solid; border-collapse: collapse; border-color: #626262; border-left: 0; border-right: 0; }
+
+.policy table .tbody { color: #000; font-size: 12px; line-height: 15px; font-weight: 300; }
+
+.policy table .tbody th { background-color: #f8f8f8; line-height: 26px; }
+
+.policy .br-only-m { display: none; }
+
+@media (min-width: 769px) { .policy .br-only-m { display: inline-block; } }
 /*# sourceMappingURL=renew.v3.css.map */
