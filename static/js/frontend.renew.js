@@ -1,6 +1,42 @@
 //renewCommon
+
+//오픈되어 있는 o-lightbox 내에 html 가져오기
+function makeHtml(){
+    let tempHtml = document.querySelector('.o-lightbox.is-open').innerHTML
+    const obj = {html : ''};
+    let html = '<div class="o-lightbox is-open">';
+    html += tempHtml;
+    html += '</div>';
+    obj.html = html;
+    return obj;
+}
+
+//프린트를 위한 임시 window
+function openTempPrintWin(param){
+    const setting = "width=auto, height=auto";
+    const objWin = window.open('', 'print', setting);
+    objWin.document.open();
+    objWin.document.write('<html><head><title>Print</title>');
+    objWin.document.write('<link rel="stylesheet" type="text/css" href="../css/frontend.renew.css"/>');
+    objWin.document.write('</head><body class="temp-win-for-print">');
+    objWin.document.write(param.html);
+    objWin.document.write('</body></html>');
+    objWin.focus();
+    objWin.document.close();
+
+    setTimeout(function(){
+        objWin.print();
+        objWin.close();
+    }, 1000);
+}
+
+//lightbox popup print call
 function lpPrint() {
-    window.print();
+    // let printHtml = makeHtml();
+    // openTempPrintWin(printHtml);
+    console.log(window)
+
+    window.print()
 }
 
 function formatDate(a) {
@@ -10,6 +46,7 @@ function formatDate(a) {
     return a
 }
 
+//띠배너 카운터
 function displaySiteBannerCountDown() {
     var e, g = null;
     var t = new Date();
@@ -377,7 +414,6 @@ renewCommon = (function(doc, win){
     obj.infoLineToggle = {
         changeBtnMode: function(_obj){
             let tempLi = _obj.closest('li');
-            console.log(tempLi.classList)
             if(tempLi.classList.contains('mode-edit')){
                 tempLi.classList.remove('mode-edit');
             }else{
@@ -611,7 +647,6 @@ renewCommon = (function(doc, win){
     //loading
     obj.loadingDisplay = {
         page: function (flag) {
-            console.log("call Loading")
             let body = doc.querySelector('body');
             if(flag){
                 body.classList.add('is-page-loading');

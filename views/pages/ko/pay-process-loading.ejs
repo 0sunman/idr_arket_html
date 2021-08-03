@@ -1,8 +1,5 @@
+<!-- index 재사용 -->
 <div data-component="OPageContent" class="o-page-content">
-    <div class="coremetricsPageId" hidden="">Startpage 3</div>
-    <div class="coremetricsPageType" hidden="">Startpage 4</div>
-    <div class="coremetricsCategoryId" hidden="">Startpage 2</div>
-    <div class="coremetricsCategoryPath" hidden="">Startpage 1</div>
 
     <!-- o-hero -->
     <div class="o-hero is-takeover full-width hero-takeover double-image" data-component="OHero">
@@ -105,15 +102,25 @@
         <!-- //md-o-focus-panel -->
     </div>
     <!-- //o-width -->
+
 </div>
+<!-- //index 재사용 -->
+
+<!-- pay-process-loading-bx -->
+<div class="pay-process-loading-bx is-show">
+    <div class="content-bx">
+        <p class="t1">결제 진행 중입니다.</p>
+        <p class="t2">창을 닫거나, 새로 고침 시 주문오류가 발생할 수 있습니다</p>
+    </div>
+</div>
+<!-- //pay-process-loading-bx -->
 
 <!-- tip : when develop this script must be delete -->
 <script type="text/javascript">
     (function() {
         'use strict';
-        //헤더 border-bottom 라인 숨기기
-        let tempHeader = document.querySelector('.o-header');
-        tempHeader.classList.add('hide-border');
+        setTimeout(function(){
+        },1000);
     })();
 </script>
 <!-- //tip -->

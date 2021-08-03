@@ -109,7 +109,9 @@
         'use strict';
         //헤더 border-bottom 라인 숨기기
         let tempHeader = document.querySelector('.o-header');
-        tempHeader.classList.add('hide-border');
+        if(tempHeader) {
+            tempHeader.classList.add('hide-border');
+        }
     })();
 </script>
 <!-- //tip -->

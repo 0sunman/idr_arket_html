@@ -70,9 +70,7 @@
 
     <!-- m-site-banner : 띠배너 -->
     <!--
-    <div id="site-banner-id" data-component="MSiteBanner" class="m-site-banner slide-down" data-component-id="99b5970e-f57c-49a0-81af-c7dcdc255c0b" style="background-color: rgb(0, 0, 0); display: block;">
-        <input type="hidden" name="startDateField" value="2021/06/10 08:10:00" id="sitebannersd">
-        <input type="hidden" name="endDateField" value="2021/06/18 00:05:00" id="sitebannered">
+    <div id="site-banner-id" data-component="MSiteBanner" class="m-site-banner slide-down" style="background-color: rgb(0, 0, 0);">
         <div>
             <div class="a-paragraph site-banner-desktop is-richtext" style="padding-top:15px;padding-bottom:15px;color:#FFFFFF">
                 <a title="ARKET SALE" href="/en/sale.html">SALE —</a>
@@ -83,6 +81,7 @@
                 <a title="Children SALE" href="/en/children/sale.html">Children</a>
                 <a title="Homeware SALE" href="/en/homeware/sale.html">&amp; Homeware</a>
             </div>
+
             <div class="a-paragraph site-banner-mobile is-richtext" style="padding-top:10px;padding-bottom:10px;color:#FFFFFF">
                 <a href="/en/sale.html">SALE —</a>
                 U
@@ -114,7 +113,8 @@
     <input type="hidden" id="isIndex" value="false">
     <input type="hidden" id="isAccountPage" value="">
     <input type="hidden" id="contextPath2" value="en">
-    
+
+    <!-- header-bar -->
     <div class="header-bar">
         
         <!-- o-search -->
@@ -873,16 +873,13 @@
         </div>
     </button>
     <div class="my-account-block">
-        <a href="/ko/my-account/profile" target="_self" id="myAccountLink"
-           style="display:none;" class="a-link my-account-icon" area-hidden="true"
-           aria-label="My account">
+        <a href="/ko/my-account/profile" target="_self" id="myAccountLink" style="display:none;" class="a-link my-account-icon" area-hidden="true" aria-label="My account">
             <span class="a-icon-profile"></span>
         </a>
-        <button type="button" class="a-button-nostyle my-account-icon tooltip-trigger"
-                area-hidden="false" aria-label="My account"
-                onclick="TealiumUtils.trackSignInNav(this);">
+        <button type="button" class="a-button-nostyle my-account-icon tooltip-trigger" area-hidden="false" aria-label="My account">
             <span class="a-icon-profile"></span>
         </button>
+
         <div class="my-account-section tooltip-content" aria-hidden="true" aria-expanded="false">
             <div class="o-sign-in-registration-tabs is-my-account-tooltip">
                 <ul data-component="MTablist"
@@ -933,7 +930,7 @@
                                     <label class="a-label js-a-label" for="sign-in-password" data-placeholder="" aria-hidden="true"></label>
                                     <button type="button" class="a-button-nostyle toggle-password-state password-visible" data-show-text="Show" data-hide-text="Hide">Show</button>
                                 </div>
-                                
+
                                 <div class="checkbox-input">
                                     <span class="m-checkbox u-clearfix" id="rememberme">
                                         <input type="checkbox" class="a-checkbox" id="checkbox_rememberme_popup" name="_spring_security_remember_me" checked="checked">
@@ -945,7 +942,7 @@
                                         <a href="/ko/password/requestSignIn" target="_self" class="a-link forgot-password bo-b" onclick="TealiumUtils.trackForgotButton();">비밀번호찾기</a>
                                     </div>
                                 </div>
-                                
+
 
 
                                 <button type="submit" class="a-button is-primary" tabindex="202">
@@ -1362,30 +1359,29 @@
                 </div>
             </div>
         </div>
+
     </div>
     <div class="information-block">
-        <button type="button" class="a-button-nostyle info-icon tooltip-trigger"
-                aria-label="information">
+        <button type="button" class="a-button-nostyle info-icon tooltip-trigger" aria-label="information">
             <span class="a-custom-icon-question">?</span>
         </button>
     </div>
 
-    <a href="/ko/cart" target="_self" class="a-link a-bag-icon-container"
-       aria-label="cart">
-					<span class="a-bag-icon js-a-bag-icon animate">
-						<span class="wrapper">
-							<span class="handle"></span>
-							<span class="quantity">2</span>
-						</span>
-					</span>
+    <a href="/ko/cart" target="_self" class="a-link a-bag-icon-container" aria-label="cart">
+        <span class="a-bag-icon js-a-bag-icon animate">
+            <span class="wrapper">
+                <span class="handle"></span>
+                <span class="quantity">2</span>
+            </span>
+        </span>
     </a>
 
     <button type="button" class="a-button-nostyle a-burger js-a-burger animate" aria-label="menu">
-				<span class="line-wrapper">
-					<span class="line"></span>
-					<span class="line"></span>
-					<span class="line"></span>
-				</span>
+        <span class="line-wrapper">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </span>
     </button>
 </nav>
 <!-- //md-secondary-navigation -->
@@ -1395,6 +1391,7 @@
 
         </div>
     </div>
+    <!-- //header-bar -->
 
     
     <!-- m-cart-addition -->
@@ -2021,15 +2018,15 @@
             </h2>
         </div>
         <div class="o-text-field is-wide ">
-            <div class="headings" style="text-align:center;">
+            <div class="headings about-align-center">
                 <div class="m-headline">
-                    <h2 class="a-heading-2  has-margin">우리가 미치는<br>영향에 대한<br> 책임에 관한 대화</h2>
+                    <h2 class="a-heading-2 has-margin">우리가 미치는<br>영향에 대한<br> 책임에 관한 대화</h2>
                 </div>
             </div>
             <div class="text-container">
                 <p class="a-paragraph is-richtext"></p>
-                    <div style="text-align: center;">
-                        소피아 스노보르그<br>
+                    <div class="about-align-center">
+                        소피아 스노보르그,<br>
                         프로덕션 매니저
                     </div>
                 <p class="a-paragraph"></p>
@@ -2038,9 +2035,9 @@
     </div>
     <div class="o-width about wc-50">
         <div class="o-text-field two-columns ">
-            <div class="headings" style="text-align:left;">
+            <div class="headings about-align-left">
                 <div class="m-headline">
-                    <h2 class="a-heading-2  has-margin">
+                    <h2 class="a-heading-2 has-margin">
                         <span class="heading-cap">Environment</span>
                         패션은 세계에서 가장 자원 집약적인 산업 중 하나이며, 기후 면적이 큽니다. 하지만 여기 ARKET 일하는 많은 사람들에게, 그것은 바로 점진적 변화의 일부가 되는 능력이며 순환 경제에 기여하며 우리가 하는 일에 동기부여를 주는 것입니다.
                     </h2>
@@ -2055,7 +2052,7 @@
         </div>
     </div>
     <div class="o-width fullWidth--mobile wc-75">
-        <div class="o-image-listing cols-2" style="margin-top:0px; margin-bottom:0px;">
+        <div class="o-image-listing cols-2">
             <div class="image-container">
                 <div class="trackImage col-item">
                     <img class="a-image" src="../../../static/images/about/ARKET_20Q4_about_sofia_10_WEB.jpg">
@@ -2069,7 +2066,7 @@
         </div>
     </div>
     <div class="o-width title--medium wc-75">
-        <div class="headings" style="text-align:center;">
+        <div class="headings about-align-center">
             <div class="m-headline">
                 <h2 class="a-heading-2  has-margin">
                     ‘변화를 만들고 영향을<br class="br-only-m"> 미칠 수 있다는 것은<br class="br-only-m"> 제 개인적으로 큰 원동력입니다.’
@@ -2109,7 +2106,7 @@
         </div>
     </div>
     <div class="o-width fullWidth--mobile wc-25">
-        <div class="o-image-listing cols-1" style="margin-top:0px; margin-bottom:0px;">
+        <div class="o-image-listing cols-1">
             <div class="image-container">
                 <div class="trackImage col-item">
                     <img class="a-image" src="../../../static/images/about/ARKET_20Q4_about_sofia_06_WEB.jpg">
@@ -2119,7 +2116,7 @@
     </div>
     <div class="o-width about wc-50">
         <div class="o-text-field two-columns ">
-            <div class="headings" style="text-align:left;">
+            <div class="headings about-align-left">
                 <div class="m-headline">
                     <h2 class="a-heading-2  has-margin">
                         대부분의 경우에 고객은 현재 진행 중인 개선 사항을 인식하지 못할 것입니다. 불과 몇 년 만에 우리는 데님 제품에 사용되는 물의 양을 대폭 줄였습니다. 터키와 방글라데시에 있는 우리의 공급업자들은 데님 의류를 염색하고 워싱하는 특별한 기술을 사용하면서, 물을 덜 사용하면서도 같은 외관과 느낌을 주는 데님을 만들고 있습니다.
@@ -2249,7 +2246,7 @@
 </div>
 
     <div class="o-width spacer wc-100"></div>
-    <div class="o-width fullWidth--desktop fullWidth--tablet fullWidth--mobile wc-100" style="background-color: #f5f5f5">
+    <div class="o-width fullWidth--desktop fullWidth--tablet fullWidth--mobile wc-100 fullWidth--bgColor">
         <div class="o-width wc-75">
             <div class="m-headline u-align-center is-main-headline full-width ">
                 <h2 class="a-heading-2">
@@ -2338,7 +2335,8 @@
     <div class="u-no-select" id="footer_warp">
 
     
-    <footer class="o-footer o-footer-top u-clearfix">
+    <!-- o-footer -->
+<footer class="o-footer o-footer-top u-clearfix">
     <ul>
         <li>
             <a class="a-link" href="#" target="_self">About ARKET</a>
@@ -2389,6 +2387,7 @@
         </li>
     </ul>
 </footer>
+<!-- //o-footer -->
 
     <footer class="o-footer v2 u-clearfix">
     <div class="footer-cont">
@@ -2485,7 +2484,8 @@
 <!--    <script src="../../../static/org/etc/designs/appeaser/p11/clientlibs/application.min.73b337f60c6d73af4c93d85989b79c31.js"></script>-->
 <!--    <script src="../../../static/org/etc/designs/appeaser/shared/rakuten.min.747914cb35be38661f59d65b3ef708d2.js"></script>-->
     <script src="../../../static/org/etc/designs/appeaser/p11/pattern-lib/frontend.min.53fbce400c01c000a192f9a286ec0c06.js"></script>
-    <script src="../../../static/org/etc/designs/appeaser/p11/pattern-lib/controllers.min.2c7b678057024241af565e0ec9b1b348.js"></script>
+<!--    <script src="../../../static/org/etc/designs/appeaser/p11/pattern-lib/controllers.min.2c7b678057024241af565e0ec9b1b348.js"></script>-->
+    <script src="../../../static/org/etc/designs/appeaser/p11/pattern-lib/controllers/controllers.js"></script>
 <!--    <script src="../../../static/org/etc/designs/appeaser/p11/clientlibs/aem-clientlibs/global_Clientlib.min.bffddb20c0117ec36495ecd499273e2a.js"></script>-->
 <!--    <script src="../../../static/org/etc/designs/appeaser/p11/clientlibs/aem-clientlibs/product_Clientlib.min.09ff425f6b46f61e5c6429be9e290878.js"></script>-->
 <!--    <script src="../../../static/org/etc/designs/appeaser/p11/clientlibs/aem-clientlibs/genericpage_Clientlib.min.44bc583ac294a90847353b251f2c46c0.js"></script>-->

@@ -20,22 +20,28 @@
 
     <meta property="fb:app_id" content="138733209821465">
 
-    <link rel="shortcut icon" type="image/png" href="../org/etc/designs/appeaser/p11/favicons/favicon-32.png">
-    <link rel="apple-touch-icon" href="../org/etc/designs/appeaser/p11/favicons/favicon-57.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="../org/etc/designs/appeaser/p11/favicons/favicon-180.png">
+    <link rel="shortcut icon" type="image/png" href="../../static/org/etc/designs/appeaser/p11/favicons/favicon-32.png">
+    <link rel="apple-touch-icon" href="../../static/org/etc/designs/appeaser/p11/favicons/favicon-57.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../static/org/etc/designs/appeaser/p11/favicons/favicon-180.png">
 
-    <link rel="canonical" href="../ko/index.html">
+    <link rel="canonical" href="../../static/ko/index.html">
 
-    <!--<link rel="stylesheet" href="../org/etc/designs/appeaser/p11/pattern-lib/frontend.min.a033ce601ceae2b3ed0d1dc0a1cc8264.css" type="text/css">-->
-    <link rel="stylesheet" href="../org/etc/designs/appeaser/p11/pattern-lib/frontend.min.1987a0f885a03ad325376517da7bed68.css" type="text/css">
+    <!--<link rel="stylesheet" href="../../static/org/etc/designs/appeaser/p11/pattern-lib/frontend.min.a033ce601ceae2b3ed0d1dc0a1cc8264.css" type="text/css">-->
+    <link rel="stylesheet" href="../../static/org/etc/designs/appeaser/p11/pattern-lib/frontend.min.1987a0f885a03ad325376517da7bed68.css" type="text/css">
 
     <!-- frontend.renew.css -->
-    <link rel="stylesheet" href="../css/frontend.renew.css" type="text/css">
+    <link rel="stylesheet" href="../../static/css/jquery-ui.css" type="text/css">
+    <link rel="stylesheet" href="../../static/css/frontend.renew.css" type="text/css">
     <!-- //frontend.renew.css -->
 
-    <script src="../org/etc/designs/hm/clientlibs/shared/jquery.min.98d49f2a9477a5d4f9edef7b7e9698b1.js"></script>
-    <script src="../org/etc/designs/appeaser/p11/pattern-lib/frontend/js/modernizr-custom.min.js"></script>
-    <script src="../org/metrics/default/touchpoint.js"></script>
+    <!-- for IE -->
+    <script src="../../static/js/polyfill.min.js"></script>
+    <!-- //for IE -->
+    
+    <script src="../../static/org/etc/designs/hm/clientlibs/shared/jquery.min.98d49f2a9477a5d4f9edef7b7e9698b1.js"></script>
+    <script src="../../static/org/etc/designs/appeaser/p11/pattern-lib/frontend/js/modernizr-custom.min.js"></script>
+    <script src="../../static/org/metrics/default/touchpoint.js"></script>
+
 </head>
 
 <body data-component="OPage" class="layout-inside" id="oPage" data-locale-page-node-name="en" data-component-id="66152dea-5e9c-4757-9208-19efae8e2313">
@@ -52,8 +58,7 @@
     <div data-component="SkeletonLoading" id="lpResolveConfigs" data-lp-aspect-ratio-width="2" data-lp-aspect-ratio-height="3" data-lp-density-mobile="2" data-lp-density-tablet="2" data-lp-density-desk="2" data-lp-max-density="3" data-lp-format="webp,jpeg" data-lp-cache-threshold="50" data-lp-url="lp.arket.com" data-lp-uri="app006prod" data-lp-image-fit="containerWidth" data-lp-jpeg-quality-desktop="70" data-lp-webp-quality-mobile="70" data-lp-webp-quality-tablet="70" data-lp-jpeg-quality-tablet="70" data-lp-webp-quality-desktop="70" data-lp-jpeg-quality-mobile="70" data-component-id="6dbb0cd9-2cf4-4569-a46d-c4294b9c76a2"></div>
 
     <div class="firsttimelanguageselector first-time-language-selector">
-        <script type="text/x-handlebars-template" id="language-select">
-        </script>
+        <script type="text/x-handlebars-template" id="language-select"></script>
     </div>
 
     <span id="arketeotflag" data-arketeot-flag="true"></span>
@@ -65,9 +70,7 @@
 
     <!-- m-site-banner : 띠배너 -->
     <!--
-    <div id="site-banner-id" data-component="MSiteBanner" class="m-site-banner slide-down" data-component-id="99b5970e-f57c-49a0-81af-c7dcdc255c0b" style="background-color: rgb(0, 0, 0); display: block;">
-        <input type="hidden" name="startDateField" value="2021/06/10 08:10:00" id="sitebannersd">
-        <input type="hidden" name="endDateField" value="2021/06/18 00:05:00" id="sitebannered">
+    <div id="site-banner-id" data-component="MSiteBanner" class="m-site-banner slide-down" style="background-color: rgb(0, 0, 0);">
         <div>
             <div class="a-paragraph site-banner-desktop is-richtext" style="padding-top:15px;padding-bottom:15px;color:#FFFFFF">
                 <a title="ARKET SALE" href="/en/sale.html">SALE —</a>
@@ -78,6 +81,7 @@
                 <a title="Children SALE" href="/en/children/sale.html">Children</a>
                 <a title="Homeware SALE" href="/en/homeware/sale.html">&amp; Homeware</a>
             </div>
+
             <div class="a-paragraph site-banner-mobile is-richtext" style="padding-top:10px;padding-bottom:10px;color:#FFFFFF">
                 <a href="/en/sale.html">SALE —</a>
                 U
@@ -109,7 +113,8 @@
     <input type="hidden" id="isIndex" value="false">
     <input type="hidden" id="isAccountPage" value="">
     <input type="hidden" id="contextPath2" value="en">
-    
+
+    <!-- header-bar -->
     <div class="header-bar">
         
         <!-- o-search -->
@@ -806,30 +811,30 @@
 <div role="treeitem" class="information-section tooltip-content" aria-hidden="true" aria-expanded="false">
 
     <a href="ko/about.html" target="_self" class="a-link nav">
-        <img class="a-image img" src="../org/content/dam/P11/images/customer-service-icons/stores.png" alt="">
+        <img class="a-image img" src="../../static/org/content/dam/P11/images/customer-service-icons/stores.png" alt="">
         <span class="text">About ARKET</span>
     </a>
     <a href="ko/stores.html" target="_self" class="a-link nav">
-        <img class="a-image img" src="../org/content/dam/P11/images/illustrations/storesandcafes.gif" alt="">
+        <img class="a-image img" src="../../static/org/content/dam/P11/images/illustrations/storesandcafes.gif" alt="">
         <span class="text">상점 &amp; 카페</span>
     </a>
     <a href="ko/customer-service.html" target="_self" class="a-link nav">
-        <img class="a-image img" src="../org/content/dam/P11/images/customer-service-icons/customerservice1.png" alt="">
+        <img class="a-image img" src="../../static/org/content/dam/P11/images/customer-service-icons/customerservice1.png" alt="">
         <span class="text">고객 서비스</span>
     </a>
     <a href="ko/newslettersubscribe.html" target="_self" class="a-link nav">
-        <img class="a-image img" src="../org/content/dam/P11/images/customer-service-icons/newsletter.png" alt="">
+        <img class="a-image img" src="../../static/org/content/dam/P11/images/customer-service-icons/newsletter.png" alt="">
         <span class="text">뉴스레터</span>
     </a>
     <a href="ko/customer-service/delivery-methods.html" target="_self" class="a-link nav">
-        <img class="a-image img" src="../org/content/dam/P11/images/customer-service-icons/delivery-ani-3.gif" alt="">
+        <img class="a-image img" src="../../static/org/content/dam/P11/images/customer-service-icons/delivery-ani-3.gif" alt="">
         <span class="text">배달</span>
     </a>
     <a href="ko/guide/recycle-with-arket.html" target="_self" class="a-link nav">
-        <img class="a-image img" src="../org/content/dam/P11/images/illustrations/recyclewitharket_icon.png" alt="">
+        <img class="a-image img" src="../../static/org/content/dam/P11/images/illustrations/recyclewitharket_icon.png" alt="">
         <span class="text">재활용 with ARKET</span>
     </a>
-    <a href="../ko/login/login.html" target="_self" class="a-link my-account-icon" id="signInMobile" area-hidden="false">
+    <a href="../../static/ko/login/login.html" target="_self" class="a-link my-account-icon" id="signInMobile" area-hidden="false">
         <span class="a-icon-profile"></span>
         <span class="text">로그인</span>
     </a>
@@ -868,16 +873,13 @@
         </div>
     </button>
     <div class="my-account-block">
-        <a href="/ko/my-account/profile" target="_self" id="myAccountLink"
-           style="display:none;" class="a-link my-account-icon" area-hidden="true"
-           aria-label="My account">
+        <a href="/ko/my-account/profile" target="_self" id="myAccountLink" style="display:none;" class="a-link my-account-icon" area-hidden="true" aria-label="My account">
             <span class="a-icon-profile"></span>
         </a>
-        <button type="button" class="a-button-nostyle my-account-icon tooltip-trigger"
-                area-hidden="false" aria-label="My account"
-                onclick="TealiumUtils.trackSignInNav(this);">
+        <button type="button" class="a-button-nostyle my-account-icon tooltip-trigger" area-hidden="false" aria-label="My account">
             <span class="a-icon-profile"></span>
         </button>
+
         <div class="my-account-section tooltip-content" aria-hidden="true" aria-expanded="false">
             <div class="o-sign-in-registration-tabs is-my-account-tooltip">
                 <ul data-component="MTablist"
@@ -928,7 +930,7 @@
                                     <label class="a-label js-a-label" for="sign-in-password" data-placeholder="" aria-hidden="true"></label>
                                     <button type="button" class="a-button-nostyle toggle-password-state password-visible" data-show-text="Show" data-hide-text="Hide">Show</button>
                                 </div>
-                                
+
                                 <div class="checkbox-input">
                                     <span class="m-checkbox u-clearfix" id="rememberme">
                                         <input type="checkbox" class="a-checkbox" id="checkbox_rememberme_popup" name="_spring_security_remember_me" checked="checked">
@@ -940,7 +942,7 @@
                                         <a href="/ko/password/requestSignIn" target="_self" class="a-link forgot-password bo-b" onclick="TealiumUtils.trackForgotButton();">비밀번호찾기</a>
                                     </div>
                                 </div>
-                                
+
 
 
                                 <button type="submit" class="a-button is-primary" tabindex="202">
@@ -1357,30 +1359,29 @@
                 </div>
             </div>
         </div>
+
     </div>
     <div class="information-block">
-        <button type="button" class="a-button-nostyle info-icon tooltip-trigger"
-                aria-label="information">
+        <button type="button" class="a-button-nostyle info-icon tooltip-trigger" aria-label="information">
             <span class="a-custom-icon-question">?</span>
         </button>
     </div>
 
-    <a href="/ko/cart" target="_self" class="a-link a-bag-icon-container"
-       aria-label="cart">
-					<span class="a-bag-icon js-a-bag-icon animate">
-						<span class="wrapper">
-							<span class="handle"></span>
-							<span class="quantity">2</span>
-						</span>
-					</span>
+    <a href="/ko/cart" target="_self" class="a-link a-bag-icon-container" aria-label="cart">
+        <span class="a-bag-icon js-a-bag-icon animate">
+            <span class="wrapper">
+                <span class="handle"></span>
+                <span class="quantity">2</span>
+            </span>
+        </span>
     </a>
 
     <button type="button" class="a-button-nostyle a-burger js-a-burger animate" aria-label="menu">
-				<span class="line-wrapper">
-					<span class="line"></span>
-					<span class="line"></span>
-					<span class="line"></span>
-				</span>
+        <span class="line-wrapper">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </span>
     </button>
 </nav>
 <!-- //md-secondary-navigation -->
@@ -1390,6 +1391,7 @@
 
         </div>
     </div>
+    <!-- //header-bar -->
 
     
     <!-- m-cart-addition -->
@@ -1398,11 +1400,20 @@
         <div class="basket-wrapper">
             <div class="added-item">
                 <div class="basket-added-image">
-                    <img class="a-image ResolveComplete" src="../images/temp/sample-img.jpg">
+                    <img class="a-image ResolveComplete" src="../../static/images/temp/sample-img.jpg">
                 </div>
                 <div class="basket-added-info">
                     <p class="a-paragraph">
                         <span class="item-title">루즈핏 리넨 쇼츠</span>
+                        <!--
+                        <div class="markers">
+                            <div class="m-product-marker" data-component="MProductMarkers">
+                                <div class="marker-text product-marker">
+                                    <span>online exclusive</span>
+                                </div>
+                            </div>
+                        </div>
+                        -->
                         <div class="product-param-info second">
                             <div class="product-params data">
                                 <div class="product-size">44</div>
@@ -1452,7 +1463,7 @@
     </div>
 
     <input type="hidden" id="georguri" value="?goeorguri=%2Fen%2Findex.html">
-    <script src="../org/etc/designs/appeaser/shared/clientlibs/components.min.0ff734763f97062b81ea61876bc97b89.js"></script>
+    <script src="../../static/org/etc/designs/appeaser/shared/clientlibs/components.min.0ff734763f97062b81ea61876bc97b89.js"></script>
 
     
     <script type="text/html" id="country-selector">
@@ -1610,7 +1621,7 @@
                     </a>
 
                     <a href="https://www.arket.com/content/p11/page.countryselector.sl_SI.en_eur.EUR.jsp" target="_self" class="a-link internal-link m-country-select" data-country="SI">
-                        <img alt="South Korea" class="a-image icon-flag" src="../images/icon/icon-country-korea.svg" />
+                        <img alt="South Korea" class="a-image icon-flag" src="../../static/images/icon/icon-country-korea.svg" />
                         <span>대한민국</span>
                     </a>
 
@@ -1997,254 +2008,272 @@
     <!-- //handlebars-template -->
 
     <!-- o-page-content -->
-    <div data-component="OPageContent" class="o-page-content">
-    
-    <div class="o-width fullWidth--mobile title--large about-icon wc-50">
-        <div class="m-headline with-icon u-align-center is-main-headline full-width ">
-            <img class="a-image" src="../images/about/ARKET_9_GRID_Environment.png">
-            <h2 class="a-heading-2 ">
-                <span class="heading-cap">ENVIRONMENT</span>
-                <span class="heading-value"></span>
-            </h2>
-        </div>
-        <div class="o-text-field is-wide">
-            <div class="headings">
-                <div class="m-headline">
-                    <h2 class="a-heading-2  has-margin">ARKET과 함께<br>리사이클</h2>
-                </div>
-            </div>
-            <div class="text-container">
-                <p class="a-paragraph is-richtext"></p>
-                <div class="a-paragraph is-richtext" style="text-align: center;">
-                    <b>파트너</b> I:CO
-                </div>
-                <p class="a-paragraph"></p>
-            </div>
-        </div>
-    </div>
-    <div class="o-width about wc-50">
-        <div class="o-text-field two-columns">
-            <div class="headings" style="text-align:left;">
-                <div class="m-headline">
-                    <h2 class="a-heading-2 has-margin">
-                        <span class="heading-cap">Environment</span>섬유는 절대 버려져서는 안 됩니다. 섬유는 여전히 가치 있는 자원으로 사용될 수 있음에 도 불구하고, 오늘날 많은 원치 않는 옷들이 쓰레기 매립지에 버려집니다.
-                    </h2>
-                </div>
-            </div>
-            <div class="text-container">
-                <p class="a-paragraph is-richtext">대부분의 옷은 수선되거나 리메이크를 통해 수명이 연장될 수 있습니다 . 만약 여러분에게 더 이상 필요 없다면, 교환 및 리셀, 친구나 가족에게 주거나, 자선단체에 기부할 수도 있습니다. 마지막 대안으로, 여러분의 오래된 옷은 재활용될 수 있고 순환 패션 루프로 돌아갈 수 있습니다. 저희 매장에 어떤 섬유라도 가져와주세요, 저희가 새로운 쓰임을 만들도록 하겠습니다.</p>
-            </div>
-        </div>
-    </div>
-    <div class="o-width wc-75">
-        <div class="o-image-listing cols-2">
-            <div class="image-container">
-                <div class="trackImage col-item">
-                    <img class="a-image" src="../images/about/ARKET_20Q4_about_sofia_11_WEB.jpg">
-                </div>
-            </div>
-            <div class="image-container">
-                <div class="trackImage col-item">
-                    <img class="a-image" src="../images/about/Supplier_ico_RGB_05_WEB.jpg">
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="o-width about wc-50">
-        <div class="o-text-field two-columns ">
-            <div class="headings" style="text-align:left;">
-                <div class="m-headline">
-                    <h2 class="a-heading-2 has-margin">
-                        <span class="heading-cap">작업 방식</span>의류, 신발 및 가정용 직물을 가까운 ARKET 상점으로 가져와 주세요. 어떤 브랜드라도, 어떤 상태라도 무방합니다. 재활용하기에는 너무 작거나 너무 하찮은 것은 없습니다. 심지어 여러분의 서랍 한켠에 있는 짝 잃은 양말도 가져오면 새로운 목적을 줄 수 있습니다. 저희는 또한 카페의 테이크 어웨이 포장지를 제외한 ARKET의 제품 포장 패키지도 받습니다.
-                    </h2>
-                </div>
-            </div>
-            <div class="text-container">
-                <p class="a-paragraph is-richtext">원치 않는 물건들을 가방에 챙겨서 스토어로 가져오세요. 재활용을 위해 신발을 가져오고 싶다면, 반드시 테이프로 묶거나 끈을 함께 묶어주세요. ARKET 제품 포장 패키지는 별도의 가방에 넣어주세요.</p>
-            </div>
-        </div>
-    </div>
-    <div class="o-width fullWidth--mobile wc-75">
-        <div class="o-image-listing cols-2">
-            <div class="image-container">
-                <div class="trackImage col-item">
-                    <img class="a-image" src="../images/about/V-NAV_ico_01.jpg">
-                </div>
-            </div>
-            <div class="image-container">
-                <div class="trackImage col-item">
-                    <img class="a-image" src="../images/about/ARKET_20Q4_about_sofia_06_WEB.jpg">
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="o-width about wc-50">
-        <div class="o-text-field is-wide ">
-            <div class="headings" style="text-align:left;">
-                <div class="m-headline">
-                    <h2 class="a-heading-2 has-margin">기부에 대한 보상으로 다음 번 구매 시 10% 할인된 가격으로 매장이나 카페에서 구매가능 한 쿠폰을 드립니다. 3개월 동안 유효한 쿠폰을을 한 건당 한 장씩 드립니다.  이 쿠폰은 다른 할인 혜택과 함께 사용할 수 없으며 온라인 구매 시에는 유효하지 않습니다.</h2>
-                </div>
-            </div>
-            <div class="text-container">
-                <p class="a-paragraph">섬유와 신발은 ARKET의 기존 물류 네트워크를 통해 저희 창고로 보내질 것입니다. 매장으로 제품을 배달하는 트럭은 재활용을 위해 들여온 물품을 싣고 창고로 돌아갈 것입니다. 우리의 파트너 I:CO는 모든 항목을 수집하여 상태에 따라 재착용가능, 재사용 또는 재활용의 세 가지 주요 범주로 분류합니다.<br><br>제품 포장지는 나뉘어져 각 스토어의 일반적인 폐기물 처리를 통해 분류 및 재활용됩니다.</p>
-                <p class="a-paragraph"><br>재활용을 통해 얻은 최종 수익은 H&M 재단에 기부되고 사회 및 환경 프로젝트에 투자될 것입니다.</p>
-            </div>
-        </div>
-    </div>
-    <div class="o-width about-grid wc-50">
-        <div class="headings">
-            <div class="m-headline">
-                <h2 class="a-heading-2 has-hover has-margin">
-                    <span class="heading-cap">explore</span>
-                    <a href="/en/about.html" target="_self" class="a-link heading-tag">ARKET</a>
-                </h2>
-            </div>
-        </div>
-        <div class="o-image-listing cols-3">
-            <div class="image-container">
-                <a href="/en/about.html" target="_self" class="trackImage a-link">
-                    <img class="a-image" src="../images/about/ARKET_9_GRID_Materials.png">
-                </a>
-                <div class="slider-text-block">
-                    <div class="is-richtext o-text-field ">Materials&nbsp;</div>
-                </div>
-            </div>
-            <div class="image-container">
-                <a href="/en/about/suppliers.html" target="_self" class="trackImage a-link">
-                    <img class="a-image" src="../images/about/ARKET_9_GRID_Suppliers.png">
-                </a>
-                <div class="slider-text-block">
-                    <div class="is-richtext o-text-field ">Suppliers&nbsp;</div>
-                </div>
-            </div>
-            <div class="image-container">
-                <a href="/en/about/design.html" target="_self" class="trackImage a-link">
-                    <img class="a-image" src="../images/about/ARKET_9_GRID_Design.png">
-                </a>
-                <div class="slider-text-block">
-                    <div class="is-richtext o-text-field ">Design</div>
-                </div>
-            </div>
-            <div class="image-container">
-                <a href="/en/about/food.html" target="_self" class="trackImage a-link">
-                    <img class="a-image" src="../images/about/ARKET_9_GRID_Food.png">
-                </a>
-                <div class="slider-text-block">
-                    <div class="is-richtext o-text-field ">Food&nbsp;</div>
-                </div>
-            </div>
-            <div class="image-container">
-                <a href="/en/about/people.html" target="_self" class="trackImage a-link">
-                    <img class="a-image" src="../images/about/ARKET_9_GRID_People.png">
-                </a>
-                <div class="slider-text-block">
-                    <div class="is-richtext o-text-field ">People&nbsp;</div>
-                </div>
-            </div>
-            <div class="image-container">
-                <a href="/en/about/balance.html" target="_self" class="trackImage a-link">
-                    <img class="a-image" src="../images/about/ARKET_9_GRID_Balance.png">
-                </a>
-                <div class="slider-text-block">
-                    <div class="is-richtext o-text-field ">Balance&nbsp;</div>
-                </div>
-            </div>
-            <div class="image-container">
-                <a href="/en/about/knowledge.html" target="_self" class="trackImage a-link">
-                    <img class="a-image" src="../images/about/ARKET_9_GRID_Knowledge.png">
-                </a>
-                <div class="slider-text-block">
-                    <div class="is-richtext o-text-field ">Knowledge&nbsp;</div>
-                </div>
-            </div>
-            <div class="image-container">
-                <a href="/en/about/community.html" target="_self" class="trackImage a-link">
-                    <img class="a-image" src="../images/about/ARKET_9_GRID_Community.png">
-                </a>
-                <div class="slider-text-block">
-                    <div class="is-richtext o-text-field ">Community&nbsp;</div>
-                </div>
-            </div>
-            <div class="image-container">
-                <a href="/en/about/environment.html" target="_self" class="trackImage a-link">
-                    <img class="a-image" src="../images/about/ARKET_9_GRID_Environment.png">
-                </a>
-                <div class="slider-text-block">
-                    <div class="is-richtext o-text-field ">Environment&nbsp;</div>
-                </div>
-            </div>
-        </div>
-        <div class="o-width wc-50">
-            <div class="o-text-field is-wide ">
-                <div class="text-container">
-                    <p class="a-paragraph is-richtext"></p>
-                    <div class="a-paragraph is-richtext" style="text-align:left;font-size:13px;">그리드는 우리의 시각적 아이덴티티에 있어 필수적인 요소입니다. 그것은 아카이브의 개념을 나타내며, 식물 이름부터 직물의 무게 및 우리의 컬렉션에 사용되는 다양한 소재에 이르는 정보를 정리 하고 표시하는 데 사용됩니다. 이 9개의 사각형은 우리의 세상을 구성하는 각 부분을 상징하며, 우리가 변화를 만들기 위해 노력하 는 영역을 나타냅니다.</div>
-                    <p class="a-paragraph"></p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="o-width spacer wc-100"></div>
-    <div class="o-width fullWidth--desktop fullWidth--tablet fullWidth--mobile wc-100" style="background-color:#f5f5f5">
-        <div class="o-width wc-75">
-            <div class="m-headline u-align-center is-main-headline full-width">
-                <h2 class="a-heading-2 "><span class="heading-value">You may also be interested in</span></h2>
-            </div>
-        </div>
-        <div class="o-width wc-75">
-            <div class="o-focus-panel">
-                <div class="focus-panel-container three-tiles">
-                    <div class="free-tile focus-panel">
-                        <a href="../ko/about/environment.html" target="_self" class="a-link">
-                            <div class="m-free-tile q-color-black-100">
-                                <picture class="a-picture"
-                                         data-component="APicture"
-                                         data-background="m-free-tile">
-                                    <img class="a-image" src="../images/about/ARKET_20Q4_about_sofia_10_WEB.jpg" alt="Jessica Leroux">
-                                </picture>
-                                <div class="text-content">
-                                    <h2 class="a-heading-2">Sofia Snöborgs</h2>
-                                </div>
-                            </div>
-                        </a>
+    <!-- index 재사용 -->
+<div data-component="OPageContent" class="o-page-content">
+
+    <!-- o-hero -->
+    <div class="o-hero is-takeover full-width hero-takeover double-image" data-component="OHero">
+        <div class="takeover-wrapper">
+            <div class="textblock-container">
+                <div class="o-text-block disable-bg">
+                    <div class="heading-wrapper">
+                        <div class="m-headline">
+                            <h1 class="a-heading-1 large-font">
+                                <span class="heading-cap">S/S 2021</span>
+                                <span class="heading-value">Striped collection</span>
+                            </h1>
+                        </div>
                     </div>
-                    <div class="free-tile focus-panel">
-                        <a href="../ko/about.html" target="_self" class="a-link">
-                            <div class="m-free-tile q-color-black-100">
-                                <picture class="a-picture"
-                                         data-component="APicture"
-                                         data-background="m-free-tile">
-                                    <img class="a-image" src="../images/about/arketgrid_vnav.gif" alt="About ARKET">
-                                </picture>
-                                <div class="text-content">
-                                    <h2 class="a-heading-2">About ARKET</h2>
-                                </div>
-                            </div>
-                        </a>
+
+                    <div class="cta-wrapper" style="--cta-color:Black; --text-color:White;">
+                        <div class="o-tag-cloud">
+                            <ul class="tags-container">
+                                <li class="tag">
+                                    <a class="a-link" href="/en/men/c/striped-collection.html" onclick="TealiumUtils.heroCtaClicked('Hero component','startpage','');">
+                                        Men<span class="promoIndex" hidden="">0</span>
+                                    </a>
+                                </li>
+                                <li class="tag">
+                                    <a class="a-link" href="/en/women/c/striped-collection.html" onclick="TealiumUtils.heroCtaClicked('Hero component','startpage','');">
+                                        Women
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="free-tile focus-panel">
-                        <a href="../ko/about/sustainability-fact-sheet.html" target="_self" class="a-link">
-                            <div class="m-free-tile q-color-black-100">
-                                <picture class="a-picture"
-                                         data-component="APicture"
-                                         data-background="m-free-tile">
-                                    <img class="a-image" src="../images/about/factsheet_vnav.gif" alt="Sustainability Fact Sheet">
-                                </picture>
-                                <div class="text-content">
-                                    <h2 class="a-heading-2  ">Sustainability Fact Sheet</h2>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
+
                 </div>
             </div>
+        </div>
+
+        <div class="image-wrapper">
+            <a onclick="TealiumUtils.heroCtaClicked( 'Hero component','startpage','Striped collection,Striped collection');"
+               href="/en/men/c/striped-collection.html"
+               target="_self"
+               class="a-link">
+                <div style="background-image:url(../../static/images/component/21207_M_Towelling-Summer-Stripes_02_WEB.jpg)"
+                     class="takeover-background">
+                </div>
+            </a>
+            <a onclick="TealiumUtils.heroCtaClicked( 'Hero component','startpage','Striped collection');"
+               href="/en/women/c/striped-collection.html"
+               target="_self"
+               class="a-link">
+                <div style="background-image: url(../../static/images/component/21203_W_Towelling-Summer-Stripes_04_WEB.jpg); float:right"
+                     class="takeover-background">
+                </div>
+            </a>
+        </div>
+
+        <div class="promotion-data p11-takeover-base" hidden="" data-slides-index="0">
+            <span class="promo_id">Hero component</span>
+            <span class="promo_name">startpage</span>
+            <span class="promo_creative">Striped collection,Striped collection</span>
+        </div>
+
+    </div>
+    <!-- //o-hero -->
+
+    <!-- o-width -->
+    <div class="o-width VNAV wc-100">
+
+        
+        <!-- md-o-image-listing -->
+<div class="o-image-listing cols-3">
+    <div class="image-container">
+        <a href="#none" target="_self" class="trackImage a-link">
+            <img class="a-image" src="../../static/images/component/ARKET_Q2_Summerhike_5_WEB.jpg">
+        </a>
+        <div class="slider-text-block">
+            <div class="is-richtext o-text-field ">Women</div>
+        </div>
+    </div>
+    <div class="image-container">
+        <a href="#none" target="_self" class="trackImage a-link">
+            <img class="a-image" src="../../static/images/component/ARKET_Q2_Summerhike_16_WEB.jpg">
+        </a>
+        <div class="slider-text-block">
+            <div class="is-richtext o-text-field ">Men</div>
+        </div>
+    </div>
+    <div class="image-container">
+        <a href="#none" target="_self" class="trackImage a-link">
+            <img class="a-image" src="../../static/images/component/ARKET_Q2_Summerhike_29_WEB.jpg">
+        </a>
+        <div class="slider-text-block">
+            <div class="is-richtext o-text-field ">Children</div>
+        </div>
+    </div>
+    <div class="image-container">
+        <a href="#none" target="_self" class="trackImage a-link">
+            <img class="a-image" src="../../static/images/component/ARKET_21217_HOME_SUMMER_23_WEB.jpg">
+        </a>
+        <div class="slider-text-block">
+            <div class="is-richtext o-text-field ">Homeware</div>
         </div>
     </div>
 </div>
+<!-- //md-o-image-listing -->
+
+    </div>
+    <!-- //o-width -->
+
+    <!-- o-width -->
+    <div class="o-width VNAV wc-100">
+
+        
+        <!-- md-o-image-listing -->
+<div class="o-image-listing cols-3">
+    <div class="image-container">
+        <a href="#none" target="_self" class="trackImage a-link">
+            <img class="a-image" src="../../static/images/component/BABY_004_WEB.jpg" alt="ARKET-baby">
+        </a>
+        <div class="slider-text-block">
+            <div class="is-richtext o-text-field ">Baby</div>
+        </div>
+    </div>
+    <div class="image-container">
+        <a href="#none" target="_self" class="trackImage a-link">
+            <img class="a-image" src="../../static/images/component/ARKET_21_cafe_strawberry_bun_B_WEB_X2.jpg" alt="ARKET café">
+        </a>
+        <div class="slider-text-block">
+            <div class="is-richtext o-text-field ">ARKET café<br></div>
+        </div>
+    </div>
+    <div class="image-container">
+        <a href="#none" target="_self" class="trackImage a-link">
+            <img class="a-image" src="../../static/images/component/6.NEW-ITEMS-ADDED_SALE-21_WEB.jpg" alt="Sale start">
+        </a>
+    </div>
+    <div class="image-container">
+        <a href="#none" target="_self" class="trackImage a-link">
+            <img class="a-image" src="../../static/images/component/ARKET_Q2_Summerhike_3_PR.jpg">
+        </a>
+        <div class="slider-text-block">
+            <div class="is-richtext o-text-field ">Selected brands</div>
+        </div>
+    </div>
+</div>
+<!-- //md-o-image-listing -->
+
+    </div>
+    <!-- //o-width -->
+
+    <!-- o-width -->
+    <div class="o-width wc-100">
+        <div class="headings ta-c">
+            <div class="m-headline">
+                <h2 class="a-heading-2 has-hover has-margin">
+                    <span class="heading-cap">explore</span>
+                    <a href="/ko/about.html" target="_self" class="a-link heading-tag">ARKET</a>
+                </h2>
+            </div>
+        </div>
+    </div>
+    <!-- //o-width -->
+
+    <!-- o-width -->
+    <div class="o-width wc-75">
+        <!-- md-o-focus-panel -->
+        <div class="o-focus-panel">
+    <div class="focus-panel-container three-tiles">
+        <div class="free-tile focus-panel">
+            <!--added style-->
+            <a href="/ko/about/community/women-in-leadership.html" target="_self" class="a-link">
+                <div class="m-free-tile q-color-black-100 is-promo" style="background-image: url(&quot;https://www.arket.com/content/dam/P11/images/campaigns/2021/iwd/iwd_vnav.jpg&quot;);">
+                    <picture data-component="APicture" class="a-picture" data-background="m-free-tile" data-component-id="6c249449-99cf-446a-b96c-8791aa1b1aaa">
+                        <img class="a-image" src="https://www.arket.com/content/dam/P11/images/campaigns/2021/iwd/iwd_vnav.jpg">
+                    </picture>
+                    <div class="text-content">
+                        <h2 class="a-heading-2  ">Women in leadership</h2>
+                        <p class="a-paragraph q-gamma"></p>
+                    </div>
+                    <div class="promotion-data p11-freetile" hidden="" data-slides-index="8">
+                        <span class="promo_id">startpage freetile</span>
+                        <span class="promo_name">startpage</span>
+                        <span class="promo_creative">startpage / freetile 1</span>
+                    </div>
+                    <span class="promoIndex" hidden="">8</span>
+                </div>
+            </a>
+        </div>
+
+        <div class="free-tile focus-panel">
+            <!--added style-->
+            <a href="/ko/about/environment/recycle-with-arket.html" target="_self" class="a-link">
+                <div class="m-free-tile q-color-black-100 is-promo" style="background-image: url(&quot;https://www.arket.com/content/dam/P11/images/suppliers/Supplier_ico_RGB_07_WEB.jpg&quot;);">
+                    <picture data-component="APicture" class="a-picture" data-background="m-free-tile" data-component-id="d2a79958-e04e-4bbe-8f3c-c58dbfd962d2">
+                        <img class="a-image" src="https://www.arket.com/content/dam/P11/images/suppliers/Supplier_ico_RGB_07_WEB.jpg">
+                    </picture>
+                    <div class="text-content">
+                        <h2 class="a-heading-2  ">Recycle with ARKET</h2>
+                        <p class="a-paragraph q-gamma"></p>
+                    </div>
+                    <div class="promotion-data p11-freetile" hidden="" data-slides-index="9">
+                        <span class="promo_id">startpage freetile</span>
+                        <span class="promo_name">startpage</span>
+                        <span class="promo_creative">startpage / freetile 2</span>
+                    </div>
+                    <span class="promoIndex" hidden="">9</span>
+                </div>
+            </a>
+        </div>
+
+        <div class="free-tile focus-panel">
+            <!--added style-->
+            <a href="/ko/about/materials.html" target="_self" class="a-link">
+                <div class="m-free-tile q-color-black-100 is-promo" style="background-image: url(&quot;https://www.arket.com/content/dam/P11/images/campaigns/2020/about/ARKET_20Q4_about_ken_01_WEB.jpg&quot;);">
+                    <picture data-component="APicture" class="a-picture" data-background="m-free-tile" data-component-id="dc593eac-888c-41fa-8962-181146da4339">
+                        <img class="a-image" src="https://www.arket.com/content/dam/P11/images/campaigns/2020/about/ARKET_20Q4_about_ken_01_WEB.jpg">
+                    </picture>
+                    <div class="text-content">
+                        <h2 class="a-heading-2  ">About MATERIALS</h2>
+                        <p class="a-paragraph q-gamma"></p>
+                    </div>
+                    <div class="promotion-data p11-freetile" hidden="" data-slides-index="10">
+                        <span class="promo_id">startpage freetile</span>
+                        <span class="promo_name">startpage</span>
+                        <span class="promo_creative">startpage / freetile 3</span>
+                    </div>
+                    <span class="promoIndex" hidden="">10</span>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+        <!-- //md-o-focus-panel -->
+    </div>
+    <!-- //o-width -->
+
+</div>
+<!-- //index 재사용 -->
+
+<!-- pay-process-loading-bx -->
+<div class="pay-process-loading-bx is-show">
+    <div class="content-bx">
+        <p class="t1">결제 진행 중입니다.</p>
+        <p class="t2">창을 닫거나, 새로 고침 시 주문오류가 발생할 수 있습니다</p>
+    </div>
+</div>
+<!-- //pay-process-loading-bx -->
+
+<!-- tip : when develop this script must be delete -->
+<script type="text/javascript">
+    (function() {
+        'use strict';
+        setTimeout(function(){
+        },1000);
+    })();
+</script>
+<!-- //tip -->
     <!-- //o-page-content -->
 
     <!-- footer -->
-    <footer class="o-footer o-footer-top u-clearfix">
+    <div class="u-no-select" id="footer_warp">
+
+    
+    <!-- o-footer -->
+<footer class="o-footer o-footer-top u-clearfix">
     <ul>
         <li>
             <a class="a-link" href="#" target="_self">About ARKET</a>
@@ -2290,13 +2319,14 @@
         <li class="right li-contry">
             <a class="a-link m-country-select open-lightbox" href="#" target="_self" data-country="UK" data-template="country-selector" data-classes="is-country-selector is-multi-language">
                 <span>배송국가 : 대한민국</span>
-                <img class="a-image icon-flag" alt="flag" src="../images/icon/icon-country-korea.svg">
+                <img class="a-image icon-flag" alt="flag" src="../../static/images/icon/icon-country-korea.svg">
             </a>
         </li>
     </ul>
 </footer>
+<!-- //o-footer -->
 
-<footer class="o-footer v2 u-clearfix">
+    <footer class="o-footer v2 u-clearfix">
     <div class="footer-cont">
         <div class="section-01">
             <p class="footer-hyundai">
@@ -2308,7 +2338,7 @@
             <p>ARKET 온라인 스토어는<br><a href="http://thehyundai.com" class="a-link a-link-udln" target="_blank">더현대닷컴</a>을 이용하고 있습니다.</p>
             <ul class="link-lst">
                 <li><a href="#none" class="a-link" target="_self">이용약관</a></li>
-                <li><a href="#none" class="a-link" target="_self">개인정보처리방침</a></li>
+                <li><a href="#none" class="a-link" target="_self"><strong>개인정보처리방침</strong></a></li>
                 <li><a href="http://www.ehyundai.com/newPortal/ir/main.do" class="a-link" target="_blank">현대백화점 그룹</a></li>
             </ul>
         </div>
@@ -2337,8 +2367,15 @@
     </div>
     
 </footer>
+    
+</div>
     <!-- //footer -->
 
+    
+    <!-- page-loading-bx -->
+<div class="page-loading-bx"></div>
+<!-- //page-loading-bx -->
+    
     <div id="selectCountryLightboxType" data-lightbox-type="is-multi-language" hidden=""></div>
     
     <!-- o-cookie-message -->
@@ -2380,17 +2417,19 @@
 
     <div class="jseditor"></div>
 
-<!--    <script src="../org/etc/designs/appeaser/shared/head.min.5e1856d1a93320e7fb437c09aa90d73b.js"></script>-->
-<!--    <script src="../org/etc/designs/appeaser/p11/clientlibs/application.min.73b337f60c6d73af4c93d85989b79c31.js"></script>-->
-<!--    <script src="../org/etc/designs/appeaser/shared/rakuten.min.747914cb35be38661f59d65b3ef708d2.js"></script>-->
-    <script src="../org/etc/designs/appeaser/p11/pattern-lib/frontend.min.53fbce400c01c000a192f9a286ec0c06.js"></script>
-    <script src="../org/etc/designs/appeaser/p11/pattern-lib/controllers.min.2c7b678057024241af565e0ec9b1b348.js"></script>
-<!--    <script src="../org/etc/designs/appeaser/p11/clientlibs/aem-clientlibs/global_Clientlib.min.bffddb20c0117ec36495ecd499273e2a.js"></script>-->
-<!--    <script src="../org/etc/designs/appeaser/p11/clientlibs/aem-clientlibs/product_Clientlib.min.09ff425f6b46f61e5c6429be9e290878.js"></script>-->
-<!--    <script src="../org/etc/designs/appeaser/p11/clientlibs/aem-clientlibs/genericpage_Clientlib.min.44bc583ac294a90847353b251f2c46c0.js"></script>-->
+<!--    <script src="../../static/org/etc/designs/appeaser/shared/head.min.5e1856d1a93320e7fb437c09aa90d73b.js"></script>-->
+<!--    <script src="../../static/org/etc/designs/appeaser/p11/clientlibs/application.min.73b337f60c6d73af4c93d85989b79c31.js"></script>-->
+<!--    <script src="../../static/org/etc/designs/appeaser/shared/rakuten.min.747914cb35be38661f59d65b3ef708d2.js"></script>-->
+    <script src="../../static/org/etc/designs/appeaser/p11/pattern-lib/frontend.min.53fbce400c01c000a192f9a286ec0c06.js"></script>
+<!--    <script src="../../static/org/etc/designs/appeaser/p11/pattern-lib/controllers.min.2c7b678057024241af565e0ec9b1b348.js"></script>-->
+    <script src="../../static/org/etc/designs/appeaser/p11/pattern-lib/controllers/controllers.js"></script>
+<!--    <script src="../../static/org/etc/designs/appeaser/p11/clientlibs/aem-clientlibs/global_Clientlib.min.bffddb20c0117ec36495ecd499273e2a.js"></script>-->
+<!--    <script src="../../static/org/etc/designs/appeaser/p11/clientlibs/aem-clientlibs/product_Clientlib.min.09ff425f6b46f61e5c6429be9e290878.js"></script>-->
+<!--    <script src="../../static/org/etc/designs/appeaser/p11/clientlibs/aem-clientlibs/genericpage_Clientlib.min.44bc583ac294a90847353b251f2c46c0.js"></script>-->
 
     <!-- frontend.renew.js -->
-    <script src="../js/frontend.renew.js"></script>
+    <script src="../../static/js/jquery-ui.js"></script>
+    <script src="../../static/js/frontend.renew.js"></script>
     <!-- //frontend.renew.js -->
 
 </body>

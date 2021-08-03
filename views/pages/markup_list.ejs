@@ -85,14 +85,32 @@ p.gnbcheck{padding-right:50px;padding-left:50px;font-weight:700;font-size:32px;}
         %>
         <h4 id='idx-<%= idx %>'><%= data.type %></h4>
         <ul id='<%= data.type %>'>
+
         <%
                 }
                 if(idx != 0){
+                    if(data.otherTemplate == 'sis') {
         %>
             <li>
-                <a href='dist/<%= data.pageurl.replace(/(.ejs)$/,'') %>.html' target="_blank"><span class="s-ko"><%= data.titleko %></span><span class="s-en"><%= data.title %></span></a>
+                <a href='dist-sis/<%= data.pageurl.replace(/(.ejs)$/,'') %>.html' target="_blank"><span class="s-ko"><%= data.titleko %></span><span class="s-en"><%= data.title %></span></a>
             </li>
         <%
+
+                    } else if(data.otherTemplate == 'sis-con') {
+        %>
+            <li>
+                <a href='dist-sis-con/<%= data.pageurl.replace(/(.ejs)$/,'-sis-con') %>.html' target="_blank"><span class="s-ko"><%= data.titleko %></span><span class="s-en"><%= data.title %></span></a>
+            </li>
+        <%
+
+                    } else {
+        %>
+            <li>
+                <%= data.otherTemplate %><a href='dist/<%= data.pageurl.replace(/(.ejs)$/,'') %>.html' target="_blank"><span class="s-ko"><%= data.titleko %></span><span class="s-en"><%= data.title %></span></a>
+            </li>
+        <%
+
+                    }
                 }
                 tempListType2 = data.type;
                 if(idx == (pageList.length - 1)){

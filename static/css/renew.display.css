@@ -69,7 +69,7 @@ html.no-touchevents .m-input, html.no-touchevents .m-dropdown, .alternative-styl
 .m-input.v3 .a-label:first-child.fixed { opacity: 1; }
 .m-input.v3 .a-input { padding-right: 0; padding-left: 0; font-weight: 300; font-size: 18px; color: #000; background: transparent; }
 .m-input.v3 .a-input::placeholder { opacity: 1; }
-.m-input.v3 .input-guide-text { display: inline-block; margin-top: 3px; margin-bottom: 0; font-size: 12px; line-height: 1.1em; color: #b2b2b2; }
+.m-input.v3 .input-guide-text { display: block; margin-top: 3px; margin-bottom: 0; font-weight: 400; font-size: 12px; line-height: 1.1em; color: #b2b2b2; }
 .m-input.no-label .a-label:first-child { opacity: 0; }
 .m-input.with-button { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; }
 .m-input.with-button .a-input { width: calc(100% - 130px); }
@@ -181,6 +181,7 @@ html.no-touchevents .m-input, html.no-touchevents .m-dropdown, .alternative-styl
 
 .o-width:not(.wc-25) .o-image-listing.cols-3 .image-container:nth-child(n+4) { margin-top: 3px; }
 
+.o-hero .takeover-wrapper { height: 100%; }
 .o-hero .takeover-background.with-video-visible-btn { position: relative; }
 .o-hero .takeover-background.with-video-visible-btn .a-vimeo-video + .video-play-button { position: absolute; top: 50%; left: 50%; margin-top: -17px; margin-left: -17px; z-index: 5; }
 .o-hero:not(.has-hidden-video) .takeover-background.with-video-visible-btn .a-vimeo-video + .video-play-button { display: none; }
@@ -1074,11 +1075,11 @@ h1 { margin: 20px 0; }
 /* ---------------------------------------------------------- */
 /* simple s ================================================= */
 /* text-align */
-.ta-l { text-align: left; }
+.ta-l { text-align: left !important; }
 
-.ta-c { text-align: center; }
+.ta-c { text-align: center !important; }
 
-.ta-r { text-align: right; }
+.ta-r { text-align: right !important; }
 
 /* simple e ================================================= */
 /* ---------------------------------------------------------- */
@@ -1089,6 +1090,8 @@ body { font-family: "Arket Sans", "Noto Sans KR", "HelveticaNeue-Light", "Helvet
 @media (min-width: 401px) { .only-m { display: none; } }
 
 @media (max-width: 400px) { .only-pc { display: none; } }
+
+.hidden { display: none; }
 
 .a-icon-question { position: relative; display: inline-block; width: 16px; height: 16px; }
 .a-icon-question::before { position: absolute; top: 0; right: 0; content: ''; display: inline-block; width: 100%; height: 100%; background: url("../images/icon/icon-question.svg") no-repeat; }
@@ -1278,9 +1281,10 @@ html .list-option .m-dropdown-label-ex + .m-dropdown { margin-left: 0; }
   .email-input-bx .m-input .a-input { margin-bottom: 0; height: 39px; }
   .email-input-bx .m-dropdown { margin-top: 0; width: 140px; } }
 
-.view-table { border-color: #ccc; border-top-width: 1px; border-top-style: solid; }
+.view-table { width: 100%; border-color: #ccc; border-top-width: 1px; border-top-style: solid; }
 .view-table th, .view-table td { padding: 10px 5px; border-color: #ccc; border-bottom-width: 1px; border-bottom-style: solid; font-weight: 300; font-size: 12px; color: #000; }
 .view-table.left { text-align: left; }
+.view-table.type2 th { font-weight: 400; text-align: center; background: #f0f0f0; }
 
 .dot-ul > li { position: relative; padding-left: 10px; font-size: 13px; line-height: 1.5em; list-style: none; }
 .dot-ul > li::before { position: absolute; top: 2px; left: 0; content: "·"; font-size: 18px; line-height: 20px; vertical-align: top; padding-right: 8px; }
@@ -1347,8 +1351,8 @@ html .list-option .m-dropdown-label-ex + .m-dropdown { margin-left: 0; }
 .landing-page-wrap { display: flex; justify-content: center; height: calc(100vh - 56px); }
 .landing-page-wrap p { margin-top: 0; margin-bottom: 0; }
 
-.page-loading-bx { display: none; justify-content: center; align-items: center; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: #fff; z-index: 999; }
-.page-loading-bx::before { content: ''; display: inline-block; width: 90px; height: 90px; background: url("../images/common/loading.svg") no-repeat; }
+.page-loading-bx { display: none; justify-content: center; align-items: center; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(240, 240, 240, 0.5); z-index: 999; }
+.page-loading-bx::before { content: ''; display: inline-block; width: 90px; height: 90px; background: #fff url("../images/common/loading.svg") no-repeat 50%; }
 
 body.is-page-loading { overflow: hidden; }
 body.is-page-loading .page-loading-bx { display: flex; }
@@ -1625,6 +1629,17 @@ html .lp-find-address .m-input { margin-top: 35px; margin-bottom: 35px; }
 .lp-receipt-apply-tax .dft-bx .dft-bx-tit { font-size: 15px; }
 .lp-receipt-apply-tax .dft-bx .dft-bx-tit .sub { font-size: 12px; }
 
+.lp-nonmbr-order-info-agree h3 { margin-top: 40px; margin-bottom: 10px; font-size: 18px; }
+.lp-nonmbr-order-info-agree .a-paragraph { font-size: 12px; }
+
+.pay-process-loading-bx { display: none; position: fixed; top: 0; left: 0; justify-content: center; align-items: center; width: 100vw; height: 100vh; background: rgba(255, 255, 255, 0.5); z-index: 999; }
+.pay-process-loading-bx.is-show { display: flex; }
+.pay-process-loading-bx .content-bx { padding: 30px 20px; width: 90%; text-align: center; max-width: 440px; background: #fff; }
+.pay-process-loading-bx .content-bx::before { content: ''; width: 90px; height: 90px; display: inline-block; background: #fff url(../images/common/loading.svg) no-repeat 50%; }
+.pay-process-loading-bx .content-bx p { margin: 0; }
+.pay-process-loading-bx .content-bx .t1 { margin-bottom: 10px; font-size: 20px; }
+.pay-process-loading-bx .content-bx .t2 { font-size: 14px; }
+
 /* layer-popup e ============================================ */
 /* ---------------------------------------------------------- */
 /* lightbox-list > 마이페이지_주문배송 > 환불계좌변경 : 계좌인증성공,실패 */
@@ -1697,19 +1712,22 @@ html .lp-find-address .m-input { margin-top: 35px; margin-bottom: 35px; }
 /* ========================================================== */
 /* ---------------------------------------------------------- */
 /* print s ================================================== */
+body * { box-sizing: border-box; }
+body ul { list-style: none; margin: 0; padding: 0; }
+
 .print-area-wrap { position: relative; }
 .print-area-wrap .print-text-bx { font-family: 'dotum'; font-weight: 400; font-size: 12px; }
 
 .print-receipt-tax .lightbox-wrapper { width: 720px; }
-.print-receipt-tax .print-area-wrap .print-bg-img-bx { width: 640px; }
-.print-receipt-tax .print-area-wrap .print-bg-img-bx img { width: 100%; }
-.print-receipt-tax .print-area-wrap .print-text-bx { position: absolute; top: 0; left: 0; width: calc(100% - 18px); }
 
+.lp-receipt-print-tax .print-area-wrap .print-bg-img-bx { width: 640px; }
+.lp-receipt-print-tax .print-area-wrap .print-bg-img-bx img { width: 100%; }
+.lp-receipt-print-tax .print-area-wrap .print-text-bx { position: absolute; top: 0; left: 0; width: calc(100% - 18px); }
 .lp-receipt-print-tax .text-info-ul { width: 640px; display: flex; flex-wrap: wrap; margin-bottom: 4px; }
-.lp-receipt-print-tax .text-info-ul li { display: flex; align-items: center; padding: 9px 0 10px 6px; border: 0px solid red; }
+.lp-receipt-print-tax .text-info-ul li { display: flex; align-items: flex-end; padding: 9px 0 10px 6px; border: 0px solid red; }
 .lp-receipt-print-tax .text-info-ul li span { display: inline-block; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
 .lp-receipt-print-tax .text-info-ul li.price { justify-content: flex-end; }
-.lp-receipt-print-tax .text-info-ul li.price span { letter-spacing: 0.48em; margin-right: -3px; text-overflow: initial; }
+.lp-receipt-print-tax .text-info-ul li.price span { width: 100%; text-align: right; text-overflow: initial; letter-spacing: 0.58em; margin-right: -4px; }
 .lp-receipt-print-tax .text-info-ul li:nth-child(1) { padding: 18px 0 18px 450px; width: 100%; }
 .lp-receipt-print-tax .text-info-ul li:nth-child(2), .lp-receipt-print-tax .text-info-ul li:nth-child(4), .lp-receipt-print-tax .text-info-ul li:nth-child(6), .lp-receipt-print-tax .text-info-ul li:nth-child(8), .lp-receipt-print-tax .text-info-ul li:nth-child(12) { padding-left: 76px; width: 30%; }
 .lp-receipt-print-tax .text-info-ul li:nth-child(3), .lp-receipt-print-tax .text-info-ul li:nth-child(5), .lp-receipt-print-tax .text-info-ul li:nth-child(7), .lp-receipt-print-tax .text-info-ul li:nth-child(9), .lp-receipt-print-tax .text-info-ul li:nth-child(13) { padding-left: 54px; width: 20%; }
@@ -1721,8 +1739,8 @@ html .lp-find-address .m-input { margin-top: 35px; margin-bottom: 35px; }
 .lp-receipt-print-tax .text-info-ul li:nth-child(18) { width: 6%; }
 .lp-receipt-print-tax .text-info-ul li:nth-child(19), .lp-receipt-print-tax .text-info-ul li:nth-child(20) { width: 2.6%; }
 .lp-receipt-print-tax .text-info-ul li:nth-child(21) { width: 5%; }
-.lp-receipt-print-tax .text-info-ul li:nth-child(22) { width: 24%; }
-.lp-receipt-print-tax .text-info-ul li:nth-child(23) { width: 22%; }
+.lp-receipt-print-tax .text-info-ul li:nth-child(22) { width: 24.4%; }
+.lp-receipt-print-tax .text-info-ul li:nth-child(23) { width: 22.4%; }
 .lp-receipt-print-tax .text-info-ul li:nth-child(24) { width: 36%; }
 .lp-receipt-print-tax .text-info-ul li:nth-child(25) { padding: 14px 0 14px 80px; width: 100%; }
 .lp-receipt-print-tax .text-info-ul li:nth-child(26), .lp-receipt-print-tax .text-info-ul li:nth-child(27), .lp-receipt-print-tax .text-info-ul li:nth-child(28), .lp-receipt-print-tax .text-info-ul li:nth-child(29), .lp-receipt-print-tax .text-info-ul li:nth-child(30), .lp-receipt-print-tax .text-info-ul li:nth-child(31), .lp-receipt-print-tax .text-info-ul li:nth-child(32), .lp-receipt-print-tax .text-info-ul li:nth-child(33), .lp-receipt-print-tax .text-info-ul li:nth-child(34) { padding-top: 28px; }
@@ -1742,10 +1760,10 @@ html .lp-find-address .m-input { margin-top: 35px; margin-bottom: 35px; }
 .lp-receipt-print-tax .guide-text { text-align: left; font-size: 12px; color: #000; }
 
 .print-receipt-card .lightbox-wrapper { width: 430px; }
-.print-receipt-card .print-area-wrap .print-bg-img-bx { width: 350px; }
-.print-receipt-card .print-area-wrap .print-bg-img-bx img { width: 100%; }
-.print-receipt-card .print-area-wrap .print-text-bx { position: absolute; top: 48px; left: 9px; width: calc(100% - 18px); }
 
+.lp-receipt-print-cash .print-area-wrap .print-bg-img-bx, .lp-receipt-print-credit .print-area-wrap .print-bg-img-bx { width: 350px; }
+.lp-receipt-print-cash .print-area-wrap .print-bg-img-bx img, .lp-receipt-print-credit .print-area-wrap .print-bg-img-bx img { width: 100%; }
+.lp-receipt-print-cash .print-area-wrap .print-text-bx, .lp-receipt-print-credit .print-area-wrap .print-text-bx { position: absolute; top: 48px; left: 9px; width: calc(100% - 18px); }
 .lp-receipt-print-cash .text-info-ul, .lp-receipt-print-credit .text-info-ul { width: 332px; display: flex; flex-wrap: wrap; }
 .lp-receipt-print-cash .text-info-ul li, .lp-receipt-print-credit .text-info-ul li { display: flex; align-items: center; padding: 16px 0 6px 5px; border: 0px solid red; }
 .lp-receipt-print-cash .text-info-ul li span, .lp-receipt-print-credit .text-info-ul li span { display: inline-block; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
@@ -1783,13 +1801,14 @@ html .lp-find-address .m-input { margin-top: 35px; margin-bottom: 35px; }
 .lp-receipt-print-cash .text-info-ul li:nth-child(30), .lp-receipt-print-credit .text-info-ul li:nth-child(30) { width: 28%; }
 .lp-receipt-print-cash .text-info-ul li:nth-child(31), .lp-receipt-print-credit .text-info-ul li:nth-child(31) { width: 72%; }
 
+.temp-win-for-print .lightbox-content-dft > h2, .temp-win-for-print .button-container, .temp-win-for-print .a-icon-close { display: none; }
+
 @page { size: 210mm 297mm;
   /*A4*/
 margin: 0mm; }
-@media only print { html, body { margin: 0; padding: 0; page-break-after: avoid; page-break-before: avoid; }
+@media only print { html, body { margin: 0; padding: 0; page-break-after: avoid; page-break-before: avoid; width: 210mm; height: 297mm; overflow: hidden; }
   body * { visibility: hidden; margin: 0; padding: 0; }
   a[href]::after { content: none !important; }
-  .is-open .print-area-wrap { transform: scale(1, 1); }
   .is-open .print-area-wrap * { visibility: visible; }
   .is-open .print-area-wrap .not-print { visibility: hidden !important; } }
 /* print e ================================================== */
@@ -1800,7 +1819,140 @@ margin: 0mm; }
 /*                                                            */
 /* ========================================================== */
 /* ---------------------------------------------------------- */
-/* sis s ==================================================== */
+/* sis headedr s ============================================ */
+.has-sis-header { /*@ 샵인샵에서 장바구니는 필요없다. / 2018.01.29 / mglee */ /*@ 샵인샵에서 오피셜헤더에 있는 우측 메뉴들은 PC일때는 숨겨놓는다. / 2018.01.29 / mglee */ /* @샵인샵 모바일헤더 뒤로가기 버튼 신규  / 2018.01.31 / mglee */ /* @샵인샵 모바일헤더 뒤로가기 버튼 태블릿일때는 top위치가 다소 다르다.  / 2018.02.05 / mglee */ /* @모바일일때 햄버거 버튼 위치가 다소 이상하다.(태블릿일때는 괜찮다)  / 2018.02.05 / mglee */ /*헤더는 공통*/ }
+.has-sis-header .m-notification { padding: 10px; }
+.has-sis-header .m-notification.is-inline { display: none !important; }
+.has-sis-header .m-notification .a-paragraph { display: inline-block; width: 100%; }
+.has-sis-header .o-navigation .secondary-navigation .btn-pt-prev { display: inline-block; padding: 12px 6px 10px 14px; width: 24px; height: 24px; position: fixed; left: 15px; margin-top: 14px; cursor: pointer; background: url(../images/sis/btn-pt-prev.png) no-repeat 0 50%; background-size: 13px; opacity: 0.5; }
+.has-sis-header .o-navigation .secondary-navigation .my-account-block .my-account-section { padding: 0; top: 46px; right: 100px; width: auto; }
+.has-sis-header .o-navigation .secondary-navigation .my-account-block .my-account-section::before, .has-sis-header .o-navigation .secondary-navigation .my-account-block .my-account-section::after { display: none; }
+.has-sis-header .o-navigation.is-open .btn-pt-prev { display: none; }
+@media (max-width: 768px) { .has-sis-header .o-navigation:not(.is-open) .secondary-navigation .a-burger { margin-left: 30px; }
+  .has-sis-header .o-navigation:not(.is-open) .secondary-navigation .search-icon { display: none; }
+  .has-sis-header .o-navigation .secondary-navigation .a-bag-icon-container { display: none; } }
+@media (min-width: 769px) { .has-sis-header { height: auto; padding: 0; margin-top: 0 !important; animation: none !important; }
+  .has-sis-header .m-notification.is-inline { display: block !important; }
+  .has-sis-header .header-bar { padding: 19px 19px 20px; }
+  .has-sis-header .o-navigation .secondary-navigation { top: auto; bottom: 2px; }
+  .has-sis-header .o-navigation .secondary-navigation .btn-pt-prev { display: none; }
+  .has-sis-header .o-navigation .navigation-curtain { top: calc(56px + 40px); }
+  .has-sis-header .o-navigation .sub-menu:last-child { display: block; }
+  .has-sis-header.has-sis-notification .o-navigation .navigation-curtain { top: calc(56px + 37px + 41px + 2px); } }
+@media (min-width: 1025px) { .has-sis-header .o-page-content { /* padding-top:0px;   H&M Hmall 입점 */ padding-top: 37px; /* 2019.11.18 원상복귀 */ }
+  .has-sis-header .sis-header { display: block; }
+  .has-sis-header .o-navigation .sub-menu:last-child { /*display: none;*/ }
+  .has-sis-header .o-navigation .navigation-wrapper .m-search { display: none; }
+  .has-sis-header .sub-menu.sis-sub-menu { position: static; top: 0; left: auto; right: 0; margin-right: 0; width: 100%; } }
+.has-sis-header .o-header .m-bag { display: none; }
+.has-sis-header .o-navigation .sub-menu:last-child { display: block; }
+.has-sis-header .o-header .navigation-icons .btn-pt-prev { /*outline:1px solid red;*/ display: inline-block; padding: 12px 6px 10px 14px; width: 18px; height: 25px; position: absolute; top: 10px; left: 15px; cursor: pointer; background: url("../images/cos/02/btn-pt-prev.png"); /* @샵인샵 모바일헤더 뒤로가기 버튼 - 백그라운드 이미지 추가  / 2018.02.05 / mglee */ background-size: 100% 100%; opacity: 0.5; }
+.has-sis-header .o-header .navigation-icons .a-icon-menu { margin-left: 35px; }
+.has-sis-header .o-header .navigation-icons .a-icon-search { position: fixed; top: 3px; right: 10px; }
+@media (min-width: 768px) { .has-sis-header { /* @샵인샵 돋보기 버튼 태블릿일때는 top위치가 다소 다르다.  / 2018.03.22 / bhkim */ }
+  .has-sis-header .o-header .navigation-icons .btn-pt-prev { top: 7px; }
+  .has-sis-header .o-header .navigation-icons .a-icon-search { top: 10px; } }
+@media (min-width: 1px) and (max-width: 767px) { .has-sis-header .o-header .navigation-icons .a-icon-menu { margin-top: 1px; } }
+
+/* @ 샵인샵 레이아웃 BASE / 2018.01.29 / mglee */
+.o-page-content { padding-top: 0px; /*sis-header 높이값*/ }
+
+.sis-header { display: none; posirion: relative; z-index: 30; /*오피셜 헤더가 20임. 그값보다 커야함.*/ height: 37px; background: #fff; text-align: center; line-height: 37px; }
+.sis-header #header-top { height: 100%; border-bottom: 1px solid #ebebeb; }
+.sis-header #header-top .inner { position: relative; margin: 0 auto; width: 100%; max-width: 1540px; max-width: 1600px; height: 100%; text-align: center; line-height: 0; padding: 0 0; }
+.sis-header #header-top .top-gnb { position: relative; font-size: 11px; color: #666; line-height: 18px; padding: 4px 0; z-index: 100; }
+.sis-header #header-top .top-gnb ul li { position: relative; float: left; margin: 0 7px; }
+.sis-header #header-top .top-gnb ul li a { color: inherit; }
+.sis-header #header-top .top-gnb ul li.search-trigger { margin-top: -2px; }
+.sis-header #header-top .top-gnb ul li.search-trigger a:hover { color: #666; color: #a0a0a0; }
+.sis-header #header-top .top-gnb ul li.search-trigger a .a-icon-search { font-weight: bold; font-size: 13px; }
+.sis-header #header-top .top-gnb .left, .sis-header #header-top .top-gnb .right { position: absolute; top: 10px; float: none; padding: 0; margin: 0; }
+.sis-header #header-top .top-gnb .left { /*left: 174px;*/ /*@ 더현대 로고 교체(익스버그방지) / 2018.03.06 / mglee */ left: 165px; /*@ 더현대 로고 교체(익스버그방지) / 2018.03.06 / mglee */ vertical-align: middle; }
+.sis-header #header-top .top-gnb .right { display: none; right: 20px; top: 63px; z-index: 30; }
+.sis-header #header-top .mid-gnb { position: relative; width: 50%; top: 0; left: 0; height: auto; height: 30px; padding: 0 0px; margin: 0 30px; overflow: visible; z-index: 100; /*@ 샵인샵-검색돋보기 클릭시 - thehyundai 로고가 사라짐 / 2018.03.15 / mglee */ float: left; }
+.sis-header #header-top .mid-gnb .logo { position: fixed; position: absolute; /*top: 6px;*/ /*@ 더현대 로고 교체(익스버그방지) / 2018.03.06 / mglee */ top: 2px; /*@ 더현대 로고 교체(익스버그방지) / 2018.03.06 / mglee */ left: -5px; width: auto; height: auto; padding: 0; margin: 0; /*@ GNB 검색버튼 누르고 검색키워드 입력하는 부분이 짤림 / 2018.02.19 / mglee */ z-index: 2; }
+.sis-header #header-top .mid-gnb .logo a { position: static; padding: 0; margin: 0; display: block; /*width: 200px;*/ /*@ 더현대 로고 교체(익스버그방지) / 2018.03.06 / mglee */ /*width: 146px;*/ /*@ 더현대 로고 교체(익스버그방지) / 2018.03.06 / mglee */ /*height: 20px;*/ /*@ 더현대 로고 교체(익스버그방지) / 2018.03.06 / mglee */ /*height: 13px;*/ /*@ 더현대 로고 교체(익스버그방지) / 2018.03.06 / mglee */ width: 138px; /*@ 더현대 로고 교체(익스버그방지) / 2018.03.06 / mglee */ height: 16px; /*@ 더현대 로고 교체(익스버그방지) / 2018.03.06 / mglee */ /*background-image: url(../images/cos/01/common/thehyundai.svg);*/ /*@ 더현대 로고 교체(익스버그방지) / 2018.03.06 / mglee */ background-image: url(../images/sis/thehyundai.svg); background-repeat: no-repeat; background-position: 0 0; /*@ 더현대 로고 교체(익스버그방지) / 2018.03.06 / mglee */ background-size: 100% 100%; /*@ 더현대 로고 교체(익스버그방지) / 2018.03.06 / mglee */ }
+.sis-header #header-top .mid-gnb .searcharea { display: none; }
+
+.ic-onoff { display: inline-block; margin-bottom: 1px; vertical-align: middle; width: 28px; height: 14px; background: url(../images/sis/ic_onoff.png) no-repeat 0 0; }
+.ic-onoff.off { background-position: 0 0; }
+.ic-onoff.on { background-position: 0 -14px; }
+
+.ic-gnb { display: inline-block; background: url(../images/icon/gnb-arrow.png) no-repeat 0 0; vertical-align: middle; font-size: 0; line-height: 0; }
+.ic-gnb.arrow { width: 5px; height: 9px; }
+
+.myshop-info-layer { padding: 0 9px; font-size: 12px; border: 1px solid #46675c; }
+.myshop-info-layer .js-login-area { display: none; }
+.myshop-info-layer .js-logout-area { display: block; }
+.myshop-info-layer h4 { margin: 0; white-space: nowrap; line-height: 28px; border-bottom: 1px solid #e7e7e7; color: #767676; padding: 0 5px; }
+.myshop-info-layer h4.js-logout-area { color: #36544a; text-align: center; }
+.myshop-info-layer a { color: #767676; }
+.myshop-info-layer a:hover { text-decoration: none; font-weight: 400; }
+.myshop-info-layer .link-ul { padding: 10px 0; border-bottom: 1px solid #e7e7e7; }
+.myshop-info-layer .link-ul a { display: inline-block; width: 100%; }
+.myshop-info-layer .link-ul a .ic-gnb { float: right; margin-top: 4px; margin-right: 4px; }
+.myshop-info-layer .cont { position: relative; padding: 9px 0 9px 54px; }
+.myshop-info-layer .cont .grade { position: absolute; top: 50%; margin-top: -44px; left: 0; }
+.myshop-info-layer .cont .grade p { text-align: center; line-height: 18px; margin-top: 4px; }
+.myshop-info-layer .cont table { table-layout: auto; }
+.myshop-info-layer .cont table th, .myshop-info-layer .cont table td { white-space: nowrap; padding: 0 4px; line-height: 20px; text-align: right; font-weight: 400; }
+.myshop-info-layer .cont table th { font-size: 11px; color: #767676; text-align: left; }
+.myshop-info-layer .cont table th a i { display: none; }
+.myshop-info-layer .cont table td a { color: #36544a; text-decoration: underline; }
+.myshop-info-layer .cont table td a .ic-gnb { margin-left: 4px; }
+.myshop-info-layer .bottom-menu { border-top: 1px solid #e7e7e7; padding-top: 8px; padding-bottom: 8px; }
+.myshop-info-layer .bottom-menu a { position: relative; }
+.myshop-info-layer.no-login .js-login-area { display: block; }
+.myshop-info-layer.no-login .js-logout-area { display: none; }
+.myshop-info-layer.no-login .cont { padding-left: 0; }
+.myshop-info-layer.no-login .cont .grade { display: none; }
+.myshop-info-layer.no-login .cont table th a { display: block; min-width: 70px; padding-right: 10px; position: relative; }
+.myshop-info-layer.no-login .cont table th a i { position: absolute; top: 50%; right: 0; margin-top: -5px; display: block; }
+.myshop-info-layer.no-login .cont table td { display: none; }
+.myshop-info-layer.no-login .bottom-menu a { display: block; text-align: left; }
+.myshop-info-layer.no-login .bottom-menu i { position: absolute; top: 50%; right: 0; margin-top: -5px; display: block; }
+
+.hd-grade { display: inline-block; *display: inline; *zoom: 1; width: 74px; height: 74px; font-size: 0; line-height: 0; vertical-align: middle; background: url(../images/sis/ic_grade_mark2.png) no-repeat 0 0; }
+.hd-grade.g-1001 { background-position: 0 0; }
+.hd-grade.g-3001 { background-position: 0 -74px; }
+.hd-grade.g-5001 { background-position: 0 -148px; }
+.hd-grade.g-6001 { background-position: 0 -222px; }
+.hd-grade.lg { width: 110px; height: 110px; background: url(../images/sis/ic_grade_mark2_lg.png) no-repeat 0 0; }
+.hd-grade.lg.g-1001 { background-position: 0 0; }
+.hd-grade.lg.g-3001 { background-position: 0 -110px; }
+.hd-grade.lg.g-5001 { background-position: 0 -220px; }
+.hd-grade.lg.g-6001 { background-position: 0 -330px; }
+.hd-grade.md { width: 98px; height: 98px; background: url(../images/sis/ic_grade_mark2_md.png) no-repeat 0 0; }
+.hd-grade.md.g-1001 { background-position: 0 0; }
+.hd-grade.md.g-3001 { background-position: 0 -98px; }
+.hd-grade.md.g-5001 { background-position: 0 -196px; }
+.hd-grade.md.g-6001 { background-position: 0 -294px; }
+.hd-grade.xlg { width: 154px; height: 154px; background: url(../images/sis/ic_grade_mark2_xlg.png) no-repeat 0 0; }
+.hd-grade.xlg.nologin { background-position: 0 0; }
+.hd-grade.xlg.g-1001 { background-position: 0 -616px; }
+.hd-grade.xlg.g-3001 { background-position: 0 -462px; }
+.hd-grade.xlg.g-5001 { background-position: 0 -308px; }
+.hd-grade.xlg.g-6001 { background-position: 0 -154px; }
+.hd-grade.xsm { width: 48px; height: 48px; background: url(../images/sis/ic_grade_mark2_xsm.png) no-repeat 0 0; }
+.hd-grade.xsm.g-1001 { background-position: 0 0; }
+.hd-grade.xsm.g-3001 { background-position: 0 -48px; }
+.hd-grade.xsm.g-5001 { background-position: 0 -96px; }
+.hd-grade.xsm.g-6001 { background-position: 0 -144px; }
+
+/* sis headedr e ============================================ */
+/* ---------------------------------------------------------- */
+/* ---------------------------------------------------------- */
+/* sis content s ============================================ */
+/* o-hero */
+@media (max-width: 630px) { .o-hero .image-wrapper .takeover-background, .o-hero { height: 150vw; } }
+.o-hero.is-takeover { margin-top: 0; }
+
+@media (min-width: 631px) { .o-hero .image-wrapper .takeover-background, .o-hero, .o-hero.single-image .image-wrapper .takeover-background { height: 46vw; } }
+/* end o-hero */
+/* sis content e ============================================ */
+/* ---------------------------------------------------------- */
+/* ---------------------------------------------------------- */
+/* sis footer s ============================================= */
 .blind { position: absolute !important; left: -10000px !important; top: -10000px !important; width: 0; height: 0; font-size: 0; display: block; visibility: hidden; }
 
 #footer_warp .sis-footer { clear: both; }
@@ -1859,8 +2011,24 @@ margin: 0mm; }
 #sis_footer .bottom .sns-quickgo i.tistory { background-position: -123px 0; }
 #sis_footer .bottom .sns-quickgo i.instagram { background-position: -164px 0; }
 
-/*푸터-Mobile*/
-/* sis e ==================================================== */
+#sis_footer.sis-footer-m { position: relative; padding-bottom: 20px; border-top: 1px solid #34483b; }
+#sis_footer.sis-footer-m .foot-wrap { position: relative; margin: 0 15px 10px; font-size: 11px; color: #767676; line-height: 18px; }
+#sis_footer.sis-footer-m .foot-wrap .foot-link-wrap { display: table; table-layout: fixed; width: 100%; }
+#sis_footer.sis-footer-m .foot-wrap .foot-link-wrap .foot-link { overflow: hidden; display: table-row; width: 100%; }
+#sis_footer.sis-footer-m .foot-wrap .foot-link-wrap .foot-link li { display: table-cell; border-bottom: 1px solid #ccc4cc; text-align: center; white-space: nowrap; }
+#sis_footer.sis-footer-m .foot-wrap .foot-link-wrap .foot-link li a { display: block; color: #494949; line-height: 40px; }
+#sis_footer.sis-footer-m .foot-wrap .foot-link-wrap .foot-link li a strong { font-weight: 300; }
+#sis_footer.sis-footer-m .foot-wrap .foot-link-wrap .foot-link li:first-child a { text-align: left; }
+#sis_footer.sis-footer-m .foot-wrap .foot-link-wrap .foot-link li:last-child a { text-align: right; }
+#sis_footer.sis-footer-m address { padding: 10px 0 5px; font-style: normal; text-align: left; }
+#sis_footer.sis-footer-m .copyright { font-weight: 700; text-align: left; }
+#sis_footer.sis-footer-m .go-top a { display: block; position: fixed; bottom: 20px; right: 15px; width: 36px; height: 36px; background: url(../images/sis/ic_top.png) no-repeat; background-size: 36px 36px; text-indent: -9999px; z-index: 4; }
+
+@media (max-width: 400px) { .sis-footer-pc { display: none; }
+  .sis-footer-m { display: block; } }
+@media (min-width: 401px) { .sis-footer-pc { display: block; }
+  .sis-footer-m { display: none; } }
+/* sis footer e ============================================= */
 /* ---------------------------------------------------------- */
 /* ========================================================== */
 /*                                                            */
@@ -2352,7 +2520,7 @@ html.no-touchevents .n-find-idpw .n-wrap.resting-guide .info { padding-bottom: 1
 .my-delivery-input { display: inline-block; }
 .my-delivery-input .m-input.v3 { margin-top: 20px; }
 .my-delivery-input .m-input.v3:first-child { margin-top: 0; }
-.my-delivery-input .m-input.v3.is-readonly .a-input { border-color: #000; border-bottom-width: 1px; border-bottom-style: solid; }
+.my-delivery-input .m-input.v3.is-readonly:not(.has-error) .a-input { border-color: #000; border-bottom-width: 1px; border-bottom-style: solid; }
 .my-delivery-input .set-default-delivery .m-checkbox { padding-top: 15px; }
 .my-delivery-input .button-container { margin-top: 35px; }
 

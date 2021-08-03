@@ -70,9 +70,7 @@
 
     <!-- m-site-banner : 띠배너 -->
     <!--
-    <div id="site-banner-id" data-component="MSiteBanner" class="m-site-banner slide-down" data-component-id="99b5970e-f57c-49a0-81af-c7dcdc255c0b" style="background-color: rgb(0, 0, 0); display: block;">
-        <input type="hidden" name="startDateField" value="2021/06/10 08:10:00" id="sitebannersd">
-        <input type="hidden" name="endDateField" value="2021/06/18 00:05:00" id="sitebannered">
+    <div id="site-banner-id" data-component="MSiteBanner" class="m-site-banner slide-down" style="background-color: rgb(0, 0, 0);">
         <div>
             <div class="a-paragraph site-banner-desktop is-richtext" style="padding-top:15px;padding-bottom:15px;color:#FFFFFF">
                 <a title="ARKET SALE" href="/en/sale.html">SALE —</a>
@@ -83,6 +81,7 @@
                 <a title="Children SALE" href="/en/children/sale.html">Children</a>
                 <a title="Homeware SALE" href="/en/homeware/sale.html">&amp; Homeware</a>
             </div>
+
             <div class="a-paragraph site-banner-mobile is-richtext" style="padding-top:10px;padding-bottom:10px;color:#FFFFFF">
                 <a href="/en/sale.html">SALE —</a>
                 U
@@ -114,7 +113,8 @@
     <input type="hidden" id="isIndex" value="false">
     <input type="hidden" id="isAccountPage" value="">
     <input type="hidden" id="contextPath2" value="en">
-    
+
+    <!-- header-bar -->
     <div class="header-bar">
         
         <!-- o-search -->
@@ -873,16 +873,13 @@
         </div>
     </button>
     <div class="my-account-block">
-        <a href="/ko/my-account/profile" target="_self" id="myAccountLink"
-           style="display:none;" class="a-link my-account-icon" area-hidden="true"
-           aria-label="My account">
+        <a href="/ko/my-account/profile" target="_self" id="myAccountLink" style="display:none;" class="a-link my-account-icon" area-hidden="true" aria-label="My account">
             <span class="a-icon-profile"></span>
         </a>
-        <button type="button" class="a-button-nostyle my-account-icon tooltip-trigger"
-                area-hidden="false" aria-label="My account"
-                onclick="TealiumUtils.trackSignInNav(this);">
+        <button type="button" class="a-button-nostyle my-account-icon tooltip-trigger" area-hidden="false" aria-label="My account">
             <span class="a-icon-profile"></span>
         </button>
+
         <div class="my-account-section tooltip-content" aria-hidden="true" aria-expanded="false">
             <div class="o-sign-in-registration-tabs is-my-account-tooltip">
                 <ul data-component="MTablist"
@@ -933,7 +930,7 @@
                                     <label class="a-label js-a-label" for="sign-in-password" data-placeholder="" aria-hidden="true"></label>
                                     <button type="button" class="a-button-nostyle toggle-password-state password-visible" data-show-text="Show" data-hide-text="Hide">Show</button>
                                 </div>
-                                
+
                                 <div class="checkbox-input">
                                     <span class="m-checkbox u-clearfix" id="rememberme">
                                         <input type="checkbox" class="a-checkbox" id="checkbox_rememberme_popup" name="_spring_security_remember_me" checked="checked">
@@ -945,7 +942,7 @@
                                         <a href="/ko/password/requestSignIn" target="_self" class="a-link forgot-password bo-b" onclick="TealiumUtils.trackForgotButton();">비밀번호찾기</a>
                                     </div>
                                 </div>
-                                
+
 
 
                                 <button type="submit" class="a-button is-primary" tabindex="202">
@@ -1362,30 +1359,29 @@
                 </div>
             </div>
         </div>
+
     </div>
     <div class="information-block">
-        <button type="button" class="a-button-nostyle info-icon tooltip-trigger"
-                aria-label="information">
+        <button type="button" class="a-button-nostyle info-icon tooltip-trigger" aria-label="information">
             <span class="a-custom-icon-question">?</span>
         </button>
     </div>
 
-    <a href="/ko/cart" target="_self" class="a-link a-bag-icon-container"
-       aria-label="cart">
-					<span class="a-bag-icon js-a-bag-icon animate">
-						<span class="wrapper">
-							<span class="handle"></span>
-							<span class="quantity">2</span>
-						</span>
-					</span>
+    <a href="/ko/cart" target="_self" class="a-link a-bag-icon-container" aria-label="cart">
+        <span class="a-bag-icon js-a-bag-icon animate">
+            <span class="wrapper">
+                <span class="handle"></span>
+                <span class="quantity">2</span>
+            </span>
+        </span>
     </a>
 
     <button type="button" class="a-button-nostyle a-burger js-a-burger animate" aria-label="menu">
-				<span class="line-wrapper">
-					<span class="line"></span>
-					<span class="line"></span>
-					<span class="line"></span>
-				</span>
+        <span class="line-wrapper">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </span>
     </button>
 </nav>
 <!-- //md-secondary-navigation -->
@@ -1395,6 +1391,7 @@
 
         </div>
     </div>
+    <!-- //header-bar -->
 
     
     <!-- m-cart-addition -->
@@ -2199,7 +2196,8 @@
     <div class="u-no-select" id="footer_warp">
 
     
-    <footer class="o-footer o-footer-top u-clearfix">
+    <!-- o-footer -->
+<footer class="o-footer o-footer-top u-clearfix">
     <ul>
         <li>
             <a class="a-link" href="#" target="_self">About ARKET</a>
@@ -2250,6 +2248,7 @@
         </li>
     </ul>
 </footer>
+<!-- //o-footer -->
 
     <footer class="o-footer v2 u-clearfix">
     <div class="footer-cont">
@@ -2346,7 +2345,8 @@
 <!--    <script src="../../../static/org/etc/designs/appeaser/p11/clientlibs/application.min.73b337f60c6d73af4c93d85989b79c31.js"></script>-->
 <!--    <script src="../../../static/org/etc/designs/appeaser/shared/rakuten.min.747914cb35be38661f59d65b3ef708d2.js"></script>-->
     <script src="../../../static/org/etc/designs/appeaser/p11/pattern-lib/frontend.min.53fbce400c01c000a192f9a286ec0c06.js"></script>
-    <script src="../../../static/org/etc/designs/appeaser/p11/pattern-lib/controllers.min.2c7b678057024241af565e0ec9b1b348.js"></script>
+<!--    <script src="../../../static/org/etc/designs/appeaser/p11/pattern-lib/controllers.min.2c7b678057024241af565e0ec9b1b348.js"></script>-->
+    <script src="../../../static/org/etc/designs/appeaser/p11/pattern-lib/controllers/controllers.js"></script>
 <!--    <script src="../../../static/org/etc/designs/appeaser/p11/clientlibs/aem-clientlibs/global_Clientlib.min.bffddb20c0117ec36495ecd499273e2a.js"></script>-->
 <!--    <script src="../../../static/org/etc/designs/appeaser/p11/clientlibs/aem-clientlibs/product_Clientlib.min.09ff425f6b46f61e5c6429be9e290878.js"></script>-->
 <!--    <script src="../../../static/org/etc/designs/appeaser/p11/clientlibs/aem-clientlibs/genericpage_Clientlib.min.44bc583ac294a90847353b251f2c46c0.js"></script>-->
