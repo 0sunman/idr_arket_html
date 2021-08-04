@@ -109,7 +109,14 @@
         %>
             <%- include ("./common/header-for-search.ejs") %>
         <%
-            }else {
+            } else if(targetPath == "ko/order/order.ejs"
+                        || targetPath == "ko/order/order-nonmbr.ejs"
+                        || targetPath == "ko/order/order-complete.ejs"
+                        || targetPath == "ko/order/order-complete-nonmember.ejs") {
+        %>
+            <%- include ("./common/header-for-checkout.ejs") %>
+        <%
+            } else {
         %>
             <%- include ("./common/header.ejs") %>
         <%

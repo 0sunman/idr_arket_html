@@ -12,7 +12,7 @@
 
 .o-product-details-selection .product-size-wrapper .a-heading-4, .o-product-details-selection .product-size-wrapper .size-guide-link, .o-product-details .left-panel .attributes-bottom .list-container li span, .o-product-attributes .description-container ul li, .o-product-attributes .description-container li a, .o-product-attributes .list-container li a { font-size: 11px; }
 
-.o-product-attributes .description-container .a-paragraph, .o-product-attributes .description-container p { font-size: 12px; }
+.o-product-attributes .description-container .a-paragraph, .o-product-attributes .description-container p, .o-product-attributes .description-container div, .o-product-attributes .description-container span { font-size: 12px; }
 
 .o-navigation .information-section .bottom-section .m-country-cta { font-size: 13px; }
 
@@ -1047,6 +1047,8 @@ h1 { margin: 20px 0; }
 @media (max-width: 768px) { .about-chooser .o-text-field .text-container { text-align: center; }
   .about-icon .m-headline.with-icon { margin: 20px 0 -10px !important; } }
 /* main_inside about */
+.m-site-banner .a-paragraph > *:not(section) { font-family: "Noto Sans KR"; }
+
 /* org page inside overwrite e ============================== */
 /* ========================================================== */
 /*                                                            */
@@ -1382,16 +1384,20 @@ body.is-page-loading .page-loading-bx { display: flex; }
 .o-header .o-sign-in-registration-tabs.is-my-account-tooltip .o-sign-in .checkbox-input .link-holder { display: inline-block; margin-top: 0; width: 49%; text-align: right; vertical-align: middle; }
 .o-header .o-sign-in-registration-tabs.is-my-account-tooltip .o-sign-in .checkbox-input .link-holder a { margin-left: 20px; font-size: 11px; color: #7b7b7b; text-decoration: underline; }
 .o-header .o-sign-in-registration-tabs.is-my-account-tooltip .o-sign-in .checkbox-input .link-holder a:first-child { margin-left: 0; }
+.o-header.is-checkout { height: 56px; background: #fff; }
+.o-header.is-checkout .top-section { height: 100%; }
+.o-header.is-checkout .top-section .checkout-header .back-button-container { padding-left: 0; }
+.o-header.is-checkout .top-section .checkout-header .checkout-heading .checkout-title { padding-top: 14px; font-size: 18px; }
+.o-header.is-checkout .top-section .checkout-header .checkout-heading .arket-logo { float: none; display: inline-block; }
+@media (min-width: 631px) { .o-header.is-checkout { height: 56px; }
+  .o-header.is-checkout .top-section { padding-right: 20px; padding-left: 20px; }
+  .o-header.is-checkout .top-section .checkout-header .checkout-heading .checkout-title { padding-top: 14px; } }
 
 .o-slider-cofs.in-search { width: auto; }
 .o-slider-cofs.in-search .slider-title { text-align: center; }
 @media (min-width: 401px) { .o-slider-cofs.in-search { margin-right: auto; margin-left: auto; } }
 
-.header-bar-for-landing { position: relative; text-align: center; }
-.header-bar-for-landing .a-heading-1 { font-size: 18px; }
-.header-bar-for-landing .a-back-move { position: absolute; top: -4px; left: 0; }
-
-.a-back-move { display: inline-block; width: 32px; height: 32px; background: url("../images/icon/icon-back-move.png") no-repeat 50%; background-size: 13px; }
+.a-back-move { display: inline-block; width: 32px; height: 32px; background: url("../images/icon/icon-back-move.png") no-repeat 50% 80%; background-size: 13px; }
 
 /* header e ================================================= */
 /* ---------------------------------------------------------- */
@@ -1402,7 +1408,6 @@ body.is-page-loading .page-loading-bx { display: flex; }
 /* ========================================================== */
 /* ---------------------------------------------------------- */
 /* footer s ================================================= */
-.o-footer { margin-top: 0; }
 @media (max-width: 768px) { .o-footer { padding-top: 30px; padding-bottom: 30px; } }
 @media (min-width: 631px) { .o-footer { padding-top: 40px; padding-bottom: 40px; } }
 .o-footer.o-footer-top { padding-bottom: 0; }
@@ -1417,6 +1422,9 @@ body.is-page-loading .page-loading-bx { display: flex; }
 .o-footer.o-footer-top > ul > li.right .a-link.m-country-select span { padding-left: 0; font-size: 12px; }
 .o-footer.o-footer-top > ul > li.right .a-link.m-country-select .icon-flag { border: 1px solid #ccc; }
 .o-footer.o-footer-top > ul > li.li-contry { margin-top: 9px; padding-top: 17px; padding-bottom: 10px; border-top: 1px solid #000; }
+.o-footer.o-footer-top > ul > li.li-contry .a-image { position: relative; top: 3px; width: 23px; height: 16px; }
+.o-footer.o-footer-top > ul > li.li-contry .icon-flag { border: 1px solid #ccc; }
+.o-footer.o-footer-top > ul > li.li-contry > * { vertical-align: unset; }
 @media (max-width: 768px) { .o-footer.o-footer-top > ul::before { display: none; } }
 @media (min-width: 769px) { .o-footer.o-footer-top > ul { flex-wrap: nowrap; justify-content: center; border-top: 0; }
   .o-footer.o-footer-top > ul > li { padding-right: 18px; padding-left: 18px; flex: none; width: auto; }
@@ -1828,17 +1836,26 @@ margin: 0mm; }
 .has-sis-header .o-navigation .secondary-navigation .my-account-block .my-account-section { padding: 0; top: 46px; right: 100px; width: auto; }
 .has-sis-header .o-navigation .secondary-navigation .my-account-block .my-account-section::before, .has-sis-header .o-navigation .secondary-navigation .my-account-block .my-account-section::after { display: none; }
 .has-sis-header .o-navigation.is-open .btn-pt-prev { display: none; }
+.has-sis-header.has-open-search { height: calc(112px + 37px + 41px); }
+.has-sis-header.has-open-search.is-open:not(.is-opening-navigation) { height: auto; }
 @media (max-width: 768px) { .has-sis-header .o-navigation:not(.is-open) .secondary-navigation .a-burger { margin-left: 30px; }
   .has-sis-header .o-navigation:not(.is-open) .secondary-navigation .search-icon { display: none; }
   .has-sis-header .o-navigation .secondary-navigation .a-bag-icon-container { display: none; } }
 @media (min-width: 769px) { .has-sis-header { height: auto; padding: 0; margin-top: 0 !important; animation: none !important; }
   .has-sis-header .m-notification.is-inline { display: block !important; }
-  .has-sis-header .header-bar { padding: 19px 19px 20px; }
+  .has-sis-header .o-search { width: 100%; background: #fff; }
+  .has-sis-header .o-search::after { left: 19px; width: calc(100% - 38px); }
+  .has-sis-header .o-search.is-open { top: calc(37px + 41px); }
+  .has-sis-header .firstLevelNavConfiguration { padding: 19px 19px 20px; }
   .has-sis-header .o-navigation .secondary-navigation { top: auto; bottom: 2px; }
   .has-sis-header .o-navigation .secondary-navigation .btn-pt-prev { display: none; }
   .has-sis-header .o-navigation .navigation-curtain { top: calc(56px + 40px); }
   .has-sis-header .o-navigation .sub-menu:last-child { display: block; }
-  .has-sis-header.has-sis-notification .o-navigation .navigation-curtain { top: calc(56px + 37px + 41px + 2px); } }
+  .has-sis-header.has-sis-notification .o-navigation .navigation-curtain { top: calc(56px + 37px + 41px); }
+  .has-sis-header.has-open-search.is-open:not(.is-opening-navigation) { height: auto; }
+  .has-sis-header.has-open-search .o-search { padding: 0 19px 0; }
+  .has-sis-header.has-open-search .o-navigation .secondary-navigation { bottom: calc(2px + 56px); }
+  .has-sis-header.is-closing-search .o-search { z-index: -1; } }
 @media (min-width: 1025px) { .has-sis-header .o-page-content { /* padding-top:0px;   H&M Hmall 입점 */ padding-top: 37px; /* 2019.11.18 원상복귀 */ }
   .has-sis-header .sis-header { display: block; }
   .has-sis-header .o-navigation .sub-menu:last-child { /*display: none;*/ }
@@ -1859,7 +1876,7 @@ margin: 0mm; }
 
 .sis-header { display: none; posirion: relative; z-index: 30; /*오피셜 헤더가 20임. 그값보다 커야함.*/ height: 37px; background: #fff; text-align: center; line-height: 37px; }
 .sis-header #header-top { height: 100%; border-bottom: 1px solid #ebebeb; }
-.sis-header #header-top .inner { position: relative; margin: 0 auto; width: 100%; max-width: 1540px; max-width: 1600px; height: 100%; text-align: center; line-height: 0; padding: 0 0; }
+.sis-header #header-top .inner { position: relative; margin: 0 auto; width: 100%; height: 100%; text-align: center; line-height: 0; padding: 0 0; }
 .sis-header #header-top .top-gnb { position: relative; font-size: 11px; color: #666; line-height: 18px; padding: 4px 0; z-index: 100; }
 .sis-header #header-top .top-gnb ul li { position: relative; float: left; margin: 0 7px; }
 .sis-header #header-top .top-gnb ul li a { color: inherit; }
@@ -2028,6 +2045,10 @@ margin: 0mm; }
   .sis-footer-m { display: block; } }
 @media (min-width: 401px) { .sis-footer-pc { display: block; }
   .sis-footer-m { display: none; } }
+.m-notification #desktoptimer, .m-notification #mobiletimer { display: inline; }
+.m-notification .sitebannertimer { letter-spacing: 2px; border: 1px solid; border-radius: 3px 3px 3px 3px; width: 30px; height: 19px; background-color: inherit; text-align: center; padding-bottom: 4px; font-family: "Arket Sans SC"; }
+.m-notification .timeLabel { margin-right: 5px; margin-left: 2px; font-family: "Arket Sans SC"; }
+
 /* sis footer e ============================================= */
 /* ---------------------------------------------------------- */
 /* ========================================================== */
@@ -2450,7 +2471,7 @@ html.no-touchevents .n-find-idpw .n-wrap.resting-guide .info { padding-bottom: 1
 .o-quick-buy .m-product-price .price-won::after { font-size: 18px; }
 .o-quick-buy .a-button { font-size: 16px; }
 
-.a-size-swatch .size-options { width: auto; }
+.a-size-swatch .size-options { width: auto; height: 26px; }
 
 /* cart e =================================================== */
 /* ---------------------------------------------------------- */
@@ -2710,8 +2731,8 @@ span.m-hazmat-v2.warning::before { background-image: url("../images/icon/icon-wa
 
 .page-delivery .a-heading-2.page-top-title { margin-bottom: 10px; }
 
-.my-delivery-content .radio-button-list { margin-bottom: 0; }
-.my-delivery-content .my-delivery-list { padding-top: 0; }
+.my-delivery-content .radio-button-list { margin-bottom: 0; font-size: 13px; }
+.my-delivery-content .my-delivery-list { padding-top: 0; font-size: 13px; }
 .my-delivery-content .my-delivery-list > li { border-color: #ccc; border-bottom-width: 1px; border-bottom-style: solid; padding-top: 20px; padding-bottom: 20px; }
 .my-delivery-content .my-delivery-list > li:last-child { border-bottom: 0; }
 .my-delivery-content .my-delivery-list > li .m-radio-button .a-radio-button, .my-delivery-content .my-delivery-list > li .m-radio-button .custom-radio { display: none; }
@@ -2860,7 +2881,7 @@ span.m-hazmat-v2.warning::before { background-image: url("../images/icon/icon-wa
 @media (min-width: 401px) { .refund-way-info-bx .toggle-info-line-li-btn { margin-top: 0; } }
 
 .refund-location-bx .o-info-line-box { padding-top: 10px; padding-bottom: 0; }
-.refund-location-bx .delivery-info-bx { width: 100%; }
+.refund-location-bx .delivery-info-bx { width: 100%; font-size: 13px; }
 .refund-location-bx .delivery-info-bx .radio-button-list { margin-bottom: 0; padding-right: 20px; padding-left: 20px; }
 .refund-location-bx .delivery-info-bx .my-delivery-list > li { padding: 10px 20px; }
 .refund-location-bx .delivery-info-bx .my-delivery-input { padding: 20px; }

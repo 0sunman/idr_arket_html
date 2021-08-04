@@ -34,8 +34,6 @@ function openTempPrintWin(param){
 function lpPrint() {
     // let printHtml = makeHtml();
     // openTempPrintWin(printHtml);
-    console.log(window)
-
     window.print()
 }
 

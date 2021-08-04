@@ -92,4 +92,7 @@
 .policy-text-wrap .br-only-m { display: none; }
 
 @media (min-width: 769px) { .policy-text-wrap .br-only-m { display: inline-block; } }
+
+/* 푸터 > Care > 공통 */
+@media (min-width: 360px) { .o-hero .takeover-wrapper { width: 100%; height: 100%; position: absolute; text-align: center; } }
 /*# sourceMappingURL=renew.v3.css.map */

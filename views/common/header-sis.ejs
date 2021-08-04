@@ -50,10 +50,34 @@
     <!-- m-notification : pc 일때 사용 -->
     <!-- to Dev : 활성화되면 .o-header 태그에 .has-sis-notification 클래스 추가 필요 -->
     <div data-component="MNotification" class="m-notification is-inline" id="notificationbnnr" style="background:#1B1B1B;display:block;">
-        <p class="a-paragraph" style="color:#ffffff;">
-            <a href="#none" style="color:inherit;">10만 원 이상 구매 시 최대 1만 원 적립금을 드립니다 | <span style="border-bottom:1px solid #ffffff">신청하기</span></a>
-        </p>
+        <input type="hidden" name="startDateField" value="2021/06/10 08:10:00" id="sitebannercountsd">
+        <input type="hidden" name="endDateField" value="2021/9/13 18:45:00" id="sitebannercounted">
+        <div>
+            <!-- to Dev [toggle Class] : site-banner-desktop, site-banner-mobile  -->
+            <div class="a-paragraph site-banner-desktop is-richtext" style="color:#FFFFFF">
+                <a title="ARKET SALE" href="/en/sale.html">SALE — 최대 70% 할인</a>
+                <a title="Women SALE" href="/en/women/sale.html">여성,</a>
+                <a title="Men SALE" href="/en/men/sale.html">남성,</a>
+                <a title="Homeware SALE" href="/en/homeware/sale.html">&amp; 홈웨어</a>
+                &nbsp;&nbsp;
+                <section id="desktoptimer">
+                    <input class="sitebannertimer" id="desktopdaysid" value="01">
+                    <span id="desktopdayspan" class="timeLabel">D</span>
+                    <input class="sitebannertimer" id="desktophoursid" value="43">
+                    <span class="timeLabel">H</span>
+                    <input class="sitebannertimer" id="desktopminutesid" value="21">
+                    <span class="timeLabel">M</span>
+                    <input class="sitebannertimer" id="desktopsecondsid" value="55">
+                    <span class="timeLabel">S</span>
+                </section>
+            </div>
+        </div>
     </div>
+    <script>
+        setTimeout(function(){
+            displaySiteBannerCountDown();
+        },3000);
+    </script>
     <!-- //m-notification : pc 일때 사용 -->
 
     <!-- header-bar -->
