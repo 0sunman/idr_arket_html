@@ -2105,6 +2105,7 @@
             </div>
             <!-- //center-panel -->
 
+
             <!-- left-panel -->
             <div class="left-panel">
 
@@ -2188,30 +2189,45 @@
     -->
 </div>
 
+                <!-- pub edit : 20210805 -->
                 <!-- m-product-shipping-info -->
+                <!--
                 <div data-component="MShippingInfo" class="m-product-shipping-info">
                     <div class="info-short is-richtext" data-content="localizedTTT">무료배송 | 무료반품</div>
                     <div class="a-tooltip">
-                        <div class="is-richtext" data-content="localized">
-                            <h3>택배</h3>
-                            <p>영업일 기준 1~3일 내 배송
-                                배송비 무료 | 무료 반품</p>
-
-                            <p>목적지: 대한민국 | 배송료 무료 영업일 기준 1~3일 소요됩니다.
-                                반품 배송비 무료</p>
-
-                            <p>배송에 대한 자세한 내용은 여기를 클릭하십시오.
-                                우리의 반품 및 환불 정책에 대한 자세한 내용은 <a href="#none">여기</a>를 참조하십시오.</p>
-
-                            <p>일부 군사지역은 배송이 불가능할 수 있습니다.</p>
-
-                            <p>위생상의 이유로 속옷 및 이어링 제품은 반품이 불가합니다.
-                                (결함의 경우 제외)</p>
-                        </div>
-                        <p><a href="#" target="_self"></a></p>
+                        <p>영업일 기준 1~3일 내 배송</p>
+                        <p>배송비 무료 | 무료 반품</p>
+                        <br>
+                        <p>- 일부 군사지역은 배송 불가</p>
+                        <p>- 속옷 및 이어링 제품은 반품 불가</p>
+                        <p>&nbsp;&nbsp;(결함의 경우 가능)</p>
+                        <br>
+                        <p>
+                            <button type="button" class="open-lightbox a-button-nostyle" data-template="lp-return-refund-guide"> > 반품 및 환불 정책 상세</button>
+                        </p>
                     </div>
                 </div>
+                -->
                 <!-- //m-product-shipping-info -->
+
+                <!-- tooltip-wrap -->
+                <div class="product-shipping-tooltip-bx">
+                    <div class="info-short open-tooltip-btn">무료배송 | 무료반품</div>
+                    <div class="a-tooltip">
+                        <p>영업일 기준 1~3일 내 배송</p>
+                        <p>배송비 무료 | 무료 반품</p>
+                        <br>
+                        <p>- 일부 군사지역은 배송 불가</p>
+                        <p>- 속옷 및 이어링 제품은 반품 불가</p>
+                        <p>&nbsp;&nbsp;(결함의 경우 가능)</p>
+                        <br>
+                        <p>
+                            <button type="button" class="open-lightbox a-button-nostyle" data-template="lp-return-refund-guide"> > 반품 및 환불 정책 상세</button>
+                        </p>
+                    </div>
+                </div>
+                <!-- //tooltip-wrap -->
+                <!-- //pub edit : 20210805 -->
 
                 <!-- o-availability -->
                 <div data-component="OAvailability" class="o-availability is-visible"></div>
@@ -2439,91 +2455,241 @@
     <div class="stylewith parbase">
         <div id="osliderStyleWith" class="o-width wc-75 carousel">
 
-            <div class="o-pra-component is-combine-with" style="display:block;">
+            <div class="o-pra-component is-suggestions"
+                 data-component="OPra"
+                 data-pra-panel="product-detail-page"
+                 data-pra-locale="en"
+                 data-pra-id="PRA0">
                 <h2 class="a-heading-2 u-align-center is-main-heading">추천상품(관련상품)</h2>
 
+                <!-- to Dev : 해상도가 400 이하일 경우 .o-slide 태그 속성 중 data-num-slides="customized-pra" 를 data-num-slides="adaptive" 로 변경 필요) -->
+                
+                
                 <!-- o-slider -->
-                <div data-component="OSlider"
-                     class="o-slider single-multislide-disable"
-                     data-pagination="false"
-                     data-multislide="true"
-                     data-num-slides="adaptive"
-                     data-slide-width="200">
-                    <div class="redils">
-                        <div class="slide-cont" id="sliderStyleWith">
+<div data-component="OSlider"
+     class="o-slider"
+     data-pagination="false"
+     data-multislide="true"
+     data-num-slides="customized-pra"
+     data-slide-width="200">
+    <div class="redils">
+        <div class="slide-cont" id="sliderStyleWith">
 
-                            <!-- slides -->
-                            <div class="slides">
-                                <div class="o-product">
-                                    <a href="https://www.arket.com/en/women/shoes/product.birkenstock-madrid-eva-slide-sandals-black.0985624001.html"
-                                       target="_self"
-                                       class="a-link">
-                                        <div class="image">
-                                            <div class="m-product-image">
-                                                <div class="cross"></div>
-                                                <div class="placeholder-wrapper">
-                                                    <img class="product-image a-image is-hidden Resolve"
-                                                         src="../../static/images/temp/app006prod_pra_1.jpg"
-                                                         alt="" >
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="description">
-                                            <div class="product">
-                                                <span class="i18n">Product</span>
-                                                <span>Birkenstock Madrid 슬라이드 샌들</span>
-                                            </div>
-                                            <div class="price">
-                                                <span class="i18n">Price</span>
-                                                <div class="m-product-price">
-                                                    <span class="is-regular price-value">42,000</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
+            <!-- slides -->
+            <div class="slides">
+                <div class="o-product">
+                    <a href="https://www.arket.com/en/women/shoes/product.birkenstock-madrid-eva-slide-sandals-black.0985624001.html"
+                       target="_self"
+                       class="a-link">
+                        <div class="image">
+                            <div class="m-product-image">
+                                <div class="cross"></div>
+                                <div class="placeholder-wrapper">
+                                    <img class="product-image a-image is-hidden Resolve"
+                                         src="../../static/images/temp/app006prod_pra_1.jpg"
+                                         alt="" >
                                 </div>
                             </div>
-                            <!-- //slides -->
-                            <!-- slides -->
-                            <div class="slides">
-                                <div class="o-product">
-                                    <a href="#none"
-                                       target="_self"
-                                       class="a-link">
-                                        <div class="image">
-                                            <div class="m-product-image">
-                                                <div class="cross"></div>
-                                                <div class="placeholder-wrapper">
-                                                    <img class="product-image a-image is-hidden Resolve"
-                                                         src="../../static/images/temp/app006prod_pra_2.jpg"
-                                                         alt="" >
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="description">
-                                            <div class="product">
-                                                <span class="i18n">Product</span>
-                                                <span>반팔 리넨 셔츠</span>
-                                            </div>
-                                            <div class="price">
-                                                <span class="i18n">Price</span>
-                                                <div class="m-product-price">
-                                                    <div class="price parbase">
-                                                        <span class="is-regular price-value">59,000</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- //slides -->
-
                         </div>
-                    </div>
-                    <div class="pagination"></div>
+                        <div class="description">
+                            <div class="product">
+                                <span class="i18n">Product</span>
+                                <span>Birkenstock Madrid 슬라이드 샌들</span>
+                            </div>
+                            <div class="price">
+                                <span class="i18n">Price</span>
+                                <div class="m-product-price">
+                                    <span class="is-regular price-value">42,000</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
                 </div>
-                <!-- //o-slider -->
+            </div>
+            <!-- //slides -->
+            <!-- slides -->
+            <div class="slides">
+                <div class="o-product">
+                    <a href="#none"
+                       target="_self"
+                       class="a-link">
+                        <div class="image">
+                            <div class="m-product-image">
+                                <div class="cross"></div>
+                                <div class="placeholder-wrapper">
+                                    <img class="product-image a-image is-hidden Resolve"
+                                         src="../../static/images/temp/app006prod_pra_2.jpg"
+                                         alt="" >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="description">
+                            <div class="product">
+                                <span class="i18n">Product</span>
+                                <span>반팔 리넨 셔츠</span>
+                            </div>
+                            <div class="price">
+                                <span class="i18n">Price</span>
+                                <div class="m-product-price">
+                                    <div class="price parbase">
+                                        <span class="is-regular price-value">59,000</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <!-- //slides -->
+            <!-- slides -->
+            <div class="slides">
+                <div class="o-product">
+                    <a href="https://www.arket.com/en/women/shoes/product.birkenstock-madrid-eva-slide-sandals-black.0985624001.html"
+                       target="_self"
+                       class="a-link">
+                        <div class="image">
+                            <div class="m-product-image">
+                                <div class="cross"></div>
+                                <div class="placeholder-wrapper">
+                                    <img class="product-image a-image is-hidden Resolve"
+                                         src="../../static/images/temp/app006prod_pra_1.jpg"
+                                         alt="" >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="description">
+                            <div class="product">
+                                <span class="i18n">Product</span>
+                                <span>Birkenstock Madrid 슬라이드 샌들</span>
+                            </div>
+                            <div class="price">
+                                <span class="i18n">Price</span>
+                                <div class="m-product-price">
+                                    <span class="is-regular price-value">42,000</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <!-- //slides -->
+            <!-- slides -->
+            <div class="slides">
+                <div class="o-product">
+                    <a href="#none"
+                       target="_self"
+                       class="a-link">
+                        <div class="image">
+                            <div class="m-product-image">
+                                <div class="cross"></div>
+                                <div class="placeholder-wrapper">
+                                    <img class="product-image a-image is-hidden Resolve"
+                                         src="../../static/images/temp/app006prod_pra_2.jpg"
+                                         alt="" >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="description">
+                            <div class="product">
+                                <span class="i18n">Product</span>
+                                <span>반팔 리넨 셔츠</span>
+                            </div>
+                            <div class="price">
+                                <span class="i18n">Price</span>
+                                <div class="m-product-price">
+                                    <div class="price parbase">
+                                        <span class="is-regular price-value">59,000</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <!-- //slides -->
+            <!-- slides -->
+            <div class="slides">
+                <div class="o-product">
+                    <a href="https://www.arket.com/en/women/shoes/product.birkenstock-madrid-eva-slide-sandals-black.0985624001.html"
+                       target="_self"
+                       class="a-link">
+                        <div class="image">
+                            <div class="m-product-image">
+                                <div class="cross"></div>
+                                <div class="placeholder-wrapper">
+                                    <img class="product-image a-image is-hidden Resolve"
+                                         src="../../static/images/temp/app006prod_pra_1.jpg"
+                                         alt="" >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="description">
+                            <div class="product">
+                                <span class="i18n">Product</span>
+                                <span>Birkenstock Madrid 슬라이드 샌들</span>
+                            </div>
+                            <div class="price">
+                                <span class="i18n">Price</span>
+                                <div class="m-product-price">
+                                    <span class="is-regular price-value">42,000</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <!-- //slides -->
+            <!-- slides -->
+            <div class="slides">
+                <div class="o-product">
+                    <a href="#none"
+                       target="_self"
+                       class="a-link">
+                        <div class="image">
+                            <div class="m-product-image">
+                                <div class="cross"></div>
+                                <div class="placeholder-wrapper">
+                                    <img class="product-image a-image is-hidden Resolve"
+                                         src="../../static/images/temp/app006prod_pra_2.jpg"
+                                         alt="" >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="description">
+                            <div class="product">
+                                <span class="i18n">Product</span>
+                                <span>반팔 리넨 셔츠</span>
+                            </div>
+                            <div class="price">
+                                <span class="i18n">Price</span>
+                                <div class="m-product-price">
+                                    <div class="price parbase">
+                                        <span class="is-regular price-value">59,000</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <!-- //slides -->
+
+        </div>
+    </div>
+    <div class="redils-controls">
+        <div class="arrow-area arrow-area-left">
+            <button type="button" class="a-button-nostyle arrow"></button>
+        </div>
+        <div class="arrow-area arrow-area-right">
+            <button type="button" class="a-button-nostyle arrow"></button>
+        </div>
+    </div>
+    <div class="pagination"></div>
+</div>
+<!-- //o-slider -->
+
+
+                
 
             </div>
         </div>
@@ -2551,6 +2717,7 @@
         <div class="slide-cont">
 
             <!-- slides -->
+            <!--
             <div class="slides">
                 <div class="o-product">
                     <a href="#none" target="_self" class="a-link">
@@ -2578,6 +2745,7 @@
                     </a>
                 </div>
             </div>
+            -->
             <!-- //slides -->
             <!-- slides -->
             <div class="slides">
@@ -3203,7 +3371,7 @@
 </script>
 <!-- //사이즈가이드 -->
 
-
+i
 <!-- 상품필수정보 -->
 <script type="text/x-handlebars-template" id="lp-prd-essential-info">
     <h2 class="freeHTML-sizeguide-title"><span>상품 필수 표시 정보</span></h2>
@@ -3264,6 +3432,102 @@
     </div>
 </script>
 <!-- //상품필수정보 -->
+
+
+<!-- 반품 및 환불 -->
+<script type="text/x-handlebars-template" id="lp-return-refund-guide">
+    <div class="lightbox-content-dft lp-return-refund-guide">
+        <div class="m-headline is-main-headline">
+            <h2 class="a-heading-2"><span>반품 및 환불</span></h2>
+        </div>
+        <div class="content">
+
+            <!-- o-accordion -->
+            <div class="o-accordion v2" data-component="OAccordion" data-exclusive="true" data-exclusive-group="return-refound-guide">
+                <div class="accordion-header">
+                    <a class="a-link accordion-title js-accordion-toggle" href="#none" target="_self">
+                        <h3 class="a-heading-3">반품 및 환불</h3>
+                    </a>
+                </div>
+                <div class="accordion-content">
+                    <p class="accordion-con-text">고객이 주문한 상품에 만족하기를 항상 바라지만, 마음에 들지 않을 경우 상품 수령 후 7일 이내의 경우 온라인 스토어 및 고객 센터를 통한 반품 신청이 가능하며 수령 후
+                        7일 경과, 14일 이전의 기간에는 고객 센터를 통한 반품 신청만 가능합니다.
+                        결제 방식과 동일한 방법으로 전액이 환불됩니다. 반품 진행 시 상품이 깨끗하고 흠이 없고 모든 태그가 부착되어 있어야 합니다. 특히 수영복의 경우 위생 테이프의 손상없이
+                        부착되어 있어야 합니다.
+                        위생상의 이유로 속옷 및 이어링 제품은 반품이 불가합니다. (결함의 경우 제외)
+                        온라인 구매 상품은 매장에서 환불이 불가합니다.
+                        모든 반품 비용은 무료이나, 위생상의 이유로 속옷 및 이어링 제품은 반품이 불가합니다
+
+                    </p>
+                </div>
+            </div>
+            <!-- o-accordion -->
+            <!-- //o-accordion -->
+            <div class="o-accordion v2" data-component="OAccordion" data-exclusive="true" data-exclusive-group="return-refound-guide">
+                <div class="accordion-header">
+                    <a class="a-link accordion-title js-accordion-toggle" href="#none" target="_self">
+                        <h3 class="a-heading-3">반품방법</h3>
+                    </a>
+                </div>
+                <div class="accordion-content">
+                    <p class="accordion-con-text">상품 회수가 완료되면 14일 이내에 환불받을 수 있습니다. 현금으로 결제했다면 반품 완료 시 SMS가 전송됩니다.
+
+                        - 반품 회수 택배사는 CJ대한통운으로 진행되며, 타 택배사를 이용하는 경우 환불이 지연될 수 있습니다.
+
+                        - 기타 다른 방법으로 반품하는 경우 환불이 지연될 수 있습니다.
+                    </p>
+                </div>
+            </div>
+            <!-- o-accordion -->
+            <!-- //o-accordion -->
+            <div class="o-accordion v2" data-component="OAccordion" data-exclusive="true" data-exclusive-group="return-refound-guide">
+                <div class="accordion-header">
+                    <a class="a-link accordion-title js-accordion-toggle" href="#none" target="_self">
+                        <h3 class="a-heading-3">조심해서 착용해 주세요</h3>
+                    </a>
+                </div>
+                <div class="accordion-content">
+                    <p class="accordion-con-text">반품은 상품이 완전한 상태여야 가능합니다. 다시 말해, 상품은 데오드란트나 향수 또는 화장 자국 등이 없이 깨끗해야 하고, 닳거나 빨래한 적도 없는 상태여야 합니다. 판매 불가 상태로 반환된 상품은 환불되지 않으며 고객에게 반송될 수 있습니다.
+
+                        신발은 바닥이 손상되지 않도록 표면이 부드러운 카펫이 깔린 곳에서 착용 바랍니다. 반품을 결심했으면 배송된 신발 상자에 상품을 넣어주세요. 상자도 상품의 일부입니다. 그리고 또 다른 두꺼운 상자에 넣어 포장해주세요. 배송 시 사용된 외부 포장 상자를 그대로 사용하는 것을 추천합니다.
+                    </p>
+                </div>
+            </div>
+            <!-- o-accordion -->
+            <!-- //o-accordion -->
+            <div class="o-accordion v2" data-component="OAccordion" data-exclusive="true" data-exclusive-group="return-refound-guide">
+                <div class="accordion-header">
+                    <a class="a-link accordion-title js-accordion-toggle" href="#none" target="_self">
+                        <h3 class="a-heading-3">환불</h3>
+                    </a>
+                </div>
+                <div class="accordion-content">
+                    <p class="accordion-con-text">카드 결제:
+                        ARKET에서 반품 처리 진행이 완료된 후 은행에서 환불 절차가 진행됩니다. 카드 환급은 은행 처리 시간에 따라 영업일 기준 최대 10일 정도 소요됩니다. 이러한 점은 ARKET이 해결할 수 없는 점 양해 바랍니다.
+
+                        현금(무통장 입금) 결제:
+                        9시-15시 사이에 접수된 환불은 당일에 처리되며, 15시 이후 또는 다음날 9시까지 접수된 환불은 다음날에 처리됩니다. 토/일요일 및 공휴일의 환불 접수는 마지막 공휴일 기준 다음날에 처리됩니다.
+
+                        현금(실시간 계좌 이체) 결제:
+                        영업일 기준 다음날에 환불이 진행됩니다.
+
+                        간편결제:
+                        등록된 카드사 또는 계좌에 따라 다르나, 계좌의 경우 영업일 기준 다음날에 환불 절차가 진행됩니다.
+
+                        휴대폰 결제:
+                        주문 당월에 반품 신청 시 당월결제 내역에서 취소됩니다. 다음 달에 취소 시에는 현금 환불만 가능하며, 영업일 기준(토, 일, 공휴일 제외) 익일 환불이 진행됩니다.
+
+                        예치금:
+                        ARKET 에서 반품 처리 진행이 완료된 후 바로 부여됩니다.
+                    </p>
+                </div>
+            </div>
+            <!-- //o-accordion -->
+
+        </div>
+    </div>
+</script>
+<!-- //반품 및 환불 -->
 <!-- //handlebars-template -->
 
 <!-- tip : when develop this script must be delete -->
@@ -3359,7 +3623,7 @@
                 <span>주식회사 현대백화점 대표이사 : 김형종 외 2인</span>
                 <address>서울시 강남구 테헤란로98길 12</address>
                 <br>
-                <span>사업자등록번호 : 211-87-21455 [<a href="http://www.ftc.go.kr/www/bizCommView.do?key=232&amp;apv_perm_no=2010322014830201882&amp;pageUnit=10&amp;searchCnd=wrkr_no&amp;searchKrwd=2118721455&amp;pageIndex=1" data-toggle="winpopup" data-api="center,750,700,scrollbars" target="_blank" class="a-link">사업자정보 확인</a>]</span>
+                <span>사업자등록번호 : 211-87-21455 [<a href="javascript:void(0);" onClick="window.open('http://www.ftc.go.kr/www/bizCommView.do?key=232&amp;apv_perm_no=2010322014830201882&amp;pageUnit=10&amp;searchCnd=wrkr_no&amp;searchKrwd=2118721455&amp;pageIndex=1','','width=750, height=700, menubar=no, status=no, toolbar=no');" class="a-link">사업자정보 확인</a>]</span>
                 <span> / </span>
                 <span>통신판매업신고 : 2010-서울강남-01882</span>
                 <br>

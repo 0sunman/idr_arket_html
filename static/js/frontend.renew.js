@@ -446,8 +446,7 @@ renewCommon = (function(doc, win){
     //aTab
     obj.aTooltip = {
         init: function(){
-            let openTooltipBtns = doc.querySelectorAll('.open-tooltip-btn'),
-                aTabCon = doc.querySelectorAll('.a-tab-con');
+            let openTooltipBtns = doc.querySelectorAll('.open-tooltip-btn');
             if(openTooltipBtns) {
                 Array.prototype.slice.call(openTooltipBtns).forEach( function (_obj) {
                     _obj.addEventListener('click', function (_evt) {
