@@ -372,21 +372,11 @@
         </li>
     </ul>
 
-    <h3 class="lightbox-list-tit">기타</h3>
+    <h3 class="lightbox-list-tit">푸터</h3>
     <ul class="lightbox-list-wrap">
         <li>
             <button class="a-button is-outlined open-lightbox" data-template="country-selector" data-classes="is-country-selector is-multi-language">
                 <span>배송국가</span>
-            </button>
-        </li>
-        <li>
-            <button class="a-button is-outlined open-lightbox" data-template="lp-main-popup" data-classes="is-main-popup">
-                <span>메인팝업</span>
-            </button>
-        </li>
-        <li>
-            <button class="a-button open-dialog-btn" data-target="lp-mail-unsubscription-complete">
-                <span>이메일수신거부완료</span>
             </button>
         </li>
         <li>
@@ -402,6 +392,31 @@
         <li>
             <button class="a-button open-dialog-btn" data-target="lp-newsletter-apply-complete">
                 <span>뉴스레터 신청완료</span>
+            </button>
+        </li>
+        <li>
+            <!-- type1 : 이용약관, type2 : 개인정보처리방침, type3:개인정보처리방침 12조 -->
+            <button class="a-button is-outlined open-lightbox" data-template="lp-join-policy" data-classes="join-policy-type type1">
+                <span>이용약관 및 개인정보처리방침</span>
+            </button>
+        </li>
+    </ul>
+
+    <h3 class="lightbox-list-tit">기타</h3>
+    <ul class="lightbox-list-wrap">
+        <li>
+            <button class="a-button is-outlined open-lightbox" data-template="lp-main-popup" data-classes="is-main-popup">
+                <span>메인팝업</span>
+            </button>
+        </li>
+        <li>
+            <button class="a-button is-outlined open-lightbox" data-template="lp-main-popup2" data-classes="is-main-popup">
+                <span>메인팝업2</span>
+            </button>
+        </li>
+        <li>
+            <button class="a-button open-dialog-btn" data-target="lp-mail-unsubscription-complete">
+                <span>이메일수신거부완료</span>
             </button>
         </li>
     </ul>
@@ -624,16 +639,24 @@
 <%# 메인팝업 %>
 <%- include ("../../handlebars/hndl-lp-main-popup.ejs") %>
 
+<%# 메인팝업2 %>
+<%- include ("../../handlebars/hndl-lp-main-popup2.ejs") %>
+
 <%# 이메일수신거부완료 %>
 <%- include ("../../handlebars/hndl-lp-mail-unsubscription-complete.ejs") %>
 
 <%# 서비스가입사실확인 %>
-<%- include ("../../handlebars/hndl-lp-service-join-confirm.ejs") %>
+<%# footer.ejs 에서 include %>
+<%#- include ("../../handlebars/hndl-lp-service-join-confirm.ejs") %>
 
 <%# 뉴스레터신청팝업 %>
 <%- include ("../../handlebars/hndl-lp-newsletter-apply.ejs") %>
 
 <%# 뉴스레터신청완료 %>
 <%- include ("../../handlebars/hndl-lp-newsletter-apply-complete.ejs") %>
+
+<%# 이용약관 및 개인정보처리 방침 %>
+<%# footer.ejs 에서 include %>
+<%#- include ("../../handlebars/hndl-lp-join-policy.ejs") %>
 
 <!-- //handlebars-template -->

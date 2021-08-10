@@ -34,7 +34,7 @@
                             <div data-component="MInput" class="m-input with-button">
                                 <label class="a-label js-a-label" for="id">아이디 또는 이메일</label>
                                 <input class="a-input js-a-input" id="id" name="id" type="text" pattern="" placeholder="아이디 또는 이메일" data-validation-required-text="아이디를 입력해주세요." data-validation-pattern-text="아이디는 4~20자 영문/숫자 또는  email만 가능합니다." required="">
-                                <button class="a-button is-primary sm" type="button"><span>중복확인</span></button>
+                                <button class="a-button sm" type="button"><span>중복확인</span></button>
                                 <label class="a-label js-a-label" for="id"></label>
                             </div><!-- // input : 아이디 또는 이메일 -->
 
@@ -271,12 +271,13 @@
                                 <div class="m-checkbox policy-select">
                                     <h2 class="text-1">이용약관 및 개인정보 처리방침</h2>
                                     <span class="a-label">
-                                         <a href="#" id="registerLink" class="a-link policiesLink open-lightbox" data-template="lp-join-policy" target="_self">전문보기</a>
+                                        <!-- type1 : 이용약관, type2 : 개인정보처리방침, type3:개인정보처리방침 12조 -->
+                                        <a href="#" id="registerLink" class="a-link policiesLink open-lightbox" target="_self" data-template="lp-join-policy" data-classes="join-policy-type type1">전문보기</a>
                                     </span>
                                     <p class="text-2">이용약관 및 개인정보 수집 및 이용에 대한 내용을 확인하고 동의합니다.</p>
                                 </div>
                             </div>
-                            <button type="submit" id="registerButton" class="a-button is-primary">
+                            <button type="submit" id="registerButton" class="a-button">
                                 <span>동의하고 회원가입</span>
                             </button>
                         </div><!-- // 신규추가 내용 : 회원가입 2.가입정보입력 -->
@@ -286,7 +287,7 @@
                         <div class="m-change-country-lightbox">
                             <h2 class="a-heading-2">YOU ARE ABOUT TO CHANGE YOUR LOCATION</h2>
                             <p class="a-paragraph">Your shopping bag will not be moved to the selected location.</p>
-                            <a class="a-button is-primary" href="/entrance.html">Register</a>
+                            <a class="a-button" href="/entrance.html">Register</a>
                             <button class="a-button is-secondary js-close-button">
                                 <span>Cancel</span>
                             </button>
@@ -300,8 +301,3 @@
         </div>
     </div>
 </div>
-
-<!-- handlebars-template -->
-<%# 전문보기 %>
-<%- include ("../../../handlebars/hndl-lp-join-policy.ejs") %>
-<!-- //handlebars-template -->

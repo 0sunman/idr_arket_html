@@ -22,7 +22,7 @@
             </div>
 
             <!--
-            <button class="a-button is-primary js-close-button" type="button"><span>확인</span></button>
+            <button class="a-button js-close-button" type="button"><span>확인</span></button>
             -->
 
         </div>
@@ -33,9 +33,23 @@
 
             setTimeout(function(){
                 //.a-tab click trigger
-                let lightboxWrap = document.querySelector('.lightbox-wrapper');
-                lightboxWrap.scrollTop = 0;
-                document.querySelector('.a-tab:nth-child(1)').click();
+                let lightboxType = document.querySelector('.join-policy-type.is-open');
+                if(lightboxType){
+                    let lightboxWrap = document.querySelector('.lightbox-wrapper');
+                    lightboxWrap.scrollTop = 0;
+
+                    //type1 : 이용약관, type2 : 개인정보처리방침, type3:개인정보처리방침 12조
+                    if(lightboxType.classList.contains("type1")){
+                        lightboxWrap.querySelector('.a-tab:nth-child(1)').click();
+                    } else if(lightboxType.classList.contains("type2")){
+                        lightboxWrap.querySelector('.a-tab:nth-child(2)').click();
+                    } else if(lightboxType.classList.contains("type3")){
+                        lightboxWrap.querySelector('.a-tab:nth-child(2)').click();
+                        lightboxWrap.querySelector('.h3-list p:nth-child(12) a').click();
+                    } else {
+                        lightboxWrap.querySelector('.a-tab:nth-child(1)').click();
+                    }
+                }
             },100);
 
         })();
