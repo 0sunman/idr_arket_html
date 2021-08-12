@@ -82,7 +82,8 @@
                 <div class="info">
                     <p>주식회사 현대백화점 대표이사 : 김형종 외 2인 서울시 강남구 테헤란로98길 12</p>
                     <p>사업자등록번호 : 211-87-21455 [<a href="javascript:void(0);" onClick="window.open('http://www.ftc.go.kr/www/bizCommView.do?key=232&amp;apv_perm_no=2010322014830201882&amp;pageUnit=10&amp;searchCnd=wrkr_no&amp;searchKrwd=2118721455&amp;pageIndex=1','','width=750, height=700, menubar=no, status=no, toolbar=no');" class="a-link">사업자정보 확인</a>] 통신판매업신고 : 2010-서울강남-01882</p>
-                    <p>개인정보관리 및 청소년보호 책임자 : 회원운영관리담당 장근혁 홈페이지/앱 문의 : <a href="mailto:customerservice@thehyundai.com">customerservice@thehyundai.com</a>고객센터 : <strong>1800-2233</strong></p>
+                    <p>개인정보관리 및 청소년보호 책임자 : 회원운영관리담당 장근혁</p>
+                    <p>홈페이지/앱 문의 : <a href="mailto:customerservice@thehyundai.com">customerservice@thehyundai.com</a> 고객센터 : <strong>1800-2233</strong></p>
                     <p>호스팅서비스 : (주)현대백화점</p>
                     <p class="copy">CopyrightⓒHyundai Department Store. All rights reserved.</p>
                 </div>
@@ -123,7 +124,10 @@
                 </p>
                 <p class="checkguarantee">
                     <span>고객님의 안전거래를 위해 현금결제시 우리은행과 채무지급보증계약을<br>체결하여 안전거래를 보장하고 있습니다.</span>
-                    <a href="#" onclick="javascript:popover_ajax('/html/contents/guarantee.html', 750);return false;">서비스 가입사실 확인</a>
+                    <!--<a href="#" onclick="javascript:popover_ajax('/html/contents/guarantee.html', 750);return false;">서비스 가입사실 확인</a>-->
+                    <a class="a-link open-lightbox" data-template="lp-service-join-confirm" data-classes="is-large">
+                        <span>서비스가입사실확인</span>
+                    </a>
                 </p>
             </div>
         </div>
@@ -131,7 +135,7 @@
     <!-- //sis-footer-pc -->
 
     <!-- sis-footer-m -->
-    <footer id="sis_footer" class="sis-footer sis-footer-m ">
+    <footer id="sis_footer" class="sis-footer sis-footer-m">
         <div class="foot-wrap">
             <div class="foot-link-wrap">
                 <ul class="foot-link">
@@ -152,7 +156,11 @@
                 고객센터 : <span style="text-decoration: underline;font-size:11px">1800-2233</span>
                 [<a href="https://m.thehyundai.com/front/mpd/leaveMemberForm.thd">회원탈퇴</a>]
                 <br>
-                호스팅서비스:(주)현대백화점 <a class="txt-btn" href="#none" onclick="servicePopupOpen(); return false;">[우리은행 채무지급보증안내]</a>
+                호스팅서비스:(주)현대백화점
+                <!--<a class="txt-btn" href="#none" onclick="servicePopupOpen(); return false;">[우리은행 채무지급보증안내]</a>-->
+                <a class="a-link open-lightbox" data-template="lp-service-join-confirm" data-classes="is-large">
+                    <span>[우리은행 채무지급보증안내]</span>
+                </a>
             </address>
 
             <div class="copyright">
@@ -166,3 +174,8 @@
     <!-- //sis-footer-m -->
 
 </div>
+
+<!-- handlebars-template -->
+<%# 서비스가입사실확인 %>
+<%- include ("../handlebars/hndl-lp-service-join-confirm.ejs") %>
+<!-- //handlebars-template -->

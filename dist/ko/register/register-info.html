@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta name="p:domain_verify" content="12424d5c1bfd4a43b3d3a555349a3cb8">
+    <meta name="p:domain_verify">
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 
     <title>ARKET - Essential products for men, women, children and the home WW</title>
@@ -29,21 +29,25 @@
     <!--<link rel="stylesheet" href="../../../static/org/etc/designs/appeaser/p11/pattern-lib/frontend.min.a033ce601ceae2b3ed0d1dc0a1cc8264.css" type="text/css">-->
     <link rel="stylesheet" href="../../../static/org/etc/designs/appeaser/p11/pattern-lib/frontend.min.1987a0f885a03ad325376517da7bed68.css" type="text/css">
 
-    <!-- frontend.renew.css -->
     <link rel="stylesheet" href="../../../static/css/jquery-ui.css" type="text/css">
+    <!-- frontend.renew.css -->
     <link rel="stylesheet" href="../../../static/css/frontend.renew.css" type="text/css">
     <!-- //frontend.renew.css -->
 
     <!-- for IE -->
     <script src="../../../static/js/polyfill.min.js"></script>
     <!-- //for IE -->
-    
+
     <script src="../../../static/org/etc/designs/hm/clientlibs/shared/jquery.min.98d49f2a9477a5d4f9edef7b7e9698b1.js"></script>
     <script src="../../../static/org/etc/designs/appeaser/p11/pattern-lib/frontend/js/modernizr-custom.min.js"></script>
     <script src="../../../static/org/metrics/default/touchpoint.js"></script>
-
 </head>
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 3f8a1e4b7f40d307b9dbab83871bfa301098099a
 <body data-component="OPage" class="layout-inside" id="oPage">
 
     <div class="coremetricsPageId" hidden="">Startpage 3</div>
@@ -68,7 +72,7 @@
     <input type="hidden" id="localeNode" data-base-store-code="p11-global">
     <div id="headerDataStorage" data-testbuy="false" data-context-path="en" data-is-order-confirmation-page="false" hidden=""></div>
 
-    <!-- m-site-banner : 띠배너 -->
+    <!-- m-site-banner : 상단배너 -->
     <!--
     <div id="site-banner-id" data-component="MSiteBanner" class="m-site-banner slide-down" style="background-color: rgb(0, 0, 0);">
         <div>
@@ -90,7 +94,7 @@
         </div>
     </div>
     -->
-    <!-- //m-site-banner : 띠배너 -->
+    <!-- //m-site-banner : 상단배너 -->
 
     <div class="u-no-select">
         <div class="a-overlay js-a-overlay q-opacity-0" data-component="AOverlay"></div>
@@ -943,9 +947,7 @@
                                     </div>
                                 </div>
 
-
-
-                                <button type="submit" class="a-button is-primary" tabindex="202">
+                                <button type="submit" class="a-button" tabindex="202">
                                     <span>로그인</span>
                                 </button>
 
@@ -1349,7 +1351,7 @@
 												</label>
 											</span>
                                     </div>
-                                    <button type="submit" class="a-button is-primary" tabindex="313">
+                                    <button type="submit" class="a-button" tabindex="313">
                                         <span>Submit</span>
                                     </button>
                                 </div>
@@ -1677,7 +1679,7 @@
         <div class="m-change-country-lightbox is-checkout">
             <h2 class="a-heading-2">Change location</h2>
             <p class="a-paragraph">Your shopping bag will be moved to the selected location.</p>
-            <a class="a-button is-primary" href="/entrance.html?goeorguri=%2Fen%2Findex.html">Continue</a>
+            <a class="a-button" href="/entrance.html?goeorguri=%2Fen%2Findex.html">Continue</a>
             <button class="a-button is-secondary js-close-button"><span>false</span></button>
         </div>
     </script>
@@ -2067,7 +2069,7 @@
                             <div data-component="MInput" class="m-input with-button">
                                 <label class="a-label js-a-label" for="id">아이디 또는 이메일</label>
                                 <input class="a-input js-a-input" id="id" name="id" type="text" pattern="" placeholder="아이디 또는 이메일" data-validation-required-text="아이디를 입력해주세요." data-validation-pattern-text="아이디는 4~20자 영문/숫자 또는  email만 가능합니다." required="">
-                                <button class="a-button is-primary sm" type="button"><span>중복확인</span></button>
+                                <button class="a-button sm" type="button"><span>중복확인</span></button>
                                 <label class="a-label js-a-label" for="id"></label>
                             </div><!-- // input : 아이디 또는 이메일 -->
 
@@ -2304,12 +2306,13 @@
                                 <div class="m-checkbox policy-select">
                                     <h2 class="text-1">이용약관 및 개인정보 처리방침</h2>
                                     <span class="a-label">
-                                         <a href="#" id="registerLink" class="a-link policiesLink open-lightbox" data-template="lp-join-policy" target="_self">전문보기</a>
+                                        <!-- type1 : 이용약관, type2 : 개인정보처리방침, type3:개인정보처리방침 12조 -->
+                                        <a href="#" id="registerLink" class="a-link policiesLink open-lightbox" target="_self" data-template="lp-join-policy" data-classes="join-policy-type type1">전문보기</a>
                                     </span>
                                     <p class="text-2">이용약관 및 개인정보 수집 및 이용에 대한 내용을 확인하고 동의합니다.</p>
                                 </div>
                             </div>
-                            <button type="submit" id="registerButton" class="a-button is-primary">
+                            <button type="submit" id="registerButton" class="a-button">
                                 <span>동의하고 회원가입</span>
                             </button>
                         </div><!-- // 신규추가 내용 : 회원가입 2.가입정보입력 -->
@@ -2319,7 +2322,7 @@
                         <div class="m-change-country-lightbox">
                             <h2 class="a-heading-2">YOU ARE ABOUT TO CHANGE YOUR LOCATION</h2>
                             <p class="a-paragraph">Your shopping bag will not be moved to the selected location.</p>
-                            <a class="a-button is-primary" href="/entrance.html">Register</a>
+                            <a class="a-button" href="/entrance.html">Register</a>
                             <button class="a-button is-secondary js-close-button">
                                 <span>Cancel</span>
                             </button>
@@ -2332,6 +2335,109 @@
             </div>
         </div>
     </div>
+</div>
+    <!-- //o-page-content -->
+
+    <!-- footer -->
+    <div class="u-no-select" id="footer_warp">
+
+    
+    <!-- o-footer -->
+<footer class="o-footer o-footer-top u-clearfix">
+    <ul>
+        <li>
+            <a class="a-link" href="#" target="_self">About ARKET</a>
+        </li>
+        <li>
+            <a class="a-link" href="#" target="_self">지속가능성</a>
+        </li>
+        <li>
+            <a class="a-link" href="/ko/customer-service.html" target="_self">고객서비스</a>
+        </li>
+        <li>
+            <a class="a-link" href="/ko/newslettersubscribe.html"  target="_self">뉴스레터</a>
+        </li>
+        <li>
+            <a class="a-link" href="/ko/stores.html" target="_self">매장정보</a>
+        </li>
+        <li>
+            <a class="a-link" href="/ko/customer-service/size-guide.html" target="_self">사이즈 가이드</a>
+        </li>
+        <li>
+            <a class="a-link" href="http://press.arket.com/" target="_self">프레스</a>
+        </li>
+        <li>
+            <a class="a-link" href="https://career.hmgroup.com/arket" target="_self">채용정보</a>
+        </li>
+        <li>
+            <a class="a-link" href="/ko/my-account.html" target="_self">리사이클링</a>
+        </li>
+    </ul>
+    <ul>
+        <li class="right">
+            <a class="a-link" href="#" target="_self">KAKAOTALK</a>
+        </li>
+        <li class="right">
+            <a class="a-link" href="#" target="_self">INSTAGRAM</a>
+        </li>
+        <li class="right">
+            <a class="a-link" href="#" target="_self">FACEBOOK</a>
+        </li>
+        <li class="right">
+            <a class="a-link" href="#" target="_self">PINTEREST</a>
+        </li>
+        <li class="right li-contry">
+            <a id="noTransactionalClick" class="a-link open-lightbox" href="#" target="_self" data-country="UK" data-template="country-selector" data-classes="is-country-selector is-multi-language">
+                <span>배송국가 : 대한민국</span>
+                <img class="a-image icon-flag" alt="flag" src="../../../static/images/icon/icon-country-korea.svg">
+            </a>
+        </li>
+    </ul>
+</footer>
+<!-- //o-footer -->
+
+    <footer class="o-footer v2 u-clearfix">
+        <div class="footer-cont">
+            <div class="section-01">
+                <p class="footer-hyundai">
+                    <a href="http://www.thehyundai.com" class="unsmart-underline" target="_blank"></a>
+                    <span class="is-hidden">the HYUNDAI.COM</span>
+                </p>
+            </div>
+            <div class="section-02">
+                <p>ARKET 온라인 스토어는<br><a href="http://thehyundai.com" class="a-link a-link-udln" target="_blank">더현대닷컴</a>을 이용하고 있습니다.</p>
+                <ul class="link-lst">
+                    <li><a href="#none" class="a-link open-lightbox" target="_self" data-template="lp-join-policy" data-classes="join-policy-type type1">이용약관</a></li>
+                    <li><a href="#none" class="a-link  open-lightbox" target="_self"  data-template="lp-join-policy" data-classes="join-policy-type type2"><strong>개인정보처리방침</strong></a></li>
+                    <li><a href="http://www.ehyundai.com/newPortal/ir/main.do" class="a-link" target="_blank">현대백화점 그룹</a></li>
+                </ul>
+            </div>
+            <div class="section-03">
+                <div class="txt">
+                    <span>주식회사 현대백화점 대표이사 : 김형종 외 2인</span>
+                    <address>서울시 강남구 테헤란로98길 12</address>
+                    <br>
+                    <span>사업자등록번호 : 211-87-21455 [<a href="javascript:void(0);" onClick="window.open('http://www.ftc.go.kr/www/bizCommView.do?key=232&amp;apv_perm_no=2010322014830201882&amp;pageUnit=10&amp;searchCnd=wrkr_no&amp;searchKrwd=2118721455&amp;pageIndex=1','','width=750, height=700, menubar=no, status=no, toolbar=no');" class="a-link">사업자정보 확인</a>]</span>
+                    <span> / </span>
+                    <span>통신판매업신고 : 2010-서울강남-01882</span>
+                    <br>
+                    <span>개인정보관리 및 청소년보호 책임자 :</span> <span>회원운영관리담당 장근혁</span>
+                    <br>
+                    <span>홈페이지/앱 문의 : <a href="mailto:customerservice.kr@arket.com" class="a-link">customerservice.kr@arket.com</a></span>
+                    <span> / </span>
+                    <span>고객센터 : 1522-0176</span>
+                    <span> / </span>
+                    <span>호스팅서비스 : (주)현대백화점</span>
+                    <span class="txt-copy"><span>CopyrightⓒHyundai Department Store. </span><br class="only-m"><span>All rights reserved.</span></span>
+                </div>
+            </div>
+            <div class="section-04">
+                <span>고객님의 안전거래를 위해 현금결제시 우리은행과 채무지급보증계약을 체결하여 안전거래를 보장하고 있습니다. <a class="a-link a-link-udln open-lightbox" href="#none" target="_self" data-template="lp-service-join-confirm" data-classes="is-large">서비스 가입사실 확인</a></span>
+            </div>
+        </div>
+
+    </footer>
+    
 </div>
 
 <!-- handlebars-template -->
@@ -2975,7 +3081,7 @@
                     [개인정보 처리방침]을 제정하고 이를 준수하고 있습니다. [개인정보 처리방침]은 정부의 지침 변경, 당사의 정책 수정 변화 등의 이유로
                     변경 될 수 있습니다. 고객 여러분들께서는 온라인몰 방문 시 수시로 확인하여 주시기 바랍니다.
                 </p>
-                <h3>
+                <div class="h3-list">
                     <p class="a-paragraph"><a href="#agree-01">제1조  총칙</a></p>
                     <p class="a-paragraph"><a href="#agree-02">제2조  개인정보의 수집 항목과 이용목적</a></p>
                     <p class="a-paragraph"><a href="#agree-03">제3조  쿠키에 의한 개인정보 수집</a></p>
@@ -2995,7 +3101,7 @@
                     <p class="a-paragraph"><a href="#agree-17">제17조  광고성 정보 전송</a></p>
                     <p class="a-paragraph"><a href="#agree-18">제18조  고지의 의무</a></p>
                     <p class="a-paragraph"><a href="#agree-19">제19조  청소년 보호정책</a></p>
-                </h3>
+                </div>
                 <div class="agree-top" id="agree-01">
                     <h3>제1조 총칙</h3>
                     <p class="a-paragraph inner-indent">
@@ -4393,7 +4499,7 @@
             </div>
 
             <!--
-            <button class="a-button is-primary js-close-button" type="button"><span>확인</span></button>
+            <button class="a-button js-close-button" type="button"><span>확인</span></button>
             -->
 
         </div>
@@ -4404,76 +4510,32 @@
 
             setTimeout(function(){
                 //.a-tab click trigger
-                let lightboxWrap = document.querySelector('.lightbox-wrapper');
-                lightboxWrap.scrollTop = 0;
-                document.querySelector('.a-tab:nth-child(1)').click();
+                let lightboxType = document.querySelector('.join-policy-type.is-open');
+                if(lightboxType){
+                    let lightboxWrap = document.querySelector('.lightbox-wrapper');
+                    lightboxWrap.scrollTop = 0;
+
+                    //type1 : 이용약관, type2 : 개인정보처리방침, type3:개인정보처리방침 12조
+                    if(lightboxType.classList.contains("type1")){
+                        lightboxWrap.querySelector('.a-tab:nth-child(1)').click();
+                    } else if(lightboxType.classList.contains("type2")){
+                        lightboxWrap.querySelector('.a-tab:nth-child(2)').click();
+                    } else if(lightboxType.classList.contains("type3")){
+                        lightboxWrap.querySelector('.a-tab:nth-child(2)').click();
+                        lightboxWrap.querySelector('.h3-list p:nth-child(12) a').click();
+                    } else {
+                        lightboxWrap.querySelector('.a-tab:nth-child(1)').click();
+                    }
+                }
             },100);
 
         })();
     </script>
 </script>
 <!-- //전문보기 -->
-<!-- //handlebars-template -->
-    <!-- //o-page-content -->
 
-    <!-- footer -->
-    <div class="u-no-select" id="footer_warp">
 
-    
-    <!-- o-footer -->
-<footer class="o-footer o-footer-top u-clearfix">
-    <ul>
-        <li>
-            <a class="a-link" href="#" target="_self">About ARKET</a>
-        </li>
-        <li>
-            <a class="a-link" href="#" target="_self">지속가능성</a>
-        </li>
-        <li>
-            <a class="a-link" href="/ko/customer-service.html" target="_self">고객서비스</a>
-        </li>
-        <li>
-            <a class="a-link" href="/ko/newslettersubscribe.html"  target="_self">뉴스레터</a>
-        </li>
-        <li>
-            <a class="a-link" href="/ko/stores.html" target="_self">매장정보</a>
-        </li>
-        <li>
-            <a class="a-link" href="/ko/customer-service/size-guide.html" target="_self">사이즈 가이드</a>
-        </li>
-        <li>
-            <a class="a-link" href="http://press.arket.com/" target="_self">프레스</a>
-        </li>
-        <li>
-            <a class="a-link" href="https://career.hmgroup.com/arket" target="_self">채용정보</a>
-        </li>
-        <li>
-            <a class="a-link" href="/ko/my-account.html" target="_self">리사이클링</a>
-        </li>
-    </ul>
-    <ul>
-        <li class="right">
-            <a class="a-link" href="#" target="_self">KAKAOTALK</a>
-        </li>
-        <li class="right">
-            <a class="a-link" href="#" target="_self">INSTAGRAM</a>
-        </li>
-        <li class="right">
-            <a class="a-link" href="#" target="_self">FACEBOOK</a>
-        </li>
-        <li class="right">
-            <a class="a-link" href="#" target="_self">PINTEREST</a>
-        </li>
-        <li class="right li-contry">
-            <a id="noTransactionalClick" class="a-link open-lightbox" href="#" target="_self" data-country="UK" data-template="country-selector" data-classes="is-country-selector is-multi-language">
-                <span>배송국가 : 대한민국</span>
-                <img class="a-image icon-flag" alt="flag" src="../../../static/images/icon/icon-country-korea.svg">
-            </a>
-        </li>
-    </ul>
-</footer>
-<!-- //o-footer -->
-
+<<<<<<< HEAD
     <footer class="o-footer v2 u-clearfix">
     <div class="footer-cont">
         <div class="section-01">
@@ -4508,15 +4570,24 @@
                 <span>호스팅서비스 : (주)현대백화점</span>
                 <span class="txt-copy"><span>CopyrightⓒHyundai Department Store. </span><br class="only-m"><span>All rights reserved.</span></span>
             </div>
+=======
+<!-- 서비스가입사실확인 -->
+<script type="text/x-handlebars-template" id="lp-service-join-confirm">
+    <div class="lightbox-content-dft lp-service-join-confirm">
+        <div class="m-headline is-main-headline">
+            <h2 class="a-heading-2"><span>지급보증서</span></h2>
+>>>>>>> 3f8a1e4b7f40d307b9dbab83871bfa301098099a
         </div>
-        <div class="section-04">
-            <span>고객님의 안전거래를 위해 현금결제시 우리은행과 채무지급보증계약을 체결하여 안전거래를 보장하고 있습니다. <a class="a-link a-link-udln open-lightbox" href="#none" target="_self" data-template="guarantee-popup" data-classes="is-large">서비스 가입사실 확인</a></span>
+        <div class="content">
+            <a href="../../../static/images/common/img-guarantee.png" target="_blank">
+                <img src="../../../static/images/common/img-guarantee-pc.png" class="only-pc" style="width:100%" alt="지급보증서">
+                <img src="../../../static/images/common/img-guarantee-m.png" class="only-m" style="width:100%" alt="지급보증서">
+            </a>
         </div>
     </div>
-    
-</footer>
-    
-</div>
+</script>
+<!-- //서비스가입사실확인 -->
+<!-- //handlebars-template -->
     <!-- //footer -->
 
     

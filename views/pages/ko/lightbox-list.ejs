@@ -395,7 +395,12 @@
             </button>
         </li>
         <li>
+<<<<<<< HEAD
             <button class="a-button is-outlined open-lightbox" data-template="lp-join-policy">
+=======
+            <!-- type1 : 이용약관, type2 : 개인정보처리방침, type3:개인정보처리방침 12조 -->
+            <button class="a-button is-outlined open-lightbox" data-template="lp-join-policy" data-classes="join-policy-type type1">
+>>>>>>> 3f8a1e4b7f40d307b9dbab83871bfa301098099a
                 <span>이용약관 및 개인정보처리방침</span>
             </button>
         </li>
@@ -645,7 +650,8 @@
 <%- include ("../../handlebars/hndl-lp-mail-unsubscription-complete.ejs") %>
 
 <%# 서비스가입사실확인 %>
-<%- include ("../../handlebars/hndl-lp-service-join-confirm.ejs") %>
+<%# footer.ejs 에서 include %>
+<%#- include ("../../handlebars/hndl-lp-service-join-confirm.ejs") %>
 
 <%# 뉴스레터신청팝업 %>
 <%- include ("../../handlebars/hndl-lp-newsletter-apply.ejs") %>
@@ -654,6 +660,11 @@
 <%- include ("../../handlebars/hndl-lp-newsletter-apply-complete.ejs") %>
 
 <%# 이용약관 및 개인정보처리 방침 %>
+<<<<<<< HEAD
 <%- include ("../../handlebars/hndl-lp-join-policy.ejs") %>
+=======
+<%# footer.ejs 에서 include %>
+<%#- include ("../../handlebars/hndl-lp-join-policy.ejs") %>
+>>>>>>> 3f8a1e4b7f40d307b9dbab83871bfa301098099a
 
 <!-- //handlebars-template -->
