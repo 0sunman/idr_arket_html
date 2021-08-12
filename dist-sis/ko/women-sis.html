@@ -43,11 +43,8 @@
     <script src="../../static/org/metrics/default/touchpoint.js"></script>
 </head>
 
-<<<<<<< HEAD
-=======
 
 
->>>>>>> 3f8a1e4b7f40d307b9dbab83871bfa301098099a
 <body data-component="OPage" class="layout-inside" id="oPage">
 
     <div class="coremetricsPageId" hidden="">Startpage 3</div>
@@ -1998,20 +1995,22 @@
 </div>
     <!-- //o-cookie-message -->
 
-<!--    <script src="../../static/org/etc/designs/appeaser/shared/head.min.5e1856d1a93320e7fb437c09aa90d73b.js"></script>-->
+    
+    <!--    <script src="../../static/org/etc/designs/appeaser/shared/head.min.5e1856d1a93320e7fb437c09aa90d73b.js"></script>-->
 <!--    <script src="../../static/org/etc/designs/appeaser/p11/clientlibs/application.min.73b337f60c6d73af4c93d85989b79c31.js"></script>-->
 <!--    <script src="../../static/org/etc/designs/appeaser/shared/rakuten.min.747914cb35be38661f59d65b3ef708d2.js"></script>-->
-    <script src="../../static/org/etc/designs/appeaser/p11/pattern-lib/frontend.min.53fbce400c01c000a192f9a286ec0c06.js"></script>
+<script src="../../static/org/etc/designs/appeaser/p11/pattern-lib/frontend.min.53fbce400c01c000a192f9a286ec0c06.js"></script>
 <!--    <script src="../../static/org/etc/designs/appeaser/p11/pattern-lib/controllers.min.2c7b678057024241af565e0ec9b1b348.js"></script>-->
-    <script src="../../static/org/etc/designs/appeaser/p11/pattern-lib/controllers/controllers.js"></script>
+<script src="../../static/org/etc/designs/appeaser/p11/pattern-lib/controllers/controllers.js"></script>
 <!--    <script src="../../static/org/etc/designs/appeaser/p11/clientlibs/aem-clientlibs/global_Clientlib.min.bffddb20c0117ec36495ecd499273e2a.js"></script>-->
 <!--    <script src="../../static/org/etc/designs/appeaser/p11/clientlibs/aem-clientlibs/product_Clientlib.min.09ff425f6b46f61e5c6429be9e290878.js"></script>-->
 <!--    <script src="../../static/org/etc/designs/appeaser/p11/clientlibs/aem-clientlibs/genericpage_Clientlib.min.44bc583ac294a90847353b251f2c46c0.js"></script>-->
 
-    <!-- frontend.renew.js -->
-    <script src="../../static/js/jquery-ui.js"></script>
-    <script src="../../static/js/frontend.renew.js"></script>
-    <!-- //frontend.renew.js -->
+<!-- frontend.renew.js -->
+<script src="../../static/js/jquery-ui.js"></script>
+<script src="../../static/js/frontend.renew.js" defer></script>
+<!-- //frontend.renew.js -->
+
 
     <script type="text/javascript">
         //iframe 자동높이 조절
@@ -2026,15 +2025,6 @@
         (function() {
             'use strict';
             setTimeout(function(){
-<<<<<<< HEAD
-                //iframe margin-top set
-                let sisFrame = document.querySelector('#sisFrame');
-                let oHeaderH = document.querySelector('.o-header').offsetHeight;
-                console.log(oHeaderH);
-                let tempH = oHeaderH - 56 - 1;
-                tempH = (tempH < -1 ? -1 : tempH);
-                sisFrame.style.marginTop = tempH + "px";
-=======
                 let sisFrame = document.querySelector('#sisFrame');
                 if(sisFrame) {
                     //iframe margin-top set
@@ -2048,7 +2038,6 @@
                     tempH = (tempH < -1 ? -1 : tempH);
                     sisFrame.style.marginTop = tempH + "px";
                 }
->>>>>>> 3f8a1e4b7f40d307b9dbab83871bfa301098099a
             },1000);
         })();
     </script>

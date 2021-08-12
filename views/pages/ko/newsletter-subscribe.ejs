@@ -24,6 +24,9 @@
                            data-validation-pattern-text="이메일 형식에 맞지 않습니다.">
                     <label class="a-label js-a-label" for="email" data-placeholder=""></label>
                 </div>
+
+                <!-- mrkp-del : 국가 선택영역 삭제(20210811) -->
+                <!--
                 <div class="m-dropdown-filter global-country-dropdown" data-component="MDropdownFilter">
                     <input class="a-input filter"
                            placeholder="국가 선택"
@@ -33,10 +36,13 @@
                     <span class="a-icon-accordion a-icon-arrow-down-small"></span>
 
                     <%# md-global-country-list %>
-                    <%- include ("../../common/md-global-country-list.ejs") %>
+                    <%#- include ("../../common/md-global-country-list.ejs") %>
 
                     <span class="error-msg">목록에서 국가를 선택하세요</span>
                 </div>
+                -->
+                <!-- //mrkp-del : 국가 선택영역 삭제(20210811) -->
+                
                 <div class="option-wrapper">
                     <div class="m-radio-button u-clearfix">
                         <input class="a-radio-button men"
@@ -64,12 +70,8 @@
                            id="checkbox_age">
                     <label class="a-label js-a-label custom-box" for="checkbox_age" tabindex="0"></label>
                     <label class="a-label js-a-label" for="checkbox_age">네, 저는 H&M 그룹의 브랜드인 ARKET에서 프로모션 소식을 받고 싶습니다. 저는 제가 만18세 이상임을 확인합니다. 개인 정보 보호 통지에 따라, 소셜 미디어 피드 이메일과 SMS를 통해 개인화된 프로모션을 제공하기 위해, H&M 그룹에
-<<<<<<< HEAD
-                        <a href="#" class="a-link open-lightbox has-underline" data-template="lp-join-policy" target="_self">개인정보 제3자 (H&M) 정보제공 및 국외 이전</a>에 동의합니다.
-=======
                         <!-- type1 : 이용약관, type2 : 개인정보처리방침, type3:개인정보처리방침 12조 -->
                         <a href="#" class="a-link open-lightbox has-underline" data-template="lp-join-policy" data-classes="join-policy-type type3" target="_self" >개인정보 제3자 (H&M) 정보제공 및 국외 이전</a>에 동의합니다.
->>>>>>> 3f8a1e4b7f40d307b9dbab83871bfa301098099a
                     </label>
                     <label class="a-label js-a-label" for="checkbox_age" data-placeholder=""></label>
                 </span>
@@ -84,8 +86,3 @@
         </form>
     </div>
 </div>
-
-<!-- handlebars-template -->
-<%# 전문보기 %>
-<%- include ("../../handlebars/hndl-lp-join-policy.ejs") %>
-<!-- //handlebars-template -->
