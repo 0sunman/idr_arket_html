@@ -1,0 +1,21 @@
+<iframe id="sisFrame"
+        class="sisFrame"
+        <%
+            if(pageInfo.isLocalExPath) {
+        %>
+        src="<%= pageInfo.pageRoot %>/dist-sis-con/<%= pageInfo.lang %>/product-detail-sis-con.html"
+        <%
+            }else {
+        %>
+        src="/<%= pageInfo.lang %>/product-detail-sis-con.html"
+        <%
+            }
+        %>
+        style="margin-top:-1px; min-height:100vh"
+        width="100%"
+        frameborder="no"
+        scrolling="no"
+        marginheight="0"
+        marginwidth="0"
+        onload="iframeAutoResize(this);">
+</iframe>

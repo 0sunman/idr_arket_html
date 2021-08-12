@@ -44,7 +44,7 @@
 
 </head>
 
-<body data-component="OPage" class="layout-inside" id="oPage" data-locale-page-node-name="en" data-component-id="66152dea-5e9c-4757-9208-19efae8e2313">
+<body data-component="OPage" class="layout-inside" id="oPage">
 
     <div class="coremetricsPageId" hidden="">Startpage 3</div>
     <div class="coremetricsPageType" hidden="">Startpage 4</div>
@@ -2121,15 +2121,72 @@
                                                             <div class="product-quantity">2</div>
                                                         </div>
                                                     </div>
+                                                    <div class="product-param-price third">
+                                                        <div class="product-params data">
+                                                            <div class="product-price">1,303,800</div>
+                                                        </div>
+                                                    </div>
+                                                    <!--
                                                     <div class="product-param-btns fourth">
                                                         <a href="#none" class="a-link a-link-udln">옵션변경</a>
                                                     </div>
+                                                    -->
                                                 </div>
                                             </div>
                                             <div class="order-price"><span>1,303,800</span></div>
-                                            <div class="order-status"><span>주문접수</span></div>
-                                            <div class="order-btns">
-                                                <a href="#none" class="a-link a-link-udln">주문취소</a>
+                                            <div class="order-status">
+                                                <span>상품배송</span>
+                                                <a href="#none" class="a-link a-link-udln open-lightbox" data-template="lp-delivery-trace">배송추척</a>
+                                            </div>
+                                        </div>
+                                        <!-- //product-list-item -->
+                                    </li>
+                                </ul>
+
+                            </div>
+                            <!-- //order-list-item -->
+                        </li>
+                        <li>
+                            <!-- order-list-item -->
+                            <div class="order-list-item">
+                                <ul class="product-list-ul">
+                                    <li>
+                                        <!-- product-list-item -->
+                                        <div class="product-list-item">
+                                            <div class="m-order-summary-row">
+                                                <div class="product-image">
+                                                    <!--<img class="a-image product-image" alt="image description" src="http://pava-0341648599.s3-eu-west-1.amazonaws.com/images/55f8861ee517704a05ab1b11/boy-vintage-thumbnail-big.jpg">-->
+                                                    <img class="a-image product-image" alt="image description" src="../../../static/images/temp/boy-vintage-thumbnail-big.jpg">
+                                                </div>
+                                                <div class="product-info">
+                                                    <div class="product-item-info first">
+                                                        <div class="product-details">
+                                                            <div class="product-name">해리 블랙 슈즈해리 블랙 슈즈해리 블랙 슈즈</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product-param-info second">
+                                                        <div class="product-params data">
+                                                            <div class="product-size">44</div>
+                                                            <div class="product-color">블루</div>
+                                                            <div class="product-quantity">2</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product-param-price third">
+                                                        <div class="product-params data">
+                                                            <div class="product-price">1,303,800</div>
+                                                        </div>
+                                                    </div>
+                                                    <!--
+                                                    <div class="product-param-btns fourth">
+                                                        <a href="#none" class="a-link a-link-udln">옵션변경</a>
+                                                    </div>
+                                                    -->
+                                                </div>
+                                            </div>
+                                            <div class="order-price"><span>1,303,800</span></div>
+                                            <div class="order-status">
+                                                <span>주문취소</span>
+                                                <a href="#none" class="a-link a-link-udln open-lightbox" data-template="lp-order-cancel-details" data-classes="alert">상세보기</a>
                                             </div>
                                         </div>
                                         <!-- //product-list-item -->
@@ -2755,6 +2812,22 @@
 <!-- //tip -->
 
 
+<!-- 배송추적 -->
+<script type="text/x-handlebars-template" id="lp-delivery-trace">
+    <div class="lightbox-content-dft lp-delivery-trace">
+        <div class="m-headline is-main-headline">
+            <h2 class="a-heading-2"><span>배송추적</span></h2>
+        </div>
+        <div class="content">
+
+            <iframe src="http://www.naver.com" frameborder="0" style="width:100%;"></iframe>
+            
+        </div>
+    </div>
+</script>
+<!-- //배송추적 -->
+
+
 <!-- lp-find-address -->
 <script type="text/x-handlebars-template" id="lp-find-address">
     <!-- tip : step1, step2, step3 유무로 con-step1, con-step2, con-step3 토글 -->
@@ -3306,6 +3379,38 @@
 
 </script>
 <!-- //결제수단변경 -->
+
+
+<!-- 주문배송_상세_주문취소 상세 정보 -->
+<script type="text/x-handlebars-template" id="lp-order-cancel-details">
+    <div class="lightbox-content-dft lp-deposit-account-guide">
+        <div class="m-headline is-main-headline">
+            <h2 class="a-heading-2"><span>주문취소 상세 정보</span></h2>
+        </div>
+        <div class="content">
+            <ul class="o-info-line-box sty2 col-2-1 o-info-line-box-top">
+                <li>
+                    <span class="f-type3">접수일</span>
+                    <span class="f-type3">
+                        주문취소 <span class="f-type4">(2021-05-26 11:12:13)</span><br>
+                    </span>
+                </li>
+                <li class="left-star">
+                    <span class="f-type3">취소상품</span>
+                    <div class="product-param-info second">
+                        <div class="product-params data">
+                            <div class="f-type3">오버사이즈리넨 재킷</div>
+                            <div class="product-size product">44</div>
+                            <div class="product-color product">블루</div>
+                            <div class="product-quantity product">1</div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</script>
+<!-- //주문배송_상세_주문취소 상세 정보 -->
 <!-- //handlebars-template -->
 
 <!-- tip : when develop this script must be delete -->
@@ -3407,7 +3512,7 @@
                 <br>
                 <span>개인정보관리 및 청소년보호 책임자 :</span> <span>회원운영관리담당 장근혁</span>
                 <br>
-                <span>홈페이지/앱 문의 : <a href="mailto:customerservice.kr@cosstores.com" class="a-link">customerservice.kr@cosstores.com</a></span>
+                <span>홈페이지/앱 문의 : <a href="mailto:customerservice.kr@arket.com" class="a-link">customerservice.kr@arket.com</a></span>
                 <span> / </span>
                 <span>고객센터 : 1522-0176</span>
                 <span> / </span>

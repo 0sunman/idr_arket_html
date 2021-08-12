@@ -39,7 +39,7 @@
 
 </head>
 
-<body data-component="OPage" class="layout-inside" id="oPage" data-locale-page-node-name="en" data-component-id="66152dea-5e9c-4757-9208-19efae8e2313">
+<body data-component="OPage" class="layout-inside" id="oPage">
 
     <div class="coremetricsPageId" hidden="">Startpage 3</div>
     <div class="coremetricsPageType" hidden="">Startpage 4</div>
@@ -66,9 +66,19 @@
                 <button class="a-button-nostyle a-icon-close a-icon" type="button" aria-label="Close"></button>
             </div>
         </div>
-
         <!-- header-sis -->
+        <%
+            if(targetPath == "ko/index-sis-topbanner.ejs"){
+        %>
+        <%- include ("./common/header-sis-topbanner.ejs") %>
+        <%
+            } else{
+        %>
         <%- include ("./common/header-sis.ejs") %>
+        <%
+            }
+        %>
+
         <!-- //header-sis -->
 
         <!-- o-lightbox -->
@@ -135,6 +145,18 @@
             var iframeHeight = (h).contentWindow.document.body.scrollHeight;
             (h).height = iframeHeight + 56;
         }
+        (function() {
+            'use strict';
+            setTimeout(function(){
+                //iframe margin-top set
+                let sisFrame = document.querySelector('#sisFrame');
+                let oHeaderH = document.querySelector('.o-header').offsetHeight;
+                console.log(oHeaderH);
+                let tempH = oHeaderH - 56 - 1;
+                tempH = (tempH < -1 ? -1 : tempH);
+                sisFrame.style.marginTop = tempH + "px";
+            },1000);
+        })();
     </script>
 
 </body>

@@ -82,15 +82,72 @@
                                                             <div class="product-quantity">2</div>
                                                         </div>
                                                     </div>
+                                                    <div class="product-param-price third">
+                                                        <div class="product-params data">
+                                                            <div class="product-price">1,303,800</div>
+                                                        </div>
+                                                    </div>
+                                                    <!--
                                                     <div class="product-param-btns fourth">
                                                         <a href="#none" class="a-link a-link-udln">옵션변경</a>
                                                     </div>
+                                                    -->
                                                 </div>
                                             </div>
                                             <div class="order-price"><span>1,303,800</span></div>
-                                            <div class="order-status"><span>주문접수</span></div>
-                                            <div class="order-btns">
-                                                <a href="#none" class="a-link a-link-udln">주문취소</a>
+                                            <div class="order-status">
+                                                <span>상품배송</span>
+                                                <a href="#none" class="a-link a-link-udln open-lightbox" data-template="lp-delivery-trace">배송추척</a>
+                                            </div>
+                                        </div>
+                                        <!-- //product-list-item -->
+                                    </li>
+                                </ul>
+
+                            </div>
+                            <!-- //order-list-item -->
+                        </li>
+                        <li>
+                            <!-- order-list-item -->
+                            <div class="order-list-item">
+                                <ul class="product-list-ul">
+                                    <li>
+                                        <!-- product-list-item -->
+                                        <div class="product-list-item">
+                                            <div class="m-order-summary-row">
+                                                <div class="product-image">
+                                                    <!--<img class="a-image product-image" alt="image description" src="http://pava-0341648599.s3-eu-west-1.amazonaws.com/images/55f8861ee517704a05ab1b11/boy-vintage-thumbnail-big.jpg">-->
+                                                    <img class="a-image product-image" alt="image description" src="<%= pageInfo.root %>/images/temp/boy-vintage-thumbnail-big.jpg">
+                                                </div>
+                                                <div class="product-info">
+                                                    <div class="product-item-info first">
+                                                        <div class="product-details">
+                                                            <div class="product-name">해리 블랙 슈즈해리 블랙 슈즈해리 블랙 슈즈</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product-param-info second">
+                                                        <div class="product-params data">
+                                                            <div class="product-size">44</div>
+                                                            <div class="product-color">블루</div>
+                                                            <div class="product-quantity">2</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product-param-price third">
+                                                        <div class="product-params data">
+                                                            <div class="product-price">1,303,800</div>
+                                                        </div>
+                                                    </div>
+                                                    <!--
+                                                    <div class="product-param-btns fourth">
+                                                        <a href="#none" class="a-link a-link-udln">옵션변경</a>
+                                                    </div>
+                                                    -->
+                                                </div>
+                                            </div>
+                                            <div class="order-price"><span>1,303,800</span></div>
+                                            <div class="order-status">
+                                                <span>주문취소</span>
+                                                <a href="#none" class="a-link a-link-udln open-lightbox" data-template="lp-order-cancel-details" data-classes="alert">상세보기</a>
                                             </div>
                                         </div>
                                         <!-- //product-list-item -->
@@ -239,11 +296,17 @@
 <%# 배송지변경 %>
 <%- include ("../../../handlebars/hndl-lp-select-delivery-address.ejs") %>
 
+<%# 배송추적 %>
+<%- include ("../../../handlebars/hndl-lp-delivery-trace.ejs") %>
+
 <%# 주소검색 %>
 <%- include ("../../../handlebars/hndl-lp-find-address.ejs") %>
 
 <%# 결제수단변경 %>
 <%- include ("../../../handlebars/hndl-lp-select-pay-way.ejs") %>
+
+<%# 주문취소 상세 정보 %>
+<%- include ("../../../handlebars/hndl-lp-order-cancel-details.ejs") %>
 <!-- //handlebars-template -->
 
 <!-- tip : when develop this script must be delete -->

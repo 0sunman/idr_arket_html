@@ -1,15 +1,17 @@
 <!-- m-notification : m 일때 사용 -->
 <!-- to Dev : 활성화되면 .o-header 태그에 .has-sis-notification 클래스 추가 필요 -->
+<!--
 <div id="site-banner-id" data-component="MSiteBanner" class="m-site-banner slide-down" style="background-color: rgb(0, 0, 0);">
     <div class="a-paragraph site-banner-mobile is-richtext" style="padding-top:10px;padding-bottom:10px;color:#FFFFFF">
         <a href="#none" style="color:inherit;">10만 원 이상 구매 시 최대 1만 원 | <span style="border-bottom:1px solid #ffffff">신청하기</span></a>
     </div>
 </div>
+-->
 <!-- //m-notification : m 일때 사용 -->
 
 <!-- tip : class name be able to toggle [hide-departments, hide-border, has-sis-heade, has-sis-notification] -->
-<!--<header data-component="OHeader" class="o-header hide-departments has-sis-header">-->
-<header data-component="OHeader" class="o-header hide-departments has-sis-header has-sis-notification">
+<header data-component="OHeader" class="o-header hide-departments has-sis-header">
+<!--<header data-component="OHeader" class="o-header hide-departments has-sis-header has-sis-notification">-->
     <input type="hidden" id="signinFormPath" value="/<%= pageInfo.lang %>/j_spring_security_check">
     <input type="hidden" id="forgotPasswordPath" value="/<%= pageInfo.lang %>/password/requestSignIn">
     <input type="hidden" id="joinFormPath" value="/<%= pageInfo.lang %>/register/newcustomer">
@@ -49,11 +51,11 @@
 
     <!-- m-notification : pc 일때 사용 -->
     <!-- to Dev : 활성화되면 .o-header 태그에 .has-sis-notification 클래스 추가 필요 -->
+    <!--
     <div data-component="MNotification" class="m-notification is-inline" id="notificationbnnr" style="background:#1B1B1B;display:block;">
         <input type="hidden" name="startDateField" value="2021/06/10 08:10:00" id="sitebannercountsd">
         <input type="hidden" name="endDateField" value="2021/9/13 18:45:00" id="sitebannercounted">
         <div>
-            <!-- to Dev [toggle Class] : site-banner-desktop, site-banner-mobile  -->
             <div class="a-paragraph site-banner-desktop is-richtext" style="color:#FFFFFF">
                 <a title="ARKET SALE" href="/en/sale.html">SALE — 최대 70% 할인</a>
                 <a title="Women SALE" href="/en/women/sale.html">여성,</a>
@@ -78,6 +80,7 @@
             displaySiteBannerCountDown();
         },3000);
     </script>
+    -->
     <!-- //m-notification : pc 일때 사용 -->
 
     <!-- header-bar -->
