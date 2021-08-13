@@ -2209,30 +2209,34 @@
     <div class="lightbox-content-dft lp-order-search-nonmbr">
         <h2 class="a-heading-2"><span>비회원 주문조회</span></h2>
         <div class="content">
-            <div class="m-input v3" data-component="MInput">
-                <input class="a-input js-a-input"
-                       placeholder="주문번호"
-                       type="tel"
-                       value=""
-                       pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
-                       name="order-search-num"
-                       id="order-search-num"
-                       data-validation-required-text="주문번호를 입력해수세요">
-                <label class="a-label js-a-label" for="order-search-num" data-placeholder=""></label>
-            </div>
-            <div class="m-input v3" data-component="MInput">
-                <input class="a-input js-a-input"
-                       placeholder="비밀번호"
-                       type="tel"
-                       value=""
-                       pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
-                       name="order-search-pw"
-                       id="order-search-pw"
-                       data-validation-required-text="비밀번호를 입력해수세요"
-                       data-validation-pattern-text="입력하신 주문번호 또는 비밀번호가 맞지 않습니다.">
-                <label class="a-label js-a-label" for="order-search-pw" data-placeholder=""></label>
-            </div>
-            <button class="a-button" type="button"><span>주문배송조회</span></button>
+            <form class="o-form" data-component="OForm" action="" method="POST">
+                <div class="m-input v3" data-component="MInput">
+                    <input class="a-input js-a-input"
+                           placeholder="주문번호"
+                           type="tel"
+                           value=""
+                           required=""
+                           pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                           name="order-search-num"
+                           id="order-search-num"
+                           data-validation-required-text="주문번호를 입력해주세요">
+                    <label class="a-label js-a-label" for="order-search-num" data-placeholder=""></label>
+                </div>
+                <div class="m-input v3" data-component="MInput">
+                    <input class="a-input js-a-input"
+                           placeholder="비밀번호"
+                           type="tel"
+                           value=""
+                           required=""
+                           pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                           name="order-search-pw"
+                           id="order-search-pw"
+                           data-validation-required-text="비밀번호를 입력해주세요"
+                           data-validation-pattern-text="입력하신 주문번호 또는 비밀번호가 맞지 않습니다.">
+                    <label class="a-label js-a-label" for="order-search-pw" data-placeholder=""></label>
+                </div>
+                <button class="a-button" type="submit"><span>주문배송조회</span></button>
+            </form>
             <p class="guide-text">
                 주문번호가 기억나지 않으신다면,<br>ARKET 고객센터 [1522-0176]로 문의주십시오.
             </p>
@@ -2241,7 +2245,6 @@
                 <a href="#none" class="a-link a-link-udln">회원가입</a>
             </div>
         </div>
-
     </div>
 </script>
 <!-- //비회원 주문조회 -->

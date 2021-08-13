@@ -110,8 +110,18 @@
             </button>
         </li>
         <li>
+            <button class="a-button open-dialog-btn" data-target="lp-find-address-v2">
+                <span>주소검색 v2</span>
+            </button>
+        </li>
+        <li>
             <button class="a-button is-outlined open-lightbox" data-template="lp-find-address-standard">
                 <span>주소검색 - 표준주소</span>
+            </button>
+        </li>
+        <li>
+            <button class="a-button open-dialog-btn" data-target="lp-find-address-standard-v2">
+                <span>주소검색 - 표준주소 v2</span>
             </button>
         </li>
         <li>
@@ -540,8 +550,14 @@
 <%# 주소검색 %>
 <%- include ("../../handlebars/hndl-lp-find-address.ejs") %>
 
+<%# 주소검색 v2 %>
+<%- include ("../../handlebars/hndl-lp-find-address-v2.ejs") %>
+
 <%# 주소검색-표준주소 %>
 <%- include ("../../handlebars/hndl-lp-find-address-standard.ejs") %>
+
+<%# 주소검색-표준주소 v2 %>
+<%- include ("../../handlebars/hndl-lp-find-address-standard-v2.ejs") %>
 
 <%# 배송지목록 > 삭제 %>
 <%- include ("../../handlebars/hndl-lp-dlvr-list-del.ejs") %>

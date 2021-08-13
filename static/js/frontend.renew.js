@@ -585,6 +585,17 @@ renewCommon = (function(doc, win){
             if(dialogBxs){
                 Array.prototype.slice.call(dialogBxs).forEach( function (_obj) {
                     let _tempId = _obj.getAttribute('id');
+                    if(_obj.classList.contains('basic')){
+                        $('#'+_tempId).dialog({
+                            dialogClass: "dialog-basic",
+                            title: "",
+                            autoOpen: false,
+                            width: '90%',
+                            height: 'auto',
+                            modal: true,
+                            resizable: false,
+                        });
+                    }
                     if(_obj.classList.contains('alert')){
                         $('#'+_tempId).dialog({
                             dialogClass: "dialog-alert",
