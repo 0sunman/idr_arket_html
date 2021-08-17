@@ -1138,6 +1138,9 @@ body { font-family: "Arket Sans", "Noto Sans KR", "HelveticaNeue-Light", "Helvet
 
 .price-value::after, .is-regular::after, .is-reduced::after, .price-won::after { content: '원'; font-family: "Noto Sans KR"; font-size: inherit; }
 
+.is-deprecated { padding-right: 12px; }
+.is-deprecated::before { position: absolute; top: 0; right: 0; content: '원'; display: inline-block; font-family: "Noto Sans KR"; font-size: inherit; }
+
 .dft-bx { padding: 15px 4%; }
 .dft-bx .dft-bx-tit { margin-bottom: 5px; font-weight: 400; }
 .dft-bx li { padding-top: 4px; padding-bottom: 4px; }
@@ -1208,6 +1211,8 @@ html .list-option .m-dropdown-label-ex + .m-dropdown { margin-left: 0; }
 .o-info-line-box.col-3-1 > li [class^="f-type"]:first-child { flex-basis: 30%; }
 .o-info-line-box.col-3-1 > li [class^="f-type"]:nth-child(2) { flex-basis: 40%; }
 .o-info-line-box.col-3-1 > li [class^="f-type"]:last-child { flex-basis: 30%; }
+.o-info-line-box.col-3-1 > li.one-line { flex-wrap: wrap; }
+.o-info-line-box.col-3-1 > li.one-line [class^="f-type"] { flex-basis: 100%; }
 .o-info-line-box.col-3-2 > li [class^="f-type"]:first-child { flex-basis: 40%; }
 .o-info-line-box.col-3-2 > li [class^="f-type"]:nth-child(2) { flex-basis: 30%; }
 .o-info-line-box.col-3-2 > li [class^="f-type"]:last-child { flex-basis: 30%; }
@@ -1912,6 +1917,7 @@ header.o-header.has-sis-header.has-open-search.is-open:not(.is-opening-navigatio
   header.o-header.has-sis-header.is-closing-search .o-search { z-index: -1; } }
 @media (min-width: 1025px) { header.o-header.has-sis-header .o-page-content { /* padding-top:0px;   H&M Hmall 입점 */ padding-top: 37px; /* 2019.11.18 원상복귀 */ }
   header.o-header.has-sis-header .sis-header { display: block; }
+  header.o-header.has-sis-header .m-cart-addition .a-tooltip { top: -9px; right: 8px; }
   header.o-header.has-sis-header .o-navigation .sub-menu:last-child { /*display: none;*/ }
   header.o-header.has-sis-header .o-navigation .navigation-wrapper .m-search { display: none; }
   header.o-header.has-sis-header .sub-menu.sis-sub-menu { position: static; top: 0; left: auto; right: 0; margin-right: 0; width: 100%; } }
@@ -2407,17 +2413,17 @@ html.no-touchevents .m-input.has-error .a-input, .alternative-style-option .m-in
 /* ========================================================== */
 /* ---------------------------------------------------------- */
 /* product s ================================================ */
-.o-product-listing .o-product .description .m-product-price .is-deprecated { padding-right: 10px; }
+.o-product-listing .o-product .description .m-product-price .is-deprecated { padding-right: 12px; }
 .o-product-listing .o-product .description .m-product-price .is-deprecated::before { position: absolute; top: 0; right: 0; content: '원'; display: inline-block; font-family: "Noto Sans KR"; font-size: inherit; }
 .o-product-listing .o-product .description .swatches .m-swatches .a-swatch div.a-image { position: relative; display: inline-block; }
 .o-product-listing .o-product .description .swatches .m-swatches .a-swatch.current div.a-image::before { position: absolute; top: 0; left: 0; content: ''; width: 7px; height: 7px; display: inline-block; border: 1px solid #fff; border-radius: 50%; }
 
-.o-product-cofs .description .m-product-price .is-deprecated { padding-right: 10px; }
+.o-product-cofs .description .m-product-price .is-deprecated { padding-right: 12px; }
 .o-product-cofs .description .m-product-price .is-deprecated::before { position: absolute; top: 0; right: 0; content: '원'; display: inline-block; font-family: "Noto Sans KR"; font-size: inherit; }
 
 .a-link-pdp-essential { font-size: 13px; color: #000; font-weight: 400; }
 
-.a-link.plp-link-track .price .m-product-price span.is-deprecated { padding-right: 10px; }
+.a-link.plp-link-track .price .m-product-price span.is-deprecated { padding-right: 12px; }
 .a-link.plp-link-track .price .m-product-price span.is-deprecated::before { position: absolute; top: 0; right: 0; content: '원'; display: inline-block; font-family: "Noto Sans KR"; font-size: inherit; }
 .a-link.plp-link-track .price .m-product-price span:not(.is-deprecated)::after { content: '원'; font-family: "Noto Sans KR"; font-size: inherit; }
 
@@ -2474,9 +2480,9 @@ html.no-touchevents .m-input.has-error .a-input, .alternative-style-option .m-in
 .m-cart-addition .added-item .basket-added-info .a-paragraph .item-title { font-size: 13px; }
 .m-cart-addition .added-item .basket-added-info .basket-added-info-price { display: inline-block; clear: both; float: none; width: 100%; }
 .m-cart-addition .added-item .basket-added-info .basket-added-info-price span { font-family: "Arket Sans SC", "Noto Sans KR", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", "Sans-Serif"; font-size: 13px; }
-.m-cart-addition .added-item .basket-added-info .basket-added-info-price .is-deprecated { float: left; text-decoration: line-through; }
-.m-cart-addition .added-item .basket-added-info .basket-added-info-price .is-deprecated::after { content: '원'; font-family: "Noto Sans KR"; font-size: inherit; }
-.m-cart-addition .added-item .basket-added-info .basket-added-info-price .is-deprecated::after { font-size: 10px; }
+.m-cart-addition .added-item .basket-added-info .basket-added-info-price .is-deprecated { position: relative; float: left; padding-right: 10px; }
+.m-cart-addition .added-item .basket-added-info .basket-added-info-price .is-deprecated::before { font-size: 10px; }
+.m-cart-addition .added-item .basket-added-info .basket-added-info-price .is-deprecated::after { border-bottom: .1em solid #000; content: ""; position: absolute; width: 100%; height: 50%; left: 0; top: calc(.1em + 1px); box-sizing: border-box; }
 .m-cart-addition .added-item .basket-added-info .basket-added-info-price .discount { color: #cc0000; }
 .m-cart-addition .added-item .basket-added-info .basket-added-info-price .total { float: right; }
 .m-cart-addition .added-item .basket-added-info .basket-added-info-price .total::after { content: '원'; font-family: "Noto Sans KR"; font-size: inherit; }
@@ -2497,7 +2503,7 @@ html.no-touchevents .m-input.has-error .a-input, .alternative-style-option .m-in
 .o-cart .o-cart-item .cart-wrapper .cart-item-info .markers .m-product-marker .product-marker { display: inline-block; }
 .o-cart .o-cart-item .cart-wrapper .cart-item-info .size-section .low-stock { font-family: "Arket Sans SC", "Noto Sans KR", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", "Sans-Serif"; /* 210713 기획 > 퍼블수정 : 장바구니 > 품절 말풍선 */ left: calc(50% - 46px); }
 .o-cart .o-cart-item .cart-wrapper .cart-item-info .price-section span::before, .o-cart .o-cart-item .cart-wrapper .cart-item-info .price-section span:after { font-size: 10px; }
-.o-cart .o-cart-item .cart-wrapper .cart-item-info .price-section .is-deprecated { padding-right: 10px; }
+.o-cart .o-cart-item .cart-wrapper .cart-item-info .price-section .is-deprecated { padding-right: 12px; }
 .o-cart .o-cart-item .cart-wrapper .cart-item-info .price-section .is-deprecated::before { position: absolute; top: 0; right: 0; content: '원'; display: inline-block; font-family: "Noto Sans KR"; font-size: inherit; }
 .o-cart .o-cart-item .cart-wrapper .cart-item-info .price-section .is-deprecated::before { font-size: 10px; }
 .o-cart .o-cart-item.is-soldout .content-wrapper .cart-image-wrapper { opacity: 0.3; }
@@ -2517,7 +2523,9 @@ html.no-touchevents .m-input.has-error .a-input, .alternative-style-option .m-in
 
 .o-quick-buy .m-product-price { font-size: 18px; }
 .o-quick-buy .m-product-price .product-name { width: calc(100% - 120px); }
-.o-quick-buy .m-product-price .price { width: 120px; }
+.o-quick-buy .m-product-price .price { float: right; width: 120px; }
+.o-quick-buy .m-product-price .price li { width: 100%; }
+.o-quick-buy .m-product-price .price .is-deprecated { padding-right: 16px; }
 .o-quick-buy .m-product-price .price-won::after { font-size: 18px; }
 .o-quick-buy .a-button { font-size: 16px; }
 
@@ -3146,6 +3154,16 @@ html.no-touchevents .footer-about-wrap .product-listing .o-product .image:hover 
 @media (min-width: 769px) { .stores-content .text-container .open-day b:last-child { padding-left: 15px; } }
 .stores-content .text-container .cafe-info b { display: block; padding-top: 50px; padding-bottom: 30px; }
 
+.country-wrapper { display: inline-block; width: 100%; }
+
+.map-wrapper .o-map .map-container { height: 450px; }
+.map-wrapper .map-in-store-info { display: none; position: absolute; top: 20px; right: 20px; padding: 20px 20px 20px; width: 255px; font-size: 13px; text-align: left; background: #fff; border: 1px solid #ccc; }
+.map-wrapper .map-in-store-info b { font-weight: 400; }
+.map-wrapper .map-in-store-info .close-btn { position: absolute; top: 10px; right: 10px; }
+.map-wrapper .map-in-store-info.is-visible { display: block; }
+
+@media (min-width: 769px) { .country-wrapper .dropdown { display: inline-block; padding: 0 6px 0 0; } }
+@media (min-width: 1025px) { .country-wrapper .dropdown { width: 16.66%; padding-right: 10px; } }
 /* store e ================================================== */
 /* ---------------------------------------------------------- */
 /* ========================================================== */

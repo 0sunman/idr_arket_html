@@ -76,13 +76,11 @@
         
         <!-- m-notification : m 일때 사용 -->
 <!-- to Dev : 활성화되면 .o-header 태그에 .has-sis-notification 클래스 추가 필요 -->
-<!--
-<div id="site-banner-id" data-component="MSiteBanner" class="m-site-banner slide-down" style="background-color: rgb(0, 0, 0);">
+<div id="site-banner-id" data-component="MSiteBanner" class="m-site-banner slide-down only-m" style="background-color: rgb(0, 0, 0);">
     <div class="a-paragraph site-banner-mobile is-richtext" style="padding-top:10px;padding-bottom:10px;color:#FFFFFF">
         <a href="#none" style="color:inherit;">10만 원 이상 구매 시 최대 1만 원 | <span style="border-bottom:1px solid #ffffff">신청하기</span></a>
     </div>
 </div>
--->
 <!-- //m-notification : m 일때 사용 -->
 
 <!-- tip : class name be able to toggle [hide-departments, hide-border, has-sis-heade, has-sis-notification] -->
@@ -1129,6 +1127,52 @@
         </div>
     </div>
     <!-- //header-bar -->
+
+    
+    <!-- m-cart-addition -->
+<div data-component="MCartAddition" class="m-cart-addition">
+    <div class="a-tooltip has-animation">
+        <div class="basket-wrapper">
+            <div class="added-item">
+                <div class="basket-added-image">
+                    <img class="a-image ResolveComplete" src="../../static/images/temp/sample-img.jpg">
+                </div>
+                <div class="basket-added-info">
+                    <p class="a-paragraph">
+                        <span class="item-title">루즈핏 리넨 쇼츠</span>
+                        <!--
+                        <div class="markers">
+                            <div class="m-product-marker" data-component="MProductMarkers">
+                                <div class="marker-text product-marker">
+                                    <span>online exclusive</span>
+                                </div>
+                            </div>
+                        </div>
+                        -->
+                        <div class="product-param-info second">
+                            <div class="product-params data">
+                                <div class="product-size">44</div>
+                                <div class="product-color">핑크</div>
+                                <div class="product-qty">2</div>
+                            </div>
+                        </div>
+                        <span class="basket-added-info-price">
+                            <span class="u-price is-deprecated">100,000</span>
+                            <span class="u-price discount total">85,000</span>
+                        </span>
+                    </p>
+                    <a class="a-button checkout i18n" href="/ko/cart">장바구니 보기</a>
+                </div>
+            </div>
+            <div class="no-added-item">
+                <div class="basket-added-info-title i18n">ITEM NOT ADDED</div>
+                <p class="a-paragraph i18n">This product is sold only in limited numbers per customer. You cannot
+                    add more items to your shopping bag.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //m-cart-addition -->
 
 </header>
         

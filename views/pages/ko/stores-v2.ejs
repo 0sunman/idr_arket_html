@@ -1,0 +1,184 @@
+<div data-component="OPageContent" class="o-page-content stores-content" data-component-id="">
+
+    <div class="o-width wc-75">
+        <div class="o-width wc-50">
+            <div class="o-text-field is-wide">
+                <div class="headings">
+                    <div class="m-headline">
+                        <h2 class="a-heading-2  has-margin">
+                            <span class="heading-cap">ARKET</span>
+                            Stores &amp; Cafés
+                        </h2>
+                    </div>
+                </div>
+                <div class="text-container">
+                    <p class="a-paragraph is-richtext">
+                        직원과 고객 그리고 지역사회의 안녕을 보장하기 위해 지자체 지침에 따라 매장 및 카페 오픈 시간을 조정하고 있습니다. 아래의 각 위치에 대한 구체적인 정보를 참조하십시오.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="country-wrapper">
+            <div class="dropdown">
+                <!-- 대한민국 고정위해 disabled 사용 -->
+                <div data-component="MDropdownFilter" class="m-dropdown-filter is-disabled" id="countries">
+                    <input placeholder="Choose your country" class="a-input filter" type="text" data-value="KR" value="대한민국" disabled>
+                    <span class="a-icon-accordion a-icon-arrow-down-small"></span>
+                    <ul>
+                        <li class="ul-container">
+                            <ul class="options has-results">
+                                <li class="a-option" data-value="AU">Australia</li>
+                                <li class="a-option" data-value="AT">Austria</li>
+                                <li class="a-option" data-value="BH">Bahrain</li>
+                                <li class="a-option" data-value="BE">Belgium</li>
+                                <li class="a-option" data-value="CA">Canada</li>
+                                <li class="a-option" data-value="CN">China</li>
+                                <li class="a-option" data-value="CZ">Czech Republic</li>
+                                <li class="a-option" data-value="DK">Denmark</li>
+                                <li class="a-option" data-value="FI">Finland</li>
+                                <li class="a-option" data-value="FR">France</li>
+                                <li class="a-option" data-value="DE">Germany</li>
+                                <li class="a-option" data-value="HK">Hong Kong</li>
+                                <li class="a-option" data-value="HU">Hungary</li>
+                                <li class="a-option" data-value="IE">Ireland</li>
+                                <li class="a-option" data-value="IL">Israel</li>
+                                <li class="a-option" data-value="IT">Italy</li>
+                                <li class="a-option" data-value="JP">Japan</li>
+                                <li class="a-option" data-value="KW">Kuwait</li>
+                                <li class="a-option" data-value="LV">Latvia</li>
+                                <li class="a-option" data-value="LU">Luxembourg</li>
+                                <li class="a-option" data-value="MY">Malaysia</li>
+                                <li class="a-option" data-value="NL">Netherlands</li>
+                                <li class="a-option" data-value="NO">Norway</li>
+                                <li class="a-option" data-value="PL">Poland</li>
+                                <li class="a-option" data-value="PT">Portugal</li>
+                                <li class="a-option" data-value="QA">Qatar</li>
+                                <li class="a-option" data-value="RO">Romania</li>
+                                <li class="a-option" data-value="SG">Singapore</li>
+                                <li class="a-option" data-value="SI">Slovenia</li>
+                                <li class="a-option is-dropdown-value is-selected" data-value="KR">대한민국</li>
+                                <li class="a-option" data-value="ES">Spain</li>
+                                <li class="a-option" data-value="SE">Sweden</li>
+                                <li class="a-option" data-value="CH">Switzerland</li>
+                                <li class="a-option" data-value="TR">Turkey</li>
+                                <li class="a-option" data-value="AE">United Arab Emirates</li>
+                                <li class="a-option" data-value="GB">United Kingdom</li>
+                                <li class="a-option" data-value="US">United States</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="dropdown">
+                <div data-component="MDropdownFilter" class="m-dropdown-filter" id="cities">
+                    <input placeholder="Choose your city" class="a-input filter" type="text" value="서울">
+                    <span class="a-icon-accordion a-icon-arrow-down-small"></span>
+                    <ul>
+                        <li class="ul-container">
+                            <ul class="options has-results">
+                                <li class="a-option">부산</li>
+                                <li class="a-option">대구</li>
+                                <li class="a-option">고양</li>
+                                <li class="a-option">한남</li>
+                                <li class="a-option is-dropdown-value is-selected">서울</li>
+                                <li class="a-option">성남</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="map-wrapper">
+
+            <!-- 작업후 style="height:490px; border: 1px #ebebeb solid" 삭제요망 -->
+            <div data-component="OMap" class="o-map" style="height:490px; border: 1px #ebebeb solid">
+
+                <!-- 네이버맵 -->
+                <div class="naver-map-bx"></div>
+                <!-- //네이버맵 -->
+
+                <!-- 매장정보팝업 -->
+                <div class="map-in-store-info is-visible">
+                    <button type="button" class="a-button-nostyle close-btn">
+                        <span class="a-icon-close"></span>
+                    </button>
+                    <div class="scroll-content">
+                        
+                        <div class="text-container">
+                            <div class="storea-name">
+                                ARKET <span>가로수길점</span>
+                            </div>
+                            <dis class="address">서울특별시 영등포구 여의대로 108 파크원 더현대서울 지하2층</dis>
+                            <div class="open-day">
+                                <b>월-목</b>10:30–20:00<br>
+                                <b>금-일</b>10:30-20:30
+                            </div>
+                            <div class="a-paragraph">
+                                <b>ARKET café</b>
+                            </div>
+                            <div class="open-day"><br>
+                                <b>월-목</b>10:30–20:00<br>
+                                <b>금-일</b>10:30-20:30
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- //매장정보팝업 -->
+
+            </div>
+
+            <ul class="store-list-ul">
+                <li>
+                    <!-- store-item -->
+                    <div class="store-item">
+                        <div class="o-image-listing cols-1">
+                            <div class="image-container">
+                                <div class="trackImage col-item">
+                                    <img class="a-image" src="<%= pageInfo.root %>/images/stores/WEB_Korea-store_1.jpg">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="o-text-field is-wide is-large">
+
+                            <div class="text-container align-center">
+                                <div class="storea-name">
+                                    ARKET <span>가로수길점</span>
+                                </div>
+
+                                <dis class="address">서울특별시 영등포구 여의대로 108 파크원 더현대서울 지하2층</dis>
+
+                                <div class="open-day">
+                                    <b>월-목</b>10:30–20:00<br class="only-m">
+                                    <b>금-일</b>10:30-20:30
+                                </div>
+
+                                <p class="a-paragraph">&nbsp;</p>
+
+                                <div class="a-paragraph">
+                                    <b>ARKET café</b>
+                                </div>
+
+                                <div class="open-day"><br>
+                                    <b>월-목</b>10:30–20:00<br class="only-m">
+                                    <b>금-일</b>10:30-20:30
+                                </div>
+
+                                <p class="a-paragraph">&nbsp;</p>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- //store-item -->
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <%# md-o-teaser %>
+    <%- include ("../../common/md-o-teaser.ejs") %>
+
+</div>
