@@ -1,20 +1,15 @@
 <div data-component="OPageContent" class="o-page-content stores-content" data-component-id="">
 
-    <div class="o-width wc-75">
+    <div class="u-clearfix o-width wc-75">
         <div class="o-width wc-50">
             <div class="o-text-field is-wide">
                 <div class="headings">
                     <div class="m-headline">
-                        <h2 class="a-heading-2  has-margin">
+                        <h2 class="a-heading-2 has-margin">
                             <span class="heading-cap">ARKET</span>
-                            Stores &amp; Cafés
+                            매장찾기
                         </h2>
                     </div>
-                </div>
-                <div class="text-container">
-                    <p class="a-paragraph is-richtext">
-                        직원과 고객 그리고 지역사회의 안녕을 보장하기 위해 지자체 지침에 따라 매장 및 카페 오픈 시간을 조정하고 있습니다. 아래의 각 위치에 대한 구체적인 정보를 참조하십시오.
-                    </p>
                 </div>
             </div>
         </div>
@@ -77,12 +72,7 @@
                     <ul>
                         <li class="ul-container">
                             <ul class="options has-results">
-                                <li class="a-option">부산</li>
-                                <li class="a-option">대구</li>
-                                <li class="a-option">고양</li>
-                                <li class="a-option">한남</li>
                                 <li class="a-option is-dropdown-value is-selected">서울</li>
-                                <li class="a-option">성남</li>
                             </ul>
                         </li>
                     </ul>
@@ -90,37 +80,43 @@
             </div>
         </div>
 
-        <div class="map-wrapper">
-
-            <!-- 작업후 style="height:490px; border: 1px #ebebeb solid" 삭제요망 -->
-            <div data-component="OMap" class="o-map" style="height:490px; border: 1px #ebebeb solid">
-
+        <div class="map-wrapper u-clearfix">
+            <div data-component="OMap" class="o-map">
                 <!-- 네이버맵 -->
                 <div class="naver-map-bx"></div>
                 <!-- //네이버맵 -->
 
-                <!-- 매장정보팝업 -->
+                <!-- 매장 표시 marker -->
+                <!-- to Dev [toggle Class] : is-active -->
+                <a href="none#" class="marker is-active"></a>
+                <!-- // 매장 표시 marker -->
+
+                <!-- to Dev [toggle Class] : is-visible -->
+                <!-- 매장정보팝업-가로수길점-->
                 <div class="map-in-store-info is-visible">
                     <button type="button" class="a-button-nostyle close-btn">
                         <span class="a-icon-close"></span>
                     </button>
                     <div class="scroll-content">
-                        
-                        <div class="text-container">
-                            <div class="storea-name">
-                                ARKET <span>가로수길점</span>
+
+                        <div class="text-container"><br>
+                            <div class="store-name">
+                                ARKET 가로수길점
                             </div>
-                            <dis class="address">서울특별시 영등포구 여의대로 108 파크원 더현대서울 지하2층</dis>
+                            <div class="address">
+                                서울 특별시 강남구 가로수길 30<br>
+                                02-3442-3935
+                            </div>
+                            <br>
                             <div class="open-day">
-                                <b>월-목</b>10:30–20:00<br>
-                                <b>금-일</b>10:30-20:30
+                                <span>월-일</span>11:00–20:00
                             </div>
-                            <div class="a-paragraph">
-                                <b>ARKET café</b>
+                            <br>
+                            <div class="cafe-title">
+                                ARKET café
                             </div>
-                            <div class="open-day"><br>
-                                <b>월-목</b>10:30–20:00<br>
-                                <b>금-일</b>10:30-20:30
+                            <div class="open-day">
+                                <span>월-일</span>11:00–20:00
                             </div>
                         </div>
 
@@ -128,9 +124,84 @@
                 </div>
                 <!-- //매장정보팝업 -->
 
-            </div>
+                <!-- 매장정보팝업-더현대 서울점 -->
+                <div class="map-in-store-info">
+                    <button type="button" class="a-button-nostyle close-btn">
+                        <span class="a-icon-close"></span>
+                    </button>
+                    <div class="scroll-content">
+                        
+                        <div class="text-container"><br>
+                            <div class="store-name">
+                                ARKET 더현대 서울점
+                            </div>
+                            <div class="address">
+                                서울특별시 영등포구 여의대로 108 파크원<br class="only-m">
+                                더현대서울 지하2층
+                            </div>
+                            <br>
+                            <div class="open-day">
+                                <span>월-목</span> 10:30–20:00<br>
+                                <span>금-일</span> 10:30-20:30
+                            </div>
+                            <br>
+                            <div class="cafe-title">
+                                ARKET café
+                            </div>
+                            <div class="open-day">
+                                <span>월-목</span> 10:30–20:00<br>
+                                <span>금-일</span> 10:30-20:30
+                            </div>
+                        </div>
 
-            <ul class="store-list-ul">
+                    </div>
+                </div>
+                <!-- //매장정보팝업 -->
+            </div>
+        </div>
+
+         <ul class="store-list-ul">
+                <li>
+                    <!-- store-item -->
+                    <div class="store-item">
+                        <div class="o-image-listing cols-1">
+                            <div class="image-container">
+                                <div class="trackImage col-item">
+                                    <img class="a-image" src="<%= pageInfo.root %>/images/stores/ARKET_Korea_Store-9_Web.jpg">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="o-text-field is-wide is-large">
+
+                            <div class="text-container">
+                                <div class="store-name">
+                                    ARKET 가로수길점
+                                </div>
+
+                                <div class="address">
+                                    서울 특별시 강남구 가로수길 30<br>
+                                    02-3442-3935
+                                </div>
+                                <br>
+                                <div class="open-day">
+                                    <span>월-일</span>11:00–20:00
+                                </div>
+
+                                <p class="a-paragraph">&nbsp;</p>
+
+                                <div class="cafe-title">
+                                    ARKET café
+                                </div>
+
+                                <div class="open-day">
+                                    <span>월-일</span>11:00–20:00
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- //store-item -->
+                </li>
                 <li>
                     <!-- store-item -->
                     <div class="store-item">
@@ -143,30 +214,33 @@
                         </div>
                         <div class="o-text-field is-wide is-large">
 
-                            <div class="text-container align-center">
-                                <div class="storea-name">
-                                    ARKET <span>가로수길점</span>
+                            <div class="text-container">
+                                <div class="store-name">
+                                    ARKET 더현대 서울점
                                 </div>
 
-                                <dis class="address">서울특별시 영등포구 여의대로 108 파크원 더현대서울 지하2층</dis>
+                                <div class="address">
+                                    서울특별시 영등포구 여의대로 108 파크원<br class="only-m">더현대서울 지하2층
+                                </div>
+
+                                <br>
 
                                 <div class="open-day">
-                                    <b>월-목</b>10:30–20:00<br class="only-m">
-                                    <b>금-일</b>10:30-20:30
+                                    <span>월-목</span>10:30–20:00<br>
+                                    <span>금-일</span>10:30–20:30
                                 </div>
 
                                 <p class="a-paragraph">&nbsp;</p>
 
-                                <div class="a-paragraph">
-                                    <b>ARKET café</b>
+                                <div class="cafe-title">
+                                    ARKET café
                                 </div>
 
-                                <div class="open-day"><br>
-                                    <b>월-목</b>10:30–20:00<br class="only-m">
-                                    <b>금-일</b>10:30-20:30
+                                <div class="open-day">
+                                   <span>월-목</span>10:30–20:00<br>
+                                    <span>금-일</span>10:30–20:30
                                 </div>
 
-                                <p class="a-paragraph">&nbsp;</p>
                             </div>
 
                         </div>
@@ -174,9 +248,43 @@
                     <!-- //store-item -->
                 </li>
             </ul>
-        </div>
 
     </div>
+
+    <p class="a-paragraph only-pc">&nbsp;</p>
+
+    <div class="o-width spacer wc-50">
+        <div class="m-headline u-align-center is-main-headline full-width">
+            <h2 class="a-heading-2">
+                <span class="heading-value">ARKET Café</span>
+            </h2>
+        </div>
+        <div class="o-text-field is-wide is-large">
+            <div class="text-container">
+                <p class="a-paragraph is-richtext">
+                    ARKET 매장에는 뉴 노르딕 푸드 매니페스토와 양질의 재료와 건강한 삶에 대한 비전을 담은 카페가 포함되어 있습니다.
+                    우리가 제공하는 요리에 계절의 변화를 반영하여 우리의 기후, 풍경, 물을 구분짓는 다양한 재료들로 요리하는 것을 목표로 하고 있습니다.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <p class="a-paragraph only-pc">&nbsp;</p>
+    <div class="o-width wc-100">
+        <div class="title--medium tag-cloud--new-arrivals wc-100">
+            <div class="o-tag-cloud">
+                <h6 class="a-heading-6 cloud-title"></h6>
+                <ul class="tags-container">
+                    <li class="tag">
+                        <a href="<%= pageInfo.root %>/<%= pageInfo.lang %>/cafe.html" target="_self" class="a-link">Read more</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <p class="a-paragraph only-pc">&nbsp;</p>
+    <p class="a-paragraph only-pc">&nbsp;</p>
 
     <%# md-o-teaser %>
     <%- include ("../../common/md-o-teaser.ejs") %>

@@ -88,6 +88,7 @@ html.no-touchevents .m-input, html.no-touchevents .m-dropdown, .alternative-styl
 .m-input.has-error .a-label:last-of-type { font-family: "Arket Sans", "Noto Sans KR", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", "Sans-Serif"; font-size: 12px; }
 .m-input.has-error .input-guide-text { display: none; }
 
+.m-dropdown-filter li { font-size: 13px; }
 .m-dropdown-filter .a-input { background-color: transparent; }
 .m-dropdown-filter.v2 ul { font-family: "Arket Sans", "Noto Sans KR", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", "Sans-Serif"; }
 .m-dropdown-filter.v2 ul li { font-size: 12px; }
@@ -2564,6 +2565,7 @@ html.no-touchevents .m-input.has-error .a-input, .alternative-style-option .m-in
 .o-order-confirmation .m-order-summary-row .product-info .product-param-info .product-params .product-qty::before { content: '\00D7'; display: inline-block; margin-left: 1px; }
 .o-order-confirmation .m-order-summary-row .product-info .product-param-price.fourth { position: relative; top: unset; order: 3; }
 .o-order-confirmation .m-order-summary-row .product-info .product-param-price.fourth .is-deprecated { text-decoration: line-through; }
+.o-order-confirmation .m-order-summary-row .product-info .product-param-price.fourth .is-deprecated::before { display: none; }
 .o-order-confirmation .m-order-summary-row .product-info .product-param-price.fourth .product-price, .o-order-confirmation .m-order-summary-row .product-info .product-param-price.fourth .product-discount, .o-order-confirmation .m-order-summary-row .product-info .product-param-price.fourth .product-total { font-family: "Arket Sans SC", "Noto Sans KR", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", "Sans-Serif"; }
 .o-order-confirmation .m-order-summary-row .product-info .product-param-price.fourth .product-price::after, .o-order-confirmation .m-order-summary-row .product-info .product-param-price.fourth .product-discount::after, .o-order-confirmation .m-order-summary-row .product-info .product-param-price.fourth .product-total::after { content: '원'; font-family: "Noto Sans KR"; font-size: inherit; }
 .o-order-confirmation .m-order-summary-row .product-info .product-param-price.fourth .product-price::after, .o-order-confirmation .m-order-summary-row .product-info .product-param-price.fourth .product-discount::after, .o-order-confirmation .m-order-summary-row .product-info .product-param-price.fourth .product-total::after { font-size: 10px; }
@@ -3146,6 +3148,7 @@ html.no-touchevents .footer-about-wrap .product-listing .o-product .image:hover 
 /* ========================================================== */
 /* ---------------------------------------------------------- */
 /* store s ================================================== */
+@media (min-width: 631px) { .stores-content { padding-top: 50px; } }
 .stores-content .seo-heading .text-address { display: block; margin-top: 35px; }
 @media (min-width: 769px) { .stores-content .seo-heading .text-address { margin-top: 50px; } }
 .stores-content .o-hero .takeover-wrapper { width: 100%; height: 100%; }
@@ -3153,17 +3156,49 @@ html.no-touchevents .footer-about-wrap .product-listing .o-product .image:hover 
 .stores-content .text-container .open-day b { padding-right: 10px; }
 @media (min-width: 769px) { .stores-content .text-container .open-day b:last-child { padding-left: 15px; } }
 .stores-content .text-container .cafe-info b { display: block; padding-top: 50px; padding-bottom: 30px; }
-
-.country-wrapper { display: inline-block; width: 100%; }
+.stores-content .headings .a-heading-2 { font-size: 20px; }
+.stores-content .country-wrapper { display: inline-block; width: 100%; }
+.stores-content .country-wrapper .dropdown { margin-bottom: 25px; }
+.stores-content .country-wrapper .dropdown .m-dropdown-filter .a-input { font-size: 18px; font-weight: 300; }
+@media (min-width: 631px) { .stores-content .country-wrapper { text-align: center; padding-top: 45px; padding-bottom: 5px; }
+  .stores-content .country-wrapper .dropdown { display: inline-block; padding: 0; }
+  .stores-content .country-wrapper .dropdown:first-child { padding-right: 5%; } }
+@media (min-width: 1025px) { .stores-content .country-wrapper .dropdown { width: 16.66%; min-width: 330px; } }
+.stores-content .map-wrapper { margin-top: 20px; }
+.stores-content .map-wrapper .o-map .naver-map-bx { position: relative; height: 300px; background-color: rgba(37, 37, 50, 0.1); margin-bottom: 20px; }
+@media (min-width: 769px) { .stores-content .map-wrapper .o-map .naver-map-bx { height: 400px; } }
+.stores-content .map-wrapper .o-map .marker { display: none; background: url("../images/stores/marker-off.png") no-repeat; position: absolute; top: 20%; left: 30%; width: 24px; height: 28px; }
+.stores-content .map-wrapper .o-map .marker:hover { background: url("../images/stores/marker-on.png") no-repeat; }
+.stores-content .map-wrapper .o-map .marker.is-active { display: block; }
+.stores-content .map-wrapper .o-map .map-in-store-info { display: none; position: relative; padding: 0px 10px; width: 100%; height: auto; font-size: 13px; text-align: left; background: #fff; }
+@media (min-width: 769px) { .stores-content .map-wrapper .o-map .map-in-store-info { position: absolute; top: 20px; right: 20px; width: 300px; padding: 0px 15px 60px; } }
+.stores-content .map-wrapper .o-map .map-in-store-info b { font-weight: 400; }
+.stores-content .map-wrapper .o-map .map-in-store-info .close-btn { position: absolute; top: 10px; right: 10px; }
+.stores-content .map-wrapper .o-map .map-in-store-info .text-container { padding-bottom: 30px; border-bottom: 1px solid #000; }
+.stores-content .map-wrapper .o-map .map-in-store-info .text-container .store-name { text-align: center; padding: 20px 0px; border-bottom: 1px solid #000; }
+.stores-content .map-wrapper .o-map .map-in-store-info .text-container .address { padding-top: 25px; }
+@media (min-width: 769px) { .stores-content .map-wrapper .o-map .map-in-store-info .text-container { border-bottom: none; } }
+.stores-content .map-wrapper .o-map .map-in-store-info.is-visible { display: block; }
+.stores-content .text-container .store-name { font-size: 22px; }
+.stores-content .text-container .address { font-size: 14px; }
+.stores-content .text-container .open-day { font-size: 16px; }
+.stores-content .text-container .open-day span { padding-right: 10px; font-size: 12px; }
+.stores-content .text-container .cafe-title { font-size: 16px; padding-bottom: 10px; }
+@media (min-width: 769px) { .stores-content .text-container { margin-top: 5px; } }
+.stores-content .store-list-ul li .store-item { padding-bottom: 50px; }
+.stores-content .store-list-ul li .store-item .image-container { padding: 20px 75px 10px; }
+.stores-content .store-list-ul li:last-child { border-top: 1px solid #000; }
+@media (min-width: 769px) { .stores-content .store-list-ul li .store-item { display: flex; }
+  .stores-content .store-list-ul li .store-item .o-image-listing { width: 250px; margin-right: 20px; }
+  .stores-content .store-list-ul li .store-item .o-image-listing .image-container { padding: 0; }
+  .stores-content .store-list-ul li .store-item .o-text-field { margin-left: 0; }
+  .stores-content .store-list-ul li:last-child { border-top: none; } }
+@media (min-width: 1025px) { .stores-content .store-list-ul { display: flex; padding-top: 30px; }
+  .stores-content .store-list-ul li { width: 50%; }
+  .stores-content .store-list-ul li .store-item .o-image-listing { min-width: 180px; width: 40%; } }
 
 .map-wrapper .o-map .map-container { height: 450px; }
-.map-wrapper .map-in-store-info { display: none; position: absolute; top: 20px; right: 20px; padding: 20px 20px 20px; width: 255px; font-size: 13px; text-align: left; background: #fff; border: 1px solid #ccc; }
-.map-wrapper .map-in-store-info b { font-weight: 400; }
-.map-wrapper .map-in-store-info .close-btn { position: absolute; top: 10px; right: 10px; }
-.map-wrapper .map-in-store-info.is-visible { display: block; }
 
-@media (min-width: 769px) { .country-wrapper .dropdown { display: inline-block; padding: 0 6px 0 0; } }
-@media (min-width: 1025px) { .country-wrapper .dropdown { width: 16.66%; padding-right: 10px; } }
 /* store e ================================================== */
 /* ---------------------------------------------------------- */
 /* ========================================================== */
