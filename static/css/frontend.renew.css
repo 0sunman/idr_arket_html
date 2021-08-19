@@ -216,8 +216,8 @@ html.no-touchevents .m-input, html.no-touchevents .m-dropdown, .alternative-styl
 .product-shipping-tooltip-bx.is-open .a-tooltip::after, .m-product-shipping-info.is-open .a-tooltip::after { border-top-color: #fff; transform: translateY(-1px); }
 
 @media (min-width: 769px) { .o-header.has-open-search .category-group { padding-top: 0; }
-  .o-page-content .left-component + .o-width[class*="title--"] { clear: both; }
-  .o-page-content .left-component + .o-width[class*="title--"] + .sdp-component.local-navigation { position: relative; } }
+  .o-page-content .left-component + .o-width { clear: both; }
+  .o-page-content .left-component + .o-width + .sdp-component.local-navigation { position: relative; } }
 @media (max-width: 768px) { .o-page-content .o-width .product-listing.align-below .o-product-listing { padding-top: 0; } }
 @media (max-width: 1024px) { .o-product-details .left-panel .attributes-bottom .description-container .a-paragraph { font-size: 12px; } }
 /* frontend.min overwrite e ================================= */
@@ -1199,6 +1199,7 @@ html .list-option .m-dropdown-label-ex + .m-dropdown { margin-left: 0; }
 .o-info-line-box > li.flexwrap { flex-wrap: wrap; }
 .o-info-line-box > li.info-line-toggle-li { display: none; }
 .o-info-line-box > li.info-line-toggle-li.mode-edit { display: flex; }
+.o-info-line-box > li.left-star { justify-content: start; }
 .o-info-line-box .space { margin-top: 5px; }
 .o-info-line-box .f-type1 { font-weight: 300; font-size: 13px; color: #000; }
 .o-info-line-box .f-type2 { color: #000; }
@@ -1612,12 +1613,12 @@ body.is-page-loading .page-loading-bx { display: flex; }
 
 html .lp-find-address .m-input { margin-top: 35px; margin-bottom: 35px; }
 
-.lp-deposit-account-guide .m-headline.is-main-headline { margin-bottom: 0; }
-.lp-deposit-account-guide .content { padding-top: 0; padding-bottom: 0; text-align: left; }
-.lp-deposit-account-guide .content .o-info-line-box { margin-bottom: 20px; }
-.lp-deposit-account-guide .content .o-info-line-box.col-2-1 > li span:first-child { flex-basis: 24%; }
-.lp-deposit-account-guide .content .o-info-line-box.col-2-1 > li span:last-child { flex-basis: 76%; }
-.lp-deposit-account-guide .content .o-info-line-box .price-won { text-align: left; }
+.lp-return-details .m-headline.is-main-headline, .lp-order-cancel-details .m-headline.is-main-headline, .lp-deposit-account-guide .m-headline.is-main-headline { margin-bottom: 0; }
+.lp-return-details .content, .lp-order-cancel-details .content, .lp-deposit-account-guide .content { padding-top: 0; padding-bottom: 0; text-align: left; }
+.lp-return-details .content .o-info-line-box, .lp-order-cancel-details .content .o-info-line-box, .lp-deposit-account-guide .content .o-info-line-box { margin-bottom: 20px; }
+.lp-return-details .content .o-info-line-box.col-2-1 > li span:first-child, .lp-order-cancel-details .content .o-info-line-box.col-2-1 > li span:first-child, .lp-deposit-account-guide .content .o-info-line-box.col-2-1 > li span:first-child { flex-basis: 24%; }
+.lp-return-details .content .o-info-line-box.col-2-1 > li span:last-child, .lp-order-cancel-details .content .o-info-line-box.col-2-1 > li span:last-child, .lp-deposit-account-guide .content .o-info-line-box.col-2-1 > li span:last-child { flex-basis: 76%; }
+.lp-return-details .content .o-info-line-box .price-won, .lp-order-cancel-details .content .o-info-line-box .price-won, .lp-deposit-account-guide .content .o-info-line-box .price-won { text-align: left; }
 
 .lp-nonmbr-order-info-agree .content { padding-top: 0; padding-bottom: 0; text-align: left; }
 
@@ -1704,17 +1705,16 @@ html .lp-find-address .m-input { margin-top: 35px; margin-bottom: 35px; }
 .pay-process-loading-bx .content-bx .t1 { margin-bottom: 10px; font-size: 20px; }
 .pay-process-loading-bx .content-bx .t2 { font-size: 14px; }
 
+.lp-return-details .content .o-info-line-box, .lp-order-cancel-details .content .o-info-line-box { margin-bottom: 0; border-top: 1px solid #ddd; border-bottom: 0; }
+.lp-return-details .content .o-info-line-box:first-child, .lp-order-cancel-details .content .o-info-line-box:first-child { border-top: 0; }
+.lp-return-details .content .o-info-line-box li, .lp-order-cancel-details .content .o-info-line-box li { align-items: flex-start; }
+
 /* layer-popup e ============================================ */
 /* ---------------------------------------------------------- */
 /* lightbox-list > 마이페이지_주문배송 > 환불계좌변경 : 계좌인증성공,실패 */
 .guide-text-pop { line-height: 24px; font-weight: 300; font-size: 18px; color: #000; }
 
 .guide-text-color { color: #d00d00; }
-
-/* lightbox-list > 마이페이지_주문배송 > 반품상세정보*/
-.content .o-info-line-box-top { border-top: 0; border-color: #000; border-bottom-width: 0px; border-bottom-style: solid; }
-
-.o-info-line-box > li.left-star { justify-content: start; }
 
 .left-star .product-params { display: block; }
 .left-star .product-params div.product { display: inline-block; }
@@ -1729,6 +1729,7 @@ html .lp-find-address .m-input { margin-top: 35px; margin-bottom: 35px; }
 
 .f-type6 { font-weight: 400; font-size: 14px; color: #000; }
 
+/* lightbox-list > 마이페이지_주문배송 > 반품상세정보*/
 /*lightbox-list > 마이페이지_회원정보_영수증_인쇄*/
 .stamp-img { position: absolute; right: 0px; top: -8px; }
 
