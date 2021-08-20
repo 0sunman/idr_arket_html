@@ -1895,7 +1895,7 @@ header.o-header.has-sis-header .o-navigation .secondary-navigation .my-account-b
 header.o-header.has-sis-header .o-navigation .secondary-navigation .my-account-block .my-account-section::before, header.o-header.has-sis-header .o-navigation .secondary-navigation .my-account-block .my-account-section::after { display: none; }
 header.o-header.has-sis-header .o-navigation.is-open .btn-pt-prev { display: none; }
 header.o-header.has-sis-header.has-open-search { height: calc(112px + 37px); }
-header.o-header.has-sis-header.has-open-search.is-open:not(.is-opening-navigation) { height: auto; }
+header.o-header.has-sis-header.has-open-search:not(.is-opening-navigation) { height: auto; }
 @media (max-width: 768px) { header.o-header.has-sis-header .o-navigation:not(.is-open) .secondary-navigation .a-burger { margin-left: 30px; }
   header.o-header.has-sis-header .o-navigation:not(.is-open) .secondary-navigation .search-icon { display: none; }
   header.o-header.has-sis-header .o-navigation .secondary-navigation .a-bag-icon-container { display: none; } }
