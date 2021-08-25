@@ -1,0 +1,37 @@
+<div data-component="OPageContent" class="o-page-content iframe-wrap">
+    <iframe id="sisFrame"
+            class="sisFrame parsys"
+            <%
+                if(pageInfo.isLocalExPath) {
+            %>
+            src="<%= pageInfo.pageRoot %>/dist-sis-con/<%= pageInfo.lang %>/men-sis-con.html"
+            <%
+                }else {
+            %>
+            src="/<%= pageInfo.lang %>/men-sis-con.html"
+            <%
+                }
+            %>
+            style="margin-top:-1px; min-height:100vh"
+            width="100%"
+            frameborder="no"
+            scrolling="no"
+            marginheight="0"
+            marginwidth="0"
+            onload="iframeAutoResize(this);">
+    </iframe>
+</div>
+
+<!-- tip : when develop this script must be delete -->
+<script type="text/javascript">
+    (function() {
+        'use strict';
+        //헤더 border-bottom 라인 숨기기
+        let tempHeader = document.querySelector('.o-header');
+        //tempHeader.classList.add('hide-border');
+
+        let tempHeaderMen = tempHeader.querySelector('.departments li:nth-child(2) a')
+        tempHeaderMen.classList.add('is-active'); //gnb 활성화
+    })();
+</script>
+<!-- //tip -->

@@ -904,7 +904,7 @@ display: inline-block;
 /* lightbox-list > 상품 > 상품필수정보  */
 .freeHTML-sizeguide-chart-info { text-align: left; }
 .freeHTML-sizeguide-chart-info th { border-right: 1px solid #000; }
-.freeHTML-sizeguide-chart-info th, .freeHTML-sizeguide-chart-info td { padding: 10px 5px; border-bottom-width: 1px; font-size: 13px; color: #000; border-bottom-style: none; font-weight: 400; }
+.freeHTML-sizeguide-chart-info th, .freeHTML-sizeguide-chart-info td { padding: 10px 5px; border-bottom-width: 1px; font-size: 13px; color: #000; border-bottom-style: none; font-weight: 400; word-break: break-word; }
 
 .freeHTML-sizeguide-chart-info tr:nth-child(2n-2) th, .freeHTML-sizeguide-chart-info tr:nth-child(2n-2) td { background-color: #E9E9EB; }
 
@@ -1424,6 +1424,7 @@ body.is-page-loading .page-loading-bx { display: flex; }
 .o-sign-in-registration-tabs.is-my-account-tooltip .o-sign-in .social-login-container .sns-list ul li:nth-child(2n + 1) { padding-left: 0; }
 .o-sign-in-registration-tabs.is-my-account-tooltip .o-sign-in .social-login-container .sns-list ul li:nth-child(2n + 2) { padding-right: 0; }
 .o-sign-in-registration-tabs.is-my-account-tooltip .o-sign-in .social-login-container .info { margin-top: 0; margin-bottom: 26px; color: #000; }
+.o-sign-in-registration-tabs.is-my-account-tooltip .o-sign-in .btn-non-member { order: 6; width: 100%; }
 
 .o-header::before { opacity: 1; }
 .o-header .o-sign-in-registration-tabs.is-my-account-tooltip .o-sign-in .checkbox-input { margin-top: 20px; margin-bottom: 37px; width: 100%; }
@@ -1473,7 +1474,7 @@ body.is-page-loading .page-loading-bx { display: flex; }
 .o-footer.o-footer-top > ul > li.li-contry { margin-top: 9px; padding-top: 17px; padding-bottom: 10px; border-top: 1px solid #000; }
 .o-footer.o-footer-top > ul > li.li-contry .a-image { position: relative; top: 3px; width: 23px; height: 16px; }
 .o-footer.o-footer-top > ul > li.li-contry .icon-flag { border: 1px solid #ccc; }
-.o-footer.o-footer-top > ul > li.li-contry > * { vertical-align: unset; }
+.o-footer.o-footer-top > ul > li.li-contry > * { vertical-align: unset; font-family: "Arket Sans SC", "Noto Sans KR", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", "Sans-Serif"; font-size: 13px; }
 @media (max-width: 768px) { .o-footer.o-footer-top > ul::before { display: none; } }
 @media (min-width: 631px) { .o-footer.o-footer-top > ul { flex-wrap: nowrap; justify-content: center; border-top: 0; }
   .o-footer.o-footer-top > ul > li { padding-right: 6px; padding-left: 6px; flex: none; width: auto; }
@@ -1925,6 +1926,8 @@ header.o-header.has-sis-header.has-open-search:not(.is-opening-navigation) { hei
   header.o-header.has-sis-header .sub-menu.sis-sub-menu { position: static; top: 0; left: auto; right: 0; margin-right: 0; width: 100%; } }
 @media (max-width: 1024px) { header.o-header.has-sis-header.has-open-search { height: calc(112px + 37px + 41px); } }
 
+.iframe-wrap { margin-top: 0 !important; }
+
 /* @ 샵인샵 레이아웃 BASE / 2018.01.29 / mglee */
 .o-page-content { padding-top: 0px; /*sis-header 높이값*/ }
 
@@ -2034,7 +2037,7 @@ header.o-header.has-sis-header.has-open-search:not(.is-opening-navigation) { hei
 
 .ie7 #sis_footer { z-index: 501 !important; }
 
-#sis_footer { position: relative; margin-top: 100px; padding-bottom: 55px; width: 100%; letter-spacing: normal; background-color: #ffffff; border-top: 3px solid #36544a; }
+#sis_footer { position: relative; margin-top: 100px; padding-bottom: 20px; width: 100%; letter-spacing: normal; background-color: #ffffff; border-top: 3px solid #36544a; }
 #sis_footer .row { width: 1200px; max-width: 1580px; padding-left: 20px; /* @샵인샵하단 너비 조정 / 20180131 / mglee */ margin: 0 auto; position: relative; }
 #sis_footer .row:after { content: ""; display: block; clear: both; }
 #sis_footer .top { background: #fff; line-height: 40px; height: 40px; }
@@ -2104,6 +2107,40 @@ header.o-header.has-sis-header.has-open-search:not(.is-opening-navigation) { hei
 .m-notification .timeLabel { margin-right: 5px; margin-left: 2px; font-family: "Arket Sans SC"; }
 
 /* sis footer e ============================================= */
+/* ---------------------------------------------------------- */
+/* ---------------------------------------------------------- */
+/* sis utilbar s ============================================ */
+.utilbar li a:before { display: inline-block; text-indent: -9999px; overflow: hidden; background-image: url(http://image.thehyundai.com/hdsmart/images/co/ic_main.png); background-repeat: no-repeat; background-size: 300px 300px; }
+
+.utilbar { display: none; position: fixed; z-index: 1000; left: 0; right: 0; bottom: 0; height: 50px; padding-top: 1px; background-color: rgba(165, 165, 165, 0.3); }
+.utilbar ul { margin: 0; padding: 0; height: 100%; border-top: 1px solid #6e6e6e; background-color: #fff; }
+.utilbar ul:after { content: ''; clear: both; display: block; }
+.utilbar ul li { float: left; height: 100%; }
+.utilbar ul li a { display: block; padding-top: 6px; height: 100%; line-height: 1em; font-size: 10px; color: #444; font-weight: 700; text-align: center; text-decoration: none; outline: none; }
+.utilbar ul li a::before { content: ''; display: block; width: 27px; height: 27px; margin: 0 auto 1px; }
+.utilbar ul li.home { width: 16%; }
+.utilbar ul li.home a::before { background-position: 0 -35px; }
+.utilbar ul li.category { width: 17%; }
+.utilbar ul li.category a:before { background-position: -30px -35px; }
+.utilbar ul li.search { width: 16%; }
+.utilbar ul li.search a:before { background-position: -60px -35px; }
+.utilbar ul li.cart { width: 17%; }
+.utilbar ul li.cart a:before { background-position: -90px -35px; }
+.utilbar ul li.delivery { width: 17%; }
+.utilbar ul li.delivery a:before { background-position: -120px -35px; }
+.utilbar ul li.myhd { width: 17%; }
+.utilbar ul li.myhd a:before { background-position: -150px -35px; }
+.utilbar .cart { position: relative; }
+.utilbar .cart .cnt { position: absolute; top: 8px; left: 50%; margin-left: 3px; line-height: 16px; background: #dd72bb; font-size: 10px; font-weight: 700; color: #fff; padding: 0 4px; height: 13px; -webkit-border-radius: 13px; -moz-border-radius: 13px; border-radius: 13px; text-align: center; }
+
+@media (max-width: 768px) { .is-sis-body .utilbar { display: block; }
+  .is-sis-body .o-cookie-message { bottom: 49px; }
+  .is-sis-body #sis_footer { padding-bottom: 55px; }
+  .is-sis-body #sis_footer .go-top a { bottom: 55px; } }
+
+html.no-touchevents .utilbar { display: none; }
+
+/* sis utilbar e ============================================ */
 /* ---------------------------------------------------------- */
 /* ========================================================== */
 /*                                                            */
@@ -3275,7 +3312,7 @@ html.no-touchevents .footer-about-wrap .product-listing .o-product .image:hover 
 .policy-text-wrap .freeHTML-accordian-content p:last-child { padding-bottom: 0px; }
 .policy-text-wrap .o-text-field .text-container .a-paragraph { font-size: 12px; line-height: 1.5em; }
 .policy-text-wrap .o-text-field .text-container .inner-indent { padding-left: 10px; text-indent: -10px; display: inline-block; }
-.policy-text-wrap .o-text-field .text-container .inner-indent .inner-indent { padding-left: 10px; text-indent: 0; }
+.policy-text-wrap .o-text-field .text-container .inner-indent.pl-20 { padding-left: 20px; }
 .policy-text-wrap .o-text-field .text-container .inner-indent-2 { padding-left: 104px; text-indent: -104px; display: inline-block; }
 .policy-text-wrap .o-text-field .text-container .agree-top { padding-top: 56px; margin-top: -56px; }
 @media (max-width: 768px) { .policy-text-wrap .o-text-field .text-container .agree-top { padding-top: 53px; margin-top: -53px; } }

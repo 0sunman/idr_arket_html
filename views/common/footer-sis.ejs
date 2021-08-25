@@ -1,7 +1,66 @@
 <div class="u-no-select" id="footer_warp">
 
-    <%# footer-top %>
-    <%- include ("footer-arket.ejs") %>
+    <!-- o-footer -->
+    <footer class="o-footer o-footer-top u-clearfix">
+        <ul>
+            <li>
+                <a class="a-link" href="#" target="_self">About ARKET</a>
+            </li>
+            <li>
+                <a class="a-link" href="#" target="_self">지속가능성</a>
+            </li>
+            <li>
+                <a class="a-link" href="/<%= pageInfo.lang %>/customer-service.html" target="_self">고객서비스</a>
+            </li>
+            <li>
+                <a class="a-link" href="/<%= pageInfo.lang %>/newslettersubscribe.html"  target="_self">뉴스레터</a>
+            </li>
+            <li>
+                <a class="a-link" href="/<%= pageInfo.lang %>/stores.html" target="_self">매장정보</a>
+            </li>
+            <li>
+                <a class="a-link" href="/<%= pageInfo.lang %>/customer-service/size-guide.html" target="_self">사이즈 가이드</a>
+            </li>
+            <li>
+                <a class="a-link" href="http://press.arket.com/" target="_self">프레스</a>
+            </li>
+            <li>
+                <a class="a-link" href="https://career.hmgroup.com/arket" target="_self">채용정보</a>
+            </li>
+            <li>
+                <a class="a-link" href="/<%= pageInfo.lang %>/my-account.html" target="_self">리사이클링</a>
+            </li>
+        </ul>
+        <ul>
+            <li class="right">
+                <a class="a-link" href="#" target="_self">KAKAOTALK</a>
+            </li>
+            <li class="right">
+                <a class="a-link" href="#" target="_self">INSTAGRAM</a>
+            </li>
+            <li class="right">
+                <a class="a-link" href="#" target="_self">FACEBOOK</a>
+            </li>
+            <li class="right">
+                <a class="a-link" href="#" target="_self">PINTEREST</a>
+            </li>
+            <li class="right li-contry">
+                <!-- mrk-edit : 20210825 -->
+                <!--
+                <a id="noTransactionalClick" class="a-link open-lightbox" href="#" target="_self" data-country="UK" data-template="country-selector" data-classes="is-country-selector is-multi-language">
+                    <span>배송국가 : 대한민국</span>
+                    <img class="a-image icon-flag" alt="flag" src="<%= pageInfo.root %>/images/icon/icon-country-korea.svg">
+                </a>
+                -->
+                <div>
+                    <span>배송국가 : 대한민국</span>
+                    <img class="a-image icon-flag" alt="flag" src="<%= pageInfo.root %>/images/icon/icon-country-korea.svg">
+                </div>
+                <!-- mrk-edit : 20210825 -->
+            </li>
+        </ul>
+    </footer>
+    <!-- //o-footer -->
 
     <!-- sis-footer-pc -->
     <div id="sis_footer" class="sis-footer sis-footer-pc">
@@ -172,6 +231,10 @@
         </div>
     </footer>
     <!-- //sis-footer-m -->
+
+    <!-- util bar -->
+    <%- include ("../common/utilbar-sis.ejs") %>
+    <!-- util bar -->
 
 </div>
 
