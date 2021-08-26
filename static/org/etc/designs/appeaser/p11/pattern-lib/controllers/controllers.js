@@ -34030,7 +34030,7 @@ var OSearch = /*#__PURE__*/function (_AppeaserComponentBas) {
     value: function _onKeyDown(e) {
       var event = e.originalEvent; //Allow edits e.g. Cmd + C
 
-      if (event.metaKey || event.ctrlKey || $('input:focus').length) {
+      if (event.metaKey || event.ctrlKey || $('input:focus').length || $('textarea:focus').length) {
         return;
       } else if (event.key.match(this.REGEX_ALLOWED_TRIGGER_KEYS) && !this.$el.hasClass(_Enums.default.CLASS.IS_OPEN_STATE)) {
         this._showSearch();

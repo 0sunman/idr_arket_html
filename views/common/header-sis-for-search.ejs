@@ -251,20 +251,22 @@
 <script type="text/javascript">
     (function() {
         'use strict';
-        //헤더 border-bottom 라인 숨기기
-        let tempHeader = document.querySelector('.o-header');
-        tempHeader.classList.add('hide-departments','has-open-search','is-open');
+        setTimeout(function(){
+            //헤더 border-bottom 라인 숨기기
+            let tempHeader = document.querySelector('.o-header');
+            tempHeader.classList.add('hide-departments','has-open-search','is-open');
 
-        let tempOsearch = tempHeader.querySelector('.o-search');
-        tempOsearch.classList.add('is-open');
+            let tempOsearch = tempHeader.querySelector('.o-search');
+            tempOsearch.classList.add('is-open');
 
-        let tempOsearchIcon = tempHeader.querySelector('.search-icon.a-icon');
-        tempOsearchIcon.classList.add('is-open');
+            let tempOsearchIcon = tempHeader.querySelector('.search-icon.a-icon');
+            tempOsearchIcon.classList.add('is-open');
 
-        let tempHeaderWomen = tempHeader.querySelector('.departments li:nth-child(1) a')
-        let tempCategoryWrapper = tempHeader.querySelectorAll('.animation-wrapper .category-wrapper');
-        tempCategoryWrapper[0].classList.add('is-visible');
-        tempCategoryWrapper[0].querySelector('.category-menu').classList.add('is-hidden');
+            let tempHeaderWomen = tempHeader.querySelector('.departments li:nth-child(1) a')
+            let tempCategoryWrapper = tempHeader.querySelectorAll('.animation-wrapper .category-wrapper');
+            tempCategoryWrapper[0].classList.add('is-visible');
+            tempCategoryWrapper[0].querySelector('.category-menu').classList.add('is-hidden');
+        },3000)
     })();
 </script>
 <!-- //tip -->

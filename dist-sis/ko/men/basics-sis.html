@@ -1731,13 +1731,13 @@
     <!-- //handlebars-template -->
 
     <!-- o-page-content -->
-    <iframe id="sisFrame"
-		class="sisFrame"
+    <div data-component="OPageContent" class="o-page-content iframe-wrap">
+	<iframe id="sisFrame"
+		class="sisFrame parsys"
 
 		
 		src="../../../dist-sis-con/ko/men/basics-sis-con-sis-con.html"
 		
-		style="margin-top:-1px; min-height:100vh"
 		width="100%"
 		frameborder="no"
 		scrolling="no"
@@ -1745,7 +1745,7 @@
 		marginwidth="0"
 		onload="iframeAutoResize(this);">
 </iframe>
-
+</div>
     <!-- //o-page-content -->
 
     <!-- footer-sis -->
@@ -2091,16 +2091,20 @@
             setTimeout(function(){
                 let sisFrame = document.querySelector('#sisFrame');
                 if(sisFrame) {
+                    //iframe 밖을 o-page-content로 감싸면서 사용하지 않게 되었음 : 20210826
                     //iframe margin-top set
-                    let oHeaderH = document.querySelector('.o-header').offsetHeight;
-                    let tempH = oHeaderH - 56 - 1; //o-page-content 의 margin-top 빼기
-                    let oSearchOpen = document.querySelector('.o-search.is-open');
-                    if(oSearchOpen){
-                        let oSearchOpenH = oSearchOpen.offsetHeight;
-                        tempH = tempH - 56; //검색어입력영역이 is-open 일 경우
-                    }
-                    tempH = (tempH < -1 ? -1 : tempH);
-                    sisFrame.style.marginTop = tempH + "px";
+                    // let oHeaderH = document.querySelector('.o-header').offsetHeight;
+                    // let tempH = oHeaderH - 56 - 1; //o-page-content 의 margin-top 빼기
+                    // let oSearchOpen = document.querySelector('.o-search.is-open');
+                    // if(oSearchOpen){
+                    //     let oSearchOpenH = oSearchOpen.offsetHeight;
+                    //     tempH = tempH - 56; //검색어입력영역이 is-open 일 경우
+                    // }
+                    // tempH = (tempH < -1 ? -1 : tempH);
+                    // sisFrame.style.marginTop = tempH + "px";
+
+                    //iframe 내 .o-pagte-content 에 .mt0 클래스 추가하기
+                    //sisFrame.contentWindow.document.querySelector('.o-page-content').classList.add('mt0')
                 }
             },1000);
         })();

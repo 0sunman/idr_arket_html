@@ -1,5 +1,6 @@
-<iframe id="sisFrame"
-		class="sisFrame"
+<div data-component="OPageContent" class="o-page-content iframe-wrap">
+	<iframe id="sisFrame"
+		class="sisFrame parsys"
 
 		<%
 			if(pageInfo.isLocalExPath) {
@@ -12,7 +13,6 @@
 		<%
 			}
 		%>
-		style="margin-top:-1px; min-height:100vh"
 		width="100%"
 		frameborder="no"
 		scrolling="no"
@@ -20,3 +20,4 @@
 		marginwidth="0"
 		onload="iframeAutoResize(this);">
 </iframe>
+</div>
