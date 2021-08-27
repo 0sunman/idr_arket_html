@@ -2510,6 +2510,9 @@ html.no-touchevents .m-input.has-error .a-input, .alternative-style-option .m-in
 
 .o-pra-component .o-slider .pagination { min-height: 47px; }
 
+@media (max-width: 768px) { .o-product-slider .o-product-cofs .description .m-product-price { white-space: initial; }
+  .o-product-slider .o-product-cofs .description .m-product-price .is-reduced { margin-left: 0; } }
+
 /* product e ================================================ */
 /* ---------------------------------------------------------- */
 /* ========================================================== */
