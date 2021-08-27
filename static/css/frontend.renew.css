@@ -1619,6 +1619,7 @@ html .lp-find-address .m-input { margin-top: 35px; margin-bottom: 35px; }
 .lp-return-details .content .o-info-line-box, .lp-order-cancel-details .content .o-info-line-box, .lp-deposit-account-guide .content .o-info-line-box { margin-bottom: 20px; }
 .lp-return-details .content .o-info-line-box.col-2-1 > li span:first-child, .lp-order-cancel-details .content .o-info-line-box.col-2-1 > li span:first-child, .lp-deposit-account-guide .content .o-info-line-box.col-2-1 > li span:first-child { flex-basis: 24%; }
 .lp-return-details .content .o-info-line-box.col-2-1 > li span:last-child, .lp-order-cancel-details .content .o-info-line-box.col-2-1 > li span:last-child, .lp-deposit-account-guide .content .o-info-line-box.col-2-1 > li span:last-child { flex-basis: 76%; }
+.lp-return-details .content .o-info-line-box.col-2-1 > li .product-param-info, .lp-order-cancel-details .content .o-info-line-box.col-2-1 > li .product-param-info, .lp-deposit-account-guide .content .o-info-line-box.col-2-1 > li .product-param-info { flex-basis: 76%; }
 .lp-return-details .content .o-info-line-box .price-won, .lp-order-cancel-details .content .o-info-line-box .price-won, .lp-deposit-account-guide .content .o-info-line-box .price-won { text-align: left; }
 
 .lp-nonmbr-order-info-agree .content { padding-top: 0; padding-bottom: 0; text-align: left; }
