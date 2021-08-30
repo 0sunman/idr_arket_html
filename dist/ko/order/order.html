@@ -922,7 +922,7 @@
                             <p class="item-top">
                                 <span class="name">홍길동</span>
                                 <a class="a-link a-link-udln delivery-item-edit" href="#none" target="_self">수정</a>
-                                <a class="a-link a-link-udln delivery-item-del open-lightbox" href="#none" target="_self" data-template="lp-dlvr-list-del" data-classes="alert">삭제</a>
+                                <a class="a-link a-link-udln delivery-item-del open-dialog-btn" data-target="lp-dlvr-list-del" href="#none" target="_self">삭제</a>
                             </p>
                             <p class="phone-num">010-6841-9653</p>
                             <p class="phone-num">010-6841-9653</p>
@@ -2358,12 +2358,19 @@
                     btnAddressSearch.addEventListener('click', function (_evt) {
                         _evt.preventDefault();
                         _evt.stopPropagation();
-                        let tempWrap = this.closest('.lp-find-address');
-                        if(tempWrap && !tempWrap.classList.contains('step2')){
-                            tempWrap.classList.add('step2')
+                        // let tempWrap = this.closest('.lp-find-address');
+                        // if(tempWrap && !tempWrap.classList.contains('step2')){
+                        //     tempWrap.classList.add('step2')
+                        // }
+                        // if(tempWrap && tempWrap.classList.contains('step3')){
+                        //     tempWrap.classList.remove('step3')
+                        // }
+                        let tempWrap = $(this).parents('.lp-find-address');
+                        if(tempWrap && !tempWrap.hasClass('step2')){
+                            tempWrap.addClass('step2')
                         }
-                        if(tempWrap && tempWrap.classList.contains('step3')){
-                            tempWrap.classList.remove('step3')
+                        if(tempWrap && tempWrap.hasClass('step3')){
+                            tempWrap.removeClass('step3')
                         }
                     });
                 }
@@ -2373,17 +2380,24 @@
                         _obj.addEventListener('click', function (_evt) {
                             _evt.preventDefault();
                             _evt.stopPropagation();
-                            let tempWrap = this.closest('.lp-find-address');
-                            if(tempWrap && tempWrap.classList.contains('step2')){
-                                tempWrap.classList.remove('step2')
+                            // let tempWrap = this.closest('.lp-find-address');
+                            // if(tempWrap && tempWrap.classList.contains('step2')){
+                            //     tempWrap.classList.remove('step2')
+                            // }
+                            // if(tempWrap && !tempWrap.classList.contains('step3')){
+                            //     tempWrap.classList.add('step3')
+                            // }
+                            let tempWrap = $(this).parents('.lp-find-address');
+                            if(tempWrap && tempWrap.hasClass('step2')){
+                                tempWrap.removeClass('step2')
                             }
-                            if(tempWrap && !tempWrap.classList.contains('step3')){
-                                tempWrap.classList.add('step3')
+                            if(tempWrap && !tempWrap.hasClass('step3')){
+                                tempWrap.addClass('step3')
                             }
                         });
                     });
                 }
-            },100);
+            },100);;
         })();
     </script>
     <!-- //tip -->

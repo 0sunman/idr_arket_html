@@ -1336,8 +1336,8 @@
                                            type="email" value="" name="j_username" id="sign-in-email"
                                            required="required"
                                            pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
-                                           data-validation-required-text="이메일 주소를 입력하세요"
-                                           data-validation-pattern-text="아이디를 입력해주세요"
+                                           data-validation-required-text="아이디를 입력해주세요."
+                                           data-validation-pattern-text="입력하신 아이디가 맞지 않습니다."
                                            tabindex="200"
                                            style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6zwAAAgcBApocMXEAAAAASUVORK5CYII=&quot;);">
                                     <label class="a-label js-a-label" for="sign-in-email"
@@ -1355,7 +1355,7 @@
                                            tabindex="201"
                                            style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6zwAAAgcBApocMXEAAAAASUVORK5CYII=&quot;);">
                                     <label class="a-label js-a-label" for="sign-in-password" data-placeholder="" aria-hidden="true"></label>
-                                    <button type="button" class="a-button-nostyle toggle-password-state password-visible" data-show-text="Show" data-hide-text="Hide">Show</button>
+<!--                                    <button type="button" class="a-button-nostyle toggle-password-state password-visible" data-show-text="Show" data-hide-text="Hide">Show</button>-->
                                 </div>
 
                                 <div class="checkbox-input">
@@ -1365,8 +1365,8 @@
                                         <label class="a-label js-a-label" for="checkbox_rememberme_popup">아이디 저장</label>
                                     </span>
                                     <div class="link-holder">
-                                        <a href="/ko/id/requestSignIn" target="_self" class="a-link forgot-id bo-b" onclick="">아이디찾기</a>
-                                        <a href="/ko/password/requestSignIn" target="_self" class="a-link forgot-password bo-b" onclick="TealiumUtils.trackForgotButton();">비밀번호찾기</a>
+                                        <a href="/ko/id/requestSignIn/request-signIn.html" target="_self" class="a-link forgot-id bo-b" onclick="">아이디찾기</a>
+                                        <a href="/ko/password/requestSignIn/request-signin.html" target="_self" class="a-link forgot-password bo-b" onclick="TealiumUtils.trackForgotButton();">비밀번호찾기</a>
                                     </div>
                                 </div>
 
@@ -6429,7 +6429,7 @@
                             <p class="item-top">
                                 <span class="name">홍길동</span>
                                 <a class="a-link a-link-udln delivery-item-edit" href="#none" target="_self">수정</a>
-                                <a class="a-link a-link-udln delivery-item-del open-lightbox" href="#none" target="_self" data-template="lp-dlvr-list-del" data-classes="alert">삭제</a>
+                                <a class="a-link a-link-udln delivery-item-del open-dialog-btn" data-target="lp-dlvr-list-del" href="#none" target="_self">삭제</a>
                             </p>
                             <p class="phone-num">010-6841-9653</p>
                             <p class="phone-num">010-6841-9653</p>
@@ -6983,12 +6983,19 @@
                     btnAddressSearch.addEventListener('click', function (_evt) {
                         _evt.preventDefault();
                         _evt.stopPropagation();
-                        let tempWrap = this.closest('.lp-find-address');
-                        if(tempWrap && !tempWrap.classList.contains('step2')){
-                            tempWrap.classList.add('step2')
+                        // let tempWrap = this.closest('.lp-find-address');
+                        // if(tempWrap && !tempWrap.classList.contains('step2')){
+                        //     tempWrap.classList.add('step2')
+                        // }
+                        // if(tempWrap && tempWrap.classList.contains('step3')){
+                        //     tempWrap.classList.remove('step3')
+                        // }
+                        let tempWrap = $(this).parents('.lp-find-address');
+                        if(tempWrap && !tempWrap.hasClass('step2')){
+                            tempWrap.addClass('step2')
                         }
-                        if(tempWrap && tempWrap.classList.contains('step3')){
-                            tempWrap.classList.remove('step3')
+                        if(tempWrap && tempWrap.hasClass('step3')){
+                            tempWrap.removeClass('step3')
                         }
                     });
                 }
@@ -6998,17 +7005,24 @@
                         _obj.addEventListener('click', function (_evt) {
                             _evt.preventDefault();
                             _evt.stopPropagation();
-                            let tempWrap = this.closest('.lp-find-address');
-                            if(tempWrap && tempWrap.classList.contains('step2')){
-                                tempWrap.classList.remove('step2')
+                            // let tempWrap = this.closest('.lp-find-address');
+                            // if(tempWrap && tempWrap.classList.contains('step2')){
+                            //     tempWrap.classList.remove('step2')
+                            // }
+                            // if(tempWrap && !tempWrap.classList.contains('step3')){
+                            //     tempWrap.classList.add('step3')
+                            // }
+                            let tempWrap = $(this).parents('.lp-find-address');
+                            if(tempWrap && tempWrap.hasClass('step2')){
+                                tempWrap.removeClass('step2')
                             }
-                            if(tempWrap && !tempWrap.classList.contains('step3')){
-                                tempWrap.classList.add('step3')
+                            if(tempWrap && !tempWrap.hasClass('step3')){
+                                tempWrap.addClass('step3')
                             }
                         });
                     });
                 }
-            },100);
+            },100);;
         })();
     </script>
     <!-- //tip -->
@@ -7280,12 +7294,19 @@
                 btnAddressSearch.addEventListener('click', function (_evt) {
                     _evt.preventDefault();
                     _evt.stopPropagation();
-                    let tempWrap = this.closest('.lp-find-address');
-                    if(tempWrap && !tempWrap.classList.contains('step2')){
-                        tempWrap.classList.add('step2')
+                    // let tempWrap = this.closest('.lp-find-address');
+                    // if(tempWrap && !tempWrap.classList.contains('step2')){
+                    //     tempWrap.classList.add('step2')
+                    // }
+                    // if(tempWrap && tempWrap.classList.contains('step3')){
+                    //     tempWrap.classList.remove('step3')
+                    // }
+                    let tempWrap = $(this).parents('.lp-find-address');
+                    if(tempWrap && !tempWrap.hasClass('step2')){
+                        tempWrap.addClass('step2')
                     }
-                    if(tempWrap && tempWrap.classList.contains('step3')){
-                        tempWrap.classList.remove('step3')
+                    if(tempWrap && tempWrap.hasClass('step3')){
+                        tempWrap.removeClass('step3')
                     }
                 });
             }
@@ -7295,12 +7316,19 @@
                     _obj.addEventListener('click', function (_evt) {
                         _evt.preventDefault();
                         _evt.stopPropagation();
-                        let tempWrap = this.closest('.lp-find-address');
-                        if(tempWrap && tempWrap.classList.contains('step2')){
-                            tempWrap.classList.remove('step2')
+                        // let tempWrap = this.closest('.lp-find-address');
+                        // if(tempWrap && tempWrap.classList.contains('step2')){
+                        //     tempWrap.classList.remove('step2')
+                        // }
+                        // if(tempWrap && !tempWrap.classList.contains('step3')){
+                        //     tempWrap.classList.add('step3')
+                        // }
+                        let tempWrap = $(this).parents('.lp-find-address');
+                        if(tempWrap && tempWrap.hasClass('step2')){
+                            tempWrap.removeClass('step2')
                         }
-                        if(tempWrap && !tempWrap.classList.contains('step3')){
-                            tempWrap.classList.add('step3')
+                        if(tempWrap && !tempWrap.hasClass('step3')){
+                            tempWrap.addClass('step3')
                         }
                     });
                 });
@@ -7961,7 +7989,7 @@
                             <a class="a-link a-link-udln mode-edit-btn mode-con-view" href="#none" target="_self">등록</a>
                             <!--
                             <a class="a-link a-link-udln mode-edit-btn mode-con-view" href="#none" target="_self">수정</a>
-                            <a class="a-link a-link-udln open-lightbox mode-con-view" href="#none" target="_self" data-template="lp-refund-account-del" data-classes="alert">삭제</a>
+                            <a class="a-link a-link-udln open-dialog-btn mode-con-view" data-target="lp-refund-account-del" href="#none" target="_self">삭제</a>
                             -->
                             <a class="a-link a-link-udln mode-view-btn mode-con-edit" href="#none" target="_self">취소</a>
                         </div>
@@ -8040,7 +8068,7 @@
                             <a class="a-link a-link-udln mode-edit-btn mode-con-view" href="#none" target="_self">등록</a>
                             <!--
                             <a class="a-link a-link-udln mode-edit-btn mode-con-view" href="#none" target="_self">수정</a>
-                            <a class="a-link a-link-udln open-lightbox mode-con-view" href="#none" target="_self" data-template="lp-refund-account-del" data-classes="alert">삭제</a>
+                            <a class="a-link a-link-udln open-dialog-btn mode-con-view" data-target="lp-refund-account-del" href="#none" target="_self">삭제</a>
                             -->
                             <a class="a-link a-link-udln mode-view-btn mode-con-edit" href="#none" target="_self">취소</a>
                         </div>
@@ -8097,7 +8125,7 @@
                             <a class="a-link a-link-udln mode-edit-btn mode-con-view" href="#none" target="_self">등록</a>
                             <!--
                             <a class="a-link a-link-udln mode-edit-btn mode-con-view" href="#none" target="_self">수정</a>
-                            <a class="a-link a-link-udln open-lightbox mode-con-view" href="#none" target="_self" data-template="lp-refund-account-del" data-classes="alert">삭제</a>
+                            <a class="a-link a-link-udln open-dialog-btn mode-con-view" data-target="lp-refund-account-del" href="#none" target="_self">삭제</a>
                             -->
                             <a class="a-link a-link-udln mode-view-btn mode-con-edit" href="#none" target="_self">취소</a>
                         </div>
@@ -8143,7 +8171,7 @@
                             <a class="a-link a-link-udln mode-edit-btn mode-con-view" href="#none" target="_self">등록</a>
                             <!--
                             <a class="a-link a-link-udln mode-edit-btn mode-con-view" href="#none" target="_self">수정</a>
-                            <a class="a-link a-link-udln open-lightbox mode-con-view" href="#none" target="_self" data-template="lp-refund-account-del" data-classes="alert">삭제</a>
+                            <a class="a-link a-link-udln open-dialog-btn mode-con-view" data-target="lp-refund-account-del" href="#none" target="_self">삭제</a>
                             -->
                             <a class="a-link a-link-udln mode-view-btn mode-con-edit" href="#none" target="_self">취소</a>
                         </div>
@@ -8219,7 +8247,7 @@
                         <div class="link-wrap">
                             <!--<a class="a-link a-link-udln mode-edit-btn mode-con-view" href="#none" target="_self">등록</a>-->
                             <a class="a-link a-link-udln mode-edit-btn mode-con-view" href="#none" target="_self">수정</a>
-                            <a class="a-link a-link-udln open-lightbox mode-con-view" href="#none" target="_self" data-template="lp-refund-account-del" data-classes="alert">삭제</a>
+                            <a class="a-link a-link-udln open-dialog-btn mode-con-view" data-target="lp-refund-account-del" href="#none" target="_self">삭제</a>
                             <a class="a-link a-link-udln mode-view-btn mode-con-edit" href="#none" target="_self">취소</a>
                         </div>
                     </h3>
@@ -8296,7 +8324,7 @@
                         <div class="link-wrap">
                             <!--<a class="a-link a-link-udln mode-edit-btn mode-con-view" href="#none" target="_self">등록</a>-->
                             <a class="a-link a-link-udln mode-edit-btn mode-con-view" href="#none" target="_self">수정</a>
-                            <a class="a-link a-link-udln open-lightbox mode-con-view" href="#none" target="_self" data-template="lp-refund-account-del" data-classes="alert">삭제</a>
+                            <a class="a-link a-link-udln open-dialog-btn mode-con-view" data-target="lp-refund-account-del" href="#none" target="_self">삭제</a>
                             <a class="a-link a-link-udln mode-view-btn mode-con-edit" href="#none" target="_self">취소</a>
                         </div>
                     </h3>
@@ -8351,7 +8379,7 @@
                         <div class="link-wrap">
                             <!--<a class="a-link a-link-udln mode-edit-btn mode-con-view" href="#none" target="_self">등록</a>-->
                             <a class="a-link a-link-udln mode-edit-btn mode-con-view" href="#none" target="_self">수정</a>
-                            <a class="a-link a-link-udln open-lightbox mode-con-view" href="#none" target="_self" data-template="lp-refund-account-del" data-classes="alert">삭제</a>
+                            <a class="a-link a-link-udln open-dialog-btn mode-con-view" data-target="lp-refund-account-del" href="#none" target="_self">삭제</a>
                             <a class="a-link a-link-udln mode-view-btn mode-con-edit" href="#none" target="_self">취소</a>
                         </div>
                     </h3>
@@ -8395,7 +8423,7 @@
                         <div class="link-wrap">
                             <!--<a class="a-link a-link-udln mode-edit-btn mode-con-view" href="#none" target="_self">등록</a>-->
                             <a class="a-link a-link-udln mode-edit-btn mode-con-view" href="#none" target="_self">수정</a>
-                            <a class="a-link a-link-udln open-lightbox mode-con-view" href="#none" target="_self" data-template="lp-refund-account-del" data-classes="alert">삭제</a>
+                            <a class="a-link a-link-udln open-dialog-btn mode-con-view" data-target="lp-refund-account-del" href="#none" target="_self">삭제</a>
                             <a class="a-link a-link-udln mode-view-btn mode-con-edit" href="#none" target="_self">취소</a>
                         </div>
                     </h3>
@@ -8444,7 +8472,9 @@
             setTimeout(function(){
                 //mode-wrap 수정, 취소버튼 클릭이벤트
                 renewCommon.modeEditView.init();
-            },100);
+                //dialogBtn 삭제버튼 클릭이벤트
+                renewCommon.dialogBtn.init();
+            },1000);
         })();
     </script>
     <!-- //tip -->
@@ -10263,7 +10293,7 @@
     <div class="newsletter-signup">
         <form class="o-form" data-component="OForm" action="/views/common/views/pages/newsletter/newsletter-subscription-validation-email.html">
             <span class="a-icon-lg-close-circle"></span>
-            <h6 class="a-heading-6">ARKET에서 뉴스레터를 구독하고 첫 구매 시 10% 할인*을<br>받아보세요</h6>
+            <h6 class="a-heading-6">ARKET에서 뉴스레터를 구독하고<br class="only-m"> 첫 구매 시 10% 할인*을<br class="only-pc">받아보세요</h6>
             <div class="personalized-option">
                 <div class="m-error js-m-error is-hidden">
                     <span class="has-error"></span>
@@ -10323,7 +10353,7 @@
                        data-validation-required-text-below="제 3자 정보제공에 동의해 주세요.">
                 <label class="a-label js-a-label custom-box" for="checkbox_age" tabindex="0"></label>
                 <label class="a-label js-a-label" for="checkbox_age">네, 저는 H&M 그룹의 브랜드인 ARKET에서 프로모션 소식을 받고싶습니다. 저는 제가 만18세 이상임을 확인합니다. 개인 정보 보호통지에 따라, 소셜 미디어 피드 이메일과 SMS를 통해 개인화된프로모션을 제공하기 위해, H&M 그룹에
-                    <a href="#" class="a-link open-lightbox has-underline" data-template="lp-join-policy" data-classes="join-policy-type type3" target="_self" >개인정보 제3자 (H&M) 정보제공 및 국외 이전</a>에 동의합니다.</label>
+                    <a href="#" class="a-link open-lightbox has-underline" data-template="lp-join-policy" data-classes="join-policy-type is-large type3" target="_self" >개인정보 제3자 (H&M) 정보제공 및 국외 이전</a>에 동의합니다.</label>
                 <label class="a-label js-a-label" for="checkbox_age" data-placeholder="" ></label>
             </span>
                 <p class="a-paragraph is-richtext">

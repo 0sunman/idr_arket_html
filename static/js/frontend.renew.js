@@ -411,11 +411,17 @@ renewCommon = (function(doc, win){
     //info-line-toggle
     obj.infoLineToggle = {
         changeBtnMode: function(_obj){
-            let tempLi = _obj.closest('li');
-            if(tempLi.classList.contains('mode-edit')){
-                tempLi.classList.remove('mode-edit');
+            // let tempLi = _obj.closest('li');
+            // if(tempLi.classList.contains('mode-edit')){
+            //     tempLi.classList.remove('mode-edit');
+            // }else{
+            //     tempLi.classList.add('mode-edit');
+            // }
+            let tempLi = _obj.parents('li');
+            if(tempLi.hasClass('mode-edit')){
+                tempLi.removeClass('mode-edit');
             }else{
-                tempLi.classList.add('mode-edit');
+                tempLi.addClass('mode-edit');
             }
         },
         init: function(){
@@ -425,15 +431,27 @@ renewCommon = (function(doc, win){
                     _obj.addEventListener('click', function (_evt) {
                         _evt.preventDefault();
                         _evt.stopPropagation();
-                        renewCommon.infoLineToggle.changeBtnMode(this);
-                        let tempUl = this.closest('ul');
-                        let tempLi = tempUl.querySelectorAll('.info-line-toggle-li');
+                        // renewCommon.infoLineToggle.changeBtnMode(this);
+                        // let tempUl = this.closest('ul');
+                        // let tempLi = tempUl.querySelectorAll('.info-line-toggle-li');
+                        // if(tempLi){
+                        //     Array.prototype.slice.call(tempLi).forEach( function (_obj) {
+                        //         if(_obj.classList.contains('mode-edit')){
+                        //             _obj.classList.remove('mode-edit')
+                        //         }else {
+                        //             _obj.classList.add('mode-edit')
+                        //         }
+                        //     })
+                        // }
+                        renewCommon.infoLineToggle.changeBtnMode($(this))
+                        let tempUl = $(this).parents('ul');
+                        let tempLi = tempUl.find('.info-line-toggle-li');
                         if(tempLi){
                             Array.prototype.slice.call(tempLi).forEach( function (_obj) {
-                                if(_obj.classList.contains('mode-edit')){
-                                    _obj.classList.remove('mode-edit')
+                                if($(_obj).hasClass('mode-edit')){
+                                    $(_obj).removeClass('mode-edit')
                                 }else {
-                                    _obj.classList.add('mode-edit')
+                                    $(_obj).addClass('mode-edit')
                                 }
                             })
                         }
@@ -473,9 +491,13 @@ renewCommon = (function(doc, win){
                     _obj.addEventListener('click', function (_evt) {
                         _evt.preventDefault();
                         _evt.stopPropagation();
-                        let tempLi = this.closest('li');
-                        if(tempLi && !tempLi.classList.contains('mode-edit')){
-                            tempLi.classList.add('mode-edit')
+                        // let tempLi = this.closest('li');
+                        // if(tempLi && !tempLi.classList.contains('mode-edit')){
+                        //     tempLi.classList.add('mode-edit')
+                        // }
+                        let tempLi = $(this).parents('li');
+                        if(tempLi && !tempLi.hasClass('mode-edit')){
+                            tempLi.addClass('mode-edit')
                         }
                     });
                 });
@@ -486,9 +508,13 @@ renewCommon = (function(doc, win){
                     _obj.addEventListener('click', function (_evt) {
                         _evt.preventDefault();
                         _evt.stopPropagation();
-                        let tempLi = this.closest('li');
-                        if(tempLi && tempLi.classList.contains('mode-edit')){
-                            tempLi.classList.remove('mode-edit')
+                        // let tempLi = this.closest('li');
+                        // if(tempLi && tempLi.classList.contains('mode-edit')){
+                        //     tempLi.classList.remove('mode-edit')
+                        // }
+                        let tempLi = $(this).parents('li');
+                        if(tempLi && tempLi.hasClass('mode-edit')){
+                            tempLi.removeClass('mode-edit')
                         }
                     });
                 });
@@ -505,10 +531,15 @@ renewCommon = (function(doc, win){
                     _obj.addEventListener('click', function (_evt) {
                         _evt.preventDefault();
                         _evt.stopPropagation();
-                        let tempModeWrap = this.closest('.mode-wrap');
+                        // let tempModeWrap = this.closest('.mode-wrap');
+                        // if(tempModeWrap){
+                        //     tempModeWrap.classList.remove('mode-view')
+                        //     tempModeWrap.classList.add('mode-edit')
+                        // }
+                        let tempModeWrap = $(this).parents('.mode-wrap');
                         if(tempModeWrap){
-                            tempModeWrap.classList.remove('mode-view')
-                            tempModeWrap.classList.add('mode-edit')
+                            tempModeWrap.removeClass('mode-view')
+                            tempModeWrap.addClass('mode-edit')
                         }
                     });
                 });
@@ -519,10 +550,15 @@ renewCommon = (function(doc, win){
                     _obj.addEventListener('click', function (_evt) {
                         _evt.preventDefault();
                         _evt.stopPropagation();
-                        let tempModeWrap = this.closest('.mode-wrap');
+                        // let tempModeWrap = this.closest('.mode-wrap');
+                        // if(tempModeWrap){
+                        //     tempModeWrap.classList.add('mode-view')
+                        //     tempModeWrap.classList.remove('mode-edit')
+                        // }
+                        let tempModeWrap = $(this).parents('.mode-wrap');
                         if(tempModeWrap){
-                            tempModeWrap.classList.add('mode-view')
-                            tempModeWrap.classList.remove('mode-edit')
+                            tempModeWrap.addClass('mode-view')
+                            tempModeWrap.removeClass('mode-edit')
                         }
                     });
                 });
@@ -634,7 +670,8 @@ renewCommon = (function(doc, win){
             if(dialogCloseBtns) {
                 Array.prototype.slice.call(dialogCloseBtns).forEach( function (_obj) {
                     _obj.addEventListener('click', function (_evt) {
-                        let _targetDialogId = this.closest('.dialog-bx').getAttribute('id');
+                        // let _targetDialogId = this.closest('.dialog-bx').getAttribute('id');
+                        let _targetDialogId = $(this).parents('.dialog-bx').attr('id');
                         $('#'+_targetDialogId).dialog('close');
                         renewCommon.dialogBtn.bodyHold(false);
                     });

@@ -257,12 +257,19 @@
                     btnAddressSearch.addEventListener('click', function (_evt) {
                         _evt.preventDefault();
                         _evt.stopPropagation();
-                        let tempWrap = this.closest('.lp-find-address');
-                        if(tempWrap && !tempWrap.classList.contains('step2')){
-                            tempWrap.classList.add('step2')
+                        // let tempWrap = this.closest('.lp-find-address');
+                        // if(tempWrap && !tempWrap.classList.contains('step2')){
+                        //     tempWrap.classList.add('step2')
+                        // }
+                        // if(tempWrap && tempWrap.classList.contains('step3')){
+                        //     tempWrap.classList.remove('step3')
+                        // }
+                        let tempWrap = $(this).parents('.lp-find-address');
+                        if(tempWrap && !tempWrap.hasClass('step2')){
+                            tempWrap.addClass('step2')
                         }
-                        if(tempWrap && tempWrap.classList.contains('step3')){
-                            tempWrap.classList.remove('step3')
+                        if(tempWrap && tempWrap.hasClass('step3')){
+                            tempWrap.removeClass('step3')
                         }
                     });
                 }
@@ -272,17 +279,24 @@
                         _obj.addEventListener('click', function (_evt) {
                             _evt.preventDefault();
                             _evt.stopPropagation();
-                            let tempWrap = this.closest('.lp-find-address');
-                            if(tempWrap && tempWrap.classList.contains('step2')){
-                                tempWrap.classList.remove('step2')
+                            // let tempWrap = this.closest('.lp-find-address');
+                            // if(tempWrap && tempWrap.classList.contains('step2')){
+                            //     tempWrap.classList.remove('step2')
+                            // }
+                            // if(tempWrap && !tempWrap.classList.contains('step3')){
+                            //     tempWrap.classList.add('step3')
+                            // }
+                            let tempWrap = $(this).parents('.lp-find-address');
+                            if(tempWrap && tempWrap.hasClass('step2')){
+                                tempWrap.removeClass('step2')
                             }
-                            if(tempWrap && !tempWrap.classList.contains('step3')){
-                                tempWrap.classList.add('step3')
+                            if(tempWrap && !tempWrap.hasClass('step3')){
+                                tempWrap.addClass('step3')
                             }
                         });
                     });
                 }
-            },100);
+            },100);;
         })();
     </script>
     <!-- //tip -->
