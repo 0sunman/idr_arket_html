@@ -73,7 +73,7 @@ html.no-touchevents .m-input, html.no-touchevents .m-dropdown, .alternative-styl
 .m-input.with-button .a-input { width: calc(100% - 130px); }
 .m-input.with-button .a-button { margin-bottom: 4px; margin-left: 10px; width: 120px; }
 .m-input.with-button .a-label:first-child { flex-basis: 100%; }
-.m-input.with-button .certify-time { margin-top: 0; margin-bottom: 0; width: 120px; font-weight: 300; font-size: 12px; color: #cc0000; text-align: right; }
+.m-input.with-button .certify-time { margin-top: 0; margin-bottom: 0; width: 120px; font-weight: 300; font-size: 12px; color: #cc0000; }
 @media (max-width: 768px) { .m-input.with-button.big-btn .a-input, .m-input.with-button.big-btn .a-button { width: 100%; margin-left: 0; }
   .m-input.with-button.big-btn .a-button { margin-top: 10px; } }
 .m-input.with-button.two-btns .a-input { width: calc(100% - 260px); }

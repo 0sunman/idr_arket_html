@@ -201,6 +201,9 @@ function displaySiteBannerCountDown() {
                                 if (y) {
                                     var D = Math.floor(v / (1000 * 60 * 60 * 24));
                                     if (D == 0) {
+                                        // [ARKET] DAY input 숨김 - 시작
+                                        y.className = "is-hidden"
+                                        // [ARKET] DAY input 숨김 - 끝
                                         document.getElementById("mobiledayspan").className = "is-hidden"
                                     } else {
                                         if (D < 10) {
