@@ -2106,9 +2106,9 @@ header.o-header.has-sis-header.has-open-search:not(.is-opening-navigation) { hei
 #sis_footer.sis-footer-m .copyright { font-weight: 700; text-align: left; }
 #sis_footer.sis-footer-m .go-top a { display: block; position: fixed; bottom: 20px; right: 15px; width: 36px; height: 36px; background: url(../images/sis/ic_top.png) no-repeat; background-size: 36px 36px; text-indent: -9999px; z-index: 4; }
 
-@media (max-width: 400px) { .sis-footer-pc { display: none; }
+@media (max-width: 768px) { .sis-footer-pc { display: none; }
   .sis-footer-m { display: block; } }
-@media (min-width: 401px) { .sis-footer-pc { display: block; }
+@media (min-width: 769px) { .sis-footer-pc { display: block; }
   .sis-footer-m { display: none; } }
 .m-notification #desktoptimer, .m-notification #mobiletimer { display: inline; }
 .m-notification .sitebannertimer { letter-spacing: 2px; border: 1px solid; border-radius: 3px 3px 3px 3px; width: 30px; height: 19px; background-color: inherit; text-align: center; padding-bottom: 4px; font-family: "Arket Sans SC"; }
