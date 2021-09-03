@@ -199,7 +199,7 @@ html.no-touchevents .m-input, html.no-touchevents .m-dropdown, .alternative-styl
 .product-shipping-tooltip-bx.is-open .a-tooltip .a-icon-close, .m-product-shipping-info.is-open .a-tooltip .a-icon-close { position: absolute; top: 5px; right: 10px; }
 .product-shipping-tooltip-bx.is-open .a-tooltip h3, .m-product-shipping-info.is-open .a-tooltip h3 { font-size: 20px; line-height: 1.4em; font-family: 'Arket Sans SC', HelveticaNeue-Light, 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, Sans-Serif; font-weight: 400; font-size: 13px; line-height: 1.5em; text-transform: uppercase; margin-bottom: 10px; }
 .product-shipping-tooltip-bx.is-open .a-tooltip h3:first-child, .m-product-shipping-info.is-open .a-tooltip h3:first-child { margin-top: 0; }
-.product-shipping-tooltip-bx.is-open .a-tooltip p, .m-product-shipping-info.is-open .a-tooltip p { font-family: 'Arket Sans', HelveticaNeue-Light, 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, Sans-Serif; font-weight: 400; font-size: 13px; line-height: 1.5em; margin: 0; padding: 0; }
+.product-shipping-tooltip-bx.is-open .a-tooltip p, .m-product-shipping-info.is-open .a-tooltip p { font-family: "Arket Sans", "Noto Sans KR", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", "Sans-Serif"; font-weight: 400; font-size: 13px; line-height: 1.5em; margin: 0; padding: 0; }
 .product-shipping-tooltip-bx.is-open .a-tooltip .a-icon-pay-mastercard, .product-shipping-tooltip-bx.is-open .a-tooltip .a-icon-pay-paypal, .product-shipping-tooltip-bx.is-open .a-tooltip .a-icon-pay-visa, .m-product-shipping-info.is-open .a-tooltip .a-icon-pay-mastercard, .m-product-shipping-info.is-open .a-tooltip .a-icon-pay-paypal, .m-product-shipping-info.is-open .a-tooltip .a-icon-pay-visa { font-size: 46px; }
 .product-shipping-tooltip-bx.is-open .a-tooltip a, .m-product-shipping-info.is-open .a-tooltip a { color: inherit; cursor: pointer; border-bottom: 1px solid #cdd1d7; }
 .product-shipping-tooltip-bx.is-open .a-tooltip a *, .m-product-shipping-info.is-open .a-tooltip a * { cursor: pointer; }
@@ -1892,6 +1892,7 @@ margin: 0mm; }
 /* ---------------------------------------------------------- */
 /* sis headedr s ============================================ */
 html { scroll-behavior: smooth; }
+html.no-scroll-smooth { scroll-behavior: initial; }
 
 header.o-header.has-sis-header .m-notification { padding: 10px; }
 header.o-header.has-sis-header .m-notification.is-inline { display: none !important; }
@@ -2476,6 +2477,7 @@ html.no-touchevents .m-input.has-error .a-input, .alternative-style-option .m-in
 
 .cart-item-info .total-section .total::after { content: '원'; font-family: "Noto Sans KR"; font-size: inherit; }
 
+.o-product-details .left-panel .o-product-attributes { border-bottom: 0; }
 .o-product-details .o-product-attributes .list-container .add-comp { font-family: "Arket Sans SC", "Noto Sans KR", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", "Sans-Serif"; }
 .o-product-details .o-product-attributes .list-container .list-elements li { padding-left: 0; list-style-type: none; }
 .o-product-details .o-product-attributes .list-container .list-elements li::before { font-size: 0; padding-right: 0px; }
@@ -2530,6 +2532,7 @@ html.no-touchevents .m-input.has-error .a-input, .alternative-style-option .m-in
 .m-cart-addition .added-item .basket-added-info .a-paragraph .item-title { font-size: 13px; }
 .m-cart-addition .added-item .basket-added-info .basket-added-info-price { display: inline-block; clear: both; float: none; width: 100%; }
 .m-cart-addition .added-item .basket-added-info .basket-added-info-price span { font-family: "Arket Sans SC", "Noto Sans KR", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", "Sans-Serif"; font-size: 13px; }
+.m-cart-addition .added-item .basket-added-info .basket-added-info-price .is-regular::after { font-size: 10px; }
 .m-cart-addition .added-item .basket-added-info .basket-added-info-price .is-deprecated { position: relative; float: left; padding-right: 10px; }
 .m-cart-addition .added-item .basket-added-info .basket-added-info-price .is-deprecated::before { font-size: 10px; }
 .m-cart-addition .added-item .basket-added-info .basket-added-info-price .is-deprecated::after { border-bottom: .1em solid #000; content: ""; position: absolute; width: 100%; height: 50%; left: 0; top: calc(.1em + 1px); box-sizing: border-box; }
@@ -3222,7 +3225,7 @@ html.no-touchevents .footer-about-wrap .product-listing .o-product .image:hover 
 .map-wrapper .o-map .marker.is-active { display: block; }
 
 .map-in-store-info { display: none; position: relative; padding: 10px 0px 40px; width: 100%; height: auto; font-size: 13px; text-align: left; background: #fff; }
-.map-in-store-info .m-info-box { background: none; padding: 0; }
+.map-in-store-info .m-info-box { position: relative; background: none; padding: 0; }
 @media (min-width: 769px) { .map-in-store-info { position: absolute; top: 20px; right: 20px; width: 300px; padding: 0px 15px 30px; } }
 .map-in-store-info b { font-weight: 400; }
 .map-in-store-info .close-btn { position: absolute; top: 10px; right: 0; }
