@@ -2378,6 +2378,11 @@
             </button>
         </li>
         <li>
+            <button class="a-button is-outlined open-lightbox" data-template="lp-receipt-apply-tax-v2" data-classes="is-large">
+                <span>세금계산서 신청(iFrame)</span>
+            </button>
+        </li>
+        <li>
             <button class="a-button open-dialog-btn" data-target="lp-biznum-check-1">
                 <span>사업자등록번호 이력 없을 때</span>
             </button>
@@ -8929,6 +8934,7 @@
 <!-- 세금계산서 신청 -->
 <script type="text/x-handlebars-template" id="lp-receipt-apply-tax">
     <div class="lightbox-content-dft lp-receipt-apply-tax">
+
         <div class="m-headline is-main-headline">
             <h2 class="a-heading-2"><span>세금계산서 신청</span></h2>
         </div>
@@ -9010,7 +9016,7 @@
                                    id="company-zipcode"
                                    readonly="readonly"
                                    required="">
-                            <button class="a-button sm open-lightbox" type="button" data-template="lp-find-address"><span>찾기</span></button>
+                            <button class="a-button sm open-dialog-btn" type="button" data-target="lp-find-address-v2"><span>찾기</span></button>
                             <label class="a-label js-a-label" for="company-zipcode" data-placeholder=""></label>
                         </div>
                     </li>
@@ -9217,11 +9223,49 @@
 
             },100);
         })();
-</script>
-<!-- //tip -->
+    </script>
+    <!-- //tip -->
 
 </script>
 <!-- //세금계산서 신청 -->
+
+
+<!-- 세금계산서 신청(iFrame) -->
+<script type="text/x-handlebars-template" id="lp-receipt-apply-tax-v2">
+
+
+        <iframe class="tax-receipt-iframe"
+            
+                src="../../dist/ko/my-account/ifrp-receipt-apply-tax.html"
+            
+            width="100%"
+            frameborder="no"
+            scrolling="no"
+            marginheight="0"
+            marginwidth="0"
+            onload="iframeAutoResize(this);">
+            </iframe>
+
+   
+
+    <!-- tip : when develop this script must be delete -->
+    <script type="text/javascript">
+        //iframe 자동높이 조절
+        function iframeAutoResize(h){
+            console.log("d")
+            if(h == null){
+                return false;
+            }
+            (h).height = "0px";
+            var iframeHeight = (h).contentWindow.document.body.scrollHeight;
+            (h).height = iframeHeight;
+        }
+
+    </script>
+    <!-- //tip -->
+
+</script>
+<!-- //세금계산서 신청(iFrame) -->
 
 
 <!-- 사업자등록번호 이력 없을 때 -->
@@ -9552,9 +9596,11 @@
                         <!-- 단종기종구분 -->
                         <li><span>1234545</span></li>
                         <!-- 카드종류 -->
-                        <li><span>현금(소득공제용)</span></li>
+                        <!--<li><span>현금(소득공제용)</span></li>-->
+                        <li><span></span></li>
                         <!-- 거래종류 -->
-                        <li><span>승인</span></li>
+                        <!--<li><span>승인</span></li>-->
+                        <li><span></span></li>
                         <!-- 회원번호 -->
                         <li><span>43028023**********</span></li>
                         <!-- 유효기간 -->

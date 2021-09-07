@@ -83,7 +83,7 @@ html.no-touchevents .m-input, html.no-touchevents .m-dropdown, .alternative-styl
 .m-input.biz-number-input .a-input.biz-number { width: calc(30% - 30px); }
 .m-input.biz-number-input .a-input.biz-number2 { width: calc(30% - 30px); }
 .m-input.biz-number-input .a-input.biz-number3 { width: calc(40% - 30px); }
-.m-input.attach-file input[type="file"] { position: absolute; top: 0; left: 0; width: 0; height: 0; padding: 0; overflow: hidden; border: 0; }
+.m-input.attach-file input[type="file"] { position: absolute; bottom: 0; left: 0; width: 0; height: 0; padding: 0; overflow: hidden; border: 0; }
 .m-input.attach-file + .guide-text { font-size: 12px; color: #787573; }
 .m-input.has-error .a-label:last-of-type { font-family: "Arket Sans", "Noto Sans KR", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", "Sans-Serif"; font-size: 12px; }
 .m-input.has-error .input-guide-text { display: none; }
@@ -1694,6 +1694,7 @@ html .lp-find-address .m-input { margin-top: 35px; margin-bottom: 35px; }
 .lp-receipt-list .line-list-wrap .list-body .col-2 a, .lp-receipt-list .line-list-wrap .list-body .col-2 span, .lp-receipt-list .line-list-wrap .list-body .col-5 a, .lp-receipt-list .line-list-wrap .list-body .col-5 span { display: inline-block; width: 100%; }
 .lp-receipt-list .line-list-wrap .list-body .col-2 a + a, .lp-receipt-list .line-list-wrap .list-body .col-5 a + a { margin-top: 5px; }
 
+.lp-receipt-apply-tax .m-headline .a-heading-2 { text-align: center; }
 .lp-receipt-apply-tax .content { padding-top: 0; }
 .lp-receipt-apply-tax .dft-bx { margin-top: 60px; padding: 0; text-align: left; }
 .lp-receipt-apply-tax .dft-bx:first-child { margin-top: 0; }
@@ -1796,7 +1797,7 @@ body ul { list-style: none; margin: 0; padding: 0; }
 .lp-receipt-print-tax .print-area-wrap .print-text-bx { position: absolute; top: 0; left: 0; width: calc(100% - 18px); }
 .lp-receipt-print-tax .text-info-ul { width: 640px; display: flex; flex-wrap: wrap; margin-bottom: 4px; }
 .lp-receipt-print-tax .text-info-ul li { display: flex; align-items: flex-end; padding: 9px 0 10px 6px; border: 0px solid red; }
-.lp-receipt-print-tax .text-info-ul li span { display: inline-block; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.lp-receipt-print-tax .text-info-ul li span { min-height: 14px; display: inline-block; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
 .lp-receipt-print-tax .text-info-ul li.price { justify-content: flex-end; }
 .lp-receipt-print-tax .text-info-ul li.price span { width: 100%; text-align: right; text-overflow: initial; letter-spacing: 0.58em; margin-right: -4px; }
 .lp-receipt-print-tax .text-info-ul li:nth-child(1) { padding: 18px 0 18px 450px; width: 100%; }
@@ -1837,7 +1838,7 @@ body ul { list-style: none; margin: 0; padding: 0; }
 .lp-receipt-print-cash .print-area-wrap .print-text-bx, .lp-receipt-print-credit .print-area-wrap .print-text-bx { position: absolute; top: 48px; left: 9px; width: calc(100% - 18px); }
 .lp-receipt-print-cash .text-info-ul, .lp-receipt-print-credit .text-info-ul { width: 332px; display: flex; flex-wrap: wrap; }
 .lp-receipt-print-cash .text-info-ul li, .lp-receipt-print-credit .text-info-ul li { display: flex; align-items: center; padding: 16px 0 6px 5px; border: 0px solid red; }
-.lp-receipt-print-cash .text-info-ul li span, .lp-receipt-print-credit .text-info-ul li span { display: inline-block; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.lp-receipt-print-cash .text-info-ul li span, .lp-receipt-print-credit .text-info-ul li span { display: inline-block; min-height: 14px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
 .lp-receipt-print-cash .text-info-ul li.price, .lp-receipt-print-credit .text-info-ul li.price { justify-content: flex-end; }
 .lp-receipt-print-cash .text-info-ul li.price span, .lp-receipt-print-credit .text-info-ul li.price span { letter-spacing: 0.92em; margin-right: -3px; }
 .lp-receipt-print-cash .text-info-ul li:nth-child(1), .lp-receipt-print-credit .text-info-ul li:nth-child(1) { width: 28%; }

@@ -1,0 +1,44 @@
+<!-- 세금계산서 신청(iFrame) -->
+<script type="text/x-handlebars-template" id="lp-receipt-apply-tax-v2">
+
+
+        <iframe class="tax-receipt-iframe"
+            <%
+            if(pageInfo.isLocalExPath) {
+            %>
+                src="<%= pageInfo.pageRoot %>/dist/<%= pageInfo.lang %>/my-account/ifrp-receipt-apply-tax.html"
+            <%
+            }else {
+            %>
+                src="/<%= pageInfo.lang %>/my-account/ifrp-receipt-apply-tax.html"
+            <%
+            }
+            %>
+            width="100%"
+            frameborder="no"
+            scrolling="no"
+            marginheight="0"
+            marginwidth="0"
+            onload="iframeAutoResize(this);">
+            </iframe>
+
+   
+
+    <!-- tip : when develop this script must be delete -->
+    <script type="text/javascript">
+        //iframe 자동높이 조절
+        function iframeAutoResize(h){
+            console.log("d")
+            if(h == null){
+                return false;
+            }
+            (h).height = "0px";
+            var iframeHeight = (h).contentWindow.document.body.scrollHeight;
+            (h).height = iframeHeight;
+        }
+
+    </script>
+    <!-- //tip -->
+
+</script>
+<!-- //세금계산서 신청(iFrame) -->

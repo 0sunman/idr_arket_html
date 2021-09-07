@@ -272,6 +272,11 @@
             </button>
         </li>
         <li>
+            <button class="a-button is-outlined open-lightbox" data-template="lp-receipt-apply-tax-v2" data-classes="is-large">
+                <span>세금계산서 신청(iFrame)</span>
+            </button>
+        </li>
+        <li>
             <button class="a-button open-dialog-btn" data-target="lp-biznum-check-1">
                 <span>사업자등록번호 이력 없을 때</span>
             </button>
@@ -606,6 +611,9 @@
 
 <%# 세금계산서 신청 %>
 <%- include ("../../handlebars/hndl-lp-receipt-apply-tax.ejs") %>
+
+<%# 세금계산서 신청(iFrame) %>
+<%- include ("../../handlebars/hndl-lp-receipt-apply-tax-v2.ejs") %>
 
 <%# 사업자등록번호 이력 없을때 %>
 <%- include ("../../handlebars/hndl-lp-biznum-check-1.ejs") %>
