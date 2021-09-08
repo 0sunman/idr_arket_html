@@ -2998,7 +2998,7 @@ span.m-hazmat-v2.warning::before { background-image: url("../images/icon/icon-wa
 @media (min-width: 401px) { .order-detail-info-bx .dot-ul dt, .order-detail-info-bx .dot-ul dd { display: inline-block; }
   .order-detail-info-bx .dot-ul dt { width: 60px; }
   .order-detail-info-bx .dot-ul dd::before { content: ":"; display: inline-block; margin-right: 15px; margin-left: 5px; } }
-.order-detail-info-bx .order-info-btns { position: absolute; bottom: 20px; right: 20px; display: none; color: #000; margin-left: 20px; }
+.order-detail-info-bx .order-info-btns { position: absolute; top: 20px; right: 20px; display: none; color: #000; margin-left: 20px; }
 .order-detail-info-bx .order-info-btns .a-link { margin-left: 10px; font-size: 12px; }
 .order-detail-info-bx .order-info-btns .btn-order-list-hide-guide { display: inline-block; vertical-align: bottom; width: 16px; height: 16px; }
 @media (min-width: 1025px) { .order-detail-info-bx .order-info-btns { display: block; } }
@@ -3026,6 +3026,8 @@ span.m-hazmat-v2.warning::before { background-image: url("../images/icon/icon-wa
 .tooltip-order-list-hide-guide::before { border-bottom-color: #eee; }
 .tooltip-order-list-hide-guide::after { border-bottom-color: #fff; }
 .tooltip-order-list-hide-guide .is-richtext { overflow-y: auto; max-height: 150px; }
+.tooltip-order-list-hide-guide .is-richtext h3, .tooltip-order-list-hide-guide .is-richtext p { font-size: 12px; }
+.tooltip-order-list-hide-guide .is-richtext h3 { margin-bottom: 18px; }
 
 .is-open .tooltip-order-list-hide-guide { display: block; }
 

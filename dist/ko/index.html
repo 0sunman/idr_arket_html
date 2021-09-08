@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta name="p:domain_verify" content="12424d5c1bfd4a43b3d3a555349a3cb8">
+    <meta name="p:domain_verify">
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 
     <title>ARKET - Essential products for men, women, children and the home WW</title>
@@ -29,6 +29,7 @@
     <!--<link rel="stylesheet" href="../../static/org/etc/designs/appeaser/p11/pattern-lib/frontend.min.a033ce601ceae2b3ed0d1dc0a1cc8264.css" type="text/css">-->
     <link rel="stylesheet" href="../../static/org/etc/designs/appeaser/p11/pattern-lib/frontend.min.1987a0f885a03ad325376517da7bed68.css" type="text/css">
 
+    <link rel="stylesheet" href="../../static/css/jquery-ui.css" type="text/css">
     <!-- frontend.renew.css -->
     <link rel="stylesheet" href="../../static/css/frontend.renew.css" type="text/css">
     <!-- //frontend.renew.css -->
@@ -42,7 +43,9 @@
     <script src="../../static/org/metrics/default/touchpoint.js"></script>
 </head>
 
-<body data-component="OPage" class="layout-inside" id="oPage" data-locale-page-node-name="en" data-component-id="66152dea-5e9c-4757-9208-19efae8e2313">
+
+
+<body data-component="OPage" class="layout-inside" id="oPage">
 
     <div class="coremetricsPageId" hidden="">Startpage 3</div>
     <div class="coremetricsPageType" hidden="">Startpage 4</div>
@@ -56,8 +59,7 @@
     <div data-component="SkeletonLoading" id="lpResolveConfigs" data-lp-aspect-ratio-width="2" data-lp-aspect-ratio-height="3" data-lp-density-mobile="2" data-lp-density-tablet="2" data-lp-density-desk="2" data-lp-max-density="3" data-lp-format="webp,jpeg" data-lp-cache-threshold="50" data-lp-url="lp.arket.com" data-lp-uri="app006prod" data-lp-image-fit="containerWidth" data-lp-jpeg-quality-desktop="70" data-lp-webp-quality-mobile="70" data-lp-webp-quality-tablet="70" data-lp-jpeg-quality-tablet="70" data-lp-webp-quality-desktop="70" data-lp-jpeg-quality-mobile="70" data-component-id="6dbb0cd9-2cf4-4569-a46d-c4294b9c76a2"></div>
 
     <div class="firsttimelanguageselector first-time-language-selector">
-        <script type="text/x-handlebars-template" id="language-select">
-        </script>
+        <script type="text/x-handlebars-template" id="language-select"></script>
     </div>
 
     <span id="arketeotflag" data-arketeot-flag="true"></span>
@@ -68,21 +70,27 @@
     <div id="headerDataStorage" data-testbuy="false" data-context-path="en" data-is-order-confirmation-page="false" hidden=""></div>
 
     <!-- m-site-banner : 상단배너 -->
-    <!-- to Dev [toggle Prop] : background-color  -->
+    <!--
     <div id="site-banner-id" data-component="MSiteBanner" class="m-site-banner slide-down" style="background-color: rgb(0, 0, 0);">
         <div>
-            <!-- to Dev [toggle Class] : site-banner-desktop, site-banner-mobile  -->
-            <div class="a-paragraph site-banner-desktop is-richtext" style="font-size:11px;padding-top:15px;padding-bottom:15px;color:#FFFFFF">
-                현재 브라우저에서는 모든 서비스를 원활하게 이용하실 수 없습니다. 더 나은 서비스를 위해서는
-                <a href="#none" class="a-link a-link-udln">여기</a>를 확인하세요
+            <div class="a-paragraph site-banner-desktop is-richtext" style="padding-top:15px;padding-bottom:15px;color:#FFFFFF">
+                <a title="ARKET SALE" href="/en/sale.html">SALE —</a>
+                U
+                <a href="/en/sale.html">p to 50% off |</a>
+                <a title="Women SALE" href="/en/women/sale.html">Women,</a>
+                <a title="Men SALE" href="/en/men/sale.html">Men,</a>
+                <a title="Children SALE" href="/en/children/sale.html">Children</a>
+                <a title="Homeware SALE" href="/en/homeware/sale.html">&amp; Homeware</a>
+            </div>
+
+            <div class="a-paragraph site-banner-mobile is-richtext" style="padding-top:10px;padding-bottom:10px;color:#FFFFFF">
+                <a href="/en/sale.html">SALE —</a>
+                U
+                <a href="/en/sale.html">p to 50% off</a>
             </div>
         </div>
     </div>
-    <script>
-        setTimeout(function(){
-            displaySiteBannerCountDown();
-        },3000);
-    </script>
+    -->
     <!-- //m-site-banner : 상단배너 -->
 
     <div class="u-no-select">
@@ -4562,6 +4570,11 @@
 <!-- //handlebars-template -->
     <!-- //footer -->
 
+    
+    <!-- page-loading-bx -->
+<div class="page-loading-bx"></div>
+<!-- //page-loading-bx -->
+    
     <div id="selectCountryLightboxType" data-lightbox-type="is-multi-language" hidden=""></div>
     
     <!-- o-cookie-message -->
