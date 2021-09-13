@@ -15450,7 +15450,8 @@ var BaseEnums = {
     HAS_DISABLED_BUTTON_STYLE: 'a-button-nostyle',
     IS_EMPTY: 'IS_EMPTY',
     IS_MOBILE: 'is-mobile',
-    IS_DESKTOP: 'is-desktop'
+    IS_DESKTOP: 'is-desktop',
+    IS_HALF_OPEN_STATE: 'half-open' ////샵인샵 iframe 때문에 수정 : 20210909
   },
   // Slider related constants
   SWIPER: {
@@ -27558,7 +27559,16 @@ var OHeader = /*#__PURE__*/function (_AppeaserComponentBas) {
       } else {
         this.publish(_Enums.default.ACTION.HIDE_SEARCH);
 
+        //샵인샵 iframe 때문에 수정 : 20210909
+        this.$navigation.removeClass(_Enums.default.CLASS.IS_HALF_OPEN_STATE);
+
         this._hideHeader();
+
+        //샵인샵 iframe 때문에 수정 : 20210909
+        setTimeout(function(){
+            $('.o-page-content').css('margin-top', $('.o-header').outerHeight());
+        },1000)
+
       }
     }
     /**
@@ -32698,8 +32708,8 @@ var OProductFilters = /*#__PURE__*/function (_AppeaserComponentBas) {
 
           //샵인샵 iframe 때문에 수정 : 20210909
           //_this4.$el.find(_this4.SELECTOR_SCROLL_CONTENT).height(_this4.$window.height() - _this4.heightOfSorroundings);
-          _this4.$el.find(_this4.$filterWrapper).height(window.parent.innerHeight - _this4.heightOfSorroundings - 100);
-          $(window.parent.document).find('body').addClass(_Enums.default.CLASS.DISABLE_SCROLL);
+            _this4.$el.find(_this4.$filterWrapper).height(window.parent.innerHeight - _this4.heightOfSorroundings - 180);
+          // $(window.parent.document).find('body').addClass(_Enums.default.CLASS.DISABLE_SCROLL);
 
           _this4.publish(_Enums.default.ACTION.DISABLE_SCROLL, {
             $touchScrollElement: _this4.$scrollContent
@@ -32728,7 +32738,7 @@ var OProductFilters = /*#__PURE__*/function (_AppeaserComponentBas) {
       if (this.$el.hasClass(this.CLASS_SHOW_ALL_FILTERS)) {
 
         //샵인샵 iframe 때문에 수정 : 20210909
-        $(window.parent.document).find('body').removeClass(_Enums.default.CLASS.DISABLE_SCROLL);
+        // $(window.parent.document).find('body').removeClass(_Enums.default.CLASS.DISABLE_SCROLL);
 
         this.publish(_Enums.default.ACTION.ENABLE_SCROLL);
         this.publish(_Enums.default.ACTION.HIDE_OVERLAY);

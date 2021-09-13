@@ -1,0 +1,49 @@
+<div data-component="OPageContent" class="o-page-content is-extended" data-component-id="">
+
+    <div class="parbase sdp-component left-component is-search">
+        <p class="a-paragraph search-results-title">
+            <span class="search-text">드레스&nbsp;</span>
+        </p>
+    </div>
+
+    <div class="o-width">
+        <div class="parbase sdp-component product-listing align-below">
+            <%# md-o-product-filters %>
+            <%- include ("../../common/md-o-product-filters2-search.ejs") %>
+
+            <!-- o-product-listing -->
+            <div id="lazyLoadSpan">
+                <div id="reloadProducts" class="o-product-listing fixed-columns-5 center-aligned u-align-center">
+                    <%# md-o-product-listing-product-list %>
+                    <%- include ("../../common/md-o-product-listing-search-list.ejs") %>
+                </div>
+            </div>
+
+            <span id="lazyDiv">
+                <%# md-o-lazy-load %>
+                <%- include ("../../common/md-o-lazy-load.ejs") %>
+            </span>
+            <!-- //o-product-listing -->
+        </div>
+    </div>
+    
+</div>
+
+<!-- tip : when develop this script must be delete -->
+<script type="text/javascript">
+    (function() {
+        'use strict';
+        setTimeout(function(){
+            //헤더 border-bottom 라인 숨기기
+            let tempHeader = document.querySelector('.o-header');
+            tempHeader.classList.add('hide-departments','has-open-search','desktop-sticky','mobile-sticky','is-open');
+
+            let tempOsearch = tempHeader.querySelector('.o-search');
+            tempOsearch.classList.add('is-open');
+
+            let tempOsearchIcon = tempHeader.querySelector('.search-icon.a-icon');
+            tempOsearchIcon.classList.add('is-open');
+        },1000)
+    })();
+</script>
+<!-- //tip -->
