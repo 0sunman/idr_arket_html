@@ -506,7 +506,6 @@ html.no-touchevents .m-input, html.no-touchevents .m-dropdown, .alternative-styl
 
 .hero--mobile-text .o-hero .o-text-block .caption-wrapper .caption-container > span { font-size: 20px; }
 
-@media (max-width: 631px) { .hero--mobile-2images .o-hero .image-wrapper .takeover-background:nth-child(2) { display: block; position: absolute; top: 0; left: 0; opacity: 0; animation: alternate_second_hero_image 5s infinite ease-in-out; } }
 .hero--text-align__center .text-wrapper, .hero--text-align__center .text-content { text-align: center; }
 
 .hero--text-align__right .text-wrapper, .hero--text-align__right .text-content { text-align: right; }
