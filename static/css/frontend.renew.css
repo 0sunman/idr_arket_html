@@ -1570,10 +1570,12 @@ body.is-page-loading .page-loading-bx { display: flex; }
 .o-lightbox.alert .text-box { font-size: 14px; }
 .o-lightbox.is-main-popup .lightbox-wrapper { padding: 0; max-width: 380px; height: auto; }
 .o-lightbox.is-main-popup .lightbox-wrapper .content { padding-top: 0; padding-bottom: 0; }
-.o-lightbox.is-main-popup .lightbox-wrapper .content .main-popup-wrap { font-size: 0; }
-.o-lightbox.is-main-popup .lightbox-wrapper .m-button-icon { top: auto; right: 0; bottom: 0; padding-right: 15px; padding-bottom: 16px; }
-.o-lightbox.is-main-popup .lightbox-wrapper .m-button-icon::before { content: '닫기'; font-family: "Arket Sans", "Noto Sans KR", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", "Sans-Serif"; font-size: 14px; display: inline-block; padding-right: 5px; line-height: 24px; vertical-align: top; }
-.o-lightbox .option-bx { padding: 12px 15px 16px; text-align: left; }
+.o-lightbox.is-main-popup .lightbox-wrapper .content .main-popup-wrap { position: relative; font-size: 0; }
+.o-lightbox.is-main-popup .lightbox-wrapper .m-button-icon, .o-lightbox.is-main-popup .lightbox-wrapper .m-button-icon-v2 { position: absolute; top: auto; right: 0; bottom: 0; padding: 20px 15px 12px 20px; cursor: pointer; font-size: 20px; }
+.o-lightbox.is-main-popup .lightbox-wrapper .m-button-icon::before, .o-lightbox.is-main-popup .lightbox-wrapper .m-button-icon-v2::before { content: '닫기'; font-family: "Arket Sans", "Noto Sans KR", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", "Sans-Serif"; font-size: 14px; display: inline-block; padding-right: 5px; line-height: 24px; vertical-align: top; }
+.o-lightbox.is-main-popup .lightbox-wrapper .m-button-icon::after, .o-lightbox.is-main-popup .lightbox-wrapper .m-button-icon-v2::after { font-family: 'Arket Sans Ding'; font-weight: 400; content: "M"; }
+.o-lightbox.is-main-popup .lightbox-wrapper .m-button-icon { display: none; }
+.o-lightbox .option-bx { position: relative; padding: 12px 15px 16px; text-align: left; }
 .o-lightbox .option-bx .a-link { font-size: 14px; color: #000; }
 
 .lightbox-content-dft { word-break: keep-all; }
