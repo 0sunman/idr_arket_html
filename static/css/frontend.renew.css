@@ -70,10 +70,10 @@ html.no-touchevents .m-input, html.no-touchevents .m-dropdown, .alternative-styl
 .m-input.v3 .input-guide-text { display: block; margin-top: 3px; margin-bottom: 0; font-weight: 400; font-size: 12px; line-height: 1.1em; color: #b2b2b2; }
 .m-input.no-label .a-label:first-child { opacity: 0; }
 .m-input.with-button { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; }
-.m-input.with-button .a-input { width: calc(100% - 130px); }
-.m-input.with-button .a-button { margin-bottom: 4px; margin-left: 10px; width: 120px; }
+.m-input.with-button .a-input { width: calc(100% - 140px); }
+.m-input.with-button .a-button { margin-bottom: 4px; margin-left: 10px; width: 130px; }
 .m-input.with-button .a-label:first-child { flex-basis: 100%; }
-.m-input.with-button .certify-time { margin-top: 0; margin-bottom: 0; width: 120px; font-weight: 300; font-size: 12px; color: #cc0000; }
+.m-input.with-button .certify-time { margin-top: 0; margin-bottom: 0; width: 130px; font-weight: 300; font-size: 12px; color: #cc0000; }
 @media (max-width: 768px) { .m-input.with-button.big-btn .a-input, .m-input.with-button.big-btn .a-button { width: 100%; margin-left: 0; }
   .m-input.with-button.big-btn .a-button { margin-top: 10px; } }
 .m-input.with-button.two-btns .a-input { width: calc(100% - 260px); }
