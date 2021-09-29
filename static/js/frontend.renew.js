@@ -92,7 +92,8 @@ function displaySiteBannerCountDown() {
                         b.innerHTML = h.value
                     } else {
                         if (s) {
-                            b.parentNode.removeChild(b);
+                            // b.parentNode.removeChild(b);
+                            i.parentNode.removeChild(i);
                             a = true
                         }
                     }

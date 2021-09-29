@@ -25,6 +25,10 @@
 
 .o-navigation .information-section .bottom-section { clear: both; }
 
+.o-navigation .information-section .a-button-nostyle.follow, .o-navigation .information-section .a-link.follow { margin-bottom: 150px; }
+
+@media (max-width: 630px) { .o-navigation .information-section .a-button-nostyle.bottom.account.logout, .o-navigation .information-section .a-button-nostyle.bottom.my-account.logout, .o-navigation .information-section .a-link.bottom.account.logout, .o-navigation .information-section .a-link.bottom.my-account.logout { bottom: 124px; } }
+
 html.no-touchevents .m-input, html.no-touchevents .m-dropdown, .alternative-style-option .m-input, .alternative-style-option .m-dropdown { margin: 5px 0 13px 0; }
 
 .o-sign-in-registration-tabs.is-my-account-tooltip .m-tablist { margin-top: 0; }
@@ -59,6 +63,7 @@ html.no-touchevents .m-input, html.no-touchevents .m-dropdown, .alternative-styl
 .m-radio-button.valign-top.v3 .a-radio-button + .custom-radio { margin-top: 3px; }
 
 .m-input .a-input { font-size: 18px; background-color: transparent; }
+.m-input .a-input[type="password"]::-ms-reveal { display: none; }
 .m-input .a-link { color: #000; }
 .m-input.v2 { min-height: auto; }
 .m-input.v2 .a-input { padding-right: 22px; padding-left: 22px; font-weight: 300; font-size: 13px; color: #000; background: transparent; border: 1px solid #ddd; }
@@ -386,7 +391,7 @@ html.no-touchevents .m-input, html.no-touchevents .m-dropdown, .alternative-styl
 .o-hero .takeover-wrapper .textblock-container .o-text-block .caption-wrapper .caption-container [class^=caption-][class*=title] { display: none; }
 
 @media (min-width: 631px) { .o-hero .o-text-block .text-wrapper { margin: 10px 10% 20px 10%; }
-  .o-hero.single-image .takeover-wrapper .o-text-block, .o-hero.double-image .takeover-wrapper .o-text-block { min-width: 75%; width: auto; padding: 20px 60px; } }
+  .o-hero.single-image .takeover-wrapper .o-text-block, .o-hero.double-image .takeover-wrapper .o-text-block { max-width: 75%; width: auto; padding: 20px 60px; } }
 /* --------- END HERO FIXES --------- */
 .multipleTags .a-link:hover { color: rgba(0, 0, 0, 0.2); }
 
@@ -2044,11 +2049,11 @@ header.o-header.has-sis-header.has-open-search:not(.is-opening-navigation) { hei
 .sisFrame { margin-top: -1px; min-height: 100vh; }
 
 @media (max-width: 630px) { .sisFrame { margin-top: -54px; }
-  .is-sis-body .o-hero .image-wrapper .takeover-background, .is-sis-body .o-hero { height: 150vw; } }
-.is-sis-body .o-hero.is-takeover { margin-top: 0; }
+  .is-sis-con-body .o-hero .image-wrapper .takeover-background, .is-sis-con-body .o-hero { height: 150vw; } }
+.is-sis-con-body .o-hero.is-takeover { margin-top: 0; }
 
 @media (min-width: 631px) { .sisFrame { margin-top: -57px; }
-  .is-sis-body .o-hero .image-wrapper .takeover-background, .is-sis-body .o-hero, .is-sis-body .o-hero.single-image .image-wrapper .takeover-background { height: 46vw; } }
+  .is-sis-con-body .o-hero .image-wrapper .takeover-background, .is-sis-con-body .o-hero, .is-sis-con-body .o-hero.single-image .image-wrapper .takeover-background { height: 46vw; } }
 /* end o-hero */
 /* sis content e ============================================ */
 /* ---------------------------------------------------------- */
@@ -2130,7 +2135,7 @@ header.o-header.has-sis-header.has-open-search:not(.is-opening-navigation) { hei
 @media (min-width: 769px) { .sis-footer-pc { display: block; }
   .sis-footer-m { display: none; } }
 .m-notification #desktoptimer, .m-notification #mobiletimer { display: inline; }
-.m-notification .sitebannertimer { letter-spacing: 2px; border: 1px solid; border-radius: 3px 3px 3px 3px; width: 30px; height: 19px; background-color: inherit; text-align: center; padding-bottom: 4px; font-family: "Arket Sans SC"; }
+.m-notification .sitebannertimer { letter-spacing: 2px; border: 1px solid; border-radius: 3px 3px 3px 3px; width: 30px; height: 19px; background-color: transparent; text-align: center; padding-bottom: 4px; font-family: "Arket Sans SC"; }
 .m-notification .timeLabel { margin-right: 5px; margin-left: 2px; font-family: "Arket Sans SC"; }
 
 /* sis footer e ============================================= */
@@ -3253,7 +3258,7 @@ html.no-touchevents .footer-about-wrap .product-listing .o-product .image:hover 
 .map-in-store-info .m-info-box { position: relative; background: none; padding: 0; }
 @media (min-width: 769px) { .map-in-store-info { position: absolute; top: 20px; right: 20px; width: 300px; padding: 0px 15px 30px; } }
 .map-in-store-info b { font-weight: 400; }
-.map-in-store-info .close-btn { position: absolute; top: 10px; right: 0; }
+.map-in-store-info .close-btn { position: absolute; top: 10px; right: 0; cursor: pointer; }
 .map-in-store-info .text-container { padding-bottom: 20px; border-bottom: 1px solid #000; }
 @media (min-width: 769px) { .map-in-store-info .text-container { margin-top: 5px; border-bottom: none; } }
 .map-in-store-info .text-container .store-name { text-align: center; padding: 40px 0px 20px; border-bottom: 1px solid #000; font-size: 22px; }
