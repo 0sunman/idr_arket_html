@@ -181,11 +181,13 @@
     (function() {
         'use strict';
         //헤더 border-bottom 라인 숨기기
-        let tempHeader = document.querySelector('.o-header');
-        tempHeader.classList.add('hide-border');
+        // let tempHeader = document.querySelector('.o-header');
+        // tempHeader.classList.add('hide-border');
+        $('.o-header').addClass('hide-border') //gnb 활성화
 
-        let tempHeaderWomen = tempHeader.querySelector('.departments li:nth-child(1) a')
-        tempHeaderWomen.classList.add('is-active'); //gnb 활성화
+        // let tempHeaderWomen = tempHeader.querySelector('.departments li:nth-child(1) a')
+        // tempHeaderWomen.classList.add('is-active'); //gnb 활성화
+        $('.departments li:nth-child(1) a').addClass('is-active') //gnb 활성화
     })();
 </script>
 <!-- //tip -->

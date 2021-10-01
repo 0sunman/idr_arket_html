@@ -1,5 +1,9 @@
 //renewCommon
 
+//--ntfbnnrh css Property 생성
+var ntfbnnrh = $('#notificationbnnr').innerHeight(); //샵인샵 PC 띠배너 높이 사이즈
+var ntfbnnrVar = ntfbnnrh + 'px';
+
 //오픈되어 있는 o-lightbox 내에 html 가져오기
 function makeHtml(){
     let tempHtml = document.querySelector('.o-lightbox.is-open').innerHTML
@@ -42,6 +46,35 @@ function formatDate(a) {
         return "0" + a
     }
     return a
+}
+
+//IE browser Check
+function isBrowserIE(){
+    var agent = navigator.userAgent.toLowerCase();
+    if ( (navigator.appName == 'Netscape' && agent.indexOf('trident') != -1) || (agent.indexOf("msie") != -1)) {
+        // ie일 경우
+        return true;
+    }else{
+        // ie일 아닐 경우
+        return false;
+    }
+}
+
+//샵인샵 PC 띠배너 체크 후 header position 재정의
+function setSisHeaderPosition(){
+    //css 가상프로퍼티 생성
+    document.documentElement.style.setProperty('--ntfbnnrh', ntfbnnrVar);
+
+    //IE 브라우저 체크
+    if(isBrowserIE()){
+        let hasSisHeader = $('header.o-header.has-sis-header'),
+        hasSisHeaderWithNotification = $('header.o-header.has-sis-header.has-sis-notification'),
+        navigationCurtain = hasSisHeaderWithNotification.find('.o-navigation .navigation-curtain');
+
+        // header.o-header.has-sis-header.has-sis-notification .o-navigation .navigation-curtain { top: calc(56px + 37px + var(--ntfbnnrh, 1ntfbnnrh)); }
+        let tempCssVal3 = 56 + 37 + ntfbnnrh;
+        navigationCurtain.css('top',tempCssVal3+'px');
+    }
 }
 
 //띠배너 카운터

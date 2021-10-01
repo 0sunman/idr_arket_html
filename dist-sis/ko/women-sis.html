@@ -74,18 +74,20 @@
         </div>
         <!-- header-sis -->
         
-        <!-- m-notification : m 일때 사용 -->
+        
+<!-- m-site-banner : m 일때 사용 -->
 <!-- to Dev : 활성화되면 .o-header 태그에 .has-sis-notification 클래스 추가 필요 -->
-<div id="site-banner-id" data-component="MSiteBanner" class="m-site-banner slide-down only-m" style="background-color: rgb(0, 0, 0);">
+<div id="site-banner-id" data-component="MSiteBanner" class="m-site-banner slide-down" style="background-color: rgb(0, 0, 0);">
     <div class="a-paragraph site-banner-mobile is-richtext" style="padding-top:10px;padding-bottom:10px;color:#FFFFFF">
+        <!--<h1>모바일 테스트</h1>-->
         <a href="#none" style="color:inherit;">10만 원 이상 구매 시 최대 1만 원 | <span style="border-bottom:1px solid #ffffff">신청하기</span></a>
     </div>
 </div>
-<!-- //m-notification : m 일때 사용 -->
+<!-- //m-site-banner : m 일때 사용 -->
 
 <!-- tip : class name be able to toggle [hide-departments, hide-border, has-sis-heade, has-sis-notification] -->
-<header data-component="OHeader" class="o-header hide-departments has-sis-header">
-<!--<header data-component="OHeader" class="o-header hide-departments has-sis-header has-sis-notification">-->
+<!--<header data-component="OHeader" class="o-header hide-departments has-sis-header">-->
+<header data-component="OHeader" class="o-header hide-departments has-sis-header has-sis-notification">
     <input type="hidden" id="signinFormPath" value="/ko/j_spring_security_check">
     <input type="hidden" id="forgotPasswordPath" value="/ko/password/requestSignIn">
     <input type="hidden" id="joinFormPath" value="/ko/register/newcustomer">
@@ -123,39 +125,43 @@
     </div>
     <!-- //sis-header -->
 
+    
+    <!-- to dev : 이부분이 활성화되면 Header 태그 클래스에 .has-sis-notification 추가 필요 -->
     <!-- m-notification : pc 일때 사용 -->
-    <!-- to Dev : 활성화되면 .o-header 태그에 .has-sis-notification 클래스 추가 필요 -->
-    <!--
-    <div data-component="MNotification" class="m-notification is-inline" id="notificationbnnr" style="background:#1B1B1B;display:block;">
-        <input type="hidden" name="startDateField" value="2021/06/10 08:10:00" id="sitebannercountsd">
-        <input type="hidden" name="endDateField" value="2021/9/13 18:45:00" id="sitebannercounted">
-        <div>
-            <div class="a-paragraph site-banner-desktop is-richtext" style="color:#FFFFFF">
-                <a title="ARKET SALE" href="/en/sale.html">SALE — 최대 70% 할인</a>
-                <a title="Women SALE" href="/en/women/sale.html">여성,</a>
-                <a title="Men SALE" href="/en/men/sale.html">남성,</a>
-                <a title="Homeware SALE" href="/en/homeware/sale.html">&amp; 홈웨어</a>
-                &nbsp;&nbsp;
-                <section id="desktoptimer">
-                    <input class="sitebannertimer" id="desktopdaysid" value="01">
-                    <span id="desktopdayspan" class="timeLabel">D</span>
-                    <input class="sitebannertimer" id="desktophoursid" value="43">
-                    <span class="timeLabel">H</span>
-                    <input class="sitebannertimer" id="desktopminutesid" value="21">
-                    <span class="timeLabel">M</span>
-                    <input class="sitebannertimer" id="desktopsecondsid" value="55">
-                    <span class="timeLabel">S</span>
-                </section>
-            </div>
+<!-- to Dev : 활성화되면 .o-header 태그에 .has-sis-notification 클래스 추가 필요 -->
+<div data-component="MNotification" class="m-notification is-inline" id="notificationbnnr" style="background:#1B1B1B;display:block;">
+    <input type="hidden" name="startDateField" value="2021/06/10 08:10:00" id="sitebannercountsd">
+    <input type="hidden" name="endDateField" value="2021/12/13 18:45:00" id="sitebannercounted">
+    <div>
+        <div class="a-paragraph site-banner-desktop is-richtext" style="color:#FFFFFF">
+            <a title="ARKET SALE" href="/en/sale.html">SALE — 최대 80% 할인</a>
+            <a title="Women SALE" href="/en/women/sale.html">여성,</a>
+            <a title="Men SALE" href="/en/men/sale.html">남성,</a>
+            <a title="Homeware SALE" href="/en/homeware/sale.html">&amp; 홈웨어</a>
+            &nbsp;&nbsp;
+            <section id="desktoptimer">
+                <input class="sitebannertimer" id="desktopdaysid" value="01">
+                <span id="desktopdayspan" class="timeLabel">D</span>
+                <input class="sitebannertimer" id="desktophoursid" value="43">
+                <span class="timeLabel">H</span>
+                <input class="sitebannertimer" id="desktopminutesid" value="21">
+                <span class="timeLabel">M</span>
+                <input class="sitebannertimer" id="desktopsecondsid" value="55">
+                <span class="timeLabel">S</span>
+            </section>
         </div>
     </div>
-    <script>
-        setTimeout(function(){
-            displaySiteBannerCountDown();
-        },3000);
-    </script>
-    -->
-    <!-- //m-notification : pc 일때 사용 -->
+</div>
+<script>
+    setTimeout(function(){
+        //샵인샵 PC 띠배너 체크 후 header position 재정의
+        setSisHeaderPosition();
+
+        //띠배너 타이머 시작
+        displaySiteBannerCountDown();
+    },3000);
+</script>
+<!-- //m-notification : pc 일때 사용 -->
 
     <!-- header-bar -->
     <div class="header-bar">
@@ -1128,69 +1134,6 @@
     </div>
     <!-- //header-bar -->
 
-    
-    <!-- m-cart-addition -->
-<div data-component="MCartAddition" class="m-cart-addition">
-    <div class="a-tooltip has-animation">
-        <div class="basket-wrapper">
-            <div class="added-item">
-                <div class="basket-added-image">
-                    <img class="a-image ResolveComplete" src="../../static/images/temp/sample-img.jpg">
-                </div>
-                <div class="basket-added-info">
-                    <p class="a-paragraph">
-                        <span class="item-title">루즈핏 리넨 쇼츠</span>
-                        <!--
-                        <div class="markers">
-                            <div class="m-product-marker" data-component="MProductMarkers">
-                                <div class="marker-text product-marker">
-                                    <span>online exclusive</span>
-                                </div>
-                            </div>
-                        </div>
-                        -->
-                        <div class="product-param-info second">
-                            <div class="product-params data">
-                                <div class="product-size">44</div>
-                                <div class="product-color">핑크</div>
-                                <div class="product-qty">2</div>
-                            </div>
-                        </div>
-
-                        <!-- 할인이 있을 경우 -->
-                        <span class="basket-added-info-price">
-                            <span class="u-price is-deprecated">100,000</span>
-                            <span class="u-price discount total">85,000</span>
-                        </span>
-                        <!-- //할인이 있을 경우 -->
-
-                        <!-- 할인이 없을 경우 -->
-                        <span class="basket-added-info-price">
-                            <span class="u-price is-regular">100,000</span>
-                        </span>
-                        <!-- //할인이 없을 경우 -->
-                    </p>
-                    <a class="a-button checkout i18n" href="/ko/cart">장바구니 보기</a>
-                </div>
-            </div>
-            <div class="no-added-item">
-                <div class="basket-added-info-title i18n">장바구니 담기 실패</div>
-
-                <!-- case1 : 장바구니에 상품을 최대로 담을 경우 -->
-                <p class="a-paragraph i18n">장바구니에 더 이상 상품을 담을 수 없습니다.</p>
-
-                <!-- case2 : 장바구니에 동일상품을 최대로 담을 경우 -->
-<!--                <p class="a-paragraph i18n">죄송합니다. 한 번에 15개 이상의 상품을 담을 수 없습니다.</p>-->
-
-                <!-- case3 : 재고가 15개 미만으로 남았을 경우 -->
-<!--                <p class="a-paragraph i18n">죄송합니다. 재고가 부족하여 최대 N개 까지 구매 하실 수 있습니다.</p>-->
-
-            </div>
-        </div>
-    </div>
-</div>
-<!-- //m-cart-addition -->
-
 </header>
         
 
@@ -1768,11 +1711,13 @@
     (function() {
         'use strict';
         //헤더 border-bottom 라인 숨기기
-        let tempHeader = document.querySelector('.o-header');
+        // let tempHeader = document.querySelector('.o-header');
         //tempHeader.classList.add('hide-border');
+        // $('.o-header').addClass('hide-border') //gnb 활성화
 
-        let tempHeaderWomen = tempHeader.querySelector('.departments li:nth-child(1) a')
-        tempHeaderWomen.classList.add('is-active'); //gnb 활성화
+        // let tempHeaderWomen = tempHeader.querySelector('.departments li:nth-child(1) a')
+        // tempHeaderWomen.classList.add('is-active'); //gnb 활성화
+        $('.departments li:nth-child(1) a').addClass('is-active') //gnb 활성화
     })();
 </script>
 <!-- //tip -->

@@ -198,7 +198,7 @@ html.no-touchevents .m-input, html.no-touchevents .m-dropdown, .alternative-styl
 .product-shipping-tooltip-bx, .m-product-shipping-info { position: relative; background-image: url(frontend/css/images/mailman.png); background-repeat: no-repeat; background-size: 80px; background-position: top center; padding: 90px 10px 10px; cursor: pointer; text-align: center; }
 .product-shipping-tooltip-bx::before, .m-product-shipping-info::before { content: ''; font-family: "Arket Icons"; }
 .product-shipping-tooltip-bx .a-tooltip, .m-product-shipping-info .a-tooltip { cursor: default; }
-.product-shipping-tooltip-bx .info-short, .m-product-shipping-info .info-short { display: flex; flex-direction: column; align-items: center; display: -ms-grid; }
+.product-shipping-tooltip-bx .info-short, .m-product-shipping-info .info-short { display: flex; flex-direction: column; align-items: center; }
 .product-shipping-tooltip-bx .info-short p, .m-product-shipping-info .info-short p { font-size: 11px; line-height: 13px; display: inline-block; padding: 0; margin: 0 0 1px 0; }
 .product-shipping-tooltip-bx.is-open .a-tooltip, .m-product-shipping-info.is-open .a-tooltip { display: block; position: absolute; bottom: 62px; width: 230px; padding: 15px; text-align: left; }
 .product-shipping-tooltip-bx.is-open .a-tooltip .a-icon-close, .m-product-shipping-info.is-open .a-tooltip .a-icon-close { position: absolute; top: 5px; right: 10px; }
@@ -220,6 +220,10 @@ html.no-touchevents .m-input, html.no-touchevents .m-dropdown, .alternative-styl
 .product-shipping-tooltip-bx.is-open .a-tooltip::after, .product-shipping-tooltip-bx.is-open .a-tooltip::before, .m-product-shipping-info.is-open .a-tooltip::after, .m-product-shipping-info.is-open .a-tooltip::before { z-index: 1; content: ""; border: 8px solid transparent; position: absolute; bottom: -16px; left: 118px; }
 .product-shipping-tooltip-bx.is-open .a-tooltip::before, .m-product-shipping-info.is-open .a-tooltip::before { border-top-color: #eee; }
 .product-shipping-tooltip-bx.is-open .a-tooltip::after, .m-product-shipping-info.is-open .a-tooltip::after { border-top-color: #fff; transform: translateY(-1px); }
+
+.o-product-listing .image.compat-object-fit .m-product-image > .cross + div { line-height: 0; }
+
+.o-filter.a-buttons .button-wrapper li { height: auto; line-height: 37px; max-width: 100%; }
 
 @media (min-width: 769px) { .o-header.has-open-search .category-group { padding-top: 0; }
   .o-page-content .left-component + .o-width { clear: both; }
@@ -775,7 +779,7 @@ html.no-touchevents .m-input, html.no-touchevents .m-dropdown, .alternative-styl
   .abc--fixed .o-text-field .text-container { margin: -11px 0; } }
 .chooser--fixed .m-chooser-item.with-image .a-image { width: 35px; }
 
-@media (max-width: 768px) { .chooser--fixed { position: fixed; top: 53px; z-index: 98; height: 68px; }
+@media (max-width: 768px) { .chooser--fixed { position: fixed; top: 53px; z-index: 11; height: 68px; }
   .chooser--fixed .m-chooser-item.with-image { width: 90px; }
   .chooser--fixed .m-chooser-item.with-image .a-link { padding: 2px 8px; }
   .chooser--fixed .m-chooser-item.with-image .anchor-title { margin: 2px auto 1px; } }
@@ -1201,7 +1205,7 @@ html .list-option .m-dropdown-label-ex + .m-dropdown { margin-left: 0; }
 .empty-item { margin-top: 0; margin-bottom: 0; padding-top: 70px; padding-bottom: 80px; text-align: center; font-size: 12px; }
 .empty-item.left { text-align: left; }
 
-.o-info-line-box { padding-top: 18px; padding-bottom: 18px; border-color: #000; border-top-width: 2px; border-top-style: solid; }
+.o-info-line-box { padding-top: 18px; padding-bottom: 18px; border-color: #000; border-top-width: 2px; border-top-style: solid; word-break: break-all; }
 .o-info-line-box > li { padding-top: 5px; padding-bottom: 5px; display: flex; justify-content: space-between; align-items: center; }
 @media (min-width: 401px) { .o-info-line-box > li:not(.no-padding) { padding-right: 20px; padding-left: 20px; } }
 .o-info-line-box > li.flexwrap { flex-wrap: wrap; }
@@ -1941,9 +1945,9 @@ header.o-header.has-sis-header.has-open-search:not(.is-opening-navigation) { hei
   header.o-header.has-sis-header .o-navigation .secondary-navigation .btn-pt-prev { display: none; }
   header.o-header.has-sis-header .o-navigation .navigation-curtain { top: calc(56px + 40px); }
   header.o-header.has-sis-header .o-navigation .sub-menu:last-child { display: block; }
-  header.o-header.has-sis-header.has-sis-notification.has-open-search { height: calc(112px + 37px + 41px); }
-  header.o-header.has-sis-header.has-sis-notification .o-search.is-open { top: calc(37px + 41px); }
-  header.o-header.has-sis-header.has-sis-notification .o-navigation .navigation-curtain { top: calc(56px + 37px + 41px); }
+  header.o-header.has-sis-header.has-sis-notification.has-open-search { height: calc(112px + 37px + var(--ntfbnnrh, 1ntfbnnrh)); }
+  header.o-header.has-sis-header.has-sis-notification .o-search.is-open { top: auto; bottom: 58px; }
+  header.o-header.has-sis-header.has-sis-notification .o-navigation .navigation-curtain { top: calc(56px + 37px + var(--ntfbnnrh, 1ntfbnnrh)); }
   header.o-header.has-sis-header.has-open-search.is-open:not(.is-opening-navigation) { height: auto; }
   header.o-header.has-sis-header.has-open-search .o-search { padding: 0 19px 0; }
   header.o-header.has-sis-header.has-open-search .o-navigation .secondary-navigation { bottom: calc(2px + 56px); }
@@ -1958,7 +1962,6 @@ header.o-header.has-sis-header.has-open-search:not(.is-opening-navigation) { hei
 
 .is-sis-body { /* @ 샵인샵 레이아웃 BASE / 2018.01.29 / mglee */ }
 .is-sis-body .o-page-content.mt0 { margin-top: 0 !important; }
-.is-sis-body .o-page-content { padding-top: 0px; /*sis-header 높이값*/ }
 
 .sis-header { display: none; posirion: relative; z-index: 30; /*오피셜 헤더가 20임. 그값보다 커야함.*/ height: 37px; background: #fff; text-align: center; line-height: 37px; }
 .sis-header #header-top { height: 100%; border-bottom: 1px solid #ebebeb; }
@@ -2686,7 +2689,7 @@ html.no-touchevents .m-input.has-error .a-input, .alternative-style-option .m-in
 .my-delivery-input .set-default-delivery .m-checkbox { padding-top: 15px; }
 .my-delivery-input .button-container { margin-top: 35px; }
 
-.delivery-item { text-align: left; }
+.delivery-item { text-align: left; word-break: break-all; }
 .delivery-item .item-top { margin-top: 0; margin-bottom: 8px; }
 .delivery-item .phone-num, .delivery-item .address { margin-top: 2px; margin-bottom: 2px; }
 .delivery-item .name { font-weight: 400; }
@@ -2773,7 +2776,7 @@ span.m-hazmat-v2.warning::before { background-image: url("../images/icon/icon-wa
 
 .order-complete-wrap .o-order-summary .total-section { margin-bottom: 0; padding-bottom: 0; border-color: #000; border-top-width: 1px; border-top-style: solid; border-bottom: 0; }
 .order-complete-wrap .o-order-summary .total-section .total { font-weight: 400; }
-.order-complete-wrap .order-summary-info { padding: 20px 15px; border-color: #000; border-bottom-width: 1px; border-bottom-style: solid; }
+.order-complete-wrap .order-summary-info { padding: 20px 15px; border-color: #000; border-bottom-width: 1px; border-bottom-style: solid; word-break: break-all; }
 @media (min-width: 769px) { .order-complete-wrap .o-order-summary { margin-left: auto; width: 50%; } }
 
 .order-info-bx .guide-text { margin-top: 0; margin-bottom: 0; }
