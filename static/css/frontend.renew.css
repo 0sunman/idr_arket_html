@@ -2538,7 +2538,7 @@ html.no-touchevents .m-input.has-error .a-input, .alternative-style-option .m-in
 .o-product-attributes .attributes-top .o-accordion.align-left .accordion-header .a-link::after { top: 2px; right: 10px; }
 .o-product-attributes .attributes-top .pdp-label, .o-product-attributes .attributes-top .pdp-value, .o-product-attributes .attributes-top .a-paragraph { font-family: "Arket Sans", "Noto Sans KR", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", "Sans-Serif"; font-size: 12px; }
 .o-product-attributes .attributes-top .made-in-el { margin-top: 10px; }
-.o-product-attributes .attributes-top .made-in-el .accordion-header .pdp-value { font-family: inherit; }
+.o-product-attributes .attributes-top .made-in-el .accordion-header .pdp-value { display: inline-block !important; font-family: inherit; word-break: break-all; }
 .o-product-attributes .attributes-top .made-in-el .accordion-content { padding-top: 15px; }
 .o-product-attributes .attributes-top .care-el .accordion-content .wash-wrap { font-family: 'washing-icons'; padding: 15px; }
 .o-product-attributes .attributes-top .care-el .accordion-content .wash-wrap li { font-size: 28px; padding-right: 20px; }
@@ -2731,6 +2731,7 @@ html.no-touchevents .m-input.has-error .a-input, .alternative-style-option .m-in
 .pay-info-bx .rd-toggle-con .line-bx { padding-top: 15px; padding-bottom: 15px; padding-right: 20px; padding-left: 20px; }
 .pay-info-bx .rd-toggle-con + .rd-toggle-con .line-bx { border-top: 0; }
 .pay-info-bx .rd-toggle-con + .m-radio-button { margin-top: 10px; }
+.pay-info-bx .rd-toggle-con.rd-toggle-pay-credit .m-radio-button { min-width: 136px; }
 .pay-info-bx .line-bx + .rd-toggle-con .line-bx { border-top: 0; }
 .pay-info-bx .line-bx .tit-text, .pay-info-bx .line-bx .guide-text, .pay-info-bx .line-bx .desc-text { margin-top: 0; margin-bottom: 0; font-size: 12px; }
 .pay-info-bx .line-bx .tit-text { margin-bottom: 10px; }
@@ -3002,8 +3003,7 @@ span.m-hazmat-v2.warning::before { background-image: url("../images/icon/icon-wa
 .my-order-delivery-content .button-container:last-child { margin-top: 30px; }
 .my-order-delivery-content.detail .order-list-ul-header .m-order-summary-row { text-align: left; }
 .my-order-delivery-content.detail .o-info-line-box > li { align-items: baseline; }
-@media (min-width: 401px) { .my-order-delivery-content.detail .m-order-summary-row { flex-basis: 65%; }
-  .my-order-delivery-content.detail .product-list-item .order-btns { display: none; } }
+@media (min-width: 401px) { .my-order-delivery-content.detail .m-order-summary-row { flex-basis: 65%; } }
 .my-order-delivery-content.order-info-edit .order-list-ul-header .m-order-summary-row { text-align: left; }
 .my-order-delivery-content.order-info-edit .my-orders-list-wrap .a-button.is-outlined { margin-top: 30px; }
 .my-order-delivery-content.order-info-edit .my-orders-list-wrap .guide-text { font-size: 13px; }

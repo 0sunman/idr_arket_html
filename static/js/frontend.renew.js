@@ -1,9 +1,4 @@
 //renewCommon
-
-//--ntfbnnrh css Property 생성
-var ntfbnnrh = $('#notificationbnnr').innerHeight(); //샵인샵 PC 띠배너 높이 사이즈
-var ntfbnnrVar = ntfbnnrh + 'px';
-
 //오픈되어 있는 o-lightbox 내에 html 가져오기
 function makeHtml(){
     let tempHtml = document.querySelector('.o-lightbox.is-open').innerHTML
@@ -61,9 +56,9 @@ function isBrowserIE(){
 }
 
 //샵인샵 PC 띠배너 체크 후 header position 재정의
-function setSisHeaderPosition(){
+function setSisHeaderPosition(ntfbnnrVarlue){
     //css 가상프로퍼티 생성
-    document.documentElement.style.setProperty('--ntfbnnrh', ntfbnnrVar);
+    document.documentElement.style.setProperty('--ntfbnnrh', ntfbnnrVarlue);
 
     //IE 브라우저 체크
     if(isBrowserIE()){
