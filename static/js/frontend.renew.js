@@ -58,7 +58,7 @@ function isBrowserIE(){
 //샵인샵 PC 띠배너 체크 후 header position 재정의
 function setSisHeaderPosition(ntfbnnrVarlue){
     //css 가상프로퍼티 생성
-    document.documentElement.style.setProperty('--ntfbnnrh', ntfbnnrVarlue);
+    document.documentElement.style.setProperty('--ntfbnnrh', ntfbnnrVarlue + 'px');
 
     //IE 브라우저 체크
     if(isBrowserIE()){
@@ -67,7 +67,7 @@ function setSisHeaderPosition(ntfbnnrVarlue){
         navigationCurtain = hasSisHeaderWithNotification.find('.o-navigation .navigation-curtain');
 
         // header.o-header.has-sis-header.has-sis-notification .o-navigation .navigation-curtain { top: calc(56px + 37px + var(--ntfbnnrh, 1ntfbnnrh)); }
-        let tempCssVal3 = 56 + 37 + ntfbnnrh;
+        let tempCssVal3 = 56 + 37 + ntfbnnrVarlue;
         navigationCurtain.css('top',tempCssVal3+'px');
     }
 }
