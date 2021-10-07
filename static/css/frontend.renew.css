@@ -1133,11 +1133,11 @@ h1 { margin: 20px 0; }
 /* common s ================================================= */
 body { font-family: "Arket Sans", "Noto Sans KR", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", "Sans-Serif"; }
 
-@media (min-width: 401px) { .only-m { display: none; } }
+@media (min-width: 769px) { .only-m { display: none; } }
 
 @media (max-width: 768px) { .only-wide-pc { display: none; } }
 
-@media (max-width: 400px) { .only-pc { display: none; } }
+@media (max-width: 768px) { .only-pc { display: none; } }
 
 .hidden { display: none; }
 
