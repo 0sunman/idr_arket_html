@@ -8,9 +8,9 @@
 퍼블리싱 특이사항
 ---
 - [글로벌사이트](https://www.arket.com/) 벤치마킹하여 작업 진행
-- [글로벌사이트](https://www.arket.com/) 에서 사용하는 frontend.min.css 사용 후 frontend.renew.css 선언
+- [글로벌사이트](https://www.arket.com/) 에서 사용하는 frontend.min.css 선언 후 신규 css 파일인 frontend.renew.css 선언
 - 페이지 구성요소 대부분 [Appeaser](https://p11-acc.ocd.ddns.net/pl) 에서 검색 후 인용  
-- 기본폰트 : Arket Sans, Noto Sans KR
+- 기본폰트 : Arket Sans, Arket Sans SC, Noto Sans KR
 - mediaQuery 분기사이즈(글로벌사이트 기준)
   - mobile : ~ 400
   - tablet : 401 ~ 630 or 401 ~ 768
@@ -40,7 +40,7 @@
 
   │　　├ /utils : scss mixin 관련 scss
   
-  │　　├ frontend.renew.error.scss : error pages에서 사용하는 scss
+  │　　├ frontend.renew.error.scss : error pages에서만 사용하는 scss
   
   │　　└ frontend.renew.scss : 그 외 모든 pages에서 사용하는 scss
   
