@@ -229,6 +229,8 @@ html.no-touchevents .m-input, html.no-touchevents .m-dropdown, .alternative-styl
 
 .m-site-banner .timeLabel { margin-right: 6px; margin-left: 2px; }
 
+.o-slider .redils .super-slide .slides:only-child { margin-right: 0; margin-left: 0; }
+
 @media (min-width: 769px) { .o-header.has-open-search .category-group { padding-top: 0; }
   .o-page-content .left-component + .o-width { clear: both; }
   .o-page-content .left-component + .o-width + .sdp-component.local-navigation { position: relative; }
@@ -1158,8 +1160,8 @@ body { font-family: "Arket Sans", "Noto Sans KR", "HelveticaNeue-Light", "Helvet
 
 .price-value::after, .is-regular::after, .is-reduced::after, .price-won::after { content: '원'; font-family: "Noto Sans KR"; font-size: 0.8em; }
 
-.is-deprecated { padding-right: 12px; }
-.is-deprecated::before { position: absolute; top: 0; right: 0; content: '원'; display: inline-block; font-family: "Noto Sans KR"; font-size: inherit; }
+.is-deprecated { padding-right: 11px; }
+.is-deprecated::before { position: absolute; top: 0; right: 0; content: '원'; display: inline-block; font-family: "Noto Sans KR"; font-size: 0.8em; }
 
 .dft-bx { padding: 15px 4%; }
 .dft-bx .dft-bx-tit { margin-bottom: 5px; font-weight: 400; }
@@ -1632,7 +1634,6 @@ body.is-page-loading .page-loading-bx { display: flex; }
 .lp-order-search-nonmbr .content .m-input { margin-bottom: 35px; }
 .lp-order-search-nonmbr .guide-text, .lp-order-search-nonmbr .link-wrap { font-size: 14px; text-align: left; }
 .lp-order-search-nonmbr .guide-text .a-link, .lp-order-search-nonmbr .link-wrap .a-link { margin-left: 30px; }
-.lp-order-search-nonmbr .guide-text .a-link:first-child, .lp-order-search-nonmbr .link-wrap .a-link:first-child { margin-left: 0; }
 .lp-order-search-nonmbr .guide-text { margin-top: 34px; margin-bottom: 45px; }
 
 .lp-join-policy .content { padding-top: 0; }
@@ -2498,19 +2499,19 @@ html.no-touchevents .m-input.has-error .a-input, .alternative-style-option .m-in
 /* ========================================================== */
 /* ---------------------------------------------------------- */
 /* product s ================================================ */
-.o-product-listing .o-product .description .m-product-price .is-deprecated { padding-right: 12px; }
-.o-product-listing .o-product .description .m-product-price .is-deprecated::before { position: absolute; top: 0; right: 0; content: '원'; display: inline-block; font-family: "Noto Sans KR"; font-size: inherit; }
+.o-product-listing .o-product .description .m-product-price .is-deprecated { padding-right: 11px; }
+.o-product-listing .o-product .description .m-product-price .is-deprecated::before { position: absolute; top: 0; right: 0; content: '원'; display: inline-block; font-family: "Noto Sans KR"; font-size: 0.8em; }
 .o-product-listing .o-product .description .swatches .m-swatches .a-swatch .a-button-nostyle { padding: 0; margin: 0; }
 .o-product-listing .o-product .description .swatches .m-swatches .a-swatch div.a-image { position: relative; display: inline-block; }
 .o-product-listing .o-product .description .swatches .m-swatches .a-swatch.current div.a-image::before { position: absolute; top: 0; left: 0; content: ''; width: 7px; height: 7px; display: inline-block; border: 1px solid #fff; border-radius: 50%; }
 
-.o-product-cofs .description .m-product-price .is-deprecated { padding-right: 12px; }
-.o-product-cofs .description .m-product-price .is-deprecated::before { position: absolute; top: 0; right: 0; content: '원'; display: inline-block; font-family: "Noto Sans KR"; font-size: inherit; }
+.o-product-cofs .description .m-product-price .is-deprecated { padding-right: 11px; }
+.o-product-cofs .description .m-product-price .is-deprecated::before { position: absolute; top: 0; right: 0; content: '원'; display: inline-block; font-family: "Noto Sans KR"; font-size: 0.8em; }
 
 .a-link-pdp-essential { font-size: 13px; color: #000; font-weight: 400; }
 
-.a-link.plp-link-track .price .m-product-price span.is-deprecated { padding-right: 12px; }
-.a-link.plp-link-track .price .m-product-price span.is-deprecated::before { position: absolute; top: 0; right: 0; content: '원'; display: inline-block; font-family: "Noto Sans KR"; font-size: inherit; }
+.a-link.plp-link-track .price .m-product-price span.is-deprecated { padding-right: 11px; }
+.a-link.plp-link-track .price .m-product-price span.is-deprecated::before { position: absolute; top: 0; right: 0; content: '원'; display: inline-block; font-family: "Noto Sans KR"; font-size: 0.8em; }
 .a-link.plp-link-track .price .m-product-price span:not(.is-deprecated)::after { content: '원'; font-family: "Noto Sans KR"; font-size: 0.8em; }
 
 .cart-item-info .total-section .total::after { content: '원'; font-family: "Noto Sans KR"; font-size: 0.8em; }
@@ -2557,6 +2558,8 @@ html.no-touchevents .m-input.has-error .a-input, .alternative-style-option .m-in
 .o-product-attributes .attributes-top .care-el .accordion-content .wash-wrap li:last-child { padding-right: 0; }
 .o-product-attributes .description-container ul { margin-top: 10px; }
 
+.o-pra-component .o-slider .o-product .description .price .is-deprecated { padding-right: 10px; }
+.o-pra-component .o-slider .o-product .description .price .is-reduced { display: block; margin-left: 0; }
 .o-pra-component .o-slider .pagination { min-height: 47px; }
 
 @media (max-width: 768px) { .o-product-slider .o-product-cofs .description .m-product-price { white-space: initial; }
@@ -2600,8 +2603,8 @@ html.no-touchevents .m-input.has-error .a-input, .alternative-style-option .m-in
 .o-cart .o-cart-item .cart-wrapper .cart-item-info .markers .m-product-marker .product-marker { display: inline-block; }
 .o-cart .o-cart-item .cart-wrapper .cart-item-info .size-section .low-stock { font-family: "Arket Sans SC", "Noto Sans KR", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", "Sans-Serif"; /* 210713 기획 > 퍼블수정 : 장바구니 > 품절 말풍선 */ left: calc(50% - 46px); }
 .o-cart .o-cart-item .cart-wrapper .cart-item-info .price-section span::before, .o-cart .o-cart-item .cart-wrapper .cart-item-info .price-section span:after { font-size: 10px; }
-.o-cart .o-cart-item .cart-wrapper .cart-item-info .price-section .is-deprecated { padding-right: 12px; }
-.o-cart .o-cart-item .cart-wrapper .cart-item-info .price-section .is-deprecated::before { position: absolute; top: 0; right: 0; content: '원'; display: inline-block; font-family: "Noto Sans KR"; font-size: inherit; }
+.o-cart .o-cart-item .cart-wrapper .cart-item-info .price-section .is-deprecated { padding-right: 11px; }
+.o-cart .o-cart-item .cart-wrapper .cart-item-info .price-section .is-deprecated::before { position: absolute; top: 0; right: 0; content: '원'; display: inline-block; font-family: "Noto Sans KR"; font-size: 0.8em; }
 .o-cart .o-cart-item .cart-wrapper .cart-item-info .price-section .is-deprecated::before { font-size: 10px; }
 .o-cart .o-cart-item.is-soldout .content-wrapper .cart-image-wrapper { opacity: 0.3; }
 .o-cart .o-cart-item.is-soldout .content-wrapper .total-label, .o-cart .o-cart-item.is-soldout .content-wrapper .total { display: none; }
@@ -3284,6 +3287,7 @@ html.no-touchevents .footer-about-wrap .product-listing .o-product .image:hover 
 .map-in-store-info .text-container .open-day { font-size: 16px; }
 .map-in-store-info .text-container .open-day span { padding-right: 10px; font-size: 12px; }
 .map-in-store-info .text-container .cafe-title { font-size: 16px; padding-bottom: 10px; }
+.map-in-store-info .text-container .store-title { font-family: "Arket Sans SC", "Noto Sans KR", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", "Sans-Serif"; font-size: 16px; }
 .map-in-store-info.is-visible { display: block; }
 
 .map-wrapper .o-map .map-container { height: 450px; }
@@ -3295,6 +3299,7 @@ html.no-touchevents .footer-about-wrap .product-listing .o-product .image:hover 
 .store-list-ul li .store-item .text-container .open-day { font-size: 16px; }
 .store-list-ul li .store-item .text-container .open-day span { padding-right: 10px; font-size: 12px; }
 .store-list-ul li .store-item .text-container .cafe-title { font-size: 16px; padding-bottom: 10px; }
+.store-list-ul li .store-item .text-container .store-title { font-family: "Arket Sans SC", "Noto Sans KR", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", "Sans-Serif"; font-size: 16px; }
 @media (min-width: 769px) { .store-list-ul li .store-item .text-container { margin-top: 5px; } }
 .store-list-ul li:last-child { border-top: 1px solid #000; }
 
