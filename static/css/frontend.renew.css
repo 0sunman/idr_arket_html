@@ -202,11 +202,11 @@ html.no-touchevents .m-input, html.no-touchevents .m-dropdown, .alternative-styl
 .product-shipping-tooltip-bx .a-tooltip, .m-product-shipping-info .a-tooltip { cursor: default; }
 .product-shipping-tooltip-bx .info-short, .m-product-shipping-info .info-short { display: flex; flex-direction: column; align-items: center; }
 .product-shipping-tooltip-bx .info-short p, .m-product-shipping-info .info-short p { font-size: 11px; line-height: 13px; display: inline-block; padding: 0; margin: 0 0 1px 0; }
-.product-shipping-tooltip-bx.is-open .a-tooltip, .m-product-shipping-info.is-open .a-tooltip { display: block; position: absolute; bottom: 62px; width: 230px; padding: 15px; text-align: left; }
+.product-shipping-tooltip-bx.is-open .a-tooltip, .m-product-shipping-info.is-open .a-tooltip { display: block; position: absolute; bottom: 60px; width: 230px; padding: 10px 15px; text-align: left; }
 .product-shipping-tooltip-bx.is-open .a-tooltip .a-icon-close, .m-product-shipping-info.is-open .a-tooltip .a-icon-close { position: absolute; top: 5px; right: 10px; }
 .product-shipping-tooltip-bx.is-open .a-tooltip h3, .m-product-shipping-info.is-open .a-tooltip h3 { font-size: 20px; line-height: 1.4em; font-family: 'Arket Sans SC', HelveticaNeue-Light, 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, Sans-Serif; font-weight: 400; font-size: 13px; line-height: 1.5em; text-transform: uppercase; margin-bottom: 10px; }
 .product-shipping-tooltip-bx.is-open .a-tooltip h3:first-child, .m-product-shipping-info.is-open .a-tooltip h3:first-child { margin-top: 0; }
-.product-shipping-tooltip-bx.is-open .a-tooltip p, .m-product-shipping-info.is-open .a-tooltip p { font-family: "Arket Sans", "Noto Sans KR", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", "Sans-Serif"; font-weight: 400; font-size: 13px; line-height: 1.5em; margin: 0; padding: 0; }
+.product-shipping-tooltip-bx.is-open .a-tooltip p, .m-product-shipping-info.is-open .a-tooltip p { font-family: "Arket Sans", "Noto Sans KR", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", "Sans-Serif"; font-weight: 400; font-size: 12px; line-height: 1.2em; margin: 0; padding: 0; }
 .product-shipping-tooltip-bx.is-open .a-tooltip .a-icon-pay-mastercard, .product-shipping-tooltip-bx.is-open .a-tooltip .a-icon-pay-paypal, .product-shipping-tooltip-bx.is-open .a-tooltip .a-icon-pay-visa, .m-product-shipping-info.is-open .a-tooltip .a-icon-pay-mastercard, .m-product-shipping-info.is-open .a-tooltip .a-icon-pay-paypal, .m-product-shipping-info.is-open .a-tooltip .a-icon-pay-visa { font-size: 46px; }
 .product-shipping-tooltip-bx.is-open .a-tooltip a, .m-product-shipping-info.is-open .a-tooltip a { color: inherit; cursor: pointer; border-bottom: 1px solid #cdd1d7; }
 .product-shipping-tooltip-bx.is-open .a-tooltip a *, .m-product-shipping-info.is-open .a-tooltip a * { cursor: pointer; }
@@ -230,6 +230,67 @@ html.no-touchevents .m-input, html.no-touchevents .m-dropdown, .alternative-styl
 .m-site-banner .timeLabel { margin-right: 6px; margin-left: 2px; }
 
 .o-slider .redils .super-slide .slides:only-child { margin-right: 0; margin-left: 0; }
+@media (max-width: 768px) { .o-slider .redils-controls .arrow-area .arrow { top: 51% !important; } }
+
+.o-pra-component .o-slider.c-num-slides-1 .super-slide .slides { width: calc(100% / 1) !important; /*
+&:nth-last-child(1) { &, & ~ .slides { width: calc(100% / 1); }
+}
+*/ }
+
+.o-pra-component .o-slider.c-num-slides-2 .super-slide .slides { width: calc(100% / 2) !important; /*
+&:nth-last-child(2) { &, & ~ .slides { width: calc(100% / 2); }
+}
+*/ }
+
+.o-pra-component .o-slider.c-num-slides-3 .super-slide .slides { width: calc(100% / 3) !important; /*
+&:nth-last-child(3) { &, & ~ .slides { width: calc(100% / 3); }
+}
+*/ }
+
+.o-pra-component .o-slider.c-num-slides-4 .super-slide .slides { width: calc(100% / 4) !important; /*
+&:nth-last-child(4) { &, & ~ .slides { width: calc(100% / 4); }
+}
+*/ }
+
+.o-pra-component .o-slider.c-num-slides-5 .super-slide .slides { width: calc(100% / 5) !important; /*
+&:nth-last-child(5) { &, & ~ .slides { width: calc(100% / 5); }
+}
+*/ }
+
+.o-pra-component .o-slider.c-num-slides-6 .super-slide .slides { width: calc(100% / 6) !important; /*
+&:nth-last-child(6) { &, & ~ .slides { width: calc(100% / 6); }
+}
+*/ }
+
+.o-pra-component .o-slider.c-num-slides-7 .super-slide .slides { width: calc(100% / 7) !important; /*
+&:nth-last-child(7) { &, & ~ .slides { width: calc(100% / 7); }
+}
+*/ }
+
+.o-pra-component .o-slider.c-num-slides-8 .super-slide .slides { width: calc(100% / 8) !important; /*
+&:nth-last-child(8) { &, & ~ .slides { width: calc(100% / 8); }
+}
+*/ }
+
+.o-pra-component .o-slider.c-num-slides-9 .super-slide .slides { width: calc(100% / 9) !important; /*
+&:nth-last-child(9) { &, & ~ .slides { width: calc(100% / 9); }
+}
+*/ }
+
+.o-pra-component .o-slider.c-num-slides-10 .super-slide .slides { width: calc(100% / 10) !important; /*
+&:nth-last-child(10) { &, & ~ .slides { width: calc(100% / 10); }
+}
+*/ }
+
+.o-pra-component .o-slider.c-num-slides-11 .super-slide .slides { width: calc(100% / 11) !important; /*
+&:nth-last-child(11) { &, & ~ .slides { width: calc(100% / 11); }
+}
+*/ }
+
+.o-pra-component .o-slider.c-num-slides-12 .super-slide .slides { width: calc(100% / 12) !important; /*
+&:nth-last-child(12) { &, & ~ .slides { width: calc(100% / 12); }
+}
+*/ }
 
 @media (min-width: 769px) { .o-header.has-open-search .category-group { padding-top: 0; }
   .o-page-content .left-component + .o-width { clear: both; }
@@ -2802,7 +2863,7 @@ span.m-hazmat-v2.warning::before { background-image: url("../images/icon/icon-wa
 .order-info-bx .order-num + .guide-text { margin-bottom: 45px; }
 
 .order-product-info-bx .m-order-summary-row .product-info .product-param-price.fourth .product-params .product-price, .order-product-info-bx .m-order-summary-row .product-info .product-param-price.fourth .product-params .product-discount, .order-product-info-bx .m-order-summary-row .product-info .product-param-price.fourth .product-params .product-total { font-family: "Arket Currency"; font-weight: 400; }
-.order-product-info-bx .m-order-summary-row .product-info .product-param-price.fourth .product-params .product-price::after, .order-product-info-bx .m-order-summary-row .product-info .product-param-price.fourth .product-params .product-discount::after, .order-product-info-bx .m-order-summary-row .product-info .product-param-price.fourth .product-params .product-total::after { font-size: 13px; }
+.order-product-info-bx .m-order-summary-row .product-info .product-param-price.fourth .product-params .product-price::after, .order-product-info-bx .m-order-summary-row .product-info .product-param-price.fourth .product-params .product-discount::after, .order-product-info-bx .m-order-summary-row .product-info .product-param-price.fourth .product-params .product-total::after { font-size: 0.8em; }
 
 .summary-item { margin-top: 30px; font-weight: 300; font-size: 13px; line-height: 18px; }
 .summary-item:first-child { margin-top: 0; }
@@ -3206,6 +3267,11 @@ span.m-hazmat-v2.warning::before { background-image: url("../images/icon/icon-wa
 /* ========================================================== */
 /* ---------------------------------------------------------- */
 /* custom service s ========================================= */
+.page-sizeguide { /* Adjustments to Bredcrumb on PLP */ /* END */ }
+@media (min-width: 1025px) { .page-sizeguide.o-page-content .sdp-component.left-component { width: calc(100vw - 25%); } }
+@media (min-width: 769px) { .page-sizeguide.o-page-content .sdp-component.left-component { width: calc(100vw - 25%); line-height: 35px; }
+  .page-sizeguide .o-page-content .sdp-component { margin: 0px 0px 10px 20px; } }
+
 .cs-contents { clear: both; padding: 40px 0 100px; min-height: 420px; }
 .cs-contents .o-accordion-wrap { margin-top: 80px; border-color: #ccc; border-top-width: 1px; border-top-style: solid; }
 .cs-contents .o-accordion-wrap .o-accordion.v2 .accordion-con-text { border-top: 0; }
@@ -3224,7 +3290,7 @@ span.m-hazmat-v2.warning::before { background-image: url("../images/icon/icon-wa
 .footer-about-wrap .o-width .about-align-center { text-align: center; }
 .footer-about-wrap .o-width .interval-zero { padding: 0; margin-left: 0; margin-right: 0; }
 .footer-about-wrap .fullWidth--bgColor { background-color: #f5f5f5; }
-.footer-about-wrap .o-text-field .text-container .a-paragraph { font-size: 13px; line-height: 21px; }
+.footer-about-wrap .o-text-field .text-container .a-paragraph { font-size: 13px; line-height: 21px; word-break: keep-all; word-wrap: break-word; }
 .footer-about-wrap .big-tit-txt .m-headline h2 { font-size: 11vw; line-height: 1.2em; }
 @media (min-width: 769px) { .footer-about-wrap .big-tit-txt .m-headline h2 { font-size: calc(51px + 1vw); } }
 .footer-about-wrap .big-tit-txt .m-headline .cafe { font-size: 9vw; }

@@ -35122,6 +35122,21 @@ var OSlider = /*#__PURE__*/function (_AppeaserComponentBas) {
         }
       }
 
+      //slide-controler 속성 추가 : 20211015
+      if (this.$el.data('slide-controler-hide')) {
+        if (this.$el.find(this.SELECTOR_SUPER_SLIDE)) {
+          if (this.$el.find(this.SELECTOR_NON_DUPLICATE).length === 1) {
+            this.$el.find(this.SELECTOR_REDILS_CONTROL).css({
+                display: 'none'
+            });
+          }
+        }
+      }
+
+      //slide 갯수 파악 후 o-slide 에 클래스 추가 : 20211015
+      var tempNumSlides = this.$el.find(this.SELECTOR_NON_DUPLICATE).eq(0).find(this.SELECTOR_SLIDE).length;
+      this.$el.addClass('c-num-slides-' + tempNumSlides)
+
       if (this.$el.is($(this.SELECTOR_PRA_SLIDER))) {
         this.publish(_Enums.default.ACTION.RESET_IMAGE_CLICK_HANDLER);
       }
