@@ -147,7 +147,7 @@ html .m-dropdown.v2 select { border-bottom: 0; }
 
 .o-cart-item.has-multiple-quantity .cart-item-info .is-reduced, .o-cart-item.has-multiple-quantity .cart-item-info .total-label { display: none; }
 
-.a-button { font-size: 18px; }
+.a-button { font-size: 18px; cursor: pointer; }
 .a-button.sm { font-size: 13px; height: 38px; line-height: 38px; }
 
 .o-accordion { padding-right: 20px; padding-left: 0; }
@@ -296,7 +296,8 @@ html.no-touchevents .m-input, html.no-touchevents .m-dropdown, .alternative-styl
   .o-page-content .left-component + .o-width { clear: both; }
   .o-page-content .left-component + .o-width + .sdp-component.local-navigation { position: relative; }
   .o-pra-component.is-suggestions .o-slider .o-product .description .m-product-marker .marker-text { display: none; } }
-@media (max-width: 768px) { .o-page-content .o-width .product-listing.align-below .o-product-listing { padding-top: 0; } }
+@media (max-width: 768px) { .m-breadcrumb { line-height: 12px; }
+  .o-page-content .o-width .product-listing.align-below .o-product-listing { padding-top: 0; } }
 @media (max-width: 1024px) { .o-product-details .left-panel .attributes-bottom .description-container .a-paragraph { font-size: 12px; } }
 /* frontend.min overwrite e ================================= */
 /* ========================================================== */
@@ -979,7 +980,7 @@ display: inline-block;
 
 /* sizeguide e ============================================== */
 /* lightbox-list > 상품 > 상품필수정보  */
-.freeHTML-sizeguide-chart-info { text-align: left; }
+.freeHTML-sizeguide-chart-info { table-layout: fixed; text-align: left; }
 .freeHTML-sizeguide-chart-info th { border-right: 1px solid #000; text-align: left; }
 .freeHTML-sizeguide-chart-info th, .freeHTML-sizeguide-chart-info td { padding: 10px 5px; border-bottom-width: 1px; font-size: 13px; color: #000; border-bottom-style: none; font-weight: 400; word-break: break-all; }
 
