@@ -296,9 +296,9 @@ html.no-touchevents .m-input, html.no-touchevents .m-dropdown, .alternative-styl
   .o-page-content .left-component + .o-width { clear: both; }
   .o-page-content .left-component + .o-width + .sdp-component.local-navigation { position: relative; }
   .o-pra-component.is-suggestions .o-slider .o-product .description .m-product-marker .marker-text { display: none; } }
-@media (max-width: 768px) { .m-breadcrumb { line-height: 12px; }
+@media (max-width: 768px) { .m-breadcrumb { line-height: 13px; }
   .o-page-content .o-width .product-listing.align-below .o-product-listing { padding-top: 0; } }
-@media (max-width: 1024px) { .o-product-details .left-panel .attributes-bottom .description-container .a-paragraph { font-size: 13px; } }
+@media (max-width: 1024px) { .o-product-details .left-panel .attributes-bottom .description-container .a-paragraph { font-size: 12px; } }
 /* frontend.min overwrite e ================================= */
 /* ========================================================== */
 /*                                                            */
