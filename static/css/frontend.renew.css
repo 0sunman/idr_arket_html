@@ -2790,7 +2790,7 @@ html.no-touchevents .m-input.has-error .a-input, .alternative-style-option .m-in
 @media (min-width: 769px) { .discount-info-bx .m-input.v3 .a-input { max-width: 280px; } }
 .discount-info-bx .deposit-price { position: absolute; top: -37px; right: 0; font-weight: 400; color: #000; }
 .discount-info-bx .deposit-price::after { content: '원'; font-family: "Noto Sans KR"; font-size: 0.8em; }
-@media (min-width: 769px) { .discount-info-bx .deposit-price { display: inline-block; top: unset; right: unset; margin-top: 10px; margin-left: 20px; } }
+@media (min-width: 769px) { .discount-info-bx .deposit-price { display: inline-block; top: auto; right: auto; margin-left: 20px; } }
 .discount-info-bx .guide-text { font-size: 12px; color: #afb0b5; }
 .discount-info-bx .promotion-info-tit { clear: both; margin-top: 20px; color: #000; }
 
