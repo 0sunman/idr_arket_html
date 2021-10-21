@@ -981,7 +981,7 @@ display: inline-block;
 /* sizeguide e ============================================== */
 /* lightbox-list > 상품 > 상품필수정보  */
 .freeHTML-sizeguide-chart-info { table-layout: fixed; text-align: left; }
-.freeHTML-sizeguide-chart-info th { border-right: 1px solid #000; text-align: left; }
+.freeHTML-sizeguide-chart-info th { min-width: 70px; border-right: 1px solid #000; text-align: left; }
 .freeHTML-sizeguide-chart-info th, .freeHTML-sizeguide-chart-info td { padding: 10px 5px; border-bottom-width: 1px; font-size: 13px; color: #000; border-bottom-style: none; font-weight: 400; word-break: break-all; }
 
 .freeHTML-sizeguide-chart-info tr:nth-child(2n-2) th, .freeHTML-sizeguide-chart-info tr:nth-child(2n-2) td { background-color: #E9E9EB; }
