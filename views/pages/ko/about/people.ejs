@@ -10,7 +10,10 @@
         <div class="o-text-field is-wide">
             <div class="headings big-tit-txt">
                 <div class="m-headline">
-                    <h2 class="a-heading-2 has-margin">우리는 누구이며<br>어떤 사람이 되고 싶은지에 관한 대화들</h2>
+                    <!-- mrk-edit : 20211025 -->
+                    <!--<h2 class="a-heading-2 has-margin">우리는 누구이며<br>어떤 사람이 되고 싶은지에 관한 대화들</h2>-->
+                    <h2 class="a-heading-2 has-margin">우리는 누구이며<br>어떤 사람이 되고 싶은지에 대한 고찰</h2>
+                    <!-- //mrk-edit : 20211025 -->
                 </div>
             </div>
         </div>
@@ -37,86 +40,27 @@
         </div>
     </div>
 
+    <!-- mrk-edit : 20211025 -->
     <div class="o-width VNAV wc-100">
         <div class="headings about-align-center">
             <div class="m-headline">
+                <!-- mrk-edit : 20211025 -->
                 <h2 class="a-heading-2  has-margin">
-                    Select a topic below
+                    <!--Select a topic below-->
+                    주제를 선택하세요
                 </h2>
+                <!-- //mrk-edit : 20211025 -->
             </div>
         </div>
-        
-        <div class="o-image-listing cols-3">
-            <div class="image-container">
-                <a href="<%= pageInfo.root %>/<%= pageInfo.lang %>/about/materials.html" target="_blank" class="trackImage a-link">
-                    <img class="a-image" src="<%= pageInfo.root %>/images/about/ARKET_20Q4_about_ken_10_WEB.jpg" alt="Kenjiro Kuwana">
-                </a>
-                <div class="slider-text-block">
-                    <div class="is-richtext o-text-field ">Materials</div>
-                </div>
-            </div>
-            <div class="image-container">
-                <a href="<%= pageInfo.root %>/<%= pageInfo.lang %>/about/suppliers.html" target="_self" class="trackImage a-link">
-                    <img class="a-image" src="<%= pageInfo.root %>/images/about/ARKET_20Q4_about_susanna_04_WEB.jpg" alt="Susanna Cognigni">
-                </a>
-                <div class="slider-text-block">
-                    <div class="is-richtext o-text-field ">Suppliers</div>
-                </div>
-            </div>
-            <div class="image-container">
-                <a href="<%= pageInfo.root %>/<%= pageInfo.lang %>/about/design.html" target="_self" class="trackImage a-link">
-                    <img class="a-image" src="<%= pageInfo.root %>/images/about/ARKET_20Q4_about_elisabeth_06_WEB.jpg" alt="Elisabet Holmström">
-                </a>
-                <div class="slider-text-block">
-                    <div class="is-richtext o-text-field ">Design</div>
-                </div>
-            </div>
-            <div class="image-container">
-                <a href="<%= pageInfo.root %>/<%= pageInfo.lang %>/about/food.html" target="_self" class="trackImage a-link">
-                    <img class="a-image" src="<%= pageInfo.root %>/images/about/ARKET_20Q3_cafe_bts_jessica_f.jpg" alt="Jessica Leroux">
-                </a>
-                <div class="slider-text-block">
-                    <div class="is-richtext o-text-field ">Food</div>
-                </div>
-            </div>
-        </div>
+        <%# md-about-o-image-list-tiles %>
+        <%- include ("../../../common/md-about-o-image-list-tiles-1.ejs") %>
     </div>
     <div class="o-width VNAV wc-100">
-        <div class="o-image-listing cols-3">
-            <div class="image-container">
-                <a href="<%= pageInfo.root %>/<%= pageInfo.lang %>/about/balance.html" target="_self" class="trackImage a-link">
-                    <img class="a-image" src="<%= pageInfo.root %>/images/about/ARKET_20Q4_about_caroline_08_WEB.jpg" alt="Caroline Igel">
-                </a>
-                <div class="slider-text-block">
-                    <div class="is-richtext o-text-field ">Balance</div>
-                </div>
-            </div>
-            <div class="image-container">
-                <a href="<%= pageInfo.root %>/<%= pageInfo.lang %>/about/knowledge.html" target="_self" class="trackImage a-link">
-                    <img class="a-image" src="<%= pageInfo.root %>/images/about/ARKET_20Q4_about_ivan_03_WEB.jpg" alt="Ivan Fernandez">
-                </a>
-                <div class="slider-text-block">
-                    <div class="is-richtext o-text-field ">Knowledge</div>
-                </div>
-            </div>
-            <div class="image-container">
-                <a href="<%= pageInfo.root %>/<%= pageInfo.lang %>/about/community.html" target="_self" class="trackImage a-link">
-                    <img class="a-image" src="<%= pageInfo.root %>/images/about/ARKET_20Q4_about_marielouise_07_WEB.jpg">
-                </a>
-                <div class="slider-text-block">
-                    <div class="is-richtext o-text-field ">Community</div>
-                </div>
-            </div>
-            <div class="image-container">
-                <a href="<%= pageInfo.root %>/<%= pageInfo.lang %>/about/environment.html" target="_self" class="trackImage a-link">
-                    <img class="a-image" src="<%= pageInfo.root %>/images/about/ARKET_20Q4_about_sofia_10_WEB.jpg">
-                </a>
-                <div class="slider-text-block">
-                    <div class="is-richtext o-text-field ">Environment</div>
-                </div>
-            </div>
-        </div>
+        <%# md-about-o-image-list-tiles %>
+        <%- include ("../../../common/md-about-o-image-list-tiles-2.ejs") %>
     </div>
+    <!-- //mrk-edit : 20211025 -->
+
     <div class="o-width about wc-50"></div>
     <div class="o-width fullWidth--mobile title--large about-icon wc-50">
         <div class="m-headline with-icon u-align-center is-main-headline full-width">
@@ -203,12 +147,14 @@
                             </div>
                             <div class="tagCloud parbase section">
                                 <div class="o-tag-cloud">
-                                    <h6 class="a-heading-6 cloud-title">Join our community</h6>
+                                    <!-- mrk-edit : 20211025 -->
+                                    <h6 class="a-heading-6 cloud-title"><!--Join our community-->우리의 소식을 구독하세요</h6>
                                     <ul class="tags-container">
                                         <li class="tag ">
-                                            <a href="http://www.instagram.com/arketofficial" target="_self" class="a-link">ARKET Instagram</a>
+                                            <a href="http://www.instagram.com/arketofficial" target="_self" class="a-link"><!--ARKET Instagram-->ARKET 인스타그램</a>
                                         </li>
                                     </ul>
+                                    <!-- //mrk-edit : 20211025 -->
                                 </div>
                             </div>
                         </div>

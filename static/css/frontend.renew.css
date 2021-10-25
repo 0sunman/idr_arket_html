@@ -232,6 +232,9 @@ html.no-touchevents .m-input, html.no-touchevents .m-dropdown, .alternative-styl
 .o-slider .redils .super-slide .slides:only-child { margin-right: 0; margin-left: 0; }
 @media (max-width: 768px) { .o-slider .redils-controls .arrow-area .arrow { top: 51% !important; } }
 
+.a-size-swatch .low-stock { left: 50%; transform: translateX(-50%); }
+.a-size-swatch .low-stock::before, .a-size-swatch .low-stock::after { left: 50%; transform: translateX(-50%); }
+
 .o-pra-component .o-slider.c-num-slides-1 .super-slide .slides { width: calc(100% / 1) !important; /*
 &:nth-last-child(1) { &, & ~ .slides { width: calc(100% / 1); }
 }
@@ -1095,7 +1098,7 @@ display: inline-block;
 
 .about-grid .o-image-listing.cols-3 .image-container .slider-text-block { text-align: center; margin-bottom: 20px; }
 
-.about-grid .o-image-listing .image-container .o-text-field { text-align: center; font-family: Arket Sans SC; font-size: 14px; width: auto; display: inline-block; margin: auto; line-height: 14px; padding-bottom: 6px; padding-left: 8px; padding-right: 8px; padding-top: 2px; border-radius: 2px; }
+.about-grid .o-image-listing .image-container .o-text-field { text-align: center; font-family: "Arket Sans SC", "Noto Sans KR", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", "Sans-Serif"; font-size: 14px; width: auto; display: inline-block; margin: auto; line-height: 14px; padding-bottom: 6px; padding-left: 8px; padding-right: 8px; padding-top: 2px; border-radius: 2px; }
 
 .about-grid .o-image-listing.cols-3 .image-container a[href="#Current"] + div .o-text-field { background: #000000; }
 
@@ -1141,6 +1144,8 @@ display: inline-block;
   .about-grid .o-image-listing .image-container .o-text-field { font-size: 11px; }
   .about-grid .o-image-listing.cols-3 .image-container a { padding: 18px 0 10px; } }
 .o-layout .o-text-field .headings, .o-layout .o-text-field .m-headline { display: block; }
+
+.o-layout b, .o-text-field b, .o-slider b { font-family: "Arket Sans SC", "Noto Sans KR", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", "Sans-Serif"; }
 
 h1 { margin: 20px 0; }
 

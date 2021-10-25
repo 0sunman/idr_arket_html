@@ -74,77 +74,12 @@
         <div class="o-width spacer--desktop wc-100"></div>
     </div>
     <div class="o-width VNAV wc-100">
-        <div class="o-image-listing cols-3">
-            <div class="image-container">
-                <a href="<%= pageInfo.root %>/<%= pageInfo.lang %>/about/materials.html" target="_blank" class="trackImage a-link">
-                    <img class="a-image" src="<%= pageInfo.root %>/images/about/ARKET_20Q4_about_ken_10_WEB.jpg" alt="Kenjiro Kuwana">
-                </a>
-                <div class="slider-text-block">
-                    <div class="is-richtext o-text-field ">Materials</div>
-                </div>
-            </div>
-            <div class="image-container">
-                <a href="<%= pageInfo.root %>/<%= pageInfo.lang %>/about/suppliers.html" target="_self" class="trackImage a-link">
-                    <img class="a-image" src="<%= pageInfo.root %>/images/about/ARKET_20Q4_about_susanna_04_WEB.jpg" alt="Susanna Cognigni">
-                </a>
-                <div class="slider-text-block">
-                    <div class="is-richtext o-text-field ">Suppliers</div>
-                </div>
-            </div>
-            <div class="image-container">
-                <a href="<%= pageInfo.root %>/<%= pageInfo.lang %>/about/design.html" target="_self" class="trackImage a-link">
-                    <img class="a-image" src="<%= pageInfo.root %>/images/about/ARKET_20Q4_about_elisabeth_06_WEB.jpg" alt="Elisabet Holmström">
-                </a>
-                <div class="slider-text-block">
-                    <div class="is-richtext o-text-field ">Design</div>
-                </div>
-            </div>
-            <div class="image-container">
-                <a href="<%= pageInfo.root %>/<%= pageInfo.lang %>/about/food.html" target="_self" class="trackImage a-link">
-                    <img class="a-image" src="<%= pageInfo.root %>/images/about/ARKET_20Q3_cafe_bts_jessica_f.jpg" alt="Jessica Leroux">
-                </a>
-                <div class="slider-text-block">
-                    <div class="is-richtext o-text-field ">Food</div>
-                </div>
-            </div>
-        </div>
+        <%# md-about-o-image-list-tiles %>
+        <%- include ("../../common/md-about-o-image-list-tiles-1.ejs") %>
     </div>
     <div class="o-width VNAV wc-100">
-        <div class="o-image-listing cols-3">
-            <div class="image-container">
-                <a href="<%= pageInfo.root %>/<%= pageInfo.lang %>/about/balance.html" target="_self" class="trackImage a-link">
-                    <img class="a-image" src="<%= pageInfo.root %>/images/about/ARKET_20Q4_about_caroline_08_WEB.jpg" alt="Caroline Igel">
-                </a>
-                <div class="slider-text-block">
-                    <div class="is-richtext o-text-field ">Balance</div>
-                </div>
-            </div>
-            <div class="image-container">
-                <a href="<%= pageInfo.root %>/<%= pageInfo.lang %>/about/knowledge.html" target="_self" class="trackImage a-link">
-                    <img class="a-image" src="<%= pageInfo.root %>/images/about/ARKET_20Q4_about_ivan_03_WEB.jpg" alt="Ivan Fernandez">
-                </a>
-                <div class="slider-text-block">
-                    <div class="is-richtext o-text-field ">Knowledge</div>
-                </div>
-            </div>
-            <div class="image-container">
-                <a href="<%= pageInfo.root %>/<%= pageInfo.lang %>/about/community.html" target="_self" class="trackImage a-link">
-                    <img class="a-image" src="<%= pageInfo.root %>/images/about/ARKET_20Q4_about_marielouise_07_WEB.jpg">
-                </a>
-                <div class="slider-text-block">
-                    <div class="is-richtext o-text-field ">Community</div>
-                </div>
-            </div>
-            <div class="image-container">
-                <a href="<%= pageInfo.root %>/<%= pageInfo.lang %>/about/environment.html" target="_self" class="trackImage a-link">
-                    <img class="a-image" src="<%= pageInfo.root %>/images/about/ARKET_20Q4_about_sofia_10_WEB.jpg">
-                    <span class="promoIndex" hidden="">18</span>
-                </a>
-                <div class="slider-text-block">
-                    <div class="is-richtext o-text-field">Environment</div>
-                </div>
-            </div>
-        </div>
+        <%# md-about-o-image-list-tiles %>
+        <%- include ("../../common/md-about-o-image-list-tiles-2.ejs") %>
     </div>
     <div class="o-width about-chooser wc-75"></div>
     <div class="o-width wc-50">
@@ -233,14 +168,17 @@
                         </div>
                         <div class="tagCloud parbase section">
                             <div class="o-tag-cloud">
-                                <h6 class="a-heading-6 cloud-title">explore our seasonal menu</h6>
+                                <!-- mrk-edit : 20211025 -->
+                                <h6 class="a-heading-6 cloud-title"><!--explore our seasonal menu-->시즈널 메뉴를 확인하세요</h6>
                                 <ul class="tags-container"><!-- -->
                                     <li class="tag "><!-- -->
                                         <a href="<%= pageInfo.root %>/<%= pageInfo.lang %>/cafe.html" target="_self" class="a-link">
-                                            ARKET café
+                                            <!--ARKET café-->
+                                            ARKET 카페
                                         </a><!-- -->
                                     </li><!-- -->
                                 </ul>
+                                <!-- //mrk-edit : 20211025 -->
                             </div>
                         </div>
                     </div>
@@ -273,9 +211,12 @@
         <div class="o-text-field two-columns">
             <div class="headings about-align-left">
                 <div class="m-headline">
+                    <!-- mrk-edit : 20211025 -->
                     <h2 class="a-heading-2 has-margin">
-                        ARKET Sustainability Fact Sheet란, 목표 선언문이자, 환경을 위해 여러 사용량을 줄이면서 우리가 하고 있는 노력에 대한 설명문입니다.
+                        <!--ARKET Sustainability Fact Sheet란, 목표 선언문이자, 환경을 위해 여러 사용량을 줄이면서 우리가 하고 있는 노력에 대한 설명문입니다.-->
+                        지속 가능성 리포트란, 목표 선언문이자, 환경을 위해 여러 사용량을 줄이면서 우리가 하고 있는 노력에 대한 설명문입니다.
                     </h2>
+                    <!-- //mrk-edit : 20211025 -->
                 </div>
             </div>
             <div class="text-container">
@@ -291,10 +232,12 @@
     </div>
     <div class="o-width fullWidth--mobile title--large about-icon wc-50">
         <div class="o-tag-cloud">
-            <h6 class="a-heading-6 cloud-title">Explore</h6>
+            <!-- mrk-edit : 20211025 -->
+            <h6 class="a-heading-6 cloud-title"><!--Explore-->확인하세요</h6>
             <ul class="tags-container"><!-- -->
-                <li class="tag "><!-- --><a href="<%= pageInfo.root %>/<%= pageInfo.lang %>/about/sustainability-fact-sheet.html" target="_self" class="a-link">ARKET Sustainability Fact Sheet 2020</a><!-- --></li>
+                <li class="tag "><!-- --><a href="<%= pageInfo.root %>/<%= pageInfo.lang %>/about/sustainability-fact-sheet.html" target="_self" class="a-link">ARKET <!--Sustainability Fact Sheet 2020-->2020 지속 가능성 리포트</a><!-- --></li>
             </ul>
+            <!-- //mrk-edit : 20211025 -->
         </div>
         <div class="o-text-field is-wide">
             <div class="text-container">
