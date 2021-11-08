@@ -740,4 +740,23 @@ renewCommon = (function(doc, win){
     'use strict';
     // console.log('frontend.renew.js start!');
     renewCommon.initialize();
+
+
+    var videoIO = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+            if (entry.intersectionRatio > 0) { // 뷰포트에 들어오면
+                entry.target.play();
+            }
+            // 그 외의 경우 'tada' 클래스 제거
+            else { // 뷰포트에서 빠지면
+                entry.target.pause();
+            }
+        })
+    })
+
+    document.querySelectorAll("video").forEach((video) => {
+        videoIO.observe(video);
+    })
+
+
 })();
