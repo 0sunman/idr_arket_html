@@ -14,6 +14,9 @@
 
 .o-product-attributes .description-container .a-paragraph, .o-product-attributes .description-container p, .o-product-attributes .description-container div, .o-product-attributes .description-container span { font-size: 12px; }
 
+.o-product-attributes .description-container ul li { position: relative; margin-bottom: 2px; padding-left: 14px; line-height: 20px; }
+.o-product-attributes .description-container ul li:before { position: absolute; display: inline-block; left: 0; line-height: 18px; }
+
 .o-navigation .information-section .bottom-section .m-country-cta { font-size: 13px; }
 
 .a-heading-2, .a-heading-3, .a-heading-4 { font-size: 18px; }
@@ -226,6 +229,7 @@ html.no-touchevents .m-input, html.no-touchevents .m-dropdown, .alternative-styl
 .o-product-listing .image.compat-object-fit .m-product-image > .cross + div { line-height: 0; }
 
 .o-filter.a-buttons .button-wrapper li { height: auto; line-height: 37px; max-width: 100%; }
+.o-filter .filters-content { padding-bottom: 90px; }
 
 .m-site-banner { z-index: 15; }
 .m-site-banner .timeLabel { margin-right: 6px; margin-left: 2px; }
@@ -303,6 +307,8 @@ html.no-touchevents .m-input, html.no-touchevents .m-dropdown, .alternative-styl
 */ }
 
 .m-order-summary-row .product-info .product-param-info.second * { display: inline-block; }
+
+.o-newsletter-popup.is-visible { animation: none; -ms-animation: none; -webkit-animation: popup_appear .2s ease; }
 
 @media (min-width: 769px) { .o-header.has-open-search .category-group { padding-top: 0; }
   .o-page-content .sdp-component.left-component { width: calc(100vw - 25%); line-height: 35px; }

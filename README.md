@@ -3,12 +3,14 @@
 
 퍼블리싱 작업환경
 ---
-- node.js + express + ejs 환경
+- node.js : [다운로드](https://nodejs.org/ko/)
+- express + ejs 환경 : package.json 사용해서 npm install
+- ruby : [다운로드](https://rubyinstaller.org/downloads/) 설치 후 sass 설치 
 
 퍼블리싱 특이사항
 ---
-- [글로벌사이트](https://www.arket.com/) 벤치마킹하여 작업 진행
-- [글로벌사이트](https://www.arket.com/) 에서 사용하는 frontend.min.css 선언 후 신규 css 파일인 frontend.renew.css 선언
+- [글로벌사이트](https://www.arket.com/en/) 벤치마킹하여 작업 진행
+- [글로벌사이트](https://www.arket.com/en/) 에서 사용하는 frontend.min.css 선언 후 신규 css 파일인 frontend.renew.css 선언
 - 페이지 구성요소 대부분 [Appeaser](https://p11-acc.ocd.ddns.net/pl) 에서 검색 후 인용  
 - 기본폰트 : Arket Sans, Arket Sans SC, Noto Sans KR
 - mediaQuery 분기사이즈(글로벌사이트 기준)
@@ -16,6 +18,7 @@
   - tablet : 401 ~ 630 or 401 ~ 768
   - pc : 769 ~ 1024 or 1025 ~  
 - 샵인샵 작업은 [더현대닷컴_COS](http://www.thehyundai.com/front/dpa/cosHome.thd) 벤치마킹하여 작업 진행
+- 파일 위치 : \\10.103.201.134\더현대아르켓토템ess프로젝트\99.산출물\03.설계\09.퍼블리싱산출물
 
 퍼블리싱 산출물 디렉토리 구조
 ---
@@ -67,7 +70,9 @@
   │　├ /js : 신규 js
   
   │　└ /org : 기존 사이트(글로벌사이트) static 소스
-  
+
+  ├ /temp : 글로벌사이트에서 확인한 페이지 마크업 임시 저장 폴더 
+
   ├ /views : ejs 관련 파일
 
   │　└ /common : page 별 include ejs 파일
