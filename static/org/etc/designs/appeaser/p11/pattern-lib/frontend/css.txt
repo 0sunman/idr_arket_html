@@ -1,6 +1,0 @@
-css/slick.css
-css/common.css
-css/p11.css
-css/styleguide.css
-css/redils.min.css
-css/swiper.min.css
