@@ -1,0 +1,126 @@
+<%- include ("./common/layout-header") %>
+
+<body data-component="OPage" class="layout-inside is-sis-body" id="oPage">
+
+    <div class="coremetricsPageId" hidden="">Startpage 3</div>
+    <div class="coremetricsPageType" hidden="">Startpage 4</div>
+    <div class="coremetricsCategoryId" hidden="">Startpage 2</div>
+    <div class="coremetricsCategoryPath" hidden="">Startpage 1</div>
+
+    <input id="ogimage" type="hidden" value="">
+
+    <!-- Code to manage the mobile preview after css changes by HTML team -->
+
+    <div data-component="SkeletonLoading" id="lpResolveConfigs" data-lp-aspect-ratio-width="2" data-lp-aspect-ratio-height="3" data-lp-density-mobile="2" data-lp-density-tablet="2" data-lp-density-desk="2" data-lp-max-density="3" data-lp-format="webp,jpeg" data-lp-cache-threshold="50" data-lp-url="lp.arket.com" data-lp-uri="app006prod" data-lp-image-fit="containerWidth" data-lp-jpeg-quality-desktop="70" data-lp-webp-quality-mobile="70" data-lp-webp-quality-tablet="70" data-lp-jpeg-quality-tablet="70" data-lp-webp-quality-desktop="70" data-lp-jpeg-quality-mobile="70" data-component-id="6dbb0cd9-2cf4-4569-a46d-c4294b9c76a2"></div>
+
+    <div class="firsttimelanguageselector first-time-language-selector">
+        <script type="text/x-handlebars-template" id="language-select"></script>
+    </div>
+
+    <div class="u-no-select">
+        <div class="a-overlay js-a-overlay q-opacity-0" data-component="AOverlay"></div>
+        <div id="popupOutOfStock" class="m-out-of-stock" data-component="MOutOfStockCart" aria-hidden="true">
+            <div class="out-of-stock-info">
+                <p class="a-paragraph max-limit-text popupText">The Product You have selected is Not Available now</p>
+            </div>
+            <div class="close-out-of-stock">
+                <button class="a-button-nostyle a-icon-close a-icon" type="button" aria-label="Close"></button>
+            </div>
+        </div>
+        <!-- header-sis -->
+        <%
+        if(targetPath == "ko/search-sis.ejs"){
+        %>
+            <%- include ("./common/header-sis-for-search.ejs") %>
+        <%
+        } else if(targetPath == "ko/index-sis-topbanner.ejs" || targetPath == "ko/women-sis.ejs"){
+        %>
+        <%- include ("./common/header-sis-topbanner.ejs") %>
+        <%
+            } else{
+        %>
+        <%- include ("./common/header-sis.ejs") %>
+        <%
+            }
+        %>
+
+        <!-- //header-sis -->
+
+        <!-- o-lightbox -->
+        <div data-component="OLightbox" class="o-lightbox">
+            <div class="lightbox-wrapper">
+                <div class="lightbox-header"></div>
+                <div class="lightbox-content js-content u-clearfix"></div>
+                <button type="button" class="a-button-nostyle m-button-icon a-icon-close js-close-button"></button>
+            </div>
+        </div>
+        <!-- //o-lightbox -->
+
+        <!-- m-product-zoom -->
+        <div data-component="MProductZoom" class="m-product-zoom">
+            <button type="button" class="a-button-nostyle a-icon-close-circle"></button>
+            <div class="img-wrapper"></div>
+        </div>
+        <!-- //m-product-zoom -->
+    </div>
+
+    <script src="<%= pageInfo.root %>/org/etc/designs/appeaser/shared/clientlibs/components.min.0ff734763f97062b81ea61876bc97b89.js"></script>
+
+    <%# 배송국가 %>
+    <%- include ("./handlebars/hndl-country-selector.ejs") %>
+
+    <!-- handlebars-template -->
+    <%- include ("./common/handlebars-template.ejs") %>
+    <!-- //handlebars-template -->
+
+    <!-- o-page-content -->
+    <%- include ("./pages/"+targetPath) %>
+    <!-- //o-page-content -->
+
+    <!-- footer-sis -->
+    <%- include ("./common/footer-sis.ejs") %>
+    <!-- //footer-sis -->
+
+    <!-- o-cookie-message -->
+    <%- include ("./common/cookie-message.ejs") %>
+    <!-- //o-cookie-message -->
+
+    <%# md-include-script %>
+    <%- include ("./common/md-include-script-sis.ejs") %>
+
+    <script type="text/javascript">
+        //iframe 자동높이 조절
+        function iframeAutoResize(h){
+            if(h == null){
+                return false;
+            }
+            (h).height = "0px";
+            var iframeHeight = (h).contentWindow.document.body.scrollHeight;
+            (h).height = iframeHeight + 56;
+        }
+        (function() {
+            'use strict';
+            setTimeout(function(){
+                let sisFrame = document.querySelector('#sisFrame');
+                if(sisFrame) {
+                    //iframe 밖을 o-page-content로 감싸면서 사용하지 않게 되었음 : 20210826
+                    //iframe margin-top set
+                    // let oHeaderH = document.querySelector('.o-header').offsetHeight;
+                    // let tempH = oHeaderH - 56 - 1; //o-page-content 의 margin-top 빼기
+                    // let oSearchOpen = document.querySelector('.o-search.is-open');
+                    // if(oSearchOpen){
+                    //     let oSearchOpenH = oSearchOpen.offsetHeight;
+                    //     tempH = tempH - 56; //검색어입력영역이 is-open 일 경우
+                    // }
+                    // tempH = (tempH < -1 ? -1 : tempH);
+                    // sisFrame.style.marginTop = tempH + "px";
+
+                    //iframe 내 .o-pagte-content 에 .mt0 클래스 추가하기
+                    //sisFrame.contentWindow.document.querySelector('.o-page-content').classList.add('mt0')
+                }
+            },1000);
+        })();
+    </script>
+
+</body>
+</html>

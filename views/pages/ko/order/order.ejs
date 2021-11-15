@@ -1,0 +1,155 @@
+<main data-component="OPageContent" class="o-page-content cofs-page">
+
+    <div class="o-order-confirmation">
+        <!-- order-sheet-info -->
+        <div class="order-sheet-info">
+
+            <!-- orderer-info-bx : 이메일정보가 있는 경우 -->
+            <h2 class="a-heading-2">주문고객정보</h2>
+            <ul class="dft-bx line-bx orderer-info-bx">
+                <li>
+                    <span class="orderer">홍길동</span>
+                    <a class="a-link a-link-udln orderer" href="#" target="_self">수정</a>
+                </li>
+                <li><span class="orderer-phone">010-1234-5678</span></li>
+                <li>
+                    <span class="orderer-email">arket@gmail.com</span>
+                </li>
+            </ul>
+            <!-- //orderer-info-bx : 이메일정보가 있는 경우 -->
+
+            <!-- orderer-info-bx : 이메일정보가 없는 경우 -->
+            <h2 class="a-heading-2">주문고객정보</h2>
+            <ul class="dft-bx line-bx orderer-info-bx">
+                <li>
+                    <span class="orderer">홍길동</span>
+                    <a class="a-link a-link-udln orderer" href="#" target="_self">수정</a>
+                </li>
+                <li><span class="orderer-phone">010-1234-5678</span></li>
+                <li>
+                    <div class="email-input-bx">
+                        <div class="m-input v3" data-component="MInput">
+                            <label class="a-label js-a-label" for="orderer-email">이메일</label>
+                            <input class="a-input js-a-input"
+                                   placeholder="이메일(필수)"
+                                   type="email"
+                                   value=""
+                                   pattern=""
+                                   name="orderer-email"
+                                   id="orderer-email"
+                                   required=""
+                                   data-validation-required-text="연락 가능한 이메일을 입력해 주세요."
+                                   data-validation-pattern-text="">
+                            <label class="a-label js-a-label" for="orderer-email" data-placeholder=""></label>
+                        </div>
+                        <div class="m-dropdown v3">
+                            <label class="a-label js-a-label" for="emailDomain">&nbsp;</label>
+                            <select class="option-wrap"name="selectMailDomain" id="emailDomain">
+                                <option class="a-option">직접입력</option>
+                                <option class="a-option">@naver.com</option>
+                                <option class="a-option">@daum.net</option>
+                                <option class="a-option">@nate.com</option>
+                                <option class="a-option">@gmail.com</option>
+                                <option class="a-option">@hanmail.net</option>
+                                <option class="a-option">@hotmail.com</option>
+                            </select>
+                            <span class="a-icon-accordion a-icon-arrow-down-small"></span>
+                        </div>
+                        <p class="guide-text">회원정보를 수정 하실 경우는 “마이페이지 > <strong class="a-link-udln">회원정보변경</strong>” 에서 변경해주세요.</p>
+                    </div>
+                </li>
+            </ul>
+            <!-- //orderer-info-bx : 이메일정보가 없는 경우 -->
+
+            <!-- delivery-info-bx -->
+            <h2 class="a-heading-2">배송지정보</h2>
+            <div class="dft-bx line-bx">
+                
+                <%# md-deliver-info-bx : 배송지 목록 %>
+                <%- include ("../../../common/md-delivery-info-bx.ejs") %>
+
+            </div>
+            <!-- //delivery-info-bx -->
+
+            <!-- discount-info-bx -->
+            <h2 class="a-heading-2">할인</h2>
+            <div class="dft-bx line-bx discount-info-bx">
+                <p class="dft-bx-tit">예치금</p>
+                <div class="m-input v3" data-component="MInput">
+                    <input class="a-input js-a-input v3"
+                           type="number"
+                           name="delivery-requset-msg"
+                           id="delivery-requset-msg"
+                           pattern="[0-9]+"
+                           placeholder="0"
+                           data-validation-pattern-text="숫자만 입력하세요">
+                    <a class="a-link a-link-udln" href="#" target="_self">모두 사용</a>
+                    <p class="deposit-price">52,090</p>
+                    <label class="a-label js-a-label" for="delivery-requset-msg" data-placeholder=""></label>
+                    <p class="guide-text">예치금 사용 기본 단위는 10원이며, 1회 사용 금액 은 제한이 없습니다.</p>
+                </div>
+                <p class="dft-bx-tit promotion-info-tit"><b>프로모션 코드</b></p>
+                <ul class="promotion-info-bx first">
+                    <li>
+                        <span class="discount-name">50% 할인 프로모션 쿠폰</span>
+                        <span class="discount-price">415,789</span>
+                    </li>
+                </ul>
+                <ul class="promotion-info-bx">
+                    <li>
+                        <span class="discount-name"><b>임직원 할인</b></span>
+                        <span class="discount-price">25,789</span>
+                    </li>
+                </ul>
+            </div>
+            <!-- //discount-info-bx -->
+
+            <%# md-pay-info-bx : 결제 %>
+            <%- include ("../../../common/md-pay-info-bx.ejs") %>
+
+        </div>
+        <!-- //order-sheet-info -->
+
+        <!-- order-summary-section -->
+        <div class="order-summary-section">
+            <h2 class="a-heading-2 order-summary-heading">
+                주문 상품
+                <a class="a-link a-link-udln cart-item-edit" href="#" target="_self">장바구니 수정</a>
+            </h2>
+
+            <%# md-order-summary-info %>
+            <%- include ("../../../common/md-order-summary-info.ejs") %>
+
+            <%# md-pay-policy-bx %>
+            <%- include ("../../../common/md-pay-policy-bx.ejs") %>
+
+            <a class="a-button is-checkout-options checkout-button" href="/views/common/views/pages/checkout/checkout-guest-options.html">결제하기</a>
+
+            <%# md-m-informative-section %>
+            <%- include ("../../../common/md-m-informative-section.ejs") %>
+
+        </div>
+        <!-- //order-summary-section -->
+        
+    </div>
+
+</main>
+
+<!-- handlebars-template -->
+<%# 배송지목록 > 삭제 %>
+<%- include ("../../../handlebars/hndl-lp-dlvr-list-del.ejs") %>
+
+<%# 주소검색 %>
+<%- include ("../../../handlebars/hndl-lp-find-address.ejs") %>
+<!-- //handlebars-template -->
+
+<!-- tip : when develop this script must be delete -->
+<script type="text/javascript">
+    (function() {
+        setTimeout(function(){
+            //배송지 수정, 삭제 버튼 클릭이벤트
+            renewCommon.deliverListEdit.init();
+        },300)
+    })();
+</script>
+<!-- //tip -->

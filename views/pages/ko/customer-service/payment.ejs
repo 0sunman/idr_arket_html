@@ -1,0 +1,68 @@
+<div data-component="OPageContent" class="o-page-content">
+
+    <!-- m-breadcrumb -->
+    <div class="sdp-component left-component">
+        <nav aria-label="breadcrumbs" class="m-breadcrumb" data-component="MBreadCrumb">
+            <ol class="breadcrumb-container">
+                <li>
+                    <a class="a-link" href="<%= pageInfo.root %>/<%= pageInfo.lang %>/index.html">
+                        <span>ARKET</span>
+                    </a>
+                </li>
+                <li itemprop="itemListElement">
+                    <a class="a-link" href="<%= pageInfo.root %>/<%= pageInfo.lang %>/customer-service.html">
+                        <span>고객서비스</span>
+                    </a>
+                </li>
+                <li itemprop="itemListElement">
+                    <a class="a-link" href="#none" data-no-click="true">
+                        <span>결제정보</span>
+                    </a>
+                </li>
+            </ol>
+        </nav>
+    </div>
+    <!-- //m-breadcrumb -->
+
+    <h1 class="a-heading-1 seo-heading"><span>결제정보</span></h1>
+
+    <%# md-o-local-navigation-cs %>
+    <%- include ("../../../common/md-o-local-navigation-cs.ejs") %>
+
+    <!-- cs-contents -->
+    <div class="o-width wc-50 cs-contents">
+        <div class="is-richtext"><p>&nbsp;</p>
+            <!-- //mrk-edit : 20211025 -->
+            <p>
+                안전결제<br>
+                온라인 결제는 신용카드, 현금결제, 카드+현금결제, 휴대폰결제, 예치금을 통해서만 가능합니다.<br>
+                사용되는 통화는 한국 ‘원’(KRW) 입니다. 부가가치세는 모든 가격에 포함되며 주문이 배송되는 국가를 기반으로 합니다.<br>
+                <!--ARKET 온라인 상점의 모든 가격 및 제품 정보는 변경될 수 있으며 일부 의류는 일부 상점에서만 제공됩니다.<br>-->
+                ARKET.com의 모든 가격 및 제품 정보는 변경될 수 있으며 일부 의류는 일부 상점에서만 제공됩니다.<br>
+                <br>
+                <br>
+                보안<br>
+                더현대닷컴은 카드사와 직접 거래하고 있습니다.
+            </p>
+            <!-- //mrk-edit : 20211025 -->
+        </div>
+    </div>
+    <!-- //cs-contents -->
+
+    <%# md-o-teaser %>
+    <%- include ("../../../common/md-o-teaser.ejs") %>
+
+</div>
+
+<!-- tip : when develop this script must be delete -->
+<script type="text/javascript">
+    (function() {
+        'use strict';
+        //탭활성화
+        let activeTab = document.querySelectorAll('.o-local-navigation > ul > li');
+        if(activeTab){
+            activeTab[3].classList.add('is-selected');
+        }
+    })();
+</script>
+<!-- //tip -->

@@ -1,0 +1,115 @@
+<div data-component="OPageContent" class="o-page-content footer-about-wrap">
+    <div class="o-width title--medium about-icon wc-50">
+        <div class="m-headline with-icon u-align-center is-main-headline full-width ">
+            <img class="a-image" src="<%= pageInfo.root %>/images/about/ARKET_9_GRID_Community.png">
+            <h2 class="a-heading-2 ">
+                <span class="heading-cap">community</span>
+                <span class="heading-value"></span>
+            </h2>
+        </div>
+        <div class="o-text-field is-wide ">
+            <div class="headings" style="text-align:center;">
+                <div class="m-headline">
+                    <h2 class="a-heading-2 has-margin">커뮤니티 / 여성 리더들</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="o-width about wc-50">
+        <div class="o-text-field two-columns">
+            <div class="headings">
+                <div class="m-headline about-align-left">
+                    <h2 class="a-heading-2  has-margin">
+                        여성의 업적을 축하하고 성평등한 미래 건설을 위해 필요한 지속적인 노력에 대한 인식을 높이기 위해, 우리는 올해 국제 여성의 날을 맞아 UN 여성 주제에서 단서를 얻고 여성의 리더십 발전이 왜 중요한지에 대해 논의합니다.
+                    </h2>
+                </div>
+            </div>
+            <div class="text-container">
+                <p class="a-paragraph is-richtext"></p>
+                <p class="a-paragraph is-richtext">
+                    역사적으로 여성들은 경제에 참여하는 것에 있어서 남성들보다 더 큰 장벽을 마주해 왔었습니다. 이러한 장애물은 은폐 하더라도 급여 격차, 고르지 못한 승진 기회 및 중요한 의사결정에 있어 성 불균형한 대표들의 형태로 오늘날까지 지속됩니다.
+                </p>
+                <p class="a-paragraph is-richtext">
+                    그러나 점점 더 많은 증거들이 여성이 대표되고 지도력에 종사할 때, 직원들뿐만 아니라 그들의 가족, 지역 사회 그리고 사회 전체에 혜택을 준다는 것을 보여줍니다. 반면에, 시스템적인 성 불평등은 느린 발전과 제한된 지속가능성 결과와 연결 되었습니다.
+                </p>
+                <p class="a-paragraph is-richtext">
+                    ARKET의 3개의 전략 분야인 본사, 매장&카페, 프로덕션 오피스의 여성 매니저들을 초청하여 그들의 리더십에 대한 생각을 공유하였습니다. 리나, 레오나, 베라를 만나 대표성, 일상의 롤모델, 힘있는 자리에 있는 여성들에게 긍정적인 비즈니스 사례를 제시합니다.
+                </p>
+                <p class="a-paragraph is-richtext"></p>
+            </div>
+        </div>
+    </div>
+    <div class="o-width wc-100">
+        <div class="headings" style="text-align:center;">
+            <div class="m-headline">
+                <h2 class="a-heading-2  has-margin">
+                    Select a colleague below to read more
+                </h2>
+            </div>
+        </div>
+    </div>
+    <div class="o-width wc-75">
+        <div class="o-focus-panel">
+            <div class="focus-panel-container three-tiles">
+
+                <%# md-about-o-focus-tiles %>
+                <%- include ("../../../../common/md-about-o-focus-tiles-lina.ejs") %>
+
+                <%# md-about-o-focus-tiles %>
+                <%- include ("../../../../common/md-about-o-focus-tiles-leona.ejs") %>
+
+                <%# md-about-o-focus-tiles %>
+                <%- include ("../../../../common/md-about-o-focus-tiles-vera.ejs") %>
+
+            </div>
+        </div>
+    </div>
+    <div class="o-width spacer wc-100"></div>
+
+    <%# md-about-o-width-communites %>
+    <%- include ("../../../../common/md-about-o-width-communites.ejs") %>
+
+    <%# md-about-o-image-list-explore-arket-wrap %>
+    <%- include ("../../../../common/md-about-o-image-list-explore-arket-wrap.ejs") %>
+
+    <div class="o-width spacer wc-100"></div>
+    <div class="o-width fullWidth--desktop fullWidth--tablet fullWidth--mobile wc-100" style="background-color: #f5f5f5">
+        <div class="o-width wc-75">
+            <div class="m-headline u-align-center is-main-headline full-width ">
+                <h2 class="a-heading-2 ">
+                    <span class="heading-value">You may also be interested in</span>
+                </h2>
+            </div>
+        </div>
+        <div class="o-width wc-75">
+            <div class="o-focus-panel">
+                <div class="focus-panel-container three-tiles">
+
+                    <%# md-about-o-focus-tiles %>
+                    <%- include ("../../../../common/md-about-o-focus-tiles-sustainability-fact-sheet.ejs") %>
+
+                    <%# md-about-o-focus-tiles %>
+                    <%- include ("../../../../common/md-about-o-focus-tiles-arket.ejs") %>
+
+                    <%# md-about-o-focus-tiles %>
+                    <%- include ("../../../../common/md-about-o-focus-tiles-stores-cafes.ejs") %>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="splash parbase"></div>
+</div>
+<!-- end -->
+
+<!-- tip : when develop this script must be delete -->
+<script type="text/javascript">
+    (function() {
+        'use strict';
+        //explore Arket 활성화
+        let tempImageContainer = document.querySelectorAll('.about-grid .o-image-listing.cols-3 .image-container');
+        let tempExploreArket = tempImageContainer[7].querySelector('a')
+        tempExploreArket.setAttribute('href','#Current'); //활성화
+    })();
+</script>
+<!-- //tip -->

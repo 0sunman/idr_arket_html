@@ -1,0 +1,156 @@
+<%# md-line-banner-sis-m %>
+<%- include ("md-line-banner-sis-m.ejs") %>
+
+<!-- tip : class name be able to toggle [hide-departments, hide-border, has-sis-heade, has-sis-notification] -->
+<!--<header data-component="OHeader" class="o-header hide-departments has-sis-header">-->
+<header data-component="OHeader" class="o-header hide-departments has-sis-header has-sis-notification">
+    <input type="hidden" id="signinFormPath" value="/<%= pageInfo.lang %>/j_spring_security_check">
+    <input type="hidden" id="forgotPasswordPath" value="/<%= pageInfo.lang %>/password/requestSignIn">
+    <input type="hidden" id="joinFormPath" value="/<%= pageInfo.lang %>/register/newcustomer">
+    <input type="hidden" id="isIndex" value="false">
+    <input type="hidden" id="isAccountPage" value="">
+    <input type="hidden" id="contextPath2" value="en">
+
+    <!-- sis-header -->
+    <div class="sis-header">
+        <div id="header-top">
+            <div id="wrap-for-main">
+                <div class="inner" id="loginOutId">
+                    <div class="top-gnb">
+                        <div class="left">
+                            <ul>
+                                <li>
+                                    <a href="http://www.thehyundai.com/CS/eva/directAccess.thd?MainpageGroup=Fix&amp;GroupbannerName=GNB_On">
+                                        바로접속 <i class="ic-onoff on"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div><!-- [D] -->
+                    </div><!--//.top-gnb-->
+                    <div class="mid-gnb">
+                        <div class="logo">
+                            <a href="http://www.thehyundai.com/Home.html?MainpageGroup=Fix&amp;GroupbannerName=GNB_Logo">
+                                <span class="blind">The HYUNDAI</span>
+                            </a>
+                        </div>
+                        <div class="searcharea">
+                            <input type="text" placeholder="" class="keyword"><i class="ic-gnb glass"></i></div>
+                    </div><!--//.mid-gnb--></div>
+            </div>
+        </div><!--//#header-top-->
+    </div>
+    <!-- //sis-header -->
+
+    <%# md-line-banner-sis-pc %>
+    <!-- to dev : 이부분이 활성화되면 Header 태그 클래스에 .has-sis-notification 추가 필요 -->
+    <%- include ("md-line-banner-sis-pc.ejs") %>
+
+    <!-- header-bar -->
+    <div class="header-bar">
+        
+        <!-- o-search -->
+        <div data-component="OSearch" class="o-search" area-hidden="true">
+            <ul class="curated-search-suggestions">
+<!--                <li class="a-tag is-suggestion is-hidden"><a class="a-link" href="#" target="_self">New arrivals</a></li>-->
+<!--                <li class="a-tag is-suggestion is-hidden"><a class="a-link" href="#" target="_self">Women</a></li>-->
+<!--                <li class="a-tag is-suggestion is-hidden"><a class="a-link" href="#" target="_self">Men</a></li>-->
+<!--                <li class="a-tag is-suggestion is-hidden"><a class="a-link" href="#" target="_self">Jeans</a></li>-->
+<!--                <li class="a-tag is-suggestion is-hidden"><a class="a-link" href="#" target="_self">Outerwear</a></li>-->
+            </ul>
+
+            <div class="form-container">
+                <form data-component="OForm"
+                      class="o-form search-form"
+                      action="/<%= pageInfo.lang %>/search.html"
+                      method="GET"
+                      autocomplete="off"
+                      data-min-characters="3">
+                    <div class="input-field-container">
+                        <div class="input-field-wrapper">
+                            <input class="a-input text-hint" type="text" autocomplete="off" autocorrect="none" autocapitalize="off" tabindex="100">
+                            <input class="a-input search-field" type="text" name="q" autocomplete="off" autocorrect="none" autocapitalize="off" placeholder="§ 검색어를 입력하세요" tabindex="101">
+                        </div>
+                        <button type="submit" class="a-button-nostyle search"></button>
+                        <button type="button" class="a-button-nostyle close"></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- //o-search -->
+
+        <div id="autosuggestSearchDataStorage"
+             data-base-url-search="/<%= pageInfo.lang %>/search.html"
+             data-endpoint-term-suggestions="/content/p11/<%= pageInfo.lang %>/jcr:content/header/autosuggestsearch.display.html"
+             hidden=""></div>
+        <div class="notificationTicker parbase">
+
+        </div>
+        <div class="firstLevelNavConfiguration parbase">
+            <div data-component="ONavigation" class="o-navigation has-selected-department">
+                <nav class="main-navigation">
+
+                    <div class="arket-logo">
+                        <a href="/<%= pageInfo.lang %>/index.html" target="_self" class="a-link"
+                           aria-label="arket-logo">
+                            <div class="a-logo i18n">
+                                <svg id="Lager_1" data-name="Lager 1" xmlns="http://www.w3.org/2000/svg"
+                                     viewBox="0 0 317.51 70">
+                                    <title>ARKET</title>
+                                    <g id="Page-1">
+                                        <path id="ARKET" d="M117.14,55.2c-.1-6.7-.3-14.6-9.4-17.3,7.9-1.5,13.4-6.9,13.4-17.3,0-13.4-9.8-20.6-24.4-20.6H71.14V70H80V41.6h24.2c4.8,4.1,3.8,8.5,3.8,14.2,0,4.1.5,10.1,3.9,14.2h9.9c-3.5-4-4.6-9.7-4.7-14.8ZM80.21,33.6V8.1h16.7c10.3,0,15.3,4.4,15.3,12.4s-5,13.1-15.3,13.1ZM54.5,70h9.1L38.4,0H25.2L0,70H9.1l6.5-18.1H48Zm-36-26.1L31.8,6.8,45.1,43.9ZM166.81,24.2,190.31,0h-12l-35.6,36.6V0h-8.9V70h8.9V49l17.5-18,7.7,19.4c2.5,6.2,5.6,15,9.1,19.6h9.9c-4-5.5-7.4-13.1-10.2-20.3ZM249.71,8V0H201V70h48.7V62h-39.8V38h36V30h-36V8Zm67.8-8h-58.7V8h24.9V70h8.9V8h24.9Z"></path>
+                                    </g>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+
+                    <%# header-departments %>
+                    <%- include ("header-departments-sis.ejs") %>
+
+                    <div aria-hidden="false" class="navigation-curtain" aria-expanded="true">
+                        <div role="tree" class="animation-wrapper">
+
+                            <!-- o-search-suggestion -->
+                            <div data-component="OSearchSuggestion" class="o-search-suggestion search-palette" role="treeitem">
+                                <ul class="pages sites">
+                                </ul>
+                                <h4 class="a-heading-4 product-heading u-display-none i18n">상품</h4>
+                                <ul class="products">
+                                </ul>
+                                <span class="see-all-products u-display-none i18n">상품 모두 보기</span>
+                            </div>
+                            <!-- //o-search-suggestion -->
+
+                            <%# header-treeitem %>
+                            <%- include ("header-treeitem.ejs") %>
+
+                            <div class="m-static-notification-ticker" style="display: none;">
+                                <div class="center-content">
+                                    <span class="a-svg-package">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="35" viewBox="0 0 30 35"
+                                             id="package">
+                                            <path d="M15 1L1 9.113V25.33l14 8.112 14-8.11V9.11L15 1zm.037 15.07l-4.516-2.623L21.487 7.07l4.528 2.625-10.977 6.375zm4.457-10.154L8.53 12.292l-4.508-2.62L15 3.313l4.494 2.604zM3 11.393l11 6.388v12.772L3 24.178V11.393zM16 30.55V17.824l11-6.388v12.743L16 30.55z"
+                                                  fill="#231f20"></path>
+                                        </svg>
+                                    </span>
+                                    <p class="mobile-notification"></p>
+                                </div>
+                            </div>
+
+                            <%# header-information-section %>
+                            <%- include ("header-information-section-sis.ejs") %>
+
+                        </div>
+                    </div>
+                </nav>
+
+                <%# md-secondary-navigation %>
+                <%- include ("md-secondary-navigation-sis.ejs") %>
+
+            </div>
+
+        </div>
+    </div>
+    <!-- //header-bar -->
+
+</header>

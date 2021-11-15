@@ -1,0 +1,51 @@
+<!-- md-o-product-filters -->
+<div data-component="OProductFilters" class="o-product-filters is-collapsed">
+    <div class="filter-buttons">
+        <button type="button" class="a-button-nostyle mobile-filter-btn filter-link i18n">필터</button>
+        <button type="button" class="a-button-nostyle clear-btn is-disabled" disabled="disabled">
+            <span class="i18n">Clear</span>
+        </button>
+        <p class="total-items i18n">306 아이템</p>
+    </div>
+
+    <!-- filter-wrapper -->
+    <div class="filter-wrapper">
+        <div class="scroll-content" id="reloadFilter">
+
+			<%# md-o-product-filters-department %>
+			<%- include ("md-o-product-filters-department.ejs") %>
+
+            <%# md-o-product-filters-category %>
+            <%- include ("md-o-product-filters-category.ejs") %>
+
+            <%# md-o-product-filters-color %>
+            <%- include ("md-o-product-filters-color-chck.ejs") %>
+
+            <%# md-o-product-filters-size %>
+            <%- include ("md-o-product-filters-size.ejs") %>
+
+            <%# md-o-product-filters-pattern %>
+            <%#- include ("md-o-product-filters-pattern.ejs") %>
+
+            <%# md-o-product-filters-material %>
+            <%- include ("md-o-product-filters-material.ejs") %>
+
+            <button type="button" class="a-button-nostyle clear-btn is-disabled" disabled="disabled">
+                <span class="i18n">초기화</span>
+            </button>
+        </div>
+        <div class="cta-block">
+            <button type="button" class="a-button clear-filter is-disabled" disabled="disabled">
+                <span class="i18n">초기화</span>
+            </button>
+            <button type="button" class="a-button set-filter">
+                <span class="i18n">적용</span>
+            </button>
+            <button type="button" class="a-button close-filter">
+                <span class="i18n">닫기</span>
+            </button>
+        </div>
+    </div>
+    <!-- //filter-wrapper -->
+</div>
+<!-- //md-o-product-filters -->

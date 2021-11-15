@@ -1,0 +1,22 @@
+<div data-component="OPageContent" class="o-page-content iframe-wrap">
+    <iframe id="sisFrame"
+        class="sisFrame parsys"
+        <%
+            if(pageInfo.isLocalExPath) {
+        %>
+        src="<%= pageInfo.pageRoot %>/dist-sis-con/<%= pageInfo.lang %>/search-sis-con.html"
+        <%
+            }else {
+        %>
+        src="/<%= pageInfo.lang %>/search-sis-con.html"
+        <%
+            }
+        %>
+        width="100%"
+        frameborder="no"
+        scrolling="no"
+        marginheight="0"
+        marginwidth="0"
+        onload="iframeAutoResize(this);">
+</iframe>
+</div>

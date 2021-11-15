@@ -1,0 +1,47 @@
+<div data-component="OPageContent" class="o-page-content cofs-page">
+    <span id="content" class="access-content">Content of the page</span>
+    <div class="o-sign-in-wrapper">
+        <div class="sign-in-heading">
+            <h2 class="a-heading-2">개인계정연결 안내</h2>
+        </div>
+        <div class="is-sign-in-tabs">
+            <div class="o-registration empty-registration alternative-style-option ng-scope">
+                <form method="post" data-component="OForm">
+                    <div class="o-registration-form v2 id-cnnt">
+                        <!-- 신규추가 내용 : 회원가입 1.간편인증(기존계정 존재) -->
+                        <div class="n-wrap step-1-2">
+                            <div class="in-service"><span>honggildong@hmall.com</span> 계정이 아이디 또는 이메일 주소로 사용 중 입니다.</div>
+
+                            <p>기존의 계정에 로그인 해서 SNS계정을 연결하시면, 하나의  계정으로 회원/주문 정보를 통합 관리할 수 있습니다.<br class="only-m"/>개인 계정 연결 및 해제는 마이페이지에서 가능합니다.</p>
+                            <p>연동을 위한 아이디와 비밀번호를 입력해주세요.</p>
+
+                            <!-- input : 아이디 또는 이메일 -->
+                            <div data-component="MInput" class="m-input id">
+                                <label class="a-label js-a-label" for="id">아이디 또는 이메일</label>
+                                <input class="a-input js-a-input" id="id" name="id" type="text" pattern="" placeholder="아이디 또는 이메일" data-validation-required-text="아이디를 입력해 주세요." data-validation-pattern-text="입력하신 아이디가 맞지 않습니다." required="">
+                                <label class="a-label js-a-label" for="id"></label>
+                            </div><!-- // input : 아이디 또는 이메일 -->
+
+                            <!-- input : 비밀번호 -->
+                            <div data-component="MInput" class="m-input password">
+                                <label class="a-label js-a-label" for="password">비밀번호</label>
+                                <input class="a-input js-a-input" id="password" name="password" type="password" pattern="" placeholder="비밀번호" data-validation-required-text="비밀번호를 입력해주세요." data-validation-pattern-text="입력하신 비밀번호가 맞지 않습니다."required="">
+                                <label class="a-label js-a-label" for="password"></label>
+                            </div><!-- // input : 비밀번호 -->
+
+                            <button type="submit" class="a-button">
+                                <span>연결하기</span>
+                            </button>
+
+                            <div class="link-holder">
+                                <a href="#none" class="a-link a-link-udln forgot-id">아이디찾기</a>
+                                <a href="#none" class="a-link a-link-udln forgot-pw">비밀번호찾기</a>
+                                <a href="#none" class="a-link a-link-udln register">회원가입</a>
+                            </div>
+                        </div><!-- // 신규추가 내용 : 회원가입 1.간편인증(기존계정 존재) -->
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

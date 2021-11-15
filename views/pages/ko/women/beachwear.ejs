@@ -1,0 +1,125 @@
+<div data-component="OPageContent" class="o-page-content">
+
+    <div class="parbase sdp-component left-component">
+        <%# m-breadcrumb %>
+        <%- include ("../../../common/md-m-breadcrumb.ejs") %>
+    </div>
+
+    <h1 class="a-heading-1 seo-heading ">
+        <span class="department">Women</span><span>Beachwear</span>
+    </h1>
+
+    <div class="parbase sdp-component local-navigation">
+        <!-- o-local-navigation -->
+        <div data-component="OLocalNavigation" class="o-local-navigation">
+            <button type="button" class="a-button-nostyle show-more-left-btn"></button>
+            <span class="nav-title">Type</span>
+            <ul>
+                <li>
+                    <a href="/en/women/swimwear.html" target="_self" class="a-link" data-title="Swimwear" tabindex="0">
+                        All Swimwear
+                    </a>
+                </li>
+                <li>
+                    <a href="/en/women/swimwear/swimsuits.html" target="_self" class="a-link" data-title="Swimsuits" tabindex="0">
+                        수영복
+                    </a>
+                </li>
+                <li>
+                    <a href="/en/women/swimwear/bikinis.html" target="_self" class="a-link" data-title="Bikinis" tabindex="0">
+                        비키니
+                    </a>
+                </li>
+                <li class="is-selected">
+                    <a href="/en/women/swimwear/beachwear.html" target="_self" class="a-link" data-title="Beachwear" tabindex="0">
+                        비치웨어
+                    </a>
+                </li>
+            </ul>
+            <button type="button" class="a-button-nostyle show-more-right-btn"></button>
+        </div>
+        <!-- //o-local-navigation -->
+    </div>
+
+    <div class="o-width wc-75">
+        <!-- o-focus-panel -->
+        <div class="o-focus-panel">
+            <div class="focus-panel-container three-tiles">
+
+                <div class="free-tile focus-panel">
+                    <a href="#none" target="_self" class="a-link">
+                        <div class="m-free-tile q-color-black-100 " style="background-image: url(&quot;<%= pageInfo.root %>/images/component/W_SDP_beachwear_wk22.jpg&quot;);">
+                            <picture data-component="APicture" class="a-picture" data-background="m-free-tile" data-component-id="1e9b8cf7-0a8a-4ff2-9219-c733411b303d">
+                                <img class="a-image" src="<%= pageInfo.root %>/images/component/W_SDP_beachwear_wk22.jpg">
+                            </picture>
+                            <div class="text-content">
+                                <h2 class="a-heading-2">Seersucker Bikini Top</h2>
+                                <p class="a-paragraph q-gamma"></p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="free-tile focus-panel">
+                    <a href="#none" target="_self" class="a-link">
+                        <div class="m-free-tile q-color-black-100 " style="background-image: url(&quot;<%= pageInfo.root %>/images/component/W_SDP_beachwear_wk_22_3.jpg&quot;);">
+                            <picture data-component="APicture" class="a-picture" data-background="m-free-tile" data-component-id="41f0aa5a-d61e-402b-bb74-371611c62336">
+                                <img class="a-image" src="<%= pageInfo.root %>/images/component/W_SDP_beachwear_wk_22_3.jpg">
+                            </picture>
+                            <div class="text-content">
+                                <h2 class="a-heading-2  ">Flatform Slides</h2>
+                                <p class="a-paragraph q-gamma"></p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="free-tile focus-panel">
+                    <a href="#none" target="_self" class="a-link">
+                        <div class="m-free-tile q-color-black-100 is-promo" style="background-image: url(&quot;<%= pageInfo.root %>/images/component/W_SDP_beachwear_2_wk22.jpg&quot;);">
+                            <picture data-component="APicture" class="a-picture" data-background="m-free-tile" data-component-id="6e5bf1c7-d0d5-4b28-82d4-738504391775">
+                                <img class="a-image" src="<%= pageInfo.root %>/images/component/W_SDP_beachwear_2_wk22.jpg">
+                            </picture>
+                            <div class="text-content">
+                                <h2 class="a-heading-2  ">Towelling Strap Dress</h2>
+                                <p class="a-paragraph q-gamma"></p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+        <!-- //o-focus-panel -->
+    </div>
+
+    <div class="o-width wc-75">
+        <div class="parbase sdp-component product-listing align-below">
+
+            <%# md-o-product-filters %>
+			<%- include ("../../../common/md-o-product-filters.ejs") %>
+
+            <!-- o-product-listing -->
+			<div id="lazyLoadSpan">
+				<div id="reloadProducts" class="o-product-listing has-upper-body-images fixed-columns-4 u-align-center">
+					<%# md-o-product-listing-product-list %>
+					<%- include ("../../../common/md-o-product-listing-product-list-30ea-central.ejs") %>
+				</div>
+
+			</div>
+
+            <span id="lazyDiv">
+                <%# md-o-lazy-load %>
+                <%- include ("../../../common/md-o-lazy-load.ejs") %>
+            </span>
+            <!-- //o-product-listing -->
+
+        </div>
+
+        <div id="productStart" class="0"></div>
+        <div id="productPath" class="/en/women/new-arrivals/_jcr_content/homepagepar/widthcomponent_16087/o-width/productlisting_copy_.products.html"></div>
+        <div id="productCount" class="102"></div>
+        <div id="productPerPage" class="36"></div>
+    </div>
+
+</div>

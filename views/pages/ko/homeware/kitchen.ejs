@@ -1,0 +1,82 @@
+<div data-component="OPageContent" class="o-page-content">
+    <!--
+    <div class="parbase sdp-component left-component">
+        <%# m-breadcrumb %>
+        <%#- include ("../../../common/md-m-breadcrumb.ejs") %>
+    </div>
+    -->
+
+    <!-- o-hero -->
+    <div class="o-hero is-takeover full-width hero-takeover single-image" data-component="OHero">
+        <div class="takeover-wrapper">
+            <div class="textblock-container">
+                <div class="o-text-block disable-bg" style="color:#fff">
+                    <div class="heading-wrapper">
+                        <div class="m-headline">
+                            <h1 class="a-heading-1 large-font">
+                                <span class="heading-cap">Homeware</span>
+                                <span class="heading-value">Kitchen</span>
+                            </h1>
+                        </div>
+                    </div>
+                    <div class="text-wrapper">
+                        <p class="a-paragraph text-content a-paragraph text-content large-font">Crafted kitchenware in soft neutrals and tactile materials brings beauty to your everyday life.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="image-wrapper">
+            <div style="background-image:url(<%= pageInfo.root %>/images/component/ARKET_21140_HOME_06_WEB_L.jpg)" class="takeover-background"></div>
+        </div>
+    </div>
+    <!-- //o-hero -->
+
+    <div class="o-width hero--mobile-text hero--dark-shadow hero wc-100"></div>
+
+    <div class="localnav--tag-cloud o-width wc-100">
+        <!-- o-tag-cloud -->
+        <div class="o-tag-cloud">
+            <h6 class="a-heading-6 cloud-title">Type</h6>
+            <ul class="tags-container">
+                <li class="tag ">
+                    <a href="/en/homeware/serving.html" target="_self" class="a-link">Serving</a>
+                </li>
+                <li class="tag ">
+                    <a href="/en/homeware/recipes.html" target="_self" class="a-link">Recipes</a>
+                </li>
+            </ul>
+        </div>
+        <!-- //o-tag-cloud -->
+    </div>
+
+    <div class="o-width wc-100">
+        <div class="parbase sdp-component product-listing align-below">
+
+            <%# md-o-product-filters %>
+            <%- include ("../../../common/md-o-product-filters.ejs") %>
+
+            <!-- o-product-listing -->
+            <div id="lazyLoadSpan">
+                <div id="reloadProducts" class="o-product-listing has-upper-body-images fixed-columns-5 u-align-center">
+                    <%# md-o-product-listing-product-list %>
+                    <%- include ("../../../common/md-o-product-listing-product-list-30ea-central.ejs") %>
+                </div>
+
+            </div>
+
+            <span id="lazyDiv">
+                <%# md-o-lazy-load %>
+                <%- include ("../../../common/md-o-lazy-load.ejs") %>
+            </span>
+            <!-- //o-product-listing -->
+
+        </div>
+
+        <div id="productStart" class="0"></div>
+        <div id="productPath" class="/en/women/new-arrivals/_jcr_content/homepagepar/widthcomponent_16087/o-width/productlisting_copy_.products.html"></div>
+        <div id="productCount" class="102"></div>
+        <div id="productPerPage" class="36"></div>
+    </div>
+
+</div>

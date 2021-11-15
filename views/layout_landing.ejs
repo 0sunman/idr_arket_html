@@ -1,0 +1,31 @@
+<%- include ("./common/layout-header") %>
+
+<body data-component="OPage" class="layout-inside" id="oPage">
+
+    <div class="coremetricsPageId" hidden="">Startpage 3</div>
+    <div class="coremetricsPageType" hidden="">Startpage 4</div>
+    <div class="coremetricsCategoryId" hidden="">Startpage 2</div>
+    <div class="coremetricsCategoryPath" hidden="">Startpage 1</div>
+
+    <input id="ogimage" type="hidden" value="">
+
+    <!-- Code to manage the mobile preview after css changes by HTML team -->
+
+    <div data-component="SkeletonLoading" id="lpResolveConfigs" data-lp-aspect-ratio-width="2" data-lp-aspect-ratio-height="3" data-lp-density-mobile="2" data-lp-density-tablet="2" data-lp-density-desk="2" data-lp-max-density="3" data-lp-format="webp,jpeg" data-lp-cache-threshold="50" data-lp-url="lp.arket.com" data-lp-uri="app006prod" data-lp-image-fit="containerWidth" data-lp-jpeg-quality-desktop="70" data-lp-webp-quality-mobile="70" data-lp-webp-quality-tablet="70" data-lp-jpeg-quality-tablet="70" data-lp-webp-quality-desktop="70" data-lp-jpeg-quality-mobile="70" data-component-id="6dbb0cd9-2cf4-4569-a46d-c4294b9c76a2"></div>
+
+    <script src="<%= pageInfo.root %>/org/etc/designs/appeaser/shared/clientlibs/components.min.0ff734763f97062b81ea61876bc97b89.js"></script>
+    <script src="https://www.arket.com/etc/designs/appeaser/p11/clientlibs/aem-clientlibs/selectCountryLightbox_Clientlib.min.js"></script>
+
+    <div class="u-no-select">
+        <%- include ("./common/header-for-checkout.ejs") %>
+    </div>
+
+    <!-- o-page-content -->
+    <%- include ("./pages/"+targetPath) %>
+    <!-- //o-page-content -->
+
+    <%# md-include-script %>
+    <%- include ("./common/md-include-script.ejs") %>
+
+</body>
+</html>

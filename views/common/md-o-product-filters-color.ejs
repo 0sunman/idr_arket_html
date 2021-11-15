@@ -1,0 +1,140 @@
+<!-- container_colorWithNames -->
+<div data-component="OFilter" id="container_colorWithNames" class="o-filter color-filter">
+	<div class="filter-container">
+		<button type="button" class="a-button-nostyle filter-link">
+			컬러<span class="selected-value"></span>
+		</button>
+		<div class="filter-section" style="">
+			<button type="button" class="a-button-nostyle a-icon-close"></button>
+
+			<!-- filters-content -->
+			<div class="filters-content">
+				<input type="hidden" id="colorJson"
+					   data-value="[{&quot;name&quot;:&quot;000000_black&quot;,&quot;code&quot;:&quot;000000_black&quot;,&quot;eAngle&quot;: 0,&quot;count&quot;: 2,&quot;query&quot;: null,&quot;sAngle&quot;: 0,&quot;selected&quot;:false,&quot;title&quot;:&quot;black&quot;,&quot;type&quot;:&quot;colorWithNames&quot;,&quot;value&quot;:&quot;#000000&quot;},{&quot;name&quot;:&quot;0000ff_blue&quot;,&quot;code&quot;:&quot;0000ff_blue&quot;,&quot;eAngle&quot;: 0,&quot;count&quot;: 2,&quot;query&quot;: null,&quot;sAngle&quot;: 0,&quot;selected&quot;:false,&quot;title&quot;:&quot;blue&quot;,&quot;type&quot;:&quot;colorWithNames&quot;,&quot;value&quot;:&quot;#0000ff&quot;},{&quot;name&quot;:&quot;008000_green&quot;,&quot;code&quot;:&quot;008000_green&quot;,&quot;eAngle&quot;: 0,&quot;count&quot;: 2,&quot;query&quot;: null,&quot;sAngle&quot;: 0,&quot;selected&quot;:false,&quot;title&quot;:&quot;green&quot;,&quot;type&quot;:&quot;colorWithNames&quot;,&quot;value&quot;:&quot;#008000&quot;},{&quot;name&quot;:&quot;800080_purple&quot;,&quot;code&quot;:&quot;800080_purple&quot;,&quot;eAngle&quot;: 0,&quot;count&quot;: 2,&quot;query&quot;: null,&quot;sAngle&quot;: 0,&quot;selected&quot;:false,&quot;title&quot;:&quot;purple&quot;,&quot;type&quot;:&quot;colorWithNames&quot;,&quot;value&quot;:&quot;#800080&quot;},{&quot;name&quot;:&quot;808080_grey&quot;,&quot;code&quot;:&quot;808080_grey&quot;,&quot;eAngle&quot;: 0,&quot;count&quot;: 2,&quot;query&quot;: null,&quot;sAngle&quot;: 0,&quot;selected&quot;:false,&quot;title&quot;:&quot;grey&quot;,&quot;type&quot;:&quot;colorWithNames&quot;,&quot;value&quot;:&quot;#808080&quot;},{&quot;name&quot;:&quot;a52a2a_brown&quot;,&quot;code&quot;:&quot;a52a2a_brown&quot;,&quot;eAngle&quot;: 0,&quot;count&quot;: 2,&quot;query&quot;: null,&quot;sAngle&quot;: 0,&quot;selected&quot;:false,&quot;title&quot;:&quot;brown&quot;,&quot;type&quot;:&quot;colorWithNames&quot;,&quot;value&quot;:&quot;#a52a2a&quot;},{&quot;name&quot;:&quot;f5f5dc_beige&quot;,&quot;code&quot;:&quot;f5f5dc_beige&quot;,&quot;eAngle&quot;: 0,&quot;count&quot;: 2,&quot;query&quot;: null,&quot;sAngle&quot;: 0,&quot;selected&quot;:false,&quot;title&quot;:&quot;beige&quot;,&quot;type&quot;:&quot;colorWithNames&quot;,&quot;value&quot;:&quot;#f5f5dc&quot;},{&quot;name&quot;:&quot;ffa500_orange&quot;,&quot;code&quot;:&quot;ffa500_orange&quot;,&quot;eAngle&quot;: 0,&quot;count&quot;: 2,&quot;query&quot;: null,&quot;sAngle&quot;: 0,&quot;selected&quot;:false,&quot;title&quot;:&quot;orange&quot;,&quot;type&quot;:&quot;colorWithNames&quot;,&quot;value&quot;:&quot;#ffa500&quot;},{&quot;name&quot;:&quot;ffc0cb_pink&quot;,&quot;code&quot;:&quot;ffc0cb_pink&quot;,&quot;eAngle&quot;: 0,&quot;count&quot;: 2,&quot;query&quot;: null,&quot;sAngle&quot;: 0,&quot;selected&quot;:false,&quot;title&quot;:&quot;pink&quot;,&quot;type&quot;:&quot;colorWithNames&quot;,&quot;value&quot;:&quot;#ffc0cb&quot;},{&quot;name&quot;:&quot;ffff00_yellow&quot;,&quot;code&quot;:&quot;ffff00_yellow&quot;,&quot;eAngle&quot;: 0,&quot;count&quot;: 2,&quot;query&quot;: null,&quot;sAngle&quot;: 0,&quot;selected&quot;:false,&quot;title&quot;:&quot;yellow&quot;,&quot;type&quot;:&quot;colorWithNames&quot;,&quot;value&quot;:&quot;#ffff00&quot;},{&quot;name&quot;:&quot;ffffff_white&quot;,&quot;code&quot;:&quot;ffffff_white&quot;,&quot;eAngle&quot;: 0,&quot;count&quot;: 2,&quot;query&quot;: null,&quot;sAngle&quot;: 0,&quot;selected&quot;:false,&quot;title&quot;:&quot;white&quot;,&quot;type&quot;:&quot;colorWithNames&quot;,&quot;value&quot;:&quot;#ffffff&quot;}]">
+				<h6 class="a-heading-6 filter-title"></h6>
+				<div class="o-filter-color search-filter">
+					<ul data-component="MTablist"
+						class="m-tablist"
+						data-tablist-for="filter-color">
+						<li data-toggle="#colors" class="u-no-select is-active" tabindex="0"></li>
+					</ul>
+					<div data-content-for="filter-color" class="tablist-content">
+						<div class="content is-active">
+							<canvas data-component="OFilterColor"
+									data-facets="[{&quot;name&quot;:&quot;000000_black&quot;,&quot;code&quot;:&quot;000000_black&quot;,&quot;eAngle&quot;: 0,&quot;count&quot;: 2,&quot;query&quot;: null,&quot;sAngle&quot;: 0,&quot;selected&quot;:false,&quot;title&quot;:&quot;black&quot;,&quot;type&quot;:&quot;colorWithNames&quot;,&quot;value&quot;:&quot;#000000&quot;},{&quot;name&quot;:&quot;0000ff_blue&quot;,&quot;code&quot;:&quot;0000ff_blue&quot;,&quot;eAngle&quot;: 0,&quot;count&quot;: 2,&quot;query&quot;: null,&quot;sAngle&quot;: 0,&quot;selected&quot;:false,&quot;title&quot;:&quot;blue&quot;,&quot;type&quot;:&quot;colorWithNames&quot;,&quot;value&quot;:&quot;#0000ff&quot;},{&quot;name&quot;:&quot;008000_green&quot;,&quot;code&quot;:&quot;008000_green&quot;,&quot;eAngle&quot;: 0,&quot;count&quot;: 2,&quot;query&quot;: null,&quot;sAngle&quot;: 0,&quot;selected&quot;:false,&quot;title&quot;:&quot;green&quot;,&quot;type&quot;:&quot;colorWithNames&quot;,&quot;value&quot;:&quot;#008000&quot;},{&quot;name&quot;:&quot;800080_purple&quot;,&quot;code&quot;:&quot;800080_purple&quot;,&quot;eAngle&quot;: 0,&quot;count&quot;: 2,&quot;query&quot;: null,&quot;sAngle&quot;: 0,&quot;selected&quot;:false,&quot;title&quot;:&quot;purple&quot;,&quot;type&quot;:&quot;colorWithNames&quot;,&quot;value&quot;:&quot;#800080&quot;},{&quot;name&quot;:&quot;808080_grey&quot;,&quot;code&quot;:&quot;808080_grey&quot;,&quot;eAngle&quot;: 0,&quot;count&quot;: 2,&quot;query&quot;: null,&quot;sAngle&quot;: 0,&quot;selected&quot;:false,&quot;title&quot;:&quot;grey&quot;,&quot;type&quot;:&quot;colorWithNames&quot;,&quot;value&quot;:&quot;#808080&quot;},{&quot;name&quot;:&quot;a52a2a_brown&quot;,&quot;code&quot;:&quot;a52a2a_brown&quot;,&quot;eAngle&quot;: 0,&quot;count&quot;: 2,&quot;query&quot;: null,&quot;sAngle&quot;: 0,&quot;selected&quot;:false,&quot;title&quot;:&quot;brown&quot;,&quot;type&quot;:&quot;colorWithNames&quot;,&quot;value&quot;:&quot;#a52a2a&quot;},{&quot;name&quot;:&quot;f5f5dc_beige&quot;,&quot;code&quot;:&quot;f5f5dc_beige&quot;,&quot;eAngle&quot;: 0,&quot;count&quot;: 2,&quot;query&quot;: null,&quot;sAngle&quot;: 0,&quot;selected&quot;:false,&quot;title&quot;:&quot;beige&quot;,&quot;type&quot;:&quot;colorWithNames&quot;,&quot;value&quot;:&quot;#f5f5dc&quot;},{&quot;name&quot;:&quot;ffa500_orange&quot;,&quot;code&quot;:&quot;ffa500_orange&quot;,&quot;eAngle&quot;: 0,&quot;count&quot;: 2,&quot;query&quot;: null,&quot;sAngle&quot;: 0,&quot;selected&quot;:false,&quot;title&quot;:&quot;orange&quot;,&quot;type&quot;:&quot;colorWithNames&quot;,&quot;value&quot;:&quot;#ffa500&quot;},{&quot;name&quot;:&quot;ffc0cb_pink&quot;,&quot;code&quot;:&quot;ffc0cb_pink&quot;,&quot;eAngle&quot;: 0,&quot;count&quot;: 2,&quot;query&quot;: null,&quot;sAngle&quot;: 0,&quot;selected&quot;:false,&quot;title&quot;:&quot;pink&quot;,&quot;type&quot;:&quot;colorWithNames&quot;,&quot;value&quot;:&quot;#ffc0cb&quot;},{&quot;name&quot;:&quot;ffff00_yellow&quot;,&quot;code&quot;:&quot;ffff00_yellow&quot;,&quot;eAngle&quot;: 0,&quot;count&quot;: 2,&quot;query&quot;: null,&quot;sAngle&quot;: 0,&quot;selected&quot;:false,&quot;title&quot;:&quot;yellow&quot;,&quot;type&quot;:&quot;colorWithNames&quot;,&quot;value&quot;:&quot;#ffff00&quot;},{&quot;name&quot;:&quot;ffffff_white&quot;,&quot;code&quot;:&quot;ffffff_white&quot;,&quot;eAngle&quot;: 0,&quot;count&quot;: 2,&quot;query&quot;: null,&quot;sAngle&quot;: 0,&quot;selected&quot;:false,&quot;title&quot;:&quot;white&quot;,&quot;type&quot;:&quot;colorWithNames&quot;,&quot;value&quot;:&quot;#ffffff&quot;}]"
+									data-type="colorWithNames" width="230" height="230" style=""
+									data-component-id="3130b59e-bd1b-4b41-9aac-d22c06cf79d4">
+							</canvas>
+							<canvas class="hinted" width="230" height="230" style=""></canvas>
+						</div>
+					</div>
+					<div class="color-name"></div>
+				</div>
+				<ul class="color-palette checkbox-wrapper">
+					<li>
+						<span class="m-color-checkbox u-clearfix" id="000000">
+							<input type="checkbox" class="a-checkbox" id="checkbox_000000_black" data-filter="colorWithNames=000000_black">
+							<label class="a-label js-a-label color-box" for="checkbox_000000_black">
+								<svg class="color-dot"><circle cx="15" cy="20" r="10" fill="#000000"></circle></svg>
+								<span>Black</span>
+							</label>
+						</span>
+					</li>
+					<li>
+						<span class="m-color-checkbox u-clearfix" id="0000ff">
+							<input type="checkbox" class="a-checkbox" id="checkbox_0000ff_blue" data-filter="colorWithNames=0000ff_blue">
+							<label class="a-label js-a-label color-box" for="checkbox_0000ff_blue">
+								<svg class="color-dot"><circle cx="15" cy="20" r="10" fill="#0000ff"></circle></svg>
+								<span>Blue</span>
+							</label>
+						</span>
+					</li>
+					<li>
+						<span class="m-color-checkbox u-clearfix" id="008000">
+							<input type="checkbox" class="a-checkbox" id="checkbox_008000_green" data-filter="colorWithNames=008000_green">
+							<label class="a-label js-a-label color-box" for="checkbox_008000_green">
+								<svg class="color-dot"><circle cx="15" cy="20" r="10" fill="#008000"></circle></svg>
+								<span>Green</span>
+							</label>
+						</span>
+					</li>
+					<li>
+						<span class="m-color-checkbox u-clearfix" id="800080">
+							<input type="checkbox" class="a-checkbox" id="checkbox_800080_purple" data-filter="colorWithNames=800080_purple">
+							<label class="a-label js-a-label color-box" for="checkbox_800080_purple">
+								<svg class="color-dot"><circle cx="15" cy="20" r="10" fill="#800080"></circle></svg>
+								<span>Purple</span>
+							</label>
+						</span>
+					</li>
+					<li>
+						<span class="m-color-checkbox u-clearfix" id="808080">
+							<input type="checkbox" class="a-checkbox" id="checkbox_808080_grey" data-filter="colorWithNames=808080_grey">
+							<label class="a-label js-a-label color-box" for="checkbox_808080_grey">
+								<svg class="color-dot"><circle cx="15" cy="20" r="10" fill="#808080"></circle></svg>
+								<span>Grey</span>
+							</label>
+						</span>
+					</li>
+					<li>
+						<span class="m-color-checkbox u-clearfix" id="a52a2a">
+							<input type="checkbox" class="a-checkbox" id="checkbox_a52a2a_brown" data-filter="colorWithNames=a52a2a_brown">
+							<label class="a-label js-a-label color-box" for="checkbox_a52a2a_brown">
+								<svg class="color-dot"><circle cx="15" cy="20" r="10" fill="#a52a2a"></circle></svg>
+								<span>Brown</span>
+							</label>
+						</span>
+					</li>
+					<li>
+						<span class="m-color-checkbox u-clearfix" id="f5f5dc">
+							<input type="checkbox" class="a-checkbox" id="checkbox_f5f5dc_beige" data-filter="colorWithNames=f5f5dc_beige">
+							<label class="a-label js-a-label color-box" for="checkbox_f5f5dc_beige">
+								<svg class="color-dot"><circle cx="15" cy="20" r="10" fill="#f5f5dc"></circle></svg>
+								<span>Beige</span>
+							</label>
+						</span>
+					</li>
+					<li>
+						<span class="m-color-checkbox u-clearfix" id="ffa500">
+							<input type="checkbox" class="a-checkbox" id="checkbox_ffa500_orange" data-filter="colorWithNames=ffa500_orange">
+							<label class="a-label js-a-label color-box" for="checkbox_ffa500_orange">
+								<svg class="color-dot"><circle cx="15" cy="20" r="10" fill="#ffa500"></circle></svg>
+								<span>Orange</span>
+							</label>
+						</span>
+					</li>
+					<li>
+						<span class="m-color-checkbox u-clearfix" id="ffc0cb">
+							<input type="checkbox" class="a-checkbox" id="checkbox_ffc0cb_pink" data-filter="colorWithNames=ffc0cb_pink">
+							<label class="a-label js-a-label color-box" for="checkbox_ffc0cb_pink">
+								<svg class="color-dot"><circle cx="15" cy="20" r="10" fill="#ffc0cb"></circle></svg>
+								<span>Pink</span>
+							</label>
+						</span>
+					</li>
+					<li>
+						<span class="m-color-checkbox u-clearfix" id="ffff00">
+							<input type="checkbox" class="a-checkbox" id="checkbox_ffff00_yellow" data-filter="colorWithNames=ffff00_yellow">
+							<label class="a-label js-a-label color-box" for="checkbox_ffff00_yellow">
+								<svg class="color-dot"><circle cx="15" cy="20" r="10" fill="#ffff00"></circle></svg>
+								<span>Yellow</span>
+							</label>
+						</span>
+					</li>
+					<li>
+						<span class="m-color-checkbox u-clearfix" id="ffffff">
+							<input type="checkbox" class="a-checkbox" id="checkbox_ffffff_white" data-filter="colorWithNames=ffffff_white">
+							<label class="a-label js-a-label color-box" for="checkbox_ffffff_white">
+								<svg class="color-dot"><circle cx="15" cy="20" r="10" fill="#ffffff"></circle></svg>
+								<span>White</span>
+							</label>
+						</span>
+					</li>
+				</ul>
+			</div>
+			<!-- //filters-content -->
+
+		</div>
+	</div>
+</div>
+<!-- //container_colorWithNames -->

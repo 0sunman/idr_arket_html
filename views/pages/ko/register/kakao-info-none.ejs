@@ -1,0 +1,39 @@
+<div data-component="OPageContent" class="o-page-content cofs-page">
+    <span id="content" class="access-content">Content of the page</span>
+    <div class="o-sign-in-wrapper">
+        <div class="sign-in-heading">
+            <h2 class="a-heading-2">회원가입</h2>
+        </div>
+        <div class="is-sign-in-tabs">
+            <div class="o-registration empty-registration alternative-style-option ng-scope">
+                <form method="post" data-component="OForm">
+                    <div class="o-registration-form v2">
+                        <!-- 신규추가 내용 : 회원가입 카카오싱크(가입정보-N) -->
+                        <div class="n-wrap kakao-wrap">
+                            <!-- readonly : 사용가능 아이디 표기 -->
+                            <div class="usable-select">
+                                <div data-component="MInput" class="m-input r-only">
+                                    <input class="a-input js-a-input" type="text" value="hy1214@gmail.com" readonly="readonly">
+                                </div>
+                                <p class="guide-text">사용 가능한 아이디입니다.</p>
+                            </div><!-- // readonly : 사용가능 아이디 표기 -->
+
+                            <!-- input : 이름 -->
+                            <div data-component="MInput" class="m-input">
+                                <label class="a-label js-a-label" for="name" >이름</label>
+                                <input class="a-input js-a-input" id="name" name="name" type="text" value="김현대" placeholder="이름" data-validation-required-text="이름을 입력해 주세요." required="">
+                                <label class="a-label js-a-label" for="name"></label>
+                            </div><!-- // input : 이름 -->
+
+                            <p class="text">카카오 프로필을 기반으로 자동 입력 되었으며, 추후 아이디/비밀번호 찾기를 위해 이름은 실명으로 설정하시기 바랍니다.</p>
+
+                            <button type="submit" class="a-button">
+                                <span>가입완료</span>
+                            </button>
+                        </div><!-- // 신규추가 내용 : 회원가입 카카오싱크(가입정보-N) -->
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

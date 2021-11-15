@@ -1,0 +1,72 @@
+<div data-component="OPageContent" class="o-page-content footer-about-wrap">
+
+    <div class="o-width title--medium about-icon wc-50">
+        <div class="m-headline with-icon u-align-center is-main-headline full-width">
+            <img class="a-image" src="<%= pageInfo.root %>/images/about/ARKET_9_GRID_Suppliers.png">
+            <h2 class="a-heading-2 ">
+                <span class="heading-cap">Suppliers</span>
+                <span class="heading-value"></span>
+            </h2>
+        </div>
+        <div class="headings" style="text-align:center;">
+            <div class="m-headline">
+                <h2 class="a-heading-2 has-margin">PIMKIE</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="o-width about wc-50">
+        <div class="o-text-field two-columns ">
+            <div class="headings" style="text-align:left;">
+                <div class="m-headline">
+                    <h2 class="a-heading-2 has-margin">
+                        <span class="heading-cap">Suppliers</span>
+                        1992년에 설립된 Pimkie는 방글라데시에 기반을 둔 의류 제조업체이자 수출업체로, 이 공장은 이 나라에서 가장 현대적인 공장 중 하나로 선정되었습니다.
+                    </h2>
+                </div>
+            </div>
+            <div class="text-container">
+                <p class="a-paragraph is-richtext">
+                    1,500명의 직원은 플래티넘 및 골드 레벨의 LEED 인증 공장(에너지 및 환경 디자인 리더십)에서 작업하여 특히 데님과 같은 우븐 상의와 하의를 생산합니다. 실제로 숙련된 인력은 매달 280만 개의 데님을 생산합니다. 그들은 ARKET을 위해 데님 전문 지식을 활용하여 보다 지속 가능한 워싱으로 청바지를 생산하고 있습니다.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="o-width wc-50">
+        <div class="o-image-listing cols-1">
+            <div class="image-container">
+                <div class="trackImage col-item">
+                    <img class="a-image" src="<%= pageInfo.root %>/images/about/pimkie_1_a.jpg">
+                </div>
+            </div>
+
+            <div class="image-container">
+                <div class="trackImage col-item">
+                    <img class="a-image" src="<%= pageInfo.root %>/images/about/pimkie_2_a.jpg">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="o-width wc-50"></div>
+
+    <div class="o-width wc-100">
+        <div class="parbase sdp-component product-listing align-below">
+            <!-- o-product-listing -->
+            <div id="lazyLoadSpan">
+                <div id="reloadProducts" class="o-product-listing fixed-columns-5 center-aligned u-align-center">
+                    <%# md-o-product-listing-product-list %>
+                    <%- include ("../../../../common/md-o-product-listing-search-list.ejs") %>
+                </div>
+            </div>
+
+            <span id="lazyDiv">
+                <%# md-o-lazy-load %>
+                <%- include ("../../../../common/md-o-lazy-load.ejs") %>
+            </span>
+            <!-- //o-product-listing -->
+        </div>
+    </div>
+
+</div>

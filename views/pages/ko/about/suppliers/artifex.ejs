@@ -1,0 +1,64 @@
+<div data-component="OPageContent" class="o-page-content footer-about-wrap">
+
+    <div class="o-width title--medium about-icon wc-50">
+        <div class="m-headline with-icon u-align-center is-main-headline full-width">
+            <img class="a-image" src="<%= pageInfo.root %>/images/about/ARKET_9_GRID_Suppliers.png">
+            <h2 class="a-heading-2 ">
+                <span class="heading-cap">Suppliers</span>
+                <span class="heading-value"></span>
+            </h2>
+        </div>
+        <div class="headings about-align-center">
+            <div class="m-headline">
+                <h2 class="a-heading-2 has-margin">ARTIFEX</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="o-width about wc-50">
+        <div class="o-text-field two-columns">
+            <div class="headings about-align-left">
+                <div class="m-headline">
+                    <h2 class="a-heading-2 has-margin">
+                        <span class="heading-cap">서플라이어 </span>
+                        <!-- mrk-edit : 20211025 -->
+                        <!--아티펙스는 루마니아의 의류 제조업체로, 퀄리티 있는 의류와과 최신 장비 사용으로 유명합니다.-->
+                        Artifex는 루마니아의 의류 제조업체로, 퀄리티 있는 의류와 최신 장비 사용으로 유명합니다.
+                        <!-- //mrk-edit : 20211025 -->
+                    </h2>
+                </div>
+            </div>
+            <div class="text-container">
+                <p class="a-paragraph is-richtext">
+                    완전히 리노베이션된 이 공장은 스위스의 쿠튀르 브랜드가 루마니아 현지 공장과 합병하며 2005년에 설립되었습니다. 아티펙스의 고향인 밀코브 강 연안의 폭샤니는 직물에 대해 풍부한 전통을 가지고 있습니다. 
+                    약 1,400명의 전문가들을 고용하여,  아티펙스는 ARKET을 위한 여성 재킷, 상의, 스커트, 바지, 드레스, 뿐 아니라 아동용 블레이저와 바지 등을 생산하고 있습니다.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="o-width wc-100">
+        <style type="text/css">
+            html.no-touchevents .o-product .image:hover .a-image.default-image {
+                display: inline-block !important;
+            }
+        </style>
+
+        <div class="parbase sdp-component product-listing align-below">
+            <!-- o-product-listing -->
+            <div id="lazyLoadSpan">
+                <div id="reloadProducts" class="o-product-listing fixed-columns-5 center-aligned u-align-center">
+                    <%# md-o-product-listing-product-list %>
+                    <%- include ("../../../../common/md-o-product-listing-search-list.ejs") %>
+                </div>
+            </div>
+
+            <span id="lazyDiv">
+                <%# md-o-lazy-load %>
+                <%- include ("../../../../common/md-o-lazy-load.ejs") %>
+            </span>
+            <!-- //o-product-listing -->
+        </div>
+    </div>
+
+</div>

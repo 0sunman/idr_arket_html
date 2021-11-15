@@ -1,0 +1,196 @@
+<div data-component="OPageContent" class="o-page-content guide-content" style="padding-bottom:100px;">
+
+    <!-- description-box -->
+    <div class="description-box full-width">
+        <h2 class="a-heading-1">
+            <strong class="a-strong">Breadcrumb</strong>
+        </h2>
+        <div class="m-informative-section">
+            <h3>Description</h3>
+
+            <h3>.m-breadcrumb</h3>
+            <p>font-size: 14px;<span class="fc-point2"> ※ 3번째 뎁스(2Level) 부터는</span> 한글 표기 예정으로 font-size: 12px;로 선언<br/>그 외 breadcrumb영역의 기본 font style 설정 </p>
+
+            <h3>.breadcrumb-container</h3>
+            <p>margin: 0; padding: 0;<br/>text-overflow: ellipsis; 부모태그에서 설정한 width 값 보다 text over시 [...]으로 표기</p>
+
+            <h3>.sdp-component</h3>
+            <p><span class="fc-point2">※ Product List일때</span> Breadcrumb영역의 높이값 및 기본 margin값 설정<br/> .m-breadcrumb 태그 위, div에 명시</p>
+
+            <h3>.left-component</h3>
+            <p><span class="fc-point2">※ Product List일때</span> 디바이스 해상도에 따른 너비 값 설정<br/>.m-breadcrumb 태그 위, div에 명시</p>
+
+            <h3>.full-width</h3>
+            <p><span class="fc-point2">※ Product Detail일때</span> margin-left:0, margin-right:0<br/>.m-breadcrumb 태그에 명시</p>
+
+            <h3>.pdp-breadcrumb</h3>
+            <p><span class="fc-point2">※ Product Detail일때</span> Breadcrumb영역의 padding값 및 디바이스 해상도에 따른 position 및 width값 설정<br/>.m-breadcrumb 태그에 명시</p>
+
+        </div>
+
+    </div>
+    <!-- //description-box -->
+
+    <!----------------------->
+
+    <!-- a-heading -->
+    <h2 class="a-heading-2 is-main-heading">
+        <span class="heading-cap">type</span>
+        <span class="a-tag is-department">1 Level</span>
+    </h2>
+    <!-- //a-heading -->
+    <!-- Basic: Breadcrumb 1 Level -->
+    <nav class="m-breadcrumb">
+        <ol class="breadcrumb-container">
+            <li>
+                <a class="a-link" href="#none" target="_self">
+                    <span>Arket</span>
+                </a>
+            </li>
+            <li>
+                <a class="a-link" href="#none" target="_self">
+                    <span>women</span>
+                </a>
+            </li>
+        </ol>
+    </nav>
+    <!-- // Basic: Breadcrumb 1 Level -->
+
+    <!----------------------->
+
+    <!-- a-heading -->
+    <h2 class="a-heading-2 is-main-heading">
+        <span class="heading-cap">type</span>
+        <span class="a-tag is-department">2 Level</span>
+    </h2>
+    <!-- //a-heading -->
+    <!-- Basic: Breadcrumb 2 Level -->
+    <nav class="m-breadcrumb">
+        <ol class="breadcrumb-container">
+            <li>
+                <a class="a-link" href="#none" target="_self">
+                    <span>Arket</span>
+                </a>
+            </li>
+            <li>
+                <a class="a-link" href="#none" target="_self">
+                    <span>women</span>
+                </a>
+            </li>
+            <li>
+                <a class="a-link" href="#none" target="_self">
+                    <span>드레스</span>
+                </a>
+            </li>
+        </ol>
+    </nav>
+    <!-- // Basic: Breadcrumb 2 Level -->
+
+    <!----------------------->
+
+    <!-- a-heading -->
+    <h2 class="a-heading-2 is-main-heading">
+        <span class="heading-cap">type</span>
+        <span class="a-tag is-department">3 Level</span>
+    </h2>
+    <!-- //a-heading -->
+    <!-- Basic: Breadcrumb 3 Level -->
+    <nav class="m-breadcrumb">
+        <ol class="breadcrumb-container">
+            <li>
+                <a class="a-link" href="#none" target="_self">
+                    <span>Arket</span>
+                </a>
+            </li>
+            <li>
+                <a class="a-link" href="#none" target="_self">
+                    <span>women</span>
+                </a>
+            </li>
+            <li>
+                <a class="a-link" href="#none" target="_self">
+                    <span>드레스</span>
+                </a>
+            </li>
+            <li>
+                <a class="a-link" href="#none" target="_self">
+                    <span>미니 드레스</span>
+                </a>
+            </li>
+        </ol>
+    </nav>
+    <!-- // Basic: Breadcrumb 3 Level -->
+
+    <!----------------------->
+
+    <!-- a-heading -->
+    <h2 class="a-heading-2 is-main-heading">
+        <span class="heading-cap">type</span>
+        <span class="a-tag is-department">Product List</span>
+    </h2>
+    <!-- //a-heading -->
+    <!-- to Dev [add div tag + Class] : sdp-component left-component -->
+    <!-- Product List: Breadcrumb -->
+    <div class="sdp-component left-component">
+        <nav class="m-breadcrumb">
+            <ol class="breadcrumb-container">
+                <li>
+                    <a class="a-link" href="#none" target="_self">
+                        <span>Arket</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="a-link" href="#none" target="_self">
+                        <span>women</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="a-link" href="#none" target="_self">
+                        <span>드레스</span>
+                    </a>
+                </li>
+            </ol>
+        </nav>
+    </div>
+    <!-- // Product List: Breadcrumb -->
+
+    <!----------------------->
+    <div class="u-clearfix"></div>
+
+    <!-- a-heading -->
+    <h2 class="a-heading-2 is-main-heading">
+        <span class="heading-cap">type</span>
+        <span class="a-tag is-department">Product Detail</span>
+    </h2>
+    <!-- //a-heading -->
+    <!-- to Dev [add Class] : pdp-breadcrumb full-width -->
+    <!-- Product Detail: Breadcrumb -->
+    <nav class="m-breadcrumb pdp-breadcrumb full-width">
+        <ol class="breadcrumb-container">
+            <li>
+                <a class="a-link" href="#none" target="_self">
+                    <span>Arket</span>
+                </a>
+            </li>
+            <li>
+                <a class="a-link" href="#none" target="_self">
+                    <span>women</span>
+                </a>
+            </li>
+            <li>
+                <a class="a-link" href="#none" target="_self">
+                    <span>드레스</span>
+                </a>
+            </li>
+            <li>
+                <a class="a-link" href="#none" target="_self">
+                    <span>와이드-핏 린넨 드레스</span>
+                </a>
+            </li>
+        </ol>
+    </nav>
+    <!-- // Product Detail: Breadcrumb -->
+
+    <!----------------------->
+
+</div>

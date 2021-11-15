@@ -1,0 +1,84 @@
+<div data-component="OPageContent" class="o-page-content page-sizeguide">
+
+    <!-- m-breadcrumb -->
+    <div class="sdp-component left-component">
+        <nav aria-label="breadcrumbs" class="m-breadcrumb" data-component="MBreadCrumb">
+            <ol class="breadcrumb-container">
+                <li>
+                    <a class="a-link" href="<%= pageInfo.root %>/<%= pageInfo.lang %>/index.html">
+                        <span>ARKET</span>
+                    </a>
+                </li>
+                <li itemprop="itemListElement">
+                    <a class="a-link" href="<%= pageInfo.root %>/<%= pageInfo.lang %>/customer-service.html">
+                        <span>고객서비스</span>
+                    </a>
+                </li>
+                <li itemprop="itemListElement">
+                    <a class="a-link" href="#none">
+                        <span>사이즈 가이드</span>
+                    </a>
+                </li>
+                <!-- mrk-add : 20211115 -->
+                <li itemprop="itemListElement">
+                    <a class="a-link" href="#none" data-no-click="true">
+                        <span>아동</span>
+                    </a>
+                </li>
+                <!-- //mrk-add : 20211115 -->
+            </ol>
+        </nav>
+    </div>
+    <!-- //m-breadcrumb -->
+
+    <h1 class="a-heading-1 seo-heading"><span>사이즈 가이드</span></h1>
+
+    <%# md-o-local-navigation-cs %>
+    <%- include ("../../../../common/md-o-local-navigation-size-guide.ejs") %>
+
+    <!-- cs-contents -->
+    <div class="o-width wc-50 cs-contents">
+
+        <!-- freeHTML-sizeguide -->
+        <div class="freeHTML-sizeguide">
+            <h1 class="freeHTML-sizeguide-title">아동의류</h1>
+
+            <%# md-o-sizeguide-women-clothing %>
+            <%- include ("../../../../common/md-sizeguide-children-clothing.ejs") %>
+        </div>
+        <!-- //freeHTML-sizeguide -->
+
+        <!-- freeHTML-sizeguide -->
+        <div class="freeHTML-sizeguide">
+            <h1 class="freeHTML-sizeguide-title">아동삭스</h1>
+
+            <%# md-o-sizeguide-women-clothing %>
+            <%- include ("../../../../common/md-sizeguide-children-socks.ejs") %>
+        </div>
+        <!-- //freeHTML-sizeguide -->
+
+        <!-- freeHTML-sizeguide -->
+        <div class="freeHTML-sizeguide">
+            <h1 class="freeHTML-sizeguide-title">아동슈즈</h1>
+            <%# md-o-sizeguide-women-shoes %>
+            <%- include ("../../../../common/md-sizeguide-children-shoes.ejs") %>
+        </div>
+        <!-- //freeHTML-sizeguide -->
+
+    </div>
+    <!-- //cs-contents -->
+
+</div>
+
+<!-- tip : when develop this script must be delete -->
+<script type="text/javascript">
+    (function() {
+        'use strict';
+        //탭활성화
+        let activeTab = document.querySelectorAll('.o-local-navigation > ul > li');
+        if(activeTab){
+            activeTab[3].classList.add('is-selected');
+        }
+    })();
+</script>
+<!-- //tip -->

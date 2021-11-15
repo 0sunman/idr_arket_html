@@ -1,0 +1,100 @@
+<div data-component="OPageContent" class="o-page-content">
+    <!--
+    <div class="parbase sdp-component left-component">
+        <%# m-breadcrumb %>
+        <%#- include ("../../common/md-m-breadcrumb.ejs") %>
+    </div>
+    -->
+
+    <!-- o-hero -->
+    <div class="o-hero is-takeover full-width hero-takeover double-image" style="background-color:BottomCenter;" data-component="OHero">
+        <div class="takeover-wrapper">
+            <div class="textblock-container">
+                <div class="o-text-block disable-bg" style="color:white">
+                    <div class="heading-wrapper">
+                        <div class="m-headline">
+                            <h1 class="a-heading-1 large-font">
+                                <span class="heading-cap">arket</span>
+                                <span class="heading-value">Travel</span>
+                            </h1>
+                        </div>
+                    </div>
+                    <div class="text-wrapper">
+                        <p class="a-paragraph text-content a-paragraph text-content large-font">Our travel assortment is
+                            a modular bag system of thoughtfully designed carry-on luggage, minimalist ultralight
+                            daypacks that can be folded into their own pocket, and a series of mesh pouches and garment
+                            cases for efficient packing and compact travelling.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="image-wrapper">
+            <div style="background-image:url(<%= pageInfo.root %>/images/component/21207_M_Towelling-Summer-Stripes_29_WEB.jpg)" class="takeover-background"></div>
+            <div style="background-image: url(<%= pageInfo.root %>/images/component/21207_M_Towelling-Summer-Stripes_28_WEB.jpg); float:right" class="takeover-background"></div>
+        </div>
+    </div>
+    <!-- //o-hero -->
+
+    <div class="parbase sdp-component local-navigation">
+        <!-- o-local-navigation -->
+        <div data-component="OLocalNavigation" class="o-local-navigation" style="opacity:1;">
+            <button type="button" class="a-button-nostyle show-more-left-btn"></button>
+            <ul>
+                <li class="is-selected">
+                    <a href="/en/travel.html" target="_self" class="a-link" data-title="Travel" tabindex="0">All
+                        Travel
+                    </a>
+                </li>
+                <li>
+                    <a href="/en/travel/luggage.html" target="_self" class="a-link" data-title="Luggage" tabindex="0">
+                        Luggage
+                    </a>
+                </li>
+                <li>
+                    <a href="/en/travel/packable-bags.html" target="_self" class="a-link" data-title="Packable bags" tabindex="0">
+                        Packable bags
+                    </a>
+                </li>
+                <li>
+                    <a href="/en/travel/travel-accessories.html" target="_self" class="a-link" data-title="Accessories" tabindex="0">
+                        Accessories
+                    </a>
+                </li>
+            </ul>
+            <button type="button" class="a-button-nostyle show-more-right-btn"></button>
+        </div>
+        <!-- //o-local-navigation -->
+    </div>
+
+    <div class="o-width spacer wc-100"></div>
+
+    <div class="o-width wc-100">
+        <div class="parbase sdp-component product-listing align-below">
+
+            <%# md-o-product-filters %>
+            <%- include ("../../common/md-o-product-filters.ejs") %>
+
+            <!-- o-product-listing -->
+            <div id="lazyLoadSpan">
+                <div id="reloadProducts" class="o-product-listing has-upper-body-images fixed-columns-5 u-align-center">
+                    <%# md-o-product-listing-product-list %>
+                    <%- include ("../../common/md-o-product-listing-product-list-30ea-central.ejs") %>
+                </div>
+
+            </div>
+
+            <span id="lazyDiv">
+                <%# md-o-lazy-load %>
+                <%- include ("../../common/md-o-lazy-load.ejs") %>
+            </span>
+            <!-- //o-product-listing -->
+
+        </div>
+
+        <div id="productStart" class="0"></div>
+        <div id="productPath" class="/en/women/new-arrivals/_jcr_content/homepagepar/widthcomponent_16087/o-width/productlisting_copy_.products.html"></div>
+        <div id="productCount" class="102"></div>
+        <div id="productPerPage" class="36"></div>
+    </div>
+
+</div>

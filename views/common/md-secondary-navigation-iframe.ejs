@@ -1,0 +1,80 @@
+<!-- md-secondary-navigation -->
+<nav class="secondary-navigation">
+    <button type="button" class="a-button-nostyle search-icon a-icon" aria-label="search">
+        <div class="a-icon-container">
+            <span class="s1"></span>
+            <span class="s2"></span>
+        </div>
+    </button>
+    <div class="my-account-block">
+        <a href="/<%= pageInfo.lang %>/my-account/profile" target="_self" id="myAccountLink" style="display:none;" class="a-link my-account-icon" area-hidden="true" aria-label="My account">
+            <span class="a-icon-profile"></span>
+        </a>
+        <button type="button" class="a-button-nostyle my-account-icon tooltip-trigger" area-hidden="false" aria-label="My account">
+            <span class="a-icon-profile"></span>
+        </button>
+
+        <div class="my-account-section tooltip-content" aria-hidden="true" aria-expanded="false">
+            <div class="o-sign-in-registration-tabs is-my-account-tooltip">
+
+                <ul class="m-tablist tabs-1-2 sign-in-registration">
+                    <li class="u-no-select is-active" tabindex="0">
+                        <h2 class="a-heading-2"></h2>
+                        <a href="#sign-in-form" target="_self" class="a-link">로그인</a>
+                    </li>
+                    <li class="u-no-select" tabindex="0">
+                        <h2 class="a-heading-2"></h2>
+                        <a href="<%= pageInfo.root %>/<%= pageInfo.lang %>/register/register.html" target="_self" class="a-link">회원가입</a>
+                    </li>
+                </ul>
+                <div class="tablist-content">
+
+                    <iframe class="sign-in-form-iframe"
+                        <%
+                        if(pageInfo.isLocalExPath) {
+                        %>
+                            src="<%= pageInfo.pageRoot %>/dist/<%= pageInfo.lang %>/login/ifrp-sign-in-form.html"
+                        <%
+                        }else {
+                        %>
+                            src="/<%= pageInfo.lang %>/login/ifrp-sign-in-form.html"
+                        <%
+                        }
+                        %>
+                        width="100%"
+                        height="550px"
+                        frameborder="no"
+                        scrolling="no"
+                        marginheight="0"
+                        marginwidth="0">
+                    </iframe>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="information-block">
+        <button type="button" class="a-button-nostyle info-icon tooltip-trigger" aria-label="information">
+            <span class="a-custom-icon-question">?</span>
+        </button>
+    </div>
+
+    <a href="/<%= pageInfo.lang %>/cart" target="_self" class="a-link a-bag-icon-container" aria-label="cart">
+        <span class="a-bag-icon js-a-bag-icon animate">
+            <span class="wrapper">
+                <span class="handle"></span>
+                <span class="quantity">2</span>
+            </span>
+        </span>
+    </a>
+
+    <button type="button" class="a-button-nostyle a-burger js-a-burger animate" aria-label="menu">
+        <span class="line-wrapper">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </span>
+    </button>
+</nav>
+<!-- //md-secondary-navigation -->

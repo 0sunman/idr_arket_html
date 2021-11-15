@@ -1,0 +1,83 @@
+<div data-component="OPageContent" class="o-page-content cofs-page page-delivery">
+
+    <div class="o-my-page o-width wc-75">
+
+        <%# md-o-my-page-navigation %>
+        <%- include ("../../../common/md-o-my-page-navigation.ejs") %>
+
+        <h2 class="a-heading-2 is-main-heading page-top-title">
+            <span>배송지 관리</span>
+        </h2>
+
+        <!-- my-profile-content -->
+        <div class="my-delivery-content">
+
+            <!-- delivery-info-bx -->
+            <div class="delivery-info-bx">
+
+                <!-- radio-button-list -->
+                <div class="radio-button-list">
+                    <div class="m-radio-button v3">
+                        <input type="radio" class="a-radio-button rd-toggle" id="delivery-input-cate1" name="delivery-input-cate" checked data-toggle-target="rd-toggle-con-list">
+                        <label class="a-label js-a-label u-no-select custom-radio" for="delivery-input-cate1"></label>
+                        <label class="a-label js-a-label label-text" for="delivery-input-cate1">배송지 목록</label>
+                    </div>
+
+                    <div class="m-radio-button v3">
+                        <input type="radio" class="a-radio-button rd-toggle" id="delivery-input-cate2" name="delivery-input-cate" data-toggle-target="rd-toggle-con-new">
+                        <label class="a-label js-a-label u-no-select custom-radio" for="delivery-input-cate2"></label>
+                        <label class="a-label js-a-label label-text" for="delivery-input-cate2">새로 입력</label>
+                    </div>
+                </div>
+                <!-- //radio-button-list -->
+
+                <!-- rd-toggle-con : 배송지목록 -->
+                <div class="rd-toggle-con rd-toggle-con-list" data-name="delivery-input-cate">
+                    <ul class="my-delivery-list">
+                        <li class="empty-li">
+                            <p class="empty-item">등록된 배송지가 없습니다.</p>
+                        </li>
+                    </ul>
+                </div>
+                <!-- //rd-toggle-con : 배송지목록 -->
+
+                <!-- rd-toggle-con : 새로입력 -->
+                <div class="rd-toggle-con rd-toggle-con-new is-hidden-strong" data-name="delivery-input-cate">
+                    <%# md-my-delivery-input %>
+                    <%- include ("../../../common/md-my-delivery-input.ejs") %>
+                </div>
+                <!-- //rd-toggle-con : 새로입력 -->
+
+            </div>
+            <!-- //delivery-info-bx -->
+
+        </div>
+        <!-- //my-profile-content -->
+
+    </div>
+</div>
+
+<!-- handlebars-template -->
+<%# 배송지목록 > 삭제 %>
+<%- include ("../../../handlebars/hndl-lp-dlvr-list-del.ejs") %>
+
+<%# 주소검색 %>
+<%- include ("../../../handlebars/hndl-lp-find-address.ejs") %>
+<!-- //handlebars-template -->
+
+<!-- tip : when develop this script must be delete -->
+<script type="text/javascript">
+    (function() {
+        'use strict';
+        //탭활성화
+        let activeTab = document.querySelector('.menu-addressbook');
+        if(activeTab){
+            activeTab.parentNode.classList.add('is-active');
+        }
+        setTimeout(function(){
+            //배송지 수정, 삭제 버튼 클릭이벤트
+            renewCommon.deliverListEdit.init();
+        },100);
+    })();
+</script>
+<!-- //tip -->

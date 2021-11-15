@@ -1,0 +1,43 @@
+<div data-component="OPageContent" class="o-page-content iframe-wrap">
+    <iframe id="sisFrame"
+        class="sisFrame parsys"
+        <%
+            if(pageInfo.isLocalExPath) {
+        %>
+        src="<%= pageInfo.pageRoot %>/dist-sis-con/<%= pageInfo.lang %>/search-result-sis-con.html"
+        <%
+            }else {
+        %>
+        src="/<%= pageInfo.lang %>/search-result-sis-con.html"
+        <%
+            }
+        %>
+        width="100%"
+        frameborder="no"
+        scrolling="no"
+        marginheight="0"
+        marginwidth="0"
+        onload="iframeAutoResize(this);">
+</iframe>
+</div>
+<!-- tip : when develop this script must be delete -->
+<script type="text/javascript">
+    (function() {
+        'use strict';
+        setTimeout(function(){
+            //헤더 border-bottom 라인 숨기기
+            let tempHeader = document.querySelector('.o-header');
+            tempHeader.classList.add('hide-departments','has-open-search','desktop-sticky','mobile-sticky','is-open');
+
+            let tempNaviation = document.querySelector('.o-navigation');
+            tempNaviation.classList.add('half-open');
+
+            let tempOsearch = tempHeader.querySelector('.o-search');
+            tempOsearch.classList.add('is-open');
+
+            let tempOsearchIcon = tempHeader.querySelector('.search-icon.a-icon');
+            tempOsearchIcon.classList.add('is-open');
+        },100)
+    })();
+</script>
+<!-- //tip -->

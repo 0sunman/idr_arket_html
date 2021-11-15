@@ -1,0 +1,110 @@
+<div data-component="OPageContent" class="o-page-content cofs-page" style="margin-top: 56px;">
+
+    <!-- o-my-page -->
+    <div class="o-my-page o-width wc-75">
+        <%# md-o-my-page-navigation %>
+        <%- include ("../../../common/md-o-my-page-navigation.ejs") %>
+
+        <!-- balance -->
+        <div class="balance">
+            <h2 class="a-heading-2 page-top-title page-title-line">
+                <span>예치금</span>
+            </h2>
+            <div class="page-title-serve">
+                <span>사용 가능한 예치금</span>
+                <span class="f-type6">10,000,000</span>
+            </div>
+
+            <!-- my-table-list-wrap -->
+            <div class="my-table-list-wrap">
+
+                <%# md-my-orderlist-month-dropdown %>
+                <%- include ("../../../common/md-my-balance-month-dropdown.ejs") %>
+
+                <div class="my-order-list">
+                    <div class="order-list-ul-header">
+                        <ul class="my-table-list-ul">
+                            <li class="table-li-date">날짜</li>
+                            <li class="table-li-num">주문번호</li>
+                            <li class="table-li-content">예치금 내용</li>
+                            <li class="table-li-price">금액</li>
+                        </ul>
+                    </div>
+                    <!-- deposit-list-ul -->
+                    <ul class="deposit-list-ul">
+                        <li>
+                            <div class="deposit-list-item">
+                                <ul class="my-table-list-ul">
+                                    <li class="table-li-date"><span>2021-05-26</span></li>
+                                    <li class="table-li-num"><span>2105263226320</span></li>
+                                    <li class="table-li-content"><span>[17122000034710] 주문에 의한 예치금 사용</span></li>
+                                    <li class="table-li-price"><span>-654,900</span></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="deposit-list-item">
+                                <ul class="my-table-list-ul">
+                                    <li class="table-li-date"><span>2021-05-26</span></li>
+                                    <li class="table-li-num"><span>2105263226320</span></li>
+                                    <li class="table-li-content"><span>기타(예치금정산)</span></li>
+                                    <li class="table-li-price"><span>900</span></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="deposit-list-item">
+                                <ul class="my-table-list-ul">
+                                    <li class="table-li-date"><span>2021-05-26</span></li>
+                                    <li class="table-li-num"><span>2105263226320</span></li>
+                                    <li class="table-li-content"><span>[17122000034710] 주문에 의한 예치금 사용</span></li>
+                                    <li class="table-li-price"><span>-654,900</span></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="deposit-list-item">
+                                <ul class="my-table-list-ul">
+                                    <li class="table-li-date"><span>2021-05-26</span></li>
+                                    <li class="table-li-num"><span>2105263226320</span></li>
+                                    <li class="table-li-content"><span>취소예치</span></li>
+                                    <li class="table-li-price"><span>1,000,900</span></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="deposit-list-item">
+                                <ul class="my-table-list-ul">
+                                    <li class="table-li-date"><span>2021-05-26</span></li>
+                                    <li class="table-li-num"><span>2105263226320</span></li>
+                                    <li class="table-li-content"><span>[17122000034710] 주문에 의한 예치금 사용</span></li>
+                                    <li class="table-li-price"><span>-654,900</span></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul><!-- //deposit-list-ul -->
+                </div>
+            </div>
+            <!-- //my-table-list-wrap -->
+
+        </div>
+        <!-- //balance -->
+    </div>
+    <!-- //o-my-page -->
+</div>
+
+
+<!-- tip : when develop this script must be delete -->
+<script type="text/javascript">
+    (function() {
+        'use strict';
+        //탭활성화
+        let tabMydetailsr = document.querySelector('.menu-my-details');
+        let tabMyorders = document.querySelector('.menu-my-orders');
+        let tabMybalance = document.querySelector('.menu-deposit');
+        if(tabMybalance){
+            tabMybalance.parentNode.classList.add('is-active');
+        }
+    })();
+</script>
+<!-- //tip -->

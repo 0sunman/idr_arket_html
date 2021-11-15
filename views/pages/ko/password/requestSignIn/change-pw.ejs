@@ -1,0 +1,36 @@
+<div data-component="OPageContent" class="o-page-content cofs-page">
+
+    <!-- n-find-idpw -->
+    <div class="o-forgot-password n-find-idpw">
+        <div class="forgot-password-form">
+            <form class="o-form o-change-password" data-component="OForm" id="updatePwdForm" method="post">
+                <h2 class="a-heading-2">비밀번호 변경하기</h2>
+                <p class="data">사용하시던 비밀번호는 개인정보 보안상 확인이 불가하니 새로운 비밀번호를 설정해주세요.</p>
+                    <!-- 신규추가 내용 : 비밀번호 변경하기 -->
+                    <div class="n-wrap">
+                        <!-- input : 새 비밀번호 -->
+                        <div  data-component="MInput" class="m-input password">
+                            <label class="a-label js-a-label" for="new-password">새 비밀번호</label>
+                            <input class="a-input js-a-input" id="new-password" name="new-password" type="password" pattern="" placeholder="새 비밀번호"  data-validation-required-text="새 비밀번호를 입력해 주세요." data-validation-pattern-text="비밀번호는 8~30자리 이내로 입력해주세요." required="">
+                            <label class="a-label js-a-label" for="new-password"></label>
+                            <p class="guide-text">8~30자 이내 영문자, 숫자, 특수문자 중 2가지 이상 포함</p>
+                        </div><!-- // input : 새 비밀번호 -->
+
+                        <!-- input : 새 비밀번호 -->
+                        <div  data-component="MInput" class="m-input password" data-validation-match-field="password">
+                            <label class="a-label js-a-label" for="repeat-new-password">새 비밀번호 확인</label>
+                            <input class="a-input js-a-input" id="repeat-new-password" name="repeat-new-password" type="password" placeholder="새 비밀번호 확인"  data-validation-required-text="비밀번호를 재입력해주세요." data-validation-match-field-text="비밀번호와 비밀번호 확인을 동일하게 입력해주세요." required="">
+                            <label class="a-label js-a-label" for="repeat-new-password"></label>
+                            <p class="guide-text">새 비밀번호와 동일한 비밀번호를 입력해주세요.</p>
+                        </div><!-- // input : 새 비밀번호 -->
+                    </div><!-- // 신규추가 내용 : 비밀번호 변경하기 -->
+
+                    <!-- button -->
+                    <button type="submit" class="a-button">
+                        <span>확인</span>
+                    </button><!-- // button -->
+            </form>
+        </div>
+    </div><!-- //n-find-idpw -->
+
+</div>

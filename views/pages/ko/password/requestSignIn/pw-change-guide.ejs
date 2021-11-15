@@ -1,0 +1,61 @@
+<div data-component="OPageContent" class="o-page-content cofs-page">
+
+    <!-- n-find-idpw -->
+    <div class="o-forgot-password n-find-idpw">
+        <div class="forgot-password-form">
+            <form class="o-form o-change-password" data-component="OForm"  method="post">
+                <h2 class="a-heading-2">비밀번호 변경안내</h2>
+                    <!-- 신규추가 내용 : 90일 이상 비밀번호 변경안내 -->
+                    <div class="n-wrap">
+                        <p class="sub-title v2">
+                            <span class="user">theHyundai@hyundai.com</span>고객님!<br/>비밀번호를 변경해 주세요.
+                        </p>
+                        <div class="text-content v2">
+                            <p class="info v2">
+                                오랫동안 비밀번호를 변경하지 않고 같은 비밀번호를 사용하고 계십니다.<br/>
+                                소중한 개인정보를 지키기 위해 비밀번호를 변경해 주시기 바랍니다.
+                            </p>
+                            <ul class="list-box">
+                                <li>기존의 비밀번호와 새 비밀번호를 차례대로 입력해주세요.</li>
+                                <li>기존에 사용하셨던 비밀번호는 사용하실 수 없습니다.</li>
+                                <li>비밀번호는 8~30자 이내 영문자, 숫자, 특수문자 중 2가지 이상 포함으로 사용 가능합니다.</li>
+                            </ul>
+                        </div>
+                        <!-- input : 기존 비밀번호 -->
+                        <div  data-component="MInput" class="m-input password">
+                            <label class="a-label js-a-label" for="old-password">기존 비밀번호</label>
+                            <input class="a-input js-a-input" id="old-password" name="old-password" type="password" pattern="" placeholder="기존 비밀번호"  data-validation-required-text="기존 비밀번호를 입력해 주세요." data-validation-pattern-text="기존 비밀번호와 동일하지 않습니다." required="">
+                            <label class="a-label js-a-label" for="old-password"></label>
+                        </div><!-- // input : 기존 비밀번호 -->
+
+                        <!-- input : 새 비밀번호 -->
+                        <div  data-component="MInput" class="m-input password">
+                            <label class="a-label js-a-label" for="new-password">새 비밀번호</label>
+                            <input class="a-input js-a-input" id="" name="new-password" type="password" pattern="" placeholder="새 비밀번호"  data-validation-required-text="새 비밀번호를 입력해 주세요." data-validation-pattern-text="비밀번호는 8~30자리 이내로 입력해주세요." required="">
+                            <label class="a-label js-a-label" for="new-password"></label>
+                            <p class="guide-text">8~30자 이내 영문자, 숫자, 특수문자 중 2가지 이상 포함</p>
+                        </div><!-- // input : 새 비밀번호 -->
+
+                        <!-- input : 새 비밀번호 확인 -->
+                        <div  data-component="MInput" class="m-input password" data-validation-match-field="password">
+                            <label class="a-label js-a-label" for="repeat-new-password">새 비밀번호 확인</label>
+                            <input class="a-input js-a-input" id="repeat-new-password" name="repeat-new-password" type="password" placeholder="새 비밀번호 확인" data-validation-required-text="비밀번호를 재입력해주세요." data-validation-match-field-text="비밀번호와 비밀번호 확인을 동일하게 입력해주세요." required="">
+                            <label class="a-label js-a-label" for="repeat-new-password"></label>
+                            <p class="guide-text">새 비밀번호와 동일한 비밀번호를 입력해주세요.</p>
+                        </div><!-- // input : 새 비밀번호 확인 -->
+                    </div><!-- // 신규추가 내용 : 90일 이상 비밀번호 변경안내 -->
+
+                    <!-- button-container -->
+                    <div class="button-container col-2 re-sort">
+                        <button type="submit" class="a-button">
+                            <span>비밀번호 변경하기</span>
+                        </button>
+                        <a class="a-button is-outlined">
+                            <span>다음에 변경하기</span>
+                        </a>
+                    </div><!-- // button-container -->
+            </form>
+        </div>
+    </div><!-- // n-find-idpw -->
+
+</div>

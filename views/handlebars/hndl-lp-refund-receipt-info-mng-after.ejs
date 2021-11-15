@@ -1,0 +1,251 @@
+<!-- 환불계좌/현금영수증 관리 -->
+<script type="text/x-handlebars-template" id="lp-refund-receipt-info-mng-after">
+    <div class="lightbox-content-dft lp-refund-receipt-info-mng">
+        <h2 class="a-heading-2"><span></span></h2>
+        <div class="content">
+
+            <!-- grid-line-wrap -->
+            <div class="grid-line-wrap wrap">
+
+                <!-- grid-line-item -->
+                <!-- to Dev [toggle Class] : mode-view, mode-edit  -->
+                <div class="grid-line-item full lp-refund-info-bx mode-wrap mode-view">
+                    <h3 class="a-heading-3 sub">
+                        홍길동 님의 환불계좌 정보
+                        <div class="link-wrap">
+                            <!--<a class="a-link a-link-udln mode-edit-btn mode-con-view" href="#none" target="_self">등록</a>-->
+                            <a class="a-link a-link-udln mode-edit-btn mode-con-view" href="#none" target="_self">수정</a>
+                            <a class="a-link a-link-udln open-dialog-btn mode-con-view" data-target="lp-refund-account-del" href="#none" target="_self">삭제</a>
+                            <a class="a-link a-link-udln mode-view-btn mode-con-edit" href="#none" target="_self">취소</a>
+                        </div>
+                    </h3>
+
+                    <ul class="o-info-line-box col-2-1 mode-con-view">
+                        <!--
+                        <li class="no-padding empty-li">
+                            <span class="empty-item">등록된 환불계좌가 없습니다.</span>
+                        </li>
+                        -->
+                        <li class="no-padding">
+                            <span class="f-type1">예금주</span>
+                            <span class="f-type1">홍길동</span>
+                        </li>
+                        <li class="no-padding">
+                            <span class="f-type1">은행</span>
+                            <span class="f-type1">기업은행</span>
+                        </li>
+                        <li class="no-padding">
+                            <span class="f-type1">계좌번호</span>
+                            <span class="f-type1">010111******</span>
+                        </li>
+                    </ul>
+
+                    <ul class="o-info-line-box col-2-1 mode-con-edit">
+                        <li class="no-padding">
+                            <span class="f-type1">예금주</span>
+                            <span class="f-type1">홍길동</span>
+                        </li>
+                        <li class="no-padding">
+                            <span class="f-type1">은행</span>
+                            <span class="f-type1">
+                                <div class="m-dropdown v3">
+                                    <label class="a-label js-a-label" for="delivery-msg-dropdown"></label>
+                                    <select name="selectSize" id="delivery-msg-dropdown">
+                                        <option class="a-option">은행 선택</option>
+                                        <option class="a-option">국민은행</option>
+                                        <option class="a-option">하나은행</option>
+                                    </select>
+                                    <span class="a-icon-accordion a-icon-arrow-down-small"></span>
+                                </div>
+                            </span>
+                        </li>
+                        <li class="no-padding">
+                            <span class="f-type1 v-top">계좌번호</span>
+                            <span class="f-type1">
+                                <div class="m-input v3 with-button big-btn" data-component="MInput">
+                                    <input class="a-input js-a-input v3"
+                                           type="numpber"
+                                           name="refund-account-number"
+                                           id="refund-account-number"
+                                           placeholder="- 없이 숫자만 입력하세요">
+                                    <button class="a-button sm btn-account-confirm open-lightbox" type="button" data-template="lp-account-success" data-classes="alert">계좌인증</button>
+                                    <label class="a-label js-a-label" for="refund-account-number" data-placeholder=""></label>
+                                </div>
+                                <p class="error-text">은행을 선택해 주세요.</p>
+                            </span>
+                        </li>
+                    </ul>
+
+                    <p class="guide-text">
+                        <span class="desc-text">환불계좌는 본인 명의의 계좌번호만 등록/변경 가능합니다.</span>
+                        <span class="desc-text">환불계좌를 저장하시면, 추후 이용 시 별도의 계좌입력 없이 이용하실 수 있습니다.</span>
+                        <span class="desc-text">정보 입력 또는 수정일로부터 1년간 환불기록이 없을 경우, 금융정보보호정책에 따라 환불계좌 정보는 삭제됩니다.</span>
+                    </p>
+                    
+                </div>
+                <!-- //grid-line-item -->
+
+                <!-- grid-line-item -->
+                <div class="grid-line-item full lp-virture-account-mng mode-wrap mode-view">
+                    <h3 class="a-heading-3 sub">
+                        기본 가상계좌 관리
+                        <div class="link-wrap">
+                            <!--<a class="a-link a-link-udln mode-edit-btn mode-con-view" href="#none" target="_self">등록</a>-->
+                            <a class="a-link a-link-udln mode-edit-btn mode-con-view" href="#none" target="_self">수정</a>
+                            <a class="a-link a-link-udln open-dialog-btn mode-con-view" data-target="lp-refund-account-del" href="#none" target="_self">삭제</a>
+                            <a class="a-link a-link-udln mode-view-btn mode-con-edit" href="#none" target="_self">취소</a>
+                        </div>
+                    </h3>
+                    
+                    <ul class="o-info-line-box col-2-1 mode-con-view">
+                        <!--
+                        <li class="no-padding empty-li">
+                            <span class="empty-item">등록된 가상계좌가 없습니다.</span>
+                        </li>
+                        -->
+                        <li class="no-padding">
+                            <span class="f-type1">은행</span>
+                            <span class="f-type1">기업은행</span>
+                        </li>
+                        <li class="no-padding">
+                            <span class="f-type1">계좌번호</span>
+                            <span class="f-type1">010111******</span>
+                        </li>
+                    </ul>
+
+                    <ul class="o-info-line-box col-2-1 mode-con-edit">
+                        <li class="no-padding">
+                            <span class="f-type1 v-top">은행</span>
+                            <span class="f-type1">
+                                <div class="m-dropdown v3 with-button big-btn">
+                                    <label class="a-label js-a-label" for="delivery-msg-dropdown"></label>
+                                    <select name="selectSize" id="delivery-msg-dropdown">
+                                        <option class="a-option">은행 선택</option>
+                                        <option class="a-option">국민은행</option>
+                                        <option class="a-option">하나은행</option>
+                                    </select>
+                                    <button class="a-button sm" type="button"><span>발급 신청</span></button>
+                                    <span class="a-icon-accordion a-icon-arrow-down-small"></span>
+                                </div>
+                                <p class="error-text">은행을 선택해 주세요.</p>
+                            </span>
+                        </li>
+                    </ul>
+
+                    <p class="guide-text">
+                        <span class="desc-text">가상계좌가 없는 경우 은행을 선택하시면 가상계좌가 신규 발급됩니다.</span>
+                        <span class="desc-text">기존에 등록된 가상계좌를 변경하고 싶으시면 변경하시고자 하는 은행을 선택해 주세요.</span>
+                        <span class="desc-text">은행 변경 시 기존 가상계좌는 삭제됩니다.</span>
+                    </p>
+                </div>
+                <!-- //grid-line-item -->
+
+                <!-- grid-line-item -->
+                <div class="grid-line-item full lp-income-info-bx mode-wrap mode-view">
+                    <h3 class="a-heading-3 sub">
+                        소득공제용 현금영수증
+                        <div class="link-wrap">
+                            <!--<a class="a-link a-link-udln mode-edit-btn mode-con-view" href="#none" target="_self">등록</a>-->
+                            <a class="a-link a-link-udln mode-edit-btn mode-con-view" href="#none" target="_self">수정</a>
+                            <a class="a-link a-link-udln open-dialog-btn mode-con-view" data-target="lp-refund-account-del" href="#none" target="_self">삭제</a>
+                            <a class="a-link a-link-udln mode-view-btn mode-con-edit" href="#none" target="_self">취소</a>
+                        </div>
+                    </h3>
+
+                    <ul class="o-info-line-box col-2-1 mode-con-view">
+                        <!--
+                        <li class="no-padding empty-li">
+                            <span class="empty-item">등록된 소득공제용 정보가 없습니다.</span>
+                        </li>
+                        -->
+                        <li class="no-padding">
+                            <span class="f-type1 v-top">소득공제용<br>(일반개인)</span>
+                            <span class="f-type1">010-1234-5678</span>
+                        </li>
+                    </ul>
+
+                    <ul class="o-info-line-box col-2-1 mode-con-edit">
+                        <li class="no-padding">
+                            <span class="f-type1 v-top">소득공제용<br>(일반개인)</span>
+                            <span class="f-type1">
+                                <div class="m-input v3 with-button big-btn" data-component="MInput">
+                                    <input class="a-input js-a-input v3"
+                                           type="numpber"
+                                           name="phone-number-income"
+                                           id="phone-number-income"
+                                           placeholder="- 없이 숫자만 입력하세요">
+                                    <button class="a-button sm" type="button"><span>수정</span></button>
+                                    <label class="a-label js-a-label" for="phone-number-income" data-placeholder=""></label>
+                                    <p class="input-guide-text">전화번호를 입력해주세요</p>
+                                </div>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- //grid-line-item -->
+
+                <!-- grid-line-item -->
+                <div class="grid-line-item full lp-apending-info-bx mode-wrap mode-view">
+                    <h3 class="a-heading-3 sub">
+                        지출증빙용 현금영수증
+                        <div class="link-wrap">
+                            <!--<a class="a-link a-link-udln mode-edit-btn mode-con-view" href="#none" target="_self">등록</a>-->
+                            <a class="a-link a-link-udln mode-edit-btn mode-con-view" href="#none" target="_self">수정</a>
+                            <a class="a-link a-link-udln open-dialog-btn mode-con-view" data-target="lp-refund-account-del" href="#none" target="_self">삭제</a>
+                            <a class="a-link a-link-udln mode-view-btn mode-con-edit" href="#none" target="_self">취소</a>
+                        </div>
+                    </h3>
+
+                    <ul class="o-info-line-box col-2-1 mode-con-view">
+                        <!--
+                        <li class="no-padding empty-li">
+                            <span class="empty-item">등록된 지출증빙용 정보가 없습니다.</span>
+                        </li>
+                        -->
+                        <li class="no-padding">
+                            <span class="f-type1 v-top">지출증빙용<br>(사업자용)</span>
+                            <span class="f-type1">211-88-45509</span>
+                        </li>
+                    </ul>
+
+                    <ul class="o-info-line-box col-2-1 mode-con-edit">
+                        <li class="no-padding">
+                            <span class="f-type1 v-top">지출증빙용<br>(사업자용)</span>
+                            <span class="f-type1">
+                                <div class="m-input v3 with-button big-btn" data-component="MInput">
+                                    <input class="a-input js-a-input v3"
+                                           type="numpber"
+                                           name="phone-number-spending"
+                                           id="phone-number-spending"
+                                           placeholder="- 없이 숫자만 입력하세요">
+                                    <button class="a-button sm" type="button"><span>수정</span></button>
+                                    <label class="a-label js-a-label" for="phone-number-spending" data-placeholder=""></label>
+                                    <p class="input-guide-text">사업자번호를 입력해주세요</p>
+                                </div>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- //grid-line-item -->
+
+            </div>
+            <!-- //grid-line-wrap -->
+
+        </div>
+    </div>
+
+    <!-- tip : when develop this script must be delete -->
+    <script type="text/javascript">
+        (function() {
+            setTimeout(function(){
+                //mode-wrap 수정, 취소버튼 클릭이벤트
+                renewCommon.modeEditView.init();
+                //dialogBtn 삭제버튼 클릭이벤트
+                renewCommon.dialogBtn.init();
+            },1000);
+        })();
+    </script>
+    <!-- //tip -->
+
+</script>
+<!-- //환불계좌/현금영수증 관리 -->
