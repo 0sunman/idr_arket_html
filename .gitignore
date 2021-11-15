@@ -2,8 +2,5 @@
 /.git/
 /node_modules/
 /package-lock.json
-/dist/
-/dist-sis/
-/dist-sis-con/
 *.db
 .sass-cache
